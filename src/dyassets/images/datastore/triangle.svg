@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="6px" height="10px" viewBox="0 0 6 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Triangle</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="数据首页" transform="translate(-144.000000, -1039.000000)" fill="#0079FA" fill-rule="nonzero">
+            <g id="数据分类" transform="translate(0.000000, 509.000000)">
+                <g id="1" transform="translate(141.000000, 30.000000)">
+                    <g id="Group-9" transform="translate(0.000000, 51.000000)">
+                        <g id="Group-10-&lt;v15&gt;">
+                            <g id="大分类" transform="translate(3.000000, 440.000000)">
+                                <path d="M3.67813336,11.6714669 L7.62230269,15.3108052 C8.02819694,15.6853293 8.05362747,16.3179834 7.67910336,16.7238776 C7.48979066,16.9290472 7.22333315,17.0457418 6.94416681,17.0457418 L-0.944171854,17.0457418 C-1.4964566,17.0457418 -1.94417185,16.5980265 -1.94417185,16.0457418 C-1.94417185,15.7665754 -1.82747727,15.5001179 -1.62230773,15.3108052 L2.3218616,11.6714669 C2.70488183,11.318049 3.29511313,11.318049 3.67813336,11.6714669 Z" id="Triangle" transform="translate(3.000000, 14.045742) scale(1, -1) rotate(-270.000000) translate(-3.000000, -14.045742) "></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

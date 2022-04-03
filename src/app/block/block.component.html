@@ -1,0 +1,20 @@
+<div
+  class="block-container"
+  id="block-box"
+  pageZoom
+  [blockHover]='pageId'
+  [ngClass]="{'isLocked': isLocked, 'show': isSelected}"
+  [ngStyle]='blockStyles'
+  [attr.chartid]="blockId"
+  [contextMenu]="basicMenu"
+  [attr.originWidth]="originWidth"
+  [attr.originHeight]="originHeight"
+  [attr.originTop]="originTop"
+  [attr.originLeft]="originLeft"
+  (click)='onBlockSelected()'
+  (mousedown)="mouseDownHandle($event)"
+  (mouseenter)="handleBlockMouseEnter()"
+  (mouseleave)="handleBlockMouseLeave()">
+  <ng-template lxChartHost></ng-template>
+  <div class="animation-button" *ngIf="showDynamicAnimationButton" [hidden]="!showAnimationButton"></div>
+</div>

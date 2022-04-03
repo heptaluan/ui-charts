@@ -1,0 +1,40 @@
+.resizable-handler {
+  height: 9px;
+  width: 9px;
+  background-color: #84b5eb;
+}
+
+.resizable-handler.ui-resizable-handle.ui-resizable-se {
+  bottom: -5px;
+  right: -5px;
+}
+
+.ui-resizable-e, .ui-resizable-w {
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.ui-resizable-s {
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.rotate {
+  width: 18px;
+  height: 18px;
+  border: 1px solid #85b5ec;
+  position: absolute;
+  left: calc(50% - 9px);
+  top: -26px;
+  cursor: pointer;
+  border-radius: 50px;
+  &:after {
+      position: absolute;
+      content: '';
+      left: 8px;
+      top: 17px;
+      background: #85b5ec;
+      width: 1px;
+      height: 8px;
+  }
+}

@@ -1,0 +1,78 @@
+<div class="content">
+  <ul class="foot-nav">
+    <li class="foot-nav-item">
+      <a (click)="goNewPage('#/pages/help/list')">快速上手</a>
+    </li>
+    <li class="foot-nav-item">
+      <a (click)="goNewPage('#/pages/help/list')">帮助中心</a>
+    </li>
+    <li class="foot-nav-item">
+      <a (click)="handleFeedback()">意见反馈</a>
+    </li>
+    <li class="foot-nav-item">
+      <a (click)="goNewPage('#/pages/help/list?id=aboutUs')">关于我们</a>
+    </li>
+  </ul>
+  <div class="call-me">
+    <p>地址：湖北省武汉市洪山区珞喻路33号中部创意大厦23层 &nbsp;&nbsp; © Copyright 2016 武汉镝次元数据科技有限公司</p>
+    <!-- <p class="last"><i></i>[北京办公室] 北京市·朝阳区·工体北路4号院39号楼408</p> -->
+  </div>
+  <p class="copyright">
+    <span>增值电信业务经营许可证：鄂B2-20210015 &nbsp;&nbsp;&nbsp;&nbsp; <a class="footer-icon" target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=42011102003836"><i></i></a>鄂公网安备 42011102003836号   鄂ICP备15019128号-3</span>
+  </p>
+</div>
+<div class="qrcode-wrapper">
+  <div class="icon" (mouseenter)="handleItemCode('wechat', 'enter')" (mouseleave)="handleItemCode('wechat', 'leave')">
+    <div class="qrcode wechat" *ngIf="qrcodeTip === 'wechat'">
+      <img src="/dyassets/images/index/wechat-service.png" alt="" />
+      <p>微信服务号</p>
+    </div>
+  </div>
+  <div class="icon" (mouseenter)="handleItemTip('weibo', 'enter')" (mouseleave)="handleItemTip('weibo', 'leave')">
+    <div class="tip weibo" *ngIf="bottomTip === 'weibo'">
+      <div>微博：<a href="https://weibo.com/2252083545/manage" target="_blank">@镝次元数据</a></div>
+    </div>
+  </div>
+  <div class="icon" (mouseenter)="handleItemTip('zhihu', 'enter')" (mouseleave)="handleItemTip('zhihu', 'leave')">
+    <div class="tip zhihu" *ngIf="bottomTip === 'zhihu'">
+      <div>知乎：<a href="https://www.zhihu.com/people/dyclub/activities" target="_blank">@小镝同学</a></div>
+    </div>
+  </div>
+  <div class="icon" (mouseenter)="handleItemCode('kefu', 'enter')" (mouseleave)="handleItemCode('kefu', 'leave')">
+    <div class="qrcode service" *ngIf="qrcodeTip === 'kefu'">
+      <img src="/dyassets/images/index/xiaodi.jpg" alt="" />
+      <p>专属客服-小镝</p>
+    </div>
+  </div>
+  <div class="icon" (mouseenter)="handleItemTip('phone', 'enter')" (mouseleave)="handleItemTip('phone', 'leave')">
+    <div class="tip phone" *ngIf="bottomTip === 'phone'">
+      <div>电话：027-87523896</div>
+    </div>
+  </div>
+  <div class="icon" (mouseenter)="handleItemTip('email', 'enter')" (mouseleave)="handleItemTip('email', 'leave')">
+    <div class="tip email" *ngIf="bottomTip === 'email'">
+      <div>商务：<a href="mailto:biz@dyclub.org">biz@dyclub.org</a></div>
+    </div>
+  </div>
+</div>
+<div class="friend-link">
+  <span>友情链接：</span>
+  <a href="https://dydata.io/" target="_blank">镝数聚</a>
+  <a href="https://xiaomark.com/" target="_blank">短网址生成器</a>
+  <a href="https://www.heibandongcha.com/" target="_blank">黑板洞察</a>
+  <a href="https://yiban.io" target="_blank">壹伴微信编辑器</a>
+  <a href="http://www.xmt.cn/" target="_blank">新媒体效率工具</a>
+  <a href="http://www.365editor.com/?f=s&k=9" target="_blank">365编辑器</a>
+  <!-- <a href="http://www.pm265.com/" target="_blank">产品经理导航</a> -->
+  <a href="https://www.mugeda.com/" target="_blank">木疙瘩</a>
+  <a href="https://vcbeat.top/" target="_blank">动脉网</a>
+  <a href="https://www.52cv.com/" target="_blank">简历模板</a>
+  <!-- <a href="https://www.itjuzi.com/">IT桔子</a> -->
+  <div class="business-license-box">
+    <img class="small-img" src="/dyassets/images/business-license-small.png" alt="business-license">
+    <div class="big-img">
+      <img src="/dyassets/images/business-license-big.png" alt="business-license">
+    </div>
+    <p>镝数营业执照</p>
+  </div>
+</div>

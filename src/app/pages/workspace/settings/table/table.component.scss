@@ -1,0 +1,183 @@
+
+.table-container {
+  border: 1px solid #333333;
+  // border-radius: 4px;
+  height: 100%;
+}
+
+.table-sheet {
+  margin-bottom: 0px;
+  // font-family:SourceHanSansCN-Medium;
+  font-size: 12px;
+  color: #666666;
+  width: 90px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sheet-active {
+  background: white;
+}
+
+:host ::ng-deep {
+  .ht_clone_left {
+    height: calc(100% - 6px) !important;
+
+    .wtHolder {
+      height: calc(100% - 6px) !important;
+    }
+  }
+
+  .ht_clone_top {
+    width: calc(100% - 6px) !important;
+
+    .wtHolder {
+      width: calc(100% - 6px) !important;
+    }
+  }
+  // 排序提示小箭头
+  .handsontable .columnSorting::after {
+    content: "\2195";
+    color: #000;
+    width: 4px;
+    top: 50%;
+    margin-top: -5px;
+    position: absolute;
+    right: -15px;
+    padding-left: 5px;
+    font-size: 14px;
+    height: 8px;
+    line-height: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration: none;
+  }
+  .handsontable .columnSorting.ascending::after {
+    content: "\25B2";
+    color: #5f5f5f;
+    position: absolute;
+    right: -15px;
+  }
+
+  .handsontable .columnSorting.descending:after {
+    content: "\25BC";
+    color: #5f5f5f;
+    position: absolute;
+    right: -15px;
+  }
+}
+
+// 转置按钮
+.reversal {
+  position: absolute;
+  left: 13px;
+  top: 53px;
+  width: 45px;
+  height: 22px;
+  z-index: 999;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+:host ::ng-deep {
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo",  "Consolas", sans-serif !important;
+}
+
+
+// 上传数据按钮
+.table-upload-data {
+  position: absolute;
+  left: 10px;
+  top: 8px;
+  width: 102px;
+  height: 32px;
+  z-index: 999;
+  cursor: pointer;
+  background: #196ad4;
+  border-radius: 2px;
+
+  label {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    span {
+      font-size: 14px;
+      color: #fff;
+      margin-left: 5px;
+    }
+  }
+
+  input {
+    display: none;
+  }
+}
+
+// 恢复样例数据按钮
+.table-initial-data {
+  position: absolute;
+  right: 10px;
+  top: 15px;
+  width: 106px;
+  height: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  span {
+    font-size: 14px;
+	  color: #ffffff;
+  }
+
+  i {
+    background: url('/dyassets/images/return.svg') no-repeat center;
+    width: 14px;
+    height: 14px;
+  }
+}
+
+:host ::ng-deep {
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo",  "Consolas", sans-serif !important;
+     
+  div ::-webkit-scrollbar {
+      width: 10px !important;
+      height: 10px !important;
+      background-color: transparent !important; // all: initial !important;
+  }
+
+  div ::-webkit-scrollbar-thumb {
+      background-color: #bbbbba !important;
+      border-radius: 6px !important; // all: initial !important;
+      border-width: 1px;
+      border-style: dashed;
+      border-color: transparent;
+      background-clip: padding-box;
+  }
+  
+  div ::-webkit-scrollbar-thumb:hover {
+      border-radius: 4px !important;
+      background-clip: unset;
+      background-color: #989898 !important;
+  }
+  div ::-webkit-scrollbar-track {
+      background: transparent !important; // all: initial !important;
+  }
+  div ::-webkit-scrollbar-corner {
+      background: transparent !important; //
+  }
+
+}

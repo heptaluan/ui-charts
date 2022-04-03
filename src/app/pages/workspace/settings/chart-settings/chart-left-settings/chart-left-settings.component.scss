@@ -1,0 +1,20 @@
+.line {
+    width: 9px;
+    height: 100%; 
+    background:#333333;
+    cursor: e-resize;
+}
+
+.table-tab { // 设置handsontable页可以超出
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    // height: 100%;
+    background-color: white;
+    border:1px solid #333333; 
+    border-radius: 4px;
+}
+:host ::ng-deep {
+    font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo",  "Consolas", sans-serif !important;
+}

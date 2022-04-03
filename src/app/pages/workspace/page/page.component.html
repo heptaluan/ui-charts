@@ -1,0 +1,122 @@
+<div magicBox class="page-container" (selected)="onSelected($event)">
+  <div class="workspace-wrap">
+    <div changeZoom id="focal" #workspace class="workspace page d-block mx-auto" [attr.originWidth]="originWidth * getScale()"
+      [attr.originHeight]="originHeight * getScale()" style='position: relative;' [style.height]="originHeight * getScale() + 'px'"
+      [style.width]="originWidth * getScale() + 'px'">
+      <!-- 边界 -->
+      <div class="border-top" [ngClass]="{'active': showBottomTouchBar || showRightTouchBar}"></div>
+      <div class="border-left" [ngClass]="{'active': showBottomTouchBar || showRightTouchBar}"></div>
+      <div class="border-right" [ngClass]="{'active': showBottomTouchBar || showRightTouchBar}"></div>
+      <div class="border-bottom" [ngClass]="{'active': showBottomTouchBar || showRightTouchBar}"></div>
+      <div class="border-bottom-drag" [ngClass]="{'active': showBottomTouchBar}"
+        (mouseenter)="showBottomTouchBar = true" (mouseleave)="showBottomTouchBar = false"
+        (mousedown)="onLineMouseDown($event, 'bottom')">
+        <span *ngIf="isShowBottomTooltip" [style.left]="toolTipLeft + 'px'">{{originHeight}} px</span>
+      </div>
+      <div class="border-right-drag" [ngClass]="{'active': showRightTouchBar}"
+        (mousedown)="onLineMouseDown($event, 'right')" (mouseenter)="showRightTouchBar = true"
+        (mouseleave)="showRightTouchBar = false">
+        <span *ngIf="isShowRightTooltip" [style.top]="toolTipTop + 'px'">{{originWidth}} px</span>
+      </div>
+      
+      <!-- 参考线 -->
+      <lx-refer [project]="project"></lx-refer>
+      <ng-template lxChartHost></ng-template>
+      <div class="block-logo">
+        <img [src]="blockLogoSrc">
+      </div>
+
+      <!-- 单元素 -->
+      <div class="magic-box is-selected">
+        <div class="subline">
+          <div class="subline-t"></div>
+          <div class="subline-l"></div>
+          <div class="subline-b"></div>
+          <div class="subline-r"></div>
+        </div>
+        <div class="rotate">
+          <div class="rotate-handle"></div>
+          <div class="rotate-text">
+            <span></span>°
+          </div>
+        </div>
+        <div class="draggable"></div>
+        <div class="resizable">
+          <span class="nw resizable-handle" draggable="true" style="cursor: nw-resize;" tips="0"></span>
+          <span class="n resizable-handle" draggable="true" style="cursor: n-resize;" tips="1"></span>
+          <span class="ne resizable-handle" draggable="true" style="cursor: ne-resize;" tips="2"></span>
+          <span class="e resizable-handle" draggable="true" style="cursor: e-resize;" tips="3"></span>
+          <span class="se resizable-handle" draggable="true" style="cursor: se-resize;" tips="4"></span>
+          <span class="s resizable-handle" draggable="true" style="cursor: s-resize;" tips="5"></span>
+          <span class="sw resizable-handle" draggable="true" style="cursor: sw-resize;" tips="6"></span>
+          <span class="w resizable-handle" draggable="true" style="cursor: w-resize;" tips="7"></span>
+        </div>
+      </div>
+
+      <!-- 多元素 -->
+      <div class="drag-box" [contextMenu]="basicMenu">
+        <div class="rotate" style="display: none;">
+          <div class="rotate-handle"></div>
+          <div class="rotate-text">
+            <span></span>°
+          </div>
+        </div>
+        <div class="drag-box-wrap"></div>
+        <div class="resizable" style="display: none;">
+          <span class="nw resizable-handle" draggable="true" style="cursor: nw-resize;" tips="0"></span>
+          <span class="n resizable-handle" draggable="true" style="cursor: n-resize;" tips="1"></span>
+          <span class="ne resizable-handle" draggable="true" style="cursor: ne-resize;" tips="2"></span>
+          <span class="e resizable-handle" draggable="true" style="cursor: e-resize;" tips="3"></span>
+          <span class="se resizable-handle" draggable="true" style="cursor: se-resize;" tips="4"></span>
+          <span class="s resizable-handle" draggable="true" style="cursor: s-resize;" tips="5"></span>
+          <span class="sw resizable-handle" draggable="true" style="cursor: sw-resize;" tips="6"></span>
+          <span class="w resizable-handle" draggable="true" style="cursor: w-resize;" tips="7"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <context-menu>
+  <ng-template *ngIf="!showGroupDelete"  contextMenuItem (execute)="setBlockMoveLevel('moveUpOneLevel')">上移一层</ng-template>
+  <ng-template *ngIf="!showGroupDelete"  contextMenuItem (execute)="setBlockMoveLevel('moveDownOneLevel')">下移一层</ng-template>
+  <ng-template *ngIf="!showGroupDelete"  contextMenuItem (execute)="setBlockMoveLevel('moveUpTop')">上移顶部</ng-template>
+  <ng-template *ngIf="!showGroupDelete"  contextMenuItem (execute)="setBlockMoveLevel('moveDownBottom')">下移底部</ng-template>
+</context-menu> -->
+
+<context-menu #basicMenu [menuClass]="'basic-menu'" (open)="open()">
+
+  <ng-template *ngIf="showGroupCopy" contextMenuItem (execute)="groupCopy()"><i class="page-icon icon-reuse"></i>复用<span class="key-code">{{ctrl}} + D</span></ng-template>
+  <ng-template *ngIf="showGroupDelete" contextMenuItem (execute)="groupDelete()"><i class="page-icon icon-delete"></i>删除<span class="key-code">Delete/Backspace</span></ng-template>
+  <ng-template *ngIf="showSingleCopy" contextMenuItem (execute)="copy()"><i class="page-icon icon-reuse"></i>复用<span class="key-code">{{ctrl}} + D</span></ng-template>
+  <ng-template *ngIf="showSingleDelete" contextMenuItem (execute)="delete()"><i class="page-icon icon-delete"></i>删除<span class="key-code">Delete/Backspace</span></ng-template>
+  <ng-template contextMenuItem passive="true" *ngIf="showAlignButton || !showGroupDelete"><div class="split-line"></div></ng-template>
+  <ng-template *ngIf="showAlignButton" contextMenuItem passive="true">
+    <div class="sub-menu"><i class="page-icon align-icon-l"></i>对齐
+      <ul>
+        <li (click)="handleGroupAlign('l', $event)"><i class="icon align-icon align-icon-l"></i>左对齐<span class="key-code">{{ctrl}} + {{alt}}  + L</span></li>
+        <li (click)="handleGroupAlign('c', $event)"><i class="icon align-icon align-icon-c"></i>水平居中<span class="key-code">{{ctrl}} + {{alt}} + C</span></li>
+        <li (click)="handleGroupAlign('r', $event)"><i class="icon align-icon align-icon-r"></i>右对齐<span class="key-code">{{ctrl}} + {{alt}} + R</span></li>
+        <li (click)="handleGroupAlign('t', $event)"><i class="icon align-icon align-icon-t"></i>顶对齐<span class="key-code">{{ctrl}} + {{alt}} + T</span></li>
+        <li (click)="handleGroupAlign('m', $event)"><i class="icon align-icon align-icon-m"></i>垂直居中<span class="key-code">{{ctrl}} + {{alt}} + M</span></li>
+        <li (click)="handleGroupAlign('b', $event)"><i class="icon align-icon align-icon-b"></i>底对齐<span class="key-code">{{ctrl}} + {{alt}} + B</span></li>
+      </ul>
+    </div>
+  </ng-template>
+  <!-- 上面分割线需要添加判断 -->
+  <ng-template *ngIf="showCoverage" contextMenuItem passive="true">
+    <div class="sub-menu"><i class="page-icon icon-layer"></i>图层
+      <ul>
+        <li (click)="setBlockMoveLevel('moveUpOneLevel')"><i class="icon icon-move-up-one"></i>上移一层<span class="key-code">{{ctrl}} + ]</span></li>
+        <li (click)="setBlockMoveLevel('moveDownOneLevel')"><i class="icon icon-move-down-one"></i>下移一层<span class="key-code">{{ctrl}} + [</span></li>
+        <li (click)="setBlockMoveLevel('moveUpTop')"><i class="icon icon-move-up"></i>置于顶层<span class="key-code">{{ctrl}} + {{shift}} + ]</span></li>
+        <li (click)="setBlockMoveLevel('moveDownBottom')"><i class="icon icon-move-down"></i>置于底层<span class="key-code">{{ctrl}} + {{shift}} + [</span></li>
+      </ul>
+    </div>
+  </ng-template>
+  <ng-template *ngIf="showLocked" contextMenuItem (execute)="locked()"><i class="page-icon icon-locked"></i>锁定<span class="key-code">{{ctrl}} + {{shift}} + L</span></ng-template>
+  <ng-template *ngIf="showUnLocked" contextMenuItem (execute)="unLocked()"><i class="page-icon icon-unlocked"></i>解锁<span class="key-code">{{ctrl}} + {{shift}} + L</span></ng-template>
+  <ng-template contextMenuItem passive="true" *ngIf="showEditData || showSingleFork"><div class="split-line"></div></ng-template>
+  <ng-template *ngIf="showEditData" contextMenuItem (execute)="edit() "><i class="page-icon icon-edit"></i>编辑数据</ng-template>
+  <ng-template *ngIf="showSingleFork" contextMenuItem (execute)="fork()"><i class="page-icon icon-save"></i>另存为图表项目</ng-template>
+</context-menu>

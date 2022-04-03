@@ -1,0 +1,319 @@
+<div class="banner" (click)="goExchange()"></div>
+<tabset type="pills" #staticTab>
+  <tab heading="会员特权" id="vip" (select)="onTabSelect($event)">
+    <div class="main">
+      <div class="page-bg">
+        <div class="top-bg"></div>
+        <div class="bottom-bg"></div>
+      </div>
+      <div class="powers-content">
+        <div class="content-header">
+          <div class="header-list">
+            <h2>用户权限</h2>
+            <img src="/dyassets/images/price/price-icon.svg" />
+          </div>
+          <div class="header-list">
+            <h2>免费用户</h2>
+            <p><span class="free">免费体验镝数图表的强大功能</span></p>
+            <div class="price free"></div>
+          </div>
+          <div class="header-list">
+            <h2>会员</h2>
+            <p><span class="vip1">更大存储空间，更自由便捷的导出方式，更多元化的场景模板</span></p>
+            <div class="price vip1"></div>
+          </div>
+          <div class="header-list">
+            <h2>企业会员</h2>
+            <p><span class="eip1">无限容量，超高权限，适合对图表、数据图文等有更多定制需求的企业</span></p>
+            <div class="price eip1"></div>
+          </div>
+        </div>
+        <div class="content-list">
+          <span>图表模版类型</span>
+          <span>全部</span>
+          <span>全部</span>
+          <span>全部</span>
+        </div>
+        <div class="content-list">
+          <span>项目存储空间</span>
+          <span>10个</span>
+          <span>100个</span>
+          <span>无限</span>
+        </div>
+        <div class="content-list">
+          <span>上传数据存储空间</span>
+          <span>10个</span>
+          <span>100个</span>
+          <span>1000个</span>
+        </div>
+        <div class="content-list">
+          <span>图片素材存储空间</span>
+          <span>50M</span>
+          <span>500M</span>
+          <span>5G</span>
+        </div>
+        <div class="content-list">
+          <span>每日导出量</span>
+          <span>3</span>
+          <span>30</span>
+          <span>无限</span>
+        </div>
+        <div class="content-list">
+          <span>项目自定义logo</span>
+          <span><img src="/dyassets/images/price/checked-light-cyan.svg" /></span>
+          <span><img src="/dyassets/images/price/checked-cyan.svg" /></span>
+          <span><img src="/dyassets/images/price/checked.svg" /></span>
+        </div>
+        <div class="content-list">
+          <span>导出JPG/SVG/GIF</span>
+          <span><img src="/dyassets/images/price/checked-light-cyan.svg" /></span>
+          <span><img src="/dyassets/images/price/checked-cyan.svg" /></span>
+          <span><img src="/dyassets/images/price/checked.svg" /></span>
+        </div>
+        <div class="content-list">
+          <span>导出透明底PNG</span>
+          <span class="not-checked"><i></i></span>
+          <span><img src="/dyassets/images/price/checked-cyan.svg" /></span>
+          <span><img src="/dyassets/images/price/checked.svg" /></span>
+        </div>
+        <div class="content-list">
+          <span>导出MP4/MOV</span>
+          <span class="not-checked"><i></i></span>
+          <span class="not-checked"><i></i></span>
+          <span><img src="/dyassets/images/price/checked.svg" /></span>
+        </div>
+        <div class="content-list">
+          <span>定制项目优先</span>
+          <span class="not-checked"><i></i></span>
+          <span class="not-checked"><i></i></span>
+          <span><img src="/dyassets/images/price/checked.svg" /></span>
+        </div>
+        <div class="content-list">
+          <span>优先使用新功能</span>
+          <span class="not-checked"><i></i></span>
+          <span class="not-checked"><i></i></span>
+          <span><img src="/dyassets/images/price/checked.svg" /></span>
+        </div>
+        <div class="content-list">
+          <span>产品使用培训</span>
+          <span class="not-checked"><i></i></span>
+          <span class="not-checked"><i></i></span>
+          <span><img src="/dyassets/images/price/checked.svg" /></span>
+        </div>
+        <div class="content-list">
+          <span>工作坊优先参与权</span>
+          <span class="not-checked"><i></i></span>
+          <span class="not-checked"><i></i></span>
+          <span><img src="/dyassets/images/price/checked.svg" /></span>
+        </div>
+        <div class="content-list">
+          <span>5*8小时客服在线支持</span>
+          <span class="not-checked"><i></i></span>
+          <span class="not-checked"><i></i></span>
+          <span><img src="/dyassets/images/price/checked.svg" /></span>
+        </div>
+        <!-- <div class="content-list">
+          <span>企业客户专属VIP群</span>
+          <span class="not-checked"><i></i></span>
+          <span class="not-checked"><i></i></span>
+          <span><img src="/dyassets/images/price/checked.svg" /></span>
+        </div> -->
+        <a class="btn-wrapper" [class.no-right-go]="update1Flag" (click)="rightGo($event, 'None')">{{ updateTip1 }}</a>
+        <a class="btn-wrapper" [class.no-right-go]="update2Flag" (click)="rightGo($event, 'vip1')">{{ updateTip2 }}</a>
+        <a class="btn-wrapper" (click)="askPrice()">咨询</a>
+        <div class="free-vip" (click)="goExchange()" onclick="_hmt.push(['_trackEvent', 'price', 'price-desc', 'free-vip'])">
+          <a>领取会员特权</a>
+        </div>
+      </div>
+      <!-- <div class="content-tip">
+        注：镝数为免费用户、会员、高级会员、企业会员、企业高级会员提供的免费数据报告每月可下载量分别为30、30、50、50、100。
+      </div> -->
+      <!-- 底部 -->
+      <div class="footer">
+        <lx-dy-index-footer></lx-dy-index-footer>
+      </div>
+    </div>
+  </tab>
+
+  <tab heading="企业定制服务" id="company" (select)="onTabSelect($event)">
+    <div class="main bg2">
+      <div class="page-bg">
+        <div class="top-bg"></div>
+        <!-- <div class="bottom-bg"></div> -->
+      </div>
+      <div class="w">
+        <ul class="server-list">
+          <li class="server-item">
+            <div class="server-item-icon icon-custom"></div>
+            <p class="title">数据新闻写作平台定制</p>
+            <div class="line"></div>
+            <p class="server-desc">
+              聚合可靠数据，提供无需编程的数据可视化模板，一站式完成从选题策划、数据处理到写作发布的大部分制作工作。
+            </p>
+          </li>
+          <li class="server-item">
+            <div class="server-item-icon icon-brand"></div>
+            <p class="title">品牌数据传播定制</p>
+            <p class="server-desc">从热点切入，深入分析数据，释放企业数据的传播价值，用最有表现力的数据作品赋能企业品牌。</p>
+          </li>
+          <li class="server-item">
+            <div class="server-item-icon icon-dev"></div>
+            <p class="title">数据可视化产品开发</p>
+            <div class="line"></div>
+            <p class="server-desc">将产品数据结构化，结构数据可视化，可视数据智能化，既实用又亮眼，彰显你的产品价值。</p>
+          </li>
+        </ul>
+
+        <div class="panel background-gray bottom-0">
+          <div class="panel-header">
+            <h1 class="panel-title">荣誉作品</h1>
+            <p class="panel-desc">
+              目前，镝数已为国内数据新闻知名媒体新华网、浙报传媒定制数据新闻写作系统；为多个领域的企业提供交互H5、可视化大屏等
+              多种数据可视化产品的开发服务；为国务院、蚂蚁金服、CCTV、湖南卫视等单位提供品牌数据传播服务，并取得良好传播效果。
+            </p>
+          </div>
+          <div class="panel-content">
+            <ul class="production-list">
+              <li class="production-list-item">
+                <div class="production-wrapper">
+                  <div class="production-preview p1">
+                    <div class="preview-content">
+                      <div class="qrcode-wrapper">
+                        <img src="/dyassets/images/price/qr1.png" alt="qrcode" />
+                      </div>
+                      <p class="preview-content-text">
+                        为国务院新闻客户端定制的数据新闻作品，以动画及高效数据可视化的方式呈现了国务院常务会议在2016年的所有会议内容和产出成果。
+                      </p>
+                    </div>
+                  </div>
+                  <div class="production-desc">
+                    <h2 class="production-title t1">《国务院常务会给咱们带来哪些实惠》</h2>
+                    <p class="production-text t1">国务院新闻客户端</p>
+                  </div>
+                </div>
+              </li>
+              <li class="production-list-item">
+                <div class="production-wrapper">
+                  <div class="production-preview p2">
+                    <div class="preview-content">
+                      <div class="qrcode-wrapper">
+                        <img src="/dyassets/images/price/qr2.png" alt="qrcode" />
+                      </div>
+                      <p class="preview-content-text">
+                        通过大数据分析、地理信息可视化等方式，呈现近五年来中国两千多万大学生的毕业流向和生存状态。作品在搜狐手机客户端首页发送，每秒流量高达7000次，成功传播支付宝的品牌形象。
+                      </p>
+                    </div>
+                  </div>
+                  <div class="production-desc">
+                    <h2 class="production-title">《数说中国大学生毕业走向》</h2>
+                    <p class="production-text">蚂蚁金服</p>
+                  </div>
+                </div>
+              </li>
+              <li class="production-list-item">
+                <div class="production-wrapper">
+                  <div class="production-preview p3">
+                    <div class="preview-content">
+                      <div class="qrcode-wrapper">
+                        <img src="/dyassets/images/price/qr3.png" alt="qrcode" />
+                      </div>
+                      <p class="preview-content-text">
+                        与CCTV合作公益作品《江豚生存地图》，通过江豚的致伤、致死相关因素和数据的分析，生动展现人与自然的关系及绿色发展理念的重要性，呼吁人们关注环保和自然。
+                      </p>
+                    </div>
+                  </div>
+                  <div class="production-desc">
+                    <h2 class="production-title">《江豚生存地图》</h2>
+                    <p class="production-text">CCTV</p>
+                  </div>
+                </div>
+              </li>
+              <li class="production-list-item">
+                <div class="production-wrapper">
+                  <div class="production-preview p4">
+                    <div class="preview-content">
+                      <div class="qrcode-wrapper">
+                        <img src="/dyassets/images/price/qr4.png" alt="qrcode" />
+                      </div>
+                      <p class="preview-content-text">
+                        通过对北京市公安局2014——2015年“每周治安播报”内容进行统计分析，基于LBS的精准数据可视化，提供交互的、个性化的阅读体验。贴近性的数据解读视角引发高度关注、高效传播，为市民生活和出行提供一些有效的提醒。
+                      </p>
+                    </div>
+                  </div>
+                  <div class="production-desc t2">
+                    <h2 class="production-title">《北京治安地图》</h2>
+                    <p class="production-text">澎湃新闻</p>
+                  </div>
+                </div>
+              </li>
+              <li class="production-list-item">
+                <div class="production-wrapper">
+                  <div class="production-preview p5">
+                    <div class="preview-content">
+                      <div class="qrcode-wrapper">
+                        <img src="/dyassets/images/price/qr5.png" alt="qrcode" />
+                      </div>
+                      <p class="preview-content-text">
+                        本项目通过对性格测试系统的设计与包装，在界面的视觉设计和用户操作上带来全新的体验，帮助客户打造性格测试类强势产品。
+                      </p>
+                    </div>
+                  </div>
+                  <div class="production-desc t2">
+                    <h2 class="production-title">《性格罗盘》</h2>
+                    <p class="production-text">北京很懂你咨询公司</p>
+                  </div>
+                </div>
+              </li>
+              <li class="production-list-item">
+                <div class="production-wrapper">
+                  <div class="production-preview p6">
+                    <div class="preview-content">
+                      <div class="qrcode-wrapper">
+                        <img src="/dyassets/images/price/qr6.png" alt="qrcode" />
+                      </div>
+                      <p class="preview-content-text">
+                        用直观的静态及动态交互可视化H5方式，将欧洲七大医疗器械集群的位置、特长、产业结构、合作空间等背景信息和合作信息呈现给相关受众及潜在客户，促成进一步深入的交流、分享和战略合作。
+                      </p>
+                    </div>
+                  </div>
+                  <div class="production-desc t2">
+                    <h2 class="production-title">《当高新医疗科技遇上古老欧洲》</h2>
+                    <p class="production-text">科特勒咨询公司</p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="pc-screen-wrapper">
+              <div class="pc-img-wrapper">
+                <img src="/dyassets/images/price/pc.png" alt="" />
+                <div class="pc-img-content">
+                  <p class="pc-img-text">
+                    该项目使用实时数据可视化技术在大屏上直播了网络攻防大赛的全过程，实现了路径解析、端口解析和协议解析的展示，让参赛者和观众可以全面掌握比赛的最新战况。
+                  </p>
+                </div>
+              </div>
+              <div class="pc-content">
+                <h3 class="title">大屏可视化直播系统定制</h3>
+                <p class="sub-title">中电运行</p>
+                <p class="desc">
+                  该项目使用实时数据可视化技术在大屏上直播了网络攻防大赛的全过程，实现了路径解析、端口解析和协议解析的展示，让参赛者和观众可以全面掌握比赛的最新战况。
+                </p>
+                <a class="button-link contact-us" (click)="contactUs()">询价</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="partner background-gray" style="height: 760px;">
+        <h1 class="title">企业服务</h1>
+        <div class="partner-wrapper">
+          <img src="/dyassets/images/price/partner_logo.png" alt="" />
+        </div>
+      </div>
+      <!-- 底部 -->
+      <div class="footer">
+        <lx-dy-index-footer></lx-dy-index-footer>
+      </div>
+    </div>
+  </tab>
+</tabset>

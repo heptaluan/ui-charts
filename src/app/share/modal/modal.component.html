@@ -1,0 +1,17 @@
+<div class="modal-header">
+  <p *ngIf="title" class="modal-title" [ngClass]="{'text-center': title.position === 'center',
+'text-left': title.position === 'left',
+'text-right': title.position === 'right'}">{{title.content}}</p>
+  <button class="icon-close" (click)="bsModalRef.hide()" [ngStyle]="{'top': title ? '12px' : '10px'}">
+    <i class="icon iconfont icon-x"></i>
+  </button>
+</div>
+<div class="modal-body">
+  <ng-content name="inner"></ng-content>
+</div>
+<div *ngIf="position" class="modal-footer" [ngClass]="{'justify-content-start': position === 'left',
+  'justify-content-center': position === 'center',
+  'jusitfy-content-end': position === 'right',
+  'justify-content-around': position === 'around'}">
+  <ng-content select=".action-button"></ng-content>
+</div>

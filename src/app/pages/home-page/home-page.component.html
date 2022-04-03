@@ -1,0 +1,216 @@
+<ng-container *ngIf="!isMobile">
+  <div class="index-wrapper" #contentScroll [ngClass]="{'iframe': isIframe}">
+    <div class="left-content" *ngIf="!isIframe" [ngStyle]="{'top': isShowTip ?'104px' : '56px'}">
+      <lx-home-sidebar></lx-home-sidebar>
+    </div>
+    <div class="right-content" [ngClass]="{ iframe: isIframe }" [ngStyle]="{'margin-top': isShowTip ? '104px' : '56px'}">
+      <ng-container *ngIf="isLogin; else noLogin">
+        <router-outlet></router-outlet>
+      </ng-container>
+      <ng-template #noLogin>
+        <lx-un-login></lx-un-login>
+      </ng-template>
+    </div>
+
+    <div class="demand" (click)="demand()" *ngIf="!isIframe"><i></i><span>提模板需求</span></div>
+
+    <ng-container *ngIf="isShowFloatBar">
+      <lx-float-menu [isShowBackTop]="isShowBackTop"></lx-float-menu>
+    </ng-container>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="isMobile">
+  <div class="mobile">
+    <header>
+      <a href="https://dycharts.com/appv2/#/pages/home/index"><img src="../../../dyassets/images/logo-new.svg"
+          alt=""></a>
+      <i (click)="showHeaderTip(true)">
+      </i>
+    </header>
+    <div class="header-tip" *ngIf="isShowHeaderTip">
+      <p (click)="linkTo('/pages/home/index')">首页</p>
+      <p (click)="linkTo('/pages/exchange')">会员兑换</p>
+      <p (click)="linkTo('/pages/index/userhelp')">使用帮助</p>
+      <p *ngIf="!isLogin" (click)="link(true)">立即登录</p>
+      <p *ngIf="isLogin" (click)="link(false)">退出登录</p>
+    </div>
+    <main>
+      <div class="login">
+        <div class="title">在线数据可视化利器<br>
+          让你的数据有型有款、创意无限
+        </div>
+        <div class="login-button" (click)="linkRegister()" *ngIf="!isLogin">
+          立即注册
+        </div>
+        <div class="login-button" (click)="showModel()" *ngIf="isLogin">
+          立即体验
+        </div>
+        <img src="../../../dyassets/images/home-page/mobile/home-mobile.png" alt="">
+      </div>
+
+      <div class="scene">
+        <div class="title">应用场景</div>
+        <div class="content-wrapper">
+          <div class="content">
+            <div class="content-title">媒体数据新闻</div>
+            <img src="../../../dyassets/images/home-page/mobile/scene1.svg" alt="">
+            <p>一键快速出图<br>
+              提高新闻写作效率</p>
+          </div>
+          <div class="content">
+            <div class="content-title">商业数据分析</div>
+            <img src="../../../dyassets/images/home-page/mobile/scene2.svg" alt="">
+            <p>丰富图表配色<br>
+              让商业数据脱颖而出</p>
+          </div>
+          <div class="content">
+            <div class="content-title">新媒体内容写作</div>
+            <img src="../../../dyassets/images/home-page/mobile/scene3.svg" alt="">
+            <p>丰富内容模板<br>
+              搞定热点内容场景</p>
+          </div>
+        </div>
+        <div class="content-wrapper content-wrapper-magin">
+          <div class="content">
+            <div class="content-title">公司财务报表</div>
+            <img src="../../../dyassets/images/home-page/mobile/scene4.svg" alt="">
+            <p>专业数据配置<br>
+              让报表数据一目了然</p>
+          </div>
+          <div class="content">
+            <div class="content-title">个人简历美化</div>
+            <img src="../../../dyassets/images/home-page/mobile/scene5.svg" alt="">
+            <p>高效信息传达<br>
+              助力简历与众不同</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="chart">
+        <div class="title">可视化图表种类全面</div>
+        <div class="content-title">支持包括词云图、桑基图、玫瑰图、河流图、雷达图等<br>
+          近100种图表种类</div>
+        <div class="content-wrapper">
+          <div class="content" (click)="linkRedirect()">
+            <img src="https://image.dycharts.com/8000000011111111001.gif?imageView2/2/w/500/quality/90" alt="">
+            <p>动态条形图</p>
+            <img src="../../../dyassets/images/home-page/mobile/dynamic.svg" alt="">
+          </div>
+          <div class="content" (click)="linkRedirect()">
+            <img src="https://image.dycharts.com/8000000011111111002.gif?imageView2/2/w/500/quality/90" alt="">
+            <p>动态折线变化图</p>
+            <img src="../../../dyassets/images/home-page/mobile/dynamic.svg" alt="">
+          </div>
+          <div class="content" (click)="linkRedirect()">
+            <img src="https://image.dycharts.com/HsiVkFNvaWbDMybZ9N1NME.jpg?imageView2/2/w/500/quality/90" alt="">
+            <p>河流图</p>
+          </div>
+          <div class="content" (click)="linkRedirect()">
+            <img src="https://image.dycharts.com/114473474859453649.png?imageView2/2/w/500/quality/90" alt="">
+            <p>词云图</p>
+          </div>
+          <div class="content" (click)="linkRedirect()">
+            <img src="https://image.dycharts.com/YVLmRojEG564VMaFTzMdky.jpg?imageView2/2/w/500/quality/90" alt="">
+            <p>玫瑰图</p>
+          </div>
+          <div class="content" (click)="linkRedirect()">
+            <img src="https://image.dycharts.com/XJcYbs1sgp8RoYQCFQ2YTh.jpg?imageView2/2/w/500/quality/90" alt="">
+            <p>堆叠柱状图</p>
+          </div>
+          <div class="content" (click)="linkRedirect()">
+            <img src="https://image.dycharts.com/GAn9rzy6Hyg9PJTjc2RToc.jpg?imageView2/2/w/500/quality/90" alt="">
+            <p>桑基图</p>
+          </div>
+          <div class="content" (click)="linkRedirect()">
+            <img src="https://image.dycharts.com/NZPuXEqk4oEXfKNrETPndv.jpg?imageView2/2/w/500/quality/90" alt="">
+            <p>人口金字塔</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="infographic" [ngClass]="{'hide-login': isLogin}">
+        <div class="title">上千种场景模板</div>
+        <div class="content-title">内容创作、媒体运营、营销海报、市场研究等场景的可视<br>化设计均可轻松稿定</div>
+        <div class="content-wrapper">
+          <div class="content" (click)="linkRedirect()">
+            <img src="../../../dyassets/images/home-page/mobile/infographic1.png" alt="">
+            <p>手机海报</p>
+          </div>
+          <div class="content" (click)="linkRedirect()">
+            <img src="../../../dyassets/images/home-page/mobile/infographic2.png" alt="">
+            <p>正文配图（方型）</p>
+          </div>
+          <div class="content" (click)="linkRedirect()">
+            <img src="../../../dyassets/images/home-page/mobile/infographic3.png" alt="">
+            <p>新闻长图</p>
+          </div>
+          <div class="content" (click)="linkRedirect()">
+            <img src="../../../dyassets/images/home-page/mobile/infographic4.png" alt="">
+            <p>微信公众号首图</p>
+          </div>
+          <div class="content" (click)="linkRedirect()">
+            <img src="../../../dyassets/images/home-page/mobile/infographic5.png" alt="">
+            <p>微博焦点图片</p>
+          </div>
+          <div class="content" (click)="linkRedirect()">
+            <img src="../../../dyassets/images/home-page/mobile/infographic6.png" alt="">
+            <p>图表报告</p>
+          </div>
+          <div class="content" (click)="linkRedirect()">
+            <img src="../../../dyassets/images/home-page/mobile/infographic7.png" alt="">
+            <p>正文配图（竖版）</p>
+          </div>
+          <div class="content" (click)="linkRedirect()">
+            <img src="../../../dyassets/images/home-page/mobile/infographic8.png" alt="">
+            <p>正文配图（横版） </p>
+          </div>
+          <div class="content" (click)="linkRedirect()">
+            <img src="../../../dyassets/images/home-page/mobile/infographic9.png" alt="">
+            <p>数据图说</p>
+          </div>
+        </div>
+        <div class="login-button" *ngIf="!isLogin">
+          <a
+            href="https://dycharts.com/vis/auth/signin.html?redirect=https%3A%2F%2Fdycharts.com%2Fappv2%2F%23%2Fpages%2Fhome%2Findex">
+            立即注册
+          </a>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="line">
+        <div>
+          <p>微信服务号</p>
+          <img src="https://ss1.dydata.io/v2/home/code.jpg" alt="">
+          <i>了解镝数图表最新资讯</i>
+        </div>
+        <div>
+          <p>客服</p>
+          <img src="/dyassets/images/index/xiaodi.jpg" alt="">
+          <i>意见反馈、进群交流</i>
+        </div>
+      </div>
+
+      <div class="address">
+        <img src="../../../dyassets/images/home-page/mobile/position.svg" alt="">
+        <p>湖北省武汉市洪山区珞喻路33号中部创意大厦23层</p>
+      </div>
+      <div class="info">
+        <img src="../../../dyassets/images/home-page/mobile/mail.svg" alt="">
+        <p>biz@dydata.io</p>
+        <img src="../../../dyassets/images/home-page/mobile/phone.svg" alt="">
+        <p>027-87523896</p>
+      </div>
+      <div class="copyright">
+        Copyright&nbsp;武汉镝次元数据科技有限公司<br>
+        ©&nbsp;2016&nbsp;&nbsp;鄂ICP备15019128号-3
+      </div>
+
+    </footer>
+
+    <div class="mobile-mask" (click)="showHeaderTip(false)" *ngIf="isShowHeaderTip">     
+    </div>
+  </div>
+
+</ng-container>

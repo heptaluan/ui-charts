@@ -1,0 +1,8 @@
+<nb-card class="toggle-chart">
+  <div class="icon-header">
+    切换图标
+    <i class="icon iconfont icon-fanhui" (click)='clickCloseBtn()'></i>
+  </div>
+
+  <lx-shape-sidebar [pageId]="curPageId" [hideShape]="true" [blockId]="blockId" (closeSidebarEvent)="clickCloseBtn()"></lx-shape-sidebar>
+</nb-card>

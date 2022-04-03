@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="3px" height="12px" viewBox="0 0 3 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>指针</title>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="渐变色颜色盒" transform="translate(-458.000000, -73.000000)" fill="#D8D8D8">
+            <g id="渐变弹窗" transform="translate(278.000000, 27.000000)">
+                <g id="颜色面板内容" transform="translate(14.000000, 44.000000)">
+                    <g id="角度渐变" transform="translate(155.000000, 0.000000)">
+                        <path d="M13,2 L13.000703,11.0856015 C13.5829319,11.2917181 14,11.8471533 14,12.5 C14,13.3284271 13.3284271,14 12.5,14 C11.6715729,14 11,13.3284271 11,12.5 C11,11.8467813 11.4175435,11.2910851 12.0002925,11.0852495 L12,2 L13,2 Z" id="指针"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

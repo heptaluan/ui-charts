@@ -1,0 +1,21 @@
+.container {
+  min-height: 652px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.notAvailable {
+  width: 100%;
+  margin-top: 70px;
+
+  img {
+    width: 91px;
+    height: 80px;
+  }
+
+  p {
+    margin-top: 15px;
+    font-size: 18px;
+  	color: #c3c4c7;
+  }
+}

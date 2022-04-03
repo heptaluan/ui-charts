@@ -1,0 +1,13 @@
+<div class="is-login">
+  <div class="create-project">
+    <ul *ngFor="let sidebar of showSideBar; let i = index" [ngClass]="{ my: i === 1 }">
+      <p *ngIf="i === 1">我的</p>
+      <li *ngFor="let item of sidebar" routerLinkActive="active" [class]="item.className">
+        <a [routerLink]="item.route" (click)="dataCollectBaidu(item.collect)">
+          <div class="img"></div>
+          <span>{{ item.name }}</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+:host::ng-deep {
+  display: inline-block;
+  width: 100%;
+
+  .input-group {
+    display: flex;
+    align-items: center;
+    height: 20px;
+    justify-content: space-between;
+    font-size: 12px;
+
+    .check-wrapper{
+      width: 73px;
+      display: flex;
+      align-items: center;
+      .input-title {
+        margin-left: 8px;
+      }
+      &.long {
+        width: auto;
+      }
+    }
+    
+    .button {
+      color: #129cff;
+      cursor: pointer;
+    }
+
+    .form-control {
+      width: 133px;
+    }
+  }
+}

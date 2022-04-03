@@ -1,0 +1,100 @@
+:host ::ng-deep {
+  // li.active {
+  //   &::after {
+  //     content: '';
+  //     background-color: #129cff;
+  //     font-size: 0px;
+  //     padding: 0px 38px !important;
+  //     position: absolute;
+  //     bottom: 0px;
+  //     left: 50%;
+  //     transform: translateX(-50%);
+  //   }
+  // }
+  .btn-dropdown {
+    padding-right: 4px !important;
+  }
+  .nav-tabs {
+    padding-left: 0 !important;
+    
+    .nav-item {
+      background-color: #232424 !important;
+    }
+    
+    li a {
+      background-color: #232424 !important;
+      color: rgba(255, 255, 255, 0.8) !important;
+      font-size: 14px;
+    }
+  }
+}
+
+.toggle-theme {
+  width: 100%;
+  user-select: none;
+  margin-top: 20px;
+
+  .chart-theme {
+    width: 209px;
+    height: 120px;
+    margin: 0 auto 15px;
+    border-radius: 2px;
+    background: #fff;
+    // padding: 7px 0;
+    position: relative;
+    box-sizing: border-box;
+    h4 {
+      font-size: 12px;
+      font-weight: bold;
+      color: #333333;
+      text-align: center;
+      margin-top: 5px;
+      position: relative;
+      border-radius: 2px 2px 0 0;
+    }
+    img {
+      display: block;
+      max-width: 110px;
+      max-height: 120px;
+      width: 110px;
+      height: 120px;
+      margin: 0 auto;
+    }
+
+    .theme-mask {
+      width: 209px;
+      height: 121px;
+      border-radius: 2px;
+      position: absolute;
+      border: solid 3px #0023ff;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    h4 {
+      width: 209px;
+      height: 22px;
+      margin: 0;
+      top: 0;
+      background-color: #108ee9;
+      position: absolute;
+      line-height: 22px;
+      font-size: 12px;
+      text-align: center;
+      color: #ffffff;
+      font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo",  "Consolas", sans-serif;    
+    }
+  }
+
+  &:hover {
+    .theme-mask {
+      opacity: 1 !important;
+    }
+  }
+
+}
+:host ::ng-deep {
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo",  "Consolas", sans-serif !important;
+}

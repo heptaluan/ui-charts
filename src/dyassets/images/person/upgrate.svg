@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="87px" height="35px" viewBox="0 0 87 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>升级会员按钮</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FEDE73" offset="0%"></stop>
+            <stop stop-color="#E3B928" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#E2BF2E" offset="0%"></stop>
+            <stop stop-color="#C29E1F" offset="100%"></stop>
+        </linearGradient>
+        <path d="M5,9.2346222e-15 L70.5968758,3.19744231e-14 C72.1157944,2.76481901e-14 73.5523589,0.690448595 74.5012198,1.87652476 L87,17.5 L74.5012198,33.1234752 C73.5523589,34.3095514 72.1157944,35 70.5968758,35 L5,35 C2.23857625,35 6.71589164e-13,32.7614237 6.6879835e-13,30 L6.65245636e-13,5 C6.64907459e-13,2.23857625 2.23857625,7.61269267e-15 5,7.10542736e-15 Z" id="path-3"></path>
+        <filter x="-1.1%" y="-2.9%" width="102.3%" height="105.7%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 0.921568627   0 0 0 0 0.490196078  0 0 0 1 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="首页导航栏3" transform="translate(-1034.000000, -13.000000)">
+            <g id="右侧信息" transform="translate(1034.000000, 10.000000)">
+                <g id="升级会员按钮" transform="translate(0.000000, 3.000000)">
+                    <g id="Rectangle" fill-rule="nonzero">
+                        <use fill="url(#linearGradient-1)" xlink:href="#path-3"></use>
+                        <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                        <path stroke="url(#linearGradient-2)" stroke-width="1" d="M86.3596876,17.5 L74.1107854,2.18887229 C73.2568106,1.12140374 71.9639025,0.5 70.5968758,0.5 L5,0.5 C2.51471863,0.5 0.5,2.51471863 0.5,5 L0.5,30 C0.5,32.4852814 2.51471863,34.5 5,34.5 L70.5968758,34.5 C71.9639025,34.5 73.2568106,33.8785963 74.1107854,32.8111277 L86.3596876,17.5 Z" stroke-linejoin="square"></path>
+                    </g>
+                    <text id="升级会员" font-family="PingFangSC-Semibold, PingFang SC" font-size="14" font-weight="500" fill="#715B0A">
+                        <tspan x="12" y="23">升级会员</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

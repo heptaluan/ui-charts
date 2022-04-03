@@ -1,0 +1,1307 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "themes";
+@import "~@nebular/theme/styles/globals";
+@import "~handsontable/dist/handsontable.full.css";
+
+@include nb-install() {
+  @include nb-theme-global();
+}
+
+@import "./dyassets/css/reset.scss";
+
+body {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo",  "Consolas", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  .modal-backdrop {
+    // z-index: 1050;
+    .show {
+      opacity: 0.4;
+    }
+  }
+
+  .modal-dialog {
+    max-width: max-content !important;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+
+    .modal-content {
+      // border-radius: 2px;
+      border: none;
+    }
+  }
+
+  // .form-control,
+  // input {
+  //   &:focus {
+  //     border: solid 1px #129cff !important;
+  //   }
+  // }
+}
+
+.home-loading {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  background: #fff;
+  display: none;
+
+  .spinner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -40px;
+    margin-left: -40px;
+    width: 80px;
+    height: 80px;
+
+    & > div {
+      width: 18px;
+      height: 18px;
+      background-color: #008de3;
+      border-radius: 100%;
+      display: inline-block;
+      -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+      animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+    }
+
+    .bounce1 {
+      -webkit-animation-delay: -0.32s;
+      animation-delay: -0.32s;
+    }
+
+    .bounce2 {
+      -webkit-animation-delay: -0.16s;
+      animation-delay: -0.16s;
+    }
+  }
+}
+@-webkit-keyframes sk-bouncedelay {
+  0%, 80%, 100% { -webkit-transform: scale(0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% { 
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  } 40% { 
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+  }
+}
+
+.workspace-loading {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  background: #fff;
+  display: none;
+
+  .spinner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -62px;
+    margin-left: -40px;
+    width: 80px;
+    height: 10px;
+
+    & > div {
+      width: 18px;
+      height: 18px;
+      background-color: #008de3;
+      border-radius: 100%;
+      display: inline-block;
+      -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+      animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+    }
+
+    .bounce1 {
+      -webkit-animation-delay: -0.32s;
+      animation-delay: -0.32s;
+    }
+
+    .bounce2 {
+      -webkit-animation-delay: -0.16s;
+      animation-delay: -0.16s;
+    }
+  }
+
+  .content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    display: flex;
+    align-items: center;
+    transform: translateX(-50%);
+
+    img:first-child {
+      margin-right: 10px;
+      width: 22px;
+	    height: 24px;
+    }
+
+    h3 {
+      font-size: 16px;
+      height: 22px;
+      font-weight: 600;
+      color: #333333;
+      line-height: 20px;
+
+      &.italic {
+        line-height: 23px;
+        font-style: italic;
+      }
+    }
+
+    &>span {
+      height: 22px;
+      color: #333333;
+      font-size: 16px;
+
+        &>span {
+          color: #333333;
+          font-weight: 600;
+        }
+    }
+  }
+
+}
+
+// workspace 当中的 loading
+.spinner-three-bounce div {
+  background-color: #0079FA !important;
+}
+
+// 全局移动元素（收藏部分）
+.fly-item {
+  display: inline-block;
+  width: 40px;
+  height: auto;
+  z-index: 99999;
+}
+
+.shake-animation {
+  animation: shakeCart .4s ease-in-out forwards;
+}
+
+.top-tips {
+  position: absolute;
+  top: 5px;
+  width: 65px;
+  text-align: center;
+  color: #0079fa;
+}
+
+.top-tips-animation {
+  animation: risekey 1.5s;
+}
+
+@keyframes risekey {
+  0% {
+    top: 0;
+    opacity: 1;
+  }
+  20% {
+    top: -25px;
+    opacity: 1;
+  }
+  30% {
+    top: -25px;
+    opacity: 1;
+  }
+  to {
+    top: -50px;
+    opacity: 0;
+  }
+}
+
+
+@keyframes shakeCart {
+  25% {
+    transform: translateX(6px);
+  }
+  50% {
+    transform: translateX(-4px);
+  }
+  75% {
+    transform: translateX(2px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Button 共用
+-------------------------- */
+
+@mixin button-active {
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}
+
+.dy-button {
+  font-size: $button-size-sm; // background: transparent;
+  padding: 7px 21px;
+  cursor: pointer;
+  transition: all 0.3s; // color: $button-color;
+  // border: $button-border-base;
+  border-radius: $border-radius-base;
+  @include button-active; // hover 状态
+  // &:hover {
+  //     border-color: rgba(0, 130, 229, 0.4);
+  //     color: #0082e6;
+  // }
+}
+
+.dy-button-reverse {
+  @extend .dy-button;
+  background: #fff;
+  border-color: rgba(155, 155, 155, 0.6);
+  border-width: 1px;
+  color: #5c6066;
+}
+
+// 大号按钮
+.dy-button-lg {
+  padding: 10px 42px;
+}
+
+// 小号按钮
+.dy-button-sm {
+  padding: 0 4px;
+}
+
+.dy-button-middle {
+  padding: 13px 29px 13px 28px;
+  font-size: 18px;
+  line-height: 18px;
+}
+
+// 蓝色渐变按钮
+.dy-button-normal {
+  @extend .dy-button;
+  background-image: linear-gradient(180deg, #4fb9ff 0%, #4c94ff 100%);
+  color: white;
+  border-color: transparent;
+
+  &:hover {
+    background-image: linear-gradient(180deg, #66c2ff 0%, #66a3ff 100%);
+  }
+}
+
+// 蓝色单色按钮
+.dy-button-blue {
+  @extend .dy-button;
+  background-color: #0090ff;
+  color: white;
+  border: none;
+
+  &:hover {
+    background-color: #0082e5;
+  }
+
+  @include button-active;
+}
+
+// 蓝色线框按钮
+.dy-button-blue-reverse {
+  @extend .dy-button;
+  background-color: #fff;
+  color: #0090ff;
+  border-color: rgba(0, 143, 255, 0.4);
+
+  &:hover {
+    border-color: rgba(0, 130, 229, 0.4);
+    color: #0082e6;
+  }
+}
+
+// 渐变按钮
+.dy-button-gradual {
+  @extend .dy-button;
+  background-image: linear-gradient(270deg, #7981ff 0%, #2cafff 100%);
+  color: white;
+  border-color: transparent;
+  border: none;
+  padding: 9px 21px;
+  box-shadow: 0 0 4px 0 rgba(133, 197, 228, 0.5);
+
+  &:hover {
+    background-image: linear-gradient(270deg, #6c74e6 0%, #279ce6 100%);
+  }
+}
+
+// 文字按钮
+.dy-button-raw {
+  @extend .dy-button;
+  border: none;
+  font-size: $button-size-lg;
+  color: $button-color-rew;
+  background: transparent;
+
+  &:hover {
+    background: transparent;
+  }
+}
+
+// 升级会员按钮
+.dy-button-upgrade {
+  @extend .dy-button;
+  background: #f80400;
+  border: none;
+  padding: 3px 5px 2px 6px;
+  color: #fff;
+  @include button-active;
+
+  // &:hover {
+  //   background: #ffb53d;
+  // }
+}
+
+// 更多帮助
+.dy-more-help {
+  background-color: #04b822;
+  font-size: $button-size-lg;
+  border-radius: 100px;
+  padding: 12px 26px;
+  border: none;
+  color: white;
+  box-shadow: 0 2px 8px 0 #bfebc6;
+  cursor: pointer;
+  @include button-active;
+}
+
+// 圆角按钮
+.dy-button-round {
+  font-size: $button-size-lg;
+  background: #fff;
+  border-radius: 100px;
+  border: none;
+  padding: 9px 58px;
+  color: #5773ff;
+  cursor: pointer;
+  @include button-active;
+}
+
+// 小号圆角按钮
+.dy-button-round-sm {
+  font-size: $button-size-lg;
+  background: #fff;
+  border-radius: 100px;
+  border: none;
+  padding: 9px 32px !important;
+  color: #5773ff !important;
+  cursor: pointer;
+  @include button-active;
+}
+
+// 免费创建
+.dy-button-add {
+  background-image: linear-gradient(-270deg, #7981ff 0%, #2cafff 100%);
+  border-radius: $border-radius-base;
+  padding: 9px 58px;
+  font-size: $button-size-lg;
+  color: white;
+  border: none;
+  cursor: pointer;
+
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}
+
+// 删除按钮
+.dy-button-del {
+  @extend .dy-button;
+  background-color: #f5222d;
+  color: white;
+  border: none;
+
+  &:hover {
+    background-color: #f5222d;
+  }
+}
+
+// 宽100%
+.dy-full-width {
+  width: 100% !important;
+}
+
+/* HandsonTable样式
+-------------------------- */
+
+/* All headers */
+
+.handsontable th {
+  background-color: #e4e8ee; // font-family:SourceHanSansCN-Bold;
+  font-size: 12px;
+  color: #666666;
+  font-weight: bold;
+  vertical-align: middle;
+}
+
+/* Row headers */
+
+/* Bottom */
+
+.ht_clone_top_left_corner th {
+  border-bottom: 1px solid #fff;
+}
+
+/* Left and right */
+
+.ht_clone_left th {
+  border-right: 1px solid #f0f2f6;
+  border-left: 1px solid #f0f2f6;
+}
+
+/* Column headers */
+
+/* Top, bottom and right */
+
+.ht_clone_top th {
+  border-top: 1px solid #f0f2f6;
+  border-right: 1px solid #f0f2f6;
+  border-bottom: 1px solid #f0f2f6;
+}
+
+/* Left */
+
+.ht_clone_top_left_corner th {
+  border-right: 1px solid #f0f2f6;
+}
+
+/*Corner */
+
+.ht_clone_top_left_corner th {
+  border: 1px solid #f0f2f6;
+}
+
+/*Rows */
+
+/* Bottom */
+
+.ht_master tr > td {
+  border-bottom: 1px solid #f0f2f6;
+}
+
+/* Right */
+
+.ht_master tr > td {
+  border-right: 1px solid #f0f2f6;
+}
+
+/*Cell */
+
+.handsontable tr:first-child th,
+.handsontable tr:first-child td {
+  border-top: 1px solid #f0f2f6 !important;
+}
+
+.handsontable th:first-child,
+.handsontable th:nth-child(2),
+.handsontable td:first-of-type,
+.handsontable .htNoFrame + th,
+.handsontable .htNoFrame + td {
+  border-left: 1px solid #f0f2f6 !important;
+}
+
+.handsontable th:last-child {
+  border-right: 1px solid #f0f2f6;
+  border-bottom: 1px solid #f0f2f6;
+}
+
+/*Fonts*/
+@font-face {
+  font-family: "Noto Sans SC";
+  src: url("https://ss1.dydata.io/Noto-Sans-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Droid Sans Fallback";
+  src: url("https://ss1.dydata.io/Droid-Sans-Fallback.ttf");
+}
+
+@font-face {
+  font-family: "站酷高端黑";
+  src: url("https://ss1.dydata.io/%E7%AB%99%E9%85%B7%E9%AB%98%E7%AB%AF%E9%BB%91.ttf");
+}
+
+@font-face {
+  font-family: "方正黑体";
+  src: url("https://ss1.dydata.io/%E6%96%B9%E6%AD%A3%E9%BB%91%E4%BD%93.ttf");
+}
+
+@font-face {
+  font-family: "方正仿宋";
+  src: url("https://ss1.dydata.io/%E6%96%B9%E6%AD%A3%E4%BB%BF%E5%AE%8B_GBK.ttf");
+}
+
+@font-face {
+  font-family: "方正楷体";
+  src: url("https://ss1.dydata.io/%E6%96%B9%E6%AD%A3%E6%A5%B7%E4%BD%93.ttf");
+}
+
+@font-face {
+  font-family: "方正书宋";
+  src: url("https://ss1.dydata.io/%E6%96%B9%E6%AD%A3%E4%B9%A6%E5%AE%8B%E7%AE%80%E4%BD%93.ttf");
+}
+
+@font-face {
+  font-family: "思源黑体-细";
+  src: url("https://ss1.dydata.io/%E6%80%9D%E6%BA%90%E9%BB%91%E4%BD%93-%E7%BB%86.otf");
+}
+
+@font-face {
+  font-family: "思源黑体-中";
+  src: url("https://ss1.dydata.io/%E6%80%9D%E6%BA%90%E9%BB%91%E4%BD%93-%E4%B8%AD.otf");
+}
+
+@font-face {
+  font-family: "思源黑体-粗";
+  src: url("https://ss1.dydata.io/%E6%80%9D%E6%BA%90%E9%BB%91%E4%BD%93-%E7%B2%97.otf");
+}
+
+@font-face {
+  font-family: "思源黑体 粗体";
+  src: url("https://ss1.dydata.io/fonts/%E6%80%9D%E6%BA%90%E9%BB%91%E4%BD%93%20%E7%B2%97%E4%BD%93.otf");
+}
+
+@font-face {
+  font-family: "思源黑体 细体";
+  src: url("https://ss1.dydata.io/fonts/%E6%80%9D%E6%BA%90%E9%BB%91%E4%BD%93%20%E7%BB%86%E4%BD%93.otf");
+}
+
+@font-face {
+  font-family: "阿里巴巴普惠体 特粗";
+  src: url("https://ss1.dydata.io/fonts/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E6%99%AE%E6%83%A0%E4%BD%93%20%E7%89%B9%E7%B2%97.ttf");
+}
+
+@font-face {
+  font-family: "阿里巴巴普惠体 特粗";
+  src: url("https://ss1.dydata.io/fonts/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E6%99%AE%E6%83%A0%E4%BD%93%20%E7%89%B9%E7%B2%97.ttf");
+}
+
+@font-face {
+  font-family: "思源宋体 超粗";
+  src: url("https://ss1.dydata.io/fonts/%E6%80%9D%E6%BA%90%E5%AE%8B%E4%BD%93%20%E8%B6%85%E7%B2%97.otf");
+}
+
+@font-face {
+  font-family: "思源宋体 加细";
+  src: url("https://ss1.dydata.io/fonts/%E6%80%9D%E6%BA%90%E5%AE%8B%E4%BD%93%20%E5%8A%A0%E7%BB%86.otf");
+}
+
+@font-face {
+  font-family: "思源宋体 细体";
+  src: url("https://ss1.dydata.io/fonts/%E6%80%9D%E6%BA%90%E5%AE%8B%E4%BD%93%20%E7%BB%86%E4%BD%93.otf");
+}
+
+@font-face {
+  font-family: "思源宋体 常规";
+  src: url("https://ss1.dydata.io/fonts/%E6%80%9D%E6%BA%90%E5%AE%8B%E4%BD%93%20%E5%B8%B8%E8%A7%84.otf");
+}
+
+@font-face {
+  font-family: "思源宋体 半粗";
+  src: url("https://ss1.dydata.io/fonts/%E6%80%9D%E6%BA%90%E5%AE%8B%E4%BD%93%20%E5%8D%8A%E7%B2%97.otf");
+}
+
+@font-face {
+  font-family: "思源黑体 黑体";
+  src: url("https://ss1.dydata.io/fonts/%E6%80%9D%E6%BA%90%E9%BB%91%E4%BD%93%20%E9%BB%91%E4%BD%93.otf");
+}
+
+@font-face {
+  font-family: "思源黑体 极细";
+  src: url("https://ss1.dydata.io/fonts/%E6%80%9D%E6%BA%90%E9%BB%91%E4%BD%93%20%E6%9E%81%E7%BB%86.otf");
+}
+
+@font-face {
+  font-family: "思源黑体 纤细";
+  src: url("https://ss1.dydata.io/fonts/%E6%80%9D%E6%BA%90%E9%BB%91%E4%BD%93%20%E7%BA%A4%E7%BB%86.otf");
+}
+
+@font-face {
+  font-family: "思源黑体 常规";
+  src: url("https://ss1.dydata.io/fonts/%E6%80%9D%E6%BA%90%E9%BB%91%E4%BD%93%20%E5%B8%B8%E8%A7%84.otf");
+}
+
+@font-face {
+  font-family: "思源黑体 中黑";
+  src: url("https://ss1.dydata.io/fonts/%E6%80%9D%E6%BA%90%E9%BB%91%E4%BD%93%20%E4%B8%AD%E9%BB%91.otf");
+}
+
+@font-face {
+  font-family: "思源宋体 中粗";
+  src: url("https://ss1.dydata.io/fonts/%E6%80%9D%E6%BA%90%E5%AE%8B%E4%BD%93%20%E4%B8%AD%E7%B2%97.otf");
+}
+
+@font-face {
+  font-family: "思源宋体 加粗";
+  src: url("https://ss1.dydata.io/fonts/%E6%80%9D%E6%BA%90%E5%AE%8B%E4%BD%93%20%E5%8A%A0%E7%B2%97.otf");
+}
+
+@font-face {
+  font-family: "阿里巴巴普惠体 中等";
+  src: url("https://ss1.dydata.io/fonts/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E6%99%AE%E6%83%A0%E4%BD%93%20%E4%B8%AD%E7%AD%89.ttf");
+}
+
+@font-face {
+  font-family: "阿里巴巴普惠体 细体";
+  src: url("https://ss1.dydata.io/fonts/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E6%99%AE%E6%83%A0%E4%BD%93%20%E7%BB%86%E4%BD%93.ttf");
+}
+
+@font-face {
+  font-family: "阿里巴巴普惠体 粗体";
+  src: url("https://ss1.dydata.io/fonts/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E6%99%AE%E6%83%A0%E4%BD%93%20%E7%B2%97%E4%BD%93.ttf");
+}
+
+@font-face {
+  font-family: "阿里巴巴普惠体 常规";
+  src: url("https://ss1.dydata.io/fonts/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E6%99%AE%E6%83%A0%E4%BD%93%20%E5%B8%B8%E8%A7%84.ttf");
+}
+
+@font-face {
+  font-family: "Caveat-Bold";
+  src: url("https://ss1.dydata.io/fonts/Caveat-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Caveat-Regular";
+  src: url("https://ss1.dydata.io/fonts/Caveat-Regular.ttf");
+}
+
+@font-face {
+  font-family: "DancingScript-Bold";
+  src: url("https://ss1.dydata.io/fonts/DancingScript-Bold.ttf");
+}
+
+@font-face {
+  font-family: "DancingScript-Regular";
+  src: url("https://ss1.dydata.io/fonts/DancingScript-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Girassol-Regular";
+  src: url("https://ss1.dydata.io/fonts/Girassol-Regular.ttf");
+}
+
+@font-face {
+  font-family: "IbarraRealNova-Italic";
+  src: url("https://ss1.dydata.io/fonts/IbarraRealNova-Italic.ttf");
+}
+
+@font-face {
+  font-family: "IbarraRealNova-SemiBold";
+  src: url("https://ss1.dydata.io/fonts/IbarraRealNova-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: "NotoSerif-Italic";
+  src: url("https://ss1.dydata.io/fonts/NotoSerif-Italic.ttf");
+}
+
+@font-face {
+  font-family: "NotoSerif-Regular";
+  src: url("https://ss1.dydata.io/fonts/NotoSerif-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Orbitron Black";
+  src: url("https://ss1.dydata.io/fonts/Orbitron Black.ttf");
+}
+
+@font-face {
+  font-family: "Orbitron Light";
+  src: url("https://ss1.dydata.io/fonts/Orbitron Light.otf");
+}
+
+@font-face {
+  font-family: "PlayfairDisplay-Bold";
+  src: url("https://ss1.dydata.io/fonts/PlayfairDisplay-Bold.ttf");
+}
+
+@font-face {
+  font-family: "PlayfairDisplay-Italic";
+  src: url("https://ss1.dydata.io/fonts/PlayfairDisplay-Italic.ttf");
+}
+
+@font-face {
+  font-family: "PlayfairDisplay-Regular";
+  src: url("https://ss1.dydata.io/fonts/PlayfairDisplay-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Solway-ExtraBold";
+  src: url("https://ss1.dydata.io/fonts/Solway-ExtraBold.ttf");
+}
+
+@font-face {
+  font-family: "Solway-Light";
+  src: url("https://ss1.dydata.io/fonts/Solway-Light.ttf");
+}
+
+.bd_weixin_popup {
+  width: 260px !important;
+  height: 320px !important;
+}
+
+.topline {
+  position: absolute;
+  width: 10000%;
+  border-top: 1px red dotted;
+  display: none;
+  vertical-align: middle;
+  top: 0;
+  margin-left: -5000%;
+}
+
+.botline {
+  position: absolute;
+  width: 10000%;
+  bottom: -2px;
+  border-bottom: 1px red dotted;
+  display: none;
+  vertical-align: middle;
+  margin-top: 500px;
+  margin-left: -5000%;
+}
+
+.leftline {
+  position: absolute;
+  height: 100000%;
+  left: -2px;
+  border-left: 1px red dotted;
+  display: none;
+  vertical-align: middle;
+  margin-top: -5000%;
+}
+
+.rightline {
+  position: absolute;
+  height: 100000%;
+  right: -2px;
+  border-right: 1px red dotted;
+  display: none;
+  vertical-align: middle;
+  margin-top: -5000%;
+}
+
+// 右键菜单
+.cdk-overlay-pane {
+  border-radius: 2px;
+  width: 225px;
+  background-color: transparent;
+  // border: solid 2px rgba(255, 255, 255, 0.2);
+  padding: 0;
+  z-index: 105;
+  font-size: 12px;
+  display: block;
+  box-shadow: 0px 0px 4px 0px 
+    rgba(0, 0, 0, 0.5);
+  border-radius: none !important;
+
+  ul.dropdown-menu {
+    padding: 0 !important;
+    // background-color: transparent;
+    background-color: #313233;
+    // border-radius: 2px;
+
+    &:focus {
+      outline: none;
+    }
+
+    li.ng-star-inserted {
+      line-height: 28px;
+      font-weight: 400;
+      position: relative;
+      cursor: pointer;
+      padding: 0 16px 0 14px;
+      // background-color: rgba(0, 0, 0, 0.9);
+      // background-color: #313233;
+      font-size: 12px;
+
+      // &:first-child {
+      //   border-top-right-radius: 2px;
+      //   border-top-left-radius: 2px;
+      // }
+
+      // &:last-child {
+      //   border-bottom-right-radius: none;
+      //   border-bottom-left-radius: none;
+      // }
+
+      a {
+        color: #fff;
+        text-decoration: none;
+        display: inline-block;
+        width: 100%;
+
+        span.key-code {
+          float: right;
+          color: rgba(255, 255, 255, 0.6);
+        }
+
+        i.page-icon {
+          display: inline-block;
+          width: 16px;
+          height: 16px;
+          vertical-align: -2px;
+          margin-right: 8px;      
+        }
+      }
+
+      .passive {
+        padding: 0px;
+
+        
+        span.key-code {
+          float: right;
+          color: rgba(255, 255, 255, 0.6) !important;
+        }
+
+        i.page-icon {
+          display: inline-block;
+          width: 16px;
+          height: 16px;
+          vertical-align: -2px;
+          margin-right: 8px;      
+        }
+
+        li:hover {
+          span.key-code {
+            color: #ffffff !important;
+          }
+        }
+      }
+
+      &:hover {
+        background: #0079fa;
+
+        span.key-code {
+          color: #ffffff;
+        }
+      }
+
+      
+
+      // &:nth-child(4) {
+      //   border-top: 1px solid #656565;
+      // }
+
+      // &:nth-child(3):hover {
+      //   background: red;
+      // }
+    }
+
+    .delete {
+      &:hover {
+        background: #f45858 !important;
+      }
+    }
+  }
+}
+
+// 提示框
+.overlay-container {
+  .toast-top-center {
+    top: 50px;
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  .toast-close-button {
+    color: rgba(0, 0, 0, 0.45) !important;
+    position: absolute !important;
+    top: 50% !important;
+    right: 17px !important;
+    transform: translate(0, -57%);
+  }
+
+  .toast {
+    width: 410px !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI",
+      "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo", "Consolas",
+      sans-serif !important;
+    border-radius: 4px !important;
+    &:hover {
+      box-shadow: none;
+    }
+  }
+
+  .toast-title {
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 24px;
+  }
+
+  .toast-success {
+    padding: 16px 64px !important;
+    color: rgba(0, 0, 0, 0.85) !important;
+    height: 56px !important;
+    position: relative !important;
+    border: solid 1px #b7eb8f !important;
+    background-image: none;
+    background-color: #f6ffed;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 16px;
+      left: 24px;
+      width: 24px;
+      height: 24px;
+      background: url(/dyassets/images/share/icon-success.svg) no-repeat
+        center/contain;
+    }
+  }
+
+  .toast-warning {
+    padding: 16px 64px !important;
+    color: rgba(0, 0, 0, 0.85) !important;
+    height: 56px !important;
+    position: relative !important;
+    border: solid 1px #ffe58f !important;
+    background-image: none;
+    background-color: #fffbe6 !important;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 16px;
+      left: 24px;
+      width: 24px;
+      height: 24px;
+      background: url(/dyassets/images/share/icon-warning.svg) no-repeat
+        center/contain;
+    }
+  }
+
+  .toast-error {
+    padding: 16px 64px !important;
+    color: rgba(0, 0, 0, 0.85) !important;
+    height: 56px !important;
+    position: relative !important;
+    border: solid 1px #ffa39e !important;
+    background-image: none;
+    background-color: #fff1f0 !important;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 16px;
+      left: 24px;
+      width: 24px;
+      height: 24px;
+      background: url(/dyassets/images/share/icon-danger.svg) no-repeat
+        center/contain;
+    }
+  }
+
+  .toast-info {
+    padding: 16px 64px !important;
+    color: rgba(0, 0, 0, 0.85) !important;
+    height: 56px !important;
+    position: relative !important;
+    border: solid 1px #91d5ff !important;
+    background-image: none;
+    background-color: #e6f7ff !important;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 16px;
+      left: 24px;
+      width: 24px;
+      height: 24px;
+      background: url(/dyassets/images/share/icon-info.svg) no-repeat
+        center/contain;
+    }
+  }
+}
+
+// 框选样式
+.ds-selector {
+  z-index: 999;
+}
+
+// 对齐 Icon
+.align-icon {
+  margin-right: 6px;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: middle;
+  background-size: cover;
+}
+
+.align-icon-l {
+  background: url(/dyassets/images/align-icons/align-l.svg) no-repeat center/contain;
+}
+
+.align-icon-c {
+  background: url(/dyassets/images/align-icons/align-c.svg) no-repeat center/contain;
+}
+
+.align-icon-r {
+  background: url(/dyassets/images/align-icons/align-r.svg) no-repeat center/contain;
+}
+
+.align-icon-t {
+  background: url(/dyassets/images/align-icons/align-t.svg) no-repeat center/contain;
+}
+
+.align-icon-m {
+  background: url(/dyassets/images/align-icons/align-m.svg) no-repeat center/contain;
+}
+
+.align-icon-b {
+  background: url(/dyassets/images/align-icons/align-b.svg) no-repeat center/contain;
+}
+
+.icon-move-up-one {
+  background: url(/dyassets/images/layer/move-top-one.svg) no-repeat center/contain;
+}
+
+.icon-move-down-one {
+  background: url(/dyassets/images/layer/move-down-one.svg) no-repeat center/contain;
+}
+
+.icon-move-up {
+  background: url(/dyassets/images/layer/move-top.svg) no-repeat center/contain;
+}
+
+.icon-move-down {
+  background: url(/dyassets/images/layer/move-down.svg) no-repeat center/contain;
+}
+
+.icon-reuse {
+  background: url(/dyassets/images/page/reuse.svg) no-repeat center/contain;
+}
+
+.icon-delete {
+  background: url(/dyassets/images/page/delete.svg) no-repeat center/contain;
+}
+
+.icon-edit {
+  background: url(/dyassets/images/page/edit.svg) no-repeat center/contain;
+}
+
+.icon-save {
+  background: url(/dyassets/images/page/save.svg) no-repeat center/contain;
+}
+
+.icon-layer {
+  background: url(/dyassets/images/layer/layer-icon.svg) no-repeat center/contain;
+}
+
+.icon-locked {
+  background: url(/dyassets/images/layer/locked.svg) no-repeat center/contain;
+  vertical-align: -3px !important;
+}
+
+.icon-unlocked {
+  background: url(/dyassets/images/layer/unlocked.svg) no-repeat center/contain;
+  vertical-align: -3px !important;
+}
+
+
+
+  .ie-show {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: none;
+    user-select: none;
+  }
+
+  .ie-show .background-img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    display: block;  
+  }
+
+  .ie-show .dycharts-icon {
+    width: 127px;
+	  height: 41px;
+    position: absolute;
+    top: 34px;
+    left: 72px;
+    display: block; 
+  }
+
+  .ie-show .content-wrapper{
+    width: 568px;
+    position: absolute;
+    top: 86px;
+    left: calc(50% - 284px);
+  }
+
+  .ie-show .content-wrapper h2 {
+    color: #ffffff;
+    font-size: 32px;
+    height: 44px;
+    line-height: 44px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .ie-show .content-wrapper .content {
+    margin-top: 32px;
+    height: 197px;
+    box-shadow: 0px 2px 10px 0px 
+      rgba(45, 103, 185, 0.2);  
+    border: solid 10px #ffffff;
+    background: #eef5ff;
+    padding: 27px 0 27px 74px;
+  }
+
+  .ie-show .content-wrapper .content p {
+    height: 25px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+    color: #323b47;
+  }
+
+  .ie-show .content-wrapper .content p img {
+    width: 25px;
+    height: 25px;
+    margin-right: 13px;
+  }
+
+  .ie-show .content-wrapper .content p a {
+    color: #0079fa;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .ie-show .content-wrapper .code-content {
+    color: #323b47;
+    margin: 67px auto 26px auto;
+    width: 497px;
+    height: 25px;
+    font-size: 18px;
+  }
+
+  .ie-show .content-wrapper .code-wrapper {
+    width: 324px;
+    height: 162px;
+    margin: 0 auto;
+    display: flex;
+  }
+
+  .ie-show .content-wrapper .code-wrapper div {
+    width: 126px;
+    height: 162px;  
+  }
+
+  .ie-show .content-wrapper .code-wrapper div:nth-of-type(1){
+    margin-right: 72px;
+  }
+
+  .ie-show .content-wrapper .code-wrapper div img {
+    width: 126px;
+    height: 126px;
+    display: block;
+  }
+
+  .ie-show .content-wrapper .code-wrapper div p {
+    color: #5c6066;
+    font-size: 18px;
+    height: 25px;
+    line-height: 25px;
+    margin-top: 11px;
+    text-align: center;
+  }
+
+  .modal-shadow {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  .browser-modal {
+    width: 500px;
+    height: 313px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 12px 0px 
+      rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    position: relative;
+    left: calc(50% - 250px);
+    top: calc(50% - 156.5px);
+    padding: 0 49px 36px 46px;
+  }
+
+  .browser-modal h2 {
+    font-size: 18px;
+    color: #000000;
+    text-align: center;
+    padding-top: 24px;
+    font-weight: 600;
+    margin-bottom: 32px;
+  }
+
+  .browser-modal > img {
+    position: absolute;
+    right: -41px;
+    top: -40px;
+    cursor: pointer;
+  }
+
+  .browser-line {
+    margin-top: 26px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .browser-box {
+    display: flex;
+    width: 175px;
+  }
+
+  .browser-box p:nth-of-type(1) {
+    margin-left: 16px;
+    font-size: 16px;
+    height: 20px;
+    line-height: 20px;
+	  color: #222222;
+  }
+
+  .browser-box p:nth-of-type(2) {
+    margin-left: 16px;
+    margin-top: 4px;
+    font-size: 14px;
+    height: 20px;
+    line-height: 20px;
+	  color: #666666;
+  }

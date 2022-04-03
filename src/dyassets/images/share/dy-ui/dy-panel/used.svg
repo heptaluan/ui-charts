@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="11px" height="12px" viewBox="0 0 11 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>形状结合</title>
+    <desc>Created with Sketch.</desc>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="首页的hover状态" transform="translate(-818.000000, -3371.000000)" fill="#80848E">
+            <g id="项目hover" transform="translate(263.000000, 3232.000000)">
+                <g id="收藏后" transform="translate(475.000000, 0.000000)">
+                    <g id="交互内容" transform="translate(14.000000, 111.000000)">
+                        <g id="编组-10" transform="translate(0.000000, 26.000000)">
+                            <g id="使用人数" transform="translate(66.000000, 2.000000)">
+                                <path d="M5.5,0 C7.43299662,0 9,1.56700338 9,3.5 C9,4.68635491 8.40974863,5.73484923 7.50689563,6.3678332 C9.75369804,7.25111464 11,9.60214796 11,12 L11,12 L0,12 C0,9.60214796 1.24630196,7.25111464 3.49294846,6.36720659 C2.59025137,5.73484923 2,4.68635491 2,3.5 C2,1.56700338 3.56700338,0 5.5,0 Z" id="形状结合"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

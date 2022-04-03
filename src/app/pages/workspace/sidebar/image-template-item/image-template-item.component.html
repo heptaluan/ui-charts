@@ -1,0 +1,52 @@
+<div class="row">
+  <!-- 上传图片部分 -->
+  <div class="template-item" [hidden]="isHideUpload || tabActive">
+    <div class="over-layout panel-shadow d-flex justify-content-center align-items-center">
+      <button class="dy-button upload-image" disabled>{{inputText}}</button>
+      <!-- <input [tooltip]="uploadImageTooltip" placement="right" container="body" title=" " #uploadImage type="file" name="image" class="uploadImageFile" accept="image/*"  (change)='onUploadImg($event)' [hidden]="isHideInput"> -->
+      <input multiple="multiple" [tooltip]="uploadImageTooltip" placement="right" container="body" title=" " #uploadImage type="file" name="image" class="uploadImageFile" accept="image/gif, image/jpeg, image/jpg, image/png"  (change)='onUploadImg($event)' [hidden]="isHideInput">
+    </div>
+    <div class="content d-flex justify-content-center align-items-center"></div>
+    <div class="title">上传图片</div>
+  </div>
+  <div class="template-item" [hidden]="isHideUpload || !tabActive">
+    <div class="over-layout panel-shadow d-flex justify-content-center align-items-center">
+      <button class="dy-button upload-image" (click)='switch()' onclick="_hmt.push(['_trackEvent', 'editpage', 'edit-desktop', 'edit-insert-image-upload'])" [tooltip]="uploadImageTooltip" placement="right" container="body">上传图片</button>
+      <!-- <input [tooltip]="uploadImageTooltip" placement="right" container="body" title=" " #uploadImage type="file" name="image" class="uploadImageFile" accept="image/*"  (change)='onUploadImg($event)' [hidden]="isHideInput"> -->
+    </div>
+    <div class="content d-flex justify-content-center align-items-center"></div>
+    <div class="title">上传图片</div>
+  </div>
+
+  <!-- 本地预览部分 -->
+  <ng-container *ngFor="let item of localReviewList">
+    <div class="template-item local-preview">
+      <ng-container *ngIf="!item.hideProcess">
+        <div class="over-layout mask panel-shadow d-flex justify-content-center align-items-center" [ngStyle]="item.percentStyle">
+        </div>
+        <div class="percent title">已上传{{item.percent}}%</div>
+      </ng-container>
+
+      <img [src]="item.localImage" alt="">
+
+      <div class="over-layout local-mask panel-shadow d-flex justify-content-center align-items-center" [attr.id]='item.id' *ngIf="item.hideProcess">
+        <button class="dy-button" (click)='insertImage($event, 2)'>插入</button>
+        <i *ngIf="deleteFlag" (click)='deleteImg($event)'></i>
+      </div>
+
+    </div>
+  </ng-container>
+
+
+  <!-- 循环部分 -->
+  <div class="template-item" *ngFor="let item of imageTemplates;let i = index;">
+    <div class="over-layout panel-shadow d-flex justify-content-center align-items-center" [attr.id]='item.id' [attr.imgSrc]='item.url' >
+      <button class="dy-button" (click)='insertImage($event)'>插入</button>
+      <i *ngIf="deleteFlag" (click)='deleteImg($event)'></i>
+    </div>
+    <!-- <div class="over-layout panel-shadow d-flex justify-content-center align-items-center" [attr.id]='item.id' [attr.imgSrc]='item.url' *ngIf="i > 10">
+      <button class="dy-button overdue">会员过期</button>
+    </div> -->
+    <img [src]="item.url + '?imageView2/2/w/120/quality/92'" class="imageStyle" alt="">
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="upgrade-member-container">
+  <carousel (activeSlideChange)="onSlideChange($event)">
+    <slide>
+      <img src="/dyassets/images/member/1.png" alt="first slide">
+    </slide>
+    <slide>
+      <img src="/dyassets/images/member/3.png" alt="third slide">
+    </slide>
+    <slide>
+      <img src="/dyassets/images/member/4.png" alt="fourth slide">
+    </slide>
+    <slide>
+      <img src="/dyassets/images/member/7.png" alt="seventh slide">
+    </slide>
+    <slide>
+      <img src="/dyassets/images/member/8.png" alt="eighth slide">
+    </slide>
+  </carousel>
+  <div class="index">{{curIndex+1}} / 5</div>
+  <button type="button" class="close" aria-label="Close" (click)="bsModalRef.hide()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <div class="content">
+    <div class="line-0">{{contents[curIndex].title}}</div>
+    <div class="line-1">{{contents[curIndex].content}}</div>
+    <div (click)="onUpgradeClicked()" class="upgrade-btn" [style.background-color]="btnColors[curIndex]">
+      <div>升级会员</div>
+    </div>
+  </div>
+</div>

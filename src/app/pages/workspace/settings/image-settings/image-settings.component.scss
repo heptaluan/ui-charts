@@ -1,0 +1,585 @@
+  .setting-container {
+    height: 100%;
+    width: 100%;
+    background-color: #252626;
+  }
+  .left-12 {
+    margin-left: 12px;
+  }
+  .left-8 {
+    margin-left: 8px;
+  }
+  .flex-start {
+    display: flex;
+    justify-content: flex-start !important;
+    margin-bottom: 20px;
+  }
+
+  .input-style {
+    width: 118px;
+    height: 20px;
+    background-color: #19191a;
+    border-radius: 2px;
+    border: none;
+    box-shadow: none;
+    color: #ffffff;
+    font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo",  "Consolas", sans-serif;
+    padding: 0 0 0 8px;
+    font-size: 12px;
+    outline: none;
+    &:focus {
+      border: solid 1px #0079fa !important; 
+    }
+  }
+
+  .flex-shadow {
+    display: flex;
+    height: 36px !important;
+    .small-title {
+      margin-bottom: 0 !important;
+      line-height: 36px !important;
+      margin-left: 10px !important;
+    }
+  }
+
+  .flex-sp {
+    .border-input {
+      width: 36px;
+      .line-width {
+        width: 44px;
+      }
+    }
+  }
+
+  .right-container {
+    overflow: auto;
+    height: 100%;
+    .big-title {
+        font-size:14px;
+    }
+    .small-title {
+        font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo",  "Consolas", sans-serif;
+        font-size:12px;
+    }
+    .clipImage {
+      width: 100%;
+      font-size: 12px;
+      display: inline-flex;
+      cursor: pointer;
+      justify-content: space-around;
+      a {
+        display: block;
+      }
+    }
+    .color-box {
+      border: solid 1px #444647;
+      background-color: #0f0f0f;
+      border-radius: 2px;
+      width: 20px;
+      height: 20px;
+      margin-left: 12px;
+      padding: 0;
+      box-shadow: none;
+
+      &:focus {
+        border: solid 1px #6c6c6c !important;
+      }
+
+      &:hover {
+        border: solid 1px #6c6c6c !important;
+      }
+    }
+  }
+
+  :host::ng-deep {
+    lx-wheel-color-picker {
+      .wheel-color-picker-backgrond {
+        width: 20px !important;
+      }
+    }
+    lx-settings-dropdowns {
+      .btn-group {
+        #dropdown-alignment {
+          overflow: hidden !important;
+        }
+      }
+    }
+    .line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 20px;    
+      width: 209px;
+    }
+    .top-20 {
+      margin-top: 20px;
+    }
+    .top-15 {
+      margin-top: 15px;
+    }
+    .left-59 {
+      margin-left: 59px;
+    }
+    .section {
+      padding: 20px 16px;
+      background-color: #252626;
+      border: none;
+      border-bottom: 1px solid #1b1c1c;
+    
+      lx-settings-size {
+        .size-container{
+          margin-left: 0px;
+          .input-container .input-box {
+            width: 58px;
+            input {
+              width: 34px;
+            }
+            span {
+              width: 24px;
+            }
+          }
+        }     
+      }
+
+    }
+  
+    .color-list-box {
+      display: flex;
+      justify-content: space-between;
+      height: 20px;    
+      width: 167px;
+      .small-title {
+        height: 20px;
+        line-height: 20px;
+      }
+      &.right {
+        width: 100%;
+        padding-left: 59px;
+      }
+      lx-slider {
+        .input-container input {
+          width: 102px !important;
+          text-align: left !important;
+          padding-left: 8px;
+        }   
+      }
+      lx-settings-dropdowns {       
+        height: 20px;
+        background-color: #19191a;
+        .btn-group {
+          vertical-align: top;
+        }
+        .dropdown-menu {
+          min-width: unset;
+          width: 77px;
+  
+          .theme-color-zone {
+            vertical-align: top;
+            width: 15px;
+            height: 14px;
+            margin-left: 0;
+          }
+  
+        }
+        
+        .btn-dropdown {
+          width: 77px;
+          height: 20px;
+          padding: 3px 0;
+          border: none;
+          box-shadow: none;
+          background-color: #19191a;
+          
+          .btn-title {
+            width: 90px;
+            height: 14px;
+            margin-left: 8px;
+            
+            .theme-color-zone {
+              vertical-align: top;
+              width: 15px;
+              height: 14px;
+              margin-left: 0;
+            }
+          }
+        }
+      }
+      
+    }
+    
+    .shadow-opacity {
+      width: 187px;
+      height: auto;
+      margin-left: 22px;
+      
+      lx-slider {
+        .input-container input {
+          width: 28px !important;
+        } 
+        .progress-wrap {
+          width: 57px !important;
+        }     
+      }
+      .color-box {
+        margin-left: 0 !important;
+      }
+      &:first-child {
+        .small-title {
+          margin-top: 0px;
+        }
+      }
+      .small-title {
+        text-align: center;
+        margin-top: 7px;
+      }
+    }
+
+    .border-box {
+      width: 209px;
+      lx-settings-dropdowns {
+        .btn-dropdown {
+          width: 150px;
+        }
+        .dropdown-menu {
+          width: 150px;
+        }
+      }
+  
+  
+    }
+    .border-section {
+      padding: 10px 24px 10px 20px;
+      border-bottom: none;
+    }
+    .setting-container .shadow-section {
+      border: 0 !important;
+      border-bottom: 1px solid #1b1c1c !important;
+      padding: 0 !important;
+    }
+    .border-section {
+      .flex-sp {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .btn-dropdown {
+          width: 84px;
+        }
+        .dropdown-menu {
+          left: 0 !important;
+        }
+      }
+    }
+    .nav-tabs {
+      padding-left: 0 !important;
+      .nav-item {
+        background-color: #232424 !important;
+      }
+      
+      li a {
+        background-color: #232424 !important;
+        color: rgba(255, 255, 255, 0.8) !important;
+        font-size: 14px;
+      }
+    }
+    accordion {
+      width: 100%;
+      .panel-open {
+        .accordion-heading-arrow {
+          transform: rotate(180deg);
+          width: 10px;
+          height: 6px;
+        }
+      }
+      .accordion-container {
+        background: #fafbfc;
+        border-radius: 0px;
+        border: none; // 头部样式
+        .panel-heading {
+          border-radius: 0px;
+          padding: 0;
+          background-color: #252626;
+          border: none;
+          cursor: pointer;
+          .accordion-heading {
+            widows: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            .accordion-heading-title {
+              // font-family:SourceHanSansCN-Normal;
+              font-size: 12px;
+              color:  #a3a3a3;
+            }
+            .accordion-heading-arrow {
+              width: 10px;
+              height: 6px;
+            }
+          }
+        } // 内容样式
+        .panel-collapse {
+          .panel-body {
+            padding: 0px;
+            .flex-sp:first-child {
+              height: 36px;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              .btn-dropdown {
+                width: 74px;
+                height: 36px;
+              }
+              .slider-container {
+                  // .progress-wrap {
+                  //   display: none;
+                  // }
+                  .input-container {
+                    margin: 0;
+                  }
+                }
+            }
+            .flex-sp {
+              height: 72px;
+            }
+            .accordion-content {
+              background: #252626;
+              padding: 20px 0;
+              position: relative;
+              &::before {
+                content: '';
+                display: block;
+                width: 4px;
+                height: 2px;
+                position: absolute;
+                left: -4px;
+                bottom: -2px;
+                background: #252626;
+              }
+              .data-range {
+                .range-input {
+                  width: 50px;
+                  height: 30px;
+                  padding: 5px 3px;
+                  background: #ffffff;
+                  border: 1px solid #d5dbe0;
+                  border-radius: 4px;
+                  text-align: center;
+                  vertical-align: middle;
+                  font-size: 12px;
+                  color: #323b47;
+                  outline: none;
+                  &:focus {
+                    border: 1px solid #1992fc !important;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    accordion {
+      .panel-open {
+        .accordion-heading-arrow {
+          transform: rotate(180deg);
+          width: 9px;
+          height: 7px;
+        }
+  
+        .panel-heading {
+          position: relative;
+          background-color: #252626;
+  
+          // &::after {
+          //   content: '';
+          //   display: block;
+          //   width: 4px;
+          //   height: 2px;
+          //   position: absolute;
+          //   left: -4px;
+          //   bottom: -2px;
+          //   background: #737373;
+          // }
+  
+          // &::before {
+          //   content: '';
+          //   display: block;
+          //   width: 4px;
+          //   height: 2px;
+          //   position: absolute;
+          //   left: -4px;
+          //   top: -2px;
+          //   background: #262626;
+          // }
+        }
+      }
+  
+      accordion-group:first-child {
+        .panel-heading {
+          border-top: #151515 solid 1px;
+        }
+      }
+  
+      .accordion-container {
+        background: #fafbfc;
+        border-radius: 0px;
+        border: none; // 头部样式
+  
+        .panel-heading {
+          border-radius: 0px;
+          padding: 0 16px;
+          height: 48px;
+          background-color: #252626;
+          border: none;
+          cursor: pointer;
+          border-top: #151515 solid 1px;
+  
+          .accordion-heading {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+  
+            .accordion-heading-title {
+              // font-family:SourceHanSansCN-Normal;
+              margin-top: 14px;
+              line-height: 20px;
+              height: 20px;
+              font-size: 12px;
+              color: #a3a3a3;
+              font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo",  "Consolas", sans-serif;
+            }
+  
+            .accordion-heading-arrow {
+              width: 10px;
+              height: 6px;
+            }
+          }
+        }
+  
+        // 内容样式
+        .panel-collapse {
+          .panel-body {
+            padding: 0px;
+  
+            .accordion-content {
+              background: #252626;
+              padding: 3px 16px 20px 16px;
+              position: relative;
+  
+              &::before {
+                content: '';
+                display: block;
+                width: 4px;
+                height: 2px;
+                position: absolute;
+                left: -4px;
+                bottom: -2px;
+                background: #262626;
+              }
+              
+              .small-title {
+                margin-bottom: 0px;
+              }
+              .form-control {
+                width: 133px;
+                height: 20px;
+                background-color: #19191a;
+                font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo",  "Consolas", sans-serif; 
+                font-size: 12px;
+                border: none;
+                border-radius: 0px;
+                padding: 0px 8px;
+                box-shadow: none;
+              }
+  
+              .data-range {
+                .small-title {
+                  margin-left: 0px;
+                  width: 100px;
+                }
+                .range-input {
+                  width: 41px;
+                  padding-left: 8px;
+                  height: 20px;
+                  background-color: #19191a;
+                  border-radius: 2px;
+                  border: none;
+                  box-shadow: none;
+                  color: #ffffff;
+                  font-size: 12px;
+                  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo",  "Consolas", sans-serif;
+  
+                  &:focus {
+                    border: 1px solid #1992fc !important;
+                  }
+                }
+              }
+  
+              .animation-box {
+                display: flex;
+                justify-content: space-between;
+                height: 22px;
+                margin-bottom: 15px;
+  
+                lx-checkbox {
+                  margin-top: 5px;
+                }
+                .small-title {
+                  margin-right: 66px;
+                }
+                .preview-button {
+                  z-index: 1;
+                  button {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 60px;
+                    height: 22px;
+                    background: #242526;
+                    border-radius: 2px;
+                    border: solid 1px #444547;                  
+                    cursor: pointer;
+  
+                    img {
+                      max-width: 35px;
+                      width: 10px;
+                      height: 10px;
+                      display: block;
+                    }
+                    span {
+                      font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo",  "Consolas", sans-serif;
+                      font-size: 12px;
+                      color: #ffffff;
+                      margin-left: 6px;
+                    }
+                  }
+                  
+                  
+                }
+              }
+                        
+            }
+          }
+        }
+  
+        .show {
+          .accordion-content {
+            // border-left: 4px solid #595959;
+            border-bottom: #262626 solid 1px;
+          }
+        }
+      }
+    }
+  }
+  :host ::ng-deep {
+    .color-list-box {
+      lx-settings-dropdowns {
+        svg {
+          vertical-align: -2px !important;
+        }
+      }
+    }
+    font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo",  "Consolas", sans-serif !important;
+  }

@@ -1,0 +1,64 @@
+<div class="conf-container">
+    <p class="conf-title">升级会员</p>
+    <div class="d-flex flex-row" style="margin-top: 50px;">
+        <img src="/dyassets/images/conf-member-lf.png" class="member-tb-lf"/>
+        <div class="member-tb-rg">
+            <img src="/dyassets/images/conf-member-rg.png" style="position: absolute; top:0px; left: 0px; width: 306px;height: 640px;transform: scale(1.0263);"/>
+            <div #selectDiv class="d-flex flex-row justify-content-between align-items-center position-relative m-btns-container">
+                <a href="javascript:;" href="javascript:;" class="m-select-btn active" (click)="onSelectClicked(0)">
+                    <div class="m-select-circle"></div>
+                    <div class="m-select-text">包月</div>
+                </a>
+                <a href="javascript:;" href="javascript:;" class="m-select-btn" (click)="onSelectClicked(1)">
+                    <div class="m-select-circle"></div>
+                    <div class="m-select-text">包季</div>
+                </a>
+                <a href="javascript:;" href="javascript:;" class="m-select-btn" (click)="onSelectClicked(2)">
+                    <div class="m-select-circle"></div>
+                    <div class="m-select-text">包年</div>
+                </a>
+                <div class="m-select-line"></div>
+            </div>
+            <div class="m-select-tip">{{selectTip}}</div>
+            <div class="m-select-money">
+                <div class="m-select-permoney">
+                    <div class="m-select-total">{{selectTotal}}</div>
+                    <div class="m-select-per">{{selectPer}}</div>
+                </div>
+                <div class="m-select-origin"><s>{{selectOrigin}}</s></div>
+            </div>
+            <a href="javascript:;" class="m-select-buy" (click)="onBuyClicked()">立即购买</a>
+        </div>
+    </div>
+    <div style="margin-top: 62px;">
+        <p class="conf-title">企业用户</p>
+        <p style="margin:30px 0px;font-size:16px;color:#5c6066;">镝数为企业用户提供个性化定制服务，帮助打造具有传播力的产品，增强企业的品牌效应，提升品牌价值。</p>
+        <div class="d-flex flex-row align-items-center" style="margin-bottom: 30px;">
+            <img src="/dyassets/images/conf-dot.svg" style="width: 16px;height: 16px;margin-right: 10px;"/>
+            <p style="margin: 0px;font-size:16px;color:#5c6066;">数据写作系统定制</p>
+        </div>
+        <div class="d-flex flex-row align-items-center" style="margin-bottom: 30px;">
+            <img src="/dyassets/images/conf-dot.svg" style="width: 16px;height: 16px;margin-right: 10px;"/>
+            <p style="margin: 0px;font-size:16px;color:#5c6066;">交互可视化图表定制</p>
+        </div>
+        <a href="javascript:;" class="member-ask-btn" (click)="onAskClicked(template)">询价</a>
+    </div>
+</div>
+
+<ng-template #template>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">提示</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <!-- 第三步、提示发送成功 -->
+        <div class="rm-reset-mail">
+            <div style="margin-bottom: 30px;">询价请联系biz@dyclub.org</div>
+            <a href="javascript:;" class="btn done-btn" (click)="modalRef.hide()"><div>完成</div></a>
+        </div>
+    </div>
+</ng-template>
+
+

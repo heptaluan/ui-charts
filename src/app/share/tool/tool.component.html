@@ -1,0 +1,41 @@
+<div id="tool">
+  <div class="tool-box">
+    <!-- <div class="tool-block tool-block-first" *ngIf="exportPage">
+      <button container="body" tooltip="元件选择工具" class="active"></button>
+      <button container="body" tooltip="拖动画布" onclick="_hmt.push(['_trackEvent', 'editpage', 'edit-desktop', 'edit-bottom-pan'])"></button> 手掌
+    </div> -->
+    <div class="change-size">
+      <div container="body" tooltip="放大画布" class="add" onclick="_hmt.push(['_trackEvent', 'editpage', 'edit-desktop', 'edit-bottom-zoomin'])"></div>
+      <div container="body" tooltip="缩小画布" class="dec" onclick="_hmt.push(['_trackEvent', 'editpage', 'edit-desktop', 'edit-bottom-zoomout'])"></div>
+
+      <!-- 下拉菜单 -->
+      <div class="btn-group tool-btn-box" dropdown [dropup]="true" onclick="_hmt.push(['_trackEvent', 'editpage', 'edit-desktop', 'edit-bottom-select-view'])">
+        <button id="button-dropup" dropdownToggle type="button" class="tool-btn btn dropdown-toggle" aria-controls="dropdown-dropup">
+          <div class="page-size" id="changeSizeNumber"><span class="size">100</span>%</div>
+        </button>
+        <ul id="dropdown-dropup" *dropdownMenu class="dropdown-menu tool-dropdown" role="menu" aria-labelledby="button-dropup">
+          <li role="menuitem"><span>200</span>%</li>
+          <li role="menuitem"><span>150</span>%</li>
+          <li role="menuitem"><span>125</span>%</li>
+          <li role="menuitem"><span>100</span>%</li>
+          <li role="menuitem"><span>75</span>%</li>
+          <li role="menuitem"><span>50</span>%</li>
+          <li role="menuitem"><span>30</span>%</li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="tool-block too-block-second">
+      <button class="transverse" container="body" tooltip="画布自适应宽度" onclick="_hmt.push(['_trackEvent', 'editpage', 'edit-desktop', 'edit-bottom-proper-width'])"></button>
+      <button class="longitudinal" container="body" tooltip="画布自适应高度" onclick="_hmt.push(['_trackEvent', 'editpage', 'edit-desktop', 'edit-bottom-proper-height'])"></button>
+    </div>
+
+    <div class="refer-line" *ngIf="exportPage" [ngClass]="{'active': isShowRefer}" (mouseenter)="showRefer()" (mouseleave)="showRefer()">参考线
+      <div class="refer-wrapper" *ngIf="isShowRefer">
+        <div class="row-refer line" (click)="changeReferLine('row')"><i></i>横向</div>
+        <div class="col-refer line" (click)="changeReferLine('col')"><i></i>纵向</div>
+        <div class="del-refer line" (click)="changeReferLine('deleteAll')">删除全部</div>
+      </div>
+    </div>
+  </div>
+</div>

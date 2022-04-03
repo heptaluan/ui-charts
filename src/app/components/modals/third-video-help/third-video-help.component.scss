@@ -1,0 +1,117 @@
+:host::ng-deep {
+  position: relative;
+
+  .close {
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    top: 0;
+    right: -54px;
+    background: url(/dyassets/images/audio/close-btn.svg) no-repeat center / cover;
+  }
+
+  .third-wrapper {
+    width: 414px;
+    background-color: #ffffff;
+    border-radius: 14px;
+    padding: 36px 30px 0;
+    margin-right: 2px;
+    overflow-y: auto;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei', 'Hiragino Sans GB', 'Segoe UI',
+      'Helvetica Neue', Helvetica, Arial, 'Monaco', 'Menlo', 'Consolas', sans-serif !important;
+
+    .q-a {
+      height: 105px;
+      border-bottom: 1px dashed #dbdbdb;
+
+      .question {
+        height: 24px;
+        font-size: 16px;
+        color: #333333;
+        font-weight: 600;
+
+        i {
+          display: inline-block;
+          width: 24px;
+          height: 24px;
+          vertical-align: -6px;
+          margin-right: 6px;
+          background: url(/dyassets/images/audio/Q.svg) no-repeat center / cover;
+        }
+      }
+
+      .anwser {
+        margin-top: 12px;
+        font-size: 14px;
+        color: #333333;
+        display: flex;
+        justify-content: flex-start;
+
+        span {
+          width: 320px;
+          margin-left: 6px;
+        }
+
+        i {
+          display: block;
+          width: 24px;
+          height: 24px;
+          background: url(/dyassets/images/audio/A.svg) no-repeat center / cover;
+        }
+      }
+    }
+
+    .scroll-wrapper {
+      margin-top: 20px;
+      height: 420px;
+      overflow-y: auto;
+      width: calc(100% + 30px);
+      padding-right: 30px;
+      padding-bottom: 24px;
+      .third {
+        color: #333333;
+        font-size: 14px;
+        &:first-child {
+          .third-title {
+            margin-top: 0;
+          }
+        }
+  
+        &-title {
+          font-weight: 600;
+          margin-top: 24px;
+        }
+  
+        &-desc {
+          margin-top: 6px;
+        }
+  
+        img {
+          width: 100%;
+          display: block;
+          margin-top: 8px;
+        }
+      }
+    }
+    
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px !important;
+  height: 6px !important;
+  background-color: transparent !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #dee1e3 !important;
+  border-radius: 5px !important;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent !important;
+}

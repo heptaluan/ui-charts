@@ -1,0 +1,84 @@
+<div class="user-wrapper">
+  <h3>账户设置</h3>
+  <h4>个人信息</h4>
+  <div class="info-wrapper">
+    <span class="title">用户名</span>
+    <span>{{ loginName }}</span>
+  </div>
+  <div class="info-wrapper">
+    <span class="title top-2">昵称</span>
+    <input type="text" placeholder="请输入昵称" [class.error-border]="nickNameFlag" [(ngModel)]="nickName" (keyup)="onNicknameUp($event)" />
+    <span class="error-tip" *ngIf="nickNameFlag">请输入20个字以内</span>
+  </div>
+  <div class="info-wrapper" [ngStyle]="{'margin-top' : nickNameFlag ? '32px' : '20px' }">
+    <span class="title top-2">个人主页</span>
+    <input type="text" placeholder="请输入个人主页" [(ngModel)]="site" (keyup)="onSiteUp($event)" />
+  </div>
+  <div class="info-wrapper intro">
+    <span class="title">个人简介</span>
+    <textarea
+      [class.error-border]="introFlag"
+      placeholder="介绍一下自己吧，其他人会在拜读你的作品时看到哦~"
+      [(ngModel)]="intro"
+      (keyup)="onIntroUp($event)"
+    ></textarea>
+    <span class="error-tip" *ngIf="introFlag">请输入140个字以内</span>
+  </div>
+  <div class="info-wrapper upload-avatar" [ngStyle]="{'margin-top' : introFlag ? '32px' : '20px' }">
+    <span class="title">上传头像</span><span>建议上传图片像素为400*400，支持jpg、jpeg、png、bmp格式</span>
+  </div>
+
+  <div class="avatar-wrapper">
+    <div class="images-wrapper">
+      <img src="/dyassets/images/logo.png" *ngIf="!avatarImage && !avatarUrl" class="line-0-i-img" />
+      <img src="{{ avatarImage || avatarUrl }}" *ngIf="avatarImage || avatarUrl" class="line-0-i-avatar" alt="" />
+    </div>
+    <div class="images-wrapper">
+      <input
+        class="setting-avatar-input"
+        type="file"
+        (change)="onUploadImg($event)"
+        (click)="onInputClicked($event)"
+        accept=".jpg,.jpeg,.png,.bmp"
+      />
+      <div class="d-flex align-items-center justify-content-center setting-avatar-btn">
+        <div>
+          <i></i>
+          <p>设置头像</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a class="setting-save-btn" (click)="onSave()">保存修改</a>
+</div>
+
+<div
+  class="modal fade"
+  bsModal
+  #staticModal="bs-modal"
+  [config]="{ backdrop: 'static' }"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="dialog-static-name"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header position-relative d-flex flex-row align-items-center justify-content-center w-100">
+        <h4 id="dialog-static-name" class="modal-title pull-left">裁剪图片</h4>
+        <button type="button" class="close pull-right modal-close-btn" aria-label="Close" (click)="staticModal.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- <img-cropper #cropper [image]="avatarData" [settings]="cropperSettings" (onCrop)="cropped($event)"></img-cropper> -->
+        <img-cropper #cropper [image]="avatarData" [settings]="cropperSettings"></img-cropper>
+        <a href="javascript:;" class="modal-done-btn" (click)="onImageSave()">完成</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<lx-security></lx-security>
+
+<lx-dy-footer></lx-dy-footer>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>暂停</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#F5FAFF" offset="0%"></stop>
+            <stop stop-color="#A1A6AB" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="圆堆积图-动画" transform="translate(-58.000000, -384.000000)">
+            <g id="暂停" transform="translate(58.000000, 384.000000)">
+                <rect id="矩形" stroke="#444547" fill="url(#linearGradient-1)" x="0.5" y="0.5" width="21" height="21" rx="10.5"></rect>
+                <path d="M10,6 L10,16 L8,16 L8,6 L10,6 Z M14,6 L14,16 L12,16 L12,6 L14,6 Z" id="形状结合" fill="#333333"></path>
+            </g>
+        </g>
+    </g>
+</svg>

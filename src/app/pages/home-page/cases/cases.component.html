@@ -1,0 +1,10 @@
+<div class="cases-container">
+  <div class="filter-container d-block mx-auto">
+    <div class="d-flex justify-content-between h-100">
+      <div class="header font-w-regular">用户案例</div>
+      <lx-form-search (searchValue)="search($event)" [initValue]="initSearch"></lx-form-search>
+    </div>
+  </div>
+  <lx-cases-library></lx-cases-library>
+  <lx-footer></lx-footer>
+</div>

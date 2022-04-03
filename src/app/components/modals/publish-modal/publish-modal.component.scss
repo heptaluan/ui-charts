@@ -1,0 +1,395 @@
+:host ::ng-deep {
+  width: 360px;
+  position: relative;
+
+  .close-tag {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: -40px;
+    right: -35px;
+    background: url(/dyassets/images/share/close.png) no-repeat center/cover;
+    cursor: pointer;
+  }
+
+  .share-header {
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: PingFangSC-Medium;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0px;
+    color: #323b47;
+    border-bottom: 1px solid #ebebeb;
+
+    .share,
+    .iframe {
+      width: 72px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      cursor: pointer;
+
+      &.active {
+        color: #0079fa;
+        border-bottom: 2px solid #0079fa;
+      }
+    }
+  }
+
+  button {
+    width: 102px;
+    height: 44px;
+    color: #ffffff;
+    background-color: #0079fa;
+    border: solid 1px #0079fa;
+    cursor: pointer;
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0px;
+    padding: 0;
+    box-sizing: border-box;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  input {
+    font-family: PingFangSC-Regular;
+    font-size: 14px !important;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0px;
+    color: #969799 !important;
+    flex: 1;
+    height: 44px;
+    background-color: #ffffff;
+    border: solid 1px #e1e3e6;
+    padding: 12px 12px 12px 10px;
+
+    // overflow: hidden;
+    // text-overflow: ellipsis;
+    // white-space: nowrap;
+  }
+
+  .private-share-container {
+    padding: 0 30px 30px 30px;
+
+    .url-code {
+      margin: 0 auto;
+      margin-top: 32px;
+      width: 200px;
+      height: 200px;
+      border: solid 1px #e4e4e4;
+
+      img {
+        transform: scale(.86);
+      }
+    }
+
+    .project-title {
+      width: 56px;
+      height: 20px;
+      font-family: PingFangSC-Regular;
+      font-size: 14px;
+      letter-spacing: 0px;
+      color: #5c6066;
+      margin-top: 38px;
+      margin-bottom: 8px;
+    }
+
+    .project-text {
+      input {
+        width: 299px;
+        height: 44px;
+        background-color: #ffffff;
+        border-radius: 2px;
+        border: solid 1px #e1e3e6;
+        margin-bottom: -15px;
+        font-family: PingFangSC-Regular;
+        font-size: 14px;
+        color: #323b47;
+
+        &:focus {
+          border: 1px solid #2ea2f8 !important;
+          outline: none;
+        }
+      }
+    }
+
+    .share-container {
+      margin-top: 30px;
+
+      .private-link-container {
+        position: relative;
+      }
+    }
+
+    .tip {
+      font-size: 12px;
+      position: absolute;
+      color: #969799;
+      bottom: 24px;
+    }
+
+    .tip-error {
+      color: #f5222d;
+    }
+
+    .btn-save {
+      width: 102px;
+      height: 44px;
+      background: #0079fa;
+      font-family: PingFangSC-Regular;
+      font-size: 14px;
+      font-weight: normal;
+      font-stretch: normal;
+      letter-spacing: 0px;
+      color: #ffffff;
+      border-radius: 0 2px 2px 0;
+    }
+
+    .btn-lock {
+      background: #d8dee3;
+      border: 1px solid #d8dee3;
+    }
+
+    nb-checkbox>label {
+      padding: 0 0 0 19px;
+
+      .customised-control-description {
+        padding-left: 0;
+        font-size: 12px;
+        color: #4a4a4a;
+      }
+    }
+
+    span {
+      font-size: 12px;
+      color: #4a4a4a;
+    }
+
+    .select-password {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      font-family: PingFangSC-Regular;
+      font-size: 14px;
+      font-weight: normal;
+      font-stretch: normal;
+      letter-spacing: 0px;
+      color: #5c6066;
+      margin-top: 30px;
+      margin-bottom: 12px;
+
+      .all-see,
+      .pwd-see {
+        display: flex;
+      }
+
+      .pwd-see {
+        margin-left: 24px;
+        position: relative;
+
+        .vip-icon {
+          width: 29px;
+          height: 16px;
+          right: -30px;
+          position: absolute;
+          background: url(/dyassets/images/person/vip.svg) center/contain no-repeat
+        }
+      }
+
+      label {
+        cursor: pointer;
+        display: block;
+        margin: 0;
+        line-height: 1;
+        margin-right: 7px;
+
+        .text {
+          display: inline-block;
+          vertical-align: -2px;
+        }
+      }
+
+      .a-radio {
+        display: none;
+      }
+
+      .b-radio {
+        display: inline-block;
+        border: 1px solid #ccc;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        vertical-align: -5px;
+        position: relative;
+      }
+
+      .b-radio:before {
+        content: '';
+        font-size: 0;
+        width: 8px;
+        height: 8px;
+        background: #1890ff;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -4px;
+        margin-top: -4px;
+        border-radius: 50%;
+        display: none;
+      }
+
+      .a-radio:checked~.b-radio:before {
+        display: block;
+      }
+    }
+
+    .private-link-password-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+
+      .input-group {
+        flex: 1;
+
+        .input-group-append {
+          position: absolute;
+          right: 15px;
+          top: 12px;
+          z-index: 10;
+        }
+
+        input {
+          &:focus {
+            outline: none;
+          }
+        }
+
+        .icon {
+          cursor: pointer;
+
+          &.icon-biyan {
+            opacity: .4;
+          }
+        }
+      }
+    }
+  }
+
+  .copyUrl {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    input,
+    button {
+      display: block;
+    }
+
+    input {
+      background-color: #f2f4f5;
+    }
+
+    button {
+      border-radius: 0 2px 2px 0;
+    }
+
+  }
+
+  .copyPriText {
+    font-family: PingFangSC-Regular;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0px;
+    color: #969799;
+    width: 48px;
+    position: absolute;
+    right: 27px;
+    top: 46px;
+  }
+
+  .copyText {
+    width: 48px;
+    height: 17px;
+    font-family: PingFangSC-Regular;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0px;
+    color: #969799;
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  lx-checkbox {
+    font-family: PingFangSC-Semibold;
+    font-size: 12px !important;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0px;
+    color: #5c6066 !important;
+  }
+
+  .iframe-container {
+    textarea {
+      display: block;
+      margin: 0 auto;
+      margin-top: 30px;
+      width: 319px;
+      height: 83px;
+      resize: none;
+      background-color: #ffffff;
+      border-radius: 2px;
+      border: solid 1px #c4cdd5;
+      font-family: PingFangSC-Regular;
+      font-size: 14px;
+      font-weight: normal;
+      font-stretch: normal;
+      letter-spacing: 0px;
+      color: #969799;
+      padding: 12px 13px 11px 20px;
+
+      &::-webkit-scrollbar {
+        width: 6px !important;
+        height: 6px !important;
+        background-color: transparent !important;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: #dee1e3 !important;
+        border-radius: 5px !important;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: transparent !important;
+      }
+
+      &::-webkit-scrollbar-corner {
+        background: transparent !important;
+      }
+    }
+
+    button {
+      width: 130px;
+      display: block;
+      margin: 0 auto;
+      margin-top: 28px;
+      margin-bottom: 34px;
+      border-radius: 2px;
+    }
+  }
+}

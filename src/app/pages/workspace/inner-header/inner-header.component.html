@@ -1,0 +1,80 @@
+<div class="d-flex justify-content-between align-items-center header-container workspace-header">
+
+  <!-- <div class="topbar-box"></div>
+  <div class="topbar-padding"></div> -->
+
+  <div class="topbar">
+
+    <button [ngClass]="{'disabled': disabledUndoButton}" [disabled]="disabledUndoButton" container="body" tooltip="撤销" placement="bottom" (click)="undo()">
+      <span class="title"><i class="icon iconfont icon-undo"></i><p>撤销</p></span>
+    </button>
+    <button [ngClass]="{'disabled': disabledRedoButton}" [disabled]="disabledRedoButton" container="body" tooltip="重做" placement="bottom" (click)="redo()">
+      <span class="title"><i class="icon iconfont icon-redo"></i><p>重做</p></span>
+    </button>
+    <div class="line"></div>
+    <button *ngIf="topMenuSetting.align" class="drop-list" (mouseenter)="baiduCollect('align')">
+      <span class="title title-arrow">
+        <div class="icon-box">
+          <i class="icon align-icon align-icon-l"></i>
+          <i class="icon-arrow"></i>
+        </div>
+        <p>对齐</p>
+      </span>
+      <ul>
+        <li (click)="handleAlignButtonClick('l', $event)"><i class="align-icon align-icon-l"></i><span>左对齐</span></li>
+        <li (click)="handleAlignButtonClick('c', $event)"><i class="align-icon align-icon-c"></i><span>水平居中</span></li>
+        <li (click)="handleAlignButtonClick('r', $event)"><i class="align-icon align-icon-r"></i><span>右对齐</span></li>
+        <li (click)="handleAlignButtonClick('t', $event)"><i class="align-icon align-icon-t"></i><span>顶对齐</span></li>
+        <li (click)="handleAlignButtonClick('m', $event)"><i class="align-icon align-icon-m"></i><span>垂直居中</span></li>
+        <li (click)="handleAlignButtonClick('b', $event)"><i class="align-icon align-icon-b"></i><span>底对齐</span></li>
+      </ul>
+    </button>
+    <button class="disabled" *ngIf="!topMenuSetting.align && projectType === 'infographic'">
+      <span class="title title-arrow">
+        <div class="icon-box">
+          <i class="icon align-icon align-icon-l"></i>
+          <i class="icon-arrow"></i>
+        </div>        
+        <p>对齐</p>
+      </span>
+    </button>
+
+    <button *ngIf="topMenuSetting.level" class="drop-list" (mouseenter)="baiduCollect('layer')">
+      <span class="title title-arrow">
+        <div class="icon-box">
+          <i class="icon align-icon icon-layer"></i>
+          <i class="icon-arrow"></i>
+        </div>
+        <p>图层</p>
+      </span>
+      <ul>
+        <li (click)="setBlockMoveLevel('moveUpOneLevel')"><i class="icon-header icon-move-up-one"></i>上移一层</li>
+        <li (click)="setBlockMoveLevel('moveDownOneLevel')"><i class="icon-header icon-move-down-one"></i>下移一层</li>
+        <li (click)="setBlockMoveLevel('moveUpTop')"><i class="icon-header icon-move-up"></i>置于顶层</li>
+        <li (click)="setBlockMoveLevel('moveDownBottom')"><i class="icon-header icon-move-down"></i>置于底层</li>
+      </ul>
+    </button>
+    <button class="disabled" *ngIf="!topMenuSetting.level && projectType === 'infographic'">
+      <span class="title title-arrow">
+        <div class="icon-box">
+          <i class="icon align-icon icon-layer"></i>
+          <i class="icon-arrow"></i>
+        </div>     
+        <p class="icon-arrow">图层</p>
+      </span>
+    </button>
+
+    <button container="body" tooltip="{{locked ? '解锁' : '锁定'}}" placement="bottom" onclick="_hmt.push(['_trackEvent', 'editpage', 'toptoolbar', 'edit-top-lock-click'])" *ngIf="topMenuSetting.locked" (click)="lockedHandle()">
+      <span class="title"><img class="locked" src="../../../../dyassets/images/layer/{{locked ? 'unlocked' : 'locked'}}.svg" /><p>{{locked ? '解锁' : '锁定'}}</p></span>
+    </button>
+    <button class="disabled" container="body" tooltip="锁定" placement="bottom" *ngIf="!topMenuSetting.locked && projectType === 'infographic'">
+      <span class="title"><img class="locked" src="../../../../dyassets/images/layer/locked.svg" /><p>锁定</p></span>
+    </button>
+  </div>
+
+  <!-- <div class="d-flex align-items-center justify-content-end ex-share-container">
+    <div *ngIf="projectType !== 'chart'" class="change-page" (click)="changePageHandle()"
+      [ngStyle]="{'right': '255px'}">页面设置</div>
+  </div> -->
+
+</div>

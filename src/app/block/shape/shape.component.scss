@@ -1,0 +1,53 @@
+:host {
+  position: relative;
+}
+
+svg {
+  vertical-align: top;
+}
+
+.block-shape {
+  background: transparent;
+  svg {
+    overflow: visible;
+  }
+}
+
+// 直线 && 箭头
+.wrap-box {
+  position: relative;
+  width: 207px;
+  height: 15px;
+  user-select: none;
+  z-index: 22;
+}
+
+.line-itemwrap {
+  position: absolute;
+  width: 200px;
+  height: 20px;
+  left: 0;
+  top: 0;
+}
+
+.line-item {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #00aeef;
+  border-radius: 50px;
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+  transition: all .3s;
+  display: none;
+}
+
+.line-item:hover {
+  transform: scale(1.4);
+}
+
+.line-wrap {
+  position: absolute;
+  overflow: visible;
+}

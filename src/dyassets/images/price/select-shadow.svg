@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="190px" height="72px" viewBox="0 0 190 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>被选中的tab的蓝色阴影</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-11.2%" y="-42.9%" width="122.5%" height="185.7%" filterUnits="objectBoundingBox" id="filter-1">
+            <feGaussianBlur stdDeviation="6" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.200000003">
+        <g id="会员页1" transform="translate(-726.000000, -208.000000)" fill="#307FFF" fill-rule="nonzero">
+            <g id="右侧所有内容" transform="translate(190.000000, 156.000000)">
+                <g id="切换" transform="translate(391.000000, 56.000000)">
+                    <rect id="被选中的tab的蓝色阴影" filter="url(#filter-1)" transform="translate(240.000000, 32.000000) scale(-1, 1) translate(-240.000000, -32.000000) " x="160" y="11" width="160" height="42" rx="6"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

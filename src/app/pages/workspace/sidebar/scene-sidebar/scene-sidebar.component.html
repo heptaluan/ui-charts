@@ -1,0 +1,65 @@
+<nb-card class="text-templates-sidebar" [ngStyle]='styles'>
+    <!-- header -->
+    <div class="templates-header">
+      插入模板
+      <i class="icon iconfont icon-x" (click)="clickCloseBtn()"></i>
+    </div>
+    <!-- body -->
+    <!-- <nb-card-body> -->
+      <div class="setting-container">
+        <tabset #staticTab>
+          <tab heading="模板中心" (select)="onTabSelect($event)" customClass="setting-tab" id="tab1">
+          </tab>
+          <tab heading="我的喜欢" (select)="onTabSelect($event)" customClass="setting-tab" id="tab2">
+          </tab>
+        </tabset>
+      </div>
+    <!-- </nb-card-body> -->
+    <!-- footer -->
+    <nb-card-footer>
+      <div class="row">
+        <div class="search-image" *ngIf="tabActive">
+          <lx-form-search (searchValue)='search($event)'></lx-form-search>
+          <lx-classify
+            class="classify"
+            (category)="classify($event)"
+            [isFix]="true"
+            [type]="'image'"
+            [data]='categories'
+            [hideShape]='true'
+            [partCategories]='partCategories'
+            [isTemplates]="true"
+          ></lx-classify>
+        </div>
+        <div class="image-container" *ngIf="!tabActive">
+          <lx-form-search (searchValue)='searchFav($event)'></lx-form-search>
+        </div>
+        <div class="col-12 list-content" [hidden]="!tabActive" #sysScroll>
+          <ng-container *ngIf="!isTemplateHidden">
+            <lx-scene-template-item [templates]='templates'></lx-scene-template-item>
+            <div class="load-more" [ngStyle]="{'top': textTop + 'px'}" (click)='loadMore()'>{{text}}</div>
+          </ng-container>
+          <ng-container *ngIf="isTemplateHidden">
+            <div class="tip">
+              <p>暂未发现符合搜索条件的结果</p>
+              <p>请<span (click)="showTemplateDemandFeedback()">点击这里</span>提出你的模板需求</p>
+            </div>
+          </ng-container>
+
+        </div>
+        <div class="col-12 list-content list-update" [hidden]="tabActive" #personScroll>
+          <ng-container *ngIf="!isFavTemplateHidden">
+            <lx-scene-template-item [templates]='favTemplates' [isFav]="'true'" (disLike)='disLike()'></lx-scene-template-item>
+            <div class="load-more" [ngStyle]="{'top': textFavTop + 'px'}" [ngClass]="{noMore: text === '- 没有更多了 -'}" (click)='loadFavMore()'>{{text}}</div>
+          </ng-container>
+          <ng-container *ngIf="isFavTemplateHidden">
+            <div class="tip">
+              <p>{{favTip}}</p>
+              <p>快去<a style="color: #007bff;" target="_blank" href="https://dycharts.com/appv2/#/pages/home/info-template">「数据图文」</a>看看吧~</p>
+            </div>
+          </ng-container>
+
+        </div>
+      </div>
+    </nb-card-footer>
+  </nb-card>

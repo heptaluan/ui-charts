@@ -1,0 +1,175 @@
+.is-login {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .create-project {
+    ul {
+      padding: 0;
+
+      &.my {
+        margin-top: 43px;
+        p {
+          height: 21px;
+          line-height: 18px;
+          padding-left: 28px;
+          font-size: 14px;
+          color: #999999;
+        }
+        li:first-child {
+          margin-top: 4px;
+        }
+      }
+
+      li {
+        font-size: 14px;
+        font-weight: normal;
+        color: #000a1a;
+        padding-left: 24px;
+        padding-top: 5px;
+        padding-bottom: 6px;
+        border-left: 4px solid transparent;
+        position: relative;
+        &:hover {
+          background: #ebedef;
+        }
+        &:not(:first-child) {
+          margin-top: 8px;
+        }
+        &.active {
+          border-left: 4px solid #0079fa;
+          a span {
+            color: #0079fa;
+            font-weight: 600;
+          }
+        }
+
+        a {
+          cursor: pointer;
+          height: 21px;
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+
+          .img {
+            width: 20px;
+            height: 20px;
+            background-size: cover;
+            margin-right: 12px;
+            display: inline-block;
+            vertical-align: middle;
+          }
+
+          span {
+            color: #6f6f6f;
+            vertical-align: sub;
+            text-decoration: none;
+          }
+        }
+
+        .active-color {
+          background: #fff !important;
+          border: none !important;
+
+          span {
+            color: #0079fa !important;
+            padding-left: 2px;
+          }
+        }
+      }
+
+      li.index {
+        a {
+          .img {
+            background: url(/dyassets/images/home-page/index/index.svg) no-repeat center / contain;
+          }
+        }
+        &.active a {
+          .img {
+            background: url(/dyassets/images/home-page/index/index-active.svg) no-repeat center / contain;
+          }
+        }
+      }
+
+      li.chart-template {
+        a {
+          .img {
+            background: url(/dyassets/images/home-page/index/chart-template.svg) no-repeat center / contain;
+          }
+        }
+        &.active a {
+          .img {
+            background: url(/dyassets/images/home-page/index/chart-template-active.svg) no-repeat center / contain;
+          }
+        }
+      }
+
+      li.info-template {
+        a {
+          .img {
+            background: url(/dyassets/images/home-page/index/info-template.svg) no-repeat center / contain;
+          }
+        }
+        &.active a {
+          .img {
+            background: url(/dyassets/images/home-page/index/info-template-active.svg) no-repeat center / contain;
+          }
+        }
+      }
+
+      li.project {
+        a {
+          .img {
+            background: url(/dyassets/images/home-page/index/project.svg) no-repeat center / contain;
+          }
+        }
+        &.active a {
+          .img {
+            background: url(/dyassets/images/home-page/index/project-active.svg) no-repeat center / contain;
+          }
+        }
+      }
+
+      li.collect {
+        a {
+          .img {
+            background: url(/dyassets/images/home-page/index/collect.svg) no-repeat center / contain;
+          }
+        }
+        &.active a {
+          .img {
+            background: url(/dyassets/images/home-page/index/collect-active.svg) no-repeat center / contain;
+          }
+        }
+      }
+
+      li.data {
+        a {
+          .img {
+            background: url(/dyassets/images/home-page/index/data.svg) no-repeat center / contain;
+          }
+        }
+        &.active a {
+          .img {
+            background: url(/dyassets/images/home-page/index/data-active.svg) no-repeat center / contain;
+          }
+        }
+      }
+    }
+  }
+
+  .feedback-btns {
+    margin-left: 40px;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0px;
+    color: #5c6066;
+    position: fixed;
+    bottom: 25px;
+
+    div:first-child {
+      margin-bottom: 15px;
+    }
+  }
+}

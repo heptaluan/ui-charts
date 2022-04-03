@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13px" height="14px" viewBox="0 0 13 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>导出</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="顶层导航栏" transform="translate(-993.000000, -12.000000)" fill-rule="nonzero">
+            <g id="导出三连" transform="translate(991.000000, 9.000000)">
+                <g id="导出">
+                    <g transform="translate(0.000000, 3.000000)">
+                        <path d="M15,13 L15,14 L2,14 L2,13 L2,8 L3,8 L3,13 L14,13 L14,8 L15,8 L15,13 Z" id="Combined-Shape" fill="#D8D8D8"></path>
+                        <g id="编组-3" transform="translate(8.500000, 5.833333) scale(1, -1) translate(-8.500000, -5.833333) translate(5.000000, 0.333333)">
+                            <rect id="Rectangle" fill="#D8D8D8" x="3" y="3.66666667" width="1" height="7"></rect>
+                            <path d="M3.5,1.66666667 L2,3.66666667 L5,3.66666667 L3.5,1.66666667 Z M3.5,4.4408921e-16 L7,4.66666667 L0,4.66666667 L3.5,4.4408921e-16 Z" id="Triangle" fill="#FFFFFF"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

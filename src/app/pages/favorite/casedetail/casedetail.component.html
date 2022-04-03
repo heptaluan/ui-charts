@@ -1,0 +1,22 @@
+<div class="casedetail row">
+  <div class="col-8 caseInfo">
+    <h4>{{ caseDetail?.title }}</h4>
+    <p>
+      <span class="date">更新于{{caseDetail?.date}}</span>
+      <span class="info">
+        <img class="watchicon" src="../../../dyassets/images/watch.png" alt="">
+        <span>{{caseDetail?.watch}}</span>
+        <img *ngIf="caseDetail?.islike" class="likeicon" src="../../../dyassets/images/like.png" (click)='ilike($event, 0)'>
+        <img *ngIf="!caseDetail?.islike" class="dislikeicon" src="../../../dyassets/images/dislike.png" (click)='ilike($event, 1)'>
+        <span>{{caseDetail?.like}}</span>
+      </span>
+    </p>
+    <p class="description">{{caseDetail?.description }}</p>
+    <img class="caseimg" src="{{caseDetail?.thumb}}" alt="">
+  </div>
+  <div class="col-4 authorInfo">
+    <img src="{{caseDetail?.profile}}" alt="">
+    <p class="author">{{caseDetail?.author}}</p>
+    <p class="slogan">{{caseDetail?.slogan}}</p>
+  </div>
+</div>

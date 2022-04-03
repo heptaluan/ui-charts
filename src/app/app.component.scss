@@ -1,0 +1,271 @@
+// iframe 专用
+.iframe-header {
+  height: 56px;
+  padding: 0 40px;
+  font-size: 16px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .1);
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+  position: fixed;
+  width: 100%;
+  z-index: 1001;
+  user-select: none;
+
+  .btns-box {
+    display: flex;
+  }
+
+  .header-logo,
+  .header-btns {
+    display: flex;
+    align-items: center;
+  }
+
+  .header-btns {
+    margin-right: 60px;
+  }
+
+  .header-logo img,
+  .header-logo div {
+    margin-right: 52px;
+    cursor: pointer;
+    font-size: 18px;
+  }
+
+  .header-logo img {
+    width: 100px;
+  }
+
+  .header-logo a {
+    text-decoration: none;
+    color: #323b47;
+  }
+
+
+  .header-btns div {
+    margin: 15px;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+	  color: #5c6066;
+
+    img {
+      width: 36px;
+    }
+
+    span {
+      margin-top: 3px;
+    }
+  }
+
+  .header-user-box {
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    .header-user {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      span {
+        font-size: 12px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 76px;
+
+        &:last-child {
+          color: #e24a1b;
+          padding: 0 2px;
+          transform: scale(0.8);
+          background-color: #ffdf2b;
+	        box-shadow: inset 0px -2px 5px 0px #eccc6f, inset 0px 1px 3px 0px #ffed89;
+	        border-radius: 4px;
+        }
+      }
+
+      i {
+        display: inline-block;
+        height: 16px;
+        border-radius: 4px;
+      }
+
+      .vip1 {
+        width: 59px;
+        height: 31px;
+        background: url('/dyassets/images/person/vip1.svg') no-repeat center / contain;
+      }
+
+      .vip2 {
+        width: 79px;
+        height: 31px;
+        background: url('/dyassets/images/person/vip2.svg') no-repeat center / contain;
+      }
+
+      .eip1 {
+        width: 59px;
+        height: 31px;
+        background: url('/dyassets/images/person/eip1.svg') no-repeat center / contain;
+      }
+
+      .eip2 {
+        width: 79px;
+        height: 31px;
+        background: url('/dyassets/images/person/eip2.svg') no-repeat center / contain;
+      }
+    }
+  }
+}
+
+
+.iframe-content {
+
+  h2 {
+    font-family: PingFangSC-Light;
+    letter-spacing: 2px;
+    font-size: 32px;
+    color: #969799;
+    text-align: center;
+    padding-top: 98px;
+    margin-bottom: 15px;
+  }
+
+  .workspace-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .workspace-box div {
+    width: 32%;
+    border-radius: 5px;
+    margin: 20px;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 16px;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
+}
+
+
+
+:host::ng-deep {
+  .iframe-box {
+    background: #f5f5fa;
+
+    &.auto-height {
+      height: 100%;
+      overflow-y: scroll;
+    }
+
+    &::-webkit-scrollbar {
+      width: 6px !important;
+      height: 6px !important;
+      background-color: transparent !important;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #dee1e3 !important;
+      border-radius: 5px !important;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent !important;
+    }
+
+    &::-webkit-scrollbar-corner {
+      background: transparent !important;
+    }
+
+    // 项目管理内容部分
+    .content {
+      margin-left: 0 !important;
+    }
+
+    .template-item .content {
+      margin: auto !important;
+    }
+
+    .tabset {
+      margin-top: 70px;
+    }
+
+
+    // 工作台
+    .go-home {
+      display: none !important;
+    }
+
+    .float-right, .workspace-header {
+      margin-top: 56px !important;
+    }
+
+    .left.compacted {
+      top: 56px !important;
+    }
+
+    .right-content {
+      top: 108px !important;
+    }
+
+    nb-sidebar.compacted .main-container nb-sidebar-header {
+      width: 50px !important;
+    }
+
+    nb-layout .layout nb-layout-header.fixed {
+      width: calc(100% - 50px) !important;
+    }
+
+    .right-container {
+      height: 99% !important;
+    }
+
+    .topbar {
+      margin-left: 20px !important;
+    }
+
+    // 下载页面
+    .download-page-box {
+      .scrollable-container {
+        padding-top: 56px !important;
+      }
+
+      .fixed {
+        box-shadow: none;
+      }
+
+      .download-page {
+        margin-bottom: 70px;
+      }
+
+      .content {
+        height: calc(100vh - 109px) !important;
+      }
+
+      .layout nb-layout-header.fixed {
+        width: 100% !important;
+      }
+    }
+
+
+
+  }
+}

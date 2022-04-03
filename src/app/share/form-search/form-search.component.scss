@@ -1,0 +1,89 @@
+:host {
+  .fa-search,
+  .fa-times {
+    z-index: 10;
+    cursor: pointer;
+  }
+  .icon.icon-sousuo {
+    left: 27px;
+    position: relative;
+    z-index: 10;
+    top: 5px;
+    color: #a3a3a3;
+  }
+  .close-icon {
+    position: absolute;
+    right: 7px;
+    top: 7px;
+    z-index: 10;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    background-color: #f5f7fa;
+    border-radius: 50%;
+
+    &:focus {
+      outline: none;
+    }
+    .icon {
+      font-size: 12px;
+      position: absolute;
+      left: 2px;
+      top: 3px;
+    }
+  }
+  .form-control {
+    height: 32px;
+    color: #ffffff;
+    // box-shadow: 0px 2px 0px 0px #3b3b3b;
+    padding-left: 3.5rem;
+    padding-right: 2rem;
+    font-size: 12px;
+    border: 2px solid #19191a;
+    border-radius: 2px !important;
+    // border-top-left-radius: 4px;
+    // border-bottom-left-radius: 4px;
+    // border-top-right-radius: 4px;
+    // border-bottom-right-radius: 4px;
+    background: #19191a;
+    padding: 6px 34px;
+    &::placeholder {
+      font-size: 12px;
+    }
+    &:focus {
+      border: solid 2px #129cff !important;
+      border-radius: 2px !important;
+    }
+  }
+}
+
+
+.home {
+  justify-content: flex-end;
+
+  .icon.icon-sousuo {
+    right: 10px;
+    left: auto;
+  }
+
+  .close-icon {
+    right: 29px;
+    top: 9px;
+  }
+
+  input {
+    border: 1px solid rgba(0, 0, 0, 0.15) !important;
+    padding: 5px 45px 5px 10px !important;
+    box-sizing: border-box;
+    // width: 175px !important;
+    max-width: 200px;
+    margin-right: -16px;
+    // box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.1) !important;
+    box-shadow: none;
+    border-radius: 4px !important;
+
+    &:focus {
+      border: solid 1px #129cff !important;
+    }
+  }
+}

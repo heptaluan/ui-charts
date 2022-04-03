@@ -1,0 +1,58 @@
+.conf-container {
+  margin-top: 46px;
+  padding-left: 10px;
+  a {
+    text-decoration: none;
+  }
+  .conf_title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 3px;
+  }
+  .wrapper {
+    padding-left: 11px;
+    width: 910px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px dashed #dbdbdb;
+  }
+  .line0-img-c {
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    img {
+      display: block;
+      width: 50px;
+      height: 50px;
+    }
+    .line0-tip {
+      font-size: 16px;
+      color: #333333;
+      margin-left: 20px;
+    }
+  }
+  .security-btn {
+    margin-right: 30px;
+    display: block;
+    text-align: center;
+    line-height: 32px;
+    border: solid 1px #0079fa;
+    border-radius: 6px;
+    width: 96px;
+    height: 32px;
+    font-size: 14px;
+    color: #0079fa;
+    cursor: pointer;
+    &:hover {
+      background-color: #0079fa;
+      color: #fff;
+    }
+    &:focus {
+      background-color: #0079fa;
+      color: #fff;
+    }
+  }
+}

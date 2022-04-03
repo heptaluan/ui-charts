@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="38px" height="38px" viewBox="0 0 38 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61 (89581) - https://sketch.com -->
+    <title>加号</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="品牌设置-删除" transform="translate(-758.000000, -376.000000)" fill="#DADCE0">
+            <g id="弹窗" transform="translate(376.000000, 226.000000)">
+                <g id="中间内容" transform="translate(85.000000, 40.000000)">
+                    <g id="编组-2" transform="translate(0.000000, 85.000000)">
+                        <g id="自定义1" transform="translate(272.000000, 0.000000)">
+                            <g id="自定义1图">
+                                <path d="M47,25 L47,41 L63,41 L63,47 L47,47 L47,63 L41,63 L41,47 L25,47 L25,41 L41,41 L41,25 L47,25 Z" id="加号"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

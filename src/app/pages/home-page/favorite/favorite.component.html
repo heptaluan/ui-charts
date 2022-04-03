@@ -1,0 +1,63 @@
+<div class="data-upload">
+  <div class="data-upload-title">
+    <div class="multiple-choice">
+      <input type="checkbox" *ngIf="dataType === 'xlsx'"
+        [(checked)]='dataTemplates?.length === listIds.length && listIds.length'
+        [tooltip]="dataTemplates?.length === listIds.length && listIds.length ? '取消全选' : '全选'" container="body"
+        (click)='checkedAll($event)'>
+      <input type="checkbox" *ngIf="dataType === 'pdf'"
+        [(checked)]='dataReportTemplates?.length === listIds.length && listIds.length'
+        [tooltip]="dataReportTemplates?.length === listIds.length && listIds.length ? '取消全选' : '全选'" container="body"
+        (click)='checkedAll($event)'>
+      <i (click)='allDelete()' *ngIf="listIds.length" tooltip='删除' container="body"></i>
+      <div class="select-one" (click)='checkedAll($event)'
+        *ngIf="listIds.length && listIds.length < this.dataTemplates.length && dataType === 'xlsx'" tooltip='取消'
+        container="body"></div>
+      <div class="select-one" (click)='checkedAll($event)'
+        *ngIf="listIds.length && listIds.length < this.dataReportTemplates.length && dataType === 'pdf'" tooltip='取消'
+        container="body"></div>
+    </div>
+
+    <div class="progressbar-box">
+      <div class="project-search">
+        <lx-form-search #searchWord class="project-search-input" (searchValue)="search($event)" [initValue]="initSearch"
+          [type]="'home'"></lx-form-search>
+      </div>
+    </div>
+
+    <tabset type="pills"
+      [ngClass]="{'no-project': dataType === 'xlsx' ? dataTemplates.length : dataReportTemplates.length && !searchResult}">
+      <tab heading="数据" (select)="onTabSelect($event)" id="xlsx">
+        <div class="list-item-box">
+          <div class="search-loading" *ngIf="!showSearchLoading">
+            <div class="loading-container">
+              <div class="loading"></div>
+            </div>
+          </div>
+          <div class="list-item" *ngIf="showSearchLoading">
+            <lx-list-item [searchResult]='searchResult' [listIds]='listIds' (deleteSucc)='getFavoriteData("xlsx")'
+              [data]='dataTemplates' [type]="'favorite'" [dataType]="'xlsx'">
+            </lx-list-item>
+          </div>
+        </div>
+      </tab>
+      <tab heading="数据报告" (select)="onTabSelect($event)" id='pdf'>
+        <div class="search-loading" *ngIf="!showSearchLoading">
+          <div class="loading-container">
+            <div class="loading"></div>
+          </div>
+        </div>
+        <div class="list-item" *ngIf="showSearchLoading">
+          <lx-list-item [searchResult]='searchResult' [listIds]='listIds' (deleteSucc)='getFavoriteData("pdf")'
+            [dataType]="'pdf'" [data]='dataReportTemplates' [type]="'favorite'">
+          </lx-list-item>
+        </div>
+      </tab>
+
+      <pagination *ngIf="listTemplates?.length && !searchResult" pageBtnClass="dy-pagination" previousText="上一页"
+        nextText="下一页" [maxSize]=10 rotate=true [totalItems]="listTemplates" [ngModel]="currentPage" [itemsPerPage]="20"
+        (pageChanged)="onPageChanged($event)">
+      </pagination>
+    </tabset>
+  </div>
+</div>

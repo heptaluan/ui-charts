@@ -1,0 +1,49 @@
+:host {
+  .modal-header {
+    padding: 32px 32px 0;
+    font-size: 16px;
+    color: #323b47;
+    line-height: 24px;
+    border-bottom: none;
+  }
+  .modal-body {
+    padding: 0 32px 25px;
+    font-size: 14px;
+    color: #5c6066;
+    line-height: 22px;
+  }
+  .modal-footer {
+    padding: 0 30px 25px;
+    border-top: none;
+    &> :not(:last-child) {
+      margin-right: 7.5px;
+    }
+    &> :not(:first-child) {
+      margin-left: 7.5px;
+    }
+  }
+  .dy-button-prompt {
+    padding: 9px 22px;
+    &.song {
+      width: 65px;
+      padding: 0;
+      font-size: 14px;
+      height: 32px;
+      line-height: 32px;
+      border: solid 1px #d9d9d9;
+      cursor: pointer;
+      &:last-child {
+        width: 88px;
+        background-color: #0079fa;
+        border-radius: 2px;
+        color: #fff;
+        text-align: center;
+        border: 1px solid #0079fa;
+        font-size: 14px;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+}

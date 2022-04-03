@@ -1,0 +1,144 @@
+<ng-container *ngIf="showDynamicChatAnimation">
+  <lx-process [min]=0 [data]="animationData" 
+    [max]="animationData.length"
+    [time]="animationData.length"
+    [startTime]="startTime"
+    [endTime]="endTime"
+    [step]=1
+    [cur]='0'
+    [animationTimeInterval]="animationTimeInterval"
+    (InputChangeValue)="handleProceeChange($event)" 
+    (ButtonClick)="handleButtonClick($event)"
+    (clearD3ChartTimer)="handleClearD3ChartTimer($event)"
+    (timeEndRender)="handleTimeEndRender($event)"
+  ></lx-process>
+</ng-container>
+<div [ngClass]="{'tip-type-wrapper': projectType !== 'chart'}" >
+  <div class="tip">文件类型</div>
+  <div class="type-wrapper">
+    <div 
+      class="type-jpg type" tooltip="常用的图片格式" container="body" containerClass="customClass" placement="left bottom">
+      <label>
+        <input name="selectType" type="radio" class="a-radio" [checked]="chooseType === 'jpg'" id="selectJpg" (click)="selectType(0)">
+        <span class="b-radio" [ngClass]="{'active': chooseType === 'jpg'}"></span>
+        <div class="text">JPG</div>
+      </label>
+    </div>
+    <div class="type-png type" tooltip="优质无损图片格式，支持透明底" container="body" containerClass="customClass" placement="left bottom">
+      <label>
+        <input name="selectType" type="radio" class="a-radio" [checked]="chooseType === 'png'" id="selectPng" (click)="selectType(1)">
+        <span class="b-radio" [ngClass]="{'active': chooseType === 'png'}"></span>
+        <div class="text">PNG</div>
+      </label>
+    </div>
+    <div class="type-svg type" *ngIf="projectType === 'chart' && !showDynamicChatAnimation"  tooltip="可无损缩放编辑的矢量图格式" container="body" containerClass="customClass" placement="left bottom">
+      <label>
+        <input name="selectType" type="radio" class="a-radio" [checked]="chooseType === 'svg'" id="selectSvg" (click)="selectType(2)">
+        <span class="b-radio" [ngClass]="{'active': chooseType === 'svg'}"></span>
+        <div class="text">SVG</div>
+      </label>
+    </div>
+    <div class="type-gif type" *ngIf="projectType === 'chart'  && !showDynamicChatAnimation" tooltip="支持动画效果的图片格式" container="body" containerClass="customClass" placement="left bottom">
+      <label>
+        <input name="selectType" type="radio" class="a-radio" [checked]="chooseType === 'gif'" id="selectGif" (click)="selectType(3)">
+        <span class="b-radio" [ngClass]="{'active': chooseType === 'gif'}"></span>
+        <div class="text">GIF</div>
+      </label>
+    </div>
+    <div class="type-mp4 type" *ngIf="projectType === 'chart'" tooltip="常用的视频文件格式" container="body" containerClass="customClass" placement="left bottom">
+      <label>
+        <input name="selectType" type="radio" class="a-radio" [checked]="chooseType === 'mp4'" id="selectMp4" (click)="selectType(4, $event)">
+        <span class="b-radio" [ngClass]="{'active': chooseType === 'mp4'}"></span>
+        <div class="text">MP4</div>
+      </label>
+    </div>
+    <div class="type-mov type" *ngIf="projectType === 'chart' && !showDynamicChatAnimation" tooltip="视频文件格式，支持透明底" container="body" containerClass="customClass" placement="left bottom">
+      <label>
+        <input name="selectType" type="radio" class="a-radio" [checked]="chooseType === 'mov'" id="selectMov" (click)="selectType(5, $event)">
+        <span class="b-radio" [ngClass]="{'active': chooseType === 'mov'}"></span>
+        <div class="text mov">MOV</div>
+      </label>
+    </div>
+  </div>
+</div>
+<form class="form-group">
+
+  <ng-container *ngIf="isSizeShow">
+    <div class="size-wrapper theme-list">
+      <div class="tip">输出宽高</div>
+      <lx-settings-dropdowns
+        [values]='dropdowImgSizeList'
+        [index]='dropdowImgSizeListIndex'
+        (onChanged)="changeImgSize($event)"
+      ></lx-settings-dropdowns>
+    </div> 
+    <!-- 宽高 -->
+    <lx-settings-size 
+      [title0]="''"
+      [title1]="''"
+      [locked]="true"
+      [isLockClick]="false"
+      [value0]="exportImgH"
+      [value1]="exportImgW"
+      [max0]=60000
+      [min0]=300
+      [max1]=24000
+      [min1]=300
+      [ratio]="exportImgH / exportImgW"
+      [pageSetting]="true"
+      (onChanged)="handleUserChange($event)"
+    ></lx-settings-size>   
+  </ng-container>
+
+  <ng-container *ngIf="chooseType === 'mov'">
+    <div class="background-config d-flex align-items-center mov" (click)="transparentSwitch('mov')">
+      <lx-checkbox [(checked)]="bgTransparent"></lx-checkbox>
+      <label>透明底</label>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="isMp4SettingsShow">
+    <div class="mp4-setting-wrapper">
+      <div class="title">动画尺寸</div>
+      <lx-settings-dropdowns
+        [values]='dropdownMp4SizeList'
+        [index]='dropdownMp4SizeListIndex'
+        (onChanged)="changeMp4Size($event)"
+      ></lx-settings-dropdowns>
+    </div>
+    <!-- <div class="mp4-setting-wrapper top-15">
+      <div class="title">动画质量</div>
+      <lx-settings-dropdowns
+        [values]='dropdownMp4QualityList'
+        [index]='dropdownMp4QualityListIndex'
+        (onChanged)="changeMp4Quality($event)"
+      ></lx-settings-dropdowns>
+    </div> -->
+  </ng-container>
+  
+
+  <div class="background-config d-flex align-items-center" *ngIf="isTransparentShow">
+    <div>底色设置</div>
+    <lx-checkbox [(checked)]="bgTransparent" [disabled]="isVpl === 'None'"  (change)="transparentSwitch('bg')"></lx-checkbox>
+    <label>透明</label>
+    <button *ngIf="isVpl === 'None'" class="dy-button-upgrade" (click)="upgrade()">会员</button>
+  </div> 
+  <div class="gif-tip" *ngIf="chooseType === 'gif' || chooseType === 'mp4' || chooseType === 'mov'">
+    <img src="/dyassets/images/git-tips.svg" alt=""><span>温馨提示：动画属性配置项可在图表右侧面板中设置。</span>
+  </div>
+  <div class="gif-tip active" *ngIf="projectType !== 'chart'">
+    <img src="/dyassets/images/git-tips.svg" alt=""><span>温馨提示：数据图文项目暂不支持GIF、视频格式导出。功能规划中，敬请期待！</span>
+  </div>
+
+  <!-- <div class="video-tip" *ngIf="showDynamicChatAnimation">
+    <img src="/dyassets/images/git-tips.svg" alt=""><span>温馨提示：视频导出功能正在开发中，敬请期待！</span>
+  </div> -->
+
+  <div class="download" [ngClass]="{'active': chooseType === 'gif'}">
+    <div class="btn-wrapper">
+      <button [ngClass]="{'disabled': curDownloadNum === 0 && (isVpl === 'vip1' || isVpl === 'vip2'),'button-one': (chooseType === 'svg' || chooseType === 'mp4' || chooseType === 'mov')}"  (click)="download(false)">下载到本地</button>
+      <button *ngIf="chooseType !== 'svg' && chooseType !== 'mp4' && chooseType !== 'mov'" [ngClass]="{'disabled': curDownloadNum === 0 && (isVpl === 'vip1' || isVpl === 'vip2')}" (click)="download(true)">下载到手机</button>
+    </div>
+    <p class="export-images-num" *ngIf="isShowExportNum">今日剩余下载量：{{curDownloadNum}}/{{maxDownloadNum}}</p>
+  </div>
+</form>

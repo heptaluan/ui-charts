@@ -1,0 +1,11 @@
+<div class="theme-list" *ngFor='let themeList of themeLists; let key = index'>
+  <div class="theme-cover" [class.checked]='key == showCheckedIndex'  (click)="toggleThemeHandle(themeList, key)">
+    <img src="{{themeList.thumb}}" alt="">
+    <div class="theme-checked" *ngIf="key == showCheckedIndex">
+      <i class="icon iconfont icon-duihao" (click)='clickCloseBtn()'></i>
+    </div>
+  </div>
+  <div class="theme-title">
+    {{themeList.name}}
+  </div>
+</div>

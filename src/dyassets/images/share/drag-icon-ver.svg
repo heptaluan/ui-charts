@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="15px" height="53px" viewBox="0 0 15 53" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 62 (91390) - https://sketch.com -->
+    <title>右侧拉手</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图表的空白状态" transform="translate(-953.000000, -286.000000)">
+            <g id="内容区域" transform="translate(332.000000, 76.000000)">
+                <g id="右侧拉手" transform="translate(628.500000, 236.500000) rotate(-270.000000) translate(-628.500000, -236.500000) translate(603.000000, 230.000000)">
+                    <rect id="矩形" stroke="#FFFFFF" fill="#3095CB" x="-0.5" y="-0.5" width="52" height="14" rx="4"></rect>
+                    <rect id="矩形" fill="#FFFFFF" x="14" y="4" width="23" height="1"></rect>
+                    <rect id="矩形" fill="#FFFFFF" x="14" y="8" width="23" height="1"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

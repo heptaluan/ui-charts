@@ -1,0 +1,66 @@
+:host {
+  lx-modal .modal-header .modal-titile {
+    font-weight: bold !important;
+  }
+
+  form {
+    margin-top: 40px;
+
+    input {
+      width: 350px;
+      margin: 0 30px;
+      height: 44px;
+      font-family: PingFangSC-Regular;
+      font-size: 14px;
+      font-weight: normal;
+      font-stretch: normal;
+      letter-spacing: 0px;
+      color: #969799;
+      outline: none;
+
+      &:focus {
+        outline: none !important;
+        border: 1px solid #2ea2f8 !important;
+        box-shadow: none !important;
+      }
+    }
+
+    .error-border {
+      border: solid 1px #ed1c24 !important;
+
+      &:focus {
+        border: solid 1px #ed1c24 !important;
+      }
+    }
+
+    .tip {
+      // margin-left: 20px;
+      width: 350px;
+      margin: 0 auto;
+      margin-top: 5px;
+      font-family: PingFangSC-Regular;
+      font-size: 12px;
+      font-weight: normal;
+      font-stretch: normal;
+      letter-spacing: 0px;
+      color: #5c6066;
+    }
+
+    .tip-error {
+      color: #f5222d;
+    }
+  }
+
+  button {
+    width: 130px;
+    height: 44px;
+    background-color: #0079fa;
+    border-radius: 2px;
+    font-family: PingFangSC-Semibold;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0px;
+    color: #ffffff;
+  }
+}

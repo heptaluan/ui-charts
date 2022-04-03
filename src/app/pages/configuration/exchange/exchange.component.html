@@ -1,0 +1,47 @@
+<div class="exchange-container">
+  <div class="exchange-banner">
+    <div class="exchange-box">
+      <input type="text" placeholder="请输入兑换码" [ngClass]="{'error': !!errorMsg}" [(ngModel)]="exchangeCode" (focus)='onHandleFocus()'>
+      <button (click)="exchange()">兑换</button>
+      <div class="error-tip">{{errorMsg}}</div>
+      <div class="succ-tip">{{succMsg}}</div>
+    </div>
+  </div>
+  <dl class="part-wrapper part-one">
+    <dt class="title"></dt>
+    <dd class="wrapper"></dd>
+  </dl>
+  <dl class="part-wrapper part-two">
+    <dt class="title"></dt>
+    <dd class="wrapper tip">
+      <p>1、登录镝数图表账号后，输入兑换码即可完成兑换。</p>
+      <p>2、一经兑换成功，相应等级会员权益即时到账，已是会员则时间自动延期。</p>
+      <p>3、请在兑换码有效期内使用，逾期失效。</p>
+      <p>4、兑换完成后可在<a (click)="handleGoMyVip()">我的会员</a>中查看。</p>
+      <p>5、通过团购或商务合作等特定渠道获取的兑换码名额有限，请妥善保管。</p>
+      <p>6、同一兑换码仅可兑换一次，如存在恶意注册等作弊行为，一经发现将扣除所有奖励。</p>
+      <p>7、更多问题，请联系<span class="code" (mousemove)='isService = true' (mouseleave)='isService = false'> 客服 </span>帮您解答。</p>
+      <div class="wechat-service wechat" *ngIf="isService"><img src="/dyassets/images/index/xiaodi.jpg" alt=""></div>
+    </dd>
+  </dl>
+  <!-- <dl class="part-wrapper part-three">
+    <dt class="title">近期活动·邀请有礼</dt>
+    <dd class="wrapper" (click)="handleEnterClick()">
+      <div class="d-flex">
+        <div class="content-wrapper">
+          <p><span>邀请好友即可免费获得&nbsp;</span><img src="/dyassets/images/num-seven.svg"><span>&nbsp;天会员</span></p>
+          <div class="go-btn">立即参与</div>
+        </div>
+        <div class="img-wrapper"></div>
+      </div>
+    </dd>
+  </dl> -->
+  <dl class="part-wrapper part-three">
+    <dt class="title"></dt>
+    <dd class="wrapper tip">
+      <p>1、关注<span (mousemove)='isCode = true' (mouseleave)='isCode = false'> 微信公众号 </span>，点击菜单栏免费领会员，获得7天会员兑换码。</p>
+      <p>2、邀请好友至少可免费获得7天会员。  <a (click)="handleEnterClick()">活动详情 >></a></p>
+      <div class="wechat-code wechat" *ngIf="isCode"><img src="https://ss1.dydata.io/v2/home/code.jpg" alt=""></div>
+    </dd>
+  </dl>
+</div>

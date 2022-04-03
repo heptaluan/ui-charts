@@ -1,0 +1,13 @@
+
+[
+    {
+        "context": [
+            "/appv2"
+        ],
+        "target": "http://localhost:4200",
+        "secure": false,
+        "pathRewrite": {
+            "^/appv2": "/"
+        }
+    }
+]

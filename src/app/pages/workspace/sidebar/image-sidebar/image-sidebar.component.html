@@ -1,0 +1,68 @@
+<nb-card class="text-templates-sidebar" [ngStyle]='styles'>
+  <!-- header -->
+  <div class="img-header">插入图片
+    <i class="icon iconfont icon-x" (click)='clickCloseBtn()'></i>
+  </div>
+  <!-- body -->
+  <div class="setting-container">
+    <tabset #staticTab>
+      <tab heading="图片库" (select)="onTabSelect($event)" customClass="setting-tab" id="tab1">
+      </tab>
+      <tab heading="我的上传" (select)="onTabSelect($event)" customClass="setting-tab" id="tab2">
+      </tab>
+    </tabset>
+  </div>
+
+  <!-- footer -->
+  <nb-card-footer>
+    <div class="row">
+      <div class="search-image" *ngIf="tabActive">
+        <lx-form-search (searchValue)='search($event)'></lx-form-search>
+        <lx-classify class="classify" (category)="classify($event)" [type]="'image'" [data]='categories'
+          [partCategories]='partCategories' [hideShape]='true'></lx-classify>
+      </div>
+      <div class="image-container" *ngIf="!tabActive && isVpl !== 'eip2'">
+        <div>
+          <progressbar value="{{ usedPercent }}" max="100"></progressbar>
+        </div>
+        <div class="percentage">{{ usedCapacity }}/{{ capacity }}</div>
+        <div (click)='upgrade()' class="extendCapacity">扩充容量</div>
+      </div>
+      <div class="image-upload" *ngIf="!tabActive && isVpl !== 'eip2'">
+        <div (click)="handleShowImageLayout()" class="upload-icon" container="body" tooltip="手机上传图片">
+          <img src="/dyassets/images/drop-upload/upload-icon.svg" alt="upload-icon">
+          <span>手机上传图片</span>
+        </div>
+        <div class="image-layout" *ngIf="showImageLayout">
+          <div class="close-btn" (click)="handleHideImageLayout()">
+            <img src="/dyassets/images/drop-upload/close-btn.svg" alt="">
+          </div>
+          <div class="content" [ngClass]="{'content-box': contentBox}">
+            <img *ngIf="isConnect" [ngClass]="{'image-suc': imageSuc}" [src]="imageLayout" alt="">
+            <ng-container *ngIf="!isConnect">
+              <div class="code-box">
+                <qr-code [value]="qrCodeUrl" size="110"
+                background="#fff" padding="0"></qr-code>
+              </div>
+            </ng-container>
+          </div>
+          <p [ngClass]="{'underline': showUnderline}" (click)="refreshCode()">{{imageText}}</p>
+        </div>
+      </div>
+      <div class="col-12 list-content" [hidden]="!tabActive" #sysScroll>
+        <lx-image-template-item (switchTab)='switchTab()' [data]='imageTemplates' [capacity]='capacity'
+          [usedCapacity]='usedCapacity' [pageId]='pageId' [isHideUpload]='isHideUpload' [tabActive]='tabActive'>
+        </lx-image-template-item>
+        <div class="load-more" [ngClass]="{noMore: text === '- 没有更多了 -'}" (click)='loadMore("image")'>{{text}}</div>
+      </div>
+      <div class="col-12 list-content list-update" [hidden]="tabActive" #personScroll>
+        <lx-image-template-item (updateSucc)='updateImages($event)' (deleteSucc)='getSysImgs()'
+          [data]='userUpdateImages' [capacity]='capacity' [usedCapacity]='usedCapacity' [deleteFlag]='deleteFlag'
+          [pageId]='pageId' [(tabActive)]='tabActive'>
+
+        </lx-image-template-item>
+        <div class="load-more" [ngClass]="{noMore: text === '- 没有更多了 -'}" (click)='loadMore("upload")'>{{text}}</div>
+      </div>
+    </div>
+  </nb-card-footer>
+</nb-card>

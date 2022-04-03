@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="34px" viewBox="0 0 44 34" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>33</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="10" cy="2" r="2"></circle>
+    </defs>
+    <g id="33" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-2">
+            <g transform="translate(5.000000, 6.000000)">
+                <rect id="Rectangle-8" fill="#B3DDFF" x="0" y="25" width="35" height="1"></rect>
+                <polyline id="Path-2" stroke="#2DA1FC" stroke-width="2" opacity="0.800000012" stroke-linecap="round" stroke-linejoin="round" points="1 19.4109589 10.4814815 10.0359589 18.7777778 17.5359589 27.0740741 9.4109589 33 13.7859589"></polyline>
+                <polyline id="Path-2" stroke="#B3DDFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="1 10.0410959 10.4814815 0.66609589 18.7777778 8.16609589 27.0740741 0.0410958904 33 4.41609589"></polyline>
+                <g id="Oval-2">
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    <circle stroke="#B3DDFF" stroke-width="1" cx="10" cy="2" r="2.5"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

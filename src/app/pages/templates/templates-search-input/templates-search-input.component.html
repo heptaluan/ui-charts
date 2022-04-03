@@ -1,0 +1,19 @@
+<div class="input-box">
+  <div class="search-input">
+
+    <div class="search-input-box">
+      <!-- (keyup)="onKeyUp($event)" -->
+      <input #searchInput type="text" placeholder="请输入搜索内容" [(ngModel)]="searchValue" (keypress)="onKeyPress($event)"
+        (keyup)="onKeyUp($event)">
+      <i class="icon iconfont icon-x" *ngIf="searchValue" (click)="searchAll()"></i>
+      <span class="search-btn" (click)="searchHandle()">站内搜索<i></i></span>
+    </div>
+
+    <div class="search-keyworld">
+      <span *ngFor="let item of hotSearchWords; let i = index" (click)="searchHotWords(item.word, i)"
+        [ngClass]="{'hot-word': item.mark === '1'}">
+        {{item.word}}
+      </span>
+    </div>
+  </div>
+</div>

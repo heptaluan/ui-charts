@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-xs-12 col-12">
+    <pagination class="justify-content-center"
+      pageBtnClass="dy-pagination"
+      [totalItems]="totalItems"
+      [itemsPerPage]="itemsPerPage"
+      [(ngModel)]="currentPage"
+      previousText="上一页"
+      nextText="下一页"
+      (pageChanged)="pageChanged($event)"></pagination>
+  </div>
+</div>
+

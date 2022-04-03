@@ -1,0 +1,122 @@
+.input-box {
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 0;
+  background: #F5F6F7;
+
+  .search-input {
+    width: 1000px;
+    margin: 0 auto;
+    position: relative;
+
+    .search-input-box {
+      overflow: hidden;
+
+      .icon-x {
+        font-size: 12px;
+        position: absolute;
+        top: 15px;
+        right: 160px;
+        background: #f5f7fa;
+        border-radius: 9px;
+        width: 18px;
+        height: 18px;
+        text-align: center;
+        line-height: 19px;
+        cursor: pointer;
+      }
+
+      input {
+        float: left;
+        width: 855px;
+        height: 48px;
+        border: solid #d0d0d0;
+        border-width: 1px 0 1px 1px;
+        padding: 0 15px;
+        font-size: 16px;
+        outline: none;
+
+        &:focus {
+          outline: none;
+          border: solid #0079fa !important;
+          border-width: 1px 0 1px 1px !important;
+        }
+      }
+
+      input::-webkit-input-placeholder {
+        font-size: 16px;
+        color: #969799;
+      }
+
+      .search-btn {
+        width: 144px;
+        height: 48px;
+        line-height: 48px;
+        text-align: center;
+        float: right;
+        background: #0079fa;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        position: relative;
+        right: 1px;
+
+        // border-radius: 0 4px 4px 0;
+        i {
+          display: inline-block;
+          width: 16px;
+          height: 16px;
+          margin-left: 10px;
+          margin-top: -2px;
+          vertical-align: middle;
+          background: url(/dyassets/images/search.svg) no-repeat center;
+        }
+      }
+    }
+
+    .search-keyworld {
+      margin-top: 15px;
+
+      span {
+        font-size: 16px;
+        color: #323b47;
+        margin-right: 60px;
+        position: relative;
+        font-family: PingFangSC-Regular;
+        cursor: pointer;
+        display: inline-block;
+
+        &:first-child {
+          margin-left: 20px;
+        }
+
+        &::after {
+          position: absolute;
+          content: '';
+          background: #999;
+          width: 1px;
+          height: 8px;
+          right: -32px;
+          top: 5px;
+        }
+
+        &:last-child:after {
+          display: none;
+        }
+      }
+
+      .hot-word {
+        &::before {
+          content: "";
+          display: block;
+          position: absolute;
+          top: -6px;
+          right: -28px;
+          width: 27px;
+          height: 15px;
+          background: url(/dyassets/images/share/hot.png) no-repeat center/contain;
+        }
+      }
+    }
+  }
+}

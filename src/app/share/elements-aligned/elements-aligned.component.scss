@@ -1,0 +1,38 @@
+.align-box {
+  background-color: #2f3030;
+  padding: 6px 17px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #1b1c1c;
+}
+
+.table-chart-text-style {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .text-style-btn {
+    cursor: pointer;
+    width: 30px !important;
+    height: 30px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .align-icon {
+      width: 16px !important;
+      height: 16px !important;
+      margin-right: 0 !important;
+    }
+
+    &:hover {
+      background: #202121;
+      
+      .align-icon {
+        width: 20px !important;
+        height: 20px !important;
+      }
+    }
+  }
+}

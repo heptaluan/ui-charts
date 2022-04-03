@@ -1,0 +1,33 @@
+<lx-header></lx-header>
+<div class="case-container d-block mx-auto">
+  <div class="d-flex justify-content-between w-100">
+    <div class="overview-container">
+      <div class="title">{{case?.title}}</div>
+      <div class="subtitle d-flex justify-content-between w-100">
+        <div class="modify-time">{{case?.modify_time}}更新</div>
+        <div class="hot d-flex align-items-center">
+          <i class="icon iconfont icon-liulan"></i>{{case?.view}}
+          <!-- <i class="icon iconfont icon-xihuan" (click)="toggleLike()" [ngClass]="{'active': isLike}"></i>{{case?.like}} -->
+        </div>
+      </div>
+      <div class="project-description">{{case?.description}}</div>
+      <div class="preview">
+        <div class="preview-container">
+          <lx-preview [contents]="case?.article.contents" [isScale]="true"></lx-preview>
+        </div>
+      </div>
+    </div>
+    <div class="author-container">
+      <div class="avatar-container">
+        <img class="rounded-circle" src="{{case?.user.avatar}}">
+      </div>
+      <div class="nickname">{{case?.user.nickname}}</div>
+      <div class="loginname">{{case?.user.loginname}}</div>
+      <div class="user-description">{{case?.user.info}}</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- tooltip -->
+<div id="tooltip" display="none" style="position: fixed; display: none;"></div>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>置顶</title>
+    <g id="置顶" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g fill="#D8D8D8" fill-rule="nonzero" id="Combined-Shape">
+            <path d="M7.5,2.33333333 L11,7 L8,6.999 L8,13 L14,13 L14,14 L1,14 L1,13 L7,13 L7,6.999 L4,7 L7.5,2.33333333 Z M6,9 L6,10 L1,10 L1,9 L6,9 Z M14,9 L14,10 L9,10 L9,9 L14,9 Z M7.5,4 L6,6 L9,6 L7.5,4 Z M14,1 L14,2 L1,2 L1,1 L14,1 Z"></path>
+        </g>
+    </g>
+</svg>

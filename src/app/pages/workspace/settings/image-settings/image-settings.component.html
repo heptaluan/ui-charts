@@ -1,0 +1,117 @@
+<div class="setting-container">
+  <tabset #staticTab [justified]="true">
+    <!-- 标题 -->
+    <tab heading="编辑图片" customClass="setting-tab" id="tab2">
+
+      <!-- 锁定组件 -->
+      <lx-elements-locked
+        [block]="curBlock"
+        [projectId]="projectId"
+        [pageId]="curPageId"
+      ></lx-elements-locked>
+
+      <!-- 对齐组件 -->
+      <lx-elements-aligned
+        [block]="curBlock"
+        [projectId]="projectId"
+        [pageId]="curPageId"
+      ></lx-elements-aligned>
+
+      <div class="d-flex flex-column right-container">
+        <!-- 尺寸组件 -->
+        <div class="section" *ngIf="showSizeOption">
+          <lx-settings-size [locked]="curBlock?.props.size.ratio" [value0]="curBlock?.props.size.height"
+            [value1]="curBlock?.props.size.width" [value2]="curBlock?.props.size.rotate"
+            [ratio]="curBlock?.props.size.ratio" [max0]=10000 [min0]=1 [max1]=6000 [min1]=1 [max2]=360 [max2]=0 [title0]="''" [title1]="''" [title2]="''"
+            [letter1]="'W'" [letter0]="'H'" [letter2]="'°'" 
+            (onChanged)="onSizeChanged($event)"></lx-settings-size>
+
+            <!-- 圆角 && 透明度 -->
+            <ng-container *ngIf="showRadius">
+              <div class="line top-20">
+                <div class="small-title">圆角(px)</div>
+                <lx-slider [min]=0 [max]=200 [step]=1 [cur]='radius' [isProgress]="true" (valueChanged)="onInput($event, 'radius')"></lx-slider>
+              </div>
+            </ng-container>
+            <div class="line top-20">
+              <div class="small-title">不透明度(%)</div>
+              <lx-slider [min]=0 [max]=100 [step]=1 [cur]='opacity' [isProgress]="true" (valueChanged)="onInput($event, 'opacity')"></lx-slider>
+            </div>
+        </div>
+        
+        <!-- 边框 -->
+        <div class="section">
+          <div class="flex-sp color-list-box border-box">
+            <div class="small-title">边框样式</div>
+            <!-- 边框样式 -->
+            <lx-settings-dropdowns [values]='borderStyle' [index]='borderStyleIndex' [isBackgroundColor] = 'true'
+              (onChanged)='changeBorderStyle($event)'></lx-settings-dropdowns>
+          </div>
+            
+
+          <div class="color-list-box top-15 right">      
+            <!-- 边框长度 -->
+            <lx-slider [min]=0 [max]=100 [step]=1 [cur]="borderWidth"
+              (valueChanged)="onInput($event, 'borderWidth')"></lx-slider>
+            <!-- <input class="input-style left-59" #borderWidthInput [(ngModel)]="borderWidth" (blur)="onInput($event, 'borderWidth')"
+              (keyup)="onInputHandle($event)" onafterpaste="this.value = this.value.replace(/\D/g,'')" type="text"> -->
+
+            <!-- 边框颜色 -->
+            <lx-color-list class="left-12"  [themColorList]=themeColorList [colorSeleced] ="borderColors" (onChanged)="changeColor('borderColorPickerClick', 'border', $event)" ></lx-color-list>
+          </div>
+
+        </div>
+        <!-- 阴影 -->
+        <div class="section">
+          <!-- <accordion closeOthers="true" class="boleft">
+            <accordion-group panelClass="accordion-container"> -->
+              <!-- <div class="accordion-container accordion-heading">
+                <div class="accordion-heading-title">阴影</div>
+                <img src="/dyassets/images/setting/settings-arrow.png" class="accordion-heading-arrow">
+              </div> -->
+              <div class="accordion-content"> 
+                
+                <div class="flex-start">
+                  <lx-checkbox class="switch" [checked]="isShadowOpen" (change)="tooltipSwitch($event)">
+                  </lx-checkbox>
+                  <div class="small-title left-8">阴影</div>
+                </div>
+                <!-- 选色版增加不透明度后与此功能重复，删去 -->
+                <!-- <div class="line shadow-opacity">
+                  <div class="small-title" style="margin:0;">不透明度(%)</div>
+                  <lx-slider [min]=0 [max]=100 [step]=1 [cur]='shadowOpacity' [isProgress]='true'
+                  (valueChanged)="onInput($event,'shadowOpacity')"></lx-slider>
+                </div> -->
+                <!-- <div class="small-title" >阴影</div> -->
+                <div class="line shadow-opacity top-20" *ngIf="isShadowOpen">
+                  <div>
+                    <lx-color-list  [themColorList]=themeColorList [colorSeleced] ="shadowColor" (onChanged)="changeColor('borderColorPickerClick','shadow', $event)" ></lx-color-list>
+                    <div class="small-title">颜色</div>
+                  </div>
+                  <div>
+                    <lx-slider [min]=0 [max]=20 [step]=1 [cur]='shadowRadius'
+                      (valueChanged)="onInput($event, 'shadowRadius')"></lx-slider>
+                    <div class="small-title">距离</div>
+                  </div>
+  
+                  <div>                
+                    <lx-slider [min]=0 [max]=360 [step]=1 [cur]='shadowAngle'
+                      (valueChanged)="onInput($event, 'shadowAngle')"></lx-slider>
+                      <div class="small-title">角度</div>
+                  </div>
+  
+                  <div>                  
+                    <lx-slider [min]=0 [max]=20 [step]=1 [cur]='shadowBlur' (valueChanged)="onInput($event,'shadowBlur')">
+                    </lx-slider>
+                    <div class="small-title">模糊</div>
+                  </div> 
+                </div>
+              
+              </div>
+            <!-- </accordion-group>
+          </accordion> -->
+        </div>
+      </div>
+    </tab>
+  </tabset>
+</div>

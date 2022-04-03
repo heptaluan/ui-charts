@@ -1,0 +1,55 @@
+<!-- banner -->
+<div class="banner-wrapper">
+  <div class="banner" (click)="goNew()">
+    <h2>{{ bannerTitle }}</h2>
+    <img src="/dyassets/images/home-page/index/index-banner.svg" alt="" />
+  </div>
+  <div class="search">
+    <lx-dy-search
+      [width]="504"
+      [headTags]="headTags"
+      [hotWords]="hotWords"
+      [isShowHeadTag]="true"
+      (onSearch)="onSearch($event, false)"
+      (onDeleteBtnClick)="onSearch('', true)"
+      (onchangeHeadTags)="onchangeHeadTags($event)"
+      [placeHolderText]="placeHolderText"
+    ></lx-dy-search>
+  </div>
+</div>
+
+<!-- 推荐轮播 -->
+<div class="carousel-recommand">
+  <lx-dy-carousel [showColumnNum]="1" [arr]="recommandArr" (clickItem)="handleRecommandClick($event)"></lx-dy-carousel>
+</div>
+
+<!-- 图表轮播 -->
+<div class="carousel-charts">
+  <lx-dy-panel  [isCarousel]="true" [name]="'图表模板合集'" [typeArr]="chartTypes" (typeClick)="hanleChartTypeClick($event)">
+    <lx-dy-carousel [showColumnNum]="2" [arr]="chartArr" (clickItem)="handleChartsClick($event)"></lx-dy-carousel>
+  </lx-dy-panel>
+</div>
+
+<!-- 信息图推荐 -->
+<div class="template-list">
+  <ng-container *ngFor="let item of showInfographicList; let i = index">
+    <lx-dy-panel
+      [isNeedMoreBtn]="item.needMore"
+      [typeArr]="item.typeArr"
+      [arr]="item.shows"
+      [name]="item.name"
+      [collectObj]="collectObj"
+      [showColunmNum]="widerArr.indexOf(item.name) > -1 ? 2 : 1"
+      (itemClick)="hanleInfoClick($event, item.id)"
+      (editClick)="hanleInfoEditClick($event)"
+      (typeClick)="hanleInfoTypeClick($event, i, item.id)"
+      (getCollectState)="getCollectState($event)"
+      (collectChange)="collectChange($event)"
+    ></lx-dy-panel>
+  </ng-container>
+</div>
+
+<!-- 底部 -->
+<div class="footer">
+  <lx-dy-index-footer></lx-dy-index-footer>
+</div>

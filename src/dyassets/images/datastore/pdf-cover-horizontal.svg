@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="462px" height="293px" viewBox="0 0 462 293" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>详情页左方</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="462" height="293"></rect>
+        <filter x="-14.7%" y="-26.2%" width="129.3%" height="152.3%" filterUnits="objectBoundingBox" id="filter-3">
+            <feGaussianBlur stdDeviation="15.6" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="-12.4%" y="-22.1%" width="124.8%" height="144.3%" filterUnits="objectBoundingBox" id="filter-4">
+            <feGaussianBlur stdDeviation="13.2" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+    </defs>
+    <g id="页面1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="报告详情页新横版" transform="translate(-159.000000, -286.000000)">
+            <g id="第一部分" transform="translate(159.000000, 285.000000)">
+                <g id="详情页左方" transform="translate(0.000000, 1.000000)">
+                    <g id="横版">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="Mask" fill="#F5F7FB" fill-rule="nonzero" xlink:href="#path-1"></use>
+                        <g id="Group-2" mask="url(#mask-2)" fill-rule="nonzero">
+                            <g transform="translate(57.000000, 32.000000)" id="Rectangle">
+                                <rect fill="#1B2841" opacity="0.140000001" filter="url(#filter-3)" x="0" y="36" width="319.2" height="178.8"></rect>
+                                <rect fill="#FFFFFF" style="mix-blend-mode: lighten;" opacity="0.400000006" filter="url(#filter-4)" x="28.8" y="0" width="319.2" height="178.8"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

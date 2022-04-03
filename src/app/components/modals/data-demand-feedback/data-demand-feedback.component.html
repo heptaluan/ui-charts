@@ -1,0 +1,43 @@
+<div class="data-demand-feedback">
+  <i class="icon close iconfont icon-x" (click)='bsModalRef.hide()'></i>
+  <div *ngIf="feedback">
+    <h4 [ngStyle]="{'margin-bottom': type === 'data' ? '24px' : '40px'}">{{title}}</h4>
+    <!-- <div class="tab-select" *ngIf="type === 'data'">
+      <div class="feedback" (click)="selectOption(true)" [ngClass]="{'active': selectValue}">
+        <label>
+          <input type="radio" name="select_type" class="a-radio" [(checked)]="selectValue">
+          <span class="b-radio"></span>
+        </label>
+        <div class="text-box">
+          <h5>我要反馈</h5>
+          <p>我们将根据反馈优化平台数据资源</p>
+        </div>
+      </div>
+      <div class="feedback" (click)="selectOption(false)" [ngClass]="{'active': !selectValue}">
+        <label>
+          <input type="radio" name="select_type" class="a-radio" [(checked)]="!selectValue">
+          <span class="b-radio"></span>
+        </label>
+        <div class="text-box">
+          <h5>我要定制数据</h5>
+          <p>我们为个性化需求提供定制化服务</p>
+        </div>
+      </div>
+    </div> -->
+    <!-- <p class="title">我们会根据反馈意见优化平台数据资源</p> -->
+    <input [(ngModel)]="name" type="text" placeholder="你的称呼">
+    <input [(ngModel)]="contact" type="text" placeholder="你的手机号或邮箱">
+
+    <div class="textarea">
+      <textarea [(ngModel)]="content" placeholder="{{yourRequest}}" [class.error-tip]='textExceed' (keyup)="onTextareaChange($event)"></textarea>
+      <span [ngClass]="{'text-prompt': textExceed}">{{textPrompt}}</span>
+    </div>
+    <div class="feedback-btn" (click)="feedbackSubmit()">提交</div>
+  </div>
+
+  <!-- <div *ngIf="!feedback" class="complete">
+    <h4>提交成功</h4>
+    <p>谢谢你的反馈，镝数会尽快联系你，听取你的宝贵意见~</p>
+    <div (click)="close()" class="complete-btn">完成</div>
+  </div> -->
+</div>

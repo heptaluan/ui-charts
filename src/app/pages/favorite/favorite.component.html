@@ -1,0 +1,26 @@
+<div class="favorite-container d-block mx-auto">
+  <!-- <div class="title-container d-block mx-auto">
+    <div class="d-flex justify-content-between h-100">
+      <div class="header font-w-regular">精选案例:</div>
+    </div>
+  </div>
+
+
+  <nb-card>
+    <nb-card-header>
+      <span class="type">类型： </span>
+      <a routerLink="chart" name='chart' [class.selected]="selectedType === 'chart' " on-click='selectType($event)'>单图</a>
+      <a routerLink="charts" name='charts' [class.selected]="selectedType === 'charts' " on-click='selectType($event)'>多图</a>
+      <a routerLink="infographic" name='infographic' [class.selected]="selectedType == 'infographic'" on-click="selectType($event)">信息图</a>
+    </nb-card-header>
+  </nb-card> -->
+
+
+
+  <div class="title-container d-block mx-auto">
+    <div class="d-flex justify-content-between h-100">
+      <div class="header font-w-regular">我的喜欢</div>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+</div>

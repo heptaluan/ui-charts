@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图层</title>
+    <g id="图层" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g fill-rule="nonzero" stroke="#D8D8D8">
+            <g transform="translate(1.000000, 1.000000)">
+                <path d="M7,0.575875553 L12.9922178,4 L7,7.42412445 L1.00778222,4 L7,0.575875553 Z" id="Path-11"></path>
+                <polyline id="Path" points="0 9 7 13 14 9"></polyline>
+            </g>
+        </g>
+    </g>
+</svg>

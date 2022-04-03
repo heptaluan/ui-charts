@@ -1,0 +1,17 @@
+<!-- PC -->
+<ng-container *ngIf="!isMobile">
+  <div class="head-wrap">
+    <lx-header></lx-header>
+  </div>
+  <router-outlet></router-outlet>
+</ng-container>
+
+<ng-container *ngIf="isMobile">
+  <div class="mobile-container">
+    <router-outlet></router-outlet>
+  </div> 
+</ng-container>
+
+
+
+

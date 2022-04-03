@@ -1,0 +1,60 @@
+<footer>
+  <div class="footer-content">
+    <div class="content">
+      <ul class="foot-nav">
+        <li class="foot-nav-item">
+          <a class="foot-nav-item-link" (click)="goNewPage('#/pages/home/index')">网站首页</a>
+        </li>
+        <li class="foot-nav-item">
+          <a class="foot-nav-item-link" (click)="goNewPage('#/pages/help/list')">快速上手</a>
+        </li>
+        <li class="foot-nav-item">
+          <a class="foot-nav-item-link" (click)="goNewPage('#/pages/help/list')">帮助中心</a>
+        </li>
+        <li class="foot-nav-item">
+          <a href="javascript:;" class="foot-nav-item-link" (click)="showDataDemandFeedback()">意见反馈</a>
+        </li>
+        <li class="foot-nav-item">
+          <a class="foot-nav-item-link last" (click)="goNewPage('#/pages/help/list?id=aboutUs')">关于我们</a>
+        </li>
+      </ul>
+      <p class="copyright">
+        <span>Copyright 武汉镝次元数据科技有限公司 © 2016  鄂ICP备15019128号-3 <a class="footer-icon" target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=42011102003836"><i></i></a>鄂公网安备 42011102003836号</span>
+      </p>
+    </div>
+    <div class="qrcode-wrapper">
+      <div class="icon" (mouseenter)="handleItemCode('wechat', 'enter')" (mouseleave)="handleItemCode('wechat', 'leave')">
+        <div class="qrcode wechat" *ngIf="qrcodeTip === 'wechat'">
+          <img src="/dyassets/images/index/wechat-service.png" alt="" />
+          <p>微信服务号</p>
+        </div>
+      </div>
+      <div class="icon" (mouseenter)="handleItemTip('weibo', 'enter')" (mouseleave)="handleItemTip('weibo', 'leave')">
+        <div class="tip weibo" *ngIf="bottomTip === 'weibo'">
+          <div>微博：<a href="https://weibo.com/2252083545/manage" target="_blank">@镝次元数据</a></div>
+        </div>
+      </div>
+      <div class="icon" (mouseenter)="handleItemTip('zhihu', 'enter')" (mouseleave)="handleItemTip('zhihu', 'leave')">
+        <div class="tip zhihu" *ngIf="bottomTip === 'zhihu'">
+          <div>知乎：<a href="https://www.zhihu.com/people/dyclub/activities" target="_blank">@小镝同学</a></div>
+        </div>
+      </div>
+      <div class="icon" (mouseenter)="handleItemCode('kefu', 'enter')" (mouseleave)="handleItemCode('kefu', 'leave')">
+        <div class="qrcode service" *ngIf="qrcodeTip === 'kefu'">
+          <img src="/dyassets/images/index/xiaodi.jpg" alt="" />
+          <p>专属客服-小镝</p>
+        </div>
+      </div>
+      <div class="icon" (mouseenter)="handleItemTip('phone', 'enter')" (mouseleave)="handleItemTip('phone', 'leave')">
+        <div class="tip phone" *ngIf="bottomTip === 'phone'">
+          <div>电话：027-87523896</div>
+        </div>
+      </div>
+      <div class="icon" (mouseenter)="handleItemTip('email', 'enter')" (mouseleave)="handleItemTip('email', 'leave')">
+        <div class="tip email" *ngIf="bottomTip === 'email'">
+          <div>商务：<a href="mailto:biz@dyclub.org">biz@dyclub.org</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

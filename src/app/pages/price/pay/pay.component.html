@@ -1,0 +1,108 @@
+<div class="main">
+  <div class="page-bg">
+    <div class="top-bg">
+    </div>
+    <div class="bottom-bg">
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="w">
+      <div class="pay-wrapper">
+        <div [routerLink]="['/pages', 'home', 'price']" class="break-btn user-select-none">
+          <i></i><span class="go-back">返回</span>
+        </div>
+        <div class="pay-content">
+          <div class="pay-left-bar">
+            <h1 class="pay-title" *ngIf="chaeckType === 0">镝数会员</h1>
+            <p class="pay-desc" *ngIf="chaeckType === 0">更全面地支持你的图表制作</p>
+            <h1 class="pay-title" *ngIf="chaeckType === 1">高级会员</h1>
+            <p class="pay-desc" style="text-align: center;" *ngIf="chaeckType === 1">全行业优质数据开放</p>
+          </div>
+          <div class="pay-price-wrapper">
+            <div class="pay-price-content">
+              <div class="pay-type-line">
+                <span class="pay-title">会员类型</span>
+                <div class="pay-type-content">
+                  <div [ngClass]="{'checked': chaeckType === 0}" (click)="changeChaeckType(0)"
+                    class="pay-check-box pay-type-check" data-chack-name="payType">会员</div>
+                  <!-- <div [ngClass]="{'checked': chaeckType === 1}" (click)="changeChaeckType(1)"
+                    class="pay-check-box pay-type-check" data-chack-name="payType">高级会员</div> -->
+                </div>
+              </div>
+
+              <div class="pay-price-line">
+                <span class="title">套餐推荐</span>
+                <div class="pay-price-conten">
+                  <div class="pay-check-box pay-price-check" [ngClass]="{'checked': recommendType === 0}"
+                    (click)="recommendHandle(0)" data-chack-name="payPrice">
+                    <div class="check-price dis-content">
+                      <span class="price-title">
+                        12个月
+                      </span>
+                      <div class="box-content" *ngIf="chaeckType === 0">
+                        <p class="price">
+                          &yen; 99
+                        </p>
+                        <p class="dis">
+                          低至 <span style="color: red">8.25元/月</span>
+                        </p>
+                      </div>
+                      <div class="box-content" *ngIf="chaeckType === 1">
+                        <p class="price">
+                          &yen; 499
+                        </p>
+                        <p class="dis">
+                          低至 <span style="color: red">41.6元/月</span>
+                        </p>
+                      </div>
+
+                    </div>
+                  </div>
+                  <div class="pay-check-box pay-price-check" [ngClass]="{'checked': recommendType === 1}"
+                    (click)="recommendHandle(1)" data-chack-name="payPrice">
+                    <div class="check-price dis-content">
+                      <span class="price-title">
+                        1个月
+                      </span>
+                      <div class="box-content" *ngIf="chaeckType === 0">
+                        <p class="price">
+                          &yen; 9.9
+                        </p>
+                      </div>
+                      <div class="box-content" *ngIf="chaeckType === 1">
+                        <p class="price">
+                          &yen;49.9
+                        </p>
+                        <p class="dis">
+                          <!-- 低至 <span style="color: red">82.5元/月</span> -->
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pay-method-line">
+                <span class="title">支付类型</span>
+                <div class="pay-type-content">
+                  <div class="pay-check-box pay-type-check checked">支付宝</div>
+                  <div class="about-receipt" (mouseenter)="toggleReceipt(true)" (mouseleave)="toggleReceipt(false)"><i></i>关于发票</div>
+                  <div class="receipt-container" *ngIf="isShowReceipt">
+                    <p>1、在镝数平台产生消费可以开具增值税普通发票，开票金额为消费金额。</p>
+                    <p class="t-6">2、请联系镝数客服提供相关信息申请开具。</p>
+                    <img src="/dyassets/images/index/xiaodi.jpg" alt="">
+                    <p class="desc t-2">客服-小镝同学</p>
+                    <p class="t-12">3、发票可以选择自提或邮寄两种领取方式。</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pay-btn user-select-none"><a (click)="goPay()"
+                  onclick="_hmt.push(['_trackEvent', 'price', 'price-pay', 'price-topay-btn-click'])">立即支付</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

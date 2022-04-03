@@ -1,0 +1,94 @@
+<div class="data-upload">
+  <div class="data-upload-title">
+    <p class="title">我的数据</p>
+    <div class="multiple-choice">
+      <input
+        type="checkbox"
+        [checked]="listTemplates.length === listIds.length && listIds.length"
+        (click)="checkedAll($event)"
+        [tooltip]="listTemplates.length === listIds.length && listIds.length ? '取消全选' : '全选'"
+        container="body"
+      />
+      <span>全部勾选</span>
+      <i class="active" (click)="allDelete()" *ngIf="listIds.length" tooltip="删除" container="body"></i>
+      <i *ngIf="!listIds.length"></i>
+      <div
+        class="select-one"
+        (click)="checkedAll($event)"
+        *ngIf="listIds.length && listIds.length < this.listTemplates.length"
+        tooltip="取消"
+        container="body"
+      ></div>
+    </div>
+
+    <div class="progressbar-box">
+      <div class="get-online-data">
+        <a 
+          onclick="_hmt.push(['_trackEvent', 'chart', 'data-management', 'go_dydata'])"
+          target="_blank" href="https://dydata.io/"
+        >点击获得更多在线数据</a>
+      </div>
+      <div class="data-upload" (click)='dataUpload()'>
+        +&nbsp;&nbsp;上传数据
+      </div>
+      <div class="project-total" [hidden]="isVpl === 'eip2'">
+        <div class="project-total-title">
+          <span class="template-total">{{ progressbarValue }}&nbsp;/&nbsp;{{ templateTotal }}</span>
+          <span class="upgrade" *ngIf="isVpl === 'None'" (click)="upgrade()">扩充容量</span>
+        </div>
+        <div class="progressbar">
+          <progressbar [value]="progressbarValue" [max]="templateTotal" [type]="getProgressColor(progressbarValue, templateTotal)"></progressbar>
+        </div>
+      </div>
+
+      <div class="project-search">
+        <lx-form-search
+          class="project-search-input"
+          (searchValue)="search($event)"
+          [initValue]="initSearch"
+          [type]="'home'"
+        ></lx-form-search>
+      </div>
+    </div>
+
+    <tabset type="pills" [ngClass]="{ 'no-project': progressbarValue !== 0 }">
+      <div class="list-item-box">
+        <div class="list-item">
+          <div class="search-loading" *ngIf="!showSearchLoading">
+            <div class="loading-container">
+              <div class="loading"></div>
+            </div>
+          </div>
+
+          <lx-list-item
+            *ngIf="showSearchLoading"
+            [searchResult]="searchResult"
+            [listIds]="listIds"
+            (deleteSucc)="deleteSucc()"
+            [data]="listTemplates"
+            [type]="'upload'"
+            [currentPage]="currentPage"
+          >
+          </lx-list-item>
+        </div>
+      </div>
+
+      <pagination
+        *ngIf="progressbarValue !== 0"
+        pageBtnClass="dy-pagination"
+        previousText="<上一页"
+        nextText="下一页>"
+        [maxSize]="10"
+        rotate="true"
+        [totalItems]="totalPage"
+        [ngModel]="currentPage"
+        [itemsPerPage]="pageSize"
+        (pageChanged)="onPageChanged($event)"
+      ></pagination>
+    </tabset>
+  </div>
+</div>
+
+<div class="footer">
+  <lx-dy-footer></lx-dy-footer>
+</div>

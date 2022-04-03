@@ -1,0 +1,45 @@
+<div #divFather class="d-flex flex-column table-container">
+  <div #tableDiv class="d-flex flex-row" style="flex: 1">
+    <hot-table
+      *ngFor="let item of data; let key = index"
+      hotId="tb{{key}}"
+      [data]="item"
+      [settings]="settings"
+      [width]="width"
+      [height]="tbHeight"
+      [renderer]="rowRenderer"
+      (afterChange)="afterChange($event, key)"
+      (afterColumnSort)="afterColumnSort($event, key)"
+      (afterRemoveCellMeta)="afterRemoveCellMeta()"
+      [hidden]="key != radioModel"
+    ></hot-table>
+  </div>
+  <div class="d-flex flex-row align-items-center" style="height: 38px; background: rgb(196, 203, 214)">
+    <div (click)="reloadTable()" class="btn-group">
+      <label
+        *ngFor="let item of data; let key = index"
+        class="table-sheet"
+        [(ngModel)]="radioModel"
+        btnRadio="{{key}}"
+        tabindex="0"
+        [class.sheet-active]="key == radioModel"
+      >
+        <div>表格{{key}}</div>
+      </label>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="showReversalButton" tooltip="转置" (click)="reversal()" class="reversal">
+  <img src="/dyassets/images/reversal.svg">
+</div>
+
+<div tooltip="请上传2M以内的Excel或CSV文件，默认识别sheet1" class="table-upload-data">
+  <label for="tableUploadData"><img src="/dyassets/images/table-upload-data.svg"><span>上传数据</span></label>
+  <input accept=".csv, .xlsx, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" type="file" id="tableUploadData" (change)="handleTableUploadData($event)">
+</div>
+
+<div class="table-initial-data" (click)="updateInitialData()">
+  <i></i>
+  <span>恢复样例数据</span>
+</div>

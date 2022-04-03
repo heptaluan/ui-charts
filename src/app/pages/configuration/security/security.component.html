@@ -1,0 +1,33 @@
+<div class="conf-container">
+  <p class="conf_title">安全设置</p>
+  <div class="wrapper">
+    <div class="line0-img-c">
+      <img src="/dyassets/images/person/conf-security-lock.svg" />
+      <p class="line0-tip">已设定</p>
+    </div>
+    <a href="javascript:;" class="security-btn" (click)="openModal(0)">重置密码</a>
+  </div>
+  <div class="wrapper">
+    <div class="line0-img-c">
+      <img src="/dyassets/images/person/conf-security-phone.svg" />
+      <p class="line0-tip">{{ phoneno }}</p>
+    </div>
+    <a href="javascript:;" class="security-btn" (click)="openModal(1)">重置手机</a>
+  </div>
+  <div class="wrapper">
+    <div class="line0-img-c">
+      <img src="/dyassets/images/person/conf-security-mail.svg" />
+      <p class="line0-tip">{{ email != '' ? securityEmail : '未绑定' }}</p>
+    </div>
+    <a href="javascript:;" class="security-btn" (click)="openModal(2)">{{ email != '' ? '重置邮箱' : '绑定邮箱' }}</a>
+  </div>
+</div>
+
+<!-- A 修改密码 -->
+<lx-security-resetpw #resetPwChild></lx-security-resetpw>
+
+<!-- B 修改手机号 -->
+<lx-security-resetphone #resetPhoneChild [userphone]="phoneno"></lx-security-resetphone>
+
+<!-- C 绑定和修改邮箱 1. 输入登录密码 -->
+<lx-security-resetmail #resetMailChild></lx-security-resetmail>

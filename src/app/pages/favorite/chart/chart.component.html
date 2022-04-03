@@ -1,0 +1,11 @@
+<div *ngIf="caselist?.length" class="container" style="padding-top: 40px;">
+  <div class="row">
+    <lx-case-item *ngFor="let caseitem of caselist" [caseitem]="caseitem" (caseClick)="getCaseDetail($event)"></lx-case-item>
+  </div>
+  <lx-pagination [totalItems]="totalItems" [currentPage]="currentPage"></lx-pagination>
+</div>
+
+<div class="notAvailable" style="text-align: center;" *ngIf="!caselist.length">
+  <img src="/dyassets/images/my-favorite.png">
+  <p>目前还没有喜欢的项目，去案例里面挑一挑吧</p>
+</div>

@@ -1,0 +1,758 @@
+body {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background: #f6f6f6;
+  margin-top: 1px;
+}
+
+h1,
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none
+}
+
+.w {
+  width: 1170px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.user-select-none {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.icon {
+  display: inline-block;
+  font-style: normal;
+  height: 20px;
+  width: 20px;
+  vertical-align: baseline;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+}
+
+.icon-address {
+  background-image: url("/dyassets/images/price/icon-address.png");
+}
+
+.icon-mail {
+  background-image: url("/dyassets/images/price/icon-mail.png");
+}
+
+.icon-phone {
+  background-image: url("/dyassets/images/price/icon-phone.png");
+}
+
+.button-wrapper {
+  display: block;
+  width: 212px;
+  height: 68px;
+  margin: auto;
+}
+
+.button-link {
+  position: relative;
+  display: block;
+  width: 210px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  color: #ffffff;
+  background-color: #7d7aff;
+  border-radius: 100px;
+  margin-top: 30px;
+}
+
+.button-link::before {
+  content: " ";
+  position: absolute;
+  display: block;
+  top: 45px;
+  left: 14px;
+  width: 210px;
+  height: 50px;
+  background: url("/dyassets/images/price/button-shadow.png");
+  transform: rotate(180deg);
+}
+
+a {
+  color: inherit;
+}
+
+.icon-brand {
+  background-image: url("/dyassets/images/price/icon-bind.png");
+}
+
+.icon-custom {
+  background-image: url("/dyassets/images/price/icon-custom.png");
+}
+
+.icon-dev {
+  background-image: url("/dyassets/images/price/icon-dev.png");
+}
+
+.page-bg {
+  position: absolute;
+  top: 0;
+  display: block;
+  width: 100%;
+  height: 1211px;
+  min-width: 1170px;
+  background: #ffffff;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.page-bg .top-bg {
+  display: block;
+  width: 100%;
+  height: 694px;
+  min-width: 1170px;
+  background: url("/dyassets/images/price/top-bg.png") no-repeat top;
+  background-size: 100% 100%;
+}
+
+.page-bg .bottom-bg {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 1322px;
+  min-width: 1170px;
+  background: url("/dyassets/images/price/bottom-bg.png") no-repeat bottom;
+  background-size: 100% 100%;
+  margin-top: 233px;
+}
+
+.main {
+  position: relative;
+  display: block;
+  height: 2187px;
+  width: 100%;
+  min-width: 1170px;
+  z-index: 99;
+}
+
+.main {
+  height: 1083px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.chart-power {
+  position: relative;
+  display: block;
+  width: 1170px;
+  height: 904px;
+  margin: 260px auto 0 auto;
+  background: url("/dyassets/images/price/power_bg.png") no-repeat bottom center;
+  background-size: 100% 95%;
+}
+
+.chart-power h1 {
+  text-align: center;
+  font-family: PingFangSC-Semibold;
+  font-size: 30px;
+  height: 42px;
+  line-height: 42px;
+  letter-spacing: 2.6px;
+  color: #323b47;
+}
+
+.data-power .powers-content {
+  position: absolute;
+  display: block;
+  width: 754px;
+  height: 447px;
+  bottom: 0;
+}
+
+.chart-power .powers-content {
+  position: absolute;
+  display: block;
+  width: 1170px;
+  height: 752px;
+  left: 0;
+  right: 0;
+  margin: 54px auto;
+}
+
+.powers {
+  position: relative;
+  display: inline-block;
+  width: 370px;
+  height: 752px;
+  float: left;
+  background: #FFFFFF;
+  margin-right: 30px;
+  border: solid 1px #ebebeb;
+}
+
+.powers:last-child {
+  margin-right: 0;
+}
+
+.powers-body {
+  margin-left: 24px;
+}
+
+.powers .power-wrapper {
+  display: block;
+  width: 256px;
+  height: 752px;
+  box-sizing: border-box;
+  padding: 50px 0;
+  margin: auto;
+}
+
+.powers .power-wrapper .power-header .power-title {
+  height: 33px;
+  line-height: 33px;
+  font-size: 24px;
+  letter-spacing: 1.2px;
+  color: #000a1a;
+  text-align: center;
+}
+
+.powers .power-wrapper .power-header .power-desc {
+  width: 203px;
+  height: 44px;
+  font-family: PingFangSC-Regular;
+  font-size: 16px;
+  letter-spacing: 0.8px;
+  color: #5c6066;
+  text-align: center;
+  padding-top: 5px;
+  margin: auto;
+}
+
+.powers .power-wrapper .powers-name {
+  font-family: PingFangSC-Light;
+  font-size: 18px;
+  letter-spacing: 0.9px;
+  color: #5c6066;
+  text-align: center;
+}
+
+.powers .power-wrapper .powers-price {
+  display: block;
+  width: 104px;
+  height: 56px;
+  margin: 58px auto;
+}
+
+.powers .power-wrapper .powers-price img {
+  width: 104px;
+  height: 56px;
+}
+
+.powers .power-wrapper .power-text {
+  height: 22px;
+  color: #323B47;
+  padding-top: 10px;
+  font-family: PingFangSC-Regular;
+  font-size: 13px;
+  line-height: 22px;
+}
+
+.powers .power-wrapper .power-text.without {
+  color: #969799;
+}
+
+.powers .power-wrapper .power-text:first-child {
+  padding-top: 0;
+}
+
+.powers .power-wrapper .power-text .font-gou {
+  font-size: 14px;
+  color: #8450eb;
+  padding-right: 10px;
+}
+
+.powers .power-wrapper .power-text.without .font-gou {
+  color: transparent;
+}
+
+.powers .power-wrapper .btn-wrapper {
+  display: block;
+  width: 240px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  background-color: #ebe6f0;
+  border-radius: 30px;
+  margin: 40px auto;
+}
+
+.powers.no-free .power-wrapper .powers-price {
+  width: 166px;
+}
+
+.powers.no-free .power-wrapper .powers-price img {
+  width: 166px;
+}
+
+.powers.no-free .power-wrapper .btn-wrapper {
+  background-color: #8352e7;
+  color: #ffffff;
+}
+
+.powers.discount::after {
+  position: absolute;
+  top: -15px;
+  left: -9px;
+  content: " ";
+  display: block;
+  width: 150px;
+  height: 156px;
+  background: url("/dyassets/images/price/dis_bg.png") no-repeat center;
+  background-size: 100% 100%;
+}
+
+.main {
+  width: calc(100% + 160px);
+  overflow: hidden;
+  margin-left: -80px;
+  margin-top: -40px;
+}
+
+.pay-wrapper {
+  display: block;
+  width: 941px;
+  height: 648px;
+  margin: 65px auto;
+  background-size: 100% 100%;
+  position: relative;
+  i {
+    display: block;
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    top: 18px;
+    left: 41px;
+    background: url('/dyassets/images/price/go-back.svg') no-repeat;
+  }
+  .go-back {
+    display: block;
+    position: absolute;
+    width: 35px;
+    height: 22px;
+    font-family: PingFangSC-Semibold;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0.8px;
+    color: #5c6066;
+    top: 0px;
+    left: 64px;
+  }
+}
+
+.break-btn {
+  display: block;
+  width: 130px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  background-color: #ffffff;
+  box-shadow: 0px 2px 10px 0px rgba(21, 51, 125, 0.1);
+  color: #5c6066;
+  cursor: pointer;
+  &:hover {
+    background-color: #fafaff;
+  }
+  &:focus {
+    background-color: #fafaff;
+    outline: none;
+  }
+}
+
+.pay-left-bar {
+  position: absolute;
+  display: block;
+  width: 364px;
+  height: 558px;
+  background: url("/dyassets/images/price/pay-left.png") no-repeat center;
+  background-size: 100% 100%;
+  z-index: 99;
+}
+
+.pay-left-bar::before {
+  position: absolute;
+  content: " ";
+  display: block;
+  width: 12px;
+  height: 13px;
+  right: -11px;
+  background: url("/dyassets/images/price/t1.svg") no-repeat center;
+}
+
+.pay-left-bar::after {
+  position: absolute;
+  content: " ";
+  display: block;
+  width: 12px;
+  height: 13px;
+  right: -11px;
+  bottom: 0;
+  background: url("/dyassets/images/price/t2.svg") no-repeat center;
+}
+
+.pay-left-bar .pay-title {
+  display: block;
+  width: 136px;
+  height: 48px;
+  font-family: PingFangSC-Semibold;
+  font-size: 34px;
+  font-weight: normal;
+  font-stretch: normal;
+  letter-spacing: 0px;
+  margin: 60px auto 0;
+  color: #ffffff;
+}
+
+.pay-left-bar .pay-desc {
+  display: block;
+  width: 202px;
+  height: 22px;
+  font-family: PingFangSC-Regular;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  letter-spacing: 0.8px;
+  color: rgba(255, 255, 255, 0.6);
+  margin: auto;
+}
+
+.pay-wrapper .pay-price-wrapper {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  display: block;
+  width: 931px;
+  height: 533px;
+  background: #ffffff;
+  box-shadow: 0 3px 16px 0 rgba(96, 95, 147, .1);
+  z-index: 1;
+}
+
+.pay-wrapper .pay-price-wrapper .pay-price-content {
+  position: absolute;
+  display: block;
+  margin: 71px 85px;
+  left: 345px;
+  width: 381px;
+  height: 408px;
+}
+
+.pay-content {
+  position: relative;
+  display: block;
+  width: 941px;
+  height: 558px;
+  // background: url("/dyassets/images/price/power_bg_.png") no-repeat center;
+  margin-top: 40px;
+}
+
+.pay-check-box {
+  position: relative;
+  border: solid 1px #d0d0d0;
+  box-sizing: border-box;
+  cursor: pointer;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.pay-check-box.checked {
+  background-color: rgba(0, 121, 250, 0.08);
+  border: solid 2px #1366da;
+}
+
+.pay-check-box.checked::before {
+  content: " ";
+  position: absolute;
+  display: block;
+  height: 15px;
+  width: 15px;
+  background: url("/dyassets/images/price/pay-check.svg") no-repeat;
+  right: 0;
+  bottom: 0;
+}
+
+.pay-method-line,
+.pay-type-line {
+  display: flex;
+  width: 337px;
+  height: 40px;
+  flex-direction: row;
+}
+
+.pay-method-line .title,
+.pay-type-line .pay-title {
+  display: block;
+  height: 40px;
+  width: 64px;
+  line-height: 40px;
+  margin-right: 45px;
+  font-family: PingFangSC-Regular;
+  font-size: 16px;
+  letter-spacing: 0px;
+  color: #5c6066;
+}
+
+.pay-method-line {
+  margin-top: 40px;
+}
+
+.pay-type-content {
+  height: 40px;
+  position: relative;
+  .about-receipt {
+    width: 86px;
+    height: 22px;
+    line-height: 22px;
+    font-size: 16px;
+    color: #666666;
+    right: -146px;
+    padding-left: 22px;
+    bottom: 8px;
+    position: absolute;
+    i {
+      width: 18px;
+      height: 18px;
+      display: inline-block;
+      top: 2px;
+      left: 0;
+      position: absolute;
+      background: url(/dyassets/images/price/icon-question.svg) no-repeat center/contain;
+    }
+    &:hover {
+      color: #333333;
+      text-decoration: underline;
+    }
+  }
+  .receipt-container {
+    width: 325px;
+    height: 307px;
+    padding: 24px;
+    background-color: #ffffff;
+    box-shadow: 0px 2px 8px 0px rgba(45, 52, 78, 0.25);
+    border-radius: 6px;
+    position: absolute;
+    top: -309px;
+    left: 63px;
+    img {
+      display: block;
+      width: 120px;
+      height: 120px;
+      margin: 0 auto;
+      margin-top: 6px;
+    }
+    p {
+      font-size: 14px;
+      line-height: 24px;
+      color: #333333;
+      &.desc {
+        color: #666666;
+        font-size: 12px;
+        text-align: center;
+      }
+      &.t-6 {
+        margin-top: 6px;
+      }
+      &.t-12 {
+        margin-top: 12px;
+      }
+    }
+  }
+}
+
+.pay-type-check {
+  display: block;
+  float: left;
+  width: 126px;
+  height: 40px;
+  text-align: center;
+  font-family: PingFangSC-Regular;
+  font-size: 16px;
+  color: #323b47;
+  line-height: 40px;
+}
+
+.pay-type-check.checked {
+  font-family: PingFangSC-Semibold;
+  font-size: 16px;
+  color: #0079fa;
+}
+
+.pay-type-check:last-child {
+  margin: 0;
+}
+
+.pay-price-line {
+  display: flex;
+  width: 381px;
+  height: 120px;
+  flex-direction: row;
+  overflow: hidden;
+  margin-top: 40px;
+}
+
+.pay-price-line .title {
+  display: block;
+  height: 22px;
+  width: 64px;
+  line-height: 22px;
+  padding-top: 19px;
+  margin-right: 45px;
+  font-family: PingFangSC-Regular;
+  font-size: 16px;
+  letter-spacing: 0px;
+  color: #5c6066;
+}
+
+.pay-price-check {
+  display: block;
+  width: 126px;
+  height: 120px;
+  float: left;
+  margin-right: 20px;
+}
+
+.pay-price-check:last-child {
+  margin: 0;
+}
+
+.check-price {
+  display: block;
+  width: 100%;
+  // height: 100%;
+  height: 120px;
+}
+
+.check-price .price-title {
+  display: block;
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  box-sizing: border-box;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 0px;
+  color: #000a1a;
+  border-bottom: solid 1px #d0d0d0;
+  font-family: PingFangSC-Semibold;
+}
+
+.check-price .box-content .price {
+  display: block;
+  width: 100px;
+  height: 80px;
+  line-height: 80px;
+  font-family: PingFangSC-Semibold;
+  font-size: 34px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: #ed1c24;
+  font-weight: bold;
+  margin: auto;
+}
+
+.check-price .box-content {
+  display: block;
+  width: 100%;
+  height: 80px;
+}
+
+.check-price.dis-content .box-content .price {
+  display: block;
+  width: 100px;
+  height: 48px;
+  font-family: PingFangSC-Semibold;
+  line-height: 48px;
+  font-size: 34px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: #ed1c24;
+  font-weight: bold;
+  margin: auto;
+  margin-top: 5px;
+}
+
+.check-price.dis-content .box-content .dis {
+  display: block;
+  width: 100px;
+  height: 20px;
+  font-family: PingFangSC-Regular;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  letter-spacing: 0px;
+  color: #000a1a;
+  margin: auto;
+}
+
+.pay-btn {
+  position: relative;
+  display: block;
+  width: 210px;
+  height: 50px;
+  line-height: 50px;
+  font-family: PingFangSC-Semibold;
+  font-size: 16px;
+  letter-spacing: 0.9px;
+  text-align: center;
+  color: #ffffff;
+  background-color: #0079fa;
+  margin: 65px 0 0 109px;
+  cursor: pointer;
+  &:hover {
+    background-color: #2e93ff;
+  }
+  &:focus {
+    background-color: #006fe6;
+    outline: none;
+  }
+  a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+  }
+}
+
+.pay-btn:before {
+  content: " ";
+  display: block;
+  width: 285px;
+  height: 126px;
+  position: absolute;
+  right: -37px;
+  top: -15px;
+  z-index: -1;
+  background: url("/dyassets/images/price/bay-btn-sh.png");
+  opacity: .2;
+}

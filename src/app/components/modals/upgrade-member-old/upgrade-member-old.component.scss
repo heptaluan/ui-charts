@@ -1,0 +1,118 @@
+:host ::ng-deep {
+    .upgrade-member-container {
+        border-radius: 5px;
+        position: relative;
+        background-color: transparent;
+        .close {
+            padding: 0;
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            span {
+                font-weight: 200;
+                color: white;
+            }
+            &:focus {
+                outline: none;
+            }
+        }
+        carousel {
+            slide {
+                img {
+                    display: block;
+                    width: 901px;
+                    height: 556px;
+                    border-radius: 5px;
+                }
+            }
+            .carousel-control-prev {
+                &::after {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translateX(-50%) translateY(-260%);
+                    width: 50px;
+                    height: 50px;
+                    background-image: url('/dyassets/images/member/left-arrow.svg');
+                    content: '';
+                }
+                span {
+                    display: none;
+                }
+            }
+            .carousel-control-next {
+                &::after {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translateX(-50%) translateY(-260%);
+                    width: 50px;
+                    height: 50px;
+                    background-image: url('/dyassets/images/member/right-arrow.svg');
+                    content: '';
+                }
+                span {
+                    display: none;
+                }
+            }
+        }
+        .content {
+            position: absolute;
+            right: 0;
+            left: 0;
+            bottom: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .line-0 {
+                font-family: PingFangSC-Medium;
+                font-size: 24px;
+                font-weight: normal;
+                font-stretch: normal;
+                color: #5c6066;
+            }                    
+            .line-1 {
+                font-family: PingFangSC-Regular;
+                font-size: 18px;
+                font-weight: normal;
+                font-stretch: normal;
+                color: #969799;
+                margin-top: 15px;
+            }
+            .upgrade-btn {
+                width: 153px;
+                height: 40px;
+                background-color: #0287ef;
+                border-radius: 4px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 25px;
+                cursor: pointer;
+                &:hover {
+                    background-color: #0287ae;
+                }
+                div {
+                    font-family: PingFangSC-Medium;
+                    font-size: 18px;
+                    font-weight: normal;
+                    font-stretch: normal;
+                    color: #ffffff;
+                }
+            }
+        }
+        .index {
+            height: 25px;
+            font-family: PingFangSC-Medium;
+            font-size: 18px;
+            font-weight: normal;
+            font-stretch: normal;
+            text-align: center;
+            color: #ffffff;
+            position: absolute;
+            top: 25px;
+            right: 30%;
+            left: 30%;
+        }
+    }
+}

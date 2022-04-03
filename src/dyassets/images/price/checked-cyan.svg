@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="15px" viewBox="0 0 22 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>Path</title>
+    <desc>Created with Sketch.</desc>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="会员页1" transform="translate(-842.000000, -774.000000)" fill="#27AED1" fill-rule="nonzero">
+            <g id="右侧所有内容" transform="translate(190.000000, 116.000000)">
+                <g id="表格所有内容" transform="translate(62.000000, 154.000000)">
+                    <g id="表格" transform="translate(64.000000, 285.000000)">
+                        <g id="中间内容">
+                            <g id="中间图标" transform="translate(528.000000, 221.000000)">
+                                <g id="勾勾中间">
+                                    <path d="M16.9393398,-1.06066017 C17.5251263,-1.64644661 18.4748737,-1.64644661 19.0606602,-1.06066017 C19.609835,-0.511485387 19.6441584,0.357577023 19.1636304,0.946737762 L19.0606602,1.06066017 L7.07845582,13.0428645 L-0.97618706,6.1388849 C-1.60517582,5.59975168 -1.67801813,4.6528017 -1.1388849,4.02381294 C-0.633447504,3.43413597 0.230422584,3.33325961 0.854702751,3.76718557 L0.97618706,3.8611151 L6.921,8.957 L16.9393398,-1.06066017 Z" id="Path"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

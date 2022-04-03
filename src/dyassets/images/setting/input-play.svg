@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>播放</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#F5FAFF" offset="0%"></stop>
+            <stop stop-color="#A1A6AB" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="圆堆积图-动画" transform="translate(-16.000000, -406.000000)">
+            <g id="播放" transform="translate(16.000000, 406.000000)">
+                <rect id="矩形" stroke="#444547" fill="url(#linearGradient-1)" x="0.5" y="0.5" width="21" height="21" rx="10.5"></rect>
+                <path d="M14.3107746,10.0379428 L9.60694262,7.25777751 C8.6889754,6.72274569 8,7.04376479 8,8.00582199 L8,13.994178 C8,14.9562352 8.80297133,15.2772543 9.60694262,14.7422225 L14.3107746,11.9620572 C15.2297418,11.4280254 15.2297418,10.5719745 14.3107746,10.0379428 Z" id="路径" fill="#333333"></path>
+            </g>
+        </g>
+    </g>
+</svg>

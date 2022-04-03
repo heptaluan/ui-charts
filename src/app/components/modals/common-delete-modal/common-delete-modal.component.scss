@@ -1,0 +1,23 @@
+:host {
+  p {
+    margin-top: 13px;
+    margin-bottom: 0;
+    width: 331px;
+  }
+
+  .tip {
+    position: absolute;
+    top: 53px;
+
+    label {
+      font-size: 12px;
+      margin-left: 5px;
+      vertical-align: text-top;
+      margin-bottom: 0;
+    }
+
+    input {
+      vertical-align: middle;
+    }
+  }
+}

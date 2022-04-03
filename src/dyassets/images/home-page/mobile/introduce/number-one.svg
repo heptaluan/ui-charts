@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="73px" height="68px" viewBox="0 0 73 68" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>数字</title>
+    <defs>
+        <linearGradient x1="88.7880513%" y1="29.3979931%" x2="13.0914383%" y2="66.1256235%" id="linearGradient-1">
+            <stop stop-color="#7981FF" offset="0%"></stop>
+            <stop stop-color="#2CAFFF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="注册成功-新" transform="translate(-345.000000, -542.000000)">
+            <g id="第二部分" transform="translate(0.000000, 542.000000)">
+                <g id="操作步骤-&lt;v96&gt;" transform="translate(50.000000, 0.000000)">
+                    <g id="步骤一">
+                        <g id="数字" transform="translate(295.000000, 0.000000)">
+                            <polygon id="Polygon" fill="url(#linearGradient-1)" points="36.5 0 68.1099272 17 68.1099272 51 36.5 68 4.89007276 51 4.89007276 17"></polygon>
+                            <path d="M40.44,48 L40.44,18.012 L36.744,18.012 C35.736,19.062 34.476,20.028 32.964,20.952 C31.452,21.792 30.024,22.38 28.68,22.716 L28.68,27.588 C31.452,26.79 33.72,25.572 35.526,23.934 L35.526,48 L40.44,48 Z" id="1" fill="#FFFFFF" fill-rule="nonzero"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{display:none;fill:#FFFFFF;}
+	.st2{fill:none;stroke:#FFFFFF;stroke-width:2;stroke-miterlimit:10;}
+	.st3{fill:#FFFFFF;}
+	.st4{fill:#FFFFFF;}
+	.st5{fill:none;stroke:#FFFFFF;stroke-width:2;stroke-miterlimit:10;}
+	.st6{display:none;}
+	.st7{display:inline;}
+</style>
+<g id="图层_1">
+	<title>两端对齐</title>
+	<desc>Created with Sketch.</desc>
+	<g id="两端对齐">
+		<path id="Combined-Shape" class="st0" d="M16,12v2H0v-2H16z M16,7v2H0V7H16z"/>
+	</g>
+	
+		<image style="display:none;overflow:visible;" width="155" height="47" xlink:href="e8c187ca-7e7f-45a4-acfd-9f5a2647d5b4.png"  transform="matrix(0.9673 0 0 0.9583 -98.2813 -7.75)">
+	</image>
+	<g id="两端对齐_1_">
+		<path id="Combined-Shape_1_" class="st1" d="M13.5,2v2h-11V2H13.5z"/>
+	</g>
+	<g>
+		<g>
+			<line class="st2" x1="1.6" y1="3" x2="14.4" y2="3"/>
+			<g>
+				<polygon class="st0" points="4.4,5.4 2,3 4.4,0.6 2.4,0.6 0,3 2.4,5.4 				"/>
+			</g>
+			<g>
+				<polygon class="st0" points="11.6,5.4 14,3 11.6,0.6 13.6,0.6 16,3 13.6,5.4 				"/>
+			</g>
+		</g>
+	</g>
+	
+		<image style="overflow:visible;" width="370" height="136" xlink:href="735b3f14-18c6-4922-bb7c-a08e3861003e.png"  transform="matrix(0.9786 0 0 0.9786 -327.9167 -197)">
+	</image>
+	<rect x="-2.5" y="-107.7" class="st3" width="27.5" height="22.7"/>
+	<g id="两端对齐_2_">
+		<path id="Combined-Shape_2_" class="st4" d="M18.5-91.5v2h-16v-2H18.5z M18.5-96.5v2h-16v-2H18.5z"/>
+	</g>
+	<g>
+		<g>
+			<line class="st5" x1="4.1" y1="-100.5" x2="16.9" y2="-100.5"/>
+			<g>
+				<polygon class="st4" points="6.8,-98.2 4.5,-100.5 6.8,-102.9 4.8,-102.9 2.5,-100.5 4.8,-98.2 				"/>
+			</g>
+			<g>
+				<polygon class="st4" points="14.1,-98.2 16.4,-100.5 14.1,-102.9 16.1,-102.9 18.5,-100.5 16.1,-98.2 				"/>
+			</g>
+		</g>
+	</g>
+</g>
+<g id="图层_2">
+	<rect x="2.5" y="13.5" class="st1" width="11" height="2"/>
+	<rect x="2.5" y="10.9" class="st1" width="11" height="2"/>
+	<rect x="2.5" y="8.4" class="st1" width="11" height="2"/>
+	<rect x="2.5" y="5.8" class="st1" width="11" height="2"/>
+	<g class="st6">
+		<g class="st7">
+			<line class="st2" x1="4.6" y1="2.9" x2="11.4" y2="2.9"/>
+			<g>
+				<polygon class="st0" points="4.9,0.4 4.9,5.3 2.5,2.9 				"/>
+			</g>
+			<g>
+				<polygon class="st0" points="11.1,0.4 11.1,5.3 13.5,2.9 				"/>
+			</g>
+		</g>
+	</g>
+	<g class="st6">
+		<g class="st7">
+			<line class="st2" x1="4.1" y1="2.9" x2="11.9" y2="2.9"/>
+			<g>
+				<polygon class="st0" points="6.9,5.2 4.5,2.9 6.9,0.5 4.9,0.5 2.5,2.9 4.9,5.2 				"/>
+			</g>
+			<g>
+				<polygon class="st0" points="9.1,5.2 11.5,2.9 9.1,0.5 11.1,0.5 13.5,2.9 11.1,5.2 				"/>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>

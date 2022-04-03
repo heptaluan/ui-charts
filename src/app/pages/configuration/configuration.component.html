@@ -1,0 +1,22 @@
+<lx-header></lx-header>
+<div class="browser-tip" *ngIf="!isCloseTip && !isChrome">
+  <p>为了能给您提供更好的操作体验，请使用谷歌浏览器。</p>
+  <i class="icon iconfont icon-x" (click)="closeTip()"></i>
+</div>
+<div class="user-container">
+  <div class="left">
+    <ul #menuItems class="menu-items">
+      <a
+        href="javascript:;"
+        (click)="onMenuClicked($event, index)"
+        class="menu-item"
+        *ngFor="let item of menuList; index as index"
+      >
+        <i></i><span>{{ item.title }}</span>
+      </a>
+    </ul>
+  </div>
+  <div class="right" [ngStyle]="{ height: changeHeight }">
+    <router-outlet (outer)="listenFromChild($event)"></router-outlet>
+  </div>
+</div>

@@ -1,0 +1,517 @@
+.waterfall {
+  position: relative;
+  width: 100%;
+  margin-bottom: 100px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo", "Consolas", sans-serif !important;
+
+  li {
+    position: absolute;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all .2s linear;
+
+    &.hover-style {
+      z-index: 2 !important;
+      box-shadow: 0px 8px 16px 0px rgba(83, 89, 102, 0.24);
+      transform: scale(1.06);
+
+      .collect-show {
+        display: block !important;
+      }
+
+      img {
+        border-radius: 6px 6px 0 0 !important;
+      }
+
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: calc(100% + 36px);
+        box-shadow: 0px 8px 16px 0px rgba(83, 89, 102, 0.24);
+      }
+    }
+
+    &:nth-of-type(1) {
+      .waterfall-introduce {
+        height: 50px;
+        bottom: -20px;
+      }
+      &.hover-style::after {
+        height: calc(100% + 16px);
+      }
+    }
+
+    .dynamic-chart {
+      position: absolute;
+      right: 5px;
+      top: 5px;
+      z-index: 1;
+      width: 42px;
+      height: 23px;
+      line-height: 23px;
+      background-image: linear-gradient(180deg, #ff896f 0%, #ff0d65 100%);
+      border-radius: 3px;
+      text-align: center;
+      font-size: 12px;
+      color: #fff;
+    }
+
+    img {
+      border: solid 1px #e8e8e8;
+      width: 100%;
+      border-radius: 6px;
+      position: absolute;
+    }
+
+    .waterfall-title {
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      font-size: 14px;
+      height: 20px;
+      line-height: 20px;
+      color: #000000;
+    }
+
+    .edit {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      width: 84px;
+      height: 32px;
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 16px;
+      color: #ffffff;
+      font-size: 12px;
+      line-height: 32px;
+      text-align: center;
+      z-index: 1;
+
+      &:hover {
+        background: #0079fa;
+      }
+
+      i {
+        display: inline-block;
+        vertical-align: -2px;
+        margin-right: 7px;
+        width: 12px;
+        height: 12px;
+        background: url(/dyassets/images/share/dy-ui/dy-panel/edit.svg) no-repeat center / cover;
+      }
+    }
+
+    .waterfall-introduce {
+      width: 100%;
+      height: 70px;
+      z-index: 2;
+      padding: 12px 23px 16px 14px;
+      position: absolute;
+      bottom: -40px;
+      border-radius: 0 0 6px 6px;
+      background: #fff;
+
+      .title {
+        max-width: 100%;
+        height: 20px;
+        line-height: 20px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-weight: 600 !important;
+        font-size: 14px;
+      }
+
+      .collect-show {
+        display: none;
+        margin-top: 6px;
+        height: 16px;
+        line-height: 16px;
+
+        .collect {
+          position: relative;
+          margin-right: 21px;
+          color: #0079fa;
+
+          &.active {
+            color: #666;
+          }
+
+          i {
+            vertical-align: top;
+            display: inline-block;
+            background: url(/dyassets/images/share/dy-ui/dy-panel/collect.svg) no-repeat center / cover;
+            width: 16px;
+            height: 16px;
+
+            &.active {
+              background: url(/dyassets/images/share/dy-ui/dy-panel/collect-active.svg) no-repeat center / cover;
+            }
+
+            margin-right: 4px;
+          }
+
+          &::after {
+            position: absolute;
+            content: '';
+            display: block;
+            right: -10px;
+            top: 0;
+            width: 1px;
+            height: 100%;
+            background: #ebebeb;
+          }
+        }
+
+        .used {
+          color: #999999;
+
+          i {
+            display: inline-block;
+            width: 11px;
+            height: 12px;
+            background: url(/dyassets/images/share/dy-ui/dy-panel/used.svg) no-repeat center / cover;
+            margin-right: 5px;
+            vertical-align: -1px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.top-8 {
+  margin-top: 8px;
+}
+
+.bread-nav {
+  margin-top: -8px;
+  margin-bottom: 22px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI",
+      "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo", "Consolas",
+      sans-serif !important;
+  a {
+    font-size: 14px;
+    color: #333333;
+    cursor: pointer;
+    &:hover {
+      color: #0079fa;
+      text-decoration: none;
+    }
+  }
+  span i {
+    color: #eb9e00;
+  }
+}
+
+.create-project-container {
+  background: #ffffff;
+  min-width: 930px;
+  // margin-top: -8px;
+
+  // 加载动画
+  .masonry-loading {
+    margin: 250px auto 0;
+    width: 70px;
+    text-align: center;
+
+    &>div {
+      width: 18px;
+      height: 18px;
+      background-color: #0079FA;
+      border-radius: 100%;
+      display: inline-block;
+      -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+      animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+    }
+
+    .bounce1 {
+      -webkit-animation-delay: -0.32s;
+      animation-delay: -0.32s;
+    }
+
+    .bounce2 {
+      -webkit-animation-delay: -0.16s;
+      animation-delay: -0.16s;
+    }
+
+    @-webkit-keyframes sk-bouncedelay {
+
+      0%,
+      80%,
+      100% {
+        -webkit-transform: scale(0)
+      }
+
+      40% {
+        -webkit-transform: scale(1.0)
+      }
+    }
+
+    @keyframes sk-bouncedelay {
+
+      0%,
+      80%,
+      100% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+      }
+
+      40% {
+        -webkit-transform: scale(1.0);
+        transform: scale(1.0);
+      }
+    }
+  }
+
+  ul li {
+    list-style: none;
+  }
+
+  .change-chart-box {
+    padding: 16px 32px;
+    background-color: #f5f7fa;
+    border-radius: 6px;
+    margin-bottom: 12px;
+
+    .info-scene {
+      display: flex;
+      flex-direction: row;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo", "Consolas", sans-serif !important;
+      font-size: 14px;
+      font-weight: normal;
+      font-stretch: normal;
+      letter-spacing: 0px;
+      color: #5c6066;
+
+      &:last-child {
+        height: 30px;
+      }
+
+      .info-scene-title {
+        width: 42px;
+        height: 20px;
+        line-height: 18px;
+        text-align: center;
+        margin-top: 5px;
+      }
+
+      .info-scene-item {
+        flex: 1;
+        line-height: 30px;
+        padding-left: 11px;
+
+        ul {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          flex-wrap: wrap;
+
+          li {
+            height: 32px;
+            line-height: 20px;
+            box-sizing: border-box;
+            padding: 6px 12px;
+            margin-bottom: 8px;
+            cursor: pointer;
+
+            &.active {
+              cursor: pointer;
+              color: #0079fa;
+              font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo", "Consolas", sans-serif !important;
+              font-size: 14px;
+              letter-spacing: 0px;
+              background-color: #dce9f9;
+              border-radius: 16px;
+              font-weight: 600;
+            }
+
+            &.order-active {
+              font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo", "Consolas", sans-serif !important;
+              font-weight: 600;
+              color: #0079fa;
+            }
+
+            &:hover {
+              color: #0079fa;
+            }
+          }
+        }
+      }
+
+      .info-scene-last {
+        line-height: 20px;
+        position: relative;
+        height: 20px;
+        padding-right: 8px;
+        z-index: 3;
+        left: 10px;
+        margin-top: 3px;
+        text-align: center;
+        color: #969799;
+        cursor: pointer;
+
+        &::after {
+          display: block;
+          content: '';
+          width: 10px;
+          height: 7px;
+          top: 7px;
+          right: -10px;
+          position: absolute;
+          background: url(/dyassets/images/drop-down-icon-gray.svg) no-repeat center/cover;
+        }
+
+        &.active {
+          &::after {
+            display: block;
+            content: '';
+            width: 10px;
+            height: 7px;
+            top: 7px;
+            right: -10px;
+            position: absolute;
+            background: url(/dyassets/images/drop-up-icon-gray.svg) no-repeat center/cover;
+          }
+        }
+
+        ul {
+          position: absolute;
+          text-align: left;
+          top: 25px;
+          left: 7px;
+          width: 98px;
+          // height: 100px;
+          padding: 5px 0;
+          box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.35);
+          border-radius: 2px;
+          background: #fff;
+          text-indent: -2px;
+
+          li {
+            list-style: none;
+            height: 30px;
+            background: #fff;
+            font-family: PingFangSC-Regular;
+            font-size: 14px;
+            font-weight: normal;
+            font-stretch: normal;
+            letter-spacing: 0px;
+            color: #5c6066;
+            line-height: 30px;
+            padding-left: 16px;
+            cursor: pointer;
+
+            &:hover {
+              background: #eaeaea;
+            }
+          }
+
+          &:first-child {
+            left: -3px;
+          }
+        }
+      }
+
+      .info-price {
+        margin-left: 60px;
+      }
+    }
+
+    &:nth-of-type(2) {
+      margin-top: 12px;
+      margin-bottom: 32px;
+
+      .info-scene {
+        height: 20px;
+
+        .info-scene-item {
+          padding-left: 0;
+        }
+      }
+
+      li {
+        margin-bottom: 0 !important;
+        padding: 0 !important;
+        height: 20px !important;
+        margin-right: 34px !important;
+      }
+    }
+  }
+}
+
+.empty-container {
+  width: 1053px;
+  margin: 40px auto 0;
+
+  .no-template {
+    width: 325px;
+    height: 185px;
+    margin: 90px auto;
+
+    img {
+      width: 250px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    div {
+      font-size: 18px;
+      color: #323b47;
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    p {
+      font-size: 16px;
+      color: #5c6066;
+      text-align: center;
+
+      a {
+        color: #0079fa;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  .change-chart-box {
+    min-width: 930px;
+  }
+}
+
+:host::ng-deep {
+  lx-dy-search {
+    position: absolute;
+    top: 8px;
+    z-index: 1000;
+
+    .delete {
+      left: 363px !important;
+    }
+
+    .search input {
+      background-color: #f2f3f5;
+
+      &:focus {
+        background-color: #e8e9eb !important;
+      }
+
+      &:hover {
+        background-color: #e8e9eb !important;
+      }
+    }
+  }
+}

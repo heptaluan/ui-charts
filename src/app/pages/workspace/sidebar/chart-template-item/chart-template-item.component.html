@@ -1,0 +1,39 @@
+<div class="d-flex flex-wrap chart-templates-container">
+  <ng-container *ngIf='chartList?.length'>
+
+    <div class="chart-type-list" *ngFor='let chartTemplate of chartTemplateList'>
+      <div *ngIf="chartTemplate.data.length" class="chart-list-box">
+        <h4 class="chart-title">
+          <i class="chart-title-arrow"></i>
+          <span>{{chartTemplate.title}}</span>
+        </h4>
+        <div class="template-item-box">
+          <div class="template-item" *ngFor='let item of chartTemplate.data; let i = index;' [attr.templateId]='item.templateId'>
+            <div class="over-layout panel-shadow d-flex justify-content-center align-items-center">
+              <button class="dy-button" (click)='insertChart($event, item, i)'>{{toggleTitle}}</button>
+            </div>
+            <!-- <div class="new-chart" *ngIf="newChartTagList.indexOf(item.templateId) > -1"></div> -->
+            <img class="cover-img d-block mx-auto" src="{{item.thumb}}" alt="">
+            <div class="title">{{item.title}}</div>
+  
+            <!--（当前 key-value + 占比 推荐=> key-value + 占比）|| （当前 key-value + 非占比 推荐=> key-value + 非占比）-->
+            <ng-container *ngIf="curChartType === 'key-value' && item.templateSwitch === 'key-value' && (isProportion && item.function_type?.indexOf('占比类') >= 0 || !isProportion && item.function_type?.indexOf('占比类') < 0)">
+              <img *ngIf="isToggleList" class="cover" src="/dyassets/images/recommend.png" alt="">
+            </ng-container>
+            
+            <!-- 同类型推荐 （除掉 key-value 与表格）-->
+            <ng-container *ngIf="item.templateSwitch === curChartType && curChartType !== 'key-value' && curChartType !== 'obj-any'" >
+              <img *ngIf="isToggleList" class="cover" src="/dyassets/images/recommend.png" alt="">
+            </ng-container>
+
+            <!-- 任何类型切换表格类型推荐 表格切换任何类型都不推荐 -->
+            <ng-container *ngIf="item.templateSwitch === 'obj-any' && curChartType !== 'obj-any'" >
+              <img *ngIf="isToggleList" class="cover" src="/dyassets/images/recommend.png" alt="">
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </ng-container>
+</div>

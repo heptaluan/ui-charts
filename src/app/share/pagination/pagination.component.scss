@@ -1,0 +1,26 @@
+:host ::ng-deep {
+  pagination {
+    position: relative;
+    bottom: -11px;
+    ul.pagination {
+      margin-bottom: 0;
+      padding-left: 0;
+      li {
+        margin: 0 4px;
+        .page-link {
+          background: #ffffff;
+          border: 1px solid #ebebeb;
+          border-radius: 4px;
+          font-size: 12px;
+          color: #9b9b9b;
+          padding: 4px 10px;
+          line-height: 18px;
+        }
+        &.active .page-link {
+          background: #0090ff;
+          color: #fff;
+        }
+      }
+    }
+  }
+}

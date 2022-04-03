@@ -1,0 +1,154 @@
+/**
+ * Wheel Color Picker for jQuery
+ * Base Stylesheet
+ * 
+ * https://raffer.one/projects/jquery-wheelcolorpicker
+ * 
+ * Copyright © 2011-2019 Fajar Chandra. All rights reserved.
+ * Released under MIT License.
+ * http://www.opensource.org/licenses/mit-license.php
+ * 
+ * Note: Width, height, left, and top properties are handled by the 
+ * plugin. These values might change on the fly.
+ */
+
+.jQWCP-wWidget {
+  position: absolute;
+  width: 180px !important;
+  height: 141px;
+  box-shadow: none;
+  border-radius: 4px;
+  border: none;
+  z-index: 1001;
+  touch-action: none;
+  outline: none;
+}
+
+.jQWCP-wWidget.jQWCP-block {
+  position: relative;
+}
+
+.jQWCP-wWheel {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size:cover;
+  position: relative;
+  float: left;
+  width: 141px;
+  height: 141px;
+  -webkit-border-radius: 70px;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  border: solid 1px #aaa;
+  transition: border .15s;
+  cursor: crosshair;
+}
+
+.jQWCP-wWheel:hover {
+  border-color: #666;
+}
+
+.jQWCP-wWheelOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0;
+  -webkit-border-radius: 90px;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.jQWCP-wWheelCursor {
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -3px -3px;
+  cursor: crosshair;
+  border: solid 2px #fff;
+  box-shadow: 1px 1px 2px #000;
+  border-radius: 50%;
+}
+
+.jQWCP-slider-wrapper,
+.jQWCP-wPreview {
+  position: relative;
+  width: 8px;
+  height: 131px;
+  border-radius: 4px;
+  float: left;
+  margin-left: 27px;
+  border: solid 1px #666666;
+  margin-top: 6px;
+}
+
+.jQWCP-wWheel:last-child,
+.jQWCP-slider-wrapper:last-child,
+.jQWCP-wPreview:last-child {
+    margin-right: 0;
+}
+
+.jQWCP-slider,
+.jQWCP-wPreviewBox {
+  position: absolute;
+  width: 6px;
+  border-radius: 4px;
+  height: 100%;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+}
+
+.jQWCP-slider {
+  cursor: crosshair;
+}
+
+.jQWCP-slider-wrapper:hover .jQWCP-slider {
+  border-color: #666;
+}
+
+.jQWCP-scursor {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  width: 12px;
+  height: 12px;
+  margin: -5px 0px -5px -3px;
+  background: url(../images/setting/color-slider.svg) no-repeat;
+  cursor: crosshair;
+}
+
+.jQWCP-wAlphaSlider,
+.jQWCP-wPreviewBox {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAABlBMVEVAQEB/f39eaJUuAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QYRBDgK9dKdMgAAABl0RVh0Q29tbWVudABDcmVhdGVkIHdpdGggR0lNUFeBDhcAAAARSURBVAjXY/jPwIAVYRf9DwB+vw/x6vMT1wAAAABJRU5ErkJggg==') center center;
+}
+
+.jQWCP-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+/*********************/
+
+/* Mobile layout */
+
+.jQWCP-mobile.jQWCP-wWidget {
+    position: fixed;
+    bottom: 0;
+    left: 0 !important;
+    top: auto !important;
+    width: 100%;
+    height: 75%;
+    max-height: 240px;
+    box-sizing: border-box;
+    border-radius: 0;
+}

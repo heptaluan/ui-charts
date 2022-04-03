@@ -1,0 +1,54 @@
+:host {
+  border-top: none;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  .theme-list {
+    .checked {
+      border: solid 2px #2475b3 !important;
+    }
+    .theme-cover {
+      width: 120px;
+      height: 176px;
+      border: solid 1px #242424;
+      border-radius: 4px;
+      float: left;
+      cursor: pointer;
+      position: relative;
+      background: #fff;
+      margin-bottom: 4px;
+
+      img {
+        max-width: 100%;
+        display: block;
+        margin: 0 auto;
+      }
+      .theme-checked {
+        background: #2475b3;
+        opacity: 0.8;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        .iconfont {
+          color: #fff;
+          display: block;
+          text-align: center;
+        }
+      }
+    }
+    .theme-title {
+      font-size: 12px;
+      color: #ffffff;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+  }
+}
+:host ::ng-deep {
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo",  "Consolas", sans-serif !important;
+}

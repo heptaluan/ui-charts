@@ -1,0 +1,55 @@
+<div class="share-header">
+  <div class="share" [ngClass]="{'active': isShare}" (click)="changeTab(true)">分享</div>
+  <div class="iframe" [ngClass]="{'active': !isShare}" (click)="changeTab(false)" *ngIf="isEdit">iframe</div>
+</div>
+<div *ngIf="privilege === 'private' && isShare" class="private-share-container">
+  <div class="url-code">
+    <qr-code [value]="shareUrl" size="200" background="#fff" padding="0"></qr-code>
+  </div>
+  <div class="project-title">项目标题</div>
+  <div class="project-text"><input type="text" (blur)='ProjectName()' (focus)="focusTitle()" (keyUp.enter)='ProjectName()' [formControl]="projectName"></div>
+  <div class="share-container">
+    <div class="private-link-container">
+      <div class="copyUrl">
+        <input type="text" class="private-link-input" value="{{shareUrl}}" disabled>
+        <button (click)='copyUrl(shareUrl)'>复制链接</button>
+      </div>
+      <div class="copyPriText" *ngIf="copyPriText">复制成功</div>
+      <!-- <lx-checkbox [value]="enablePassword" (onChanged)="togglePassword($event)" description="设置密码"></lx-checkbox> -->
+    </div>
+    <div class="select-password">
+      <div class="all-see">
+        <label>
+          <input type="radio" name="select_type" class="a-radio" (click)="togglePassword(false)" [(checked)]='!enablePassword'>
+          <span class="b-radio"></span>
+          <div class="text">所有人可查看</div>
+        </label>
+      </div>
+      <div class="pwd-see">
+        <label>
+          <input type="radio" name="select_type" class="a-radio" (click)="togglePassword(true)" [(checked)]='enablePassword'>
+          <span class="b-radio"></span>
+          <div class="text">设置密码查看</div>
+        </label>
+        <!-- <div class="vip-icon" *ngIf="isVpl === 'None'"></div> -->
+      </div>
+    </div>
+    <div *ngIf="enablePassword" class="private-link-password-container d-flex justify-content-between">
+      <div class="input-group">
+        <input class="password-input" [type]="showPassword ? 'text' : 'password'" placeholder="请输入密码" [(ngModel)]="linkPasswd" (focus)="passwordLock = false">
+        <div class="input-group-append">
+          <i class="icon iconfont" [ngClass]="{'icon-liulan': showPassword, 'icon-biyan': !showPassword}" (click)="showPassword = !showPassword"></i>
+        </div>
+      </div>
+      <button *ngIf="!passwordLock" class="dy-button-blue dy-button-middle btn-save" (click)="setPrivateLinkPassword()">保存</button>
+      <button *ngIf="passwordLock" class="dy-button-blue dy-button-middle  btn-save btn-lock"><i class="icon iconfont icon-suoguanbi"></i></button>
+    </div>
+    <div *ngIf="!!newProject.password && enablePassword" class="tip" [ngClass]="{'tip-error': linkPasswd && passwordLock}">加密链接已生成，他人只有通过密码访问此链接。</div>
+  </div>
+</div>
+<div *ngIf="!isShare" class="iframe-container">
+  <textarea disabled [value]='iframeUrl'></textarea>
+  <button (click)='copyUrl(iframeUrl)'>复制代码</button>
+  <div class="copyText" *ngIf="copyText">复制成功</div>
+</div>
+<div class="close-tag" (click)="close()"></div>

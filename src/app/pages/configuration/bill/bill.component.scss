@@ -1,0 +1,101 @@
+.conf-container {
+  .conf_title {
+    font-size: 18px;
+    color: #08080d;
+    font-weight: 600;
+  }
+
+  .bill-buy-btn {
+    background: #0090ff;
+    border-radius: 4px;
+    width: 92px;
+    height: 34px;
+    font-size: 12px;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .bill-list {
+    margin-top: 32px;
+    width: 910px;
+    background-color: #fff;
+    border: solid 1px #dddddd;
+
+    .bill-item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 17px 0 18px 32px;
+      text-align: center;
+      font-size: 14px;
+      color: #333333;
+      border-bottom: solid 1px #dddddd;
+      &:last-child {
+        border-bottom: none;
+      }
+
+      .bill-block {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 59px;
+
+        &:nth-of-type(1) {
+          width: 56px;
+          margin-left: 0;
+        }
+
+        &:nth-of-type(2) {
+          width: 145px;
+        }
+
+        &:nth-of-type(3) {
+          width: 28px;
+        }
+
+        &:nth-of-type(4) {
+          width: 107px;
+        }
+
+        &:nth-of-type(5) {
+          width: 56px;
+        }
+
+        &:nth-of-type(6) {
+          width: 181px;
+          span {
+            display: inline-block;
+            margin-left: -5px;
+          }
+        }
+      }
+    }
+
+    .hl {
+      height: 46px;
+      background: #f8f8f8;
+    }
+  }
+
+  .no-bill-list {
+    margin-top: 70px;
+    text-align: center;
+
+    i {
+      display: block;
+      width: 269px;
+      height: 209px;
+      margin: 0 auto;
+      background: url(/dyassets/images/person/no-bill-list.png) no-repeat center/contain;
+    }
+
+    p {
+      color: #333333;
+      font-size: 18px;
+      height: 25px;
+      margin-top: -5px;
+    }
+  }
+}

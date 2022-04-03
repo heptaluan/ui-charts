@@ -1,0 +1,179 @@
+:host ::ng-deep {
+  .right-2 {
+    margin-right: 2px;
+  }
+  
+  .btn-group {
+    vertical-align: top;
+  }
+  .btn-dropdown {
+    width: 190px;
+    height: 36px;
+    background: #282828;
+    box-shadow: 0px 2px 0px 0px #3b3b3b;
+    border-radius: 2px;
+    border: solid 2px #242424;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 10px;
+    justify-content: space-between;
+    cursor: pointer;
+
+    i {
+      width: 6px;
+	    height: 5px;
+      background: url('/dyassets/images/setting/drop-down.svg') no-repeat;
+      position: absolute;
+      right: 8px;
+    }
+  }
+
+  .btn-title {
+    font-size: 12px;
+    font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo",  "Consolas", sans-serif;
+    color: #ffffff;
+
+    img {
+      max-width: 100px;
+    }
+  }
+
+  .dropdown-menu {
+    padding: 0px;
+    padding-left: 0 !important;
+    margin: 5px 0 20px 0;
+    border-radius: 2px;
+    background-color: #3b3c3d;
+    box-shadow: 0px 2px 8px 0px 
+		rgba(0, 0, 0, 0.24);
+    overflow: hidden;
+    min-width: unset;
+    
+    .dropdown-item {
+      height: 30px;
+      line-height: 12px;
+      font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo",  "Consolas", sans-serif;
+      font-size: 12px;
+      color: #ffffff;
+      background-color: #3b3c3d;
+      cursor: pointer;
+      padding: 9px 0 9px 16px;
+      &:hover {
+        background-color: #2f3030;
+        color: #fff;
+      }
+
+      img {
+        height: 14px;
+      }
+      &.active {
+        background-color: #108ee9;
+      }
+    }
+
+    a:focus {
+      color: white;
+    }
+  }
+
+  .dropdown-toggle::after {
+    content: '';
+    border: none !important;
+  }
+
+  .arrow {
+    position: absolute;
+    right: 10px;
+    font-size: 12px;
+  }
+
+  .open {
+    i {
+      transform: rotate(180deg) !important;
+    }
+  }
+}
+
+.font-loading {
+  position: absolute;
+  right: 25px;
+  top: 2px;
+  display: none;
+
+  div {
+    width: 15px;
+    height: 15px;
+    border: 1px solid #f3f3f3;
+    border-top: 2px solid #0079fa;
+    border-radius: 50%;
+    animation: loading 3s infinite linear;
+  }
+}
+
+.tab-wrapper {
+  width: calc(100% - 18px);
+	height: 50px;
+  background-color: #3b3c3d;
+  padding: 14px 7px;
+  margin: 0 9px;
+  border-bottom: 1px solid #2c2d2e;
+  align-items: center;
+  display: flex;
+
+  .tab {
+    width: 50%;
+    height: 20px;
+    background-color: #3b3c3d;
+    border: 1px solid #5a5b5c;
+    line-height: 20px;
+    text-align: center; 
+    color: #ffffff;
+    font-size: 12px;
+    user-select: none;
+    cursor: pointer;
+
+    &.active {
+      background-color: #196ad4;
+    }
+  }
+}
+
+.dropdown-item-wrapper {
+  max-height: 360px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+
+:host ::ng-deep {
+  .dropdown-item-wrapper::-webkit-scrollbar {
+    width: 6px !important;
+    height: 6px !important;
+    background-color: transparent !important; // all: initial !important;
+  }
+  .dropdown-item-wrapper::-webkit-scrollbar-thumb {
+    background-color: #696a6b !important;
+    border-radius: 4px !important; // all: initial !important;
+    background-clip: unset !important;
+    border-width: 0 !important;
+    
+    // border-style: dashed;
+    // border-color: transparent;
+    // background-clip: padding-box;
+  }
+
+  .dropdown-item-wrapper::-webkit-scrollbar-thumb:hover {
+    // background-clip: unset;
+    background-color: #7d7f80 !important;
+  }
+
+  .dropdown-item-wrapper::-webkit-scrollbar-track {
+
+    background: transparent !important; // all: initial !important;
+  }
+  .dropdown-item-wrapper::-webkit-scrollbar-corner {
+    background: transparent !important; //
+  }
+
+}

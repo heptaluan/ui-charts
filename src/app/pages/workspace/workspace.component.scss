@@ -1,0 +1,657 @@
+:host ::ng-deep {
+  .left-8 {
+    margin-left: 8px;
+  }
+
+  >nb-sidebar.compacted {
+    overflow: visible;
+
+    .main-container {
+      background-color: #383838;
+
+      nb-sidebar-header {
+        box-shadow: 0px 1px 0px 0px #141517;
+        width: 100px;
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 14px;
+        background-color: #303133;
+        padding: 0;
+        padding-right: 8px;
+        line-height: 50px;
+        text-align: right;
+        // 返回按钮
+        height: 50px;
+        z-index: 1024;
+        cursor: pointer;
+
+
+        i {
+          display: inline-block;
+          box-sizing: border-box;
+          width: 24px;
+          height: 24px;
+          font-size: 12px;
+          color: #ffffff;
+          box-shadow: 0px 1px 0px 0px #424242;
+          background-image: linear-gradient(180deg, #3d3d3d 0%, #2d2d2d 100%);
+          border-radius: 2px;
+          border: 1px solid#181818;
+          padding: 4px;
+        }
+
+        &:hover {
+          span {
+            color: #fff;
+          }
+        }
+      }
+
+      .scrollable {
+        padding: 0;
+        border-right: 1px solid #1f1f1f;
+        position: relative;
+        top: 1px; //调整左侧条状面板高度
+        overflow: inherit;
+      }
+    }
+
+    img {
+      cursor: pointer;
+    }
+
+    .logo-img {
+      width: 21px;
+    }
+
+    .wrapper {
+      width: 49px;
+      height: 61px;
+      padding: 16px 13px 12px 13px;
+      box-sizing: border-box;
+      cursor: pointer;
+
+      &:hover {
+        background: #262626;
+      }
+
+      &.active {
+        background: #262626;
+      }
+
+      .assets-img {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        display: block;
+        margin: 0 auto;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      .content {
+        width: 25px;
+        height: 17px;
+        line-height: 17px;
+        font-size: 12px;
+        margin-top: 2px;
+        color: #ffffff;
+
+      }
+    }
+
+    .wrapper-chart {
+      top: 20px;
+
+      .charts-assets {
+        background-image: url('/dyassets/images/charts.svg');
+
+        // &.active {
+        //   background-image: url('/dyassets/images/charts-active.svg');
+        // }
+      }
+
+      // &:hover {
+      //   .charts-assets {
+      //     background-image: url('/dyassets/images/charts-hover.svg');
+      //   }
+      // }
+    }
+
+    .wrapper-text {
+    //   top: 50px;
+
+      .texts-assets {
+        background-image: url('/dyassets/images/fonts.svg');
+
+    //     &.active {
+    //       background-image: url('/dyassets/images/fonts-active.svg');
+    //     }
+      }
+
+    //   &:hover {
+    //     .texts-assets {
+    //       background-image: url('/dyassets/images/fonts-hover.svg');
+    //     }
+    //   }
+    }
+
+    .wrapper-shape {
+    //   top: 80px;
+
+      .shapes-assets {
+        background-image: url('/dyassets/images/shapes.svg');
+
+    //     &.active {
+    //       background-image: url('/dyassets/images/shapes-active.svg');
+    //     }
+      }
+
+    //   &:hover {
+    //     .shapes-assets {
+    //       background-image: url('/dyassets/images/shapes-hover.svg');
+    //     }
+    //   }
+    }
+
+    .wrapper-image {
+    //   top: 110px;
+
+      .images-assets {
+        background-image: url('/dyassets/images/images.svg');
+
+    //     &.active {
+    //       background-image: url('/dyassets/images/images-active.svg');
+    //     }
+      }
+
+    //   &:hover {
+    //     .images-assets {
+    //       background-image: url('/dyassets/images/images-hover.svg');
+    //     }
+    //   }
+    }
+
+    .wrapper-template {
+    //   top: 200px;
+      .template-assets {
+        background-image: url('/dyassets/images/scene.svg');
+
+    //     &.active {
+    //       background-image: url('/dyassets/images/scene-hover.svg');
+    //     }
+      }
+
+    //   &:hover {
+    //     .template-assets {
+    //       background-image: url('/dyassets/images/scene-hover.svg');
+    //     }
+    //   }
+    }
+
+    .wrapper-song {
+    //   top: 140px;
+
+      .song-assets {
+        background-image: url('/dyassets/images/audio-icon.svg');
+
+    //     &.active {
+    //       background-image: url('/dyassets/images/audio-icon-hover.svg');
+    //     }
+      }
+
+    //   &:hover {
+    //     .song-assets {
+    //       background-image: url('/dyassets/images/audio-icon-hover.svg');
+    //     }
+    //   }
+    }
+
+    .wrapper-video {
+    //   top: 170px;
+
+      .video-assets {
+        background-image: url('/dyassets/images/video-icon.svg');
+
+    //     &.active {
+    //       background-image: url('/dyassets/images/video-icon-hover.svg');
+    //     }
+      }
+
+    //   &:hover {
+    //     .video-assets {
+    //       background-image: url('/dyassets/images/video-icon-hover.svg');
+    //     }
+    //   }
+    }
+
+    .wrapper-refer {
+      position: absolute;
+      width: 50px;
+      height: 73px;
+      bottom: 73px;
+      left: 0px;
+      color: #fff;
+      line-height: 73px;
+      text-align: center;
+      font-size: 12px;
+      background: red;
+    }
+
+    .wrapper-help {
+      position: absolute;
+      width: 49px;
+      height: 73px;
+      bottom: 0px;
+      left: 0px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo", "Consolas", sans-serif !important;
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 19px;
+        height: 17px;
+        top: 19px;
+        left: 15px;
+        background: url("/dyassets/images/share/question-mark-hover.svg") no-repeat center / contain;
+
+      }
+
+      &::after {
+        content: '帮助';
+        display: block;
+        position: absolute;
+        width: 25px;
+        height: 17px;
+        top: 43px;
+        left: 12px;
+        font-size: 12px;
+        color: #fff;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo", "Consolas", sans-serif !important;
+      }
+
+      &:hover {
+        background: #262626;
+      }
+
+      &.active {
+        background: #262626;
+      }
+
+      ul {
+        width: 120px;
+        padding: 5px 0;
+        background-color: rgba(0, 0, 0, 0.9);
+        box-shadow: 0px 2px 6px 0px rgba(63, 68, 77, 0.35);
+        border-radius: 2px;
+        position: absolute;
+        top: -110px;
+        left: 57px;
+        border: solid 2px rgba(255, 255, 255, 0.2);
+        border-radius: 2px;
+
+        li {
+          width: 116px;
+          height: 30px;
+          text-align: left;
+          line-height: 30px;
+          background-color: rgba(0, 0, 0, 0.9);
+          font-family: PingFangSC-Regular;
+          font-size: 12px;
+          font-weight: normal;
+
+          color: #fff;
+          list-style: none;
+          padding-left: 17px;
+
+          a {
+            text-decoration: none;
+            color: #fff;
+          }
+
+          &:hover {
+            background-color: #191919;
+          }
+
+          i {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            vertical-align: -3px;
+            margin-right: 8px;
+          }
+
+          &:nth-of-type(1) i {
+            background: url('/dyassets/images/share/small-code-hover.svg') no-repeat center;
+          }
+
+          &:nth-of-type(2) i {
+            background: url('/dyassets/images/share/wechat-hover.svg') no-repeat center;
+          }
+
+          &:nth-of-type(3) i {
+            background: url('/dyassets/images/share/assistance-hover.svg') no-repeat center;
+          }
+
+          &:nth-of-type(4) i {
+            background: url('/dyassets/images/share/feedback-hover.svg') no-repeat center;
+          }
+
+          &:nth-of-type(5) i {
+            background: url('/dyassets/images/share/help-hover.svg') no-repeat center;
+          }
+        }
+      }
+
+      .float-code {
+        width: 184px;
+        height: 184px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: -150px;
+        left: 184px;
+        background-color: rgba(0, 0, 0, 0.9);
+        border: solid 2px rgba(255, 255, 255, 0.2);
+        border-radius: 2px;
+
+        img {
+          display: block;
+          width: 172px;
+          height: 172px;
+          background: #fff;
+        }
+      }
+    }
+
+    // 单图下侧边栏
+    .chart-left-sideBar-mask {
+      position: absolute;
+      top: 61px;
+      border: 1px dashed #666;
+      width: 48px;
+      height: 420px;
+      transition: all .3s;
+      background: transparent;
+      z-index: 9;
+      cursor: pointer;
+
+      &:hover {
+        border-color: #498fe1;
+      }
+    }
+
+    .chart-text {
+      top: 50px;
+
+      .texts-assets {
+        background-image: url('/dyassets/images/chart-text.svg');
+      }
+
+      p {
+        color: #666 !important;
+      }
+    }
+
+    .chart-shape {
+      top: 80px;
+
+      .shapes-assets {
+        background-image: url('/dyassets/images/chart-shape.svg');
+      }
+
+      p {
+        color: #666 !important;
+      }
+    }
+
+    .chart-image {
+      top: 110px;
+
+      .images-assets {
+        background-image: url('/dyassets/images/chart-image.svg');
+      }
+
+      p {
+        color: #666 !important;
+      }
+    }
+
+    .chart-song {
+      top: 140px;
+
+      .song-assets {
+        background-image: url('/dyassets/images/chart-audio.svg');
+      }
+
+      p {
+        color: #666 !important;
+      }
+    }
+
+    .chart-video {
+      top: 170px;
+
+      .video-assets {
+        background-image: url('/dyassets/images/chart-video.svg');
+      }
+
+      p {
+        color: #666 !important;
+      }
+    }
+
+    .chart-template {
+      top: 200px;
+
+      .template-assets {
+        background-image: url('/dyassets/images/chart-scene.svg');
+      }
+
+      p {
+        color: #666 !important;
+      }
+    }
+  }
+
+  nb-layout {
+    width: calc(100% - 50px);
+
+    .scrollable-container {
+      overflow: hidden;
+    }
+
+    .layout {
+      background-color: #424242;
+
+      nb-layout-header.fixed {
+        z-index: 100;
+        width: calc(100% - 95px);
+        left: unset;
+        background-image: linear-gradient(180deg, #2b2b2b 0%, #2a2a2a 100%); //顶部导航条颜色
+        border-bottom: none;
+
+        ~.layout-container {
+          padding-top: 0;
+
+          .main-container {
+            background-color: transparent;
+          }
+        }
+
+        nav.fixed {
+          background-color: #303133;
+          box-shadow: 0px 1px 0px 0px #141517;
+          height: 50px;
+        }
+      }
+    }
+
+    &>div ::-webkit-scrollbar {
+      width: 10px !important;
+      height: 10px !important;
+      background-color: transparent !important; // all: initial !important;
+    }
+
+    &>div ::-webkit-scrollbar-thumb {
+      background-color: #3f4142 ;
+      border-radius: 4px !important; // all: initial !important;
+      border-left: 2px;
+      border-right: 2px;
+      border-top: 2px;
+      border-bottom: 2px;
+      border-style: dashed;
+      border-color: transparent;
+      background-clip: padding-box;
+    }
+
+    &>div ::-webkit-scrollbar-thumb:hover {
+      background-clip: unset;
+      background-color: #57585a ;
+    }
+
+    &>div ::-webkit-scrollbar-track {
+      background: transparent; // all: initial !important;
+    }
+
+    &>div ::-webkit-scrollbar-corner {
+      background: transparent; // all: initial !important;
+    }
+  }
+
+  .left-content {
+    z-index: 99;
+    height: 100%;
+    margin-top: 50px;
+    position: relative;
+    transition: .2s ease-out;
+    left: 0;
+    background: #252625;
+  }
+
+  .center-content {
+    margin-right: 240px;
+    position: relative;
+    width: 100%;
+    overflow: auto;
+    margin-top: 50px;
+    background: #1c1c1c;
+
+    #tool {
+      width: 301px;
+      display: none;
+    }
+
+    &:hover {
+      #tool {
+        display: flex;
+      }
+    }
+  }
+
+  .right-content {
+    width: 240px;
+    z-index: 999;
+    align-self: stretch; // border:1px solid #ebebeb;
+    position: fixed;
+    right: 0px;
+    top: 50px;
+    bottom: 0px;
+    display: flex;
+    color: #a3a3a3;
+    // background: #333333;
+    background: #252626;
+  }
+}
+
+#tooltip {
+  background: #000;
+  color: #fff;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  z-index: 4;
+  word-wrap: normal;
+  white-space: nowrap;
+}
+
+.referX {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  height: .5px;
+  background: red;
+  z-index: 100;
+
+  // cursor: pointer;
+  &::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 12px;
+    position: absolute;
+    background: transparent;
+    top: -6px;
+    cursor: url(https://www.chuangkit.com/designdist/cursor_broadwise.svg?15f2592…) 9 5.5, auto;
+  }
+
+  .tooltip {
+    // content: '123';
+    width: 50px;
+    height: 18px;
+    font-size: 10px;
+    line-height: 18px;
+    color: #FFF;
+    text-align: center;
+    padding: 0 4px;
+    background-color: red;
+    position: absolute;
+    top: 0;
+  }
+}
+
+:host ::ng-deep {
+  .tool-box .dropdown-menu {
+    height: 175px !important;
+    transform: translateY(-102%) !important;
+    border: solid 2px rgba(255, 255, 255, 0.2);
+
+    li:first-child {
+      border-radius: 2px 2px 0 0;
+    }
+
+    li:last-child {
+      border-radius: 0 0 2px 2px;
+    }
+  }
+}
+
+
+// drag-upload
+.drop-box {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(34, 126, 191, .6);
+  z-index: 999;
+  justify-content: center;
+  align-items: center;
+  display: none;
+
+  .content {
+    width: 305px;
+    height: 241px;
+    background: url(/dyassets/images/drop-upload/info-upload-mask.svg) no-repeat center center;
+    background-size: contain;
+    
+    &.chart {
+      background: url(/dyassets/images/drop-upload/chart-upload-mask.svg) no-repeat center center;
+    }
+  }
+}

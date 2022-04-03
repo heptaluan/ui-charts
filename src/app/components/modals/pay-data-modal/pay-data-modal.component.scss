@@ -1,0 +1,408 @@
+.pay-data-container {
+  width: 646px;
+  background: #fff;
+  position: relative;
+  padding: 40px;
+
+  label,
+  h4,
+  h5,
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
+  h4 {
+    font-family: PingFangSC-Medium;
+    font-size: 18px;
+    font-weight: normal;
+    color: #141414;
+    text-align: center;
+    margin-bottom: 21px;
+  }
+
+  .icon-x {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  .tab-select {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+
+    .price {
+      width: 100%;
+      height: 110px;
+      background-color: #ffffff;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      cursor: pointer;
+      position: relative;
+
+      &::before {
+        content: '';
+        display: block;
+        width: 26px;
+        height: 13px;
+        border-radius: 0 0 26px 26px;
+        position: absolute;
+        border: 2px solid #f0f0f0;
+        border-top: 2px solid #fff;
+        top: 0;
+        right: 144px;
+        z-index: 1;
+      }
+
+      &::after {
+        content: '';
+        display: block;
+        width: 26px;
+        height: 13px;
+        border-radius: 26px 26px 0 0;
+        position: absolute;
+        border: 2px solid #f0f0f0;
+        border-bottom: 2px solid #fff;
+        bottom: 0;
+        right: 144px;
+      }
+
+      label {
+        display: block;
+      }
+
+      .text-box {
+        flex: 1;
+        margin-left: 16px;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        border: solid 2px #f0f0f0;
+        border-radius: 8px;
+        position: relative;
+
+        .img {
+          border-radius: 4px;
+          margin-left: 32px;
+        }
+
+        .wrapper {
+          width: 211px;
+          height: 58px;
+          margin-left: 16px;
+        }
+
+        .text-price {
+          width: 156px;
+          font-family: PingFangSC-Semibold;
+          font-size: 28px;
+          font-weight: normal;
+          color: #5c6066;
+          margin-left: 56px;
+          text-align: center;
+        }
+
+        &::after {
+          content: '';
+          width: 1px;
+          height: 72px;
+          border-left: 1px dashed #e3e3e3;
+          position: absolute;
+          right: 156px;
+        }
+
+        .normal-text-price {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          position: relative;
+
+          .show-price {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            span {
+              display: block;
+            }
+            i {
+              display: block;
+              width: 18px;
+              height: 23px;
+              margin-right: 8px;
+              background: url(/dyassets/images/share/rmb-black.svg) no-repeat center/cover;
+            }
+            &.active {
+              color: #e63962;
+              i {
+                display: block;
+                width: 18px;
+                height: 23px;
+                margin-right: 8px;
+                background: url(/dyassets/images/share/rmb.svg) no-repeat center/cover;
+              }
+            }
+          }
+
+          .old-price {
+            position: relative;
+            font-family: PingFangSC-Regular;
+            font-size: 12px;
+            font-weight: normal;
+            font-stretch: normal;
+            line-height: 12px;
+            letter-spacing: 0px;
+            color: #5c6066;
+            margin-top: 5px;
+            i {
+              display: inline-block;
+              width: 7px;
+              height: 9px;
+              background: url(/dyassets/images/share/rmb-gray.svg) no-repeat center/cover;
+              margin-right: 2px;
+            }
+          }
+        }
+
+        .discount-text-price {
+          margin-left: 50px;
+          font-size: 30px;
+
+          span {
+            font-family: PingFangSC-Semibold;
+            display: inline-block;
+
+            &:first-child {
+              color: #491a01;
+            }
+
+            &:last-child {
+              font-size: 16px;
+              font-weight: normal;
+              color: #491a01;
+            }
+
+          }
+        }
+
+      }
+
+      .normal-text {
+        .img {
+          width: 60px;
+          height: 60px;
+
+          img {
+            width: 100%;
+            height: 100%;
+            border-radius: 4px;
+          }
+        }
+
+        .wrapper {
+          h5 {
+            width: 100%;
+            margin-bottom: 10px;
+            font-family: PingFangSC-Medium;
+            font-size: 14px;
+            font-weight: normal;
+            line-height: 14px;
+            color: #000a1a;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+
+          p {
+            font-family: PingFangSC-Regular;
+            font-size: 12px;
+            font-weight: normal;
+            line-height: 12px;
+            color: #5c6066;
+
+            &:nth-of-type(1) {
+              margin-bottom: 10px;
+            }
+          }
+
+          span {
+            display: inline-block;
+
+            &:last-child {
+              margin-left: 18px;
+            }
+          }
+        }
+
+        .icon-corner {
+          width: 50px;
+          height: 40px;
+          border-radius: 0 8px 0 0;
+          border-width: 20px 25px 20px 25px;
+          border-style: solid;
+          border-color: #e63962 #e63962 transparent transparent;
+          position: absolute;
+          top: 0;
+          right: 0;
+
+          p {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            font-family: PingFangSC-Semibold;
+            font-size: 12px;
+            font-weight: normal;
+            color: #ffffff;
+            text-align: center;
+            line-height: 30px;
+            transform: rotate(45deg);
+            top: -20px;
+            right: -25px;
+          }
+        }
+      }
+
+      .discount-text {
+        border: none;
+        background-color: #ffdb61;
+
+        .img {
+          width: 70px;
+          height: 70px;
+          margin-left: 28px;
+          border-radius: 50%;
+          background: #fff url(/dyassets/images/share/crown.svg) no-repeat center center/41px 35px
+        }
+
+        .wrapper {
+          width: 200px;
+          height: 70px;
+          margin-left: 25px;
+
+          h5 {
+            font-family: PingFangSC-Semibold;
+            font-size: 18px;
+            font-weight: normal;
+            color: #540d05;
+            margin-bottom: 9px;
+            font-weight: bold;
+          }
+
+          p {
+            font-family: PingFangSC-Regular;
+            font-size: 14px;
+            font-weight: normal;
+            line-height: 14px;
+            color: #6f2b00;
+
+            &:nth-of-type(1) {
+              margin-bottom: 8px;
+            }
+          }
+        }
+
+        &::after {
+          content: '';
+          width: 1px;
+          height: 72px;
+          border-left: 1px dashed #fff;
+          position: absolute;
+          right: 158px;
+        }
+      }
+
+      .a-radio {
+        display: none;
+      }
+
+      .b-radio {
+        display: inline-block;
+        border: 1px solid #ccc;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        vertical-align: middle;
+        position: relative;
+      }
+
+      .b-radio:before {
+        content: '';
+        font-size: 0;
+        width: 8px;
+        height: 8px;
+        background: #1890ff;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -4px;
+        margin-top: -4px;
+        border-radius: 50%;
+        display: none;
+      }
+
+      .a-radio:checked~.b-radio:before {
+        display: block;
+      }
+    }
+
+    .discount-price {
+      margin-top: 42px;
+
+      &::before {
+        border: none;
+        background: #fff;
+      }
+
+      &::after {
+        border: none;
+        background: #fff;
+      }
+    }
+
+    .go-price {
+      margin: 16px 0 10px 0;
+
+      a {
+        height: 20px;
+        line-height: 20px;
+        font-family: PingFangSC-Regular;
+        text-decoration: underline;
+        font-size: 14px;
+        font-weight: normal;
+        color: #0079fa;
+        cursor: pointer;
+      }
+    }
+  }
+
+  button {
+    display: block;
+    margin: 0 auto;
+    height: 44px;
+    padding: 11px 71px;
+    background-color: #0079fa;
+    border-radius: 2px;
+    border: none;
+    font-family: PingFangSC-Semibold;
+    font-size: 14px;
+    font-stretch: normal;
+    letter-spacing: 0px;
+    color: #ffffff;
+    cursor: pointer;
+    &:hover {
+      background-color: #006ce0;
+    }
+    &:focus {
+      outline: none;
+      background-color: #0062cb;
+    }
+  }
+
+}

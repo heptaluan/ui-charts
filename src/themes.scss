@@ -1,0 +1,63 @@
+@import '~@nebular/theme/styles/theming';
+@import '~@nebular/theme/styles/themes/default';
+
+$nb-themes: nb-register-theme((
+    // customize your style here
+    //checkbox
+    checkbox-size: 14px,
+    checkbox-border-size: 1px,
+    checkbox-border-color: #d9d9d9,
+    checkbox-checkmark: #ffffff,
+    checkbox-checked-size: 14px,
+    checkbox-checked-border-size: 1px,
+    checkbox-checked-border-color: #1890ff,
+    checkbox-checked-bg: #1890ff,
+    checkbox-checked-checkmark: #ffffff,
+    checkbox-disabled-border-size: 0px,
+
+    layout-bg: #fafbfc,
+    layout-window-mode-min-width: 1280px,
+    layout-window-mode-padding-top: 37px,
+    layout-padding: 0,
+    layout-medium-padding: 0,
+    layout-small-padding: 0,
+    header-height: 37px,
+    header-shadow: 0px -40px 10px 0px rgba(215, 215, 215, 0.5),
+    header-bg: transparent,
+    header-fg: #323b47,
+    header-padding: 0,
+    // card-shadow: 0 10px 11px 0 rgba(211,221,237,0.40),
+    card-margin: 0,
+    card-padding: 8px 13px 9px 15px,
+    card-border-radius: 2px,
+    card-fg-text: #4a4a4a,
+    card-line-height: 21px,
+    sidebar-shadow: none,
+    sidebar-width-compact: 50px,
+
+    popover-border: #ebeef0,
+    // popover-shadow: 0 2px 4px 0 rgba(211,221,237,0.40),
+    context-menu-fg: #4a4a4a,
+    context-menu-active-bg: #0090ff,
+    menu-font-size: 14px
+), default, default); // let's leave it as default
+
+$base-blue: #129cff;
+
+/* Border
+---------------------- */
+$border-width-base: 1px !default;
+$border-style-base: solid !default;
+$border-color-base: #ebebeb !default;
+$border-radius-base: 4px !default;
+
+
+/* Button
+-------------------------- */
+$button-color: $base-blue !default;
+$button-border-base: $border-width-base $border-style-base $button-color !default;
+
+$button-color-rew: #4a4a4a !default;
+$button-color-hover: rgba(18, 156, 255, .06);
+$button-size-sm: 12px;
+$button-size-lg: 18px;

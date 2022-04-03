@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="260px" height="297px" viewBox="0 0 260 297" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>椭圆形2</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="85.6563212%" id="linearGradient-1">
+            <stop stop-color="#F1F0FF" offset="0%"></stop>
+            <stop stop-color="#EADDFF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.5">
+        <g id="注册成功-新" transform="translate(0.000000, -2155.000000)" fill="url(#linearGradient-1)">
+            <g id="装饰" transform="translate(-37.000000, 74.000000)">
+                <circle id="椭圆形2" cx="148.5" cy="2229.5" r="148.5"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

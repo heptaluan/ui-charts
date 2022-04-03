@@ -1,0 +1,396 @@
+:host {
+  background-color: #F5F6F7;
+}
+
+.item-container {
+  margin: 0 auto;
+  width: 100%;
+  background: #ffffff;
+  .item-box {
+    min-width: 1104px;
+    margin: 0 88px;
+    // overflow: hidden
+
+    .item-detail-box {
+      .back {
+        margin-top: 79px;
+        margin-bottom: 16px;
+        font-size: 14px;
+        font-weight: normal;
+        font-stretch: normal;
+        letter-spacing: 0px;
+        color: #333333;
+        cursor: pointer;
+        font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo",  "Consolas", sans-serif;
+        outline: none;
+        
+        span {
+          &:nth-child(2) {
+            margin-left: 4px;
+            &:hover {
+              color: #0079fa;
+            }
+        }
+          
+        }
+      }
+
+      .item-cover {
+        width: calc(100% - 342px);
+        min-width: 538px;
+        margin-right: 40px;
+        background-color: #f8f9fc;
+        display: flex;
+        align-items: flex-end;
+        position: relative;
+
+        &:hover .item-cover-mask {
+          transform: translateY(66px);
+        }
+        .item-iframe {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-width: 538px;
+          min-height: 476px;
+          padding: 40px;
+          img {
+            width: 458px;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+          }
+        }
+        .item-cover-mask {
+          width: 100%; // height: 50px;
+          // line-height: 50px;
+          text-align: center;
+          background-color: #000000;
+          opacity: 0.34;
+          font-size: 14px;
+          color: #fff;
+          position: absolute;
+          top: -66px;
+          z-index: 2;
+          transition: all .3s linear;
+          line-height: 25px;
+          padding: 8px 0;
+          p {
+            margin: 0;
+          }
+        }
+        .item-pdf {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          img {
+            max-width: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+          .pdfCover {
+            position: absolute;
+            overflow: hidden;
+            img {
+              width: 100%;
+              max-width: auto;
+            }
+          }
+        }
+      }
+      .item-detail {
+        width: 332px;
+        .item-title {
+          width: 332px;
+          font-size: 24px;
+          font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo",  "Consolas", sans-serif;
+          color: #333333;
+          margin-bottom: 26px;
+          font-weight: 600;
+          line-height: 38px;
+        }
+        .item-referral {
+          font-size: 14px;
+          color: #5c6066; // margin-bottom: 25px;
+          margin-bottom: 25px;
+        }
+        .item-share {
+          width: calc(100% - 10px);
+          font-size: 12px;
+          color: #999;
+          padding-bottom: 25px;
+          height: 65px;
+          border-bottom: solid 1px #f0f2f4;
+          user-select: none;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          & > span {
+            cursor: pointer;
+            font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo",  "Consolas", sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            text-align: center;
+            border-radius: 6px;
+
+            &:nth-of-type(1) {
+              width: 154px;
+              height: 40px;
+              line-height: 40px;
+              background-color: #0079fa;
+              border-radius: 6px;
+              color: #ffffff;
+
+              &:hover {
+                background-color: #0A81FF;
+              }
+          
+              &:active{
+                  background-color: #0071EB;
+              }
+            }
+            &:nth-of-type(2),&:nth-of-type(3) {
+              width: 70px;
+              height: 40px;
+              line-height: 40px;
+              border: solid 1px #0079fa;
+              color: #0079fa;
+
+              &:hover {
+                color: #006ce0;
+                border: solid 1px #006de0;
+              }
+            }
+          }
+          .likeAnimation {
+            display: inline-block;
+            position: absolute;
+            background-image: url(https://ss1.dydata.io/web_heart_animation_edge.png);
+            background-repeat: no-repeat;
+            background-size: 2900%;
+            height: 50px;
+            width: 50px;
+            left: 0;
+            top: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            &:hover {
+              background-position: 3.5714%;
+            }
+          }
+        }
+        .item-data-detail {
+          margin-top: 26px;
+          margin-bottom: 40px;
+          font-size: 14px;
+          background-color: #fff;
+          span {
+            display: inline-block;
+          }
+          div {
+            margin-bottom: 10px;
+          }
+          .item-data-title {
+            color: #999999;
+            width: 110px;
+            &.b-12 {
+              margin-bottom: 3px;
+            }
+          }
+          .item-data-type {
+            width: 222px;
+            display: flex;
+            flex-wrap: wrap;
+            .item-data-title {
+              width: 110px;
+            }
+            .item-data-content{
+              cursor: pointer;
+              &:hover{
+                color: #0079fa;
+              }
+            }
+            &.recommand-type {
+              max-width: 222px;
+            }        
+          }
+          .item-data-content {
+            color: #333333;
+          }
+          .vip-level {
+            width: 60px;
+            height: 22px;
+            display: inline-block;
+            background: url('/dyassets/images/person/vip.svg') no-repeat center / contain;
+            margin: -2px 7px 0 -4px;
+            vertical-align: -5px;
+          }
+          .vip-level-free {
+            width: 38px;
+            height: 22px;
+            display: inline-block;
+            background: url('/dyassets/images/datastore/free-icon.svg') no-repeat center / contain;
+            margin: -2px 7px 0 -4px;
+            vertical-align: -5px;
+          }
+          .not-vip a {
+            font-size: 12px;
+            color: #0079fa;
+            text-decoration: underline;
+            font-family: PingFangSC-Regular;
+            font-weight: normal;
+            font-stretch: normal;
+            letter-spacing: 0px;
+          }
+        }
+        .item-tags {
+          display: flex;
+          flex-wrap: wrap;
+          width: 286px;
+          span {
+            margin-right: 20px;
+            margin-bottom: 12px;
+            padding: 4px 12px;
+            background-color: #f0f3f4;
+            border-radius: 6px;
+            font-size: 14px;
+            line-height: 20px;
+            height: 28px;
+            color: #323b47;
+            cursor: pointer;
+            &:hover{
+              color: #0079fa;
+              background-color: #edf3fe;
+            }
+          }
+        }
+      }
+
+     
+    }
+  }
+}
+
+.user-also-browse {
+  width: 1000px;
+  height: 335px;
+  margin: 65px auto 100px;
+  h4 {
+    font-size: 16px;
+    color: #323b47;
+    margin-bottom: 25px;
+    border-left: 4px solid #0079fa;
+    padding-left: 20px;
+  }
+  ul {
+    padding: 0; // overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 20px;
+    list-style: none;
+    margin-bottom: 25px;
+    li {
+      // width: 225px;
+      height: 245px;
+      list-style: none;
+      cursor: pointer;
+      background: #fff;
+      box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+      .cover {
+        width: 100%;
+        height: 180px;
+        padding: 10px;
+        .img-box {
+          border-bottom: 1px solid #e6e7eb;
+          img {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+          }
+        }
+      }
+      p {
+        font-size: 12px;
+        color: #000a1a;
+        padding: 12px 8px;
+        text-align: center;
+        line-height: 19px;
+        margin-bottom: 0;
+      }
+    }
+  }
+  .not-found-data a {
+    font-size: 14px;
+    color: #969799;
+    text-decoration: underline;
+    &:hover {
+      color: #0079fa;
+    }
+  }
+}
+
+// iframe
+.iframe-loading-container {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.iframe-loading {
+  width: 100px;
+  height: 100px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #0079fa;
+  border-radius: 50%;
+  animation: loading 1.5s infinite linear;
+}
+
+@keyframes loading {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes heart-animation {
+  0% {
+    background-position: left
+  }
+  100% {
+    background-position: right
+  }
+}
+
+:host ::ng-deep{
+  lx-dy-panel {
+    .panel-wrapper {
+      margin-top: 48px;
+      li .img-box {
+        border: solid 1px #e8e8e8;
+      }
+    }       
+  }
+
+  lx-dy-footer {
+    footer {
+      width: calc(100% + 176px)!important;
+      left: -88px!important;
+      .content {
+        padding: 0 88px 44px 88px !important;
+      }
+    }
+    
+  }
+}

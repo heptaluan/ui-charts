@@ -1,0 +1,115 @@
+.block-container {
+  position: absolute;
+  z-index: 4;
+  overflow: visible;
+
+  .chart-box {
+    border: none;
+  }
+
+  &.isChart {
+    border: none;
+
+    .chart-box {
+      border: none;
+    }
+  }
+
+  // &.isUpIndex {
+  //   z-index: 98;
+  // }
+
+  .animation-button {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    width: 56px;
+    height: 56px;
+    opacity: 1;
+    background: url(/dyassets/images/play.svg) no-repeat 50%;
+  
+    &.active {
+      background: url(/dyassets/images/stop.svg) no-repeat 50%;
+    }
+
+    &.hide-button {
+      opacity: 0;
+    }
+  }
+
+  &.is-selceted {
+    &:after {
+      content: '';
+      box-sizing: initial;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border: 2px solid #84b5eb;
+      margin: -2px 0 0 -2px;
+      pointer-events: none;
+    }
+  }
+}
+
+::ng-deep {
+  .echart-container {
+    height: 100%;
+    width: 100%;
+     svg {
+       transform-origin: 0 0;
+     }
+  }
+
+  svg {
+    overflow: visible;
+    vertical-align: top !important;
+  }
+}
+
+.bounding-rect {
+  position: absolute;
+  z-index: 9;
+}
+
+.chartBox {
+  width: 100%;
+  height: 100%;
+}
+
+dropdown-menu .show {
+  border-radius: 2px;
+}
+
+.block-hover {
+  position: absolute;
+  &:after {
+    content: '';
+    box-sizing: initial;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #84b5eb;
+    margin: -2px 0 0 -2px;
+    pointer-events: none;
+  }
+}
+
+.block-locked-hover {
+  position: absolute;
+  &:after {
+    content: '';
+    box-sizing: initial;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #333;
+    margin: -2px 0 0 -2px;
+    pointer-events: none;
+  }
+}

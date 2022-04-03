@@ -1,0 +1,25 @@
+<lx-cases-filter (sortChange)="onSortChange($event)"></lx-cases-filter>
+<ng-container *ngIf="cases.length === 0; else elseTemplate">
+  <div class="empty-container d-flex justify-content-center align-items-center">
+    <div>暂无案例</div>
+  </div>
+</ng-container>
+<ng-template #elseTemplate>
+  <div class="case-items-container d-flex flex-wrap">
+    <ng-container *ngFor="let case of cases">
+      <lx-case-item [caseitem]="case" (caseClick)="getCaseDetail($event)"></lx-case-item>
+    </ng-container>
+  </div>
+  <div class="d-flex justify-content-center pagination-container">
+    <pagination 
+      pageBtnClass="dy-pagination"
+      previousText="<"
+      nextText=">" 
+      [maxSize]=7
+      rotate=true
+      [totalItems]="total" 
+      [ngModel]="currentPage" 
+      [itemsPerPage]="pageSize"
+      (pageChanged)="onPageChanged($event)"></pagination>
+  </div>
+</ng-template>

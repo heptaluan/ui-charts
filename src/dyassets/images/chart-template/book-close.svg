@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>图标书关闭</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#7981FF" offset="0%"></stop>
+            <stop stop-color="#2CAFFF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="图标书关闭" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g fill="url(#linearGradient-1)" fill-rule="nonzero" id="形状">
+            <path d="M17.9997188,4.00028125 L17.9997188,17 L7.49978125,17 C6.6713125,17 5.99964063,16.3283437 5.99964063,15.499875 C5.99964063,14.6714062 6.67098438,13.99975 7.49978125,13.99975 L16.99975,13.99975 L16.99975,2 L6.9999375,2 C5.900125,2 5,2.90015625 5,3.99995312 L5,15.9997187 C5,17.0998594 5.90014063,17.9996875 6.99995313,17.9996875 L18.9997188,17.9996875 L18.9997188,3.99995312 L17.9997344,3.99995312 L17.9997188,4.00028125 Z M7.50073438,15.0000625 L7.49978125,15.0000625 C7.223625,15.0000625 6.999625,15.2240625 6.999625,15.5002187 C6.999625,15.776375 7.223625,16.0003594 7.49978125,16.0003594 L16.9987813,16.0003594 L16.9987813,15.000375 L7.50073438,15.000375 L7.50073438,15.0000625 Z"></path>
+        </g>
+    </g>
+</svg>

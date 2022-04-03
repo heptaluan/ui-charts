@@ -1,0 +1,77 @@
+<div class="item-container">
+  <div class="item-box">
+    <div class="item-detail-box">
+      <div class="back" [routerLink]="['/pages/home/index']"><span>&lt;</span>&nbsp;<span>返回模板首页</span></div>
+      <div class="d-flex">
+        <div class="item-cover">
+          <div *ngIf="!iframeLoading" class="iframe-loading-container">
+            <div class="iframe-loading"></div>
+          </div>
+          <div class="item-iframe" #iframe>
+            <img *ngIf="!isDynamic" [src]="itemDetailContent.pre_img.split('?')[0]" alt="暂无图片" />
+          </div>
+        </div>
+
+        <div class="item-detail">
+          <h4 class="item-title">{{ itemDetailContent.title }}</h4>
+          <div class="item-share">
+            <span (click)="createInfo()">立即编辑</span>
+
+            <span class="like" (click)="toggleLike()">
+              <span class="like-text" *ngIf="!isLike">收藏</span>
+              <span class="like-text" *ngIf="isLike">取消收藏</span>
+            </span>
+            <span class="share" (click)="share()"><i></i>分享</span>
+          </div>
+          <div class="item-data-detail">
+            <div class="item-data-type">
+              <span class="item-data-title">场景</span><span
+                class="item-data-content" (click)="hanleInfoClick(itemDetailContent.tpl_type_id,'index')">{{itemDetailContent.tpl_type}}</span>
+            </div>
+            <div class="d-flex">
+              <span class="item-data-title b-12">类型</span>
+              <span class="item-data-type recommand-type">
+                <ng-container *ngFor="let item of itemDetailContent.type_tags; let i = index; let last = last">
+                  <span *ngIf="!last" class="item-data-content" (click)="hanleInfoClick(item.id, 'index')">{{ item.name }}、</span>
+                  <span *ngIf="last" class="item-data-content" (click)="hanleInfoClick(item.id, 'index')">{{ item.name }}</span>
+                </ng-container>
+              </span>
+            </div>
+            <div>
+              <span class="item-data-title b-12">尺寸</span
+              ><span class="item-data-content"
+                >{{ itemDetailContent.size.split('*')[0] }}&nbsp;x&nbsp;{{ itemDetailContent.size.split('*')[1] }}px</span
+              >
+            </div>
+
+            <div>
+              <span class="item-data-title">上架时间</span
+              ><span class="item-data-content">{{ itemDetailContent.update_time | date: 'y-MM-dd' }}</span>
+            </div>
+          </div>
+
+          <div class="item-tags">
+            <ng-container *ngFor="let item of itemDetailContent.tags; let i = index">
+              <span (click)="hanleInfoClick(item, 'keyword')">{{ item }}</span>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+
+      <lx-dy-panel
+        [arr]="itemDetailContent.recommend"
+        [name]="'相关推荐'"
+        [isNeedMoreBtn]="false"
+        [collectObj]="collectObj"
+        [showColunmNum]="2"
+        (itemClick)="itemClick($event)"
+        (editClick)="editClick($event)"
+        (getCollectState)="getCollectState($event)"
+        (collectChange)="collectChange($event)"
+      >
+      </lx-dy-panel>
+
+      <lx-dy-footer></lx-dy-footer>
+    </div>
+  </div>
+</div>

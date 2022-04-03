@@ -1,0 +1,30 @@
+<lx-modal [position]="actionPosition" >
+  <form [formGroup]="projectForm" >
+    <div class="d-flex form-group">
+      <div class="form-control d-flex align-items-center"
+        [ngClass]="{'active': projectForm.get('privilege').value === 'public'}"
+        (click)="projectForm.get('privilege').setValue('public')">
+        <input formControlName="privilege" type="radio" name="privilege" value="public">
+        <div>
+          <label for="privilege">公开</label>
+          <div>您的项目将以公开的URL发布</div>
+        </div>
+      </div>
+      <div class="form-control d-flex align-items-center" 
+        [ngClass]="{'active': projectForm.get('privilege').value === 'private'}" 
+        (click)="isVip ? projectForm.get('privilege').setValue('private'): upgrade($event)">
+        <input onkeydown="if(event.keyCode===13){ return false;}" formControlName="privilege" type="radio" name="privilege" value="private">
+        <div>
+          <label for="privilege">私密</label><button *ngIf="!isVip" class="dy-button-upgrade">升级会员</button>
+          <div>您的项目将私密发布，其他用户不可查看</div>
+        </div>
+      </div>
+    </div>
+    <div class="project-name">
+      <label for="projectName">项目名称</label>
+      <input onkeydown="if(event.keyCode===13){ return false;}" type="text" class="form-control" id="projectName" formControlName="projectName" placeholder="项目名称">
+      <div class="tip" [ngClass]="{'tip-error': projectForm.invalid }">请输入20个字以内</div>
+    </div>
+  </form>
+  <button (click)="createProject()" class="dy-button-blue dy-button-middle action-button">创建项目</button>
+</lx-modal>

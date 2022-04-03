@@ -1,0 +1,75 @@
+:host {
+  .page {
+    position: relative;
+    overflow: hidden;
+    transform-origin: 0 0;
+  }
+
+  .page-logo {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    user-select: none;
+    width: 100%;
+    z-index: 999 !important;
+
+    img {
+      width: 15%;
+      position: absolute;
+      right: 2%;
+    }
+  }
+
+  .dy-transparent {
+    background: transparent !important;
+  }
+
+  .color-transparent {
+    background-color: transparent !important;
+  }
+
+  .logo {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    background: #fff;
+    width: 100%;
+
+    .inner-logo {
+      width: 100%;
+      border-top: 1px solid #ccc;
+      overflow: hidden;
+
+      img {
+        float: right;
+      }
+
+      .logo-text {
+        float: left;
+      }
+    }
+
+    .inner-line {
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      background-color: #ccc;
+    }
+  }
+
+
+}
+
+:host ::ng-deep {
+  .block-text {
+    user-select: none !important;
+  }
+
+  #page {
+    foreignObject {
+      overflow: hidden !important;
+    }
+  }
+}

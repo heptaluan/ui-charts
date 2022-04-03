@@ -1,0 +1,105 @@
+<div class="list-item-content" *ngFor="let item of listTemplates; let i = index" (mouseenter)="hoverIndex = i"
+  (mouseleave)="hoverIndex = -1">
+  <div class="list-item-checkbox">
+    <input *ngIf="type === 'download'" type="checkbox" [checked]='listIds.indexOf(item.Id)>=0'
+      (click)='checkedOne(item.Id)'>
+    <input *ngIf="type === 'upload'" type="checkbox" [checked]='listIds.indexOf(item.id_str)>=0'
+      (click)='checkedOne(item.id_str)'>
+    <input *ngIf="type === 'favorite'" type="checkbox" [checked]='listIds.indexOf(item.dataId)>=0'
+      (click)='checkedOne(item.dataId)'>
+  </div>
+
+  <div class="item-cover" *ngIf="type === 'upload'"><img src="/dyassets/images/excel.svg" alt=""></div>
+  <div class="item-cover" *ngIf="item.data_store?.file_type === 'xlsx'"><img src="/dyassets/images/excel.svg" alt="">
+  </div>
+  <div class="item-cover" *ngIf="item.data_store?.file_type === 'pdf'"><img src="/dyassets/images/pdf.svg" alt=""></div>
+
+  <div class="item-content">
+    <h4 *ngIf="type === 'download' || type === 'favorite'"><span
+        *ngIf="item.data_store.geo_type === '1'">自营</span>{{item.data_store.title}}</h4>
+    <h4 *ngIf="type === 'upload'">{{item.title}}</h4>
+    <div class="data-time-box">
+      <!-- <span class="vip-level" *ngIf="item.data_store?.level == '1'"></span>
+      <span class="vip-level-free" *ngIf="item.data_store?.level == '0'"></span> -->
+      <span class="data-time" *ngIf="type === 'download'">下载时间：{{item.update_time | date: 'y/MM/dd HH:mm:ss'}}</span>
+      <span class="data-time" *ngIf="type === 'favorite'">来源: {{item.data_store.source}}</span>
+      <span class="data-time" *ngIf="type === 'upload'">更新时间：{{item.update_time | date: 'y/MM/dd HH:mm:ss'}}</span>
+    </div>
+
+    <!-- 我的下载 -->
+    <div class="item-edit-btns" *ngIf="type === 'download'">
+      <span *ngIf="dataType === 'xlsx'"><a target="_blank"
+          [href]="'https://dydata.io/appv2/#/pages/store/item?id=' + item.dataId">预览</a></span>
+      <span *ngIf="dataType === 'pdf'"><a target="_blank"
+          [href]="'https://dydata.io/appv2/#/pages/store/item?id=' + item.dataId">预览</a></span>
+      <span (click)='share(item)'>分享</span>
+      <span (click)='delete(item)'>删除</span>
+    </div>
+
+    <!-- 我的喜欢 -->
+    <div class="item-edit-btns" *ngIf="type === 'favorite'">
+      <span *ngIf="dataType === 'xlsx'"><a target="_blank"
+          [href]="'https://dydata.io/appv2/#/pages/store/item?id=' + item.dataId">预览</a></span>
+      <span *ngIf="dataType === 'pdf'"><a target="_blank"
+          [href]="'https://dydata.io/appv2/#/pages/store/item?id=' + item.dataId">预览</a></span>
+      <span (click)='edit(item)' [hidden]="dataType === 'pdf'">制作图表</span>
+      <span (click)='dislike(item.dataId)'>取消喜欢</span>
+    </div>
+
+    <!-- 我的上传 -->
+    <div class="item-edit-btns" [ngClass]="{'over': currentPage > limitPage && hoverIndex === i}"
+      *ngIf="type === 'upload'">
+      <ng-container *ngIf="currentPage <= limitPage || (currentPage > limitPage && hoverIndex !== i)">
+        <span (click)='editData(item)'>编辑数据</span>
+        <span (click)='oneStep(item)'>制作图表</span>
+        <span class="more"
+          onclick="_hmt.push(['_trackEvent', 'chart', 'data-management', 'data-manege-upload-excel-more'])">更多</span>
+        <div class="btn-group item-dropdown" dropdown #dropdown="bs-dropdown" *ngIf="type === 'upload'">
+          <button dropdownToggle type="button" class="dy-button dropdown-toggle"></button>
+          <ul *dropdownMenu class="dropdown-menu" role="menu">
+            <li role="menuitem">
+              <a class="dropdown-item" (click)="rename(item)" [ngClass]="{'disabled': lock}">重命名</a>
+            </li>
+            <li role="menuitem">
+              <a class="dropdown-item" id="deleteProject" (click)="deleteProject(item.id_str)">删除</a>
+            </li>
+          </ul>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="currentPage > limitPage && hoverIndex === i">
+        <div class="over-btn" tooltip="立刻升级解锁数据" container="body" containerClass="customClass" placement="top"
+          (click)="handleOverClick()">数据超限</div>
+        <div class="del" (click)="deleteProject(item.id_str)"></div>
+      </ng-container>
+    </div>
+
+    <div class="item-mask"> </div>
+  </div>
+</div>
+
+<div *ngIf="!listTemplates?.length && !searchResult">
+  <div class="empty-container d-flex flex-column justify-content-center align-items-center">
+    <div class="icon">
+      <img src="/dyassets/images/home-page/no-more-project.png" alt="">
+    </div>
+    <!-- <div *ngIf="type === 'download'">
+      <p>你还没有下载过数据~</p>
+      <p class="second">快去「找数据」看看吧</p>
+    </div> -->
+    <p *ngIf="type === 'upload'">你还没有上传过数据~</p>
+    <!-- <div *ngIf="type === 'favorite'">
+      <p>你还没有喜欢过数据~</p>
+      <p class="second">快去「找数据」看看吧</p>
+    </div> -->
+  </div>
+</div>
+
+<div *ngIf="searchResult">
+  <div class="empty-container d-flex flex-column justify-content-center align-items-center">
+    <div class="icon">
+      <img src="/dyassets/images/home-page/no-more-project.png" alt="">
+    </div>
+    <p>没有找到符合的数据</p>
+    <p class="second">试试别的关键词吧~</p>
+  </div>
+</div>

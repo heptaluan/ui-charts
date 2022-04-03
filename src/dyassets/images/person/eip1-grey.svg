@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="78px" height="38px" viewBox="0 0 78 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55 (78076) - https://sketchapp.com -->
+    <title>企业会员灰</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M50.468,15.464 L51.532,15.464 C53.282,17.382 55.298,18.894 57.594,19.986 L56.796,21.414 C55.984,20.994 55.228,20.518 54.514,20.014 L54.514,21.022 L47.528,21.022 L47.528,19.958 C46.786,20.476 45.988,20.966 45.148,21.428 L44.364,20 C46.814,18.796 48.844,17.284 50.468,15.464 Z M47.948,19.65 L54.038,19.65 C52.89,18.796 51.882,17.844 51,16.78 C50.132,17.816 49.124,18.782 47.948,19.65 Z M45.33,22.45 L56.698,22.45 L56.698,23.878 L50.188,23.878 C49.6,24.97 48.914,25.936 48.13,26.748 C50.02,26.636 51.868,26.482 53.66,26.272 C53.254,25.768 52.82,25.25 52.358,24.718 L53.492,24.004 C54.766,25.376 55.746,26.58 56.446,27.588 L55.228,28.442 C54.99,28.078 54.738,27.7 54.472,27.336 C52.302,27.672 49.6,27.938 46.352,28.134 L45.96,26.86 C46.31,26.776 46.562,26.636 46.716,26.468 C47.416,25.642 48.004,24.774 48.494,23.878 L45.33,23.878 L45.33,22.45 Z M69.872,20.49 L69.872,25.824 L68.416,25.824 L68.416,21.82 L61.598,21.82 L61.598,26.048 L60.142,26.048 L60.142,20.49 L69.872,20.49 Z M60.968,15.884 L69.046,15.884 L69.046,19.706 L60.968,19.706 L60.968,15.884 Z M67.632,18.446 L67.632,17.172 L62.382,17.172 L62.382,18.446 L67.632,18.446 Z M64.384,22.478 L65.868,22.618 C65.672,24.746 65.238,26.146 64.566,26.832 C63.866,27.7 62.158,28.274 59.414,28.526 L58.84,27.196 C61.08,27.084 62.564,26.678 63.292,25.978 C63.922,25.306 64.286,24.13 64.384,22.478 Z M66.148,25.614 C67.954,26.09 69.606,26.65 71.118,27.322 L70.334,28.54 C68.738,27.756 67.1,27.14 65.42,26.692 L66.148,25.614 Z" id="path-1"></path>
+        <filter x="-18.7%" y="-30.6%" width="137.4%" height="176.5%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.195421766 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <circle id="path-3" cx="20.5" cy="20.5" r="10.5"></circle>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="画板" transform="translate(-482.000000, -165.000000)">
+            <g id="企业会员灰" transform="translate(482.000000, 163.000000)">
+                <path d="M25,10 L70,10 C74.418278,10 78,13.581722 78,18 L78,26 C78,30.418278 74.418278,34 70,34 L25,34 L25,10 Z" id="矩形" fill="#CCCCCC"></path>
+                <g id="会员" fill-rule="nonzero">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#FFFFFF" xlink:href="#path-1"></use>
+                </g>
+                <polygon id="星形" fill="#ACACAC" points="21 36.0024414 10.5 39.1865335 8.00750462 28.5012207 0 21 8.00750462 13.4987793 10.5 2.81346652 21 5.99755859 31.5 2.81346652 33.9924954 13.4987793 42 21 33.9924954 28.5012207 31.5 39.1865335"></polygon>
+                <g id="椭圆形">
+                    <use fill="#C5C5C5" fill-rule="evenodd" xlink:href="#path-3"></use>
+                    <circle stroke="#979797" stroke-width="3" cx="20.5" cy="20.5" r="12"></circle>
+                    <circle stroke="#E1E1E1" stroke-width="2" stroke-linejoin="square" cx="20.5" cy="20.5" r="9.5"></circle>
+                </g>
+                <text id="企" font-family="PingFangSC-Semibold, PingFang SC" font-size="10" font-weight="500" fill="#FFFFFF">
+                    <tspan x="16" y="24">企</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

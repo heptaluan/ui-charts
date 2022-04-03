@@ -1,0 +1,11 @@
+<ul>
+  <li (click)="handleItemClick(i)" *ngFor="let item of titleList; let i = index" [ngClass]="{ active: activeIndex === i }">
+    {{ item }}
+  </li>
+</ul>
+
+<lx-plan *ngIf="activeIndex === 0"></lx-plan>
+<lx-bill *ngIf="activeIndex === 1"></lx-bill>
+<lx-exchange (goMyVip)="activeIndex = 0" *ngIf="activeIndex === 2"></lx-exchange>
+
+<lx-dy-footer [ngClass]="{'change': activeIndex === 2, 'bill': activeIndex === 1}"></lx-dy-footer>

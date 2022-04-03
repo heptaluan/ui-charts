@@ -1,0 +1,140 @@
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.beginner-container {
+  .conf_title {
+    font-family: PingFangSC-Semibold;
+    font-size: 18px;
+    font-weight: bold;
+    font-stretch: normal;
+    letter-spacing: 0px;
+    color: #08080d;
+    margin-bottom: 25px;
+
+    button {
+      border: none;
+      width: 65px;
+      height: 25px;
+      background-color: #ffffff;
+      border-radius: 4px;
+      border: solid 1px #0079fa;
+      font-family: PingFangSC-Regular;
+      font-size: 12px;
+      font-weight: normal;
+      font-stretch: normal;
+      line-height: 16px;
+      letter-spacing: 0px;
+      color: #0079fa;
+      margin-left: 26px;
+      cursor: pointer;
+    }
+  }
+
+  .content-wrapper {
+    width: 620px;
+    height: 216px;
+    background-color: #ffffff;
+    box-shadow: 0px 1px 7px 0px rgba(200, 209, 224, 0.4);
+
+    .content-list {
+      text-align: center;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 54px;
+      border-radius: 4px;
+      border-bottom: 1px solid #e8e8e8;
+      font-family: PingFangSC-Regular;
+      font-size: 14px;
+      font-weight: normal;
+      font-stretch: normal;
+      line-height: 22px;
+      letter-spacing: 0px;
+      color: rgba(0, 0, 0, 0.65);
+
+      &:first-child {
+        background: #ebebeb;
+        font-family: PingFangSC-Medium;
+        font-size: 14px;
+        font-weight: normal;
+        font-stretch: normal;
+        line-height: 22px;
+        letter-spacing: 0px;
+        color: rgba(0, 0, 0, 0.85);
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+      }
+
+      .content-title {
+        width: 98px;
+        height: 54px;
+        margin-left: 40px;
+        line-height: 54px;
+      }
+
+      .content-status {
+        width: 80px;
+        height: 54px;
+        margin-left: 81px;
+        line-height: 54px;
+
+        i {
+          display: inline-block;
+          width: 18px;
+          height: 18px;
+          background: url(/dyassets/images/person/unhappy.svg) no-repeat center;
+          margin-right: 6px;
+          vertical-align: middle;
+        }
+      }
+
+      .content-award {
+        width: 56px;
+        height: 54px;
+        margin-left: 81px;
+        line-height: 54px;
+      }
+
+      button {
+        display: block;
+        width: 65px;
+        height: 25px;
+        background-color: #0079fa;
+        border-radius: 4px;
+        color: #ffffff;
+        margin-left: 81px;
+        font-family: PingFangSC-Regular;
+        font-size: 12px;
+        font-weight: normal;
+        font-stretch: normal;
+        line-height: 16px;
+        letter-spacing: 0px;
+        color: #ffffff;
+        border: none;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .tips {
+    margin-top: 26px;
+    height: 17px;
+    font-family: PingFangSC-Regular;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0px;
+    color: #323b47;
+
+    i {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      background: url(/dyassets/images/person/light.svg) no-repeat center;
+      margin-right: 10px;
+      vertical-align: -3px;
+    }
+  }
+}

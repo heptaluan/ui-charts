@@ -1,0 +1,35 @@
+<div class="d-flex justify-content-between align-items-center header-container">
+  <div class="d-flex align-items-center">
+    <button container="body" tooltip="重命名" placement="bottom" class="project-title dy-button-raw" id="setName"
+      (click)="rename()"><span>{{project?.title}}</span><i></i></button>
+  </div>
+  <div class="d-flex align-items-center justify-content-end">
+    <div class="d-flex align-items-center justify-content-end ex-share-container">
+      <a container="body" tooltip="导出为JPG、PNG或SVG格式" placement="bottom" 
+        id="exportBtn" class="ex-share"
+        (click)="goDownload()"
+        onclick="_hmt.push(['_trackEvent', 'editpage', 'edit-desktop', 'edit-top-download-click'])"><i></i><p>下载</p></a>
+      <a container="body" tooltip="公开发布或私密分享你的项目" placement="bottom" id="publishBtn" class="ex-share"
+        (click)="publish()"
+        onclick="_hmt.push(['_trackEvent', 'editpage', 'edit-desktop', 'edit-top-share-click'])"><i></i><p>分享</p></a>
+    </div>
+    <div class="saving-state">
+      <span (click)="save()" onclick="_hmt.push(['_trackEvent', 'editpage', 'edit-desktop', 'edit-top-save-click'])"><i></i><p>保存</p></span>
+      <span [ngClass]="{active: loadState !== -1}">
+        <div class="sk-circle" *ngIf="loadState === 0">
+          <div class="sk-circle1 sk-child"></div>
+          <div class="sk-circle2 sk-child"></div>
+          <div class="sk-circle3 sk-child"></div>
+          <div class="sk-circle4 sk-child"></div>
+          <div class="sk-circle5 sk-child"></div>
+          <div class="sk-circle6 sk-child"></div>
+          <div class="sk-circle7 sk-child"></div>
+          <div class="sk-circle8 sk-child"></div>
+        </div>
+        <div class="loaded" *ngIf="loadState === 1">
+        </div>
+        <p>{{timeTip}}{{savingTip}}</p> 
+      </span>
+    </div>
+  </div>
+</div>

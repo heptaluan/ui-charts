@@ -1,0 +1,18 @@
+<div class="templates-container d-block mx-auto">
+    <div class="d-flex justify-content-start align-items-center h-100">
+        <lx-generate-case [type]="type" (caseClick)="initializeProject()"></lx-generate-case>
+        <ng-container *ngFor="let template of templates$ | async">
+            <lx-generate-template [content]='template' (templateClick)="initializeProject($event)"></lx-generate-template>
+        </ng-container>
+    </div>
+</div>
+<div class="cases-container">
+    <div class="filter-container d-block mx-auto">
+        <div class="d-flex justify-content-between h-100">
+            <div class="header font-w-regular">精选案例:</div>
+            <lx-form-search (searchValue)="search($event)" [initValue]="initSearch"></lx-form-search>
+        </div>
+    </div>
+    <lx-cases-library></lx-cases-library>
+    <lx-footer></lx-footer>
+</div>

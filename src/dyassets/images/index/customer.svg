@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57 (83077) - https://sketch.com -->
+    <title>客服</title>
+    <desc>Created with Sketch.</desc>
+    <g id="客服" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="customerservice-fill" transform="translate(0.000000, -0.000000)" fill-rule="nonzero">
+            <rect id="矩形" fill="#000000" opacity="0" x="0" y="0" width="35.84" height="35.84"></rect>
+            <path d="M17.92,5.92 C11.291875,5.92 5.92,11.291875 5.92,17.92 L5.92,29.17 C5.92,29.585625 6.254375,29.92 6.67,29.92 L12.42,29.92 C13.523125,29.92 14.42,29.023125 14.42,27.92 L14.42,21.42 C14.42,20.316875 13.523125,19.42 12.42,19.42 L8.17,19.42 L8.17,17.92 C8.17,12.535625 12.535625,8.17 17.92,8.17 C23.304375,8.17 27.67,12.535625 27.67,17.92 L27.67,19.42 L23.42,19.42 C22.316875,19.42 21.42,20.316875 21.42,21.42 L21.42,27.92 C21.42,29.023125 22.316875,29.92 23.42,29.92 L29.17,29.92 C29.585625,29.92 29.92,29.585625 29.92,29.17 L29.92,17.92 C29.92,11.291875 24.548125,5.92 17.92,5.92 Z" id="路径" fill="#ffffff"></path>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,11 @@
+<div class="block-text block-inner-box" style="width: 100%; height: 100%; position: relative;">
+  <textarea #textarea
+    [ngStyle]="textStyles"
+    class="text-container"
+    [placeholder]="placeholder"
+    (blur)="onBlurhandle($event)"
+    [ngClass]="{'is-focus': editing}"
+  >{{contentShow}}</textarea>
+  <div class="textMask" (dblclick)="onCoverDblClicked()" [hidden]="editing"
+  style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px;"></div>
+</div>

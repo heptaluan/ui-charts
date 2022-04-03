@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="34px" viewBox="0 0 44 34" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>9</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="9" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-3">
+            <g transform="translate(3.000000, 8.000000)">
+                <rect id="Rectangle-2" stroke="#C1E3FE" x="0.5" y="0.5" width="17" height="17" rx="3"></rect>
+                <rect id="Rectangle-2" stroke="#72BEF9" x="20.5" y="0.5" width="17" height="17" rx="3"></rect>
+                <path d="M22,1 L37,16" id="Path-6" stroke="#72BEF9"></path>
+                <path d="M29,1 L37,9" id="Path-6" stroke="#72BEF9"></path>
+                <path d="M22,9 L30,17" id="Path-6" stroke="#72BEF9"></path>
+            </g>
+        </g>
+    </g>
+</svg>

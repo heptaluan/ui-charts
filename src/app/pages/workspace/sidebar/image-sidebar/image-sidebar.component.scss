@@ -1,0 +1,334 @@
+.text-templates-sidebar {
+  width: 283px;
+  box-shadow: none !important;
+  border-right: 1px solid #1f1f1f;
+  background: #252626;
+
+  .img-header {
+    height: 38px;
+    line-height: 38px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo", "Consolas", sans-serif !important;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    letter-spacing: 0;
+    text-align: center;
+    font-weight: normal;
+    background-color: #252625;
+    border-bottom: 1px solid #161616;
+    position: relative;
+
+    i {
+      position: absolute;
+      right: 8px;
+      top: 0;
+      cursor: pointer;
+      color: #c0c2c4;
+      opacity: 0.7;
+    }
+  }
+
+  .setting-container {
+    width: 100%;
+    height: 38px;
+    padding: 0;
+    background-color: #252625;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    overflow: visible;
+    background: #252625;
+    border-bottom: 1px solid #161616;
+  }
+
+  nb-card-footer {
+    height: calc(100% - 80px);
+    padding-top: 0 !important;
+    border-top: 0;
+    background: #252626;
+    margin-right: 5px;
+    position: relative;
+
+    .row {
+      width: 280px;
+      height: 100%;
+    }
+
+    .list-content {
+      height: calc(100% - 90px);
+      overflow-y: auto;
+      padding-left: 23px;
+      padding-top: 10px;
+
+      .load-more {
+        width: 250px;
+        height: 22px;
+        margin-left: -10px;
+        border-radius: 2px;
+        border: solid 1px rgba(255, 255, 255, 0.1);
+        line-height: 22px;
+        text-align: center;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo", "Consolas", sans-serif !important;
+        font-size: 12px;
+        color: #ffffff;
+        cursor: pointer;
+        position: absolute;
+
+        &:hover {
+          border: solid 1px#4A90E2;
+          color: #4A90E2;
+        }
+      }
+
+      .noMore {
+        border: none;
+        color: rgba(255, 255, 255, 0.4);
+      }
+    }
+
+    .list-update {
+      height: calc(100% - 60px); //修正图片库与我的上传两边下方高度不一致
+      overflow-x: hidden;
+    }
+
+    .search-image {
+      width: 100%;
+      background: #252625;
+      padding: 14px 0 5px 0;
+      box-sizing: border-box;
+      z-index: 999;
+      overflow: inherit;
+      position: relative;
+      color: #a3a3a3;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .image-container {
+      width: 100%;
+      height: 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 20px 15px 15px 10px;
+      background: #252625;
+      color: #a3a3a3;
+      font-size: 12px;
+      box-sizing: border-box;
+
+      progressbar {
+        height: 6px;
+        background-image: linear-gradient(180deg, #707070 0%, #4e4e4e 100%);
+        border-radius: 8px;
+      }
+
+      .percentage {
+        margin-top: 10px;
+      }
+
+      .extendCapacity {
+        margin-top: 10px;
+        color: #4a90e2;
+        font-size: 12px;
+        cursor: pointer;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      div:nth-child(1) {
+        width: 100%;
+
+        progress {
+          display: inline-block;
+          width: 100%;
+        }
+      }
+    }
+
+    .image-upload {
+      width: 100%;
+      font-size: 12px;
+      color: #a3a3a3;
+      padding: 0 15px 0 10px;
+
+      .upload-icon {
+        width: fit-content;
+        position: relative;
+        user-select: none;
+
+        &:hover {
+          span {
+            text-decoration: underline;
+          }
+        }
+
+        img {
+          width: 13px;
+          height: 20px;
+        }
+
+        span {
+          vertical-align: middle;
+          margin-left: 5px;
+          color: #4a90e2;
+          cursor: pointer;
+        }
+      }
+
+      .image-layout {
+        position: absolute;
+        right: -182px;
+        top: 0;
+        width: 178px;
+        height: 167px;
+        background-color: #252626;
+        box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.5);
+        border-radius: 2px;
+        border: solid 1px rgba(215, 221, 224, 0.2);
+
+        .close-btn {
+          position: absolute;
+          right: 8px;
+          top: 2px;
+          cursor: pointer;
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        .content {
+          width: 90px;
+          height: 90px;
+          margin: 22px auto 0;
+          overflow: hidden;
+
+          &.content-box {
+            background: #fff;
+          }
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
+
+          .image-suc {
+            margin-top: -5px;
+          }
+
+          .code-box {
+            padding: 4px;
+          }
+        }
+
+        p {
+          font-size: 12px;
+          color: #fff;
+          margin-top: 16px;
+          text-align: center;
+          cursor: pointer;
+
+          &.underline {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+
+:host::ng-deep {
+  .input-group {
+    width: 266px; // 搜索框宽度 实际宽度250px
+    margin-left: -17px;
+
+    .form-control {
+      height: 24px;
+      padding: 6px 23px;
+    }
+
+    .icon-sousuo {
+      left: 20px !important;
+    }
+
+    .icon-x:before,
+    .icon-sousuo:before {
+      transform: scale(0.8125); // 原本16px缩小为13px
+      transform-origin: 0 0;
+      display: block;
+    }
+
+    .close-icon {
+      width: 13px;
+      height: 13px;
+
+      .icon {
+        font-size: 13px !important;
+        position: absolute;
+        left: 1px !important;
+        top: 2px !important;
+      }
+    }
+  }
+
+  .nav-tabs {
+    padding-left: 0 !important;
+    border-bottom: none;
+
+    li {
+      width: 50%;
+      height: 38px;
+      line-height: 34px;
+      margin-bottom: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      a {
+        width: 70px;
+        display: inline-block;
+        background: #252625 !important;
+        border: none;
+        font-size: 13px !important;
+        text-align: center;
+        color: #999999 !important;
+        padding: 0;
+        height: 37px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo", "Consolas", sans-serif !important;
+        font-weight: normal;
+        font-stretch: normal;
+        letter-spacing: 0px;
+
+        &.active {
+          color: #ffffff !important;
+          border-bottom: 2px solid #b8bbbc;
+        }
+      }
+    }
+  }
+
+  lx-classify {
+    #classify {
+      margin-top: 5px;
+      margin-left: -24px;
+      width: 286px;
+    }
+  }
+
+  .image-layout .content qr-code {
+    img {
+      transform: scale(0.769) !important;
+      transform-origin: 0 0 !important;
+    }
+  }
+}
+
+:host ::ng-deep {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo", "Consolas", sans-serif !important;
+}

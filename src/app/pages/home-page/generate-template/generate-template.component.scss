@@ -1,0 +1,16 @@
+:host{
+    margin-left:80px;
+    .icon {
+        position: absolute;
+        color: #129cff;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    .case-type {
+        font-family:PingFangSC-Medium;
+        font-size:14px;
+        color:#000000;
+        margin: 12px 0 0;
+    }
+}

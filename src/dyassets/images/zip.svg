@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="78px" height="78px" viewBox="0 0 78 78" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>ZIP</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="数据首页" transform="translate(-430.000000, -1697.000000)">
+            <g id="数据搜索结果" transform="translate(364.000000, 509.000000)">
+                <g id="数据列表" transform="translate(50.000000, 41.000000)">
+                    <g id="间距-&lt;v25&gt;" transform="translate(1.000000, 45.000000)">
+                        <g id="Group-2" transform="translate(0.000000, 1074.000000)">
+                            <g id="Group-10-[25v]">
+                                <g id="ZIP" transform="translate(15.000000, 28.000000)">
+                                    <g id="图标">
+                                        <rect id="Rectangle-6" fill="#F5A623" x="0" y="0" width="77.8" height="77.8" rx="6.4"></rect>
+                                        <text id="ZIP" font-family="SFUIText-Bold, SF UI Text" font-size="26" font-weight="bold" line-spacing="38.4" fill="#FFFFFF" fill-opacity="0.97">
+                                            <tspan x="17.9538462" y="42.9046154">ZIP</tspan>
+                                        </text>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

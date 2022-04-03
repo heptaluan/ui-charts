@@ -1,0 +1,17 @@
+<div class="video" [ngStyle]="styles">
+  <div class="video-header"><i class="icon iconfont icon-x" (click)="clickCloseBtn()"></i>插入视频</div>
+  <div class="video-body">
+    <p class="text">第三方平台链接<i (click)="hanldleHelp()"></i>/&nbsp;MP4地址：</p>
+    <!-- <p class="blue" (click)="hanldleHelp()">什么是第三方平台链接？</p> -->
+    <textarea type="text" [(ngModel)]="videoText" (focus)="resetError()"></textarea>
+    <div class="error" *ngIf="isError">格式错误</div>
+    <div class="insert" (click)="insertVideo()">插入</div>
+    <p class="description">
+      第三方视频在此页面无法进行播放。点击右上方「分享」按钮，即可在预览页中查看效果。
+    </p>
+    <div class="platform-wrapper">
+      支持第三方平台：<a href="https://www.youku.com/" target="_blank">优酷</a>、<a href="https://v.qq.com/" target="_blank">腾讯视频</a>、<a href="https://www.bilibili.com/" target="_blank">bilibili</a>
+    </div>
+    <!-- <a href="https://www.acfun.cn/" target="_blank">AcFun</a><a href="https://www.iqiyi.com/" target="_blank">爱奇艺</a>、 -->
+  </div>
+</div>

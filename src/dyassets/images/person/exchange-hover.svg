@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="25px" height="25px" viewBox="0 0 25 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>特权兑换</title>
+    <desc>Created with Sketch.</desc>
+    <g id="特权兑换" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-6" stroke="#0079FA">
+            <g id="编组" transform="translate(2.000000, 3.000000)">
+                <circle id="椭圆形" stroke-width="2" cx="15.5" cy="13.5" r="5.5"></circle>
+                <path d="M11,10 L0,1" id="路径" stroke-width="1.8"></path>
+                <path d="M3,3 L6,0" id="路径-2" stroke-width="1.8"></path>
+                <path d="M6,6 L9,3" id="路径-2" stroke-width="1.8"></path>
+            </g>
+        </g>
+    </g>
+</svg>

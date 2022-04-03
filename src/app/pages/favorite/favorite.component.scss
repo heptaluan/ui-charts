@@ -1,0 +1,59 @@
+.favorite-container {
+  margin: auto;
+  max-width: 1280px;
+  padding: 0 85px;
+
+  .title-container {
+    margin-top: 40px;
+    margin-bottom: 25px;
+
+    .header {
+      font-size: 24px;
+      color: #323b47;
+      font-family:PingFangSC-Regular;
+    }
+  }
+
+  nb-card {
+    border-radius: 8px !important;
+
+    nb-card-header {
+      padding: 27px 0 25px 30px;
+      box-sizing: border-box;
+
+      .type {
+        // font-family:SourceHanSansCN-Regular;
+        font-size:18px;
+        color:#9b9b9b;
+        letter-spacing:0;
+        text-align:left;
+        font-weight: normal;
+
+        margin-right: 41px;
+      }
+
+      a {
+        margin-right: 60px;
+        // font-family:SourceHanSansCN-Regular;
+        font-size:18px;
+        color:#333;
+        letter-spacing:0;
+        text-align:left;
+        font-weight: normal;
+      }
+
+      a.selected {
+        // font-family:SourceHanSansCN-Medium;
+        font-size:18px;
+        color:#0088ff;
+        letter-spacing:0;
+        text-align:left;
+      }
+
+      a:hover {
+        text-decoration: none;
+      }
+
+    }
+  }
+}

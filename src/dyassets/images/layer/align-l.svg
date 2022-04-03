@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="16px" viewBox="0 0 14 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>顶部菜单对齐</title>
+    <g id="控件" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="顶部栏" transform="translate(-504.000000, -7.000000)" fill="#D8D8D8" fill-rule="nonzero">
+            <g id="对齐" transform="translate(502.000000, 6.000000)">
+                <rect id="Rectangle" x="2" y="1" width="1" height="16"></rect>
+                <rect id="Rectangle" x="5" y="5" width="11" height="3"></rect>
+                <rect id="Rectangle" x="5" y="10" width="8" height="3"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

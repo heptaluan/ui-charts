@@ -1,0 +1,24 @@
+<lx-modal class="login-container">
+  <div class="login-content">
+
+    <div class="title">完善手机信息</div>
+
+    <div class="login-warning">依照相关法律法规要求，需要先完成手机验证后才能继续使用镝数，感谢理解及支持！</div>
+
+    <div class="input-container">
+      <input type="text" placeholder="请输入手机号" (keydown)="onKeyDown()" [(ngModel)]="phoneNo" />
+      <div>
+        <div class="identify-code">
+          <input type="text" placeholder="手机验证码" (keydown)="onKeyDown()" [(ngModel)]="telCode" />
+          <button class="send {{codestate}}" (click)="onPhoneSendSMS()">{{sendCodeTip}}</button>
+        </div>
+        <div class="msg-tip" *ngIf="errorTip">{{errorTip}}</div>
+      </div>
+    </div>
+
+    <div class="login-agreement">注册即同意<a href="">《镝数用户协议》</a></div>
+
+    <div class="login-button" (click)='bindPhone()'>完成</div>
+
+  </div>
+</lx-modal>

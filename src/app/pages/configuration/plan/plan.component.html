@@ -1,0 +1,60 @@
+<div class="conf-container">
+  <div class="bill-list" *ngIf="planListFlag">
+    <div class="bill-item" *ngFor="let item of listTop; index as index" [ngClass]="{ hl: index === 0 }">
+      <div class="bill-block" style="flex: 1;">
+        <span>{{ item.pro_name }}</span>
+      </div>
+      <div class="bill-block" style="flex: 2;">
+        <span>{{ item.time }}</span>
+      </div>
+      <div class="bill-block" style="flex: 1.36;">
+        <div class="bill-extend" *ngIf="index !== 0">
+          <a target="_blank" (click)="returnPrice()"
+            onclick="_hmt.push(['_trackEvent', 'me', 'me', 'me-member-detail'])">方案详情</a>
+          <a target="_blank" [href]="'https://dydata.io/appv2/#/pages/price/pay?vip=0'" (click)="returnPay()"
+            onclick="_hmt.push(['_trackEvent', 'me', 'me', 'me-member-pay'])"
+            [hidden]="isVpl === 'eip1' || isVpl === 'eip2'">续费</a>
+          <a target="_blank" (click)="returnPrice()" onclick="_hmt.push(['_trackEvent', 'me', 'me', 'me-member-pay'])"
+            [hidden]="isVpl === 'vip1' || isVpl === 'vip2'">续费</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="no-bill-list" *ngIf="!planListFlag">
+    <p class="sub-title">你还没有升级为会员，立刻升级体验更多功能</p>
+    <div class="recommend">
+      <a (click)="returnPrice()" target="_blank" onclick="_hmt.push(['_trackEvent', 'me', 'me', 'me-upgrade'])"></a>
+    </div>
+  </div>
+  <div class="user-permission">
+    <h4 class="conf_title">权限使用情况</h4>
+    <div class="use-wrapper">
+      <div class="contain-wrapper" *ngFor="let data of usedPermissionConsumeArr; let i = index">
+        <p>{{ data.title }}<span *ngIf="i === 1">（今日）</span></p>
+        <ng-container *ngIf="data.total !== '无限'">
+          <progressbar value="{{ data.used }}" max="{{ data.total }}" [type]="getProgressColor(data.used, data.total)"></progressbar>
+        </ng-container>
+        <ng-container *ngIf="data.total === '无限'">
+          <progressbar value="0" max="100"></progressbar>
+        </ng-container>
+        <div class="total-wrapper">
+          <div class="text-wrapper">
+            <p class="text-title">已用</p>
+            <div class="text-content">
+              <span class="number active">{{ data.used }} </span>
+              <span class="blue">{{ data.unit }}</span>/{{ data.total }}&nbsp;
+              <span *ngIf="data.total !== '无限'">{{ data.unit }}</span>
+            </div>
+          </div>
+          <div class="text-wrapper" [ngClass]="{'last': i === 3}">
+            <p class="text-title">剩余</p>
+            <div class="text-content">
+              <span class="number">{{ data.remained }}</span>
+              <span *ngIf="data.total !== '无限'">{{ data.unit }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

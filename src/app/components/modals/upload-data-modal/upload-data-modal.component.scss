@@ -1,0 +1,674 @@
+ul,
+li,
+p,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.upload-data {
+
+  ul,
+  li {
+    list-style: none;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  background-color: #edeef0;
+  border-radius: 2px;
+  border: solid 1px #f0f0f1;
+
+  .title-box {
+    overflow: hidden;
+    height: 50px;
+    padding: 10px 60px 10px 30px;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+
+    .title-left {
+      float: left;
+      margin: 2px 0 0 -2px;
+
+      .title-img {
+        width: 20px;
+        height: 18px;
+        vertical-align: middle;
+        background: url(/dyassets/images/chart-list/data-input.svg) no-repeat center;
+        display: inline-block;
+        margin-right: 8px;
+      }
+
+      .title {
+        font-size: 18px;
+        color: #323b47;
+        vertical-align: middle;
+        margin-top: 2px;
+      }
+    }
+
+    .title-right {
+      float: right;
+      height: 32px;
+
+      label {
+        display: inline-block;
+        font-family: PingFangSC-Regular;
+        margin-right: 15px;
+        font-size: 12px;
+        font-weight: normal;
+        font-stretch: normal;
+        letter-spacing: 0px;
+        color: #969799;
+
+        input[type="checkbox"] {
+          width: 16px;
+          height: 16px;
+          display: inline-block;
+          text-align: center;
+          vertical-align: middle;
+          line-height: 15px;
+          position: relative;
+          top: -1px;
+          right: 8px;
+          cursor: pointer;
+        }
+
+        input[type="checkbox"]::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          background: #fff;
+          width: 100%;
+          height: 100%;
+          border: 1px solid #d9d9d9;
+          border-radius: 4px;
+        }
+
+        input[type="checkbox"]:checked::before {
+          content: "\2713";
+          background-color: #fff;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          border: 1px solid #017df2;
+          color: #ffffff;
+          background-image: linear-gradient(180deg, #31a5ff 0%, #0272eb 100%);
+          font-size: 10px;
+          font-weight: bold;
+          border-radius: 4px;
+        }
+      }
+
+      button {
+        display: inline-block;
+        margin: 0 10px;
+        width: 76px;
+        height: 32px;
+        background-image: linear-gradient(180deg, #008efd 0%, #0272eb 100%);
+        border-radius: 2px;
+        border: solid 1px #017df2;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo",  "Consolas", sans-serif;
+        font-size: 12px;
+        font-weight: normal;
+        font-stretch: normal;
+        letter-spacing: 0px;
+        color: #ffffff;
+        cursor: pointer;
+        outline: none;
+        padding: 0;
+
+        &:hover {
+          background-color: #0A81FF;
+        }
+        
+        &:active{
+          background-color: #0071EB;
+        }
+      }
+
+      .save {
+        margin: 0 14px;
+        width: 96px;
+        height: 32px;
+        border-radius: 4px;
+        font-size: 14px;
+        background-color: #ffffff;
+        background-image: unset;
+        border: solid 1px #0079fa;
+        color: #0079fa;
+
+        &:hover {
+          background-color: #0A81FF;
+          color: #ffffff;
+        }
+      }
+
+      .save-build {
+        margin: 0 14px;
+        width: 138px;
+        height: 32px;
+        font-size: 14px;
+        background-color: #0079fa;
+        background-image: unset;
+        border-radius: 4px;
+      }
+    }
+
+    .close {
+      font-size: 14px;
+      cursor: pointer;
+      line-height: 32px;
+      position: absolute;
+      right: 30px;
+    }
+  }
+
+  .upload-data-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 0 0 4px 4px;
+    background: #EDEEF0;
+
+    .upload-area {
+      width: 568px;
+      height: 275px;
+      background-color: #fafbfc;
+      border-radius: 4px;
+      background-color: #fafbfc;
+      border-radius: 4px;
+      margin: 95px 346px 0 347px;
+      text-align: center;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin: -127px 0 0 -284px;
+      overflow: hidden;
+
+      .upload-input {
+        margin: 40px 0 4px 0;
+        font-family: PingFangSC-Regular;
+        font-size: 16px;
+        font-weight: normal;
+        letter-spacing: 0px;
+        color: rgba(0, 0, 0, 0.85);
+
+        button {
+          position: relative;
+          z-index: 2;
+          font-size: 16px;
+          color: #0079fa;
+          background: transparent;
+          border: none;
+          cursor: pointer;
+          outline: none;
+          padding: 0;
+          text-decoration: underline;
+        }
+      }
+
+      .sub-title {
+        font-family: PingFangSC-Regular;
+        font-size: 12px;
+        font-weight: normal;
+        font-stretch: normal;
+        line-height: 22px;
+        letter-spacing: 0px;
+        color: rgba(0, 0, 0, 0.43);
+        margin-bottom: 28px;
+      }
+
+      .img-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .bc-img {
+          width: 182px;
+          height: 121px;
+          margin-right: 28px;
+          background-color: #d8d8d8;
+          background: url(/dyassets/images/chart-list/small-chart.png) no-repeat center/cover;
+        }
+
+        .tips {
+          width: 228px;
+          font-family: PingFangSC-Regular;
+          font-size: 12px;
+          font-weight: normal;
+          font-stretch: normal;
+          line-height: 18px;
+          letter-spacing: 0px;
+          color: #323b47;
+
+          p {
+            text-align: left;
+
+            &:first-child {
+              font-weight: bold;
+            }
+          }
+        }
+      }
+
+      .upload-mask {
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 4px;
+        border: 1px dashed #0079fa;
+        width: 100%;
+        height: 100%;
+
+        &.over {
+          background: rgba(0, 0, 0, 0.43);
+          position: absolute;
+          z-index: 3;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+
+
+.table-container {
+  border-radius: 4px;
+  height: 100%;
+}
+
+.table-sheet {
+  margin-bottom: 0px;
+  font-size: 12px;
+  color: #666666;
+  width: 90px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sheet-active {
+  background: white;
+}
+
+
+:host ::ng-deep {
+  .table {
+    margin-bottom: 0;
+
+    .wtHolder {
+
+      &::-webkit-scrollbar {
+        width: 6px !important;
+        height: 6px !important;
+        background-color: transparent !important;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: #848484 !important;
+        border-radius: 5px !important;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: transparent !important;
+      }
+
+      &::-webkit-scrollbar-corner {
+        background: transparent !important;
+      }
+    }
+  }
+
+  .table-footer {
+    height: 38px;
+    background: rgb(196, 203, 214);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+}
+
+
+
+.create-project-container {
+  width: 100%;
+  overflow-y: scroll;
+  border-radius: 0 0 4px 4px;
+  background: #EDEEF0;
+  height: 100%;
+  padding: 20px;
+  .chart-inner-container {
+    margin: 0 auto;
+  }
+
+  .change-chart-box {
+    border: 1px solid #e0e0e0;
+    padding: 15px 25px;
+    background: #fff;
+
+    .change-chart-title {
+      font-size: 14px;
+      color: #333;
+      margin-right: 15px;
+      color: #000a1a;
+    }
+
+    .change-chart-list {
+      line-height: 32px;
+      margin-bottom: 15px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .change-chart-item {
+      font-size: 14px;
+      color: #5c6066;
+      padding: 5px 19px;
+      cursor: pointer;
+
+      &.active {
+        color: #ffffff;
+        background: #0079fa;
+      }
+    }
+
+    .change-chart-template-list {
+
+      ul {
+        overflow: hidden;
+        padding-left: 65px;
+
+        li {
+          float: left;
+          width: 65px;
+          height: 75px;
+          margin-right: 20px;
+          margin-bottom: 20px;
+          cursor: pointer;
+          border: 2px solid transparent;
+
+          &.active {
+            border: 2px solid #90C4FD;
+            background-color: #F0F7FF;
+
+            p {
+              color: #0079fa;
+            }
+          }
+
+          .cover {
+            height: 50px;
+            text-align: center;
+            padding: 8px 0;
+          }
+
+          p {
+            margin: 0;
+            text-align: center;
+            color: #333;
+            font-size: 14px;
+          }
+        }
+      }
+
+    }
+
+    .info-scene {
+      display: flex;
+      flex-direction: row;
+      font-family: PingFangSC-Regular;
+      font-size: 14px;
+      font-weight: normal;
+      font-stretch: normal;
+      letter-spacing: 0px;
+      color: #5c6066;
+
+      .info-scene-title {
+        width: 42px;
+        height: 20px;
+        line-height: 20px;
+        text-align: center;
+        margin-top: 5px;
+      }
+
+      .info-scene-item {
+        flex: 1;
+        line-height: 30px;
+
+        ul {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          flex-wrap: wrap;
+
+          li {
+            height: 30px;
+            line-height: 30px;
+            box-sizing: border-box;
+            padding: 0px 12px;
+            margin-left: 20px;
+            margin-bottom: 15px;
+            cursor: pointer;
+
+            &.active {
+              color: #ffffff;
+              background: #0079fa;
+            }
+          }
+        }
+      }
+
+      .info-scene-last {
+        line-height: 30px;
+
+        select {
+          border: none;
+          color: #5c6066;
+          font-size: 14px;
+          margin-left: 15px;
+
+          &:focus {
+            outline: none;
+            border: none;
+          }
+        }
+      }
+
+      .info-price {
+        margin-left: 40px;
+      }
+    }
+  }
+
+  .template-list {
+    width: calc(100% + 10px);
+    margin-left: -4px;
+
+    ul {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+
+      li {
+        // width: calc(91% / 4);
+        width: 252px;
+        margin-bottom: 15px;
+        cursor: pointer;
+        // margin-right: 3%;
+        margin-left: 5px;
+        margin-right: 5px;
+        background: #fff;
+        position: relative;
+        transition: all .2s linear;
+        z-index: 1;
+
+        &:hover {
+          z-index: 2;
+          box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+          transform: translate(0, -8px);
+        }
+
+        .template-cover {
+          width: 100%;
+          // min-height: 200px;
+          padding: 10px;
+          position: relative;
+          box-shadow: inset 0px -1px 0px 0px rgba(209, 209, 209, 0.5);
+
+          .vip-recommend {
+            position: absolute;
+            left: 5px;
+            top: 5px;
+            color: #fff;
+            background: #f5a623;
+            font-size: 12px;
+            padding: 3px 10px;
+            border-radius: 4px;
+          }
+
+          .vip-level {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            color: #fff;
+            background: red;
+            font-size: 12px;
+            padding: 3px 10px;
+            border-radius: 4px;
+          }
+
+          .new-chart {
+            width: 43px;
+            height: 20px;
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            color: #fff;
+            background: url(/dyassets/images/home-page/chart-new.svg) no-repeat center center / contain;
+          }
+
+          img {
+            max-width: 100%;
+            padding: 10px 0px;
+            // max-height: 200px;
+            height: 127px;
+          }
+        }
+
+        .template-intro {
+          font-size: 14px;
+          padding: 10px;
+          overflow: hidden;
+
+          .template-title {
+            float: left;
+          }
+
+          .template-view {
+            float: right;
+          }
+        }
+
+        .dynamic-chart {
+          position: absolute;
+          right: 5px;
+          top: 5px;
+          z-index: 1;
+          width: 42px;
+          height: 23px;
+          line-height: 23px;
+          background-image: linear-gradient(180deg, #ff896f 0%, #ff0d65 100%);
+          border-radius: 3px;
+          text-align: center;
+          font-size: 12px;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .infographic-template-list ul li {
+    min-height: 493px;
+
+    .template-cover {
+      min-height: 434px;
+
+      img {
+        max-width: 100%;
+        padding: 10px 0px;
+        min-height: 434px;
+      }
+    }
+
+    .create-info-blank {
+      display: flex;
+
+      i {
+        display: block;
+        width: 100%;
+        min-height: 434px;
+        background: #f6f6f6 url(/dyassets/images/create-project.png) no-repeat center/105px 87px;
+      }
+    }
+
+    .template-intro {
+      padding: 15px 10px;
+    }
+  }
+
+  .chart-template-list ul li {
+    .create-chart-blank {
+      i {
+        display: block;
+        width: 100%;
+        min-height: 195px;
+        background: #f6f6f6 url(/dyassets/images/create-project.png) no-repeat center/105px 87px;
+      }
+    }
+  }
+}
+
+
+.preview {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .page {
+    width: 600px;
+    height: 475px;
+    box-shadow: 0px 1px 7px 0px rgba(200, 209, 224, 0.4);
+    position: relative;
+    background: #fff;
+    position: relative;
+
+    .animation-button {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      width: 56px;
+      height: 56px;
+      background: url(/dyassets/images/play.svg) no-repeat 50%;
+      cursor: pointer;
+      z-index: 99;
+    
+      &.active {
+        background: url(/dyassets/images/stop.svg) no-repeat 50%;
+      }
+    }
+  }
+}

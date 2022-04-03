@@ -1,0 +1,28 @@
+:host {
+    .sort-container {
+        margin-top: 25px;
+        max-width: 1280px;
+        padding: 0 85px;
+        height: 70px;
+        > div {
+            background: #fff;
+            box-shadow:0 3px 9px 0 #e1e8f1; //注释1
+            border-radius:8px;
+            label {
+                line-height: 70px;
+                margin: 0 22px 0 30px;
+                font-size: 18px;
+                color:#333333;
+            }
+            label:first-child {
+                color:#9b9b9b;
+            }
+            label.active {
+                color:#0090ff;
+            }
+            label.sort-type {
+                cursor: pointer;
+            }
+        }
+    }
+}

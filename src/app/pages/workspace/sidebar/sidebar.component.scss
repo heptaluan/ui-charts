@@ -1,0 +1,20 @@
+:host ::ng-deep {
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo",  "Consolas", sans-serif !important;
+  input.form-control {
+    // border: 1px solid #d5dbe0 !important;
+    font-size: 12px !important;
+  }
+  
+  input.form-control::-webkit-input-placeholder {
+    font-size: 12px !important;
+  }
+  
+  select {
+    // border: 1px solid #d5dbe0 !important;
+    font-size: 12px !important;
+  }
+  
+  label {
+    font-size: 12px;
+  }
+}

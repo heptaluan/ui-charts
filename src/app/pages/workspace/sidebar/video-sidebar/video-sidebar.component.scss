@@ -1,0 +1,122 @@
+.video {
+  width: 280px;
+  height: calc(100% - 40px);
+  box-shadow: none !important;
+  border-right: 1px solid #1f1f1f;
+  background: #252626;
+
+  &-header {
+    height: 38px;
+    line-height: 38px;
+    font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo",  "Consolas", sans-serif !important;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    letter-spacing: 0;
+    text-align: center;
+    font-weight: normal;
+    background-color: #252625;
+    border-bottom: 1px solid #161616;
+    position: relative;
+
+    i {
+      position: absolute;
+      right: 8px;
+      top: 0;
+      cursor: pointer;
+      color: #c0c2c4;
+      opacity: 0.7;
+    }
+  }
+
+  &-body {
+    font-size: 12px;
+    padding: 15px 15px 0 16px;
+
+    .text {
+      color: #a3a3a3;
+
+      i {
+        vertical-align: -1px;
+        margin: 0 3px;
+        width: 14px;
+        height: 14px;
+        display: inline-block;
+        cursor: pointer;
+        background: url(/dyassets/images/animation-tooltip.svg) center / cover;
+
+        &:hover {
+          background: url(/dyassets/images/animation-tooltip-white.svg) center / cover;
+        }
+      }
+    }
+
+    // .blue {
+    //   color: #129cff;
+    //   margin-top: 8px;
+    //   cursor: pointer;
+    // }
+
+    textarea {
+      display: block;
+      margin-top: 10px;
+      border: none;
+      color: #fff;
+      background: #19191a;
+      padding: 7px 12px 0;
+      border-radius: 2px;
+      width: 100%;
+      height: 138px;
+      resize: none;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .insert {
+      color: #000000;
+      width: 70px;
+      height: 22px;
+      line-height: 22px;
+      background-image: linear-gradient(0deg,
+          #cfd9df 0%,
+          #e2ebf0 100%);
+      border-radius: 2px;
+      text-align: center;
+      margin: 0 auto;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    .platform-wrapper {
+      margin-top: 12px;
+      width: 249px;
+      height: 44px;
+      line-height: 22px;
+
+      a {
+        display: inline-block;
+        font-size: 12px;
+        color: #fff;
+        text-decoration: underline;
+
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+
+    .description {
+      width: 249px;
+      height: 44px;
+      line-height: 22px;
+      color: #a3a3a3;
+      font-size: 12px;
+      margin-top: 20px;
+    }
+  }
+}
+.error {
+  color: red;
+  font-size: 12px;
+}

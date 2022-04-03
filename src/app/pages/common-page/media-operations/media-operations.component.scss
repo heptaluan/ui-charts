@@ -1,0 +1,372 @@
+.banner {
+  height: 578px;
+  background: #463d8d url(/dyassets/images/common-page/media-operations/media-banner.png) no-repeat center / cover;
+
+  .banner-wrapper {
+    width: 1000px;
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 53px;
+    &.active {
+      top: 138px;
+      align-items: flex-end;
+    }
+    h2 {
+      position: absolute;
+      top: 27px;
+      left: 0;
+      color: #ffffff;
+      font-size: 30px;
+      font-weight: 600;
+      height: 42px;
+      line-height: 42px;
+      &.active {
+        top: -90px;
+        left: 50%;
+        transform: translate(-50%);
+      }
+    }
+    .left {
+      padding-top: 117px;
+      padding-bottom: 36px;
+      &.active {
+        padding-top: 20px;
+      padding-bottom: 19px;
+      }
+      .text {
+        width: 352px;
+        h4 {
+          position: relative;
+          font-size: 18px;
+          padding-left: 17px;
+          color: #ffffff;
+          height: 25px;
+          line-height: 25px;
+          &:not(:first-child) {
+            margin-top: 32px;
+          }
+          i {
+            width: 8px;
+            height: 9px;
+            position: absolute;
+            display: block;
+            top: 8px;
+            left: 0;
+            background: url(/dyassets/images/common-page/media-operations/tip-icon.svg) no-repeat center / cover;
+          }
+        }
+        p {
+          margin-top: 8px;
+          font-size: 16px;
+          height: 52px;
+          line-height: 26px;
+          color: rgba(255, 255, 255, 0.8);
+        }
+      }
+    }
+    .right {
+      width: 518px;
+      background-color: #ffffff;
+      border-radius: 6px;
+      padding: 40px 48px 42px 40px;
+      .input-wrapper {
+        font-size: 14px;
+        color: #4c4c4c;
+        height: 40px;
+        line-height: 40px;
+        padding-left: 16px;
+        position: relative;
+        &:not(:first-child) {
+          margin-top: 30px;
+        }
+        button {
+          padding: 0;
+          margin-left: 18px;
+          width: 102px;
+          height: 40px;
+          display: inline-block;
+          background-color: #ffffff;
+          border: solid 1px #0079fa;
+          color: #0079fa;
+          cursor: pointer;
+          line-height: 40px;
+          border-radius: 2px;
+          &:disabled {
+            border-color: rgba(0, 121, 250, 0.4);
+            color: rgba(0, 121, 250, 0.5);
+            cursor: not-allowed;
+          }
+          &:focus {
+            outline: none;
+          }
+        }
+        &.active {
+          padding-left: 30px;
+          input {
+            margin-left: 18px;
+          }
+          i {
+            left: 13px;
+          }
+        }
+        input {
+          color: #333333;
+          display: inline-block;
+          margin-left: 18px;
+          width: 340px;
+          height: 40px;
+          border-radius: 2px;
+          border: solid 1px #e6e6e6;
+          padding: 9px 0 9px 15px;
+          &:focus {
+            border: solid 1px #0079fa;
+            outline: none;
+          }
+          &::placeholder {
+            color: #999999;
+            font-size: 14px;
+          }
+          &.active {
+            width: 220px;
+          }
+        }
+        i {
+          width: 7px;
+          height: 7px;
+          position: absolute;
+          display: block;
+          top: 17px;
+          left: 0;
+          background: url(/dyassets/images/common-page/media-operations/symbol.svg) no-repeat center / cover;
+        }
+        .error-tip {
+          position: absolute;
+          height: 17px;
+          line-height: 17px;
+          color: #ff0201;
+          font-size: 12px;
+          left: 90px;
+          bottom: -20px;
+        }
+      }
+      .submit {
+        width: 414px;
+        height: 40px;
+        margin-top: 30px;
+        margin-left: 16px;
+        text-align: center;
+        line-height: 40px;
+        color: #ffffff;
+        background-color: #0079fa;
+        border-radius: 2px;
+        cursor: pointer;
+        &:hover {
+          background-color: #0a81ff;
+        }
+        &:focus {
+          outline: none;
+          background-color: #0071eb;
+        }
+      }
+    }
+  }
+}
+
+main {
+  margin: 0 auto;
+  .partner {
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 56px;
+    h3 {
+      color: #333333;
+      font-size: 26px;
+      text-align: center;
+    }
+    .show-imgs {
+      height: 298px;
+      margin-top: 40px;
+      background: url(/dyassets/images/common-page/media-operations/logo.png) no-repeat center / cover;
+    }
+  }
+  .big-shot {
+    margin: 0 auto;
+    margin-top: 70px;
+    padding-top: 63px;
+    // height: 637px;
+    background-image: linear-gradient(180deg, #f6f6fd 0%, #ffffff 100%);
+
+    h3 {
+      color: #717171;
+      font-size: 26px;
+      text-align: center;
+    }
+
+    .person-wrapper {
+      width: 1000px;
+      display: flex;
+      height: 258px;
+      margin: 0 auto;
+      margin-top: 41px;
+      .record {
+        flex: 1;
+        height: 100%;
+        margin-right: 25px;
+        &:last-child {
+          margin-right: 0;
+        }
+        .text-container {
+          position: relative;
+          background: #fff;
+          border: 1px solid #d9dce4;
+          font-size: 14px;
+          color: #323b47;
+          line-height: 24px;
+          padding: 15px 20px 20px 18px;
+          height: 177px;
+          &::before {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            position: absolute;
+            border-top: 15px solid #d9dce4;
+            border-right: 20px solid transparent;
+            bottom: -15px;
+            left: 82px;
+          }
+          &::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            position: absolute;
+            border-top: 14px solid #fff;
+            bottom: -13px;
+            border-right: 18px solid transparent;
+            left: 83px;
+          }
+          &.text-container-1 {
+            &::before {
+              left: 113px;
+            }
+            &::after {
+              left: 114px;
+            }
+          }
+          &.text-container-2 {
+            &::before {
+              left: 91px;
+            }
+            &::after {
+              left: 92px;
+            }
+          }
+        }
+        .person {
+          padding: 31px 30px 0 29px;
+          display: flex;
+          justify-content: space-between;
+          &.person-1 {
+            padding: 31px 79px 0 78px;
+            .avatar {
+              background: url(/dyassets/images/common-page/media-operations/avatar1.png) no-repeat center / cover;
+            }
+          }
+          &.person-2 {
+            padding: 31px 58px 0 57px;
+            .avatar {
+              background: url(/dyassets/images/common-page/media-operations/avatar2.png) no-repeat center / cover;
+            }
+          }
+          .avatar {
+            width: 48px;
+            height: 48px;
+            background: url(/dyassets/images/common-page/media-operations/avatar0.png) no-repeat center / cover;
+            border-radius: 50%;
+          }
+          .text-wrapper {
+            p {
+              margin-top: 7px;
+              font-size: 14px;
+              height: 15px;
+              line-height: 15px;
+              &:first-child {
+                color: #000a1a;
+              }
+              &:last-child {
+                color: #717171;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+:host::ng-deep {
+  lx-dy-footer {
+    footer {
+      top: 112px;
+      width: 100%;
+      left: 0;
+    }
+    &.succ {
+      footer {
+        top: 215px;
+        width: 100%;
+        left: 0;
+      }
+    }
+  }
+}
+
+.succ-wrapper {
+  margin: 0 auto;
+  margin-top: 112px;
+  width: 316px;
+  height: 280px;
+  padding-top: 20px;
+  img {
+    width: 100%;
+    height: 125px;
+  }
+  p {
+    text-align: center;
+    &.title {
+      margin-top: 20px;
+      color: #00081c;
+      font-size: 18px;
+      font-weight: 600;
+    }
+    &.desc {
+      margin-top: 8px;
+      color: #394351;
+      font-size: 14px;
+    }
+  }
+  button {
+    margin: 0 auto;
+    display: block;
+    width: 128px;
+    height: 40px;
+    border-radius: 6px;
+    border: none;
+    margin-top: 22px;
+    color: #fff;
+    font-weight: 600;
+    background-color: #0079fa;
+    cursor: pointer;
+    &:hover {
+      background-color: #0a81ff;
+    }
+    &:focus {
+      outline: none;
+      background-color: #0071eb;
+    }
+  }
+}

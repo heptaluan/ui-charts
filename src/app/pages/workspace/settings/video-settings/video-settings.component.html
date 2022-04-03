@@ -1,0 +1,50 @@
+<div class="header">编辑视频</div>
+
+<!-- 锁定组件 -->
+<lx-elements-locked
+  [block]="curBlock"
+  [projectId]="projectId"
+  [pageId]="curPageId"
+  [type]="'isMusicOrVidoe'"
+></lx-elements-locked>
+
+<!-- 对齐组件 -->
+<lx-elements-aligned
+  [block]="curBlock"
+  [projectId]="projectId"
+  [pageId]="curPageId"
+></lx-elements-aligned>
+
+<section>
+  <lx-settings-size
+    [locked]="curBlock?.props.size.ratio"
+    [value0]="curBlock?.props.size.height"
+    [value1]="curBlock?.props.size.width"
+    [value2]="curBlock?.props.size.rotate"
+    [ratio]="curBlock?.props.size.ratio"
+    [max0]="10000"
+    [min0]="1"
+    [max1]="6000"
+    [min1]="1"
+    [max2]="360"
+    [max2]="0"
+    [title0]="''"
+    [title1]="''"
+    [title2]="''"
+    [letter1]="'W'"
+    [letter0]="'H'"
+    [letter2]="'°'"
+    (onChanged)="onSizeChanged($event)"
+  ></lx-settings-size>
+  <div class="line top-20">
+    <div class="small-title">不透明度(%)</div>
+    <lx-slider [min]=0 [max]=100 [step]=1 [cur]='opacity' [isProgress]="true" (valueChanged)="onInput($event)"></lx-slider>
+  </div>
+</section>
+<div class="text-wrapper">
+  <p class="text">第三方平台链接/URL地址:</p>
+  <textarea type="text" [(ngModel)]="srcText" (focus)="resetError()"></textarea>
+  <div class="error" *ngIf="isError">格式错误</div>
+</div>
+
+<div class="insert" (click)="handleSwap()">切换</div>

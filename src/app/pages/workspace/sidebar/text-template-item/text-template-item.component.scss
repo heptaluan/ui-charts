@@ -1,0 +1,78 @@
+
+.text-template {
+  margin-left: -5px;
+  margin-right: -5px;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  
+  .template-item {
+    width: 120px;
+    height: 92px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    margin: 0 5px 15px 5px;
+    box-sizing: border-box;
+  
+    .over-layout {
+      position: absolute;
+      opacity: 0;
+      width: 120px;
+      height: 92px;
+      border-radius: 2px;
+      background-color: rgba($color: #4c7693, $alpha: .7);
+      text-align: center;
+      transition: all .3s;
+      border: none;
+  
+      button {
+        background-color: rgba($color: #4c7693, $alpha: .7);
+        color: #fff;
+        // border: 1px solid #ffffff;
+        border: 2px solid #0090ff !important;
+        width: 120px;
+        height: 92px;
+      }
+    }
+  
+    .title {
+      font-size: 12px;
+      font-weight: 600;
+      height: 12px;
+      line-height: 12px;
+      color: #333333;
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 13px;
+    }
+  
+    .content {
+      width: 94px;
+      height: 44px;
+      border: 1px dotted #b3b3b3;
+      background-color: #e6e6e6;
+      margin: auto;
+      padding: 9px 0;
+      font-size: 18px;
+      color: #323b47;
+      font-weight: 600;
+    }
+  }
+
+  .template-item:hover {
+    .over-layout {
+      opacity: 1;
+    }
+  }
+  
+  .dy-button {
+    border: 1px solid #fff;
+    border-radius: 2px;
+  }
+}
+
+
+
+:host ::ng-deep {
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo",  "Consolas", sans-serif !important;
+}

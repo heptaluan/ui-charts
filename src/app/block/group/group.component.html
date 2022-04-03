@@ -1,0 +1,23 @@
+<div class="group-container">
+  <div
+    class="group-container-item"
+    *ngFor="let item of data.setting.props.children"
+    [ngStyle]="{'left': item.groupLeft + 'px', 'top': item.groupTop + 'px', 'transform': 'rotate(' + item.props.size.rotate + 'deg)'}"
+    [id]="item.blockId"
+  >
+
+    <ng-container *ngIf="item.props.children; else notGroup">
+      <lx-group [data]="{setting: item}"></lx-group>
+    </ng-container>
+    <ng-template #notGroup>
+      <lx-image *ngIf="item.type === 'image'" [groupData]="item"></lx-image>
+      <!-- <lx-text *ngIf="item.type === 'text'" [groupData]="item"></lx-text>
+      <lx-shape *ngIf="item.type === 'shape'" [groupData]="item"></lx-shape>
+      <lx-video *ngIf="item.type === 'video'" [groupData]="item"></lx-video>
+      <lx-audio *ngIf="item.type === 'audio'" [groupData]="item"></lx-audio>
+      <lx-chart *ngIf="item.type === 'chart'" [groupData]="item"></lx-chart> -->
+    </ng-template>
+  </div>
+</div>
+
+<!-- [ngStyle]="{'left': getPos(item, data, 'left') + 'px', 'top': getPos(item, data, 'top') + 'px'}" -->

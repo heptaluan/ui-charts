@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="6px" height="4px" viewBox="0 0 6 4" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>下拉</title>
+    <desc>Created with Sketch.</desc>
+    <g id="组件" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="上侧固定部分" transform="translate(-211.000000, -150.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <g id="固定内容">
+                <g transform="translate(16.000000, 0.000000)">
+                    <g id="画布主题" transform="translate(0.000000, 142.000000)">
+                        <path d="M200.93704,8 L200.344925,8 C200.304661,8 200.266766,8.01953125 200.243081,8.0515625 L198.00015,11.1109375 L195.757218,8.0515625 C195.733533,8.01953125 195.695638,8 195.655374,8 L195.063259,8 C195.011942,8 194.981942,8.0578125 195.011942,8.09921875 L197.795673,11.896875 C197.896727,12.034375 198.103572,12.034375 198.203837,11.896875 L200.987567,8.09921875 C201.018357,8.0578125 200.988357,8 200.93704,8 Z" id="下拉"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="34px" height="34px" viewBox="0 0 34 34" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>地点</title>
+    <g id="地点" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="编组" stroke="#D6D6D6" stroke-width="2">
+            <g transform="translate(4.000000, 2.000000)">
+                <path d="M13,1 C9.6862915,1 6.6862915,2.34314575 4.51471863,4.51471863 C2.34314575,6.6862915 1,9.6862915 1,13 C1,14.8623772 5.13887072,20.339907 12.9997934,29.4691992 C20.8606081,20.3405968 25,14.8624945 25,13 C25,9.6862915 23.6568542,6.6862915 21.4852814,4.51471863 C19.3137085,2.34314575 16.3137085,1 13,1 Z" id="椭圆形"></path>
+                <circle id="椭圆形" cx="13" cy="11" r="4"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

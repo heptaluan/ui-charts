@@ -1,0 +1,18 @@
+<i class="icon iconfont icon-x" (click)='close()' *ngIf="!isHideCloseBtn"></i>
+
+<div class="progress">
+  <div class="progress-show">
+    <div class="progress-show-active" [ngStyle]="{'width': progressWidth + '%', 'backgroundColor': isFail ? '#e63962' : '#1890ff'}"></div>
+  </div>
+  <div class="progress-text">{{progressWidth}}%</div>
+</div>
+
+<ng-container *ngIf="!isFail;else fail">
+  <p>{{text}}</p>
+</ng-container>
+
+<ng-template #fail>
+  <!-- <p>生成失败点击<span (click)="retry()">重试</span></p> -->
+  <p>生成失败</p>
+</ng-template>
+

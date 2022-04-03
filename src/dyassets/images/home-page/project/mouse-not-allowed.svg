@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>锁定</title>
+    <desc>Created with Sketch.</desc>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="我的项目" transform="translate(-608.000000, -1492.000000)">
+            <g id="锁定" transform="translate(608.000000, 1492.000000)">
+                <circle id="椭圆形" fill="#FFFFFF" cx="9" cy="9" r="9"></circle>
+                <path d="M4.305375,14.6064375 C5.62022006,15.710735 7.28294308,16.3149813 9,16.3125076 C13.03875,16.3125076 16.3125,13.03875 16.3125,9 C16.3125,7.2129375 15.67125,5.5755 14.6064375,4.305375 L4.305375,14.6064375 Z M3.144375,13.38075 L13.38075,3.144375 C12.1172355,2.19632816 10.5796377,1.68498015 9,1.68749073 C4.96125,1.68749073 1.6875,4.96125 1.6875,9 C1.6875,10.6430625 2.22975,12.160125 3.144375,13.38075 Z M9,18 C4.0291875,18 0,13.9708125 0,9 C0,4.0291875 4.0291875,0 9,0 C13.9708125,0 18,4.0291875 18,9 C18,13.9708125 13.9708125,18 9,18 Z" id="形状" fill="#D0021B" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>

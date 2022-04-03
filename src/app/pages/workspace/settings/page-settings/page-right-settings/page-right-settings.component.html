@@ -1,0 +1,30 @@
+<div class="d-flex flex-column right-container">
+  <div class="section">
+    <ng-container *ngIf="project?.type !== 'chart'">
+      <div class="theme-list">
+        <div class="small-title">画布(px)</div>
+        <lx-settings-dropdowns class="page-dropdown" [index]="pageSizeIndex" [values]="infoShowType" [type]="'page'"
+          (onChanged)="onDropDownChanged($event)"></lx-settings-dropdowns>
+      </div>
+      <div class="page-size top-15 d-flex line-end">
+        <!-- 宽高 -->
+        <lx-settings-size [locked]="!!design.ratio" [value0]="design.height" [value1]="design.width"
+          [ratio]="design.ratio" [max0]=20000 [min0]=300 [max1]=6000 [min1]=300 [pageSetting]="true" [title0]="''"
+          [title1]="''" (onChanged)="onSizeChanged($event)"></lx-settings-size>
+      </div>
+    </ng-container>
+
+    <div class="top-15" *ngIf="project?.type === 'chart'">
+      <lx-settings-size [locked]="!!design.ratio" [value0]="design.height" [value1]="design.width"
+        [ratio]="design.ratio" [max0]=800 [min0]=300 [max1]=800 [min1]=300 [pageSetting]="true"
+        (onChanged)="onSizeChanged($event)"></lx-settings-size>
+    </div>
+
+    <div class="change-page-color top-15">
+      <div class="small-title">画布颜色</div>
+      <lx-color-list class="left-16" [isOpacityShow]="false" [themColorList]=themeColorList
+        [colorSeleced]="design.backgroundColor" (onChanged)="onEventLog($event)"></lx-color-list>
+    </div>
+  </div>
+
+</div>

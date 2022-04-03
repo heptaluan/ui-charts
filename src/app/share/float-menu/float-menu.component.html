@@ -1,0 +1,47 @@
+<div class="float-container" *ngIf="isShowFloatMenu">
+  <!-- <div class="float-item money" (click)="handleItemClick('赚钱')" (mouseenter)="handleItemMove('赚钱', 'enter')" (mouseleave)="handleItemMove('赚钱','leave')">
+    <div class="icon"></div>
+    <p class="text" class="top-3">赚钱</p>
+  </div> -->
+  <div class="float-item vip" (click)="handleItemClick('会员特权')">
+    <div class="icon"></div>
+    <p class="text">会员特权</p>
+  </div>
+  <div class="float-item" id="flyer-target" [ngClass]="{'active': isShowTip}" (click)="handleItemClick('帮助中心')">
+    <div class="icon"></div>
+    <p class="text">帮助中心</p>
+  </div>
+  <div class="float-item" (mouseenter)="handleItemMove('客服', 'enter')" (mouseleave)="handleItemMove('客服','leave')">
+    <div class="icon"></div>
+    <p class="text">客服</p>
+  </div>
+  <div class="float-item" (mouseenter)="handleItemMove('服务号', 'enter')" (mouseleave)="handleItemMove('服务号','leave')" [ngClass]="{'radiusStyle': !isShowBackTop}" >
+    <div class="icon"></div>
+    <p class="text">服务号</p>
+  </div>
+  <!-- <div class="float-item" (mouseenter)="handleItemMove('小程序', 'enter')" (mouseleave)="handleItemMove('小程序','leave')">
+    <div class="icon"></div>
+    <p class="text">小程序</p>
+  </div> -->
+  <div class="float-item" *ngIf="isShowBackTop" (click)="handleItemClick('返回顶部')">
+    <div class="icon"></div>
+    <p class="text">返回顶部</p>
+  </div>
+  <div class="float-box" *ngIf="isShowBox" [ngStyle]="{'top': boxImgTop + 'px'}">
+    <img src="{{boXImg}}" alt="">
+    <p>{{boxImgText}}</p>
+  </div>
+  
+  <div class="float-wrapper" [ngStyle]="{'top': boxImgTop + 'px'}" *ngIf="isShowSupport">
+    <div class="float-box support">
+      <img src="/dyassets/images/support-code.png" alt="">
+      <p>技术支持</p>
+    </div>
+    <div class="float-box">
+      <img src="{{boXImg}}" alt="">
+      <p>{{boxImgText}}</p>
+    </div>
+  </div>
+</div>
+
+

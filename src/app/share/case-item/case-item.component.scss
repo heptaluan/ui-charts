@@ -1,0 +1,50 @@
+.caseitem {
+  cursor: pointer;
+  background: #fff;
+  // box-shadow: 0 2px 11px 0 rgba(211, 221, 237, 0.40);
+  border-radius: 2px;
+  width: 198px;
+  height: 266px;
+  margin: 0 15px 40px 15px;
+
+  .caseimg-container {
+    border-bottom: 1px solid #ebeef2;
+
+    img {
+      width: 198px;
+      height: 154px;
+    }
+  }
+
+  .caseinfo-container {
+    height: 112px;
+    padding: 10px 13px 0 15px;
+
+    .title {
+      margin-bottom: 8px;
+      font-family:PingFangSC-Medium;
+      font-size:14px;
+      color:#48494a;
+      line-height:21px;
+      text-align:left;
+      height: 40px;
+    }
+
+    .author {
+      margin-bottom: 8px;
+      font-family:PingFangSC-Regular;
+      font-size:12px;
+      color:#323b47;
+      text-align:left;
+    }
+
+    .info span{
+      font-family:PingFangSC-Medium;
+      font-size:12px;
+      color:#969799;
+      text-align:left;
+    }
+
+  }
+}
+

@@ -1,0 +1,9 @@
+
+
+<div class="locked-box" *ngIf="isLocked" [ngClass]="{'is-chart': type === 'isChart', 'is-music': type === 'isMusicOrVidoe'}">
+  <div class="top-fill"></div>
+  <div class="locked-mask"> 
+    <p>该对象已被锁定</p>
+    <button (click)="handleButtonCliked()">解锁</button>
+  </div>
+</div>

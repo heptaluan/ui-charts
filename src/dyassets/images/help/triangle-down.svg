@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="11px" height="7px" viewBox="0 0 11 7" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Path</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="数据首页" transform="translate(-141.000000, -970.000000)" fill="#c3c4c7">
+            <g id="数据分类" transform="translate(0.000000, 509.000000)">
+                <g id="1" transform="translate(141.000000, 30.000000)">
+                    <g id="Group-9" transform="translate(0.000000, 51.000000)">
+                        <g id="Group-10-&lt;v15&gt;">
+                            <g id="一级分类-&lt;v5&gt;" transform="translate(0.000000, 370.000000)">
+                                <g id="大分类">
+                                    <g id="下--拉" transform="translate(0.000000, 10.707317)">
+                                        <path d="M6.05641401,5.36065942 C5.91583057,5.48540394 5.71317315,5.55690888 5.50020583,5.55691057 C5.28722246,5.55691838 5.08454839,5.48541271 4.94395432,5.36065939 L0.2386768,1.34844687 C0.00897435683,1.15926188 -0.0620060986,0.883528729 0.0567055772,0.639989739 C0.175417253,0.396450749 0.461934338,0.226390007 0.794906639,0.203252033 L10.2016337,0.203252033 C10.535882,0.225395007 10.8236534,0.394443884 10.9423867,0.638994739 C11.0624177,0.883528729 10.9914372,1.15825002 10.7617131,1.34844687 L6.05641401,5.36065942 Z" id="Path"></path>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,57 @@
+<!-- B 修改手机号 -->
+<div class="modal fade" bsModal #resetPhoneModal="bs-modal" [config]="{backdrop: 'static'}" tabindex="-1" role="dialog" aria-labelledby="dialog-static-name">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title pull-left">{{title}}</h4>
+                <button type="button" class="close pull-right" aria-label="Close" (click)="hide()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- 第一步、寻问是否能接收短信 -->
+                <div class="rp-ask" #rpAskDiv>
+                    <div style="margin-bottom: 30px;">你已绑定手机{{userphone}}是否能正常接收短信</div>
+                    <div class="d-flex flex-row align-items-center justify-content-around">
+                        <a href="javascript:;" class="select-btn"  (click)="onPhoneUsefull()"><div>能</div></a>
+                        <a href="javascript:;" class="select-btn"  (click)="onPhoneUseless()"><div>不能</div></a>
+                    </div>
+                </div>
+                <!-- 第二步、不能接收短信 -->
+                <div class="rp-sms-useless" hidden #rpSmsUselessDiv>
+                    <div>请添加镝数工作人员微信反馈您的问题</div>
+                    <img src="/dyassets/images/index/xiaodi.jpg" style="width: 200px;height: 200px;margin: 30px 0px;" />
+                    <a href="javascript:;" class="done-btn" (click)="onServiceDone()"><div>完成</div></a>
+                </div>
+                <!-- 第二步、能接收短信，验证已绑定手机 -->
+                <div class="rp-sms-available" hidden #rpSmsAvailableDiv>
+                    <form>
+                        <div class="form-group">
+                            <input class="form-control" (keydown)="onKeyDown($event)" [(ngModel)]="phoneNo" id="rpOldNumInput" name="phonenum" placeholder="手机号码">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control ignore" (keydown)="onKeyDown($event)" [(ngModel)]="phoneCode" id="rpOldCodeInput" name="verifycode" placeholder="短信验证码">
+                            <a href="javascript:;" class="btn sms-btn {{codestate}}" id="rpSendOldCodeBtn" (click)="onOldSendSms()"><div>{{sendCodeTip}}</div></a>
+                        </div>
+                    </form>
+                    <div class="error-tip">{{errorTip}}</div>
+                    <a href="javascript:;" class="btn done-btn" id="rpOldSubmitBtn" (click)="onOldPhoneNext()"><div>下一步</div></a>
+                </div>
+                <!-- 第三步、验证新手机 -->
+                <div class="rp-verity-new" hidden #rpVerityNewDiv>
+                    <form>
+                        <div class="form-group">
+                            <input class="form-control" (keydown)="onKeyDown($event)" [(ngModel)]="newPhoneNo" id="rpNewNumInput" name="phonenum" placeholder="手机号码">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control ignore" (keydown)="onKeyDown($event)" [(ngModel)]="newPhoneCode" id="rpNewCodeInput" name="verifycode" placeholder="短信验证码">
+                            <a href="javascript:;" class="btn sms-btn {{codestate}}" id="rpSendNewCodeBtn" (click)="onNewSendSms()"><div>{{sendCodeTip}}</div></a>
+                        </div>
+                    </form>
+                    <div class="error-tip">{{errorTip}}</div>
+                    <a href="javascript:;" class="btn done-btn" id="rpNewSubmitBtn" (click)="onNewPhoneDone()"><div>完成</div></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

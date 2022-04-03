@@ -1,0 +1,175 @@
+:host ::ng-deep {
+  // tabs顶部样式
+  .nav-tabs {
+    border: none;
+    box-sizing: border-box;
+    margin-bottom: 1px;
+    padding-left: 0px;
+    min-height: 39px;
+
+    .nav-item {
+      border-width: 0px;
+      font-size: 12px;
+      color: #323b47;
+      letter-spacing: 0;
+      background-color: #232424;
+      // border-bottom: 1px solid #161616;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .nav-link {
+        border: none;
+        color: #a3a3a3;
+        padding: 10px 0px;
+      }
+
+      .active {
+        color: #ffffff; //切换item的字体颜色
+        // border-bottom: 2px solid #129cff ;
+      }
+      a.active {
+        background-color: #232424 !important;
+        // border-bottom: 2px solid #129cff !important;
+
+      }
+    }
+
+    li.active {
+      // border-bottom-color: #129cff;
+      // border-bottom-style: solid;
+      // border-bottom-width: 2px;
+      font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo",  "Consolas", sans-serif !important;
+      font-size: 12px;
+      color: #000a1a;
+      // border-bottom: 2px solid #129cff;
+
+
+      // &::after {
+      //   content: '';
+      //   background-color: #129cff; //选中之后下面的横条
+      //   font-size: 0px;
+      //   padding: 1px 38px;
+      //   position: absolute;
+      //   bottom: 0px;
+      //   left: 50%;
+      //   transform: translateX(-50%);
+      // }
+    }
+  }
+
+  .setting-container {
+    height: 100%;
+    background: #252626;
+    border-left: 1px solid #1f1f1f;
+  }
+
+  .tab-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    ul {
+      padding-left: 0;
+    }
+
+    .tab-content {
+      // flex: 1;
+      position: relative;
+      // height: 100%;
+      height: calc(100% - 38px);
+
+      .tab-pane {
+        height: 100%;
+      }
+    }
+  }
+
+  .big-title {
+    font-size: 12px;
+    color: #a3a3a3;
+  }
+
+  .small-title {
+    font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo",  "Consolas", sans-serif !important;
+    font-size: 12px;
+    color: #a3a3a3;
+    margin-bottom: 5px;
+  }
+
+  .section {
+    // border-top-color: #e4eaf0;
+    // border-top-width: 1px;
+    // border-top-style: solid;
+    border: 1px solid #262626;
+    padding: 20px;
+    &:last-child {
+      border-bottom: none !important;
+    }
+  }
+
+  .color-box {
+    height: 36px;
+    width: 36px;
+    box-sizing: border-box;
+    // background-color: #d0021b;
+    box-shadow: 0px 2px 0px 0px#3b3b3b;
+    border: solid 2px #242424;
+    // border: solid 1px #d5dbe0;
+    border-radius: 5px;
+    // box-shadow: none;
+    cursor: pointer;
+    outline: none;
+  }
+
+  .text-style-container {
+    padding: 18px 10px;
+    border-top: 1px solid #424242;
+    // border-bottom: 1px solid #e4eaf0;
+    height: 40px;
+    box-sizing: border-box;
+
+    .text-style-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      color: #666666;
+      cursor: pointer;
+
+      &:hover {
+        color: #d5dbe0; //323b47
+      }
+
+      .icon-liangduanduiqi {
+        font-size: 22px;
+        margin-top: 2px;
+      }
+    }
+
+    .active {
+      color: #ffffff;
+    }
+  }
+
+  input.form-control {
+    height: 30px;
+    // border: 1px solid #d5dbe0;
+    color: #ffffff;
+    background-color: #282828;
+	  box-shadow: 0px 2px 0px 0px #3b3b3b;
+	  border-radius: 2px;
+	  border: solid 2px #242424;
+    width: 190px;
+    &:focus {
+      background-color: #282828;
+      box-shadow: 0px 2px 0px 0px #3b3b3b;
+      border-radius: 2px;
+      border: solid 2px #242424;
+    }
+  }
+}
+:host ::ng-deep {
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo",  "Consolas", sans-serif !important;
+}

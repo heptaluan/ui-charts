@@ -1,0 +1,72 @@
+<div class="data-upload">
+  <p class="title">我的收藏</p>
+  <div class="multiple-choice">
+    <input type="checkbox" [checked]='myFavoriteList.length === listIds.length && listIds.length' (click)='checkedAll($event)' [tooltip]="myFavoriteList.length === listIds.length && listIds.length ? '取消全选' : '全选'" container="body">
+    <span>全部勾选</span>
+    <i class="active" (click)='allDelete()' *ngIf="listIds.length" tooltip='删除' container="body"></i>
+    <i *ngIf="!listIds.length"></i>
+    <div class="select-one" (click)='checkedAll($event)' *ngIf="listIds.length && listIds.length < myFavoriteList.length" tooltip='取消' container="body"></div>
+  </div>
+  <div class="data-download-search">
+    <lx-form-search (searchValue)="search($event)" [initValue]="initSearch" [type]="'home'"></lx-form-search>
+  </div>
+</div>
+
+<ul class="waterfall" [ngStyle]="{'height': containerHeight + 'px'}" *ngIf="!showSearchLoading && showWaterfallArr.length">
+  <li
+    *ngFor="let item of showWaterfallArr; let i = index"
+    (mouseenter)="hoverIndex = i"
+    (mouseleave)="hoverIndex = -1"
+    [ngClass]="{'hover-style': hoverIndex === i}"
+    [ngStyle]="{'width': item.width + 'px', 'height': item.height + 'px', 'top': item.top + 'px', 'left': item.left + 'px'}"
+  >
+    <img [src]="item.url.split('?')[0]" alt="">
+    <p class="waterfall-title">{{item.title}}</p>
+    <div class="item-checkbox" *ngIf="hoverIndex === i || listIds.indexOf(item.caseid) >= 0">
+      <input type="checkbox" [checked]='listIds.indexOf(item.caseid) >= 0' (click)='checkedOne(item.caseid)'>
+    </div>
+    <div class="mask" *ngIf="hoverIndex === i">
+      <div class="edit" (click)="createInfoTemplateHandle($event, item.caseid)">
+        <i></i><span>编辑</span>
+      </div>
+      <div class="preview" (click)="previewInfo(item.caseid)">
+        <i></i><span>预览</span>
+      </div>
+    </div>
+    <div class="waterfall-introduce" *ngIf="hoverIndex === i">
+      <p class="title" [title]="item.title">{{item.title}}</p>
+      <p class="collect-show">
+        <span class="active" class="collect" (click)="toggleLike(item.caseid)">
+          <i class="active"></i>取消
+        </span>
+        <span class="used"><i></i>{{item.cite_count}}</span>
+      </p>
+    </div>
+  </li>
+</ul>
+
+<div class="masonry-loading" *ngIf="showSearchLoading">
+  <div class="bounce1"></div>
+  <div class="bounce2"></div>
+  <div class="bounce3"></div>
+</div>
+
+<!-- 暂无项目 -->
+<div class="empty-container d-flex flex-column justify-content-center align-items-center" *ngIf="!searchKeyWord && !showWaterfallArr.length && !showSearchLoading">
+  <div class="icon">
+    <img src="/dyassets/images/home-page/no-more-project.png" alt="" width="50px" />
+  </div>
+  <p>还没有收藏过任何模板</p>
+  <p>快去<a [routerLink]="['/pages/home/info-template']">「数据图文」</a>看看吧~</p>
+</div>
+
+<!-- 暂无搜索结果 -->
+<div class="empty-container d-flex flex-column justify-content-center align-items-center" *ngIf="searchKeyWord && !showWaterfallArr.length && !showSearchLoading">
+  <div class="icon">
+    <img src="/dyassets/images/home-page/no-more-project.png" alt="" />
+  </div>
+  <p>没有找到符合的场景模板</p>
+  <p>试试别的关键词吧~</p>
+</div>
+
+<lx-dy-footer></lx-dy-footer>

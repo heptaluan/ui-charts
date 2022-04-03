@@ -1,0 +1,9 @@
+<div class="row">
+    <!-- 循环部分 -->
+    <div class="template-item" *ngFor="let item of iconDataCopy">
+      <div class="over-layout panel-shadow d-flex justify-content-center align-items-center" [attr.iconHTML]="item.outerHTML">
+        <button class="dy-button" (click)='insertImage($event)'></button>
+      </div>
+      <div class="svgs" [innerHTML]='item.outerHTML | html'></div>
+    </div>
+  </div>

@@ -1,0 +1,36 @@
+<div class="block-inner-box audio-wrapper {{ this.curSkin }}" [ngStyle]="audioOuterStyles" *ngIf="data.setting.props.type === 'insertSong'">
+  <p [ngStyle]="{'font-size': getChangedSize(30)}">{{ musicTitle }}</p>
+  <div class="play-btn" [ngStyle]="{'width': getChangedSize(70),'height': getChangedSize(70)}" [ngClass]="{ active: playing }" (click)="play()">
+    <div class="play"></div>
+  </div>
+  <lx-slider
+    *ngIf="isWorkSpace"
+    #slider
+    [min]="0"
+    [max]="100"
+    [cur]="curTime"
+    [step]="1"
+    [isProgress]="true"
+    [isContainer]="false"
+    [isAudio]="true"
+    (valueChanged)="onPercentChange($event)"
+    (mouseenter)="handleProcessFocus()"
+    (mouseleave)="handleProcessBlur()"
+  ></lx-slider>
+  <div *ngIf="!isWorkSpace" class="copy-process {{ this.curSkin }}">
+    <div class="process"></div>
+    <div class="bar"></div>
+  </div>
+
+  <div class="wrapper" [ngStyle]="{'font-size': getChangedSize(20)}">
+    <div class="start">{{ startTime }}</div>
+    <div class="end">{{ endTime }}</div>
+  </div>
+  <audio [src]="audioSrc" #audio (timeupdate)="onTimeUpdate($event)"></audio>
+</div>
+
+<div class="bgm-wrapper block-inner-box" [ngStyle]="audioOuterStyles" *ngIf="data.setting.props.type === 'bgm'">
+  <audio [src]="audioSrc" #audioBgm></audio>
+  <!-- <div class="bgm" [ngClass]="{ active: playing }" (click)="play()"></div> -->
+  <div class="bgm" [ngClass]="{ active: playing }"></div>
+</div>

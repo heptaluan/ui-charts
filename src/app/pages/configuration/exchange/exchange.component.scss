@@ -1,0 +1,259 @@
+.exchange-container {
+  // padding-top: 40px;
+  .exchange-banner {
+    width: 100%;
+    height: 222px;
+    background: url(/dyassets/images/exchange/banner.svg) no-repeat center/cover;
+    position: relative;
+    margin-top: 20px;
+    border-radius: 6px;
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 58px;
+      left: 50%;
+      transform: translate(-50%);
+      width: 352px;
+      height: 32px;
+      background: url(/dyassets/images/exchange/banner-text.svg) no-repeat center/cover;
+    }
+    .exchange-box {
+      width: 550px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: absolute;
+      bottom: 54px;
+      left: 50%;
+      transform: translate(-50%);
+  
+      input {
+        display: block;
+        width: 430px;
+        height: 40px;
+        line-height: 20px;
+        background-color: #ffffff;
+        border-radius: 2px;
+        border: solid 1px #e1e3e6;
+        padding-left: 15px;
+        font-size: 14px;
+        color: #969799;
+        &:focus {
+          outline: none;
+        }
+      }
+  
+      .error {
+        border: 1px solid #d0021b;
+      }
+  
+      button {
+        display: block;
+        width: 102px;
+        height: 40px;
+        border: none;
+        // background-color: #0079fa;
+        background-color: #f57d23;
+        border-radius: 6px;
+        font-size: 14px;
+        color: #ffffff;
+        cursor: pointer;
+        letter-spacing: 4px;
+        text-indent: 4px;
+        &:focus {
+          outline: none;
+        }
+      }
+  
+      .error-tip {
+        position: absolute;
+        left: 10px;
+        bottom: -24px;
+        height: 17px;
+        font-family: PingFangSC-Regular;
+        font-size: 12px;
+        font-weight: normal;
+        font-stretch: normal;
+        letter-spacing: 0px;
+        color: #d0021b;
+      }
+  
+      .succ-tip {
+        position: absolute;
+        right: 25px;
+        bottom: -24px;
+        height: 17px;
+        font-family: PingFangSC-Regular;
+        font-size: 12px;
+        font-weight: normal;
+        font-stretch: normal;
+        letter-spacing: 0px;
+        color: #969799;
+      }
+    }
+  }
+
+  .part-wrapper {
+    dt.title {
+      width: 180px;
+	    height: 30px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    &.part-one {
+      dt.title {
+        background: url(/dyassets/images/exchange/title-1.svg) no-repeat center / contain;
+      }
+      margin-top: 54px;
+      dd.wrapper {
+        // width: 763px;
+        height: 175px;
+        margin: 0 auto;
+        margin-top: 18px;
+        display: flex;
+        justify-content: space-between;
+        background: url(/dyassets/images/exchange/hot-privilege.svg) no-repeat center / contain;
+      }
+    }
+
+    &.part-two, &.part-three {
+      dd.wrapper {
+        width: 541px;
+        margin: 0 auto;
+        margin-top: 15px;
+      }
+    }
+
+    &.part-two {
+      margin-top: 58px;
+      dt.title {
+        background: url(/dyassets/images/exchange/title-2.svg) no-repeat center / contain;
+      }
+    }
+
+    &.part-three {
+      margin-top: 72px;
+      dt.title {
+        background: url(/dyassets/images/exchange/title-3.svg) no-repeat center / contain;
+      }
+    }
+
+    // &.part-three {
+    //   margin-top: 85px;
+    //   dt.title {
+    //     width: 252px;
+    //   }
+    //   dd.wrapper {
+    //     height: 223px;
+    //     border-radius: 6px;
+    //     margin: 0 auto;
+    //     margin-top: 42px;
+    //     background-color: #344dce;
+    //     cursor: pointer;
+    //     .d-flex {
+    //       justify-content: space-between;
+    //       padding: 0 78px;
+    //       margin: 0 auto;
+    //       height: 100%;
+    //       width: 932px;
+    
+    //       .content-wrapper {
+    //         margin-top: 51px;
+    //         p {
+    //           color: #ffffff;
+    //           font-size: 21px;
+    //           font-weight: 600;
+    //           height: 36px;
+    //           padding-top: 4px;
+              
+    //           img {
+    //             vertical-align: -3px;
+    //           }
+    //         }
+    //         .go-btn {
+    //           width: 124px;
+    //           height: 44px;
+    //           line-height: 44px;
+    //           margin-top: 42px;
+    //           background-color: #f57d23;
+    //           box-shadow: 0px 2px 4px 0px 
+    //             rgba(35, 61, 185, 0.38);
+    //           border-radius: 6px;
+    //           color: #ffffff;
+    //           font-size: 18px;
+    //           text-align: center;
+    //           font-weight: 600;
+    //         }
+    //       }
+
+    //       .img-wrapper {
+    //         width: 333px;
+    //         height: 223px;
+    //         background: url('/dyassets/images/invite-background.svg') no-repeat center/contain;
+    //       }
+  
+    //     }
+    //   }
+    // }
+  }
+
+  p {
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    height: 26px;
+    line-height: 26px;
+    color: #5c6066;
+    a {
+      font-family: PingFangSC-Regular;
+      font-size: 14px;
+      color: #0079fa;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    &.code {
+      margin-left: 6px;
+    }
+  }
+
+  .p-top {
+    margin-top: 32px;
+  }
+
+  .tip {
+    margin-left: 3px;
+    position: relative;
+    p span {
+      font-size: 14px;
+      color: #0079fa;
+      cursor: pointer;
+    }
+    a {
+      margin-left: 5px;
+      margin-right: 6px;
+      cursor: pointer;
+    }
+    .wechat {
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      z-index: 9;
+      box-shadow: 0px 7px 10px 0px rgba(0, 0, 0, 0.35);
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .wechat-code {
+      top: -209px;
+      left: -13px;
+    }
+    .wechat-service {
+      top: -48px;
+      left: 54px;
+    }
+  }
+}

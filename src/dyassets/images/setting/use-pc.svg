@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13px" height="12px" viewBox="0 0 13 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>形状</title>
+    <desc>Created with Sketch.</desc>
+    <g id="组件" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="上侧固定部分" transform="translate(-156.000000, -257.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <g id="固定内容">
+                <g transform="translate(16.000000, 0.000000)">
+                    <g id="电脑、手机按钮" transform="translate(0.000000, 252.000000)">
+                        <g id="电脑" transform="translate(113.000000, 0.000000)">
+                            <path d="M39.3709677,5 L27.6290323,5 C27.2813871,5 27,5.28757143 27,5.64285714 L27,14.2142857 C27,14.5691429 27.5190215,14.4285714 27.8666667,14.4285714 L32.2,14.4285714 L32.2,16.1428571 L31,17 L36,17 L34.8,16.1428571 L34.8,14.4285714 L39.1333333,14.4285714 C39.4805591,14.4285714 40,14.5691429 40,14.2142857 L40,5.64285714 C40,5.28757143 39.7181935,5 39.3709677,5 Z M39,13 L28,13 L28,6 L39,6 L39,13 Z" id="形状"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,258 @@
+.info-container {
+  width: 670px;
+  height: 508px;
+  background-color: #f2f3f5;
+  box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  position: relative;
+
+  p,
+  button,
+  h2,
+  h3 {
+    margin: 0;
+    padding: 0;
+  }
+
+  i {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+  }
+
+  .page-bottom {
+    max-width: 309px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 32px;
+  }
+
+  .first-page,
+  .second-page,
+  .third-page {
+    width: 100%;
+    height: 100%;
+  }
+
+  .first-page,
+  .second-page {
+    padding-top: 40px;
+    h2 {
+      height: 20px;
+      font-family: PingFangSC-Medium;
+      font-size: 20px;
+      font-weight: bold;
+      font-stretch: normal;
+      line-height: 20px;
+      letter-spacing: 0px;
+      color: #141414;
+      text-align: center;
+    }
+
+    h3 {
+      height: 18px;
+      font-family: PingFangSC-Regular;
+      font-size: 18px;
+      font-weight: normal;
+      font-stretch: normal;
+      line-height: 18px;
+      letter-spacing: 0px;
+      color: #000a1a;
+      margin-top: 16px;
+      text-align: center;
+
+    }
+
+    .page-info-wrapper {
+      width: 574px;
+      height: 276px;
+      margin: 0 auto;
+      margin-top: 32px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-gap: 18px 18px;
+      font-family: PingFangSC-Regular;
+      font-size: 14px;
+      font-weight: normal;
+      font-stretch: normal;
+      line-height: 14px;
+      letter-spacing: 0px;
+      color: #323b47;
+      position: relative;
+
+      .page-info-item {
+        width: 80px;
+        height: 80px;
+        background: #fff;
+        cursor: pointer;
+
+        &.active {
+          color: #fff;
+          background-image: linear-gradient(0deg, #7981ff 0%, #2cafff 100%);
+          p {
+            color: #fff;
+          }
+        }
+
+        div.icon {
+          width: 38px;
+          height: 38px;
+          margin: 0 auto;
+          margin-top: 10px;
+          img {
+            width: auto;
+            height: auto;
+            max-width: 38px;
+            max-height: 38px;
+          }
+        }
+
+        p {
+          height: 14px;
+          font-family: PingFangSC-Regular;
+          font-size: 14px;
+          font-weight: normal;
+          font-stretch: normal;
+          line-height: 14px;
+          letter-spacing: 0px;
+          color: #323b47;
+          margin-top: 8px;
+          text-align: center;
+        }
+      }
+
+      input {
+        width: 276px;
+        height: 44px;
+        padding: 12px 25px 12px 20px;
+        background-color: #ffffff;
+        border-radius: 2px;
+        border: solid 1px #e1e3e6;
+        position: absolute;
+
+        &:focus {
+          outline: none;
+        }
+
+        &::-webkit-input-placeholder {
+          font-size: 14px;
+          color: #969799;
+          text-align: left;
+        }
+      }
+
+    }
+  }
+
+  .third-page {
+    position: relative;
+    background: url(/dyassets/images/share/user-info-award.png) no-repeat center/678px 520px;
+  }
+
+  button {
+    display: block;
+    height: 44px;
+    padding: 11px 41px 13px 41px;
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0px;
+    border: none;
+    display: block;
+    border-radius: 2px;
+    cursor: pointer;
+    background: #dee1e3;
+    color: #969799;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  button.jump-price {
+    padding: 11px 13px 13px 14px;
+    color: #0079fa;
+    border: solid 1px #0079fa;
+    background-color: #ffffff;
+  }
+
+
+  button.blue {
+    color: #ffffff;
+    background: #0079fa;
+    &:hover {
+      background-color: #006ce0;
+    }
+    &:focus {
+      background-color: #0062cb;
+    }
+  }
+
+  button.award-text {
+    padding: 11px 25px;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0px;
+    color: #ffffff;
+    background-image: linear-gradient(19deg,#fe9825 0%,#ff8a00 100%);
+    border-radius: 4px;
+    position: absolute;
+    &:hover {
+      background: #F08100;
+    }
+    &:first-child {
+      top: 188px;
+      right: 68px;
+    }
+    &:nth-of-type(2) {
+      top: 311px;
+      right: 68px;
+      .float-code {
+        width: 134px;
+        height: 134px;
+        padding: 7px;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 52px;
+        right: -10px;
+        box-shadow: 0px 7px 10px 0px rgba(0, 0, 0, 0.35);
+        background: #fff;
+
+        img {
+          display: block;
+          width: 120px;
+          height: 120px;
+          margin: 0;
+        }
+      }
+      &:hover {
+        .float-code {
+          display: block;
+        }
+      }
+    }
+  }
+
+  button.award {
+    padding: 10px 81px 9px 81px;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0px;
+    color: #ffffff;
+    background-image: linear-gradient(17deg,#ff8630 0%,#ff562a 100%);
+    border-radius: 4px;
+    position: absolute;
+    bottom: 41px;
+    left: 236px;
+  }
+}

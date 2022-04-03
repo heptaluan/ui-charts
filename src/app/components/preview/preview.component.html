@@ -1,0 +1,15 @@
+<div class="page-container">
+  <div id="page" class="page-box" [ngClass]="{'dy-transparent': transparent}">
+    <div class="page" [attr.originWidth]="originWidth" [attr.originHeight]="originHeight" [ngClass]="{'color-transparent': transparent}">
+      <ng-template lxChartHost></ng-template>
+      <ng-container *ngIf="blockProps && blockProps.publishDisplay && blockProps.logoDisplay">
+        <div *ngIf="projectType === 'chart' && blockProps && !(!blockProps.publishDisplay.show && !blockProps.logoDisplay.show)" class="logo" [ngStyle]="logoDisplay">
+          <div class="inner-logo">
+            <div class="logo-text" *ngIf="blockProps && blockProps.publishDisplay.show" [ngStyle]="publishDisplayText">{{blockProps.publishDisplay.text}}<span style="opacity: 0;">镝</span></div>
+            <img class="logo-img" [src]="blockProps.logoDisplay.imgUrl" [ngStyle]="publishDisplayImage" *ngIf="blockProps && blockProps.logoDisplay.show" alt="logo">
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+
+
+.locked-box {
+  .top-fill {
+    height: 115px;
+  }
+
+  .locked-mask {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    text-align: center;
+  
+    p {
+      margin-top: 20px;
+      margin-bottom: 16px;
+      font-size: 16px;
+      color: #ffffff;
+    }
+  
+    button {
+      padding: 7px 33px;
+      background-image: linear-gradient(180deg, #525252 0%, #2e2e2e 100%);
+      border-radius: 2px;
+      border: solid 1px #18191a;
+      outline: none;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all .3s;
+      color: #fff;
+  
+      &:hover {
+        background-image: linear-gradient(180deg, #474747 0%, #242424 100%);
+        border-radius: 2px;
+        border: solid 1px #18191a;
+      }
+    }
+  }
+}
+
+.is-chart {
+  .top-fill {
+    display: none;
+  }
+}
+
+.is-music {
+  .locked-mask {
+    top: 40px;
+  }
+}
+

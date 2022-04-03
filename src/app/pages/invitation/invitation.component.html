@@ -1,0 +1,43 @@
+<div class="invitation-container">
+  <div class="invitation-wrapper">
+    <div class="top-header"></div>
+    <div class="countdown">
+      <div class="time"><img src="/dyassets/images/invitation/{{dayOne}}.svg" alt=""></div>
+      <div class="time"><img src="/dyassets/images/invitation/{{dayTwo}}.svg" alt=""></div>
+      <div class="time-day">天</div>
+      <div class="time"><img src="/dyassets/images/invitation/{{hourOne}}.svg" alt=""></div>
+      <div class="time"><img src="/dyassets/images/invitation/{{hourTwo}}.svg" alt=""></div>
+      <div class="time-mark">
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div class="time"><img src="/dyassets/images/invitation/{{minOne}}.svg" alt=""></div>
+      <div class="time"><img src="/dyassets/images/invitation/{{minTwo}}.svg" alt=""></div>
+      <!-- <div class="time-mark">
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div class="time"><img src="/dyassets/images/invitation/{{sOne}}.svg" alt=""></div>
+      <div class="time"><img src="/dyassets/images/invitation/{{sTwo}}.svg" alt=""></div> -->
+    </div>
+    <div class="invite-button" [class.invited]='isInvited' (click)="goPerson()"></div>
+    <div class="mid-one"></div>
+    <div class="award-message">
+      <div class="award-container">
+        <div class="loop-message" [ngStyle]="{'top': loopTop + 'px'}" [ngClass]="{'loop-animation': loopFlag}" *ngFor="let item of dataList">
+          <img src="{{item.avatar}}" alt="">
+          <div class="name">{{item.name}}</div>
+          <div class="desc">获得了<span>{{item.desc}}</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="mid-two">
+        <div class="price" (click)="goPrice()"></div>
+        <div class="price" (click)="goPrice()"></div>
+    </div>
+    <div class="mid-three">
+      <div class="person" (click)="goPerson()"></div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,16 @@
+
+<div class="chart-type-list" *ngIf="singleChartTemplatesList.length">
+  <div class="chart-list-box">
+    <div class="template-item-box">
+      <div class="template-item" [attr.templateId]='item.id' *ngFor='let item of singleChartTemplatesList'>
+        <div class="over-layout panel-shadow d-flex justify-content-center align-items-center">
+          <button container="body" [tooltip]="item.title" class="dy-button" (click)='insertSingleChartHandle(item)'>插入</button>
+        </div>
+        <img class="cover-img d-block mx-auto" src="{{item.thumb}}" alt="">
+        <div class="title">{{item.title}}</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="no-data" *ngIf="!singleChartTemplatesList.length">暂无单图数据</div>

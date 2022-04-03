@@ -1,0 +1,62 @@
+<div class="invite-container">
+  <div class="invite-img">
+    <div class="d-flex">
+      <div class="content-wrapper">
+        <p><span>邀请好友即可免费获得&nbsp;</span><img src="/dyassets/images/num-seven.svg"><span>&nbsp;天会员</span></p>
+        <p>每成功邀请一位好友，你和好友均可获得7天镝数<br/>会员。会员天数可累加，上不封顶！</p>
+      </div>
+      <div class="img-wrapper"></div>
+    </div>
+  </div>
+  <div class="invite-url">
+    <h2>开始邀请</h2>
+    <div class="d-flex">
+      <div class="person-code">
+        <p class="invite-text">手机分享·微信扫一扫</p>
+        <div class="float-code">
+          <qr-code [value]="shareUrl" size="138" background="#fff" padding=9></qr-code>
+        </div>
+      </div>
+      <div class="copy-url">
+        <div class="copy-wrapper">
+          <p class="invite-text">链接分享·粘贴给朋友</p>
+          <div>
+            <div class="copyText" *ngIf="copyText">复制链接成功</div>
+            <button (click)="copyUrl()">复制链接</button>
+          </div>        
+        </div>
+        
+        <textarea disabled >{{ url }}</textarea>
+        
+        
+      </div>
+    </div>
+  </div>
+  <div class="invite-record">
+    <h2>邀请成就</h2>
+    <!-- <p>累计邀请 <span>{{invitedNum}}</span> 人，已获得 <span>会员</span> 权限 <span>{{getVipDays}}</span> 周，<span>高级会员</span>
+      权限 <span>{{getSvipDays}}</span> 个月。</p>   -->
+    <ng-container *ngIf="invitedNum > 0">
+      <p>累计邀请{{invitedNum}}人，已获得会员{{getVipDays * 7}}天。</p>
+      <div class="record-container">
+        <div class="record-item active">
+          <div class="invited">受邀请人</div>
+          <div class="register-time">注册时间</div>
+        </div>
+        <div class="record-item" *ngFor="let item of dataList">
+          <!-- <div class="invited"><img src="{{item.user_info.avatar}}" *ngIf="item.user_info.avatar">{{item.user_info.name}} -->
+            <div class="invited">{{item.user_info.name}}
+          </div>
+          <div class="register-time">{{item.time}}</div>
+        </div>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="invitedNum === 0">
+      <p class="invite-none">暂无邀请记录。快把这份心意悄悄告诉给最好的朋友吧~</p>
+      <img class="invite-none-img" src="/dyassets/images/invite-none.png" alt="">
+    </ng-container>
+  </div>
+  
+</div>
+<lx-dy-footer class="succ"></lx-dy-footer>

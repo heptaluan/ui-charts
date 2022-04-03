@@ -1,0 +1,204 @@
+.modal-content {
+    width: 470px;
+    a {
+        text-decoration: none;
+    }
+}
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 33px;
+    margin-top: 40px;
+    width: 100%;
+    border: none;
+    .modal-title {
+        font-family: PingFangSC-Medium;
+        font-size: 18px;
+        font-weight: normal;
+        font-stretch: normal;
+        letter-spacing: 0px;
+        color: #141414;
+    }
+    .pull-right {
+        position: absolute;
+        right: 17px;
+        top: -30px;
+        &:focus {
+            outline: none;
+
+        }
+    }
+}
+
+.modal-body {
+    text-align: center;
+    padding: 25px 60px 40px 60px;
+
+    .done-btn {
+        background:#0079fa;
+        border-radius:2px;
+        width:200px;
+        height:45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // font-family:SourceHanSansCN-Normal;
+        font-size:14px;
+        color:#ffffff;
+        margin: auto;
+        cursor: pointer;
+    }
+
+    .sms-btn {
+        background:#0079fa;
+        border-radius:2px;
+        height:45px;
+        width: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // font-family:SourceHanSansCN-Normal;
+        font-size:14px;
+        color:#ffffff;
+        margin-left: 20px;
+        cursor: pointer;
+    }
+
+    .select-btn {
+        background:#0079fa;
+        border-radius:2px;
+        width:160px;
+        height:40px;
+        font-family:PingFangSC-Medium;
+        font-size:12px;
+        color:#ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .btn-disable {
+        background: rgb(216, 222, 227);
+    }
+
+    .error-tip {
+        font-family:PingFangSC-Regular;
+        font-size:12px;
+        color:#f5222d;
+        line-height:18px;
+        height: 18px;
+        margin: -10px 20px 15px 20px;
+        text-align: left;
+    }
+
+    form {
+        input {
+            background:#ffffff;
+            border:1px solid #e1e3e6;
+            border-radius:2px;
+            &:focus {
+              box-shadow: none;
+            }
+        }
+
+        input::-webkit-input-placeholder {
+            font-size:16px;
+            color:#969799;
+            text-align:left;
+        }
+
+        input::-moz-placeholder {
+            /* Mozilla Firefox 19+ */
+            font-size:16px;
+            color:#969799;
+            text-align:left;
+        }
+
+        input:-moz-placeholder {
+            /* Mozilla Firefox 4 to 18 */
+            font-size:16px;
+            color:#969799;
+            text-align:left;
+        }
+
+        input:-ms-input-placeholder {
+            /* Internet Explorer 10-11 */
+            font-size:16px;
+            color:#969799;
+            text-align:left;
+        }
+    }
+
+    .required {
+        margin-left: 15px;
+        font-family:PingFangSC-Medium;
+        font-size:30px;
+        color: #04b822;
+        line-height: 30px;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+        margin-bottom: 20px;
+        input {
+            width: 180px !important;
+        }
+    }
+
+    .form-control {
+        height: 46px;
+        max-width: 380px;
+        color: #323b47;
+        font-size:16px;
+        flex: 1;
+    }
+
+    .form-code-input {
+        width: 210px;
+    }
+
+    .form-control:focus {
+        border-color: rgb(16, 142, 233);
+        box-shadow: 0 0 2px 2px rgba(16, 142, 233, 0.20);
+    }
+
+    input.form-control:-webkit-autofill {
+        box-shadow: 0 0 0 100px #fff inset;
+    }
+
+    input.form-control:-webkit-autofill:focus {
+        box-shadow: 0 0 2px 2px rgba(16, 142, 233, 0.20),
+        0 0 0 100px #fff inset;
+    }
+
+    .form-check {
+        margin-top: 100px;
+        margin-bottom: 15px;
+        text-align: left;
+        padding: 0 70px 0 90px;
+        // font-family:SourceHanSansCN-Normal;
+        font-size: 12px;
+        color:#4a4a4a;
+
+        span {
+            float: right;
+            a {
+                text-decoration: none;
+                color:#4a4a4a;
+            }
+        }
+
+        label {
+            padding-top: 2px;
+            // font-family:SourceHanSansCN-Normal;
+            font-size:12px;
+            color:#4a4a4a;
+            text-align:left;
+        }
+    }
+}

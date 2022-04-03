@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="20px" viewBox="0 0 24 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>公众号</title>
+    <desc>Created with Sketch.</desc>
+    <g id="公众号" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g fill="#ffffff" fill-rule="nonzero" id="形状结合">
+            <path d="M18,0 C19.1045695,-2.02906125e-16 20,0.8954305 20,2 L20,18 C20,19.1045695 19.1045695,20 18,20 L6,20 C4.8954305,20 4,19.1045695 4,18 L4,2 C4,0.8954305 4.8954305,2.02906125e-16 6,0 L18,0 Z M13,14 L7,14 L7,15 L13,15 L13,14 Z M11,11 L7,11 L7,12 L11,12 L11,11 Z M15,8 L7,8 L7,9 L15,9 L15,8 Z M8.5,3 C7.67157288,3 7,3.67157288 7,4.5 C7,5.32842712 7.67157288,6 8.5,6 C9.32842712,6 10,5.32842712 10,4.5 C10,3.67157288 9.32842712,3 8.5,3 Z"></path>
+        </g>
+    </g>
+</svg>

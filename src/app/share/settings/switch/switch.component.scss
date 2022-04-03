@@ -1,0 +1,26 @@
+:host ::ng-deep {
+  ui-switch {
+    span {
+      width: 42px !important;
+      height: 22px !important;
+      border-radius: 22px !important;
+    }
+
+    small {
+      height: 22px !important;
+      width: 22px !important;
+    }
+
+    .switch {
+      &.checked {
+        border: solid 2px #36AF47 !important;
+      }
+    }
+
+    .switch-medium {
+      box-shadow: 0px 2px 0px 0px #3b3b3b;
+      border-radius: 83px;
+      border: solid 2px #242424 !important;
+    }
+  }
+}

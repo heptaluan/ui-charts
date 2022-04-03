@@ -1,0 +1,35 @@
+<div class="tip-container">
+  <i class="icon iconfont icon-x" (click)='close()' *ngIf="isCloseButton"></i>
+  <h1 class="left">{{title.content}}</h1>
+  <p *ngIf="!isShowDownload" [innerHTML]='content | html'></p>
+  <!-- 通用 -->
+  <p *ngIf="isShowDownload && !isOverContain">
+    你已下载{{useContent}} <span class="active">{{downLoadData.downloadNum}}</span>/{{downLoadData.maxDownloadNum}} 个{{fileContent}}（截至{{downLoadData.deadline}}），确定继续？
+    <a (click)="goPrice()" *ngIf="downLoadData.isNoDiscount">升级高级会员，每月可下载{{maxNum}}个{{upFileContent}}</a><span *ngIf="downLoadData.isNoDiscount"></span>
+  </p>
+
+  <!-- 会员/普通用户 -->
+  <p *ngIf="isShowDownload && isOverContain && downLoadData.isNoDiscount">
+    你已下载{{useContent}} <span class="active">{{downLoadData.downloadNum}}</span>/{{downLoadData.maxDownloadNum}} 个{{fileContent}}，将无法继续下载{{fileContent}}（截至{{downLoadData.deadline}}）。
+    <a (click)="goPrice()" *ngIf="downLoadData.isNoDiscount">高级会员每月可下载{{maxNum}}个{{upFileContent}}</a><span *ngIf="downLoadData.isNoDiscount">，确定升级？</span>
+  </p>
+
+  <!-- 高级会员 + -->
+  <p *ngIf="isShowDownload && isOverContain && !downLoadData.isNoDiscount && downLoadData.isFree">
+    你已下载{{useContent}} <span class="active">{{downLoadData.downloadNum}}</span>/{{downLoadData.maxDownloadNum}} 个{{fileContent}}，{{downLoadData.deadline}}前将无法继续下载{{useContent}}免费{{typeContent}}，请于该日期后下载。
+  </p>
+
+  <p *ngIf="isShowDownload && isOverContain && !downLoadData.isNoDiscount && !downLoadData.isFree">
+    你已下载{{useContent}} <span class="active">{{downLoadData.downloadNum}}</span>/{{downLoadData.maxDownloadNum}} 个{{fileContent}}(截至{{downLoadData.deadline}})，确认单独购买此{{typeContent}}？
+  </p>
+
+  <div class="no-remind" *ngIf="isShowDownload && !isNoNeedRemind">
+    <label for="noRemind">
+      <input type="checkbox" id="noRemind" [(ngModel)]="isNoRemind">不再提醒
+    </label>
+  </div>
+
+  <div class="go-project" *ngIf="isUpgrade" (click)="goProjectManage()">前往「项目管理」管理你的项目</div>
+
+  <button (click)='buttonClick()'>{{title.button}}</button>
+</div>

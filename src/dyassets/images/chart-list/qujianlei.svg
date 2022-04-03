@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="34px" viewBox="0 0 44 34" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>8</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="8" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-13">
+            <g transform="translate(6.000000, 7.000000)">
+                <g id="Page-1" fill="#B3DDFF">
+                    <path d="M2,0 L30,0 C31.1045695,-2.02906125e-16 32,0.8954305 32,2 L32,6 C32,7.1045695 31.1045695,8 30,8 L2,8 C0.8954305,8 1.3527075e-16,7.1045695 0,6 L0,2 C-1.3527075e-16,0.8954305 0.8954305,2.02906125e-16 2,0 Z M9,2 L9,6 L23,6 L23,2 L9,2 Z" id="Combined-Shape"></path>
+                </g>
+                <g id="Group-11" transform="translate(16.000000, 17.000000) scale(-1, 1) translate(-16.000000, -17.000000) translate(2.000000, 13.000000)">
+                    <rect id="Rectangle-16" fill="#68B9F8" x="2" y="3" width="24" height="2"></rect>
+                    <path d="M22.5,0.934258546 L22.5,7.06574145 L27.0986122,4 L22.5,0.934258546 Z" id="Triangle" stroke="#68B9F8"></path>
+                    <path d="M0.5,0.934258546 L0.5,7.06574145 L5.09861218,4 L0.5,0.934258546 Z" id="Triangle" stroke="#68B9F8" transform="translate(3.000000, 4.000000) scale(-1, 1) translate(-3.000000, -4.000000) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

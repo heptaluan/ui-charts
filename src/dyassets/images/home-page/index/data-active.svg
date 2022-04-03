@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>数据图标</title>
+    <desc>Created with Sketch.</desc>
+    <g id="数据图标" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g stroke="#0079FA" stroke-width="1.6">
+            <g transform="translate(1.000000, 3.000000)">
+                <path d="M16.2,0.8 L1.8,0.8 L1.8,13.2 L16.2,13.2 L16.2,0.8 Z" id="路径-4"></path>
+                <line x1="11.5" y1="5.5" x2="11.5" y2="13.5" id="路径-6"></line>
+                <line x1="6.5" y1="5.5" x2="6.5" y2="13.5" id="路径-6"></line>
+                <line x1="1" y1="4.89969801" x2="16" y2="4.89969801" id="路径-5"></line>
+                <line x1="2" y1="8.86089131" x2="17" y2="8.86089131" id="路径-5"></line>
+            </g>
+        </g>
+    </g>
+</svg>

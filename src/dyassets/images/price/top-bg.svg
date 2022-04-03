@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1090px" height="428px" viewBox="0 0 1090 428" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>蒙版</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0.584145642%" y1="44.0922368%" x2="99.4660264%" y2="44.0922368%" id="linearGradient-1">
+            <stop stop-color="#EBEDF2" offset="0%"></stop>
+            <stop stop-color="#FDFDFF" offset="6.81936793%"></stop>
+            <stop stop-color="#D8DCE8" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="会员页1" transform="translate(-190.000000, -156.000000)" fill="url(#linearGradient-1)">
+            <g id="右侧所有内容" transform="translate(190.000000, 156.000000)">
+                <g id="背景">
+                    <rect id="蒙版" x="0" y="0" width="1090" height="428"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

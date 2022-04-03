@@ -1,0 +1,26 @@
+:host ::ng-deep {
+  input:focus {
+    outline: none;
+    border: 1px solid rgb(25,146,252) !important;
+  }
+}
+
+.custom-control-indicator {
+  width: 16px !important;
+  height: 16px !important;
+  top: auto;
+  border: #1890ff solid 1px !important;
+}
+
+.custom-control-indicator::before {
+  width: 8px !important;
+  height: 8px !important;
+  background-color: #1890ff !important;
+}
+
+.custom-control-description {
+  font-family:PingFangSC-Regular;
+  font-size:12px;
+  color:#5c6066 !important;
+  padding-left: 0px !important;
+}

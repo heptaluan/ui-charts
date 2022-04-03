@@ -1,0 +1,23 @@
+.block-container {
+  border: 1px solid transparent;
+  position: absolute;
+  padding: 10px;
+}
+
+.block-container:hover {
+  border: 1px solid #3195cb !important;
+}
+
+.text-container {
+  height: 100%;
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  overflow: hidden;
+  resize: none;
+  padding: 0;
+  &:focus {
+      outline-offset: 0px !important;
+      outline: none !important;
+  }
+}

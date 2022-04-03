@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="34px" viewBox="0 0 44 34" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>6</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="6" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Page-1">
+            <g transform="translate(7.000000, 4.000000)">
+                <circle id="Oval-5" fill="#BFE1FC" cx="7" cy="19" r="7"></circle>
+                <circle id="Oval-5" stroke="#B3DDFF" cx="24" cy="19" r="6.5"></circle>
+                <g id="Group-11" transform="translate(15.000000, 4.000000) scale(-1, 1) translate(-15.000000, -4.000000) translate(1.000000, 0.000000)">
+                    <rect id="Rectangle-16" fill="#68B9F8" x="2" y="3" width="24" height="2"></rect>
+                    <path d="M22.5,0.934258546 L22.5,7.06574145 L27.0986122,4 L22.5,0.934258546 Z" id="Triangle" stroke="#68B9F8"></path>
+                    <path d="M0.5,0.934258546 L0.5,7.06574145 L5.09861218,4 L0.5,0.934258546 Z" id="Triangle" stroke="#76BFF8" transform="translate(3.000000, 4.000000) scale(-1, 1) translate(-3.000000, -4.000000) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

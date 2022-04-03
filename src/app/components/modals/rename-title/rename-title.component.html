@@ -1,0 +1,7 @@
+<lx-modal position="center" [title]="title">
+  <form>
+    <input type="text" (keyUp.enter)='onSubmit()' autofocus="autofocus" onfocus="this.select()" class="form-control" [class.error-border]='projectName.invalid && (projectName.dirty || projectName.touched)' [formControl]="projectName" maxlength="50">
+    <div class="tip" [ngClass]="{'tip-error': projectName.invalid && (projectName.dirty || projectName.touched)}">请输入50个字以内</div>
+  </form>
+<button class="dy-button-blue dy-button-middle action-button" (click)="onSubmit()">确定</button>
+</lx-modal>

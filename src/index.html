@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>镝数图表 - 在线数据可视化神器，让你的数据有型有款、创意无限</title>
+  <base href="/appv2/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="renderer" content="webkit|ie-comp|ie-stand">
+  <meta name="keywords"
+    content="镝数，免费图表制作，图表设计，数据可视化，数据新闻，数据报告，数据海报、PPT数据图表，excel数据图表，数据表格，专业图表模板，图表美化，创意图表、个性化图表、图表视频、信息可视化、桑基图、玫瑰图，词云图，河流图，雷达图，子弹图，日历图，气泡图，人口金字塔，弦图、树图、圆堆图、关系图、旭日图、地图。" />
+  <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" /> -->
+  <meta name="description"
+    content="镝数图表是一款功能强大的免费在线数据可视化工具，输入数据即可一键生成可视化视频、网页交互图表制作，数据动图、矢量图表、信息图表；支持包括词云图，桑基图，玫瑰图，河流图，雷达图等近100种图表种类；提供上千种可视化模版，内容创作、媒体运营、营销海报、市场研究、论文写作、工作总结、个人简历等场景的可视化设计均可在镝数轻松稿定。" />
+  <link rel="icon" type="image/x-icon" href="https://dycharts.com/favicon.ico" />
+
+  <style type="text/css">
+
+  </style>
+</head>
+
+<body>
+  <div id="seoBox" style="display: none;">
+    <h1>找数据，做图表，上镝数</h1>
+    <h2>
+      镝数是中国首个数据与可视化服务平台，致力于聚合可靠的数据，提供无需编程的数据可视化工具，让不同行业从业者可以在平台上一站式完成从数据获取、数据处理到数据可视化的工作。
+    </h2>
+    <img src="https://dycharts.com/dyassets/images/index/logo-large.png" alt="镝数dycharts" />
+  </div>
+
+  <div class="home-loading">
+    <div class="spinner">
+      <div class="bounce1"></div>
+      <div class="bounce2"></div>
+      <div class="bounce3"></div>
+    </div>
+  </div>
+  <div class="workspace-loading">
+    <div class="spinner">
+      <div class="bounce1"></div>
+      <div class="bounce2"></div>
+      <div class="bounce3"></div>
+    </div>
+    <div class="content">
+      <!-- <img src="./dyassets/images/loading/dychart.svg" alt="">
+      <img src="./dyassets/images/loading/protip.svg" alt="">
+      <span>点击右上角<strong>分享</strong>可以生成H5</span> -->
+    </div>
+    <div class="tip">
+      <!-- <img src="./dyassets/images/loading/protip.svg" alt="">
+      <span>新增手机扫码上传图片功能，请在<strong>图片-我的上传</strong>中查看</span> -->
+    </div>
+  </div>
+  <lx-root></lx-root>
+  <div class="ie-show" style="display: none;">
+    <img class="background-img" src="./dyassets/images/ie/background.svg" alt="">
+    <img class="dycharts-icon" src="./dyassets/images/ie/dycharts-icon.svg" alt="">
+    <div class="content-wrapper">
+      <h2>您当前使用的浏览器兼容性较差</h2>
+      <div class="content">
+        <p>为了保证您的使用体验，您可以：</p>
+        <p><img src="./dyassets/images/ie/1.svg" alt=""><a href="https://www.google.cn/chrome/" target="_blank">下载谷歌chrome浏览器</a><span> ，获得最佳创作体验</span></p>
+        <p><img src="./dyassets/images/ie/2.svg" alt=""><a onClick="setModal(true)">查看浏览器兼容列表</a><span> ，选用匹配度较高的浏览器</span></p>
+      </div>
+      <div class="code-content">微信扫码添加镝数图表公众号/客服-小镝，精彩活动随时掌握~</div>
+      <div class="code-wrapper">
+        <div>
+          <img src="./dyassets/images/ie/customer-service.svg" alt="">
+          <p>镝数图表公众号</p>
+        </div>
+        <div>
+          <img src="./dyassets/images/ie/xiaodi.svg" alt="">
+          <p>客服-小镝</p>
+        </div>
+        
+      </div>
+    </div>  
+  </div>
+
+  <div class="modal-shadow" style="display: none;">
+    <div class="browser-modal">
+      <img src="./dyassets/images/ie/X.svg" alt="" onClick="setModal(false)">
+      <div>
+        <h2>浏览器支持情况</h2>
+        <div class="browser-line">
+            <div class="browser-box">
+              <img src="./dyassets/images/ie/chrome.png" alt="">
+              <div>
+                <p>Chrome浏览器</p>
+                <p>chromium&nbsp;84以上</p>
+              </div>
+            </div>
+            <div class="browser-box">
+              <img src="./dyassets/images/ie/edge.png" alt="">
+              <div>
+                <p>Microsoft&nbsp;Edge</p>
+                <p>chromium&nbsp;84以上</p>
+              </div>
+            </div>
+        </div>
+            
+        <div class="browser-line">
+          <div class="browser-box">
+            <img src="./dyassets/images/ie/sogou.png" alt="">
+            <div>
+              <p>搜狗浏览器</p>
+              <p>10.0.0.31535以上</p>
+            </div>
+          </div>
+          <div class="browser-box">
+            <img src="./dyassets/images/ie/360safe.png" alt="">
+            <div>
+              <p>360安全浏览器</p>
+              <p>11.1.1033.0以上</p>
+            </div>
+          </div>
+        </div>
+  
+        <div class="browser-line">
+          <div class="browser-box">
+            <img src="./dyassets/images/ie/360fast.png" alt="">
+            <div>
+              <p>360极速浏览器</p>
+              <p>12.0.1434.0以上</p>
+            </div>
+          </div>
+          <div class="browser-box">
+            <img src="./dyassets/images/ie/QQ.png" alt="">
+            <div>
+              <p>QQ浏览器</p>
+              <p>9.7以上</p>
+            </div>
+          </div>
+        </div>
+          
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://res.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
+
+  <script>
+    function setModal(flag) {
+      flag ? $(".modal-shadow").show() : $(".modal-shadow").hide();
+    }
+
+    $(function () {
+      if (!!window.ActiveXObject || "ActiveXObject" in window) {
+        document.querySelector(".ie-show").style.display = "block";
+      }
+      var title, show, descText;
+      setTimeout(function() {
+        $.ajax({
+          url: "https://dycharts.com/vis/share/wechat/jsshare?url=https://dycharts.com/appv2/#/pages/home/index",
+          type: "GET",
+          async: true,
+          cache: false,
+          dataType: "json",
+          success: function (data) {
+
+            wx.config({
+              debug: false,
+              appId: "wxb666f3153cb1fa13",
+              timestamp: data.data.timestamp,
+              nonceStr: data.data.nonceStr,
+              signature: data.data.signature,
+              jsApiList: ['checkJsApi', 'chooseWXPay', 'onMenuShareAppMessage', 'onMenuShareTimeline']
+            });
+
+            wx.ready(function () {
+              document.title = '镝数图表 - 简单好用的可视化工具'
+              // 分享给朋友
+              wx.onMenuShareAppMessage({
+                title: '镝数图表 - 简单好用的可视化工具',
+                desc: 'dycharts.com',
+                link: 'https://dycharts.com/appv2/#/pages/home/index',
+                imgUrl: 'https://ss1.dydata.io/logo/dycharts.png',
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+                },
+                cancel: function () {
+                }
+              })
+
+              // 朋友圈
+              wx.onMenuShareTimeline({
+                title: '镝数图表 - 简单好用的可视化工具',
+                link: 'https://dycharts.com/appv2/#/pages/home/index',
+                imgUrl: 'https://ss1.dydata.io/logo/dycharts.png',
+                success: function () {
+                }
+              })
+            })
+          },
+          error: function () {
+            console.log("err");
+            return;
+          }
+        });
+      }, 1000);
+    });
+  </script>
+
+  <script>
+    var _hmt = _hmt || [];
+    (function () {
+      var hm = document.createElement('script');
+      hm.src = 'https://hm.baidu.com/hm.js?f022a121050f39be41fbf30979374220';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+</body>
+
+</html>

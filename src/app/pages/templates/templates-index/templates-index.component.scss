@@ -1,0 +1,201 @@
+:host ::ng-deep {
+  .swiper-slide a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-pagination-bullet {
+    width: 18px;
+    height: 6px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    opacity: .5;
+  }
+
+  .swiper-pagination-bullet-active {
+    width: 40px;
+    height: 6px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    transition: width 0.3s ease-in-out;
+    opacity: 1;
+  }
+
+  .swiper-button-prev {
+    background: url("https://ss1.dydata.io/v2/home/arrows-left.png") no-repeat center/contain;
+  }
+
+  .swiper-button-next {
+    background: url("https://ss1.dydata.io/v2/home/arrows-right.png") no-repeat center/contain;
+  }
+}
+
+ul, li {margin: 0; padding: 0; list-style: none;}
+
+.swiper-container {
+  height: 322px;
+}
+
+.templates-introduce-box {
+  width: 100%;
+  background: #F5F6F7;
+  padding-bottom: 40px;
+
+  .templates-introduce {
+    width: 1098px;
+    margin: 0 auto;
+
+    ul {
+      display: flex;
+      justify-content: space-between;
+      padding: 0;
+
+      .introduce-list {
+        width: 250px;
+        height: 165px;
+        box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-size: 14px;
+        background: #ffffff;
+        h4 {
+          margin: 19px 0 25px 0;
+          position: relative;
+          font-family: PingFangSC-Semibold;
+          font-size: 18px;
+          font-weight: 600;
+          font-stretch: normal;
+          letter-spacing: 0.9px;
+          color: #000a1a;
+          &::after {
+            content: '';
+            display: block;
+            width: 46px;
+            height: 2px;
+            background: #ebebeb;
+            position: absolute;
+            bottom: -12px;
+            right: 16px;
+          }
+        }
+        p {
+          display: flex;
+          width: 100%;
+          justify-content: space-around;
+          align-items: center;
+          span {
+            width: 60px;
+            display: block;
+            text-align: left;
+            height: 14px;
+            line-height: 14px;
+            font-family: PingFangSC-Regular;
+            font-size: 14px;
+            font-weight: normal;
+            font-stretch: normal;
+            letter-spacing: 0.7px;
+            color: #323b47;
+            cursor: pointer;
+            &:focus {
+              border: none;
+              outline: none;
+            }
+          }
+          .without {
+            cursor: default;
+          }
+        }
+        &:nth-of-type(2) {
+          p {
+            justify-content: center;
+            span {
+              width: 103px;
+              &:nth-of-type(2) {
+                margin-left: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.templates-wrapper {
+  width: 100%;
+  background: #f7f9fa;
+}
+.templates-content {
+  width: 1098px;
+  margin: 0 auto;
+  padding-top: 40px;
+  background: #f7f9fa;
+  padding-bottom: 70px;
+
+  .item-margin {
+    margin-bottom: 65px;
+  }
+
+  .title {
+    height: 25px;
+    line-height: 25px;
+    margin-bottom: 10px;
+
+    h4 {
+      display: inline-block;
+      margin-bottom: 0;
+      font-size: 18px;
+      color: #000a1a;
+      font-weight: bold;
+    }
+
+    .read-more {
+      float: right;
+      font-size: 12px;
+      color: #969799;
+      cursor: pointer;
+      position: relative;
+      margin-right: 15px;
+
+      &:after {
+        position: absolute;
+        content: '';
+        top: 8px;
+        right: -12px;
+        width: 8px;
+        height: 8px;
+        border-top: 1px solid #5c6066;
+        border-right: 1px solid #5c6066;
+        border-left: none;
+        border-bottom: none;
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  .item-list-box {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+  }
+
+  .templates-choiceness {
+    ul {
+      display: flex;
+      justify-content: space-between;
+
+      li {
+        width: 250px;
+        height: 200px;
+        border: 1px solid #333;
+        background: #ffffff;
+        line-height: 200px;
+        text-align: center;
+      }
+    }
+  }
+
+}

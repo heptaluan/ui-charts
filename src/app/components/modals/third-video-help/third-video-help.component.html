@@ -1,0 +1,15 @@
+<div class="close" (click)="close()"></div>
+<div class="third-wrapper">
+  <div class="q-a">
+    <div class="question"><i></i>什么是第三方平台链接？如何获得？</div>
+    <div class="anwser"><i></i><span>打开支持视频平台，复制视频通用代码后，粘贴到输入框中点击插入即可</span></div>
+  </div>
+  
+  <div class="scroll-wrapper">
+    <div class="third" *ngFor="let item of thirdText">
+      <p class="third-title">{{item.title}}</p>
+      <p class="third-desc">点击视频下方分享按钮，选择“复制通用代码”即可</p>
+      <img [src]="item.img" alt="">
+    </div>
+  </div>
+</div>

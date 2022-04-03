@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="34px" height="34px" viewBox="0 0 34 34" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>邮件</title>
+    <g id="邮件" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g stroke-width="1.6">
+            <g transform="translate(3.000000, 6.000000)">
+                <rect id="矩形" stroke="#D6D6D6" x="0.8" y="0.8" width="26.4" height="20.4" rx="2"></rect>
+                <polyline id="路径-3" stroke="#CCCDCD" points="2 2 14 16 26 2"></polyline>
+                <line x1="10" y1="12" x2="2" y2="20" id="路径-4" stroke="#CCCDCD"></line>
+                <line x1="26" y1="12" x2="18" y2="20" id="路径-4" stroke="#CCCDCD" transform="translate(22.000000, 16.000000) scale(-1, 1) translate(-22.000000, -16.000000) "></line>
+            </g>
+        </g>
+    </g>
+</svg>

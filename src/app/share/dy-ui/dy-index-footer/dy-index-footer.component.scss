@@ -1,0 +1,350 @@
+a:hover {
+  text-decoration: none;
+}
+.content {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  &::before,
+  &::after {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #e6e6e6;
+    top: 0;
+  }
+  &::after {
+    top: 142px;
+  }
+  .foot-nav {
+    display: flex;
+    margin-top: 20px;
+    height: 20px;
+    width: 322px;
+    justify-content: space-between;
+    align-items: center;
+    .foot-nav-item {
+      font-size: 14px;
+      display: block;
+      height: 20px;
+      width: 56px;
+      a {
+        cursor: pointer;
+        color: #333333;
+        &:hover {
+          color: #0079fa;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  .call-me {
+    margin-top: 21px;
+    color: #666666;
+    font-size: 14px;
+    p {
+      height: 20px;
+      line-height: 20px;
+      &.last {
+        margin-top: 10px;
+      }
+      i {
+        margin-right: 16px;
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 20px;
+        width: 20px;
+        height: 20px;
+        background: url(/dyassets/images/home-page/index/index-footer/location.svg) no-repeat center / contain;
+      }
+    }
+  }
+  .copyright {
+    font-size: 14px;
+    color: #666666;
+    margin-top: 12px;
+    i {
+      width: 14px;
+      height: 17px;
+      display: inline-block;
+      overflow: hidden;
+      background: url(https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/global/img/icons_5859e57.png)
+        no-repeat;
+      background-position: -623px -96px;
+      position: relative;
+      top: 3px;
+      margin-right: 5px;
+    }
+    a {
+      cursor: pointer;
+      color: #666;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+.qrcode-wrapper {
+  position: absolute;
+  width: 176px;
+  height: 80px;
+  top: 21px;
+  right: 0;
+  .icon {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    cursor: pointer;
+    &:nth-of-type(1) {
+      top: 0;
+      left: 0;
+      background: url(/dyassets/images/home-page/index/index-footer/wechat.svg) no-repeat center / contain;
+      &:hover {
+        background: url(/dyassets/images/home-page/index/index-footer/wechat-hover.svg) no-repeat center / contain;
+      }
+    }
+    &:nth-of-type(2) {
+      top: 0;
+      left: 73px;
+      background: url(/dyassets/images/home-page/index/index-footer/weibo.svg) no-repeat center / contain;
+      &:hover {
+        background: url(/dyassets/images/home-page/index/index-footer/weibo-hover.svg) no-repeat center / contain;
+      }
+    }
+    &:nth-of-type(3) {
+      top: 0;
+      right: 0;
+      background: url(/dyassets/images/home-page/index/index-footer/zhihu.svg) no-repeat center / contain;
+      &:hover {
+        background: url(/dyassets/images/home-page/index/index-footer/zhihu-hover.svg) no-repeat center / contain;
+      }
+    }
+    &:nth-of-type(4) {
+      bottom: 0;
+      left: 0;
+      background: url(/dyassets/images/home-page/index/index-footer/customer.svg) no-repeat center / contain;
+      &:hover {
+        background: url(/dyassets/images/home-page/index/index-footer/customer-hover.svg) no-repeat center / contain;
+      }
+    }
+    &:nth-of-type(5) {
+      bottom: 0;
+      left: 73px;
+      background: url(/dyassets/images/home-page/index/index-footer/phone.svg) no-repeat center / contain;
+      &:hover {
+        background: url(/dyassets/images/home-page/index/index-footer/phone-hover.svg) no-repeat center / contain;
+      }
+    }
+    &:nth-of-type(6) {
+      bottom: 0;
+      right: 0;
+      background: url(/dyassets/images/home-page/index/index-footer/mail.svg) no-repeat center / contain;
+      &:hover {
+        background: url(/dyassets/images/home-page/index/index-footer/mail-hover.svg) no-repeat center / contain;
+      }
+      .tip {
+        width: 152px;
+        left: -58px;
+      }
+    }
+    .qrcode {
+      width: 126px;
+      height: 136px;
+      position: absolute;
+      right: -45px;
+      top: 43px;
+      font-size: 12px;
+      font-weight: normal;
+      color: #000a1a;
+      background: #fff;
+      border-radius: 6px;
+      border: 1px solid #e6e6e6;
+      box-shadow: 0px 2px 4px 0px rgba(45, 52, 78, 0.15);
+      z-index: 3;
+      img {
+        display: block;
+        margin: 0 auto;
+        margin-top: 10px;
+        width: 100px;
+        height: 100px;
+      }
+      p {
+        margin: 0;
+        margin-top: 2px;
+        font-size: 12px;
+        font-weight: normal;
+        color: #000a1a;
+        text-align: center;
+      }
+      &::before {
+        content: '';
+        width: 152px;
+        height: 12px;
+        position: absolute;
+        top: -11px;
+      }
+      // &::after {
+      //   content: '';
+      //   display: block;
+      //   position: absolute;
+      //   width: 11px;
+      //   height: 7px;
+      //   border-width: 0px 5px 7px 5px;
+      //   border-style: solid;
+      //   border-color: transparent transparent #fff transparent;
+      //   top: -7px;
+      //   left: 50%;
+      //   transform: translate(-50%);
+      // }
+      &.wechat {
+        // 微信公众号箭头跟朝向相反
+        top: -146px;
+        &::before {
+          content: '';
+          width: 152px;
+          height: 12px;
+          position: absolute;
+          top: 136px;
+        }
+        // &::after {
+        //   content: '';
+        //   display: block;
+        //   position: absolute;
+        //   width: 11px;
+        //   height: 7px;
+        //   border-style: solid;
+        //   left: 50%;
+        //   transform: translate(-50%);
+        //   border-width: 7px 5px 0px 5px;
+        //   border-color: #fff transparent transparent transparent;
+        //   top: 134px;
+        // }
+      }
+    }
+    .tip {
+      text-align: center;
+      width: 145px;
+      line-height: 18px;
+      position: absolute;
+      top: 46px;
+      left: -55px;
+      font-size: 12px;
+      font-weight: normal;
+      color: #000a1a;
+      right: 0;
+      background: #fff;
+      border: 1px solid #e6e6e6;
+      padding: 10px 12px;
+      border-radius: 2px;
+      z-index: 3;
+      box-shadow: 0px 2px 4px 0px rgba(45, 52, 78, 0.15);
+      a {
+        font-size: 12px;
+        font-weight: normal;
+        color: #000a1a;
+        display: inline-block;
+        border-bottom: 1px solid #000a1a;
+        cursor: pointer;
+      }
+      &::before {
+        content: '';
+        width: 152px;
+        height: 12px;
+        position: absolute;
+        top: -11px;
+        left: 0;
+      }
+      // &::after {
+      //   content: '';
+      //   display: block;
+      //   position: absolute;
+      //   width: 11px;
+      //   height: 7px;
+      //   border-width: 0px 5px 7px 5px;
+      //   border-style: solid;
+      //   border-color: transparent transparent #fff transparent;
+      //   top: -7px;
+      //   left: 50%;
+      //   transform: translate(-50%);
+      // }
+      // 微博知乎单独设置
+      &.weibo,
+      &.zhihu {
+        top: -46px;
+        &::before {
+          top: 39px;
+        }
+        // &::after {
+        //   top: 39px;
+        //   border-width: 7px 5px 0 5px;
+        //   border-color: #fff transparent transparent transparent;
+        // }
+      }
+      &.phone, &.email {
+        width: 153px;
+      }
+    }
+  }
+}
+.friend-link {
+  position: absolute;
+  width: 100%;
+  bottom: 10px;
+  span,
+  a {
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 14px;
+    font-weight: normal;
+    color: #666;
+  }
+
+  .business-license-box {
+    position: absolute;
+    right: 0;
+    bottom: -3px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    .small-img {
+      width: 38px;
+      height: 26px;
+      background-size: contain;
+      margin-right: 7px;
+    }
+
+    .big-img {
+      display: none;
+      width: 560px;
+      height: 400px;
+      position: absolute;
+      right: -10px;
+      bottom: 40px;
+      box-shadow: 0px 4px 12px 0px rgba(191, 199, 216, 0.5);
+      border-radius: 6px;
+
+      img {
+        max-width: 100%;
+      }
+    }
+
+    p {
+      font-size: 14px;
+      font-weight: normal;
+      color: #666;
+    }
+
+    &:hover {
+      .big-img {
+        display: block;
+      }
+    }
+
+  }
+}

@@ -1,0 +1,24 @@
+<div class="setting-container">
+
+  <div [hidden]="projectType === 'chart'">
+    <tabset #staticTab [justified]="true" [hidden]="showToggleTheme">
+      <!-- <tab heading="页面" (select)="onTabSelect($event)" customClass="setting-tab table-tab" id="tab1">
+              <lx-page-left-settings #leftSettings></lx-page-left-settings>
+            </tab> -->
+      <tab heading="页面设置" (select)="onTabSelect($event)" customClass="setting-tab" id="tab2">
+        <div class="toggle-theme">
+          <div class="chart-theme">
+            <img src="{{themeCover}}" alt="cover">
+            <h4>切换主题</h4>
+            <div class="theme-mask" (click)="showToggleThemeHandle()">             
+            </div>
+            
+          </div>
+        </div>
+        <lx-page-right-settings #rightSettings></lx-page-right-settings>
+      </tab>
+    </tabset>
+    <lx-toggle-theme [hidden]="!showToggleTheme" (closeSidebarEvent)='closeToggleChart($event)'></lx-toggle-theme>
+  </div>
+
+</div>

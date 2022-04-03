@@ -1,0 +1,13 @@
+<div class="text-template">
+  <div class="template-item" *ngFor="let item of textTemplates; let i = index;">
+    <div class="over-layout panel-shadow d-flex justify-content-center align-items-center">
+      <button class="dy-button" (click)='insertText($event, i)' [attr.title]='item.title'>插入</button>
+    </div>
+
+    <div class="title">{{item.title}}</div>
+    <div class="content d-flex justify-content-center align-items-center">
+      <span [ngStyle]="item.styles">{{item.content}}</span>
+    </div>
+  </div>
+</div>
+

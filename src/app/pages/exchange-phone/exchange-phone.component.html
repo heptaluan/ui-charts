@@ -1,0 +1,68 @@
+<div class="exchange-wrapper">
+  <header>
+    <a href="https://dycharts.com/appv2/#/pages/home/index"><img src="../../../dyassets/images/logo-new.svg"
+        alt=""></a>
+    <i (click)="showTip(true)">
+    </i>
+  </header>
+
+  <div class="header-tip" *ngIf="isShowTip">
+    <p (click)="linkTo('/pages/home/index')">首页</p>
+    <p (click)="linkTo('/pages/exchange')">会员兑换</p>
+    <p (click)="linkTo('/pages/index/userhelp')">使用帮助</p>
+    <p *ngIf="!isLogin" (click)="link(true)">立即登录</p>
+    <p *ngIf="isLogin" (click)="link(false)">退出登录</p>
+  </div>
+
+  <main>
+    <img src="../../../dyassets/images/exchange/exchange-background.png" alt="">
+    <div class="login-wrapper" *ngIf="!isLogin">
+      <div class="login-box">
+        <div (click)="link(true)">登录</div>
+        <p>镝数图表</p>
+      </div>
+      <p class="message">海量特权等你来兑换</p>
+    </div>
+
+    <div class="exchange-content" *ngIf="isLogin"> 
+      <p><span>您好，</span><span>{{showName}}</span><span>（{{user.phoneno}}）</span></p>
+      <input type="text" placeholder="请输入兑换码" [(ngModel)]="exchangeCode">
+      <p>{{errorMsg}}</p>
+      <button (click)="exchange()">立即兑换</button>
+    </div>
+    <div class="content">
+      <p>1、使用兑换码可获取相应的会员权益；<br>
+      2、同一兑换码仅可兑换一次；<br>
+      3、兑换完成后可在PC端&lt;我的会员&gt;中查看详情；<br>
+      4、通过团购或商务合作等特定渠道获取的兑换码<br>名额有限，请妥善保管。</p>
+    </div>
+  </main>
+
+  <div class="exchange-modal" *ngIf="isShowModal">
+    <img src="../../../dyassets/images/exchange/modal.svg" alt="">
+    <i (click)="showModal(false)"></i>
+    <p>恭喜您成功兑换{{days}}天会员</p>
+
+    <div class="d-flex">
+      <div (click)="linkTo('/pages/index/userhelp')">
+        立即体验
+      </div>
+      <div (click)="showModal(false)">
+        继续兑换
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="register-modal" *ngIf="isShowRegisterModal" >
+    <img src="../../../dyassets/images/exchange/modal.svg" alt="">
+    <i (click)="showRegisterModal(false)"></i>
+    <p>恭喜您注册成功并获得7天会员</p>
+    <div (click)="showRegisterModal(false)">
+      我知道了
+    </div>
+  </div>
+
+  <div class="mobile-mask" (click)="showTip(false)" *ngIf="isShowTip || isShowModal || isShowRegisterModal">     
+  </div>
+</div>

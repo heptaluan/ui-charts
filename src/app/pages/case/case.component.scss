@@ -1,0 +1,79 @@
+:host {
+  .case-container {
+    max-width: 1280px;
+    padding: 40px 85px;
+    overflow: hidden;
+    .overview-container {
+      width: 760px;
+      border-radius: 8px;
+      background: #fff;
+      padding: 40px 30px 65px;
+      .title {
+        font-family: PingFangSC-Medium;
+        font-size: 24px;
+        color: #323b47;
+      }
+      .subtitle {
+        font-size: 14px;
+        color: #9b9b9b;
+        margin-top: 25px;
+        .hot {
+          font-size: 12px;
+          color: #969799;
+          .iconfont {
+            margin-left: 16px;
+            margin-right: 5px;
+            font-size: 20px;
+            color: #d8dee3;
+          }
+          .icon-xihuan {
+            cursor: pointer;
+            &:hover {
+              color: #adb6c4;
+            }
+            &.active {
+              color: #f52281;
+            }
+          }
+        }
+      }
+      .project-description {
+        font-size: 16px;
+        color: #323b47;
+        margin-top: 40px;
+      }
+      .preview {
+        border-radius: 4px;
+        margin-top: 40px;
+      }
+    }
+    .author-container {
+      background: #ffffff;
+      width: 315px;
+      height: fit-content;
+      margin-top: 25px;
+      position: relative;
+      padding: 40px 20px 25px;
+      .nickname {
+        font-size: 14px;
+        color: #000a1a;
+      }
+      .loginname {
+        font-size: 12px;
+        color: #969799;
+        margin-top: 5px;
+      }
+      .user-description {
+        font-size: 14px;
+        color: #969799;
+        margin-top: 15px;
+        word-wrap: break-word;
+      }
+      img {
+        width: 50px;
+        position: absolute;
+        top: -25px;
+      }
+    }
+  }
+}

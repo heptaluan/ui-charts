@@ -1,0 +1,7 @@
+<lx-chart-sidebar *ngIf="type === 'chart'" [pageId]="pageId" (closeSidebarEvent)="closeSidebar()"></lx-chart-sidebar>
+<lx-text-sidebar *ngIf="type === 'text'" [pageId]="pageId" (closeSidebarEvent)="closeSidebar()"></lx-text-sidebar>
+<lx-shape-sidebar *ngIf="type === 'shape'" [pageId]="pageId" (closeSidebarEvent)="closeSidebar()"></lx-shape-sidebar>
+<lx-image-sidebar *ngIf="type === 'image'" [pageId]="pageId" (closeSidebarEvent)="closeSidebar()"></lx-image-sidebar>
+<lx-scene-sidebar *ngIf="type === 'template'" [pageId]="pageId" (closeSidebarEvent)="closeSidebar()"></lx-scene-sidebar>
+<lx-audio-sidebar *ngIf="type === 'song'" [pageId]="pageId" (closeSidebarEvent)="closeSidebar()"></lx-audio-sidebar>
+<lx-video-sidebar *ngIf="type === 'video'" [pageId]="pageId" (closeSidebarEvent)="closeSidebar()"></lx-video-sidebar>

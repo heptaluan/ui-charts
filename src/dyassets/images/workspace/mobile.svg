@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="350px" height="619px" viewBox="0 0 350 619" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>手机模型</title>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="单图-手机" transform="translate(-462.000000, -115.000000)">
+            <g id="手机模型" transform="translate(462.000000, 115.000000)">
+                <rect id="矩形" fill="#3D3D3D" x="0" y="0" width="350" height="618.867925" rx="33.9622642"></rect>
+                <rect id="矩形" fill="#D8D8D8" x="0" y="48.1132075" width="348.113208" height="513.207547"></rect>
+                <g id="上方" transform="translate(131.132075, 22.641509)" fill="#878787">
+                    <rect id="矩形" x="25.4716981" y="1.88679245" width="62.2641509" height="5.66037736" rx="2.83018868"></rect>
+                    <rect id="矩形" x="0" y="0" width="9.43396226" height="9.43396226" rx="4.71698113"></rect>
+                </g>
+                <circle id="椭圆形" stroke="#878787" stroke-width="2.83018868" cx="174.528302" cy="589.622642" r="16.509434"></circle>
+                <rect id="矩形" fill="#000000" x="0" y="48.1132075" width="350" height="513.207547"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

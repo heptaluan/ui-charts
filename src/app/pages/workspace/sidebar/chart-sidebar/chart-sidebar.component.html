@@ -1,0 +1,53 @@
+<nb-card class="chart-templates-sidebar del-shadow toggle-chart" [ngStyle]='styles'>
+  <div class="chart-header">
+    插入图表
+    <i class="icon iconfont icon-x left-sidebar" (click)='clickCloseBtn()'></i>
+  </div>
+
+  <!-- body -->
+  <div class="toggle-chart-header">
+    <div class="setting-container" *ngIf="projectType !== 'chart'">
+      <tabset>
+        <tab heading="图表" (select)="onTabSelect($event)" customClass="setting-tab" id="tab1">
+        </tab>
+        <tab heading="我的单图" (select)="onTabSelect($event)" customClass="setting-tab" id="tab2">
+        </tab>
+      </tabset>
+    </div>
+  </div>
+  <!-- footer -->
+  <nb-card-footer>
+    <div class="row">
+
+      <!-- 图表 -->
+      <div class="row-box" *ngIf="tabActive">
+        <nb-card-body>
+          <lx-form-search (searchValue)='search($event)' [placeholder]="'搜索图表'"></lx-form-search>
+          <label class="chart-classify" for="">分类：</label>
+          <lx-settings-dropdowns [values]="['按图表类型', '按功能类型']" [index]='0' (onChanged)='changeClassifyBy($event)'>
+          </lx-settings-dropdowns>
+          <span class="flod-all" (click)="flodAll()">收起全部</span>
+        </nb-card-body>
+        <nb-card-footer>
+          <div class="row">
+            <div class="col list-content insert-chart" [ngStyle]="listContentStyles">
+              <lx-chart-template-item [classifyBy]='classifyBy' [type]='selectedType' [data]='chartTemplates'
+                [pageId]='pageId' [searchText]='searchText'></lx-chart-template-item>
+            </div>
+          </div>
+        </nb-card-footer>
+      </div>
+
+      <!-- 我的单图 -->
+      <div class="col-12 list-content" *ngIf="!tabActive">
+        <nb-card-body>
+          <lx-form-search (searchValue)='search($event)' [placeholder]="'搜索图表'"></lx-form-search>
+        </nb-card-body>
+        <div class="single-chart-template">
+          <lx-single-chart-template-item [data]='singleChartTemplates' [pageId]='pageId' [searchText]='searchText'>
+          </lx-single-chart-template-item>
+        </div>
+      </div>
+    </div>
+  </nb-card-footer>
+</nb-card>

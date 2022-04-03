@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="34px" viewBox="0 0 44 34" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>99</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="99" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-2">
+            <g transform="translate(5.000000, 4.000000)">
+                <path d="M2.06060606,0 L31.9393939,0 L31.9393939,13.741875 C25.838682,13.666875 21.0977673,14.791875 17.7166499,17.116875 C14.3355324,19.441875 9.66812032,20.791875 3.71441351,21.166875 L31.9393939,20.0571429 L31.9393939,27 L2.06060606,26.971875 L2.06060606,15.541875 C7.20578479,15.691875 12.0937046,14.491875 16.7243654,11.941875 C21.3550263,9.391875 25.5814231,8.116875 29.4035559,8.116875 L2.06060606,8 L2.06060606,0 Z" id="Path-3" fill="#C1E3FE" opacity="0.600000024"></path>
+                <rect id="Rectangle" fill="#C1E3FE" x="0" y="0" width="2.06060606" height="15"></rect>
+                <rect id="Rectangle" fill="#C1E3FE" x="31.9393939" y="0" width="2.06060606" height="14"></rect>
+                <rect id="Rectangle" fill="#C1E3FE" x="31.9393939" y="15" width="2.06060606" height="12"></rect>
+                <rect id="Rectangle" fill="#C1E3FE" x="0" y="16" width="2.06060606" height="11"></rect>
+                <path d="M2.06060606,8 C7.66566045,8.07680492 12.6354753,9.19047619 16.9700507,11.3410138 C21.3046261,13.4915515 26.2944072,14.6994833 31.9393939,14.9648094 L31.9393939,19.9396732 C26.8175456,20.274822 21.4914613,19.2135177 15.961141,16.7557604 C11.3376014,14.70099 6.70408974,14.1040064 2.06060606,14.9648094 L2.06060606,8 Z" id="Path-5" fill="#3CA8FD" opacity="0.600000024"></path>
+            </g>
+        </g>
+    </g>
+</svg>

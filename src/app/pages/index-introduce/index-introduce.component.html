@@ -1,0 +1,59 @@
+<div class="introduce-box">
+  <header>
+    <a href="https://dycharts.com/appv2/#/pages/home/index"><img src="../../../dyassets/images/logo-new.svg"
+        alt=""></a>
+    <i (click)="showTip(true)">
+    </i>
+  </header>
+
+  <div class="header-tip" *ngIf="isShowTip">
+    <p (click)="linkTo('/pages/home/index')">首页</p>
+    <p (click)="linkTo('/pages/exchange')">会员兑换</p>
+    <p (click)="linkTo('/pages/index/userhelp')">使用帮助</p>
+    <p *ngIf="!isLogin" (click)="link(true)">立即登录</p>
+    <p *ngIf="isLogin" (click)="link(false)">退出登录</p>
+  </div>
+
+  <div class="content-wrapper">
+    <div class="index-introduce-cover"> 
+      <img src="../../../dyassets/images/home-page/mobile/introduce/circle-1.svg" alt="">
+      <img src="../../../dyassets/images/home-page/mobile/introduce/bg-left.svg" alt="">
+      <p>PC端访问dycharts.com</p>
+      <p>上千种可视化模板即刻体验~</p>
+    </div>
+
+    <div class="step-one">
+      <img src="../../../dyassets/images/home-page/mobile/introduce/number-one.svg" alt="">
+      <p>第一步：在浏览器中输入镝数网址：<br>
+        dycharts.com （使用谷歌浏览器体验最佳）</p>
+      <img src="../../../dyassets/images/home-page/mobile/introduce/first.svg" alt="">
+    </div>
+
+    <div class="step-two">
+      <img src="../../../dyassets/images/home-page/mobile/introduce/number-two.svg" alt="">
+      <p>第二步：在主页右上角入口登录，选择图表或者<br>信息图模板，开启你的可视化之旅</p>
+      <img src="../../../dyassets/images/home-page/mobile/introduce/second.png" alt="">
+    </div>
+
+    <div class="step-three">
+      <img src="../../../dyassets/images/home-page/mobile/introduce/number-three.svg" alt="">
+      <p>第三步：编辑制作并下载或分享你的作品</p>
+      <img src="../../../dyassets/images/home-page/mobile/introduce/third.png" alt="">
+      <div></div>
+    </div>
+    
+    <img class="page-bg01" src="../../../dyassets/images/home-page/mobile/introduce/circle2.svg" alt="">
+    <img class="page-bg02" src="../../../dyassets/images/home-page/mobile/introduce/bg-right.svg" alt="">
+
+    <p class="page-text">温馨提示：推荐使用谷歌浏览器访问镝数图表<br>
+      有任何使用上的问题请随时联系小镝同学哦~</p>
+
+    <img class="weixin-code" src="/dyassets/images/index-introduce/weixin-code.png" alt="">
+
+    <div class="go-home" [routerLink]="['/pages','home', 'index']">前往首页</div>
+  </div>
+  <div class="mobile-mask" (click)="showTip(false)" *ngIf="isShowTip">     
+  </div>
+
+
+</div>

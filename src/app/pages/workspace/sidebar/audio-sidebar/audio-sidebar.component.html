@@ -1,0 +1,43 @@
+<div class="song" [ngStyle]="styles">
+  <div class="song-header">
+    <i class="icon iconfont icon-fanhui" *ngIf="pageNum === 2" (click)="goBack()"></i>
+    {{title}}
+    <i class="icon iconfont icon-x" (click)="clickCloseBtn()" *ngIf="!isToggle"></i>
+  </div>
+  <div class="song-wrapper" *ngIf="pageNum === 1">
+    <div class="song-wrapper-item" (click)="goSecondPage('bgm')">
+      <div class="img"></div>
+      <div class="text">背景音乐</div>
+    </div>
+    <div class="song-wrapper-item" (click)="goSecondPage('insertSong')">
+      <div class="img"></div>
+      <div class="text">音乐模块</div>
+    </div>
+  </div>
+  <div class="song-container" *ngIf="pageNum === 2">
+    <div class="song-container-header">
+      <lx-form-search (searchValue)='search($event)'></lx-form-search>
+      <lx-classify
+        class="classify"
+        (category)="classify($event)"
+        [type]="'image'"
+        [data]='categories'
+        [partCategories]='partCategories'
+        [hideShape]='true'
+      ></lx-classify>
+    </div>
+    <div class="diy-music" (click)="handleOpenModal()"><i></i>自定义音乐链接</div>
+    <div class="song-container-body" [ngStyle]="innerStyles" #audioScroll>
+      <div class="song-item" [title]="item.name" (mouseenter)=" handleMouseEnter(i)" (mouseleave)="activeIndex = -1" [ngClass]="{'active': activeIndex === i || activePlaying === i}" *ngFor="let item of songList; let i = index">
+        <span class="index" *ngIf="activePlaying !== i">{{i < 9 ? '0' + (i + 1) : i + 1}}</span>
+        <span class="gif" *ngIf="activePlaying === i"></span>
+        <span class="text">{{item.name}}</span>
+        <span class="time" *ngIf="activeIndex != i">{{item.duration}}</span>
+        <span class="icon" [ngClass]="{'active': activePlaying === i}" (click)="handlePlayBtn(i)" *ngIf="activeIndex === i || activePlaying === i"></span>
+        <span class="btn" *ngIf="activeIndex === i" (click)="handleInsertSong(item)">{{isToggle ? '切换' : '插入'}}</span>
+        <audio [src]="item.url" #audioList></audio>
+      </div>
+      <div class="more" (click)="getMore()" [ngClass]="{noMore: moreBtnText === '- 没有更多了 -'}">{{moreBtnText}}</div>
+    </div> 
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<nb-card class="text-templates-sidebar" [ngStyle]='styles'>
+  <div class="text-header">
+    插入文字
+    <i class="icon iconfont icon-x" (click)='clickCloseBtn()'></i>
+  </div>
+  <nb-card-footer>
+    <div class="row">
+      <div class="col-12 list-content">
+        <lx-text-template-item [data]='textTemplates' [pageId]='pageId'></lx-text-template-item>
+      </div>
+    </div>
+  </nb-card-footer>
+</nb-card>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="383px" height="370px" viewBox="0 0 383 370" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>Path 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="85.6563212%" id="linearGradient-1">
+            <stop stop-color="#F0F7FF" offset="0%"></stop>
+            <stop stop-color="#DDEEFF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="注册成功-新" transform="translate(-367.000000, -623.000000)" fill="url(#linearGradient-1)">
+            <g id="装饰" transform="translate(-24.000000, 623.000000)">
+                <path d="M391,221 C442.763885,274.641825 493.097218,310.975158 542,330 C574.173024,342.516398 617.215825,322.410505 674,330 C693.684928,332.630991 727.018261,345.964325 774,370 L774,2 L391,0 L391,221 Z" id="Path-2"></path>
+            </g>
+        </g>
+    </g>
+</svg>

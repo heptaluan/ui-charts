@@ -1,0 +1,23 @@
+<div class="btn-group" dropdown placement="bottom right" #dropdown="bs-dropdown" [isDisabled]="isDisabled" [ngClass]="theme" [autoClose]="autoClose">
+  <div id="button-alignment" dropdownToggle  class="btn-dropdown dropdown-toggle" aria-controls="dropdown-alignment">
+    <div class="btn-title" [innerHTML]="values[index] | html" >
+    </div>
+    <span class="caret"></span>
+    <i></i>
+  </div>
+  <ul id="dropdown-alignment" *dropdownMenu class="dropdown-menu dropdown-menu-right"
+      role="menu" aria-labelledby="button-alignment">
+      <div class="tab-wrapper" *ngIf="firstSize !== 0" (click)="dropdown.show()">
+        <div class="tab" [ngClass]="{active: isChinese}" (click)="selectType(true)">中文</div>
+        <div class="tab" [ngClass]="{active: !isChinese}" (click)="selectType(false)">英文</div>
+      </div>
+      <div class="dropdown-item-wrapper" [ngClass]="{'right-2': firstSize !== 0}">
+        <li role="menuitem" *ngFor="let value of values; let key = index"  (click)="dropdown.hide()">
+          <a class="dropdown-item" *ngIf="firstSize !== 0 && isChinese ? key < firstSize : key >= firstSize" [ngClass]="{'active':(index === key)&&isBackgroundColor}" (click)="onClicked(key)" [innerHTML]="value | html"></a>
+        </li>
+      </div>
+  </ul>
+
+  <div class="font-loading" *ngIf="loadFont"><div></div></div>
+</div>
+

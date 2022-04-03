@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>顶对齐</title>
+    <g id="顶对齐" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(8.000000, 8.000000) scale(-1, 1) rotate(-270.000000) translate(-8.000000, -8.000000) " fill-rule="nonzero">
+            <rect id="Rectangle" fill="#D8D8D8" x="2" y="1" width="1" height="14"></rect>
+            <rect id="矩形" stroke="#C9C9C9" fill="#C9C9C9" x="4.5" y="4.5" width="9" height="2"></rect>
+            <rect id="矩形" stroke="#C9C9C9" fill="#C9C9C9" x="4.5" y="9.5" width="6" height="2"></rect>
+        </g>
+    </g>
+</svg>
