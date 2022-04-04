@@ -60,7 +60,6 @@ export class ImageComponent implements OnInit {
       this.updateCurBlock(block, 'redo')
     }
     let scale = Number.parseInt(document.querySelector('.page-size span').innerHTML)
-    // let scale = 100;
     if (this.groupData || this.data.setting) {
       const dataProps = this.groupData ? this.groupData.props : this.data.setting.props
       if (this.groupData) {
@@ -115,7 +114,7 @@ export class ImageComponent implements OnInit {
     }
   }
 
-  // 3位6位8位16进制颜色转RGBA
+  // 三位，六位，八位 16进制颜色转 RGBA
   colorToRGBA(color) {
     let color1, color2, color3, color4
     color = '' + color
