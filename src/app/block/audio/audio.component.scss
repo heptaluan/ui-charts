@@ -3,8 +3,8 @@
     overflow: hidden;
     position: relative;
     border-radius: 14px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei', 'Hiragino Sans GB', 'Segoe UI',
-      'Helvetica Neue', Helvetica, Arial, 'Monaco', 'Menlo', 'Consolas', sans-serif !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei',
+      'Hiragino Sans GB', 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, 'Monaco', 'Menlo', 'Consolas', sans-serif !important;
 
     p {
       text-align: left;
@@ -12,7 +12,7 @@
       color: #333333;
       font-weight: 600;
       position: absolute;
-      top: 17.20%;
+      top: 17.2%;
       left: 6%;
     }
 
@@ -44,7 +44,7 @@
     }
 
     .copy-process {
-      width: 69.30%;
+      width: 69.3%;
       height: 15px;
       position: absolute;
       top: 61.29%;
@@ -87,7 +87,7 @@
 
     .wrapper {
       position: absolute;
-      width: 69.30%;
+      width: 69.3%;
       top: 69.89%;
       left: 6%;
       display: flex;
@@ -102,10 +102,9 @@
     }
 
     lx-slider {
-
       // writing-mode:vertical-lr;
       .slider-container {
-        width: 69.30% !important;
+        width: 69.3% !important;
         position: absolute;
         top: 61.29%;
         left: 6%;
@@ -127,7 +126,6 @@
           // }
         }
       }
-      
     }
 
     &.white {
@@ -328,7 +326,6 @@
       // background: url(/dyassets/images/audio/bgm-pause.svg) center / cover;
 
       background: url(/dyassets/images/audio/bgm.svg) center / cover;
-
 
       &.active {
         background: url(/dyassets/images/audio/bgm.svg) center / cover;
