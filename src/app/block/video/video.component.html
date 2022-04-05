@@ -1,21 +1,4 @@
 <div class="video-inner-wrapper video-wrapper" [ngStyle]="videoOuterStyles">
-  <!-- <iframe
-    *ngIf="isIframe"
-    [src]="videoSrc | safeHtml | safe"
-    scrolling="no"
-    border="0"
-    frameborder="no"
-    framespacing="0"
-    allowfullscreen="true"
-  >
-  </iframe> -->
   <div [ngStyle]="videoOuterStyles" class="wrapper" *ngIf="isIframe" [innerHTML]="videoSrc | html"></div>
-  
-  <video
-    *ngIf="!isIframe"
-    [controls]="showControls"
-    [src]="videoSrc"
-    [ngStyle]="videoOuterStyles"
-    #video
-  ></video>
+  <video *ngIf="!isIframe" [controls]="showControls" [src]="videoSrc" [ngStyle]="videoOuterStyles" #video></video>
 </div>

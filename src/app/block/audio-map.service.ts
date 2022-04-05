@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core'
 
 @Injectable()
 export class AudioMapService {
@@ -23,7 +23,7 @@ export class AudioMapService {
         thumb: '',
         src: 'http://placehold.it/aaa.mp3',
         time: '4:03',
-        sourceType: 'system'  // url / system
+        sourceType: 'system', // url / system
       },
       playControl: {
         autoplay: false,
@@ -32,9 +32,9 @@ export class AudioMapService {
       skins: ['霜荼白', '深空灰', '玄潭黑', '青泽绿', '哈尼粉', '经典蓝'],
       skinSelected: '霜荼白',
       type: 'bgm', // bgm / insertSong,
-      opacity: 100,  // 0 - 100
+      opacity: 100, // 0 - 100
     },
-  };
+  }
 
   constructor() {}
 }
