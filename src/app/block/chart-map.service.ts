@@ -1,10 +1,10 @@
-import { Injectable, ComponentFactoryResolver, ComponentFactory } from '@angular/core';
-import { TextComponent } from './text/text.component';
-import { ShapeComponent } from './shape/shape.component';
-import { ImageComponent } from './image/image.component';
-import * as _ from 'lodash';
+import { Injectable, ComponentFactoryResolver, ComponentFactory } from '@angular/core'
+import { TextComponent } from './text/text.component'
+import { ShapeComponent } from './shape/shape.component'
+import { ImageComponent } from './image/image.component'
+import * as _ from 'lodash'
 
-import { Block, TextBlockProps, ShapeBlockProps } from '../states/models/project.model';
+import { Block, TextBlockProps, ShapeBlockProps } from '../states/models/project.model'
 
 import {
   D3RoseChartComponent,
@@ -80,65 +80,63 @@ import {
   D3WordCloudChartComponent,
 
   // ------------------ 20/02/04 换库之后新增  -------------------------
-  D3RainfallVolumeLineChartComponent,       // 雨量流量折线图
-  D3RainfallVolumeAreaChartComponent,       // 雨量流量面积图
-  D3BulletChartComponent,                   // 子弹图
-  D3DeformedBarChartComponent,              // 变形柱状图
-  D3MultipleBubbleChartComponent,           // 多轴气泡图
-  D3PolarBubbleChartComponent,              // 极坐标气泡图
-  D3PunchBubbleChartComponent,              // 打卡气泡图
+  D3RainfallVolumeLineChartComponent, // 雨量流量折线图
+  D3RainfallVolumeAreaChartComponent, // 雨量流量面积图
+  D3BulletChartComponent, // 子弹图
+  D3DeformedBarChartComponent, // 变形柱状图
+  D3MultipleBubbleChartComponent, // 多轴气泡图
+  D3PolarBubbleChartComponent, // 极坐标气泡图
+  D3PunchBubbleChartComponent, // 打卡气泡图
 
   // ------------------ 动态图表 -------------------------
-  D3DynamicBarChartComponent,               // 动态条形图
-  D3DynamicLineChartComponent,              // 动态折线图
-  D3DynamicRankLineChartComponent,          // 动态排名变化图
-  D3PackChartComponent,                     // 圆堆积图
+  D3DynamicBarChartComponent, // 动态条形图
+  D3DynamicLineChartComponent, // 动态折线图
+  D3DynamicRankLineChartComponent, // 动态排名变化图
+  D3PackChartComponent, // 圆堆积图
 
   // ------------------ 2020-06-08 新增图表 -------------------------
-  D3HundredPercentBarChartComponent,        // 百分比条形图
-  D3PictographBarChartComponent,            // 符号柱状图
-  D3ReverseOverlapAreaChartComponent,       // 纵向层叠面积图
-  D3ReverseStackedAreaChartComponent,       // 纵向堆叠面积图
-  D3ReverseLineChartComponent,              // 纵向折线图
+  D3HundredPercentBarChartComponent, // 百分比条形图
+  D3PictographBarChartComponent, // 符号柱状图
+  D3ReverseOverlapAreaChartComponent, // 纵向层叠面积图
+  D3ReverseStackedAreaChartComponent, // 纵向堆叠面积图
+  D3ReverseLineChartComponent, // 纵向折线图
 
   // ------------------ 2020-06-19 新增图表 -------------------------
-  D3TableChartComponent,                    // 表格
-  D3BasicScatterChartComponent,             // 散点图
-  D3HistogramChartComponent,                // 直方图
+  D3TableChartComponent, // 表格
+  D3BasicScatterChartComponent, // 散点图
+  D3HistogramChartComponent, // 直方图
 
   // ------------------ 2020-11-20 新增图表 -------------------------
-  D3HundredPercentIconBarChartComponent,    // 百分比符号条形图
-  D3LollipopChartComponent,                 // 棒棒糖图
-  D3GroupAggregationBubbleChartComponent,   // 分组聚合气泡图
-  D3ForceDiagramChartComponent,             // 分组力导图
-  D3PolarAreaChartComponent,                // 极化面积图
-  D3PolarLineChartComponent,                // 极化折线图
-  D3ForceDiagramArrowChartComponent,        // 箭头导向图
-  D3VerticalDumbbellChartComponent,         // 纵向哑铃图
+  D3HundredPercentIconBarChartComponent, // 百分比符号条形图
+  D3LollipopChartComponent, // 棒棒糖图
+  D3GroupAggregationBubbleChartComponent, // 分组聚合气泡图
+  D3ForceDiagramChartComponent, // 分组力导图
+  D3PolarAreaChartComponent, // 极化面积图
+  D3PolarLineChartComponent, // 极化折线图
+  D3ForceDiagramArrowChartComponent, // 箭头导向图
+  D3VerticalDumbbellChartComponent, // 纵向哑铃图
 
   // ------------------ 2021-02-22 新增图表 -------------------------
-  D3ParallelLineChartComponent,              // 平行线图
-  D3ButterflyChartComponent,                 // 蝴蝶图
-  D3ReverseFunnelChartComponent,             // 金字塔图
-  D3SoapBubbleChartComponent,                // 维诺图
-  D3PolarBarChartComponent,                  // 极坐标柱状图
-  D3PolarStackRectangularChartComponent,     // 极坐标堆叠柱状图
-  D3DescartesHeatmapChartComponent,          // 笛卡尔热力图
-  D3PolarHeatmapChartComponent,              // 极坐标热力图
-  D3TernaryChartComponent,                   // 三元图
-
-} from "./d3"
-import { AudioComponent } from './audio/audio.component';
-import { VideoComponent } from './video/video.component';
-import { GroupComponent } from './group/group.component';
+  D3ParallelLineChartComponent, // 平行线图
+  D3ButterflyChartComponent, // 蝴蝶图
+  D3ReverseFunnelChartComponent, // 金字塔图
+  D3SoapBubbleChartComponent, // 维诺图
+  D3PolarBarChartComponent, // 极坐标柱状图
+  D3PolarStackRectangularChartComponent, // 极坐标堆叠柱状图
+  D3DescartesHeatmapChartComponent, // 笛卡尔热力图
+  D3PolarHeatmapChartComponent, // 极坐标热力图
+  D3TernaryChartComponent, // 三元图
+} from './d3'
+import { AudioComponent } from './audio/audio.component'
+import { VideoComponent } from './video/video.component'
+import { GroupComponent } from './group/group.component'
 
 export interface TemplateComponentMap {
-  [id: string]: ComponentFactory<any>;
+  [id: string]: ComponentFactory<any>
 }
 
 @Injectable()
 export class ChartMapService {
-
   componentFactorys = {
     '333333333333333333': TextComponent,
     '666666666666666666': ShapeComponent,
@@ -231,68 +229,67 @@ export class ChartMapService {
     '6543210123456536001': D3BulletChartComponent,
 
     // ------------------ 动态图表 -------------------------
-    '8000000011111111001': D3DynamicBarChartComponent,         // 动态条形图
-    '8000000011111111002': D3DynamicLineChartComponent,        // 动态折线变化图
-    '8000000011111111003': D3DynamicRankLineChartComponent,    // 动态折线排名图
-    '8000000011111111004': D3PackChartComponent,               // 圆堆积图
+    '8000000011111111001': D3DynamicBarChartComponent, // 动态条形图
+    '8000000011111111002': D3DynamicLineChartComponent, // 动态折线变化图
+    '8000000011111111003': D3DynamicRankLineChartComponent, // 动态折线排名图
+    '8000000011111111004': D3PackChartComponent, // 圆堆积图
 
     // ------------------ 2020-06-08 新增图表 -------------------------
-    '7955555555502345001': D3HundredPercentBarChartComponent,  // 百分比条形图
-    '7955555555502345002': D3PictographBarChartComponent,      // 符号柱状图
+    '7955555555502345001': D3HundredPercentBarChartComponent, // 百分比条形图
+    '7955555555502345002': D3PictographBarChartComponent, // 符号柱状图
     '7955555555502345003': D3ReverseOverlapAreaChartComponent, // 纵向层叠面积图
     '7955555555502345004': D3ReverseStackedAreaChartComponent, // 纵向堆叠面积图
-    '7955555555502345005': D3ReverseLineChartComponent,        // 纵向折线图
+    '7955555555502345005': D3ReverseLineChartComponent, // 纵向折线图
 
     // ------------------ 2020-06-19 新增图表 -------------------------
-    '7955555555502346001': D3TableChartComponent,              // 表格
-    '7955555555502346002': D3BasicScatterChartComponent,       // 散点图
-    '7955555555502346003': D3HistogramChartComponent,          // 直方图
+    '7955555555502346001': D3TableChartComponent, // 表格
+    '7955555555502346002': D3BasicScatterChartComponent, // 散点图
+    '7955555555502346003': D3HistogramChartComponent, // 直方图
 
     // ------------------ 2020-11-20 新增图表 -------------------------
-    '7955555666601234501': D3HundredPercentIconBarChartComponent,    // 百分比符号条形图
-    '7955555666601234502': D3LollipopChartComponent,                 // 棒棒糖图
-    '7955555666601234503': D3GroupAggregationBubbleChartComponent,   // 分组聚合气泡图
-    '7955555666601234504': D3ForceDiagramChartComponent,             // 分组力导图
-    '7955555666601234505': D3PolarAreaChartComponent,                // 极化面积图
-    '7955555666601234506': D3PolarLineChartComponent,                // 极化折线图
-    '7955555666601234507': D3ForceDiagramArrowChartComponent,        // 箭头导向图
-    '7955555666601234508': D3VerticalDumbbellChartComponent,         // 纵向哑铃图
+    '7955555666601234501': D3HundredPercentIconBarChartComponent, // 百分比符号条形图
+    '7955555666601234502': D3LollipopChartComponent, // 棒棒糖图
+    '7955555666601234503': D3GroupAggregationBubbleChartComponent, // 分组聚合气泡图
+    '7955555666601234504': D3ForceDiagramChartComponent, // 分组力导图
+    '7955555666601234505': D3PolarAreaChartComponent, // 极化面积图
+    '7955555666601234506': D3PolarLineChartComponent, // 极化折线图
+    '7955555666601234507': D3ForceDiagramArrowChartComponent, // 箭头导向图
+    '7955555666601234508': D3VerticalDumbbellChartComponent, // 纵向哑铃图
 
     // ------------------ 2021-02-22 新增图表 -------------------------
-    '7955555777700001203' : D3ParallelLineChartComponent,              // 平行线图
-    '7955555777700001204' : D3ButterflyChartComponent,                 // 蝴蝶图
-    '7955555777700001202' : D3ReverseFunnelChartComponent,             // 金字塔图
-    '7955555777700001201' : D3SoapBubbleChartComponent,                // 维诺图
-    '7955555777700001205' : D3PolarBarChartComponent,                  // 极坐标柱状图
-    '7955555777700001206' : D3PolarStackRectangularChartComponent,     // 极坐标堆叠柱状图
-    '7955555777700001207' : D3DescartesHeatmapChartComponent,          // 笛卡尔热力图
-    '7955555777700001208' : D3PolarHeatmapChartComponent,              // 极坐标热力图
-    '7955555777700001209' : D3TernaryChartComponent,                   // 三元图
-  };
+    '7955555777700001203': D3ParallelLineChartComponent, // 平行线图
+    '7955555777700001204': D3ButterflyChartComponent, // 蝴蝶图
+    '7955555777700001202': D3ReverseFunnelChartComponent, // 金字塔图
+    '7955555777700001201': D3SoapBubbleChartComponent, // 维诺图
+    '7955555777700001205': D3PolarBarChartComponent, // 极坐标柱状图
+    '7955555777700001206': D3PolarStackRectangularChartComponent, // 极坐标堆叠柱状图
+    '7955555777700001207': D3DescartesHeatmapChartComponent, // 笛卡尔热力图
+    '7955555777700001208': D3PolarHeatmapChartComponent, // 极坐标热力图
+    '7955555777700001209': D3TernaryChartComponent, // 三元图
+  }
 
   TemplateTextBlockProps: TextBlockProps = {
     size: {
       height: '68',
       width: '260',
-      ratio: null
+      ratio: null,
     },
     opacity: 100,
     fontSize: 14,
-    fontFamily: "阿里巴巴普惠体 常规",
+    fontFamily: '阿里巴巴普惠体 常规',
     lineHeight: 1,
     letterSpacing: 0,
-    color: "#000",
+    color: '#000',
     basic: {
       bold: false,
       underline: false,
       italic: false,
       deleteline: false,
-      align: "left"
+      align: 'left',
     },
-    template: "body",
-    content: "hello world"
+    template: 'body',
+    content: 'hello world',
   }
-
 
   TemplateTextBlock: Block = {
     blockId: 'sdg8659erbgvggsd4yv',
@@ -300,12 +297,10 @@ export class ChartMapService {
     type: 'text',
     position: {
       left: 260,
-      top: 200
+      top: 200,
     },
     props: this.TemplateTextBlockProps,
   }
 
-  constructor() {
-  }
-
+  constructor() {}
 }

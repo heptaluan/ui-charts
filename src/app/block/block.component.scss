@@ -15,10 +15,6 @@
     }
   }
 
-  // &.isUpIndex {
-  //   z-index: 98;
-  // }
-
   .animation-button {
     position: absolute;
     bottom: 24px;
@@ -27,7 +23,7 @@
     height: 56px;
     opacity: 1;
     background: url(/dyassets/images/play.svg) no-repeat 50%;
-  
+
     &.active {
       background: url(/dyassets/images/stop.svg) no-repeat 50%;
     }
@@ -50,21 +46,6 @@
       margin: -2px 0 0 -2px;
       pointer-events: none;
     }
-  }
-}
-
-::ng-deep {
-  .echart-container {
-    height: 100%;
-    width: 100%;
-     svg {
-       transform-origin: 0 0;
-     }
-  }
-
-  svg {
-    overflow: visible;
-    vertical-align: top !important;
   }
 }
 

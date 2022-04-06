@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core'
 
 @Injectable()
 export class GroupMapService {
@@ -15,7 +15,7 @@ export class GroupMapService {
       size: {
         width: 500,
         height: 600,
-        rotate: 0
+        rotate: 0,
       },
       children: [
         {
@@ -25,7 +25,7 @@ export class GroupMapService {
           type: 'image',
           position: {
             left: 0,
-            top: 0
+            top: 0,
           },
           src: 'http://placehold.it/300x200',
           props: {
@@ -45,18 +45,18 @@ export class GroupMapService {
               shadowRadius: 3,
               shadowAngle: 45,
               shadowBlur: 5,
-              shadowOpacity: 100
+              shadowOpacity: 100,
             },
             mask: {
-              retangle: { },
-              shape: { }
+              retangle: {},
+              shape: {},
             },
             border: {
-              strokeColor: "#ffffff",
+              strokeColor: '#ffffff',
               strokeType: 'solid',
-              strokeWidth: 0
-            }
-          }
+              strokeWidth: 0,
+            },
+          },
         },
         {
           blockId: 'as5df4a5s4f',
@@ -65,7 +65,7 @@ export class GroupMapService {
           type: 'image',
           position: {
             left: 0,
-            top: 200
+            top: 200,
           },
           src: 'http://placehold.it/400x500',
           props: {
@@ -85,27 +85,27 @@ export class GroupMapService {
               shadowRadius: 3,
               shadowAngle: 45,
               shadowBlur: 5,
-              shadowOpacity: 100
+              shadowOpacity: 100,
             },
             mask: {
-              retangle: { },
-              shape: { }
+              retangle: {},
+              shape: {},
             },
             border: {
-              strokeColor: "#ffffff",
+              strokeColor: '#ffffff',
               strokeType: 'solid',
-              strokeWidth: 0
-            }
-          }
-        }
+              strokeWidth: 0,
+            },
+          },
+        },
       ],
       initGroupData: {
         left: 0,
         top: 0,
-        rotate: 0
-      }
+        rotate: 0,
+      },
     },
-  };
+  }
 
   constructor() {}
 }

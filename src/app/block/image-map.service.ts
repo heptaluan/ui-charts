@@ -1,8 +1,7 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core'
 
 @Injectable()
 export class ImageMapService {
-
   ImageBlockTemplate = {
     blockId: '',
     templateId: '222222222222222222',
@@ -10,7 +9,7 @@ export class ImageMapService {
     type: 'image',
     position: {
       left: 60,
-      top: 80
+      top: 80,
     },
     src: 'http://placehold.it/300x200',
     props: {
@@ -18,7 +17,6 @@ export class ImageMapService {
         height: '200',
         width: '300',
         rotate: '0',
-        // ratio: true
       },
       opacity: 100,
       borderRadius: 0,
@@ -30,20 +28,19 @@ export class ImageMapService {
         shadowRadius: 3,
         shadowAngle: 45,
         shadowBlur: 5,
-        shadowOpacity: 100
+        shadowOpacity: 100,
       },
       mask: {
-        retangle: { },
-        shape: { }
+        retangle: {},
+        shape: {},
       },
       border: {
-        strokeColor: "#ffffff",
+        strokeColor: '#ffffff',
         strokeType: 'solid',
-        strokeWidth: 0
-      }
-    }
-  };
+        strokeWidth: 0,
+      },
+    },
+  }
 
-  constructor() { }
-
+  constructor() {}
 }
