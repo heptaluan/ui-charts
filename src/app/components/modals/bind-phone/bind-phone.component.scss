@@ -175,7 +175,6 @@
 }
 
 :host::ng-deep {
-
   .modal-header,
   .modal-body {
     width: 470px;
@@ -216,10 +215,8 @@
         border-bottom: 1px solid #dcdee0;
       }
     }
-
   }
 }
-
 
 .login-warning {
   color: #333;

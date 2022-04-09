@@ -1,22 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import { BsModalRef } from 'ngx-bootstrap';
+import { Component, OnInit } from '@angular/core'
+import { BsModalRef } from 'ngx-bootstrap'
 
 @Component({
   selector: 'lx-business-price',
   templateUrl: './business-price.component.html',
-  styleUrls: ['./business-price.component.scss']
+  styleUrls: ['./business-price.component.scss'],
 })
 export class BusinessPriceComponent implements OnInit {
+  constructor(public bsModalRef: BsModalRef) {}
 
-  constructor(
-    public bsModalRef: BsModalRef
-  ) { }
-
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   close() {
-    this.bsModalRef.hide();
+    this.bsModalRef.hide()
   }
-
 }

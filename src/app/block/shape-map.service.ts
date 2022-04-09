@@ -1,9 +1,7 @@
-import { Injectable, ComponentFactoryResolver, ComponentFactory } from '@angular/core';
+import { Injectable, ComponentFactoryResolver, ComponentFactory } from '@angular/core'
 
 @Injectable()
 export class ShapeMapService {
-
-  // 矩形
   RectShapeBlockTemplate = {
     blockId: '',
     templateId: '666666666666666666',
@@ -13,20 +11,20 @@ export class ShapeMapService {
     openGradient: false,
     position: {
       left: 60,
-      top: 80
+      top: 80,
     },
     shapeType: 'rectangle',
     props: {
       size: {
         height: '200',
         width: '300',
-        rotate: '0'
+        rotate: '0',
       },
       specified: {
         rx: 0,
         ry: 0,
         x: 0,
-        y: 0
+        y: 0,
       },
       fill: {
         fillColor: ['#08aded', '#08aded'],
@@ -39,21 +37,21 @@ export class ShapeMapService {
         shadowRadius: 3,
         shadowAngle: 45,
         shadowBlur: 5,
-        shadowOpacity: 100
+        shadowOpacity: 100,
       },
       opacity: 100,
       strokeColor: 'transparent',
       strokeType: 'default',
       strokeWidth: 0,
-      strokeDasharray: 0,  // 第一个用来表示实线，第二个用来表示空白
+      strokeDasharray: 0,
       tooltip: false,
       tooltipText: null,
       shadowColor: '#c6c6c6',
       shadowRadius: 3,
       shadowAngle: 30,
-      shadowBlur: 5
-    }
-  };
+      shadowBlur: 5,
+    },
+  }
 
   // 圆角矩形
   RoundRectShapeBlockTemplate = {
@@ -65,20 +63,20 @@ export class ShapeMapService {
     openGradient: false,
     position: {
       left: 60,
-      top: 80
+      top: 80,
     },
     shapeType: 'round-rectangle',
     props: {
       size: {
         height: '200',
         width: '300',
-        rotate: '0'
+        rotate: '0',
       },
       specified: {
         rx: 15,
         ry: 15,
         x: 0,
-        y: 0
+        y: 0,
       },
       fill: {
         fillColor: ['#08aded', '#08aded'],
@@ -91,21 +89,21 @@ export class ShapeMapService {
         shadowRadius: 3,
         shadowAngle: 45,
         shadowBlur: 5,
-        shadowOpacity: 100
+        shadowOpacity: 100,
       },
       opacity: 100,
       strokeColor: 'transparent',
       strokeType: 'default',
       strokeWidth: 0,
-      strokeDasharray: 0,  // 第一个用来表示实线，第二个用来表示空白
+      strokeDasharray: 0,
       tooltip: false,
       tooltipText: null,
       shadowColor: '#c6c6c6',
       shadowRadius: 3,
       shadowAngle: 30,
-      shadowBlur: 5
-    }
-  };
+      shadowBlur: 5,
+    },
+  }
 
   // 圆形
   OvalShapeBlockTemplate = {
@@ -117,7 +115,7 @@ export class ShapeMapService {
     openGradient: false,
     position: {
       left: 60,
-      top: 80
+      top: 80,
     },
     shapeType: 'oval',
     props: {
@@ -125,13 +123,13 @@ export class ShapeMapService {
         height: '200',
         width: '200',
         rotate: '0',
-        ratio: true
+        ratio: true,
       },
       specified: {
         cx: 100,
         cy: 100,
         rx: 100,
-        ry: 100
+        ry: 100,
       },
       fill: {
         fillColor: ['#08aded', '#08aded'],
@@ -144,21 +142,21 @@ export class ShapeMapService {
         shadowRadius: 3,
         shadowAngle: 45,
         shadowBlur: 5,
-        shadowOpacity: 100
+        shadowOpacity: 100,
       },
       opacity: 100,
       strokeColor: 'transparent',
       strokeType: 'defaultd',
       strokeWidth: 0,
-      strokeDasharray: 0,  // 第一个用来表示实线，第二个用来表示空白
+      strokeDasharray: 0,
       tooltip: false,
       tooltipText: null,
       shadowColor: '#c6c6c6',
       shadowRadius: 3,
       shadowAngle: 30,
-      shadowBlur: 5
-    }
-  };
+      shadowBlur: 5,
+    },
+  }
 
   // 三角形
   TriangleShapeBlockTemplate = {
@@ -170,17 +168,17 @@ export class ShapeMapService {
     openGradient: false,
     position: {
       left: 60,
-      top: 80
+      top: 80,
     },
     shapeType: 'triangle',
     props: {
       size: {
         height: '200',
         width: '200',
-        rotate: '0'
+        rotate: '0',
       },
       fill: {
-        fillColor: ['#08aded', '#08aded']
+        fillColor: ['#08aded', '#08aded'],
       },
       shadow: {
         display: false,
@@ -188,44 +186,42 @@ export class ShapeMapService {
         shadowRadius: 3,
         shadowAngle: 45,
         shadowBlur: 5,
-        shadowOpacity: 100
+        shadowOpacity: 100,
       },
       opacity: 100,
       strokeColor: 'transparent',
       strokeType: 'defaultd',
       strokeWidth: 0,
-      strokeDasharray: 0,  // 第一个用来表示实线，第二个用来表示空白
+      strokeDasharray: 0,
       tooltip: false,
       tooltipText: null,
       shadowColor: '#c6c6c6',
       shadowRadius: 3,
       shadowAngle: 30,
-      shadowBlur: 5
-    }
-  };
+      shadowBlur: 5,
+    },
+  }
 
-  // 五边形
   PentagonShapeBlockTemplate = {
     blockId: '',
     templateId: '666666666666666666',
     title: '五边形',
-    // path: '100,0, 198,80, 170,198, 30,198, 0,80',  // (width: 200, heigth: 200)
-    path: '128,0, 256,97, 216,244, 38, 244, 0,97',  // (width: 256, heigth: 244)
+    path: '128,0, 256,97, 216,244, 38, 244, 0,97',
     type: 'shape',
     openGradient: false,
     position: {
       left: 60,
-      top: 80
+      top: 80,
     },
     shapeType: 'pentagon',
     props: {
       size: {
         height: '244',
         width: '256',
-        rotate: '0'
+        rotate: '0',
       },
       fill: {
-        fillColor: ['#08aded', '#08aded']
+        fillColor: ['#08aded', '#08aded'],
       },
       shadow: {
         display: false,
@@ -233,21 +229,21 @@ export class ShapeMapService {
         shadowRadius: 3,
         shadowAngle: 45,
         shadowBlur: 5,
-        shadowOpacity: 100
+        shadowOpacity: 100,
       },
       opacity: 100,
       strokeColor: 'transparent',
       strokeType: 'defaultd',
       strokeWidth: 0,
-      strokeDasharray: 0,  // 第一个用来表示实线，第二个用来表示空白
+      strokeDasharray: 0,
       tooltip: false,
       tooltipText: null,
       shadowColor: '#c6c6c6',
       shadowRadius: 3,
       shadowAngle: 30,
-      shadowBlur: 5
-    }
-  };
+      shadowBlur: 5,
+    },
+  }
 
   // 直线
   LineShapeBlockTemplate = {
@@ -269,16 +265,16 @@ export class ShapeMapService {
       size: {
         height: '12',
         width: '207',
-        rotate: '0'
+        rotate: '0',
       },
       specified: {
         x1: '5',
         y1: '5',
         x2: '200',
-        y2: '5'
+        y2: '5',
       },
       fill: {
-        fillColor: ['#08aded']
+        fillColor: ['#08aded'],
       },
       shadow: {
         display: false,
@@ -286,7 +282,7 @@ export class ShapeMapService {
         shadowRadius: 3,
         shadowAngle: 45,
         shadowBlur: 5,
-        shadowOpacity: 100
+        shadowOpacity: 100,
       },
       opacity: 100,
       strokeColor: '#08aded',
@@ -298,11 +294,10 @@ export class ShapeMapService {
       shadowColor: '#c6c6c6',
       shadowRadius: 3,
       shadowAngle: 30,
-      shadowBlur: 5
-    }
-  };
+      shadowBlur: 5,
+    },
+  }
 
-  // 图标
   IconShapeBlockTemplate = {
     blockId: '',
     templateId: '666666666666666666',
@@ -312,7 +307,7 @@ export class ShapeMapService {
     src: '',
     position: {
       left: 60,
-      top: 80
+      top: 80,
     },
     shapeType: 'icon',
     props: {
@@ -320,10 +315,9 @@ export class ShapeMapService {
         height: '100',
         width: '100',
         rotate: '0',
-        // ratio: true
       },
       fill: {
-        fillColor: ['#08aded']
+        fillColor: ['#08aded'],
       },
       shadow: {
         display: false,
@@ -331,22 +325,21 @@ export class ShapeMapService {
         shadowRadius: 3,
         shadowAngle: 45,
         shadowBlur: 5,
-        shadowOpacity: 100
+        shadowOpacity: 100,
       },
       opacity: 100,
       strokeColor: 'transparent',
       strokeType: 'defaultd',
       strokeWidth: 0,
-      strokeDasharray: 0,  // 第一个用来表示实线，第二个用来表示空白
+      strokeDasharray: 0,
       tooltip: false,
       tooltipText: null,
       shadowColor: '#c6c6c6',
       shadowRadius: 3,
       shadowAngle: 30,
-      shadowBlur: 5
-    }
-  };
+      shadowBlur: 5,
+    },
+  }
 
   constructor() {}
-
 }

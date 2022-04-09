@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core'
 
 @Injectable()
 export class VideoMapService {
@@ -22,11 +22,11 @@ export class VideoMapService {
         title: '插入视频 ',
         src: 'http://placehold.it/aaa.mp4',
         time: '4:03',
-        sourceType: 'url'  // url / iframe
+        sourceType: 'url',
       },
-      opacity: 100,  // 0 -100
+      opacity: 100,
     },
-  };
+  }
 
   constructor() {}
 }

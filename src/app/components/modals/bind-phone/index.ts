@@ -1,1 +1,1 @@
-export * from './bind-phone.component';
+export * from './bind-phone.component'
