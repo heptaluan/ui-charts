@@ -1,1 +1,1 @@
-export * from './data-demand-feedback.component';
+export * from './data-demand-feedback.component'

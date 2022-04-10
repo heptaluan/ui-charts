@@ -1,8 +1,14 @@
 .create-project {
-  background: #EDEEF0;
+  background: #edeef0;
 
-  ul, li {list-style: none;}
-  ul {padding: 0;margin: 0;}
+  ul,
+  li {
+    list-style: none;
+  }
+  ul {
+    padding: 0;
+    margin: 0;
+  }
 
   .title-box {
     overflow: hidden;
@@ -55,7 +61,7 @@
     // padding: 15px 37px 15px 50px;
     // overflow-y: scroll;
     border-radius: 0 0 4px 4px;
-    background: #EDEEF0;
+    background: #edeef0;
 
     .change-chart-box {
       border: 1px solid #e0e0e0;
@@ -81,7 +87,7 @@
 
       .change-chart-item {
         font-size: 14px;
-	      color: #5c6066;
+        color: #5c6066;
         padding: 5px 12px;
         cursor: pointer;
         margin-right: 15px;
@@ -93,7 +99,6 @@
       }
 
       .change-chart-template-list {
-
         ul {
           overflow: hidden;
           padding-left: 55px;
@@ -135,10 +140,8 @@
               text-align: center;
               padding: 8px 0;
             }
-
           }
         }
-
       }
 
       .info-scene {
@@ -272,11 +275,11 @@
           margin-right: 5px;
           background: #fff;
           position: relative;
-          transition: all .2s linear;
+          transition: all 0.2s linear;
           z-index: 1;
           &:hover {
             z-index: 2;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
             transform: translate(0, -8px);
           }
 
@@ -387,14 +390,14 @@
         margin-left: 5px;
         background: #fff;
         position: relative;
-        transition: all .2s linear;
+        transition: all 0.2s linear;
         z-index: 1;
         // min-height: 493px;
         box-shadow: 0px 1px 7px 0px rgba(200, 209, 224, 0.4);
         box-sizing: border-box;
         &:hover {
           z-index: 2;
-          box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+          box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
           transform: translate(0, -8px);
         }
 
@@ -470,7 +473,7 @@
             background-color: rgba(102, 102, 102, 0.3);
             box-shadow: inset 0px -1px 0px 0px rgba(209, 209, 209, 0.5);
             opacity: 0;
-            transition: all .3s;
+            transition: all 0.3s;
 
             .like-info {
               position: absolute;
@@ -481,8 +484,8 @@
               border-radius: 4px;
               background: #fff;
 
-              font-size:12px;
-              color:#969799;
+              font-size: 12px;
+              color: #969799;
               .iconfont {
                 margin-left: 2px;
                 font-size: 20px;

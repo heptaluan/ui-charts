@@ -1,1 +1,1 @@
-export * from './common-delete-modal.component';
+export * from './common-delete-modal.component'

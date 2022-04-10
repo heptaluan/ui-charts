@@ -1,1 +1,1 @@
-export * from './contact-us-modal.component';
+export * from './contact-us-modal.component'

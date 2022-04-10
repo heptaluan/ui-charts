@@ -1,1 +1,1 @@
-export * from './data-member.component';
+export * from './data-member.component'

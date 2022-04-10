@@ -2,41 +2,54 @@
   <div class="title-box">
     <div class="title-left">
       <span class="title-img"></span>
-      <span class="title">{{leftTitle}}</span>
+      <span class="title">{{ leftTitle }}</span>
     </div>
     <div class="title-right">
-      <!-- <span>放大缩小</span> -->
-      <i class="icon iconfont icon-x" (click)='bsModalRef.hide()'></i>
+      <i class="icon iconfont icon-x" (click)="bsModalRef.hide()"></i>
     </div>
   </div>
 
-  <div class="create-project-container" [ngStyle]="{'width': widthStyle}">
+  <div class="create-project-container" [ngStyle]="{ width: widthStyle }">
     <div class="change-chart-box">
       <div class="chart-classify change-chart-list" *ngIf="initialState.type === 'chart'">
         <span class="change-chart-title">分类：</span>
-        <span [ngClass]="{'active': chartClassifyIndex === 0}" class="change-chart-item" (click)="changeChartClassify(0)">图表类型</span>
-        <span [ngClass]="{'active': chartClassifyIndex === 1}" class="change-chart-item" (click)="changeChartClassify(1)">图表功能</span>
+        <span
+          [ngClass]="{ active: chartClassifyIndex === 0 }"
+          class="change-chart-item"
+          (click)="changeChartClassify(0)"
+          >图表类型</span
+        >
+        <span
+          [ngClass]="{ active: chartClassifyIndex === 1 }"
+          class="change-chart-item"
+          (click)="changeChartClassify(1)"
+          >图表功能</span
+        >
       </div>
       <div class="change-chart-template-list" *ngIf="initialState.type === 'chart'">
         <ul>
-          <li [ngClass]="{'active': i == activeIndex}" *ngFor="let item of chartTitleTemplates; let i = index;" (click)="chartTemplateListClickHandle(item, i)">
-            <div class="cover"><img src="{{item.cover}}"></div>
-            <p>{{item.title}}</p>
+          <li
+            [ngClass]="{ active: i == activeIndex }"
+            *ngFor="let item of chartTitleTemplates; let i = index"
+            (click)="chartTemplateListClickHandle(item, i)"
+          >
+            <div class="cover"><img src="{{ item.cover }}" /></div>
+            <p>{{ item.title }}</p>
           </li>
         </ul>
       </div>
-      <!-- <div class="chart-price change-chart-list" *ngIf="initialState.type === 'chart'">
-        <span class="change-chart-title">价格：</span>
-        <span class="change-chart-item" [ngClass]="{'active': chartPriceIndex === 0}" (click)="changeChartPrice(0)">全部</span>
-        <span class="change-chart-item" [ngClass]="{'active': chartPriceIndex === 1}" (click)="changeChartPrice(1)">会员</span>
-        <span class="change-chart-item" [ngClass]="{'active': chartPriceIndex === 2}" (click)="changeChartPrice(2)">免费</span>
-      </div> -->
       <div class="info-scene" *ngIf="initialState.type === 'infographic'">
         <div class="info-scene-title">场景：</div>
         <div class="info-scene-item">
           <ul>
-            <li [ngClass]="{'active': infoClassifyIndex === i}" *ngFor="let item of infoFirstClassify,let i = index"
-              (click)="changeInfoClassify(i, item)" [hidden]='item.name === "营销长图" || item.name === "工作报告" || item.name === "头条号首图"'>{{item.name}}</li>
+            <li
+              [ngClass]="{ active: infoClassifyIndex === i }"
+              *ngFor="let item of infoFirstClassify; let i = index"
+              (click)="changeInfoClassify(i, item)"
+              [hidden]="item.name === '营销长图' || item.name === '工作报告' || item.name === '头条号首图'"
+            >
+              {{ item.name }}
+            </li>
           </ul>
         </div>
       </div>
@@ -44,24 +57,33 @@
         <div class="info-scene-title">类型：</div>
         <div class="info-scene-item">
           <ul>
-            <li [ngClass]="{'active': infoSecondClassifyIndex === i}" *ngFor="let item of infoSecondClassify,let i = index"
-              (click)="changeInfoClassify(i, item)">{{item.name}}</li>
+            <li
+              [ngClass]="{ active: infoSecondClassifyIndex === i }"
+              *ngFor="let item of infoSecondClassify; let i = index"
+              (click)="changeInfoClassify(i, item)"
+            >
+              {{ item.name }}
+            </li>
           </ul>
         </div>
       </div>
       <div class="info-scene" *ngIf="initialState.type === 'infographic'">
         <div class="info-scene-title">排序：</div>
-        <div class="info-scene-last no-click-area" (click)='extendOrderDrop()' [ngClass]="{'active': orderDropDownflag}">
-          {{infoOrders[infoOrderIndex]}}
+        <div
+          class="info-scene-last no-click-area"
+          (click)="extendOrderDrop()"
+          [ngClass]="{ active: orderDropDownflag }"
+        >
+          {{ infoOrders[infoOrderIndex] }}
           <ul *ngIf="orderDropDownflag">
-            <li (click)='changeInfoOrder(i, item)' *ngFor="let item of infoOrders; let i = index">{{item}}</li>
+            <li (click)="changeInfoOrder(i, item)" *ngFor="let item of infoOrders; let i = index">{{ item }}</li>
           </ul>
         </div>
         <div class="info-scene-title info-price">价格：</div>
-        <div class="info-scene-last no-click-area" (click)='extendDrop()' [ngClass]="{'active': dropDownFlag}">
-          {{priceMenu[priceIndex]}}
+        <div class="info-scene-last no-click-area" (click)="extendDrop()" [ngClass]="{ active: dropDownFlag }">
+          {{ priceMenu[priceIndex] }}
           <ul *ngIf="dropDownFlag">
-            <li (click)='changeInfoPrice(i, item)' *ngFor="let item of priceMenu; let i = index">{{item}}</li>
+            <li (click)="changeInfoPrice(i, item)" *ngFor="let item of priceMenu; let i = index">{{ item }}</li>
           </ul>
         </div>
       </div>
@@ -79,14 +101,10 @@
         </li>
         <li *ngFor="let item of chartFilterTemplates; let i = index" (click)="createChartTemplateHandle(item, i)">
           <div class="template-cover">
-            <!-- <div class="new-chart" *ngIf="newChartTagList.indexOf(item.templateId) > -1"></div> -->
-            <!-- <div class="vip-recommend">推荐</div> -->
-            <!-- <div class="vip-level" *ngIf="item.isFree !== '0'"></div> -->
-            <img class="d-block mx-auto" src="{{item.thumb}}" alt="">
+            <img class="d-block mx-auto" src="{{ item.thumb }}" alt="" />
           </div>
           <div class="template-intro">
-            <span class="template-title">{{item.title}}</span>
-            <!-- <span class="template-view"></span> -->
+            <span class="template-title">{{ item.title }}</span>
           </div>
         </li>
       </ul>
@@ -94,34 +112,7 @@
 
     <!-- 信息图 -->
     <div class="infographic-template-list template-list" *ngIf="initialState.type === 'infographic'">
-      <!-- <ngx-masonry [updateLayout]="updateMasonryLayout" [options]='myOptions'> -->
-        <!-- <div ngxMasonryItem class="masonry-item" (click)="createEmptyTemplateHandle()">
-          <div class="template-cover create-info-blank"><i></i></div>
-          <div class="template-intro">
-            <span class="template-title">空白模版</span>
-            <span class="template-view">550px*550px</span>
-          </div>
-        </div> -->
-        <!-- <div ngxMasonryItem class="masonry-item" *ngFor="let item of infoFilterTemplates; let i = index" (mouseenter)="getInfoDetail($event, item, i)"
-          (click)="createInfoTemplateHandle(item, i)">
-          <div class="template-cover" [ngClass]="{'blank-info': i === 0}" [ngStyle]="{'height': i === 0 ? blankHeight : 'auto'}">
-            <div class="vip-level" *ngIf="item.price !== 0"></div>
-            <img class="d-block mx-auto" [src]="item.thumb ? item.thumb.split('?')[0] : item.thumb">
-            <div class="info-mask" *ngIf="i !== 0">
-              <div class="like-info">
-                <i class="icon iconfont icon-xihuan" (click)="toggleLike($event, item)" [ngClass]="{'active': isLike}"></i>
-              </div>
-              <div class="preview-info"><a (click)="previewInfo($event, item)">预览</a></div>
-            </div>
-          </div>
-          <div class="template-intro">
-            <span class="template-title">{{item.title}}</span>
-            <span class="template-view" *ngIf="i === 0">尺寸：{{templateSize}}</span>
-            <span class="template-view" *ngIf="i > 0">{{item.count}}人使用</span>
-          </div>
-        </div> -->
-      <!-- </ngx-masonry> -->
-      <div class="load-more" (click)='loadMore()'>{{loadTip}}</div>
+      <div class="load-more" (click)="loadMore()">{{ loadTip }}</div>
     </div>
   </div>
 </div>

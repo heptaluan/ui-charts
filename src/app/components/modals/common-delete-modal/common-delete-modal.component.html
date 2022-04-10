@@ -1,6 +1,8 @@
 <lx-prompt [title]="deleteTitle" [actions]="deleteActions" (promptHide)="onModalClosed($event)">
-  <p>{{content}}</p>
+  <p>{{ content }}</p>
   <div class="tip" *ngIf="showTip">
-    <input [checked]="isChecked" [(ngModel)]="isChecked" type="checkbox" id="checkbox"><label for="checkbox">不再提示</label>
+    <input [checked]="isChecked" [(ngModel)]="isChecked" type="checkbox" id="checkbox" /><label for="checkbox"
+      >不再提示</label
+    >
   </div>
 </lx-prompt>

@@ -91,7 +91,7 @@
         display: none;
       }
 
-      .a-radio:checked~.b-radio:before {
+      .a-radio:checked ~ .b-radio:before {
         display: block;
       }
     }
@@ -122,7 +122,7 @@
 
   .title {
     font-size: 14px;
-	  color: #323b47;
+    color: #323b47;
   }
 
   input {
@@ -186,7 +186,6 @@
       right: -12px;
       top: 0;
     }
-
   }
 
   .feedback-btn {
@@ -194,7 +193,7 @@
     width: 130px;
     height: 44px;
     text-align: center;
-    background: #0079FA;
+    background: #0079fa;
     color: #fff;
     line-height: 44px;
     margin: 0 auto;
@@ -234,7 +233,7 @@
       height: 40px;
       line-height: 40px;
       color: #fff;
-      background: #0079FA;
+      background: #0079fa;
       text-align: center;
       margin: 45px auto 0;
       user-select: none;
@@ -242,8 +241,6 @@
       border-radius: 2px;
     }
   }
-
-
 }
 
 .text-prompt {
