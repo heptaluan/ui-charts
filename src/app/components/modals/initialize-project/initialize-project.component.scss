@@ -1,58 +1,58 @@
 :host {
-    .form-group {
-        margin-bottom: 25px;
+  .form-group {
+    margin-bottom: 25px;
+  }
+  .form-control {
+    cursor: pointer;
+    color: #4a4a4a;
+    padding: 10px 15px;
+    height: 94px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #d5dbe0;
+    &.active {
+      border: 1px solid #129cff;
     }
-    .form-control {
-        cursor: pointer;
-        color:#4a4a4a;
-        padding: 10px 15px;
-        height: 94px;
-        font-size: 16px;
-        border-radius:8px;
-        border:1px solid #d5dbe0;
-        &.active {
-            border:1px solid #129cff;
-        }
-        input {
-            margin-right: 15px;
-        }
-        label {
-            font-size: 18px;
-            margin-bottom: 5px;
-            line-height: 25px;
-            ~div {
-                width: 176px;
-                line-height: 22px;
-            }
-        }   
-        .dy-button-upgrade {
-            margin-left: 8px;
-            bottom: 2px;
-            position: relative;
-        }  
+    input {
+      margin-right: 15px;
     }
-    form .form-control:first-child {
-        margin-right: 30px;
+    label {
+      font-size: 18px;
+      margin-bottom: 5px;
+      line-height: 25px;
+      ~ div {
+        width: 176px;
+        line-height: 22px;
+      }
     }
+    .dy-button-upgrade {
+      margin-left: 8px;
+      bottom: 2px;
+      position: relative;
+    }
+  }
+  form .form-control:first-child {
+    margin-right: 30px;
+  }
 
-    .project-name {
-        label {
-            font-size: 16px;
-            margin-bottom: 10px;
-            line-height: 22px;            
-        }
-        .tip {
-            font-size:14px;
-            color:#969799;
-            margin-left: 20px;
-            margin-top: 5px;      
-            line-height: 20px;      
-        }
-        .tip-error {
-            color: #f5222d;
-        }
+  .project-name {
+    label {
+      font-size: 16px;
+      margin-bottom: 10px;
+      line-height: 22px;
     }
-    button.dy-button-blue {
-        width: 221px;
-    }    
+    .tip {
+      font-size: 14px;
+      color: #969799;
+      margin-left: 20px;
+      margin-top: 5px;
+      line-height: 20px;
+    }
+    .tip-error {
+      color: #f5222d;
+    }
+  }
+  button.dy-button-blue {
+    width: 221px;
+  }
 }

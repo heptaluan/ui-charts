@@ -1,7 +1,12 @@
 <lx-modal position="center" [title]="title">
   <form>
-    <textarea name="description" id="description" [formControl]="description" [ngClass]="{'tip-error-border': description.invalid}"></textarea>
-    <div class="tip" [ngClass]="{'tip-error': description.invalid}">请输入140个字以内</div>
+    <textarea
+      name="description"
+      id="description"
+      [formControl]="description"
+      [ngClass]="{ 'tip-error-border': description.invalid }"
+    ></textarea>
+    <div class="tip" [ngClass]="{ 'tip-error': description.invalid }">请输入140个字以内</div>
   </form>
   <button class="dy-button-blue dy-button-middle action-button" (click)="onSubmit()">确定</button>
 </lx-modal>

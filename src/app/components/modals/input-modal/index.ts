@@ -1,1 +1,1 @@
-export * from './input-modal.component';
+export * from './input-modal.component'

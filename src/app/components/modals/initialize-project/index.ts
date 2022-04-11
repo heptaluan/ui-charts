@@ -1,1 +1,1 @@
-export * from './initialize-project.component';
+export * from './initialize-project.component'

@@ -1,1 +1,1 @@
-export * from './export-to-phone-modal.component';
+export * from './export-to-phone-modal.component'

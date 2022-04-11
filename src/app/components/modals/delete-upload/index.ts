@@ -1,1 +1,1 @@
-export * from './delete-upload.component';
+export * from './delete-upload.component'

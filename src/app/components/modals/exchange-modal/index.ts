@@ -1,1 +1,1 @@
-export * from './exchange-modal.component';
+export * from './exchange-modal.component'
