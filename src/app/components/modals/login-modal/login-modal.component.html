@@ -1,46 +1,44 @@
 <lx-modal class="login-container">
-    <div class="login-content">
-        <!-- 登录注册标题 -->
-        <div class="title">{{title}}</div>
-        <!-- 登录部分切换登录 -->
-        <div class="setting-container" *ngIf="isLogin">
-            <tabset #staticTab>
-                <tab heading="验证码登录" (select)="onTabSelect()" customClass="setting-tab" id="tab1">
-                </tab>
-                <tab heading="帐号登录" (select)="onTabSelect()" customClass="setting-tab" id="tab2">
-                </tab>
-            </tabset>
-        </div>
-        <!-- 登录部分主体 -->
-        <div class="input-container">
-            <input type="text" placeholder="请输入手机号" (keydown)="onKeyDown()" [(ngModel)]="phoneNo"/>
-            <div  *ngIf="tabActive">
-                <div class="identify-code">
-                    <input type="text" placeholder="短信验证码" (keydown)="onKeyDown()" [(ngModel)]="telCode"/> 
-                    <button class="send {{codestate}}" (click)="onPhoneSendSMS()">{{sendCodeTip}}</button>
-                </div>
-                <div class="msg-tip" *ngIf="errorTip">{{errorTip}}</div>
-            </div>
-            <div *ngIf="!tabActive">
-                <input type="password" placeholder="请输入密码" (keydown)="onKeyDown()" [(ngModel)]="pwd"/>
-                <div class="identify-code">
-                    <input type="text" placeholder="验证码" (keydown)="onKeyDown()" [(ngModel)]="telCode"/> 
-                    <div class="codeImg">这是验证码</div>
-                    <div>刷新</div>
-                </div>
-                <div class="msg-tip" *ngIf="errorTip">{{errorTip}}</div>
-                <div class="pwd-container">
-                    <div class="remember-pwd">记住密码</div>
-                    <div class="forget-pwd">忘记密码?</div>
-                </div>
-            </div>
-        </div>
-        <!-- 三方登录 -->
-        <div class="third-party-login">
-            <img src="/dyassets/images/QQ.svg" alt="">
-            <img src="/dyassets/images/wechat.svg" alt="">
-        </div>
-        <div class="login-button" (click)='login(loginTxt)'>{{loginTxt}}</div>
-        <div class="exist-login" *ngIf='!isLogin'>已有帐号?立即<span (click)='jump()'>登录</span></div>
+  <div class="login-content">
+    <!-- 登录注册标题 -->
+    <div class="title">{{ title }}</div>
+    <!-- 登录部分切换登录 -->
+    <div class="setting-container" *ngIf="isLogin">
+      <tabset #staticTab>
+        <tab heading="验证码登录" (select)="onTabSelect()" customClass="setting-tab" id="tab1"> </tab>
+        <tab heading="帐号登录" (select)="onTabSelect()" customClass="setting-tab" id="tab2"> </tab>
+      </tabset>
     </div>
+    <!-- 登录部分主体 -->
+    <div class="input-container">
+      <input type="text" placeholder="请输入手机号" (keydown)="onKeyDown()" [(ngModel)]="phoneNo" />
+      <div *ngIf="tabActive">
+        <div class="identify-code">
+          <input type="text" placeholder="短信验证码" (keydown)="onKeyDown()" [(ngModel)]="telCode" />
+          <button class="send {{ codestate }}" (click)="onPhoneSendSMS()">{{ sendCodeTip }}</button>
+        </div>
+        <div class="msg-tip" *ngIf="errorTip">{{ errorTip }}</div>
+      </div>
+      <div *ngIf="!tabActive">
+        <input type="password" placeholder="请输入密码" (keydown)="onKeyDown()" [(ngModel)]="pwd" />
+        <div class="identify-code">
+          <input type="text" placeholder="验证码" (keydown)="onKeyDown()" [(ngModel)]="telCode" />
+          <div class="codeImg">这是验证码</div>
+          <div>刷新</div>
+        </div>
+        <div class="msg-tip" *ngIf="errorTip">{{ errorTip }}</div>
+        <div class="pwd-container">
+          <div class="remember-pwd">记住密码</div>
+          <div class="forget-pwd">忘记密码?</div>
+        </div>
+      </div>
+    </div>
+    <!-- 三方登录 -->
+    <div class="third-party-login">
+      <img src="/dyassets/images/QQ.svg" alt="" />
+      <img src="/dyassets/images/wechat.svg" alt="" />
+    </div>
+    <div class="login-button" (click)="login(loginTxt)">{{ loginTxt }}</div>
+    <div class="exist-login" *ngIf="!isLogin">已有帐号?立即<span (click)="jump()">登录</span></div>
+  </div>
 </lx-modal>

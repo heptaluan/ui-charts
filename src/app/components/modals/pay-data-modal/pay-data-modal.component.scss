@@ -188,10 +188,8 @@
               font-weight: normal;
               color: #491a01;
             }
-
           }
         }
-
       }
 
       .normal-text {
@@ -278,7 +276,7 @@
           height: 70px;
           margin-left: 28px;
           border-radius: 50%;
-          background: #fff url(/dyassets/images/share/crown.svg) no-repeat center center/41px 35px
+          background: #fff url(/dyassets/images/share/crown.svg) no-repeat center center/41px 35px;
         }
 
         .wrapper {
@@ -347,7 +345,7 @@
         display: none;
       }
 
-      .a-radio:checked~.b-radio:before {
+      .a-radio:checked ~ .b-radio:before {
         display: block;
       }
     }
@@ -404,5 +402,4 @@
       background-color: #0062cb;
     }
   }
-
 }

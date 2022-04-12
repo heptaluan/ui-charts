@@ -1,1 +1,1 @@
-export * from './insert-single-chart-tip.component';
+export * from './insert-single-chart-tip.component'

@@ -1,1 +1,1 @@
-export * from './pay-data-modal.component';
+export * from './pay-data-modal.component'

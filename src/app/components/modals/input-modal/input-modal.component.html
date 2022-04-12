@@ -1,8 +1,8 @@
 <div [ngStyle]="styles" class="input-wrapper">
-  <i class="icon iconfont icon-x" (click)='close()'></i>
+  <i class="icon iconfont icon-x" (click)="close()"></i>
   <div class="input-wrapper-header">音乐链接地址：</div>
-  <input type="text" (keyup)="testUrl()" [(ngModel)]="url" placeholder="请输入mp3格式的音乐链接">
+  <input type="text" (keyup)="testUrl()" [(ngModel)]="url" placeholder="请输入mp3格式的音乐链接" />
   <div class="del-icon" *ngIf="url !== ''" (click)="clearUrl()"></div>
   <div class="error" *ngIf="isErrorUrl">无效的链接</div>
-  <div class="confirm" (click)="handleConfirmClick()">{{confirmText}}</div>
+  <div class="confirm" (click)="handleConfirmClick()">{{ confirmText }}</div>
 </div>

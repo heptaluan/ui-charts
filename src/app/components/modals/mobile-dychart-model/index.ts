@@ -1,1 +1,1 @@
-export * from './mobile-dychart-model.component';
+export * from './mobile-dychart-model.component'

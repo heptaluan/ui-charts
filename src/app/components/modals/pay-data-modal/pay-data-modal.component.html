@@ -1,32 +1,43 @@
 <div class="pay-data-container">
-  <i class="icon iconfont icon-x" (click)='close()'></i>
+  <i class="icon iconfont icon-x" (click)="close()"></i>
   <h4>订单确认</h4>
   <div class="tab-select">
-    <div class="price normal-price" (click)="selectOption(true)" [ngClass]="{'active': selectValue}">
+    <div class="price normal-price" (click)="selectOption(true)" [ngClass]="{ active: selectValue }">
       <label>
-        <input type="radio" name="select_type" class="a-radio" [(checked)]="selectValue">
+        <input type="radio" name="select_type" class="a-radio" [(checked)]="selectValue" />
         <span class="b-radio"></span>
       </label>
       <div class="text-box normal-text">
         <div class="icon-corner" *ngIf="!isNoDiscount && dataItem.geotype === '第三方'">
-          <p>{{discountNum}}折</p>
+          <p>{{ discountNum }}折</p>
         </div>
-        <div class="img"><img src="{{dataItem.thumb}}" alt=""></div>
+        <div class="img"><img src="{{ dataItem.thumb }}" alt="" /></div>
         <div class="wrapper">
-          <h5>{{dataItem.title}}</h5>
-          <p>来源：{{dataItem.source}}</p>
-          <p><span>年份：{{dataItem.time | formatDataTime}}</span><span>渠道：{{dataItem.geotype}}</span></p>
+          <h5>{{ dataItem.title }}</h5>
+          <p>来源：{{ dataItem.source }}</p>
+          <p>
+            <span>年份：{{ dataItem.time | formatDataTime }}</span
+            ><span>渠道：{{ dataItem.geotype }}</span>
+          </p>
         </div>
         <div class="text-price normal-text-price">
-          <p class="show-price" [ngClass]="{'active': !isNoDiscount && dataItem.geotype === '第三方'}"><i></i><span>{{price}}</span></p>
-          <p class="old-price" *ngIf="!isNoDiscount && dataItem.geotype === '第三方'">原价 &nbsp;&nbsp;<i></i>{{oldPrice}}</p>
+          <p class="show-price" [ngClass]="{ active: !isNoDiscount && dataItem.geotype === '第三方' }">
+            <i></i><span>{{ price }}</span>
+          </p>
+          <p class="old-price" *ngIf="!isNoDiscount && dataItem.geotype === '第三方'">
+            原价 &nbsp;&nbsp;<i></i>{{ oldPrice }}
+          </p>
         </div>
       </div>
     </div>
-    <div class="price discount-price" (click)="selectOption(false)" [ngClass]="{'active': !selectValue}"
-      *ngIf="isNoDiscount && dataItem.geotype === '自营'">
+    <div
+      class="price discount-price"
+      (click)="selectOption(false)"
+      [ngClass]="{ active: !selectValue }"
+      *ngIf="isNoDiscount && dataItem.geotype === '自营'"
+    >
       <label>
-        <input type="radio" name="select_type" class="a-radio" [(checked)]="!selectValue">
+        <input type="radio" name="select_type" class="a-radio" [(checked)]="!selectValue" />
         <span class="b-radio"></span>
       </label>
       <div class="text-box discount-text">
@@ -41,7 +52,8 @@
       </div>
     </div>
     <div *ngIf="isNoDiscount && dataItem.geotype === '第三方'" class="go-price" (click)="goPrice()">
-      <a>成为高级会员享受第三方合作数据9.5折优惠（￥49.9/月）</a></div>
+      <a>成为高级会员享受第三方合作数据9.5折优惠（￥49.9/月）</a>
+    </div>
   </div>
-  <button (click)="payData()">支付{{payPrice}}元</button>
+  <button (click)="payData()">支付{{ payPrice }}元</button>
 </div>

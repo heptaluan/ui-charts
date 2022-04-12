@@ -1,1 +1,1 @@
-export * from './operation.component';
+export * from './operation.component'
