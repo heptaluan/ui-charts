@@ -1,1 +1,1 @@
-export * from './publish-modal.component';
+export * from './publish-modal.component'

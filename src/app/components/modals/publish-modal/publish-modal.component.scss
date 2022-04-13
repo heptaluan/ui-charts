@@ -89,7 +89,7 @@
       border: solid 1px #e4e4e4;
 
       img {
-        transform: scale(.86);
+        transform: scale(0.86);
       }
     }
 
@@ -160,7 +160,7 @@
       border: 1px solid #d8dee3;
     }
 
-    nb-checkbox>label {
+    nb-checkbox > label {
       padding: 0 0 0 19px;
 
       .customised-control-description {
@@ -203,7 +203,7 @@
           height: 16px;
           right: -30px;
           position: absolute;
-          background: url(/dyassets/images/person/vip.svg) center/contain no-repeat
+          background: url(/dyassets/images/person/vip.svg) center/contain no-repeat;
         }
       }
 
@@ -249,7 +249,7 @@
         display: none;
       }
 
-      .a-radio:checked~.b-radio:before {
+      .a-radio:checked ~ .b-radio:before {
         display: block;
       }
     }
@@ -280,7 +280,7 @@
           cursor: pointer;
 
           &.icon-biyan {
-            opacity: .4;
+            opacity: 0.4;
           }
         }
       }
@@ -304,7 +304,6 @@
     button {
       border-radius: 0 2px 2px 0;
     }
-
   }
 
   .copyPriText {

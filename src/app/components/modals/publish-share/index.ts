@@ -1,1 +1,1 @@
-export * from './publish-share.component';
+export * from './publish-share.component'

@@ -1,1 +1,1 @@
-export * from './rename.component';
+export * from './rename.component'

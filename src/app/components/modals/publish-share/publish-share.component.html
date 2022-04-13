@@ -1,7 +1,6 @@
 <lx-modal position="center">
-
   <div class="public-share-container">
-    <h2>{{title}}</h2>
+    <h2>{{ title }}</h2>
     <h3 *ngIf="title === '模板分享'">微信扫一扫分享给好友</h3>
     <div class="share-container" *ngIf="title === '模板分享'">
       <qr-code [value]="url" size="200" background="#fff" padding="0"></qr-code>
@@ -10,16 +9,14 @@
     <div class="datastore" *ngIf="showWeixinCode">
       <p>微信扫一扫分享给好友</p>
       <div class="img-box">
-        <img [src]="shareCoverImg">
+        <img [src]="shareCoverImg" />
       </div>
     </div>
 
     <div class="copyUrl">
-      <input type="text" class="public-link-input" value="{{url}}" disabled>
-      <button (click)='copyUrl()'>复制链接</button>
+      <input type="text" class="public-link-input" value="{{ url }}" disabled />
+      <button (click)="copyUrl()">复制链接</button>
     </div>
     <div class="copyText" *ngIf="copyText">复制成功</div>
-
   </div>
-
 </lx-modal>
