@@ -7,7 +7,6 @@ h3 {
 }
 
 .upload-data {
-
   ul,
   li {
     list-style: none;
@@ -64,7 +63,7 @@ h3 {
         letter-spacing: 0px;
         color: #969799;
 
-        input[type="checkbox"] {
+        input[type='checkbox'] {
           width: 16px;
           height: 16px;
           display: inline-block;
@@ -77,8 +76,8 @@ h3 {
           cursor: pointer;
         }
 
-        input[type="checkbox"]::before {
-          content: "";
+        input[type='checkbox']::before {
+          content: '';
           position: absolute;
           top: 0;
           left: 0;
@@ -89,8 +88,8 @@ h3 {
           border-radius: 4px;
         }
 
-        input[type="checkbox"]:checked::before {
-          content: "\2713";
+        input[type='checkbox']:checked::before {
+          content: '\2713';
           background-color: #fff;
           position: absolute;
           top: 0;
@@ -113,7 +112,8 @@ h3 {
         background-image: linear-gradient(180deg, #008efd 0%, #0272eb 100%);
         border-radius: 2px;
         border: solid 1px #017df2;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo",  "Consolas", sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei',
+          'Hiragino Sans GB', 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, 'Monaco', 'Menlo', 'Consolas', sans-serif;
         font-size: 12px;
         font-weight: normal;
         font-stretch: normal;
@@ -124,11 +124,11 @@ h3 {
         padding: 0;
 
         &:hover {
-          background-color: #0A81FF;
+          background-color: #0a81ff;
         }
-        
-        &:active{
-          background-color: #0071EB;
+
+        &:active {
+          background-color: #0071eb;
         }
       }
 
@@ -144,7 +144,7 @@ h3 {
         color: #0079fa;
 
         &:hover {
-          background-color: #0A81FF;
+          background-color: #0a81ff;
           color: #ffffff;
         }
       }
@@ -174,7 +174,7 @@ h3 {
     height: 100%;
     overflow: hidden;
     border-radius: 0 0 4px 4px;
-    background: #EDEEF0;
+    background: #edeef0;
 
     .upload-area {
       width: 568px;
@@ -278,8 +278,6 @@ h3 {
   }
 }
 
-
-
 .table-container {
   border-radius: 4px;
   height: 100%;
@@ -300,13 +298,11 @@ h3 {
   background: white;
 }
 
-
 :host ::ng-deep {
   .table {
     margin-bottom: 0;
 
     .wtHolder {
-
       &::-webkit-scrollbar {
         width: 6px !important;
         height: 6px !important;
@@ -337,13 +333,11 @@ h3 {
   }
 }
 
-
-
 .create-project-container {
   width: 100%;
   overflow-y: scroll;
   border-radius: 0 0 4px 4px;
-  background: #EDEEF0;
+  background: #edeef0;
   height: 100%;
   padding: 20px;
   .chart-inner-container {
@@ -384,7 +378,6 @@ h3 {
     }
 
     .change-chart-template-list {
-
       ul {
         overflow: hidden;
         padding-left: 65px;
@@ -399,8 +392,8 @@ h3 {
           border: 2px solid transparent;
 
           &.active {
-            border: 2px solid #90C4FD;
-            background-color: #F0F7FF;
+            border: 2px solid #90c4fd;
+            background-color: #f0f7ff;
 
             p {
               color: #0079fa;
@@ -421,7 +414,6 @@ h3 {
           }
         }
       }
-
     }
 
     .info-scene {
@@ -511,7 +503,7 @@ h3 {
         margin-right: 5px;
         background: #fff;
         position: relative;
-        transition: all .2s linear;
+        transition: all 0.2s linear;
         z-index: 1;
 
         &:hover {
@@ -640,7 +632,6 @@ h3 {
   }
 }
 
-
 .preview {
   width: 100%;
   height: 100%;
@@ -665,7 +656,7 @@ h3 {
       background: url(/dyassets/images/play.svg) no-repeat 50%;
       cursor: pointer;
       z-index: 99;
-    
+
       &.active {
         background: url(/dyassets/images/stop.svg) no-repeat 50%;
       }

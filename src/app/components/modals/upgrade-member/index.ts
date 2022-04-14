@@ -1,1 +1,1 @@
-export * from './upgrade-member.component';
+export * from './upgrade-member.component'

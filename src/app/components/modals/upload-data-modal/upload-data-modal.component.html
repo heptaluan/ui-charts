@@ -2,7 +2,7 @@
   <div class="title-box">
     <div class="title-left">
       <span class="title-img"></span>
-      <span class="title">{{leftTitle}}</span>
+      <span class="title">{{ leftTitle }}</span>
     </div>
 
     <div class="title-right" *ngIf="fourStepButtonGroup">
@@ -10,11 +10,29 @@
     </div>
 
     <div class="title-right" *ngIf="oneStepButtonGroup">
-      <!-- <span>放大缩小</span> -->
-      <!-- <label *ngIf="option != 'edit'"><input type="checkbox" [checked]="isUploadFile" (change)="isUploadFileHandle()">自动保存到「数据管理 - 我的上传」</label> -->
-      <button *ngIf="option != 'edit'" (click)="oneStepButtonGroupHandle(true)" class="save" [ngStyle]="{'pointer-events': isDisabled?'none':'auto'}" >直接保存</button>
-      <button *ngIf="option != 'edit'" (click)="oneStepButtonGroupHandle(false)" class="save-build" [ngStyle]="{'pointer-events': isDisabled?'none':'auto'}" >保存并制作图表</button>
-      <button *ngIf="option === 'edit'" (click)="oneStepButtonGroupHandle()" [ngStyle]="{'pointer-events': isDisabled?'none':'auto'}">保存</button>
+      <button
+        *ngIf="option != 'edit'"
+        (click)="oneStepButtonGroupHandle(true)"
+        class="save"
+        [ngStyle]="{ 'pointer-events': isDisabled ? 'none' : 'auto' }"
+      >
+        直接保存
+      </button>
+      <button
+        *ngIf="option != 'edit'"
+        (click)="oneStepButtonGroupHandle(false)"
+        class="save-build"
+        [ngStyle]="{ 'pointer-events': isDisabled ? 'none' : 'auto' }"
+      >
+        保存并制作图表
+      </button>
+      <button
+        *ngIf="option === 'edit'"
+        (click)="oneStepButtonGroupHandle()"
+        [ngStyle]="{ 'pointer-events': isDisabled ? 'none' : 'auto' }"
+      >
+        保存
+      </button>
     </div>
     <div class="title-right" *ngIf="twoStepButtonGroup">
       <button (click)="twoStepButtonGroupBackHandle()">上一步</button>
@@ -23,22 +41,27 @@
       <button (click)="threeStepButtonGroupBackHandle()">上一步</button>
     </div>
 
-    <i class="icon close iconfont icon-x" (click)='bsModalRef.hide()'></i>
+    <i class="icon close iconfont icon-x" (click)="bsModalRef.hide()"></i>
   </div>
 
   <div class="upload-data-container" #uploadDataContainerBox>
-
     <!-- 第一步，上传文件 -->
     <div class="upload-area" [hidden]="!oneStep">
       <div class="upload-input">
-        <button type="button" onclick="upfile.click()">点击上传文件</button><input accept=".csv, .xlsx, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" type="file" id="upfile" (change)="inputChangHandle($event)" style="visibility: hidden; position: absolute;">或者拖拽上传
+        <button type="button" onclick="upfile.click()">点击上传文件</button
+        ><input
+          accept=".csv, .xlsx, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
+          type="file"
+          id="upfile"
+          (change)="inputChangHandle($event)"
+          style="visibility: hidden; position: absolute"
+        />或者拖拽上传
       </div>
       <p class="sub-title">支持最大2M的Excel和CSV文件</p>
       <div class="img-wrapper">
         <div class="bc-img"></div>
         <div class="tips">
           <p>温馨提示：</p>
-          <!-- <p>请确保上传数据是如左图所示的简单表格形式，避免出现合并或空白单元格</p> -->
           <p>1、请按照左图的简单表格形式整理数据；</p>
           <p>2、确保数据在上传的文件中的sheet1；</p>
           <p>3、确保数据中没有合并或空白单元格。</p>
@@ -51,37 +74,64 @@
     <div class="table" *ngIf="twoStep">
       <div #divFather class="d-flex flex-column table-container">
         <div class="d-flex flex-row" style="flex: 1">
-          <hot-table *ngFor="let item of data; let key = index" hotId="tb{{key}}" [data]="item" [settings]="settings"
-            [renderer]="rowRenderer" [height]="tbHeight" (afterChange)="afterChange($event, key)" (afterColumnSort)="afterColumnSort($event, key)"
-            (afterRemoveCellMeta)="afterRemoveCellMeta()" [hidden]="key != radioModel"></hot-table>
+          <hot-table
+            *ngFor="let item of data; let key = index"
+            hotId="tb{{ key }}"
+            [data]="item"
+            [settings]="settings"
+            [renderer]="rowRenderer"
+            [height]="tbHeight"
+            (afterChange)="afterChange($event, key)"
+            (afterColumnSort)="afterColumnSort($event, key)"
+            (afterRemoveCellMeta)="afterRemoveCellMeta()"
+            [hidden]="key != radioModel"
+          ></hot-table>
         </div>
         <div class="d-flex flex-row align-items-center table-footer">
           <div (click)="reloadTable()" class="btn-group">
-            <label *ngFor="let item of data; let key = index" class="table-sheet" [(ngModel)]="radioModel" btnRadio="{{key}}"
-              tabindex="0" [class.sheet-active]="key == radioModel">
-              <div>表格{{key}}</div>
+            <label
+              *ngFor="let item of data; let key = index"
+              class="table-sheet"
+              [(ngModel)]="radioModel"
+              btnRadio="{{ key }}"
+              tabindex="0"
+              [class.sheet-active]="key == radioModel"
+            >
+              <div>表格{{ key }}</div>
             </label>
           </div>
         </div>
       </div>
-
     </div>
 
     <!-- 第三步，选择图表 -->
     <div class="create-project-container" *ngIf="threeStep">
-      <div class="chart-inner-container" [ngStyle]="{'width': widthStyle}">
+      <div class="chart-inner-container" [ngStyle]="{ width: widthStyle }">
         <div class="change-chart-box">
           <div class="chart-classify change-chart-list">
             <span class="change-chart-title">分类：</span>
-            <span [ngClass]="{'active': chartClassifyIndex === 0}" class="change-chart-item" (click)="changeChartClassify(0)">图表类型</span>
-            <span [ngClass]="{'active': chartClassifyIndex === 1}" class="change-chart-item" (click)="changeChartClassify(1)">图表功能</span>
+            <span
+              [ngClass]="{ active: chartClassifyIndex === 0 }"
+              class="change-chart-item"
+              (click)="changeChartClassify(0)"
+              >图表类型</span
+            >
+            <span
+              [ngClass]="{ active: chartClassifyIndex === 1 }"
+              class="change-chart-item"
+              (click)="changeChartClassify(1)"
+              >图表功能</span
+            >
           </div>
           <div class="change-chart-template-list">
             <ul>
-              <li [ngClass]="{'active': i == activeIndex}" *ngFor="let item of chartTitleTemplates; let i = index;"
-                (click)="chartTemplateListClickHandle(item, i)">
-                <div class="cover"><img src="{{item.cover}}"></div>
-                <p>{{item.title}}</p>
+              <li
+                [ngClass]="{ active: i == activeIndex }"
+                *ngFor="let item of chartTitleTemplates; let i = index"
+                (click)="chartTemplateListClickHandle(item, i)"
+              >
+                <div class="cover"><img src="{{ item.cover }}" /></div>
+                <p>{{ item.title }}</p>
               </li>
             </ul>
           </div>
@@ -91,30 +141,40 @@
         <div class="chart-template-list template-list">
           <ul>
             <li *ngFor="let item of chartFilterTemplates" (click)="selectChartTemplateHandle(item)">
-              <div class="dynamic-chart" *ngIf="item.templateId === '8000000011111111001' || 
-              item.templateId === '8000000011111111002' ||
-              item.templateId === '8000000011111111003' ||
-              item.templateId === '8000000011111111004' ">动态</div>
+              <div
+                class="dynamic-chart"
+                *ngIf="
+                  item.templateId === '8000000011111111001' ||
+                  item.templateId === '8000000011111111002' ||
+                  item.templateId === '8000000011111111003' ||
+                  item.templateId === '8000000011111111004'
+                "
+              >
+                动态
+              </div>
               <div class="template-cover">
                 <div class="vip-recommend" *ngIf="dataType?.indexOf(item.templateSwitch) >= 0">推荐</div>
-                <img class="d-block mx-auto" src="{{item.thumb}}" alt="">
+                <img class="d-block mx-auto" src="{{ item.thumb }}" alt="" />
               </div>
               <div class="template-intro">
-                <span class="template-title">{{item.title}}</span>
+                <span class="template-title">{{ item.title }}</span>
                 <span class="template-view"></span>
               </div>
             </li>
           </ul>
         </div>
       </div>
-
-
     </div>
 
     <!-- 第四步，生成预览 -->
     <div class="preview" [hidden]="!fourStep">
       <div class="page">
-        <div class="animation-button" [ngClass]="{'active': playDynamicChart}" *ngIf="isDynamicChart" (click)="handleChangeDynamicChart()"></div>
+        <div
+          class="animation-button"
+          [ngClass]="{ active: playDynamicChart }"
+          *ngIf="isDynamicChart"
+          (click)="handleChangeDynamicChart()"
+        ></div>
         <ng-template lxChartHost></ng-template>
       </div>
     </div>

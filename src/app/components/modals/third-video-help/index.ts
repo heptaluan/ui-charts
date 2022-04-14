@@ -1,1 +1,1 @@
-export * from './third-video-help.component';
+export * from './third-video-help.component'

@@ -9,86 +9,85 @@
             <p class="pay-desc" *ngIf="chaeckType === 0">全面地支持你的图表制作</p>
             <p class="pay-desc" style="text-align: center" *ngIf="chaeckType === 1">全行业优质数据开放</p>
             <div class="powers-body" *ngIf="chaeckType === 0">
-              <!-- [ngClass]="{'without': true}" 不打勾以及变灰的样式 -->
-              <p class="power-text" [ngClass]="{'black': vipIds.indexOf(item.id) > -1 }" *ngFor="let item of vipPriceList">
-                <span class="font-gou" [ngClass]="{'price-up': item.upPrice}"></span><span class="desc-text">{{item.text}}</span>
+              <p
+                class="power-text"
+                [ngClass]="{ black: vipIds.indexOf(item.id) > -1 }"
+                *ngFor="let item of vipPriceList"
+              >
+                <span class="font-gou" [ngClass]="{ 'price-up': item.upPrice }"></span
+                ><span class="desc-text">{{ item.text }}</span>
               </p>
             </div>
             <div class="powers-body" *ngIf="chaeckType === 1">
-              <p class="power-text" [ngClass]="{'black': svipIds.indexOf(item.id) > -1}" *ngFor="let item of svipPriceList">
-                <span class="font-gou" [ngClass]="{'price-up': item.upPrice}"></span><span class="desc-text">{{item.text}}</span>
+              <p
+                class="power-text"
+                [ngClass]="{ black: svipIds.indexOf(item.id) > -1 }"
+                *ngFor="let item of svipPriceList"
+              >
+                <span class="font-gou" [ngClass]="{ 'price-up': item.upPrice }"></span
+                ><span class="desc-text">{{ item.text }}</span>
               </p>
             </div>
           </div>
           <div class="pay-price-wrapper">
-            <i class="icon close iconfont icon-x" (click)='bsModalRef.hide()'></i>
+            <i class="icon close iconfont icon-x" (click)="bsModalRef.hide()"></i>
             <div class="pay-price-content">
               <div class="pay-type-line">
                 <span class="pay-title">选择类型</span>
                 <div class="pay-type-content">
-                  <div [ngClass]="{'checked': chaeckType === 0}" (click)="changeChaeckType(0)" class="pay-check-box pay-type-check"
-                    data-chack-name="payType">会员</div>
-                  <!-- <div [ngClass]="{'checked': chaeckType === 1}" (click)="changeChaeckType(1)" class="pay-check-box pay-type-check"
-                    data-chack-name="payType">高级会员</div> -->
+                  <div
+                    [ngClass]="{ checked: chaeckType === 0 }"
+                    (click)="changeChaeckType(0)"
+                    class="pay-check-box pay-type-check"
+                    data-chack-name="payType"
+                  >
+                    会员
+                  </div>
                 </div>
               </div>
 
               <div class="pay-price-line">
                 <span class="title">选择时长</span>
                 <div class="pay-price-conten">
-                  <div class="pay-check-box pay-price-check" [ngClass]="{'checked': recommendType === 0}" (click)="recommendHandle(0)"
-                    data-chack-name="payPrice">
+                  <div
+                    class="pay-check-box pay-price-check"
+                    [ngClass]="{ checked: recommendType === 0 }"
+                    (click)="recommendHandle(0)"
+                    data-chack-name="payPrice"
+                  >
                     <div class="check-price dis-content" *ngIf="chaeckType === 0">
-                      <span class="price-title">
-                        12个月
-                      </span>
+                      <span class="price-title"> 12个月 </span>
                       <div class="box-content">
-                        <p class="price">
-                          &yen; 99
-                        </p>
-                        <p class="dis">
-                          低至 <span style="color: red">8.25元/月</span>
-                        </p>
+                        <p class="price">&yen; 99</p>
+                        <p class="dis">低至 <span style="color: red">8.25元/月</span></p>
                       </div>
                     </div>
                     <div class="check-price dis-content" *ngIf="chaeckType === 1">
-                      <span class="price-title">
-                        12个月
-                      </span>
+                      <span class="price-title"> 12个月 </span>
                       <div class="box-content">
-                        <p class="price">
-                          &yen; 499
-                        </p>
-                        <p class="dis">
-                          低至 <span style="color: red">41.6元/月</span>
-                        </p>
+                        <p class="price">&yen; 499</p>
+                        <p class="dis">低至 <span style="color: red">41.6元/月</span></p>
                       </div>
                     </div>
                   </div>
-                  <div class="pay-check-box pay-price-check" [ngClass]="{'checked': recommendType === 1}" (click)="recommendHandle(1)"
-                    data-chack-name="payPrice">
+                  <div
+                    class="pay-check-box pay-price-check"
+                    [ngClass]="{ checked: recommendType === 1 }"
+                    (click)="recommendHandle(1)"
+                    data-chack-name="payPrice"
+                  >
                     <div class="check-price dis-content" *ngIf="chaeckType === 0">
-                      <span class="price-title">
-                        1个月
-                      </span>
+                      <span class="price-title"> 1个月 </span>
                       <div class="box-content">
-                        <p class="price">
-                          &yen; 9.9
-                        </p>
-                        <p class="dis">
-                        </p>
+                        <p class="price">&yen; 9.9</p>
+                        <p class="dis"></p>
                       </div>
                     </div>
                     <div class="check-price dis-content" *ngIf="chaeckType === 1">
-                      <span class="price-title">
-                        1个月
-                      </span>
+                      <span class="price-title"> 1个月 </span>
                       <div class="box-content">
-                        <p class="price">
-                          &yen;49.9
-                        </p>
-                        <p class="dis">
-                        </p>
+                        <p class="price">&yen;49.9</p>
+                        <p class="dis"></p>
                       </div>
                     </div>
                   </div>
@@ -99,18 +98,24 @@
                 <span class="title">支付方式</span>
                 <div class="pay-type-content">
                   <div class="pay-check-box pay-type-check checked">支付宝</div>
-                  <div class="about-receipt" (mouseenter)="toggleReceipt(true)" (mouseleave)="toggleReceipt(false)"><i></i>关于发票</div>
+                  <div class="about-receipt" (mouseenter)="toggleReceipt(true)" (mouseleave)="toggleReceipt(false)">
+                    <i></i>关于发票
+                  </div>
                   <div class="receipt-container" *ngIf="isShowReceipt">
                     <p>1、在镝数平台产生消费可以开具增值税普通发票，开票金额为消费金额。</p>
                     <p class="t-6">2、请联系镝数客服提供相关信息申请开具。</p>
-                    <img src="/dyassets/images/index/xiaodi.jpg" alt="">
+                    <img src="/dyassets/images/index/xiaodi.jpg" alt="" />
                     <p class="desc t-2">客服-小镝同学</p>
                     <p class="t-12">3、发票可以选择自提或邮寄两种领取方式。</p>
                   </div>
                 </div>
               </div>
 
-              <div class="pay-btn user-select-none"><a (click)="goPay()" onclick="_hmt.push(['_trackEvent', 'payPopup', 'pay', 'popup-pay-btn-click'])">立即支付</a></div>
+              <div class="pay-btn user-select-none">
+                <a (click)="goPay()" onclick="_hmt.push(['_trackEvent', 'payPopup', 'pay', 'popup-pay-btn-click'])"
+                  >立即支付</a
+                >
+              </div>
             </div>
           </div>
         </div>
