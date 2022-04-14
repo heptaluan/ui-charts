@@ -1,1 +1,1 @@
-export * from './zip-loading.component';
+export * from './zip-loading.component'

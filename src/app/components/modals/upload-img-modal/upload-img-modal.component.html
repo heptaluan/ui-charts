@@ -1,31 +1,37 @@
 <div class="upload-img-wrapper">
-  <i class="icon iconfont icon-x" (click)='close()'></i>
-  <h3>{{title}}</h3>
-  <h4>{{desc}}</h4>
-  <ul [ngClass]="{'active': imgList[1].img === ''}">
+  <i class="icon iconfont icon-x" (click)="close()"></i>
+  <h3>{{ title }}</h3>
+  <h4>{{ desc }}</h4>
+  <ul [ngClass]="{ active: imgList[1].img === '' }">
     <li *ngFor="let item of imgList; let i = index" [hidden]="i === 2 && !imgList[1].img">
-      <div 
+      <div
         [ngClass]="{
           'img-default': i === 0,
           'img-wrapper': i !== 0,
-          'active': !item.img && i !== 0,
-          'border': item.img
+          active: !item.img && i !== 0,
+          border: item.img
         }"
-        [ngStyle]="{'background': item.img}"
+        [ngStyle]="{ background: item.img }"
         (mouseenter)="handleStatus(item, true)"
         (mouseleave)="handleStatus(item, false)"
       >
-        <input type="file" *ngIf="i !== 0 && !item.img" (change)="handleImgUpload($event, item)" #uploadImg>
-        <div class="img-mask" [ngClass]="{'active': item.show && item.img}">
+        <input type="file" *ngIf="i !== 0 && !item.img" (change)="handleImgUpload($event, item)" #uploadImg />
+        <div class="img-mask" [ngClass]="{ active: item.show && item.img }">
           <div class="del-btn" (click)="delImg(item.id)"></div>
         </div>
       </div>
-      <label for="{{item.id}}" [hidden]="!item.img">
-        <input class="a-radio" type="radio" [checked]="selectId === item.id" [id]="item.id" (click)="selectOption(item.id)">
-        <span class="b-radio" [ngClass]="{'active': selectId === item.id}"></span>
-        <div class="text">{{item.title}}</div>
+      <label for="{{ item.id }}" [hidden]="!item.img">
+        <input
+          class="a-radio"
+          type="radio"
+          [checked]="selectId === item.id"
+          [id]="item.id"
+          (click)="selectOption(item.id)"
+        />
+        <span class="b-radio" [ngClass]="{ active: selectId === item.id }"></span>
+        <div class="text">{{ item.title }}</div>
       </label>
     </li>
   </ul>
-  <button (click)="updateSetting()">{{btnValue}}</button>
+  <button (click)="updateSetting()">{{ btnValue }}</button>
 </div>

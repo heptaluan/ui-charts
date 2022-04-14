@@ -1,1 +1,1 @@
-export * from './user-info-collect-modal.component';
+export * from './user-info-collect-modal.component'

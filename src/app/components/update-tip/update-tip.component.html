@@ -1,19 +1,15 @@
 <div class="update-tip-wrapper" *ngIf="isShow">
   <div class="update-tip" (mouseenter)="clearTimeout()" (mouseleave)="createTimeout()">
     <div class="title">
-      <h2>新功能上线啦~</h2><i class="icon iconfont icon-x" (click)="closeHandle($event)"></i>
+      <h2>新功能上线啦~</h2>
+      <i class="icon iconfont icon-x" (click)="closeHandle($event)"></i>
     </div>
     <p class="time">2021-03-04</p>
     <div class="content">
-      <p>新增蝴蝶图、平行线图、维诺图、三元图、笛卡尔热力图、极坐标热力图、极坐标柱状图、极坐标堆叠柱状图8个图表模板。</p>
-      <!-- <p>2、数据图文编辑页面增加「手机上传图片」功能；</p>
-      <p>3、图表模板页面增加「搜索」功能；</p> -->
-      <!-- 如果只有3条更新则去掉下方的<p>……</p> -->
-      <!-- <p>……</p> -->
+      <p>
+        新增蝴蝶图、平行线图、维诺图、三元图、笛卡尔热力图、极坐标热力图、极坐标柱状图、极坐标堆叠柱状图8个图表模板。
+      </p>
     </div>
     <button (click)="goHelp()">查看更多</button>
   </div>
 </div>
-
-  
-

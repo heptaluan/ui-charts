@@ -1,1 +1,1 @@
-export * from './upload-img-modal.component';
+export * from './upload-img-modal.component'

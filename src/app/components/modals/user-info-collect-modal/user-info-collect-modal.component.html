@@ -1,60 +1,81 @@
 <div class="info-container">
-  <i class="icon iconfont icon-x" (click)='close()'></i>
+  <i class="icon iconfont icon-x" (click)="close()"></i>
   <!-- 行业 -->
   <div class="first-page" *ngIf="pageNum === 1">
-    <h2>{{titleInfo}}</h2>
+    <h2>{{ titleInfo }}</h2>
     <h3>您所在的行业是？</h3>
     <div class="page-info-wrapper">
-
-      <div class="page-info-item"
-          *ngFor="let item of industries;"
-          [ngClass]="{'active': userIndustry === item.name}"
-          (click)="changeSelectPageOne(item.name)"
+      <div
+        class="page-info-item"
+        *ngFor="let item of industries"
+        [ngClass]="{ active: userIndustry === item.name }"
+        (click)="changeSelectPageOne(item.name)"
       >
         <div class="icon">
-          <img src="{{item.icon.split('.svg')[0]}}-hover.svg" *ngIf="userIndustry !== item.name" alt="">
-          <img src="{{item.icon}}" *ngIf="userIndustry === item.name" alt="">
+          <img src="{{ item.icon.split('.svg')[0] }}-hover.svg" *ngIf="userIndustry !== item.name" alt="" />
+          <img src="{{ item.icon }}" *ngIf="userIndustry === item.name" alt="" />
         </div>
-        <p>{{item.name}}</p>
+        <p>{{ item.name }}</p>
       </div>
 
-      <input *ngIf="isShowPageOneInput" (keyup)='handleUserIndustry()' type="text" [(ngModel)]="otherIndustry" [ngStyle]="pageOneInput" placeholder="请补充" />
+      <input
+        *ngIf="isShowPageOneInput"
+        (keyup)="handleUserIndustry()"
+        type="text"
+        [(ngModel)]="otherIndustry"
+        [ngStyle]="pageOneInput"
+        placeholder="请补充"
+      />
     </div>
-    <div class="page-bottom" [ngStyle]="{'justify-content': isPriceEnter ? 'space-between' : 'center'}">
-      <button [(disabled)]='!isShowPageOneButton' (click)="changePageNum(2)" [ngClass]="{'blue': isShowPageOneButton}">下一步</button>
+    <div class="page-bottom" [ngStyle]="{ 'justify-content': isPriceEnter ? 'space-between' : 'center' }">
+      <button [(disabled)]="!isShowPageOneButton" (click)="changePageNum(2)" [ngClass]="{ blue: isShowPageOneButton }">
+        下一步
+      </button>
       <button class="jump-price" *ngIf="isPriceEnter" (click)="goPayImmediate()">跳过优惠，直接支付</button>
     </div>
   </div>
 
   <!-- 职业 -->
   <div class="second-page" *ngIf="pageNum === 2">
-    <h2>{{titleInfo}}</h2>
+    <h2>{{ titleInfo }}</h2>
     <h3>您的职业是？</h3>
     <div class="page-info-wrapper">
-      <div class="page-info-item"
-        *ngFor="let item of jobs; let i = index;"
-        [ngClass]="{'active': userCareer === item.name}"
+      <div
+        class="page-info-item"
+        *ngFor="let item of jobs; let i = index"
+        [ngClass]="{ active: userCareer === item.name }"
         (click)="changeSelectPageTwo(item.name)"
       >
-      <div class="icon">
-        <img src="{{item.icon.split('.svg')[0]}}-hover.svg" *ngIf="userCareer !== item.name" alt="">
-        <img src="{{item.icon}}" *ngIf="userCareer === item.name" alt="">
+        <div class="icon">
+          <img src="{{ item.icon.split('.svg')[0] }}-hover.svg" *ngIf="userCareer !== item.name" alt="" />
+          <img src="{{ item.icon }}" *ngIf="userCareer === item.name" alt="" />
+        </div>
+        <p>{{ item.name }}</p>
       </div>
-        <p>{{item.name}}</p>
-      </div>
-      <input *ngIf="isShowPageTwoInput" (keyup)='handleUserCareer()'  type="text" [(ngModel)]="otherCareer" [ngStyle]="pageTwoInput"  placeholder="请补充" />
+      <input
+        *ngIf="isShowPageTwoInput"
+        (keyup)="handleUserCareer()"
+        type="text"
+        [(ngModel)]="otherCareer"
+        [ngStyle]="pageTwoInput"
+        placeholder="请补充"
+      />
     </div>
     <div class="page-bottom" style="width: 288px">
       <button class="blue" (click)="changePageNum(1)">上一步</button>
-      <button [(disabled)]='!isShowPageTwoButton' (click)="comlete()" [ngClass]="{'blue': isShowPageTwoButton}">完成</button>
+      <button [(disabled)]="!isShowPageTwoButton" (click)="comlete()" [ngClass]="{ blue: isShowPageTwoButton }">
+        完成
+      </button>
     </div>
   </div>
 
   <!-- 奖励 -->
   <div class="third-page" *ngIf="pageNum === 3">
     <button class="award-text" (click)="goPrice()">了解特权</button>
-    <button class="award-text">添加微信<div class="float-code float-code-wechat"><img
-      src="/dyassets/images/index/xiaodi.jpg" alt="微信客服"></div></button>
+    <button class="award-text">
+      添加微信
+      <div class="float-code float-code-wechat"><img src="/dyassets/images/index/xiaodi.jpg" alt="微信客服" /></div>
+    </button>
     <button class="award" (click)="bsModalRef.hide()">完成</button>
   </div>
 </div>
