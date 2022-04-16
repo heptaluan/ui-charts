@@ -1,28 +1,28 @@
 <div class="conf-container">
- <div class="bill-list" *ngIf="!billListFlag">
-  <div class="bill-item" *ngFor="let item of billList; let i = index" [ngClass]="{hl: i == 0}">
-    <div class="bill-block">
-      <span>{{item.type}}</span>
-    </div>
-    <div class="bill-block">
-      <span>{{item.pro_name}}</span>
-    </div>
-    <div class="bill-block">
-      <span>{{item.discount}}</span>
-    </div>
-    <div class="bill-block">
-      <span>{{item.price}}</span>
-    </div>
-    <div class="bill-block">
-      <span>{{item.pay_type === '1' ? '支付宝' : item.pay_type}}</span>
-    </div>
-    <div class="bill-block last">
-      <span>{{item.time}}</span>
+  <div class="bill-list" *ngIf="!billListFlag">
+    <div class="bill-item" *ngFor="let item of billList; let i = index" [ngClass]="{ hl: i == 0 }">
+      <div class="bill-block">
+        <span>{{ item.type }}</span>
+      </div>
+      <div class="bill-block">
+        <span>{{ item.pro_name }}</span>
+      </div>
+      <div class="bill-block">
+        <span>{{ item.discount }}</span>
+      </div>
+      <div class="bill-block">
+        <span>{{ item.price }}</span>
+      </div>
+      <div class="bill-block">
+        <span>{{ item.pay_type === '1' ? '支付宝' : item.pay_type }}</span>
+      </div>
+      <div class="bill-block last">
+        <span>{{ item.time }}</span>
+      </div>
     </div>
   </div>
- </div>
- <div class="no-bill-list" *ngIf="billListFlag">
+  <div class="no-bill-list" *ngIf="billListFlag">
     <i></i>
     <p>当前账户暂无账单信息</p>
- </div>
+  </div>
 </div>

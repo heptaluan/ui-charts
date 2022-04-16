@@ -27,7 +27,7 @@
       bottom: 54px;
       left: 50%;
       transform: translate(-50%);
-  
+
       input {
         display: block;
         width: 430px;
@@ -43,11 +43,11 @@
           outline: none;
         }
       }
-  
+
       .error {
         border: 1px solid #d0021b;
       }
-  
+
       button {
         display: block;
         width: 102px;
@@ -65,7 +65,7 @@
           outline: none;
         }
       }
-  
+
       .error-tip {
         position: absolute;
         left: 10px;
@@ -78,7 +78,7 @@
         letter-spacing: 0px;
         color: #d0021b;
       }
-  
+
       .succ-tip {
         position: absolute;
         right: 25px;
@@ -97,7 +97,7 @@
   .part-wrapper {
     dt.title {
       width: 180px;
-	    height: 30px;
+      height: 30px;
       margin: 0 auto;
       position: relative;
     }
@@ -118,7 +118,8 @@
       }
     }
 
-    &.part-two, &.part-three {
+    &.part-two,
+    &.part-three {
       dd.wrapper {
         width: 541px;
         margin: 0 auto;
@@ -158,7 +159,7 @@
     //       margin: 0 auto;
     //       height: 100%;
     //       width: 932px;
-    
+
     //       .content-wrapper {
     //         margin-top: 51px;
     //         p {
@@ -167,7 +168,7 @@
     //           font-weight: 600;
     //           height: 36px;
     //           padding-top: 4px;
-              
+
     //           img {
     //             vertical-align: -3px;
     //           }
@@ -178,7 +179,7 @@
     //           line-height: 44px;
     //           margin-top: 42px;
     //           background-color: #f57d23;
-    //           box-shadow: 0px 2px 4px 0px 
+    //           box-shadow: 0px 2px 4px 0px
     //             rgba(35, 61, 185, 0.38);
     //           border-radius: 6px;
     //           color: #ffffff;
@@ -193,7 +194,7 @@
     //         height: 223px;
     //         background: url('/dyassets/images/invite-background.svg') no-repeat center/contain;
     //       }
-  
+
     //     }
     //   }
     // }

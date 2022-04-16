@@ -1,182 +1,181 @@
-
 .conf-container {
-    padding-bottom: 100px;
-    a {
+  padding-bottom: 100px;
+  a {
+    text-decoration: none;
+  }
+  .conf-title {
+    font-size: 24px;
+    color: #323b47;
+  }
+  .member-tb-lf {
+    width: 525px;
+    height: 640px;
+    margin-right: -6px;
+  }
+  .member-tb-rg {
+    width: 306px;
+    height: 640px;
+    z-index: 2;
+    position: relative;
+    .m-btns-container {
+      margin: 0px 48px;
+      top: 206px;
+      a:hover {
         text-decoration: none;
-    }
-    .conf-title {
-        font-size:24px;
-        color:#323b47;
-    }
-    .member-tb-lf {
-        width: 525px;
-        height: 640px;
-        margin-right: -6px;
-    }
-    .member-tb-rg {
-        width: 306px;
-        height: 640px;
-        z-index: 2;
-        position: relative;
-        .m-btns-container {
-            margin: 0px 48px;
-            top: 206px;
-            a:hover {
-                text-decoration: none;
-            }
-            .m-select-line {
-                background:#efefef;
-                border-radius:6px;
-                width:185px;
-                height:4px;
-                position: absolute;
-                top: 5px;
-                left: 50%;
-                transform: translateX(-50%);
-            }
-            .m-select-btn {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                align-items: center;
-                height: 60px;
-                .m-select-circle {
-                    background:#ffffff;
-                    border:2px solid #e9e9e9;
-                    width:12px;
-                    height:12px;
-                    border-radius:100%;
-                    z-index: 2;
-                }
-                .m-select-text {
-                    font-size:18px;
-                    color:#5c6066;
-                }
-            }
-            .active {
-                .m-select-circle {
-                    background:#ffffff;
-                    border:2px solid rgb(184,222,247);
-                    width:16px;
-                    height:16px;
-                    border-radius:100%;
-                    z-index: 2;
-                    margin-top: -1px;
-                }
-            }
-        }
-        .m-select-tip {
-            position: absolute;
-            z-index: 3;
-            top: 305px;
-            font-size:18px;
-            color:#666666;
-            width: 100%;
-            text-align: center;
-        }
-        .m-select-money {
-            position: absolute;
-            top: 348px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            flex-direction: row;
-            align-items: flex-end;
-            .m-select-permoney {
-                display: flex;
-                flex-direction: row;
-                align-items: flex-end;
-                .m-select-total {
-                    font-size:36px;
-                    color:#333333;
-                    font-weight: 500;
-                    line-height: 36px;
-                }
-                .m-select-per {
-                    font-size:18px;
-                    color:#666666;
-                    width: 25px;
-                }
-            }
-            .m-select-origin {
-                font-size:18px;
-                color:#666666;
-                margin-left: 15px;
-            }
-        }
-        .m-select-buy {
-            position: absolute;
-            top: 474px;
-            left: 50%;
-            transform: translateX(-50%);
-            background:#0090ff;
-            border-radius:4px;
-            width:134px;
-            height:34px;
-            font-size:12px;
-            color:#ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-    }
-    .member-ask-btn {
-        background:#0090ff;
-        border-radius:4px;
-        width:134px;
-        height:34px;
-        font-size:12px;
-        color:#ffffff;
+      }
+      .m-select-line {
+        background: #efefef;
+        border-radius: 6px;
+        width: 185px;
+        height: 4px;
+        position: absolute;
+        top: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .m-select-btn {
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        justify-content: space-between;
         align-items: center;
+        height: 60px;
+        .m-select-circle {
+          background: #ffffff;
+          border: 2px solid #e9e9e9;
+          width: 12px;
+          height: 12px;
+          border-radius: 100%;
+          z-index: 2;
+        }
+        .m-select-text {
+          font-size: 18px;
+          color: #5c6066;
+        }
+      }
+      .active {
+        .m-select-circle {
+          background: #ffffff;
+          border: 2px solid rgb(184, 222, 247);
+          width: 16px;
+          height: 16px;
+          border-radius: 100%;
+          z-index: 2;
+          margin-top: -1px;
+        }
+      }
     }
+    .m-select-tip {
+      position: absolute;
+      z-index: 3;
+      top: 305px;
+      font-size: 18px;
+      color: #666666;
+      width: 100%;
+      text-align: center;
+    }
+    .m-select-money {
+      position: absolute;
+      top: 348px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      .m-select-permoney {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        .m-select-total {
+          font-size: 36px;
+          color: #333333;
+          font-weight: 500;
+          line-height: 36px;
+        }
+        .m-select-per {
+          font-size: 18px;
+          color: #666666;
+          width: 25px;
+        }
+      }
+      .m-select-origin {
+        font-size: 18px;
+        color: #666666;
+        margin-left: 15px;
+      }
+    }
+    .m-select-buy {
+      position: absolute;
+      top: 474px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #0090ff;
+      border-radius: 4px;
+      width: 134px;
+      height: 34px;
+      font-size: 12px;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  .member-ask-btn {
+    background: #0090ff;
+    border-radius: 4px;
+    width: 134px;
+    height: 34px;
+    font-size: 12px;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .modal-content {
-    text-align: center;
-    a {
-        text-decoration: none;
-    }
+  text-align: center;
+  a {
+    text-decoration: none;
+  }
 }
 .modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 55px;
+  width: 100%;
+  .modal-title {
+    font-family: PingFangSC-Medium;
+    font-size: 18px;
+    color: #323b47;
+  }
+  .pull-right {
+    position: absolute;
+    right: 20px;
+    top: 12px;
+  }
+}
+
+.modal-body {
+  text-align: center;
+  padding: 30px;
+  width: 441px;
+  .done-btn {
+    background: #0090ff;
+    border-radius: 4px;
+    width: 200px;
+    height: 45px;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    height: 55px;
-    width: 100%;
-    .modal-title {
-        font-family:PingFangSC-Medium;
-        font-size:18px;
-        color:#323b47;
-    }
-    .pull-right {
-        position: absolute;
-        right: 20px; 
-        top:12px;
-    }
-}
-    
-.modal-body {
-    text-align: center;
-    padding: 30px;
-    width: 441px;
-    .done-btn {
-        background:#0090ff;
-        border-radius:4px;
-        width:200px;
-        height:45px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        // font-family:SourceHanSansCN-Normal;
-        font-size:18px;
-        color:#ffffff;
-        margin: auto;
-    }
+    // font-family:SourceHanSansCN-Normal;
+    font-size: 18px;
+    color: #ffffff;
+    margin: auto;
+  }
 
-    .btn-disable {
-        background: rgb(216, 222, 227);
-    }
+  .btn-disable {
+    background: rgb(216, 222, 227);
+  }
 }

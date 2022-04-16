@@ -1,1 +1,1 @@
-export * from './media-operations.component';
+export * from './media-operations.component'

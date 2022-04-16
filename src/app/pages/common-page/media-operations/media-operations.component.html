@@ -1,37 +1,58 @@
 <ng-container *ngIf="!isSucc">
   <div class="banner">
-    <div class="banner-wrapper" [ngClass]="{'active': userName}">
-      <h2 [ngClass]="{'active': userName}">商务合作通道</h2>
-      <div class="left" [ngClass]="{'active': userName}">
+    <div class="banner-wrapper" [ngClass]="{ active: userName }">
+      <h2 [ngClass]="{ active: userName }">商务合作通道</h2>
+      <div class="left" [ngClass]="{ active: userName }">
         <div class="text">
           <h4><i></i>快速上手</h4>
-          <p>提供近百种图表模板、上千个酷炫的场景模板<br>支持视频、h5、图文、gif、图片等多种作品形式</p>
+          <p>提供近百种图表模板、上千个酷炫的场景模板<br />支持视频、h5、图文、gif、图片等多种作品形式</p>
           <h4><i></i>行业解决方案</h4>
-          <p>可嵌入业务编辑系统和工作流程<br>个性定制图表、模版、数据及数据可视化作品</p>
+          <p>可嵌入业务编辑系统和工作流程<br />个性定制图表、模版、数据及数据可视化作品</p>
           <h4><i></i>专业顾问</h4>
-          <p>提供数据思维与表达的专业培训<br>专业顾问与您深入沟通业务需求</p>
+          <p>提供数据思维与表达的专业培训<br />专业顾问与您深入沟通业务需求</p>
         </div>
       </div>
       <div class="right">
         <div class="input-wrapper">
-          <i></i>真实姓名<input placeholder="请输入真实姓名" [(ngModel)]="realName" (focus)="clearErrorText('nameErrorText')" type="text" />
-          <div class="error-tip" *ngIf="nameErrorText">{{nameErrorText}}</div>
+          <i></i>真实姓名<input
+            placeholder="请输入真实姓名"
+            [(ngModel)]="realName"
+            (focus)="clearErrorText('nameErrorText')"
+            type="text"
+          />
+          <div class="error-tip" *ngIf="nameErrorText">{{ nameErrorText }}</div>
         </div>
         <div class="input-wrapper active" *ngIf="!userName">
-          <i></i>手机号<input placeholder="请输入真实手机号码" [(ngModel)]="phoneNo" (focus)="clearErrorText('phoneErrorText')" type="text" />
-          <div class="error-tip" *ngIf="phoneErrorText">{{phoneErrorText}}</div>
+          <i></i>手机号<input
+            placeholder="请输入真实手机号码"
+            [(ngModel)]="phoneNo"
+            (focus)="clearErrorText('phoneErrorText')"
+            type="text"
+          />
+          <div class="error-tip" *ngIf="phoneErrorText">{{ phoneErrorText }}</div>
         </div>
         <div class="input-wrapper active" *ngIf="!userName">
-          <i></i>验证码<input placeholder="请输入验证码" [(ngModel)]="verifyCode" (focus)="clearErrorText('codeErrorText')" type="text" class="active" /><button [disabled]="disabled" (click)="getCode()">{{codeText}}</button>
-          <div class="error-tip" *ngIf="codeErrorText">{{codeErrorText}}</div>
+          <i></i>验证码<input
+            placeholder="请输入验证码"
+            [(ngModel)]="verifyCode"
+            (focus)="clearErrorText('codeErrorText')"
+            type="text"
+            class="active"
+          /><button [disabled]="disabled" (click)="getCode()">{{ codeText }}</button>
+          <div class="error-tip" *ngIf="codeErrorText">{{ codeErrorText }}</div>
         </div>
         <div class="input-wrapper">
-          <i></i>单位名称<input placeholder="请输入单位名称" [(ngModel)]="company" (focus)="clearErrorText('companyErrorText')" type="text" />
-          <div class="error-tip" *ngIf="companyErrorText">{{companyErrorText}}</div>
+          <i></i>单位名称<input
+            placeholder="请输入单位名称"
+            [(ngModel)]="company"
+            (focus)="clearErrorText('companyErrorText')"
+            type="text"
+          />
+          <div class="error-tip" *ngIf="companyErrorText">{{ companyErrorText }}</div>
         </div>
         <div class="input-wrapper">
           推荐人ID<input placeholder="请输入推荐人ID" [(ngModel)]="inviter" type="text" />
-          <div class="error-tip" *ngIf="inviterErrorText">{{inviterErrorText}}</div>
+          <div class="error-tip" *ngIf="inviterErrorText">{{ inviterErrorText }}</div>
         </div>
         <div class="submit" (click)="submit()">提交审核</div>
       </div>
@@ -46,8 +67,8 @@
       <h3>媒体大咖说</h3>
       <div class="person-wrapper">
         <div class="record" *ngFor="let item of records; let i = index">
-          <div class="text-container text-container-{{i}}">{{ item.text }}</div>
-          <div class="person person-{{i}}">
+          <div class="text-container text-container-{{ i }}">{{ item.text }}</div>
+          <div class="person person-{{ i }}">
             <div class="avatar"></div>
             <div class="text-wrapper">
               <p>{{ item.name }}</p>
@@ -62,12 +83,10 @@
 </ng-container>
 <ng-container *ngIf="isSucc">
   <div class="succ-wrapper">
-    <img src="/dyassets/images/common-page/media-operations/submit-succ.svg" alt="">
+    <img src="/dyassets/images/common-page/media-operations/submit-succ.svg" alt="" />
     <p class="title">提交成功！</p>
     <p class="desc">行业顾问将尽快与您联系 ：）</p>
     <button [routerLink]="['/pages', 'home', 'index']">返回首页</button>
   </div>
   <lx-dy-footer class="succ"></lx-dy-footer>
 </ng-container>
-
-
