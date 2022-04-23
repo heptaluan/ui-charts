@@ -1,68 +1,126 @@
 <!-- A 修改密码 -->
-<div class="modal fade" bsModal #resetPwModal="bs-modal" [config]="{backdrop: 'static'}" tabindex="-1" role="dialog" aria-labelledby="dialog-static-name">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title pull-left">{{title}}</h4>
-                <button type="button" class="close pull-right" aria-label="Close" (click)="hide()">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <!-- 第一步、提示用户，让用户选择验证方式（手机还是邮箱） -->
-                <div class="findpw0" #findPw0>
-                    <div style="letter-spacing: -1px;">为了保证您的账号安全，我们需要验证您的身份。</div>
-                    <div style="margin: 5px 0px 25px 0;">请在下方选择适合您的验证方式</div>
-                    <div class="d-flex flex-row align-items-center justify-content-around">
-                        <a href="javascript:;" class="select-btn" (click)="onPhone()"><div>手机验证</div></a>
-                        <a href="javascript:;" class="btn select-btn {{emailstate}}" (click)="onMail()"><div>邮箱验证</div></a>
-                    </div>
-                </div>
-                <!-- 第二步、手机验证，输入验证码 -->
-                <div class="findpw1-phone" hidden #findPw1Phone>
-                    <form>
-                        <div class="form-group">
-                            <input class="form-control" (keydown)="onKeyDown($event)" [(ngModel)]="phoneNo" id="fpwPhoneNumInput" name="phonenum" placeholder="请输入手机号">
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control ignore form-code-input" (keydown)="onKeyDown($event)" [(ngModel)]="phoneCode" id="fpwPhoneCodeInput" name="verifycode" placeholder="短信验证码">
-                            <a href="javascript:;" class="btn sms-btn {{codestate}}" (click)="onPhoneSendSMS()"><div>{{sendCodeTip}}</div></a>
-                        </div>
-                    </form>
-                    <div class="error-tip">{{errorTip}}</div>
-                    <a href="javascript:;" class="done-btn" (click)="onPhoneNext()"><div>下一步</div></a>
-                </div>
-                <!-- 第二步、邮箱验证，输入邮箱验证码 -->
-                <div class="findpw1-mail" hidden #findPw1Mail>
-                    <form>
-                        <div class="form-group">
-                            <input class="form-control" (keydown)="onKeyDown($event)" [(ngModel)]="emailNo" (keydown)="onKeyDown($event)" id="fpwMailNumInput" name="phonenum" placeholder="请输入邮箱">
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control ignore form-code-input" (keydown)="onKeyDown($event)" [(ngModel)]="emailCode" id="fpwMailCodeInput" name="verifycode" placeholder="邮箱验证码">
-                            <a href="javascript:;" class="btn sms-btn {{codestate}}" (click)="onMailSendSMS()"><div>{{sendCodeTip}}</div></a>
-                        </div>
-                    </form>
-                    <div class="error-tip">{{errorTip}}</div>
-                    <a href="javascript:;" class="done-btn" (click)="onMailNext()"><div>下一步</div></a>
-                </div>
-                <!-- 第三步、输入新密码 -->
-                <div class="findpw2-reset" hidden #findPw2Reset>
-                    <form>
-                        <div class="form-group">
-                            <input class="form-control" (keyup)="onKeyUpPwd($event)" [(ngModel)]="pwd0" id="fpwNewPwd" type="password" name="password" placeholder="密码">
-                            <span class="required">*</span>
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control" [(ngModel)]="pwd1" id="fpwConfirmNewPwd" type="password" name="confirmpwd" placeholder="再次输入密码">
-                            <span class="required">*</span>
-                        </div>
-                    </form>
-                    <div class="error-tip">{{errorTip}}</div>
-                   
- <a href="javascript:;" class="done-btn" style="width: 130px !important;" (click)="onNewPwdDone()"><div>完成</div></a>
-                </div>
-            </div>
+<div
+  class="modal fade"
+  bsModal
+  #resetPwModal="bs-modal"
+  [config]="{ backdrop: 'static' }"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="dialog-static-name"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">{{ title }}</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- 第一步、提示用户，让用户选择验证方式（手机还是邮箱） -->
+        <div class="findpw0" #findPw0>
+          <div style="letter-spacing: -1px">为了保证您的账号安全，我们需要验证您的身份。</div>
+          <div style="margin: 5px 0px 25px 0">请在下方选择适合您的验证方式</div>
+          <div class="d-flex flex-row align-items-center justify-content-around">
+            <a href="javascript:;" class="select-btn" (click)="onPhone()"><div>手机验证</div></a>
+            <a href="javascript:;" class="btn select-btn {{ emailstate }}" (click)="onMail()"><div>邮箱验证</div></a>
+          </div>
         </div>
+        <!-- 第二步、手机验证，输入验证码 -->
+        <div class="findpw1-phone" hidden #findPw1Phone>
+          <form>
+            <div class="form-group">
+              <input
+                class="form-control"
+                (keydown)="onKeyDown($event)"
+                [(ngModel)]="phoneNo"
+                id="fpwPhoneNumInput"
+                name="phonenum"
+                placeholder="请输入手机号"
+              />
+            </div>
+            <div class="form-group">
+              <input
+                class="form-control ignore form-code-input"
+                (keydown)="onKeyDown($event)"
+                [(ngModel)]="phoneCode"
+                id="fpwPhoneCodeInput"
+                name="verifycode"
+                placeholder="短信验证码"
+              />
+              <a href="javascript:;" class="btn sms-btn {{ codestate }}" (click)="onPhoneSendSMS()"
+                ><div>{{ sendCodeTip }}</div></a
+              >
+            </div>
+          </form>
+          <div class="error-tip">{{ errorTip }}</div>
+          <a href="javascript:;" class="done-btn" (click)="onPhoneNext()"><div>下一步</div></a>
+        </div>
+        <!-- 第二步、邮箱验证，输入邮箱验证码 -->
+        <div class="findpw1-mail" hidden #findPw1Mail>
+          <form>
+            <div class="form-group">
+              <input
+                class="form-control"
+                (keydown)="onKeyDown($event)"
+                [(ngModel)]="emailNo"
+                (keydown)="onKeyDown($event)"
+                id="fpwMailNumInput"
+                name="phonenum"
+                placeholder="请输入邮箱"
+              />
+            </div>
+            <div class="form-group">
+              <input
+                class="form-control ignore form-code-input"
+                (keydown)="onKeyDown($event)"
+                [(ngModel)]="emailCode"
+                id="fpwMailCodeInput"
+                name="verifycode"
+                placeholder="邮箱验证码"
+              />
+              <a href="javascript:;" class="btn sms-btn {{ codestate }}" (click)="onMailSendSMS()"
+                ><div>{{ sendCodeTip }}</div></a
+              >
+            </div>
+          </form>
+          <div class="error-tip">{{ errorTip }}</div>
+          <a href="javascript:;" class="done-btn" (click)="onMailNext()"><div>下一步</div></a>
+        </div>
+        <!-- 第三步、输入新密码 -->
+        <div class="findpw2-reset" hidden #findPw2Reset>
+          <form>
+            <div class="form-group">
+              <input
+                class="form-control"
+                (keyup)="onKeyUpPwd($event)"
+                [(ngModel)]="pwd0"
+                id="fpwNewPwd"
+                type="password"
+                name="password"
+                placeholder="密码"
+              />
+              <span class="required">*</span>
+            </div>
+            <div class="form-group">
+              <input
+                class="form-control"
+                [(ngModel)]="pwd1"
+                id="fpwConfirmNewPwd"
+                type="password"
+                name="confirmpwd"
+                placeholder="再次输入密码"
+              />
+              <span class="required">*</span>
+            </div>
+          </form>
+          <div class="error-tip">{{ errorTip }}</div>
+
+          <a href="javascript:;" class="done-btn" style="width: 130px !important" (click)="onNewPwdDone()"
+            ><div>完成</div></a
+          >
+        </div>
+      </div>
     </div>
+  </div>
 </div>

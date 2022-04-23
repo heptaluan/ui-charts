@@ -7,10 +7,16 @@
   </div>
   <div class="info-wrapper">
     <span class="title top-2">昵称</span>
-    <input type="text" placeholder="请输入昵称" [class.error-border]="nickNameFlag" [(ngModel)]="nickName" (keyup)="onNicknameUp($event)" />
+    <input
+      type="text"
+      placeholder="请输入昵称"
+      [class.error-border]="nickNameFlag"
+      [(ngModel)]="nickName"
+      (keyup)="onNicknameUp($event)"
+    />
     <span class="error-tip" *ngIf="nickNameFlag">请输入20个字以内</span>
   </div>
-  <div class="info-wrapper" [ngStyle]="{'margin-top' : nickNameFlag ? '32px' : '20px' }">
+  <div class="info-wrapper" [ngStyle]="{ 'margin-top': nickNameFlag ? '32px' : '20px' }">
     <span class="title top-2">个人主页</span>
     <input type="text" placeholder="请输入个人主页" [(ngModel)]="site" (keyup)="onSiteUp($event)" />
   </div>
@@ -24,7 +30,7 @@
     ></textarea>
     <span class="error-tip" *ngIf="introFlag">请输入140个字以内</span>
   </div>
-  <div class="info-wrapper upload-avatar" [ngStyle]="{'margin-top' : introFlag ? '32px' : '20px' }">
+  <div class="info-wrapper upload-avatar" [ngStyle]="{ 'margin-top': introFlag ? '32px' : '20px' }">
     <span class="title">上传头像</span><span>建议上传图片像素为400*400，支持jpg、jpeg、png、bmp格式</span>
   </div>
 
@@ -71,7 +77,6 @@
         </button>
       </div>
       <div class="modal-body">
-        <!-- <img-cropper #cropper [image]="avatarData" [settings]="cropperSettings" (onCrop)="cropped($event)"></img-cropper> -->
         <img-cropper #cropper [image]="avatarData" [settings]="cropperSettings"></img-cropper>
         <a href="javascript:;" class="modal-done-btn" (click)="onImageSave()">完成</a>
       </div>
