@@ -40,10 +40,10 @@
   }
 
   div ::-webkit-scrollbar-track {
-    background: transparent !important; // all: initial !important;
+    background: transparent !important;
   }
   div ::-webkit-scrollbar-corner {
-    background: transparent !important; //
+    background: transparent !important;
   }
   nb-layout {
     .scrollable-container {
@@ -55,9 +55,9 @@
       overflow: hidden;
       nb-layout-header {
         height: 124px;
-        background: #303133; //导出导航条顶部颜色
+        background: #303133;
         box-sizing: border-box;
-        
+
         nav {
           &.fixed {
             display: flex;
@@ -240,7 +240,7 @@
           }
           // 内容
           lx-preview .page-container {
-            background: url("/dyassets/images/transparent.png");
+            background: url('/dyassets/images/transparent.png');
           }
           #tool {
             display: none;

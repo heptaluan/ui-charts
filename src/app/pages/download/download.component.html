@@ -1,5 +1,4 @@
 <nb-layout class="download-page-box">
-
   <!-- 导航条 -->
   <nb-layout-header fixed>
     <div class="header-top">
@@ -10,11 +9,10 @@
     </div>
     <div class="header-bottom">
       <div class="header-bottom-tab">
-        <div class="btn btn-pc" [ngClass]="{'active': isPCShow}" (click)="isPCShow = true"><i></i>电脑</div>
-        <div class="btn btn-phone" [ngClass]="{'active': !isPCShow}" (click)="isPCShow = false"><i></i>手机</div>
+        <div class="btn btn-pc" [ngClass]="{ active: isPCShow }" (click)="isPCShow = true"><i></i>电脑</div>
+        <div class="btn btn-phone" [ngClass]="{ active: !isPCShow }" (click)="isPCShow = false"><i></i>手机</div>
       </div>
     </div>
-
   </nb-layout-header>
   <!-- 缩略图 左边栏 -->
   <nb-sidebar state="expanded" class="download-left overview-sidebar">
@@ -23,13 +21,17 @@
   <!-- 中间部分 -->
 
   <nb-layout-column (mouseenter)="setToolLeft()" (mouseleave)="isToolShow = false">
-    <div class="show" [ngClass]="{'pcHide': !isPCShow}">
+    <div class="show" [ngClass]="{ pcHide: !isPCShow }">
       <div class="download-page preview-container d-block mx-auto" changeZoom>
-        <lx-preview [contents]="contents$ | async" [watermark]="showWatermark" [bgTransparent]="bgTransparent"
-          [scale]="scale"></lx-preview>
+        <lx-preview
+          [contents]="contents$ | async"
+          [watermark]="showWatermark"
+          [bgTransparent]="bgTransparent"
+          [scale]="scale"
+        ></lx-preview>
       </div>
     </div>
-    <div class="phone show" [ngClass]="{'hide': isPCShow}">
+    <div class="phone show" [ngClass]="{ hide: isPCShow }">
       <app-dy-scroll class="wrapper-content" [data]="contents$ | async">
         <lx-preview [contents]="contents$ | async" [watermark]="showWatermark" [isPhone]="true"></lx-preview>
       </app-dy-scroll>
@@ -37,9 +39,13 @@
   </nb-layout-column>
 
   <nb-sidebar state="expanded" right class="function-sidebar download-right">
-    <lx-config-download [project]="project" (scaleChange)="onScaleChange($event)"
-      (watermark)="showWatermark = !showWatermark" [projectName]="projectName"
-      (toggleTransparent)="bgTransparent = !bgTransparent"></lx-config-download>
+    <lx-config-download
+      [project]="project"
+      (scaleChange)="onScaleChange($event)"
+      (watermark)="showWatermark = !showWatermark"
+      [projectName]="projectName"
+      (toggleTransparent)="bgTransparent = !bgTransparent"
+    ></lx-config-download>
   </nb-sidebar>
 </nb-layout>
 

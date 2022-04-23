@@ -1,34 +1,31 @@
 :host ::ng-deep {
-    .page {
+  .page {
+    position: relative;
+    pointer-events: none;
+    cursor: default;
+    transform-origin: 0 0;
+  }
+  .page-thumb {
+    width: 100%;
+    height: 140px;
+    position: relative;
+    top: 1px;
+    box-sizing: border-box;
+    .thumb-container {
+      position: absolute;
+      top: 31px;
+      left: 45px;
+      right: 45px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      lx-preview {
+        overflow: hidden;
+        transform: translateZ(0);
         position: relative;
-        pointer-events: none;
-        cursor: default;
-        transform-origin: 0 0;        
+        border-radius: 2px;
+        border: solid 1px #0090ff;
+      }
     }
-    .page-thumb {
-        width: 100%;
-        height: 140px;
-        position: relative;
-        top: 1px;
-        // background-color: #323232;
-        // border-bottom: 1px solid #424242;
-        box-sizing: border-box;
-        .thumb-container {
-            position: absolute;
-            top: 31px;
-            // bottom: 19px;
-            left: 45px;
-            right: 45px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            lx-preview {
-                overflow: hidden;
-                transform: translateZ(0);
-                position: relative;     
-                border-radius: 2px;
-                border: solid 1px #0090ff;           
-            }            
-        }
-    }   
+  }
 }
