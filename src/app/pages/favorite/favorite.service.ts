@@ -1,16 +1,16 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core'
 
 @Injectable()
 export class FavoriteService {
-  type = 'chart';
+  type = 'chart'
 
   constructor() {}
 
   setType(type) {
-    this.type = type;
+    this.type = type
   }
 
   getType() {
-    return this.type;
+    return this.type
   }
 }
