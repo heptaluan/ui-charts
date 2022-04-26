@@ -1,6 +1,6 @@
 .exchange-wrapper {
   height: 100%;
-  background-color: #E2F1FF;
+  background-color: #e2f1ff;
 
   header {
     position: fixed;
@@ -24,26 +24,25 @@
       background: url('/dyassets/images/home-page/mobile/header-tip.svg') no-repeat center / cover;
       position: relative;
       margin: 0.41rem 0.41rem 0 0;
-      width: .45rem;
-      height: .28rem;
+      width: 0.45rem;
+      height: 0.28rem;
       cursor: pointer;
     }
-
   }
 
   .header-tip {
     position: fixed;
     width: 1.91rem;
     height: 3.13rem;
-    padding: 0 .09rem;
-    border-radius: .06rem;
+    padding: 0 0.09rem;
+    border-radius: 0.06rem;
     background: #ffffff;
     z-index: 10;
     top: 1rem;
-    right: .41rem;
+    right: 0.41rem;
 
     &::before {
-      content: "";
+      content: '';
       width: 0;
       height: 0;
       border: 8px solid;
@@ -54,11 +53,11 @@
 
     p {
       color: #000000;
-      font-size: .3rem;
-      height: .79rem;
-      line-height: .79rem;
-      border-bottom: .01rem solid #dddddd;
-      padding-left: .27rem;
+      font-size: 0.3rem;
+      height: 0.79rem;
+      line-height: 0.79rem;
+      border-bottom: 0.01rem solid #dddddd;
+      padding-left: 0.27rem;
       outline: none;
 
       &:last-of-type {
@@ -70,11 +69,11 @@
   main {
     position: relative;
     top: 1.11rem;
-    
+
     // background-size: 7.5rem 10.97rem;
     // background: url("/dyassets/images/exchange-background.png") no-repeat center;
-    
-    &>img {
+
+    & > img {
       width: 7.5rem;
       height: 10.97rem;
     }
@@ -83,9 +82,9 @@
       position: absolute;
       width: 6.5rem;
       height: 3.78rem;
-      border-radius: .3rem;
+      border-radius: 0.3rem;
       top: 1.98rem;
-      left: .51rem;
+      left: 0.51rem;
       padding: 1.11rem 1.6rem;
 
       .login-box {
@@ -93,34 +92,34 @@
 
         div {
           width: 1.44rem;
-          height: .67rem;
-          border-radius: .335rem;
+          height: 0.67rem;
+          border-radius: 0.335rem;
           background: #ffeccc;
           color: #db0504;
-          font-size: .37rem;
+          font-size: 0.37rem;
           text-align: center;
-          line-height: .67rem;
+          line-height: 0.67rem;
           font-weight: 600;
         }
 
         p {
-          margin-left: .15rem;
+          margin-left: 0.15rem;
           color: #ffffff;
-          font-size: .41rem;
+          font-size: 0.41rem;
           width: 1.76rem;
-          height: .67rem;
+          height: 0.67rem;
           text-align: center;
-          line-height: .67rem;
+          line-height: 0.67rem;
           font-weight: 600;
         }
       }
 
       .message {
-        margin-top: .39rem;
+        margin-top: 0.39rem;
         width: 3.94rem;
-        height: .5rem;
-        line-height: .5rem;
-        font-size: .36rem;
+        height: 0.5rem;
+        line-height: 0.5rem;
+        font-size: 0.36rem;
         // text-align: center;
         color: #ffffff;
       }
@@ -130,15 +129,15 @@
       position: absolute;
       width: 6.5rem;
       height: 3.78rem;
-      border-radius: .3rem;
+      border-radius: 0.3rem;
       top: 1.98rem;
-      left: .51rem;
-      padding: .36rem .43rem .43rem .41rem;
+      left: 0.51rem;
+      padding: 0.36rem 0.43rem 0.43rem 0.41rem;
 
       p:nth-of-type(1) {
-        height: .56rem;
-        font-size: .32rem;
-        line-height: .56rem;
+        height: 0.56rem;
+        font-size: 0.32rem;
+        line-height: 0.56rem;
         color: #ffffff;
         display: flex;
 
@@ -152,38 +151,38 @@
       }
 
       input {
-        margin-top: .2rem;
+        margin-top: 0.2rem;
         width: 5.66rem;
-        height: .8rem;
+        height: 0.8rem;
         background-color: #ffffff;
-        border-radius: .11rem;
-        padding-left: .28rem;
+        border-radius: 0.11rem;
+        padding-left: 0.28rem;
         color: #999999;
-        font-size: .3rem;
-        line-height: .8rem;
+        font-size: 0.3rem;
+        line-height: 0.8rem;
         outline: none;
         border: none;
       }
 
       p:nth-of-type(2) {
         width: 5.52rem;
-        height: .4rem;
-        font-size: .28rem;
+        height: 0.4rem;
+        font-size: 0.28rem;
         color: rgba(255, 255, 255, 0.8);
-        margin-left: .21rem;
-        margin-top: .08rem;
+        margin-left: 0.21rem;
+        margin-top: 0.08rem;
       }
 
       button {
-        margin-top: .15rem;
+        margin-top: 0.15rem;
         font-weight: 600;
         width: 5.66rem;
-        height: .8rem;
+        height: 0.8rem;
         background-color: #ffeccc;
-        border-radius: .4rem;
-        line-height: .8rem;
+        border-radius: 0.4rem;
+        line-height: 0.8rem;
         text-align: center;
-        font-size: .32rem;
+        font-size: 0.32rem;
         color: #d60705;
         outline: none;
         border: none;
@@ -193,16 +192,16 @@
     .content {
       position: absolute;
       width: 6.5rem;
-	    height: 3.86rem;
-      border-radius: .3rem;
+      height: 3.86rem;
+      border-radius: 0.3rem;
       top: 6.49rem;
-      left: .51rem;
-      padding: .93rem .16rem .33rem .37rem;
+      left: 0.51rem;
+      padding: 0.93rem 0.16rem 0.33rem 0.37rem;
 
       p {
-        line-height: .52rem;
+        line-height: 0.52rem;
         color: #424242;
-        font-size: .26rem;
+        font-size: 0.26rem;
       }
     }
   }
@@ -223,17 +222,17 @@
     width: 6.2rem;
     height: 4.6rem;
     background-color: #ffffff;
-    border-radius: .14rem;
-    padding: .64rem .55rem .48rem .55rem;
+    border-radius: 0.14rem;
+    padding: 0.64rem 0.55rem 0.48rem 0.55rem;
     z-index: 99;
 
     i {
       position: absolute;
-      right: .32rem;
-      top: .32rem;
-      background: url("../../../dyassets/images/exchange/X.svg") no-repeat center center;
-      width: .36rem;
-	    height: .36rem;
+      right: 0.32rem;
+      top: 0.32rem;
+      background: url('../../../dyassets/images/exchange/X.svg') no-repeat center center;
+      width: 0.36rem;
+      height: 0.36rem;
     }
 
     img {
@@ -245,35 +244,34 @@
 
     p {
       width: 5.4rem;
-      height: .36rem;
-      line-height: .36rem;
-      font-size: .36rem;
+      height: 0.36rem;
+      line-height: 0.36rem;
+      font-size: 0.36rem;
       text-align: center;
       color: #000000;
-      margin-top: .4rem;
+      margin-top: 0.4rem;
     }
 
     .d-flex {
       div {
         width: 2.38rem;
-        height: .8rem;
-        line-height: .8rem;
+        height: 0.8rem;
+        line-height: 0.8rem;
         padding: 0;
         background-color: #3663e0;
-        border-radius: .06rem;
+        border-radius: 0.06rem;
         outline: none;
         border: none;
-        margin-top: .72rem;
+        margin-top: 0.72rem;
         color: #ffffff;
-        font-size: .3rem;
+        font-size: 0.3rem;
         text-align: center;
-  
+
         &:first-of-type {
-          margin-right: .34rem;
+          margin-right: 0.34rem;
         }
       }
     }
-   
   }
 
   .register-modal {
@@ -283,17 +281,17 @@
     width: 6.2rem;
     height: 4.6rem;
     background-color: #ffffff;
-    border-radius: .14rem;
-    padding: .64rem .55rem .48rem .55rem;
+    border-radius: 0.14rem;
+    padding: 0.64rem 0.55rem 0.48rem 0.55rem;
     z-index: 99;
 
     i {
       position: absolute;
-      right: .32rem;
-      top: .32rem;
-      background: url("../../../dyassets/images/exchange/X.svg") no-repeat center center;
-      width: .36rem;
-	    height: .36rem;
+      right: 0.32rem;
+      top: 0.32rem;
+      background: url('../../../dyassets/images/exchange/X.svg') no-repeat center center;
+      width: 0.36rem;
+      height: 0.36rem;
     }
 
     img {
@@ -305,31 +303,29 @@
 
     p {
       width: 5.4rem;
-      height: .36rem;
-      line-height: .36rem;
-      font-size: .36rem;
+      height: 0.36rem;
+      line-height: 0.36rem;
+      font-size: 0.36rem;
       text-align: center;
       color: #000000;
-      margin-top: .4rem;
+      margin-top: 0.4rem;
     }
 
     div {
       width: 5.1rem;
-      height: .8rem;
-      line-height: .8rem;
+      height: 0.8rem;
+      line-height: 0.8rem;
       background-color: #3663e0;
-      border-radius: .06rem;
-      line-height: .8rem;
+      border-radius: 0.06rem;
+      line-height: 0.8rem;
       padding: 0;
       background-color: #3663e0;
       outline: none;
       border: none;
-      margin-top: .72rem;
+      margin-top: 0.72rem;
       color: #ffffff;
-      font-size: .3rem;
+      font-size: 0.3rem;
       text-align: center;
     }
-
-   
   }
 }
