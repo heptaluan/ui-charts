@@ -10,25 +10,25 @@
 }
 
 .tab {
-    position: absolute;
-    top: 17px;
-    left: 192px;
-    z-index: 9999;
-    width: 272px;
-    height: 22px;
-    color: #333333;
-    font-size: 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
+  position: absolute;
+  top: 17px;
+  left: 192px;
+  z-index: 9999;
+  width: 272px;
+  height: 22px;
+  color: #333333;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
 
-    span {
-      outline: none;
-      &:hover {
-        color: #0079fa !important;
-      }
+  span {
+    outline: none;
+    &:hover {
+      color: #0079fa !important;
     }
+  }
 }
 
 .click-style {
@@ -40,8 +40,6 @@
   width: 100%;
   overflow-y: scroll;
   position: relative;
-
-
 
   &::-webkit-scrollbar {
     width: 8px !important;
@@ -121,7 +119,7 @@
         }
 
         &::-webkit-scrollbar-thumb {
-          background-color: rgba(211, 211, 211, .5) !important;
+          background-color: rgba(211, 211, 211, 0.5) !important;
           border-radius: 5px !important;
         }
 
@@ -216,7 +214,6 @@
           }
         }
       }
-
     }
 
     .help-wrapper {
@@ -306,8 +303,8 @@
               position: absolute;
               width: 100%;
               height: 100%;
-              background: rgba(0, 0, 0, .4);
-              transition: .6s;
+              background: rgba(0, 0, 0, 0.4);
+              transition: 0.6s;
 
               .play-button {
                 width: 86px;
@@ -444,7 +441,7 @@
                   margin: 0;
                 }
               }
-              
+
               &.support {
                 width: auto;
               }
@@ -619,7 +616,6 @@
       z-index: 999;
     }
   }
-
 }
 
 @media screen and (max-width: 1280px) {

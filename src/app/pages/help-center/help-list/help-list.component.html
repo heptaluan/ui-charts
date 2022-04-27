@@ -1,19 +1,28 @@
-<div class="help-list" [ngStyle]="{'height': changeHeight}" #helpList>
+<div class="help-list" [ngStyle]="{ height: changeHeight }" #helpList>
   <div class="help-container">
-    <div class="help-menu" [ngStyle]="{'left': leftDistance + 'px'}">
+    <div class="help-menu" [ngStyle]="{ left: leftDistance + 'px' }">
       <!-- <div class="help-search"></div> -->
-      <div class="help-menu-container" [ngStyle]="{'height': menuHeight + 'px'}">
+      <div class="help-menu-container" [ngStyle]="{ height: menuHeight + 'px' }">
         <div class="help-menu-wrapper" *ngFor="let list of helpMenuList">
-          <h4 (click)="handleTitleClick(list)">{{list.title}}</h4>
+          <h4 (click)="handleTitleClick(list)">{{ list.title }}</h4>
           <div *ngFor="let item of list.content">
-            <h5 (click)="handleTitleClick(item)" 
-                [ngClass]="{'showTip': item.title ==='版本更新' && isShowTip}"
-                [class.active]='item.title === clickTitleData || item.id === clickId' [id]="item.title ==='版本更新'? 'helper-upload':''">
+            <h5
+              (click)="handleTitleClick(item)"
+              [ngClass]="{ showTip: item.title === '版本更新' && isShowTip }"
+              [class.active]="item.title === clickTitleData || item.id === clickId"
+              [id]="item.title === '版本更新' ? 'helper-upload' : ''"
+            >
               <!-- <i (click)="handleIconClick(item, $event)" [class.active]='item.flag' [ngClass]="{'no-arrow': item.content.length === 0}"></i>{{item.title}}</h5> -->
-              <i [class.active]='item.flag' [ngClass]="{'no-arrow': item.content.length === 0,'active': item.title ==='版本更新' && isShowTip}"></i>{{item.title}}</h5>
+              <i
+                [class.active]="item.flag"
+                [ngClass]="{ 'no-arrow': item.content.length === 0, active: item.title === '版本更新' && isShowTip }"
+              ></i
+              >{{ item.title }}
+            </h5>
             <ul *ngIf="item.flag">
-              <li *ngFor="let data of item.content;" [class.active]='data.id === clickId' (click)='handleClick(data)'>
-                {{data.subTitle}}</li>
+              <li *ngFor="let data of item.content" [class.active]="data.id === clickId" (click)="handleClick(data)">
+                {{ data.subTitle }}
+              </li>
             </ul>
           </div>
         </div>
@@ -21,141 +30,159 @@
     </div>
     <div class="help-wrapper">
       <div class="help-content">
-        <!-- 1分钟了解镝数 -->
-        <!-- <div *ngIf="learnDydataArr.indexOf(clickId) > -1"> 
-          <ng-container *ngFor="let item of teachVideoArr">
-            <h1 id="{{item.id}}" [ngClass]="{'h1-top': item.top}">{{item.title}}</h1>
-            <div class="content">
-              <div class="video-flex">
-                <div class="dy-video" [ngStyle]="{'backgroundImage': item.bgColor}" (click)="handleOpenVideo(item.url)">
-                  <p class="title">{{item.title}}</p>
-                  <p class="time"><i></i><span>{{item.time}}</span></p>
-                  <div class="video-cover">
-                    <div class="play-button">
-                      <i></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </ng-container>
-        </div> -->
         <!-- 快速上手 -->
         <div *ngIf="quickStartArr.indexOf(clickId) > -1">
-          <!-- 快速创建项目 -->
           <div id="title-1-1"></div>
           <div id="title-1"></div>
           <h1 id="1">快速上手</h1>
           <div class="content">
             <h3>快速创建项目</h3>
             <p class="p-top">完成注册后，登录镝数图表，你可以通过多种方式创建数据可视化作品。</p>
-            <img src="https://ss1.dydata.io/quick_start/1.png" alt="">
+            <img src="https://ss1.dydata.io/quick_start/1.png" alt="" />
           </div>
           <div class="content">
             <h3>(一) 从模版开始</h3>
-            <p class="p-top">「从模板开始」模块提供「图表模版」、「数据图文」两类可视化创作入口，你可以根据不同业务场景需要进行选择。</p>
+            <p class="p-top">
+              「从模板开始」模块提供「图表模版」、「数据图文」两类可视化创作入口，你可以根据不同业务场景需要进行选择。
+            </p>
             <h3>1. 图表模版</h3>
-            <p class="p-top">图表项目提供的是单个图表的创建，你可以将制作的图表插入文章、演示文稿、网页等不同的环境中。</p>
-            <img src="https://ss1.dydata.io/quick_start/2.png" alt="">
-            <img src="https://ss1.dydata.io/quick_start/3.png" alt="">
-            <p class="p-top">点击左侧「图表模版」即可开始创建单个图表，你可以在页面中选择你想要创建的模版，有两种选择方式，1、根据图表类型选择 2、根据图表的不同使用场景选择。</p>
+            <p class="p-top">
+              图表项目提供的是单个图表的创建，你可以将制作的图表插入文章、演示文稿、网页等不同的环境中。
+            </p>
+            <img src="https://ss1.dydata.io/quick_start/2.png" alt="" />
+            <img src="https://ss1.dydata.io/quick_start/3.png" alt="" />
+            <p class="p-top">
+              点击左侧「图表模版」即可开始创建单个图表，你可以在页面中选择你想要创建的模版，有两种选择方式，1、根据图表类型选择
+              2、根据图表的不同使用场景选择。
+            </p>
             <p class="p-top">或者，你也可以点击「空白模板」，进入「编辑项目」页面后再选择图表类型。</p>
-            <img src="https://ss1.dydata.io/quick_start/4.png" alt="">
+            <img src="https://ss1.dydata.io/quick_start/4.png" alt="" />
           </div>
           <div class="content">
             <h3>2. 数据图文</h3>
-            <p class="p-top">通过创建【数据图文】项目，你的作品中可以加入图片、形状、图标、文字等多种设计元素，丰富你的数据故事。</p>
-            <img src="https://ss1.dydata.io/quick_start/5.png" alt="">
+            <p class="p-top">
+              通过创建【数据图文】项目，你的作品中可以加入图片、形状、图标、文字等多种设计元素，丰富你的数据故事。
+            </p>
+            <img src="https://ss1.dydata.io/quick_start/5.png" alt="" />
             <p class="p-top">点击页面中的「数据图文」、在页面中选择心仪的模板即可创建项目。</p>
-            <img src="https://ss1.dydata.io/quick_start/6.png" alt="">
-            <p class="p-top">镝数结合数据表现需求推出了结合场景的带有丰富设计元素的系列数据图文模板，你可以根据不同的「使用场景」和「类型」两种方式来选用。</p>
-            <p class="p-top">点击后即可进入模版详情页面，点击「立即编辑」即可开始编辑模版。通过编辑项目你可以快速掌握页面排版、数据可视化等方法，也可以在此基础上完善个人数据作品。</p>
-            <img src="https://ss1.dydata.io/quick_start/7.png" alt="">
+            <img src="https://ss1.dydata.io/quick_start/6.png" alt="" />
+            <p class="p-top">
+              镝数结合数据表现需求推出了结合场景的带有丰富设计元素的系列数据图文模板，你可以根据不同的「使用场景」和「类型」两种方式来选用。
+            </p>
+            <p class="p-top">
+              点击后即可进入模版详情页面，点击「立即编辑」即可开始编辑模版。通过编辑项目你可以快速掌握页面排版、数据可视化等方法，也可以在此基础上完善个人数据作品。
+            </p>
+            <img src="https://ss1.dydata.io/quick_start/7.png" alt="" />
             <p class="p-top">你也可以点击「空白模板」，进入「编辑项目」页面后再自由添加元素。</p>
-            <img src="https://ss1.dydata.io/quick_start/8.png" alt="">
+            <img src="https://ss1.dydata.io/quick_start/8.png" alt="" />
           </div>
           <div class="content">
             <h3>(二) 从数据开始</h3>
             <p class="p-top">你也可以先上传数据，再来选择合适的图表模版。</p>
             <p class="p-top">在左侧导航栏点击「数据」板块。点击「上传数据」上传Excel或CSV文件</p>
-            <img src="https://ss1.dydata.io/quick_start/9.png" alt="">
+            <img src="https://ss1.dydata.io/quick_start/9.png" alt="" />
             <p class="p-top">上传完成后，点击「下一步」按钮。</p>
-            <img src="https://ss1.dydata.io/quick_start/10.png" alt="">
+            <img src="https://ss1.dydata.io/quick_start/10.png" alt="" />
             <p class="p-top">之后，选择一个图表模版，点击「生成图表」，就成功创建图表项目了。</p>
           </div>
 
           <!-- 编辑项目—单个图表 -->
-          <h1 class="h1-top" id='2'>编辑项目—单个图表</h1>
+          <h1 class="h1-top" id="2">编辑项目—单个图表</h1>
           <div class="content">
             <p class="p-top">单个图表可在右侧栏「编辑图表」对图表的细节进行调整。</p>
-            <img src="https://ss1.dydata.io/quick_start/11.png" alt="">
+            <img src="https://ss1.dydata.io/quick_start/11.png" alt="" />
             <p class="p-top">你可以修改图表的「映射」、「样式」、「颜色」、「标签」等配置项，让你的图表更加出彩。</p>
           </div>
           <div class="content">
             <h3>1.如何替换水印？</h3>
-            <img src="https://ss1.dydata.io/quick_start/12.png" alt="">
+            <img src="https://ss1.dydata.io/quick_start/12.png" alt="" />
             <p class="p-top">点击「附加信息」可以自由选择出品方、logo、水印等信息是否显示，也可以直接修改logo。</p>
             <h3>2.如何导出gif图表？</h3>
-            <p class="p-top">调整好图表其他配置项后，在右侧面板中打开动画开关，调整动画的效果、持续时间、开始与结束时间。</p>
-            <img src="https://ss1.dydata.io/quick_start/13.png" alt="">
-            <p class="p-top">点击右上角下载，导出GIF格式，就可以得到一个动态图表了。可以选择「下载到本地」和「下载到手机」两种方式。</p>
-            <img src="https://ss1.dydata.io/quick_start/14.png" alt="">
+            <p class="p-top">
+              调整好图表其他配置项后，在右侧面板中打开动画开关，调整动画的效果、持续时间、开始与结束时间。
+            </p>
+            <img src="https://ss1.dydata.io/quick_start/13.png" alt="" />
+            <p class="p-top">
+              点击右上角下载，导出GIF格式，就可以得到一个动态图表了。可以选择「下载到本地」和「下载到手机」两种方式。
+            </p>
+            <img src="https://ss1.dydata.io/quick_start/14.png" alt="" />
             <h3>3.如何使用动态图表模版？</h3>
-            <p class="p-top">除了基础图表以外，镝数图表还有4个动态图表模版（动态条形图、动态折线变化图、动态折线排名图、动态圆堆积图）</p>
-            <img src="https://ss1.dydata.io/quick_start/15.png" alt="">
+            <p class="p-top">
+              除了基础图表以外，镝数图表还有4个动态图表模版（动态条形图、动态折线变化图、动态折线排名图、动态圆堆积图）
+            </p>
+            <img src="https://ss1.dydata.io/quick_start/15.png" alt="" />
             <p class="p-top">点击编辑数据，将准备好的数据复制粘贴到数据表格，即可完成作品</p>
             <p class="p-top">点击分享，获取分享链接，可以在线播放动态图表，或者配合录屏工具，录制视频/gif效果</p>
-            <img src="https://ss1.dydata.io/quick_start/16.png" alt="">
+            <img src="https://ss1.dydata.io/quick_start/16.png" alt="" />
           </div>
 
           <!-- 编辑项目—数据图文 -->
-          <h1 class="h1-top" id='3'>编辑项目—数据图文</h1>
+          <h1 class="h1-top" id="3">编辑项目—数据图文</h1>
           <div class="content">
-            <p class="p-top">成功创建「数据图文」项目后，右侧栏「编辑项目」区域提供个性化设置选项。切换左侧栏的标签，你可以插入你喜欢的图表、文字、形状和图片。</p>
+            <p class="p-top">
+              成功创建「数据图文」项目后，右侧栏「编辑项目」区域提供个性化设置选项。切换左侧栏的标签，你可以插入你喜欢的图表、文字、形状和图片。
+            </p>
           </div>
           <div class="content">
             <h3>1. 页面设置</h3>
-            <p class="p-top">在页面右侧栏的「页面设置」面板中，修改宽度或高度的数值可以设置项目的大小。点击「切换主题」切换到适合你作品的主题配色，也可以点击「画布颜色」自定义页面背景颜色。</p>
-            <img src="https://ss1.dydata.io/quick_start/17.png" alt="">
-            <img src="https://ss1.dydata.io/quick_start/18.png" alt="">
+            <p class="p-top">
+              在页面右侧栏的「页面设置」面板中，修改宽度或高度的数值可以设置项目的大小。点击「切换主题」切换到适合你作品的主题配色，也可以点击「画布颜色」自定义页面背景颜色。
+            </p>
+            <img src="https://ss1.dydata.io/quick_start/17.png" alt="" />
+            <img src="https://ss1.dydata.io/quick_start/18.png" alt="" />
 
             <h3>2. 插入图表</h3>
-            <p class="p-top">点击左侧栏「图表」按钮，在「插入图表」弹窗中选择你想要的图表并点击「插入」，即可将该图表插入到你的项目中。</p>
-            <img src="https://ss1.dydata.io/quick_start/19.png" alt="">
+            <p class="p-top">
+              点击左侧栏「图表」按钮，在「插入图表」弹窗中选择你想要的图表并点击「插入」，即可将该图表插入到你的项目中。
+            </p>
+            <img src="https://ss1.dydata.io/quick_start/19.png" alt="" />
             <p class="p-top">点击右侧栏的「编辑数据」，可以在数据表格中粘贴你的数据以及进行修改。</p>
-            <img src="https://ss1.dydata.io/quick_start/20.png" alt="">
+            <img src="https://ss1.dydata.io/quick_start/20.png" alt="" />
             <p class="p-top">点击「编辑图表」，你可以修改图表的尺寸、映射、颜色、文字属性等等。</p>
-            <img src="https://ss1.dydata.io/quick_start/21.png" alt="">
+            <img src="https://ss1.dydata.io/quick_start/21.png" alt="" />
             <p class="p-top">如果你当前的图表不合适，可以点击「切换图表」，即可在不更换数据的前提下更换图表类型。</p>
-            <img src="https://ss1.dydata.io/quick_start/22.png" alt="">
-            <img src="https://ss1.dydata.io/quick_start/23.png" alt="">
-            <p class="p-top">为方便图表和数据图文的切换，数据图文中的图表支持一键保存为单独的图表。点击另存为后，可以在【我的】-【项目】中查看该图表。</p>
+            <img src="https://ss1.dydata.io/quick_start/22.png" alt="" />
+            <img src="https://ss1.dydata.io/quick_start/23.png" alt="" />
+            <p class="p-top">
+              为方便图表和数据图文的切换，数据图文中的图表支持一键保存为单独的图表。点击另存为后，可以在【我的】-【项目】中查看该图表。
+            </p>
 
             <h3>3. 插入文字</h3>
-            <p class="p-top">点击左侧栏「文字」按钮，可在项目中插入合适大小文字，通过右侧栏的「编辑文字」可以修改文字的颜色、字号、字体、对齐方式等。</p>
-            <img src="https://ss1.dydata.io/quick_start/24.png" alt="">
+            <p class="p-top">
+              点击左侧栏「文字」按钮，可在项目中插入合适大小文字，通过右侧栏的「编辑文字」可以修改文字的颜色、字号、字体、对齐方式等。
+            </p>
+            <img src="https://ss1.dydata.io/quick_start/24.png" alt="" />
 
             <h3>4. 插入形状</h3>
             <p class="p-top">点击左侧栏「形状」按钮，在项目中插入形状或图标，帮助你创作丰富多彩的作品。</p>
-            <img src="https://ss1.dydata.io/quick_start/25.png" alt="">
+            <img src="https://ss1.dydata.io/quick_start/25.png" alt="" />
 
             <h3>5. 插入图片</h3>
-            <p class="p-top">点击左侧栏「图片」按钮，大量在线图片丰富你的设计，选择图片点击插入，可在右侧栏「编辑图片」中修改图片的大小、透明度等，以及添加边框和阴影。</p>
-            <img src="https://ss1.dydata.io/quick_start/26.png" alt="">
-            <p class="p-top">你也可以上传自己的图片，点击「上传图片」，可以在弹出的本地文件夹中选择想要上传的图片，上传的图片保存在「我的上传」中。</p>
-            <img src="https://ss1.dydata.io/quick_start/27.png" alt="">
-            <p class="p-top">图表、图片、文字等素材添加完成后，进行项目排版。完成后点击「分享」按钮，在弹窗中选择「在线预览」，可以预览项目效果。</p>
-            <img src="https://ss1.dydata.io/quick_start/28.png" alt="">
+            <p class="p-top">
+              点击左侧栏「图片」按钮，大量在线图片丰富你的设计，选择图片点击插入，可在右侧栏「编辑图片」中修改图片的大小、透明度等，以及添加边框和阴影。
+            </p>
+            <img src="https://ss1.dydata.io/quick_start/26.png" alt="" />
+            <p class="p-top">
+              你也可以上传自己的图片，点击「上传图片」，可以在弹出的本地文件夹中选择想要上传的图片，上传的图片保存在「我的上传」中。
+            </p>
+            <img src="https://ss1.dydata.io/quick_start/27.png" alt="" />
+            <p class="p-top">
+              图表、图片、文字等素材添加完成后，进行项目排版。完成后点击「分享」按钮，在弹窗中选择「在线预览」，可以预览项目效果。
+            </p>
+            <img src="https://ss1.dydata.io/quick_start/28.png" alt="" />
           </div>
 
           <!-- 导出与分享 -->
           <h1 class="h1-top" id="58">导出与分享</h1>
           <div class="content">
             <p class="p-top">
-              作品完成后，可以下载为图片或者生成分享链接，通过分享链接可以查看图表的交互效果。方便你进一步传播给别人或在其他微信、微博等社交平台上分享。可以将分享链接设置为「所有人可查看」或「设置密码可查看」。</p>
-            <img src="https://ss1.dydata.io/quick_start/29.png" alt="">
-            <p class="p-top">点击「下载」按钮，确定下载的项目尺寸，如果你希望更加清晰，可以选择更大倍数的尺寸，之后点击想要导出的格式即可下载项目图片到本地。</p>
-            <img src="https://ss1.dydata.io/quick_start/30.png" alt="">
+              作品完成后，可以下载为图片或者生成分享链接，通过分享链接可以查看图表的交互效果。方便你进一步传播给别人或在其他微信、微博等社交平台上分享。可以将分享链接设置为「所有人可查看」或「设置密码可查看」。
+            </p>
+            <img src="https://ss1.dydata.io/quick_start/29.png" alt="" />
+            <p class="p-top">
+              点击「下载」按钮，确定下载的项目尺寸，如果你希望更加清晰，可以选择更大倍数的尺寸，之后点击想要导出的格式即可下载项目图片到本地。
+            </p>
+            <img src="https://ss1.dydata.io/quick_start/30.png" alt="" />
           </div>
         </div>
 
@@ -167,79 +194,118 @@
           <div class="content">
             <h3>1. 可以下载GIF吗</h3>
             <p class="p-top">支持普通图表的GIF格式下载。图文模板暂不支持GIF格式。</p>
-            <p>动态排名变化图、动态折线变化图等4个动态图表目前企业会员可以导出视频，非企业会员可以配合录屏工具导出GIF/视频（mac系统推荐使用giphy录制，非mac系统推荐使用ev录屏）。</p>
-            <p class="p-top">你也可以生成一个交互页面，完成作品后点击「分享」即可获取，在交互页面视频可以自动播放，用于社交媒体推送。</p>
+            <p>
+              动态排名变化图、动态折线变化图等4个动态图表目前企业会员可以导出视频，非企业会员可以配合录屏工具导出GIF/视频（mac系统推荐使用giphy录制，非mac系统推荐使用ev录屏）。
+            </p>
+            <p class="p-top">
+              你也可以生成一个交互页面，完成作品后点击「分享」即可获取，在交互页面视频可以自动播放，用于社交媒体推送。
+            </p>
             <h3>2. 如何下载更清晰的图片？</h3>
-            <p class="p-top">
-              在导出页面中可以调整图片的「输出宽高」，宽高数值越大，导出后的图片越清晰。
-            </p>
-            <img src="http://192.168.31.153:8000/1.png" alt="">
+            <p class="p-top">在导出页面中可以调整图片的「输出宽高」，宽高数值越大，导出后的图片越清晰。</p>
+            <img src="http://192.168.31.153:8000/1.png" alt="" />
             <h3>3. 如何保留图表的交互效果？</h3>
-            <p class="p-top">
-              保留图表的交互效果有两种方法：
-            </p>
+            <p class="p-top">保留图表的交互效果有两种方法：</p>
             <p>（1）使用iframe嵌入网页：点击图表编辑页面右上角的「分享」，复制 iframe 代码后嵌入网页即可。</p>
-            <img src="http://192.168.31.153:8000/2.png" alt="">
-            <p class="p-top">（2）通过分享链接或分享二维码查看：点击图表编辑页面右上角的「分享」，复制分享链接或二维码，通过分享链接和二维码可查看交互图表。</p>
-            <img src="http://192.168.31.153:8000/3.png" alt="">
+            <img src="http://192.168.31.153:8000/2.png" alt="" />
+            <p class="p-top">
+              （2）通过分享链接或分享二维码查看：点击图表编辑页面右上角的「分享」，复制分享链接或二维码，通过分享链接和二维码可查看交互图表。
+            </p>
+            <img src="http://192.168.31.153:8000/3.png" alt="" />
             <h3>4.下载作品时页面出现崩溃或没有反应？</h3>
             <p class="p-top">
-              可能是浏览器兼容性问题，你可以参照网站给出的<span class="click-style" (click)= "handleClick({title:'',id:'title-3-4'})">浏览器兼容列表</span>，检查自己的浏览器是否在已兼容的浏览器范围内。
+              可能是浏览器兼容性问题，你可以参照网站给出的<span
+                class="click-style"
+                (click)="handleClick({ title: '', id: 'title-3-4' })"
+                >浏览器兼容列表</span
+              >，检查自己的浏览器是否在已兼容的浏览器范围内。
             </p>
-            <p>如果你的浏览器不在已兼容浏览器范围内，你可以下载新版<a class="underline" href="https://www.google.cn/chrome/" target="_blank">Chrome</a>或<a class="underline" href="https://www.microsoft.com/zh-cn/edge" target="_blank">edge</a>浏览器，获得最佳创作体验。</p>
-            <p>如果你的浏览器在已兼容浏览器范围内，但仍无法下载，请联系<span class="support wechat">镝数图表技术支持<div class="float-code float-code-wechat"><img
-              src="/dyassets/images/support-code.png" alt="微信技术支持"></div></span>为你解决。</p>
+            <p>
+              如果你的浏览器不在已兼容浏览器范围内，你可以下载新版<a
+                class="underline"
+                href="https://www.google.cn/chrome/"
+                target="_blank"
+                >Chrome</a
+              >或<a class="underline" href="https://www.microsoft.com/zh-cn/edge" target="_blank">edge</a
+              >浏览器，获得最佳创作体验。
+            </p>
+            <p>
+              如果你的浏览器在已兼容浏览器范围内，但仍无法下载，请联系<span class="support wechat"
+                >镝数图表技术支持
+                <div class="float-code float-code-wechat">
+                  <img src="/dyassets/images/support-code.png" alt="微信技术支持" /></div></span
+              >为你解决。
+            </p>
           </div>
           <!-- 图表相关 -->
           <h1 class="h1-top" id="5">图表相关</h1>
           <div class="content">
             <h3>5. 图表项目如何去掉水印和logo</h3>
-            <p class="p-top">镝数图表目前支持免费去除底部水印。在图表对象右侧的编辑面板中，点击「附加信息」配置项，去掉水印显示的勾选状态，即可去除图表底层水印。</p>
+            <p class="p-top">
+              镝数图表目前支持免费去除底部水印。在图表对象右侧的编辑面板中，点击「附加信息」配置项，去掉水印显示的勾选状态，即可去除图表底层水印。
+            </p>
             <p class="p-top">*画布中图表右侧上方的“dycharts.com”小标识在导出作品时会自动去除。</p>
-            <img src="https://ss1.dydata.io/common_question/5.png" alt="">
+            <img src="https://ss1.dydata.io/common_question/5.png" alt="" />
             <h3>6. 坐标轴范围可以修改吗</h3>
-            <p class="p-top">可以修改。在图表对象右侧的编辑面板中，点击「轴、网格线」，修改对应的轴范围。
-            </p>
+            <p class="p-top">可以修改。在图表对象右侧的编辑面板中，点击「轴、网格线」，修改对应的轴范围。</p>
             <h3>7. 数值标签是否可以显示？</h3>
-            <p class="p-top">可以显示。在图表对象右侧的编辑面板中，点击「标签」，打开数字标签即可在图表上显示数值，还可以调整标签的位置、内容及字体。
+            <p class="p-top">
+              可以显示。在图表对象右侧的编辑面板中，点击「标签」，打开数字标签即可在图表上显示数值，还可以调整标签的位置、内容及字体。
             </p>
-            <img src="https://ss1.dydata.io/common_question/6.png" alt="">
+            <img src="https://ss1.dydata.io/common_question/6.png" alt="" />
             <h3>8.标签显示不完整怎么办？</h3>
             <p class="p-top">图表中标签的显示是自动按位置计算的，空间太小会造成标签无法显示。目前有三种方式解决：</p>
             <p>（1）调整图表画幅的长宽，空间更大就有足够的区域来显示文字标签。</p>
             <p>（2）调整标签的字号，尝试缩小字号来使标签显示完整。</p>
             <p>（3）在数据图文里，通过插入文本框的方式添加文字标签。</p>
             <h3>9. 「编辑数据」中输入的数据可以带单位吗</h3>
-            <p class="p-top">图表对应的数据编辑表格目前只支持输入纯数字，不能含有特殊符号（比如“%”、“，”等）。你可以在图表单位可以在「附加信息」中配置图表单位，在「标签」中配置标签单位，在「轴、网格线」中配置轴标签单位。</p>
+            <p class="p-top">
+              图表对应的数据编辑表格目前只支持输入纯数字，不能含有特殊符号（比如“%”、“，”等）。你可以在图表单位可以在「附加信息」中配置图表单位，在「标签」中配置标签单位，在「轴、网格线」中配置轴标签单位。
+            </p>
             <h3>10. 是否提供地图模板</h3>
             <p class="p-top">
-              地图模板因地图版权和相关政策的原因暂时下架，但我们会做相应规划，目前你可以在「发现」或者「数据图文」中输入关键词“地图”，复用带有地图素材的模板，或上传地图图片，再结合文字与图表制作更加个性化的作品。</p>
+              地图模板因地图版权和相关政策的原因暂时下架，但我们会做相应规划，目前你可以在「发现」或者「数据图文」中输入关键词“地图”，复用带有地图素材的模板，或上传地图图片，再结合文字与图表制作更加个性化的作品。
+            </p>
           </div>
           <!-- 账户相关 -->
           <h1 class="h1-top" id="6">账户相关</h1>
           <div class="content">
             <h3>11. 缴费了但没有升级成功怎么办？</h3>
-            <p class="p-top">请尽快联系<span class="support wechat">镝数图表技术支持<div class="float-code float-code-wechat"><img
-                    src="/dyassets/images/support-code.png" alt="微信技术支持"></div></span>为你解决。</p>
-            <h3>12. 忘记密码怎么办？ </h3>
+            <p class="p-top">
+              请尽快联系<span class="support wechat"
+                >镝数图表技术支持
+                <div class="float-code float-code-wechat">
+                  <img src="/dyassets/images/support-code.png" alt="微信技术支持" /></div></span
+              >为你解决。
+            </p>
+            <h3>12. 忘记密码怎么办？</h3>
             <p class="p-top">登录界面点击「忘记密码」，即可通过手机号或邮箱找回密码。</p>
             <h3>13. 可以申请开具发票吗</h3>
-            <p>请联系<span class="wechat">小镝同学<div class="float-code float-code-wechat"><img
-                    src="/dyassets/images/index/xiaodi.jpg" alt="微信客服"></div></span>提供相关信息申请开具。
+            <p>
+              请联系<span class="wechat"
+                >小镝同学
+                <div class="float-code float-code-wechat">
+                  <img src="/dyassets/images/index/xiaodi.jpg" alt="微信客服" /></div></span
+              >提供相关信息申请开具。
             </p>
           </div>
           <!-- 其他 -->
           <h1 class="h1-top" id="7">其他</h1>
           <div class="content">
             <h3>14. 制作的项目在哪里查看？</h3>
-            <p class="p-top">点击页面左侧栏「我的」-「项目」或者点击右上角头像下拉菜单中的「项目管理」，即可查看制作的项目。</p>
-            <img src="https://ss1.dydata.io/common_question/7.png" alt="">
+            <p class="p-top">
+              点击页面左侧栏「我的」-「项目」或者点击右上角头像下拉菜单中的「项目管理」，即可查看制作的项目。
+            </p>
+            <img src="https://ss1.dydata.io/common_question/7.png" alt="" />
             <h3>15. 项目存储空间满了怎么办？</h3>
             <p class="p-top">你可以升级会员获得更大的项目存储空间，或者删除一些项目来释放项目空间。</p>
             <h3>16. 如何分享加密？</h3>
-            <p class="p-top">你可以通过两种方式分享你的项目。选择「所有人可查看」，任何人都可以通过链接访问你的项目；选择「设置密码查看」，你可以设置访问密码，其他人只有输入密码之后才可以查看你的项目。</p>
+            <p class="p-top">
+              你可以通过两种方式分享你的项目。选择「所有人可查看」，任何人都可以通过链接访问你的项目；选择「设置密码查看」，你可以设置访问密码，其他人只有输入密码之后才可以查看你的项目。
+            </p>
             <h3>17. 找不到我想要的图表怎么办？</h3>
-            <p class="p-top">你可以点击首页左侧栏最下方的「提模板需求」，告诉我们你想要的图表模板，我们期待你的反馈。</p>
+            <p class="p-top">
+              你可以点击首页左侧栏最下方的「提模板需求」，告诉我们你想要的图表模板，我们期待你的反馈。
+            </p>
           </div>
         </div>
         <!-- 找数据 -->
@@ -247,7 +313,9 @@
           <!-- 用户手册 -->
           <h1 id="title-2">用户手册</h1>
           <div class="content">
-            <p class="p-top">欢迎使用镝数用户手册，这个手册的内容同时适用于新手和熟练用户。如果你对这个手册的内容有任何想法和疑问，请通过微信客服随时联系我们，我们会不断完善本手册。</p>
+            <p class="p-top">
+              欢迎使用镝数用户手册，这个手册的内容同时适用于新手和熟练用户。如果你对这个手册的内容有任何想法和疑问，请通过微信客服随时联系我们，我们会不断完善本手册。
+            </p>
             <!-- <p class="p-top">镝数是中国首个数据与可视化服务平台，致力于聚合可靠的数据，提供无需编程的数据可视化工具，让不同行业从业者可以在平台上一站式完成从数据获取、数据处理到数据可视化的工作。</p> -->
           </div>
           <!-- 找数据 -->
@@ -315,20 +383,27 @@
           </div> -->
           <h1 class="h1-top" id="16">制作图表</h1>
           <div class="content">
-            <p class="p-top">若你想要使用该数据创建可视化图表，无需先把数据表格下载到本地，只需要点击「制作图表」，即可创建该数据的图表项目。</p>
-            <img src="https://ss1.dydata.io/find_data/19.png" alt="">
-            <img src="https://ss1.dydata.io/find_data/20.png" alt="">
-            <p class="p-top">在编辑数据页面，点击图表后，你可以通过「编辑数据」查看完整的数据表格并修改和完善你的作品。</p>
-            <img src="https://ss1.dydata.io/find_data/21.png" alt="">
+            <p class="p-top">
+              若你想要使用该数据创建可视化图表，无需先把数据表格下载到本地，只需要点击「制作图表」，即可创建该数据的图表项目。
+            </p>
+            <img src="https://ss1.dydata.io/find_data/19.png" alt="" />
+            <img src="https://ss1.dydata.io/find_data/20.png" alt="" />
+            <p class="p-top">
+              在编辑数据页面，点击图表后，你可以通过「编辑数据」查看完整的数据表格并修改和完善你的作品。
+            </p>
+            <img src="https://ss1.dydata.io/find_data/21.png" alt="" />
           </div>
           <h1 class="h1-top" id="17">数据需求反馈</h1>
           <div class="content">
             <p class="p-top">
-              如果你未搜索到想要的数据或数据报告，可以选择「我要反馈」描述你的数据需求，我们会根据反馈不断优化平台数据资源；如果你需要镝数提供数据定制服务，可以选择「我要定制数据」，镝数会及时与你联系。</p>
-            <img src="https://ss1.dydata.io/find_data/22.png" alt="">
-            <img src="https://ss1.dydata.io/find_data/23.png" alt="">
-            <p class="p-top">你只需描述你的数据需求即可提交，我们也欢迎你留下联系方式，以便后续更清楚地了解你的需求。</p>
-            <img src="https://ss1.dydata.io/find_data/24.png" class="small-img" alt="">
+              如果你未搜索到想要的数据或数据报告，可以选择「我要反馈」描述你的数据需求，我们会根据反馈不断优化平台数据资源；如果你需要镝数提供数据定制服务，可以选择「我要定制数据」，镝数会及时与你联系。
+            </p>
+            <img src="https://ss1.dydata.io/find_data/22.png" alt="" />
+            <img src="https://ss1.dydata.io/find_data/23.png" alt="" />
+            <p class="p-top">
+              你只需描述你的数据需求即可提交，我们也欢迎你留下联系方式，以便后续更清楚地了解你的需求。
+            </p>
+            <img src="https://ss1.dydata.io/find_data/24.png" class="small-img" alt="" />
           </div>
         </div>
         <!-- 进入镝数图表 -->
@@ -336,48 +411,84 @@
           <!-- 进入镝数图表 -->
           <h1 id="title-2-2">进入镝数图表</h1>
           <div class="content">
-            <p class="p-top">镝数图表作为一款在线数据可视化神器，拥有近百种图表、超炫动态图表、上千可视化模版，旨在助用户轻松表达数据。</p>
+            <p class="p-top">
+              镝数图表作为一款在线数据可视化神器，拥有近百种图表、超炫动态图表、上千可视化模版，旨在助用户轻松表达数据。
+            </p>
           </div>
           <div class="content">
             <h2 class="h1-top" id="18">(一) 首页概况</h2>
-            <p class="p-top">在「发现」页面，你可以在搜索栏中通过搜索关键词或点击热词快速找到自己想要的数据图文模板。</p>
-            <img src="https://ss1.dydata.io/user-handbook/1.png" alt="">
+            <p class="p-top">
+              在「发现」页面，你可以在搜索栏中通过搜索关键词或点击热词快速找到自己想要的数据图文模板。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/1.png" alt="" />
             <p class="p-top">在搜索栏下方点击相关热门入口，则可以快速进入相关页面。</p>
-            <img src="https://ss1.dydata.io/user-handbook/2.png" alt="">
-            <p class="p-top">热门入口下方是「图表模板合集」，你可以在这里快速选择自己需要的图表，点击后进入图表编辑页面；也可以点击右上角的图表类型标签或「更多」，进入列表页后再进行选择。</p>
-            <img src="https://ss1.dydata.io/user-handbook/3.png" alt="">
-            <p class="p-top">在「图表模板合集」下方，向你推荐了部分常用场景下的数据图文模板，直接点击即可预览相应模板，鼠标移动到模板上方点击「编辑」，即可进入编辑页面编辑此模板。也可以点击右侧类型或「更多」进入相关数据图文页面。</p>
-            <img src="https://ss1.dydata.io/user-handbook/4.gif" alt="">
+            <img src="https://ss1.dydata.io/user-handbook/2.png" alt="" />
+            <p class="p-top">
+              热门入口下方是「图表模板合集」，你可以在这里快速选择自己需要的图表，点击后进入图表编辑页面；也可以点击右上角的图表类型标签或「更多」，进入列表页后再进行选择。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/3.png" alt="" />
+            <p class="p-top">
+              在「图表模板合集」下方，向你推荐了部分常用场景下的数据图文模板，直接点击即可预览相应模板，鼠标移动到模板上方点击「编辑」，即可进入编辑页面编辑此模板。也可以点击右侧类型或「更多」进入相关数据图文页面。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/4.gif" alt="" />
           </div>
-          
+
           <div class="content">
             <h2 id="19">(二) 网站功能区域介绍</h2>
             <h3>1. 左侧导航</h3>
-            <p class="p-top">页面左侧为整站固定导航栏，在这里你可以快速进入「图表模板」和「数据图文」，登录状态下，可以直接查看「我的项目」、「我的收藏」和「我的数据」。</p>
-            <img src="https://ss1.dydata.io/user-handbook/5.png" alt="">
-            <p class="p-top">左侧导航栏的最下方开放「提模板需求」入口，若你在镝数图表中没有找到自己想要的模板，点击「提模板需求」，留下你的联系方式并提交你的需求，我们会定期查看。</p>
-            <img src="https://ss1.dydata.io/user-handbook/6.png" alt="">
+            <p class="p-top">
+              页面左侧为整站固定导航栏，在这里你可以快速进入「图表模板」和「数据图文」，登录状态下，可以直接查看「我的项目」、「我的收藏」和「我的数据」。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/5.png" alt="" />
+            <p class="p-top">
+              左侧导航栏的最下方开放「提模板需求」入口，若你在镝数图表中没有找到自己想要的模板，点击「提模板需求」，留下你的联系方式并提交你的需求，我们会定期查看。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/6.png" alt="" />
             <h3>2. 右侧导航</h3>
-            <p class="p-top">在整个网站的右侧悬浮菜单，设置多个实用入口。若你想要快速了解会员价格及权限，点击「会员权限」即可进入详情页面，详情见<span class="click-style" (click)= "handleClick({title:'',id:'title-2-6'})">会员特权</span>。</p>
-            <img src="https://ss1.dydata.io/user-handbook/7.png" alt="">
-            <p class="p-top">想要快速上手镝数图表或查看常见问题，你可以选择点击「帮助中心」，这里罗列了用户常见问题、快速上手教程、用户手册等等。</p>
-            <img src="https://ss1.dydata.io/user-handbook/8.png" alt="">
-            <p class="p-top">除此之外，点击「客服」，镝数图表提供技术支持和专属客服小镝同学，微信扫描对应二维码即可添加好友。</p>
-            <img src="https://ss1.dydata.io/user-handbook/9.png" alt="">
-            <p class="p-top">想要掌握镝数图表的最新资讯，点击「服务号」，微信扫描二维码关注镝数图表服务号，了解更多可视化干货和镝数图表新功能。</p>
-            <img src="https://ss1.dydata.io/user-handbook/10.png" alt="">
+            <p class="p-top">
+              在整个网站的右侧悬浮菜单，设置多个实用入口。若你想要快速了解会员价格及权限，点击「会员权限」即可进入详情页面，详情见<span
+                class="click-style"
+                (click)="handleClick({ title: '', id: 'title-2-6' })"
+                >会员特权</span
+              >。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/7.png" alt="" />
+            <p class="p-top">
+              想要快速上手镝数图表或查看常见问题，你可以选择点击「帮助中心」，这里罗列了用户常见问题、快速上手教程、用户手册等等。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/8.png" alt="" />
+            <p class="p-top">
+              除此之外，点击「客服」，镝数图表提供技术支持和专属客服小镝同学，微信扫描对应二维码即可添加好友。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/9.png" alt="" />
+            <p class="p-top">
+              想要掌握镝数图表的最新资讯，点击「服务号」，微信扫描二维码关注镝数图表服务号，了解更多可视化干货和镝数图表新功能。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/10.png" alt="" />
             <h3>3. 顶部导航</h3>
-            <p class="p-top">首次访问镝数图表，可以点击右上方的「登陆/注册」进行账号登陆，目前镝数图表支持手机号、微信号等方式注册账号。</p>
-            <img src="https://ss1.dydata.io/user-handbook/11.png" alt="">
-            <p class="p-top">顶部栏还提供「会员特权」和「商务合作通道」的入口，详情见<span class="click-style" (click)= "handleClick({title:'',id:'title-2-6'})">会员特权</span>和<span class="click-style" (click)= "handleClick({title:'',id:'title-2-7'})">商务合作通道</span>。</p>
-            <img src="https://ss1.dydata.io/user-handbook/12.png" alt="">
+            <p class="p-top">
+              首次访问镝数图表，可以点击右上方的「登陆/注册」进行账号登陆，目前镝数图表支持手机号、微信号等方式注册账号。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/11.png" alt="" />
+            <p class="p-top">
+              顶部栏还提供「会员特权」和「商务合作通道」的入口，详情见<span
+                class="click-style"
+                (click)="handleClick({ title: '', id: 'title-2-6' })"
+                >会员特权</span
+              >和<span class="click-style" (click)="handleClick({ title: '', id: 'title-2-7' })">商务合作通道</span>。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/12.png" alt="" />
             <p class="p-top">在任意页面，点击顶部左上方的镝数图表logo，即可返回「发现」页面。</p>
-            <img src="https://ss1.dydata.io/user-handbook/13.png" alt="">
+            <img src="https://ss1.dydata.io/user-handbook/13.png" alt="" />
             <h3>4. 底部导航</h3>
-            <p class="p-top">下拉至页面底部，这里提供了「快速上手」、「帮助中心」、「意见反馈」和「关于我们」的入口，可以快速到达对应页面。</p>
-            <img src="https://ss1.dydata.io/user-handbook/14.png" alt="">
-            <p class="p-top">想要联系或关注我们，这里还有镝数图表的各种联系方式：微信服务号、微博、知乎、客服、电话和商务邮箱。</p>
-            <img src="https://ss1.dydata.io/user-handbook/15.png" alt="">         
+            <p class="p-top">
+              下拉至页面底部，这里提供了「快速上手」、「帮助中心」、「意见反馈」和「关于我们」的入口，可以快速到达对应页面。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/14.png" alt="" />
+            <p class="p-top">
+              想要联系或关注我们，这里还有镝数图表的各种联系方式：微信服务号、微博、知乎、客服、电话和商务邮箱。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/15.png" alt="" />
           </div>
         </div>
         <!-- 图表模板 -->
@@ -387,233 +498,372 @@
           <div class="content">
             <p class="p-top">镝数图表帮你告别传统的图表制作方法，零代码设计漂亮的数据图表并实现图表交互。</p>
           </div>
-          
+
           <div class="content">
             <h2 class="h1-top" id="20">(一) 创建图表</h2>
             <p class="p-top">在图表模板中，你可以快速筛选图表，并直接点击创建项目。</p>
             <h3>1. 筛选</h3>
-            <p class="p-top">点击左侧导航栏中的「图表模板」，你可以根据「图表类型」或「使用场景」筛选出你想要的图表。</p>
-            <img src="https://ss1.dydata.io/user-handbook/16.png" alt="">
+            <p class="p-top">
+              点击左侧导航栏中的「图表模板」，你可以根据「图表类型」或「使用场景」筛选出你想要的图表。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/16.png" alt="" />
             <h3>2. 创建项目</h3>
-            <p class="p-top">鼠标移动到选择好的图表上，直接点击即可建立图表项目并进入编辑页面，鼠标移到右侧的小书上还能看到对应图表的简介和使用场景。</p>
-            <img src="https://ss1.dydata.io/user-handbook/17.png" alt="">
+            <p class="p-top">
+              鼠标移动到选择好的图表上，直接点击即可建立图表项目并进入编辑页面，鼠标移到右侧的小书上还能看到对应图表的简介和使用场景。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/17.png" alt="" />
             <p class="p-top">如果不确定想用什么图表，你也可以先创建一个空白项目，到编辑页面再选择图表类型。</p>
-            <img src="https://ss1.dydata.io/user-handbook/18.png" alt="">
+            <img src="https://ss1.dydata.io/user-handbook/18.png" alt="" />
           </div>
-          
+
           <div class="content">
             <h2 class="h1-top" id="21">(二) 图表编辑页面</h2>
-            <p>创建一个图表项目后，就可以在编辑页面中对我们的图表进行打磨和加工，完成之后可以选择下载图片或者分享有交互效果的链接。这里我们以玫瑰图为例，为大家介绍。</p>
+            <p>
+              创建一个图表项目后，就可以在编辑页面中对我们的图表进行打磨和加工，完成之后可以选择下载图片或者分享有交互效果的链接。这里我们以玫瑰图为例，为大家介绍。
+            </p>
             <h3>1. 编辑数据</h3>
-            <p class="p-top">进入图表编辑页面后，我们首先可以点击右侧「编辑数据」，直接在表格中更改或者替换我们的数据；通过「上传数据」，还可以直接上传2M以内的本地excel或CSV文件。</p>
-            <img src="https://ss1.dydata.io/user-handbook/19.png" alt="">
+            <p class="p-top">
+              进入图表编辑页面后，我们首先可以点击右侧「编辑数据」，直接在表格中更改或者替换我们的数据；通过「上传数据」，还可以直接上传2M以内的本地excel或CSV文件。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/19.png" alt="" />
             <h3>2. 主题设置</h3>
-            <p class="p-top">编辑好数据之后，点击「编辑图表」，首先可以对图表的主题进行选择，镝数图表提供近20种主题颜色，帮你省去配色烦恼，一键替换为好看的主题色。</p>
-            <img src="https://ss1.dydata.io/user-handbook/20.png" alt="">
+            <p class="p-top">
+              编辑好数据之后，点击「编辑图表」，首先可以对图表的主题进行选择，镝数图表提供近20种主题颜色，帮你省去配色烦恼，一键替换为好看的主题色。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/20.png" alt="" />
             <h3>3. 画布设置</h3>
-            <p class="p-top">在右侧画布宽高和画布颜色中，我们可以自定义图表画布宽高并选择画布的颜色。点击「手机」或「电脑」可以一键适配不同场景的画布、字体大小等。</p>
-            <img src="https://ss1.dydata.io/user-handbook/21.png" alt="">
+            <p class="p-top">
+              在右侧画布宽高和画布颜色中，我们可以自定义图表画布宽高并选择画布的颜色。点击「手机」或「电脑」可以一键适配不同场景的画布、字体大小等。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/21.png" alt="" />
             <h3 id="21-4">4. 打磨图表细节</h3>
-            <p class="p-top">在「编辑图表」中，我们可以通过修改图表的映射、标题、附加信息、颜色、标签、轴、网格线和图例等打磨图表细节，让我们图表更加个性化。</p>
+            <p class="p-top">
+              在「编辑图表」中，我们可以通过修改图表的映射、标题、附加信息、颜色、标签、轴、网格线和图例等打磨图表细节，让我们图表更加个性化。
+            </p>
             <p class="p-top">打开「映射」，你可以在这里选择不同维度要映射的对象。</p>
-            <img src="https://ss1.dydata.io/user-handbook/22.png" alt="">
-            <p class="p-top">点击「标题」，你可以控制标题的开关，还能修改标题的内容，并设置它的字体、颜色、字号和位置</p>
-            <img src="https://ss1.dydata.io/user-handbook/23.png" alt="">
-            <p class="p-top">在「附加信息」中，你可以自定义单位、数据来源和出品方，设置对应的字体、字号和颜色，在这里还能修改或关闭logo和水印。</p>
-            <img src="https://ss1.dydata.io/user-handbook/24.png" alt="">
+            <img src="https://ss1.dydata.io/user-handbook/22.png" alt="" />
+            <p class="p-top">
+              点击「标题」，你可以控制标题的开关，还能修改标题的内容，并设置它的字体、颜色、字号和位置
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/23.png" alt="" />
+            <p class="p-top">
+              在「附加信息」中，你可以自定义单位、数据来源和出品方，设置对应的字体、字号和颜色，在这里还能修改或关闭logo和水印。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/24.png" alt="" />
             <p class="p-top">在「颜色」中，不同性质图表提供不同的配色方式，如玫瑰图提供单色、多色和渐变三种选项。</p>
-            <img src="https://ss1.dydata.io/user-handbook/25.png" alt="">
-            <p class="p-top">点击各标签对应的颜色，可在出现的颜色面板中点选颜色或自定义十六进制码，还能调整对应颜色的不透明度。</p>
-            <img src="https://ss1.dydata.io/user-handbook/26.png" alt="">
-            <p class="p-top">在「轴、网格线」中，可以自定义轴标签、轴线、轴标题和轴范围等，还可以设置网格线的方向、线宽和颜色。</p>
+            <img src="https://ss1.dydata.io/user-handbook/25.png" alt="" />
+            <p class="p-top">
+              点击各标签对应的颜色，可在出现的颜色面板中点选颜色或自定义十六进制码，还能调整对应颜色的不透明度。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/26.png" alt="" />
+            <p class="p-top">
+              在「轴、网格线」中，可以自定义轴标签、轴线、轴标题和轴范围等，还可以设置网格线的方向、线宽和颜色。
+            </p>
             <p class="p-top">*轴和网格线功能适用于线形图、柱状图、面积图、散点图、极坐标图等图表。</p>
-            <img src="https://ss1.dydata.io/user-handbook/27.png" alt="">
+            <img src="https://ss1.dydata.io/user-handbook/27.png" alt="" />
             <p class="p-top">在「图例」中，你可以控制图例的开关状态，还能调整图例的字体、字号、颜色和位置。</p>
-            <img src="https://ss1.dydata.io/user-handbook/28.png" alt="">
+            <img src="https://ss1.dydata.io/user-handbook/28.png" alt="" />
             <p class="p-top">除了玫瑰图之外，大部分图表还有「样式」配置项。</p>
-            <p class="p-top">线形图可以在这里设置线宽、节点大小、颜色等；柱状图可以在这里设置宽度比例、描边宽度、描边颜色、柱形圆角等；饼图可以设置描边、圆角、内径占比等；面积图可以设置不透明度、折线样式、线宽、节点等等。</p>
-            <img src="https://ss1.dydata.io/user-handbook/29.png" alt="">
+            <p class="p-top">
+              线形图可以在这里设置线宽、节点大小、颜色等；柱状图可以在这里设置宽度比例、描边宽度、描边颜色、柱形圆角等；饼图可以设置描边、圆角、内径占比等；面积图可以设置不透明度、折线样式、线宽、节点等等。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/29.png" alt="" />
             <h3>5. 动画效果</h3>
-            <p class="p-top">图表模板支持导出GIF格式，你可以在「动画」中设置动画效果、持续时间和延迟时间，点击预览按钮，还可以在此页面预览效果。</p>
-            <img src="https://ss1.dydata.io/user-handbook/30.png" alt="">
+            <p class="p-top">
+              图表模板支持导出GIF格式，你可以在「动画」中设置动画效果、持续时间和延迟时间，点击预览按钮，还可以在此页面预览效果。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/30.png" alt="" />
             <h3>6. 切换图表</h3>
-            <p class="p-top">如果你已经打磨好了图表细节，觉得现在的图表不合适想要切换图表时，直接点击右上角的「切换图表」，即可保留刚刚你所编辑过的图表细节，直替换为新的图表。</p>
-            <img src="https://ss1.dydata.io/user-handbook/31.png" alt="">
+            <p class="p-top">
+              如果你已经打磨好了图表细节，觉得现在的图表不合适想要切换图表时，直接点击右上角的「切换图表」，即可保留刚刚你所编辑过的图表细节，直替换为新的图表。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/31.png" alt="" />
             <p class="p-top">在「切换图表」页面，系统还会根据你的数据自动为你推荐合适的图表。</p>
-            <img src="https://ss1.dydata.io/user-handbook/32.png" alt="">
-            <p class="p-top">如果你想要一个全新的图表，不需要保留刚刚的编辑成果，也无需退出，直接在左侧「插入图表」中按照图表类型或功能类型进行筛选。</p>
-            <img src="https://ss1.dydata.io/user-handbook/33.png" alt="">
+            <img src="https://ss1.dydata.io/user-handbook/32.png" alt="" />
+            <p class="p-top">
+              如果你想要一个全新的图表，不需要保留刚刚的编辑成果，也无需退出，直接在左侧「插入图表」中按照图表类型或功能类型进行筛选。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/33.png" alt="" />
             <p class="p-top">找到心仪的图表后点击「插入」，即可替换成全新的图表。</p>
-            <img src="https://ss1.dydata.io/user-handbook/34.png" alt="">
+            <img src="https://ss1.dydata.io/user-handbook/34.png" alt="" />
             <h3>7. 下载</h3>
-            <p class="p-top">在编辑页面中编辑好数据、打磨好图表细节之后，就可以导出你的图表作品了，点击右上方「下载」按钮，进入下载预览界面。</p>
-            <img src="https://ss1.dydata.io/user-handbook/35.png" alt="">
-            <p class="p-top">你可以选择导出为JPG、PNG、SVG和GIF四种格式（动态图表除外）。其中JPG和PNG可以选择输出宽高，输出宽高越大，图片越清晰，PNG格式还支持透明底导出。JPG、PNG和GIF可以选择下载到本地或直接扫码下载到手机。</p>
+            <p class="p-top">
+              在编辑页面中编辑好数据、打磨好图表细节之后，就可以导出你的图表作品了，点击右上方「下载」按钮，进入下载预览界面。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/35.png" alt="" />
+            <p class="p-top">
+              你可以选择导出为JPG、PNG、SVG和GIF四种格式（动态图表除外）。其中JPG和PNG可以选择输出宽高，输出宽高越大，图片越清晰，PNG格式还支持透明底导出。JPG、PNG和GIF可以选择下载到本地或直接扫码下载到手机。
+            </p>
             <p class="p-top">*下载到本地将保存在浏览器下载内容中。</p>
-            <img src="https://ss1.dydata.io/user-handbook/36.png" alt="">
+            <img src="https://ss1.dydata.io/user-handbook/36.png" alt="" />
             <h3>8. 分享</h3>
-            <p class="p-top">除了下载项目以外，你还生成了一个带有交互功能（需要打开「编辑图表」中的交互提示框）的链接，点击右上方「分享」按钮，你可以选择公开或私密分享你的项目。</p>
-            <img src="https://ss1.dydata.io/user-handbook/37.png" alt="">
-            <p class="p-top">扫描二维码或复制链接打开，即可看到自带交互的页面。还能选择「所有人可查看」或「设置密码查看」，设置密码后，访问者需输入密码才能查看你的作品。</p>
-            <img src="https://ss1.dydata.io/user-handbook/38.png" alt="">
+            <p class="p-top">
+              除了下载项目以外，你还生成了一个带有交互功能（需要打开「编辑图表」中的交互提示框）的链接，点击右上方「分享」按钮，你可以选择公开或私密分享你的项目。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/37.png" alt="" />
+            <p class="p-top">
+              扫描二维码或复制链接打开，即可看到自带交互的页面。还能选择「所有人可查看」或「设置密码查看」，设置密码后，访问者需输入密码才能查看你的作品。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/38.png" alt="" />
             <p class="p-top">点击「iframe」，还可以直接复制iframe代码嵌入到你的网页中。</p>
-            <img src="https://ss1.dydata.io/user-handbook/39.png" alt="">
+            <img src="https://ss1.dydata.io/user-handbook/39.png" alt="" />
             <h3>9. 动态图表</h3>
             <p class="p-top">镝数图表除了拥有近百种可导出gif动画的图表模板，还拥有自带强大动画功能的动态图表。</p>
-            <img src="https://ss1.dydata.io/user-handbook/40.png" alt="">
-            <p class="p-top">在图表编辑页面，动态图表的动画功能更加完善和强大，数据随着时间变化的同时，你可以在「动画」配置项中，设置间隔时间、切换时间和延迟时间，还能通过进度条调整当前动画播放进度。</p>
-            <img src="https://ss1.dydata.io/user-handbook/41.png" alt="">
-            <p class="p-top">在「颜色」中，动态图表除支持颜色替换外，还支持上传图片。每个标签都可上传一张图片，鼠标移到对应图片上可删除当前图片。</p>
-            <img src="https://ss1.dydata.io/user-handbook/42.png" alt="">
-            <p class="p-top">在「标签」中，除了其他图表的文本和数值标签外，不同的动态图表还增加了图片标签和时间标签等，以动态条形图为例，你可以设置图片的形状、大小、位置、边距、 描边宽度和颜色等。</p>
-            <img src="https://ss1.dydata.io/user-handbook/45.png" alt="">
-            <p class="p-top">在「轴、网格线」中，除了和其他图表模板一样可自由设置轴、网格线，还能选择坐标轴的位置（不同动态图表配置项有所差异）。</p>
-            <img src="https://ss1.dydata.io/user-handbook/46.png" alt="">
-            <p class="p-top">动态图表的「样式」配置项相对于普通图表也更丰富。如动态条形图除了保留柱状图的样式配置项，还能选择条形的排序方式。</p>
-            <img src="https://ss1.dydata.io/user-handbook/47.png" alt="">
+            <img src="https://ss1.dydata.io/user-handbook/40.png" alt="" />
+            <p class="p-top">
+              在图表编辑页面，动态图表的动画功能更加完善和强大，数据随着时间变化的同时，你可以在「动画」配置项中，设置间隔时间、切换时间和延迟时间，还能通过进度条调整当前动画播放进度。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/41.png" alt="" />
+            <p class="p-top">
+              在「颜色」中，动态图表除支持颜色替换外，还支持上传图片。每个标签都可上传一张图片，鼠标移到对应图片上可删除当前图片。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/42.png" alt="" />
+            <p class="p-top">
+              在「标签」中，除了其他图表的文本和数值标签外，不同的动态图表还增加了图片标签和时间标签等，以动态条形图为例，你可以设置图片的形状、大小、位置、边距、
+              描边宽度和颜色等。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/45.png" alt="" />
+            <p class="p-top">
+              在「轴、网格线」中，除了和其他图表模板一样可自由设置轴、网格线，还能选择坐标轴的位置（不同动态图表配置项有所差异）。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/46.png" alt="" />
+            <p class="p-top">
+              动态图表的「样式」配置项相对于普通图表也更丰富。如动态条形图除了保留柱状图的样式配置项，还能选择条形的排序方式。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/47.png" alt="" />
             <p class="p-top">动态图表的下载暂时仅支持JPG和PNG格式，您可以通过录屏的方式保存为视频。</p>
-            <img src="https://ss1.dydata.io/user-handbook/48.png" alt="">
-            <p class="p-top">还可以点击「分享」，扫描二维码或复制链接后分享给他人，在预览页面也可以正常播放动态视频。</p>
-            <img src="https://ss1.dydata.io/user-handbook/49.png" alt="">
+            <img src="https://ss1.dydata.io/user-handbook/48.png" alt="" />
+            <p class="p-top">
+              还可以点击「分享」，扫描二维码或复制链接后分享给他人，在预览页面也可以正常播放动态视频。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/49.png" alt="" />
           </div>
         </div>
         <!-- 数据图文 -->
         <div *ngIf="title2_4.indexOf(clickId) > -1">
           <h1 id="title-2-4">数据图文</h1>
           <div class="content">
-            <p class="p-top">镝数图表精心准备了大量精致的数据图文模板，为你的作品配色、排版提供专业参考和启发，帮你轻松驾驭商务展示、学术报告、媒体发布等多种场景。</p>
+            <p class="p-top">
+              镝数图表精心准备了大量精致的数据图文模板，为你的作品配色、排版提供专业参考和启发，帮你轻松驾驭商务展示、学术报告、媒体发布等多种场景。
+            </p>
             <p class="p-top">点击左侧导航栏中的「数据图文」，挑选个性化数据图文模板。</p>
-            <img src="https://ss1.dydata.io/user-handbook/50.png" alt="">
+            <img src="https://ss1.dydata.io/user-handbook/50.png" alt="" />
           </div>
           <div class="content">
             <h2 class="h1-top" id="22">(一) 创建数据图文</h2>
             <h3>1. 搜索</h3>
-            <p class="p-top">通过搜索功能可以快速找到更符合你的使用场景的模板。输入场景关键词，点击搜索按钮或键盘回车，即可查看所有相关模板。</p>
-            <p class="p-top">你也可以直接点击搜索栏下方出现的热词，我们会及时更新这些热词，助你快速找到热点相关模板。</p>
-            <img src="https://ss1.dydata.io/user-handbook/51.png" alt="">
+            <p class="p-top">
+              通过搜索功能可以快速找到更符合你的使用场景的模板。输入场景关键词，点击搜索按钮或键盘回车，即可查看所有相关模板。
+            </p>
+            <p class="p-top">
+              你也可以直接点击搜索栏下方出现的热词，我们会及时更新这些热词，助你快速找到热点相关模板。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/51.png" alt="" />
             <h3>2. 筛选</h3>
             <p class="p-top">点击具体的「场景」或「类型」，并按照一定条件排序，可快速锁定符合你使用场景的模板。</p>
-            <img src="https://ss1.dydata.io/user-handbook/52.png" alt="">
+            <img src="https://ss1.dydata.io/user-handbook/52.png" alt="" />
             <h3>3. 预览</h3>
-            <p class="p-top">点击你感兴趣的数据图文上，则可以直接进入数据图文预览页面查看大图，点击「立即编辑」即可进入编辑页面。</p>
+            <p class="p-top">
+              点击你感兴趣的数据图文上，则可以直接进入数据图文预览页面查看大图，点击「立即编辑」即可进入编辑页面。
+            </p>
             <p class="p-top">在这里你可以直接收藏和分享此模板，点击主题词，还能进入各主题词的相关页面。</p>
-            <img src="https://ss1.dydata.io/user-handbook/53.png" alt="">
+            <img src="https://ss1.dydata.io/user-handbook/53.png" alt="" />
             <h3>4. 创建项目</h3>
-            <p class="p-top">在数据图文中，你可以选择设计师设计好的精美模板直接套用，只需稍作调整文字和图表等等，就能直接生成你的数据图文；你也可以创建一个空白数据图文，通过自己插入图表、文字、图片等元素，生成你的数据图文。</p>
+            <p class="p-top">
+              在数据图文中，你可以选择设计师设计好的精美模板直接套用，只需稍作调整文字和图表等等，就能直接生成你的数据图文；你也可以创建一个空白数据图文，通过自己插入图表、文字、图片等元素，生成你的数据图文。
+            </p>
             <p class="p-top">鼠标移到你感兴趣的模板上，点击「编辑」即可快速使用该模板创建项目。</p>
-            <img src="https://ss1.dydata.io/user-handbook/54.png" alt="">
+            <img src="https://ss1.dydata.io/user-handbook/54.png" alt="" />
             <p class="p-top">或进入模板预览页面，点击「立即编辑」即可。</p>
-            <img src="https://ss1.dydata.io/user-handbook/55.png" alt="">
-            <p class="p-top">在数据图文中，还能点击「空白模板」，创建空白数据图文项目，进入编辑页面后即可自由添加元素。</p>
-            <img src="https://ss1.dydata.io/user-handbook/56.png" alt="">
+            <img src="https://ss1.dydata.io/user-handbook/55.png" alt="" />
+            <p class="p-top">
+              在数据图文中，还能点击「空白模板」，创建空白数据图文项目，进入编辑页面后即可自由添加元素。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/56.png" alt="" />
           </div>
 
           <div class="content">
             <h1 class="h1-top" id="23">(二) 数据图文编辑页面</h1>
-            <p class="p-top">数据图文编辑界面中，支持图表、文字、形状、图片、音乐、视频等对象的自由布局。在这里不但可以给图表添加各种设计元素后生成图片，还能直接生成可交互的链接，助力融媒体创作。</p>
+            <p class="p-top">
+              数据图文编辑界面中，支持图表、文字、形状、图片、音乐、视频等对象的自由布局。在这里不但可以给图表添加各种设计元素后生成图片，还能直接生成可交互的链接，助力融媒体创作。
+            </p>
             <h3>1. 页面设置</h3>
             <p class="p-top">进入编辑页面后，点击数据图文画布外部分，右侧出现「页面设置」面板。</p>
-            <img src="https://ss1.dydata.io/user-handbook/57.png" alt="">
-            <p class="p-top">在这里你可以点击「切换主题」，切换整张图上所有图表和画布的主题颜色，镝数图表共提供近20种主题供你选择。</p>
-            <img src="https://ss1.dydata.io/user-handbook/58.png" alt="">
-            <p class="p-top">在「页面设置」中还可以修改画布尺寸和画布颜色。在可以点击下拉框选取不同场景的预设尺寸，也可以选择自定义类型。</p>
-            <img src="https://ss1.dydata.io/user-handbook/59.png" alt="">
-            <p class="p-top">直接在输入框中输入宽度和高度的数值进行尺寸设置，修改数值后，画布尺寸类型将自动变更为「自定义」。点击「锁定」图标，则锁定宽高度的比例，保持锁定状态，可以等比例修改宽高度的数值；再次点击「锁定」图标即可解除锁定状态，可以任意修改宽高度的数值。</p>
+            <img src="https://ss1.dydata.io/user-handbook/57.png" alt="" />
+            <p class="p-top">
+              在这里你可以点击「切换主题」，切换整张图上所有图表和画布的主题颜色，镝数图表共提供近20种主题供你选择。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/58.png" alt="" />
+            <p class="p-top">
+              在「页面设置」中还可以修改画布尺寸和画布颜色。在可以点击下拉框选取不同场景的预设尺寸，也可以选择自定义类型。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/59.png" alt="" />
+            <p class="p-top">
+              直接在输入框中输入宽度和高度的数值进行尺寸设置，修改数值后，画布尺寸类型将自动变更为「自定义」。点击「锁定」图标，则锁定宽高度的比例，保持锁定状态，可以等比例修改宽高度的数值；再次点击「锁定」图标即可解除锁定状态，可以任意修改宽高度的数值。
+            </p>
             <p class="p-top">除此之外，还可以直接将鼠标移动到画布的最右或最下，长按鼠标即可直接拖拽画布。</p>
-            <img src="https://ss1.dydata.io/user-handbook/60.png" alt="">
-            <p class="p-top">点击「画布颜色」，将出现颜色面板供你点选颜色，你也可以在自定义框中输入十六进制码，或点击当前颜色出现取色面板进行取色。</p>
-            <img src="https://ss1.dydata.io/user-handbook/61.png" alt="">
+            <img src="https://ss1.dydata.io/user-handbook/60.png" alt="" />
+            <p class="p-top">
+              点击「画布颜色」，将出现颜色面板供你点选颜色，你也可以在自定义框中输入十六进制码，或点击当前颜色出现取色面板进行取色。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/61.png" alt="" />
             <h3>2. 画布缩放和自适应显示</h3>
-            <p class="p-top">在制作数据图文的过程中，鼠标移到数据图文上方时，页面下方出现的缩放工具可以放大和缩小画布，还能一键达到高度/宽度自适应的效果。方便你进行局部的修改或全局的预览。</p>
-            <img src="https://ss1.dydata.io/user-handbook/62.png" alt="">
+            <p class="p-top">
+              在制作数据图文的过程中，鼠标移到数据图文上方时，页面下方出现的缩放工具可以放大和缩小画布，还能一键达到高度/宽度自适应的效果。方便你进行局部的修改或全局的预览。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/62.png" alt="" />
             <h3>3. 图表</h3>
-            <p class="p-top">在页面左侧点击「图表」，可以在数据图文中插入图表或我的单图。在图表中选择你想要插入的图表，鼠标移动到对应图表上点击插入。</p>
-            <img src="https://ss1.dydata.io/user-handbook/63.png" alt="">
+            <p class="p-top">
+              在页面左侧点击「图表」，可以在数据图文中插入图表或我的单图。在图表中选择你想要插入的图表，鼠标移动到对应图表上点击插入。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/63.png" alt="" />
             <p class="p-top">插入的图表可自由在数据图文中移动、缩放和旋转。</p>
-            <p class="p-top">鼠标移至图表上后，按住鼠标就能在画布上随意移动图表；将鼠标移至图表边框上各点附近，会变成箭头状，此时按住鼠标，向箭头所示方向移动即可缩小或者放大图表；鼠标移至图表上方圆圈，会变成小手，此时按住鼠标，转动即可旋转图表。</p>
-            <img src="https://ss1.dydata.io/user-handbook/64.png" alt="">
-            <p class="p-top">插入的图表可以在右侧编辑数据和编辑图表，点击「编辑数据」可以更改图表对应数据，通过「上传数据」，还可以直接上传2M以内的本地excel或CSV文件。</p>
-            <img src="https://ss1.dydata.io/user-handbook/65.png" alt="">
-            <p class="p-top">点击「编辑图表」，你可以在这里打磨图表细节和切换图表，具体打磨图表细节可见<span class="click-style" (click)= "handleClick({title:'',id:'21-4',parentId:'title-2-3'})">打磨图表细节</span>。</p>
-            <img src="https://ss1.dydata.io/user-handbook/66.png" alt="">
-            <p class="p-top">鼠标右键点击图表，选择「编辑数据」也会出现编辑数据面板，还可以直接对当前图表进行「复用」和「删除」。</p>
-            <p class="p-top">通过「另存为图表项目」，将当前图表另存为图表项目后，可以作为图表模板重新编辑或插入其他数据图文中。</p>
-            <img src="https://ss1.dydata.io/user-handbook/67.png" alt="">
+            <p class="p-top">
+              鼠标移至图表上后，按住鼠标就能在画布上随意移动图表；将鼠标移至图表边框上各点附近，会变成箭头状，此时按住鼠标，向箭头所示方向移动即可缩小或者放大图表；鼠标移至图表上方圆圈，会变成小手，此时按住鼠标，转动即可旋转图表。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/64.png" alt="" />
+            <p class="p-top">
+              插入的图表可以在右侧编辑数据和编辑图表，点击「编辑数据」可以更改图表对应数据，通过「上传数据」，还可以直接上传2M以内的本地excel或CSV文件。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/65.png" alt="" />
+            <p class="p-top">
+              点击「编辑图表」，你可以在这里打磨图表细节和切换图表，具体打磨图表细节可见<span
+                class="click-style"
+                (click)="handleClick({ title: '', id: '21-4', parentId: 'title-2-3' })"
+                >打磨图表细节</span
+              >。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/66.png" alt="" />
+            <p class="p-top">
+              鼠标右键点击图表，选择「编辑数据」也会出现编辑数据面板，还可以直接对当前图表进行「复用」和「删除」。
+            </p>
+            <p class="p-top">
+              通过「另存为图表项目」，将当前图表另存为图表项目后，可以作为图表模板重新编辑或插入其他数据图文中。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/67.png" alt="" />
             <p class="p-top">在左侧点击「我的单图」，还可以直接插入你之前已经制作好的图表项目。</p>
-            <img src="https://ss1.dydata.io/user-handbook/68.png" alt="">
+            <img src="https://ss1.dydata.io/user-handbook/68.png" alt="" />
             <h3>4. 文字</h3>
-            <p class="p-top">在页面左侧点击「文字」，可以在数据图文中插入文字。镝数图表定义了一级和二级标题以及正文样式，鼠标移至你想要采用的文字样式上方，显示「插入」按钮后，单击即可在画布中插入该文字样式。</p>
-            <img src="https://ss1.dydata.io/user-handbook/69.png" alt="">
-            <p class="p-top">鼠标点击插入的文字，可以在右侧编辑面板中，对文字的位置、字体、颜色、字号、行间距、字间距和文字样式等进行设置。</p>
-            <img src="https://ss1.dydata.io/user-handbook/70.png" alt="">
-            <p class="p-top">插入的文字也可自由在数据图文中移动、缩放和旋转。鼠标移至文本框上方，长按鼠标即可移动，移动到边框点附近或圆圈处，长按鼠标即可缩放和旋转。</p>
-            <img src="https://ss1.dydata.io/user-handbook/71.png" alt="">
+            <p class="p-top">
+              在页面左侧点击「文字」，可以在数据图文中插入文字。镝数图表定义了一级和二级标题以及正文样式，鼠标移至你想要采用的文字样式上方，显示「插入」按钮后，单击即可在画布中插入该文字样式。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/69.png" alt="" />
+            <p class="p-top">
+              鼠标点击插入的文字，可以在右侧编辑面板中，对文字的位置、字体、颜色、字号、行间距、字间距和文字样式等进行设置。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/70.png" alt="" />
+            <p class="p-top">
+              插入的文字也可自由在数据图文中移动、缩放和旋转。鼠标移至文本框上方，长按鼠标即可移动，移动到边框点附近或圆圈处，长按鼠标即可缩放和旋转。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/71.png" alt="" />
             <p class="p-top">鼠标右键点击文字，可以选择复用或删除当前文字。</p>
-            <img src="https://ss1.dydata.io/user-handbook/72.png" alt="">
+            <img src="https://ss1.dydata.io/user-handbook/72.png" alt="" />
             <h3>5. 形状</h3>
-            <p class="p-top">在页面左侧点击「形状」，可以在数据图文中插入形状或图标。镝数图表提供了多种形状，鼠标移至你想要采用的形状上方，显示「插入」按钮后，单击即可在画布中插入该形状。</p>
-            <img src="https://ss1.dydata.io/user-handbook/73.png" alt="">
+            <p class="p-top">
+              在页面左侧点击「形状」，可以在数据图文中插入形状或图标。镝数图表提供了多种形状，鼠标移至你想要采用的形状上方，显示「插入」按钮后，单击即可在画布中插入该形状。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/73.png" alt="" />
             <p class="p-top">鼠标点击插入的形状，可以在右侧编辑面板，对该形状的位置、样式等属性等进行设置。</p>
-            <img src="https://ss1.dydata.io/user-handbook/74.png" alt="">
-            <p class="p-top">插入的形状也可自由在数据图文中移动、缩放和旋转。鼠标移至形状上方，长按鼠标即可移动，移动到边框点附近或圆圈处，长按鼠标即可缩放或旋转。</p>
-            <img src="https://ss1.dydata.io/user-handbook/75.png" alt="">
+            <img src="https://ss1.dydata.io/user-handbook/74.png" alt="" />
+            <p class="p-top">
+              插入的形状也可自由在数据图文中移动、缩放和旋转。鼠标移至形状上方，长按鼠标即可移动，移动到边框点附近或圆圈处，长按鼠标即可缩放或旋转。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/75.png" alt="" />
             <p class="p-top">鼠标右键点击形状，可以选择复用或删除当前形状。</p>
-            <img src="https://ss1.dydata.io/user-handbook/76.png" alt="">
-            <p class="p-top">左侧选择「图标」，从图标库中插入图标到数据图文中，图标同形状一样可以自由在画布中移动、缩放和选择。点击图标，在右侧编辑面板中还能修改填充样式、线条样式等等。</p>
-            <img src="https://ss1.dydata.io/user-handbook/77.png" alt="">
+            <img src="https://ss1.dydata.io/user-handbook/76.png" alt="" />
+            <p class="p-top">
+              左侧选择「图标」，从图标库中插入图标到数据图文中，图标同形状一样可以自由在画布中移动、缩放和选择。点击图标，在右侧编辑面板中还能修改填充样式、线条样式等等。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/77.png" alt="" />
             <h3>6. 图片</h3>
-            <p class="p-top">在页面左侧点击「图片」，可以在数据图文中插入图片。你可以直接从镝数图表提供的图片库中选择图片并插入，也可以选择本地上传图片并插入数据图文中。</p>
-            <img src="https://ss1.dydata.io/user-handbook/78.png" alt="">
-            <p class="p-top">上传后的图片将显示在「我的上传」中，鼠标移至你想要插入的图片上方，显示「插入」按钮后，单击即可在画布中插入该图片。</p>
-            <img src="https://ss1.dydata.io/user-handbook/79.png" alt="">
-            <p class="p-top">鼠标点击插入的图片，可以在右侧编辑面板，对该图片的位置、圆角、不透明度、边框样式以及阴影等属性等进行设置。</p>
-            <img src="https://ss1.dydata.io/user-handbook/80.png" alt="">
-            <p class="p-top">插入的图片也可自由在数据图文中移动、缩放和旋转。鼠标移至图片上方，长按鼠标即可移动，移动到边框点附近或圆圈处，长按鼠标即可缩放或旋转。</p>
-            <img src="https://ss1.dydata.io/user-handbook/81.png" alt="">
+            <p class="p-top">
+              在页面左侧点击「图片」，可以在数据图文中插入图片。你可以直接从镝数图表提供的图片库中选择图片并插入，也可以选择本地上传图片并插入数据图文中。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/78.png" alt="" />
+            <p class="p-top">
+              上传后的图片将显示在「我的上传」中，鼠标移至你想要插入的图片上方，显示「插入」按钮后，单击即可在画布中插入该图片。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/79.png" alt="" />
+            <p class="p-top">
+              鼠标点击插入的图片，可以在右侧编辑面板，对该图片的位置、圆角、不透明度、边框样式以及阴影等属性等进行设置。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/80.png" alt="" />
+            <p class="p-top">
+              插入的图片也可自由在数据图文中移动、缩放和旋转。鼠标移至图片上方，长按鼠标即可移动，移动到边框点附近或圆圈处，长按鼠标即可缩放或旋转。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/81.png" alt="" />
             <p class="p-top">鼠标右键点击图片，可以选择复用或删除当前图片。</p>
-            <img src="https://ss1.dydata.io/user-handbook/82.png" alt="">
+            <img src="https://ss1.dydata.io/user-handbook/82.png" alt="" />
             <h3>7. 音乐</h3>
-            <p class="p-top">在页面左侧点击「音乐」，首先选择你要插入的音乐类型：可以在数据图文中插入「背景音乐」或「音乐模块」。一个数据图文中仅可插入一个「背景音乐」，可插入多个「音乐模块」。</p>
-            <img src="https://ss1.dydata.io/user-handbook/83.png" alt="">
-            <p class="p-top">选择插入「背景音乐」时，你可以直接从音乐库中选择音乐，将鼠标移动到选中音乐上，点击播放按钮即可试听，点击「插入」即可作为背景音乐插入数据图文。</p>
-            <img src="https://ss1.dydata.io/user-handbook/84.png" alt="">
-            <p class="p-top">插入后数据图文中将出现背景音乐的图标，背景音乐图标也能在数据图文中自由移动、缩放和旋转。鼠标移至音乐图标上方，长按鼠标即可移动，移动到边框点附近或圆圈处，长按鼠标即可缩放或旋转。</p>
-            <img src="https://ss1.dydata.io/user-handbook/85.png" alt="">
+            <p class="p-top">
+              在页面左侧点击「音乐」，首先选择你要插入的音乐类型：可以在数据图文中插入「背景音乐」或「音乐模块」。一个数据图文中仅可插入一个「背景音乐」，可插入多个「音乐模块」。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/83.png" alt="" />
+            <p class="p-top">
+              选择插入「背景音乐」时，你可以直接从音乐库中选择音乐，将鼠标移动到选中音乐上，点击播放按钮即可试听，点击「插入」即可作为背景音乐插入数据图文。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/84.png" alt="" />
+            <p class="p-top">
+              插入后数据图文中将出现背景音乐的图标，背景音乐图标也能在数据图文中自由移动、缩放和旋转。鼠标移至音乐图标上方，长按鼠标即可移动，移动到边框点附近或圆圈处，长按鼠标即可缩放或旋转。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/85.png" alt="" />
             <p class="p-top">也可以点击「自定义音乐链接」，上传mp3格式的音乐链接，插入自定义的音乐。</p>
-            <img src="https://ss1.dydata.io/user-handbook/86.png" alt="">
-            <p class="p-top">点击背景音乐图标，你可以在右侧编辑面板，对「自动播放」和「循环播放」进行定义，想要保留配置项并切换音乐，可以点击右上角「切换音乐」。</p>
+            <img src="https://ss1.dydata.io/user-handbook/86.png" alt="" />
+            <p class="p-top">
+              点击背景音乐图标，你可以在右侧编辑面板，对「自动播放」和「循环播放」进行定义，想要保留配置项并切换音乐，可以点击右上角「切换音乐」。
+            </p>
             <p class="p-top">鼠标右键点击背景音乐图标，可以选择删除当前背景音乐。</p>
-            <img src="https://ss1.dydata.io/user-handbook/87.png" alt="">
-            <p class="p-top">选择插入「音乐模块」时，同理「背景音乐」，你可以直接从音乐库中试听音乐并选择合适的插入数据图文，也可以点击「自定义音乐链接」，上传mp3格式的音乐链接，插入自定义的音乐。</p>
-            <img src="https://ss1.dydata.io/user-handbook/88.png" alt="">  
-            <p class="p-top">插入「音乐模块」后，数据图文中将出现一个带有音乐标题、音乐时长、进度条的音乐模块。音乐模块同样可以在自由图文中自由移动、缩放和旋转。</p>
-            <img src="https://ss1.dydata.io/user-handbook/89.png" alt=""> 
-            <p class="p-top">点击对应音乐模块，你可以在右侧编辑面板，修改「音乐标题」、在多款皮肤主题中选择你喜欢的「皮肤」以及定义「自动播放」和「循环播放」，想要保留参数切换音乐，可以点击「切换音乐」。</p>
+            <img src="https://ss1.dydata.io/user-handbook/87.png" alt="" />
+            <p class="p-top">
+              选择插入「音乐模块」时，同理「背景音乐」，你可以直接从音乐库中试听音乐并选择合适的插入数据图文，也可以点击「自定义音乐链接」，上传mp3格式的音乐链接，插入自定义的音乐。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/88.png" alt="" />
+            <p class="p-top">
+              插入「音乐模块」后，数据图文中将出现一个带有音乐标题、音乐时长、进度条的音乐模块。音乐模块同样可以在自由图文中自由移动、缩放和旋转。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/89.png" alt="" />
+            <p class="p-top">
+              点击对应音乐模块，你可以在右侧编辑面板，修改「音乐标题」、在多款皮肤主题中选择你喜欢的「皮肤」以及定义「自动播放」和「循环播放」，想要保留参数切换音乐，可以点击「切换音乐」。
+            </p>
             <p class="p-top">右键点击对应音乐模块，可以选择复用或删除当前音乐模块。</p>
-            <img src="https://ss1.dydata.io/user-handbook/90.png" alt="">
+            <img src="https://ss1.dydata.io/user-handbook/90.png" alt="" />
             <h3>8. 视频</h3>
-            <p class="p-top">在页面左侧点击「视频」，可以在数据图文中插入第三方视频或MP4视频，镝数图表提供了一些第三方平台如优酷、腾讯视频和bilibili的入口，点击第三方平台链接后的小问号，即可查看获取第三方平台链接方式。</p>
-            <img src="https://ss1.dydata.io/user-handbook/91.png" alt="">
-            <p class="p-top">在框内输入第三方平台链接或MP4地址，点击「插入」即可在数据图文插入视频，你可以自由调整视频的大小、位置和角度。</p>
-            <img src="https://ss1.dydata.io/user-handbook/92.png" alt="">
-            <p class="p-top">插入视频后，你可以在右侧编辑面板中，改变视频的「不透明度」，想要切换保留参数切换视频，可以直接在右侧框内输入新链接并点击「切换」。</p>
+            <p class="p-top">
+              在页面左侧点击「视频」，可以在数据图文中插入第三方视频或MP4视频，镝数图表提供了一些第三方平台如优酷、腾讯视频和bilibili的入口，点击第三方平台链接后的小问号，即可查看获取第三方平台链接方式。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/91.png" alt="" />
+            <p class="p-top">
+              在框内输入第三方平台链接或MP4地址，点击「插入」即可在数据图文插入视频，你可以自由调整视频的大小、位置和角度。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/92.png" alt="" />
+            <p class="p-top">
+              插入视频后，你可以在右侧编辑面板中，改变视频的「不透明度」，想要切换保留参数切换视频，可以直接在右侧框内输入新链接并点击「切换」。
+            </p>
             <p class="p-top">鼠标右键点击该视频，可以选择复用或删除当前视频。</p>
-            <img src="https://ss1.dydata.io/user-handbook/93.png" alt="">
+            <img src="https://ss1.dydata.io/user-handbook/93.png" alt="" />
             <h3>9. 模板</h3>
-            <p class="p-top">在页面左侧点击「模板」，鼠标移到你想要的模板上并点击插入，可以直接将当前数据图文替换成其他数据图文模板。使用新模板将会覆盖当前画布上所有的内容及数据，若当前数据图文有重要内容请谨慎选择。</p>
-            <img src="https://ss1.dydata.io/user-handbook/94.png" alt="">
+            <p class="p-top">
+              在页面左侧点击「模板」，鼠标移到你想要的模板上并点击插入，可以直接将当前数据图文替换成其他数据图文模板。使用新模板将会覆盖当前画布上所有的内容及数据，若当前数据图文有重要内容请谨慎选择。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/94.png" alt="" />
             <h3>10. 下载</h3>
             <p class="p-top">设计好数据图文之后，就可以导出你的作品了，点击右上方「下载」按钮，进入下载预览界面。</p>
-            <img src="https://ss1.dydata.io/user-handbook/95.png" alt="">
-            <p class="p-top">你可以选择导出为JPG、PNG两种格式。输出宽高越大，导出图片将会清晰，PNG格式的图片还支持透明底导出。点击「下载到本地」直接保存在浏览器下载内容中，点击「下载到手机」可以扫码保存到手机中。</p>
-            <img src="https://ss1.dydata.io/user-handbook/96.png" alt="">
+            <img src="https://ss1.dydata.io/user-handbook/95.png" alt="" />
+            <p class="p-top">
+              你可以选择导出为JPG、PNG两种格式。输出宽高越大，导出图片将会清晰，PNG格式的图片还支持透明底导出。点击「下载到本地」直接保存在浏览器下载内容中，点击「下载到手机」可以扫码保存到手机中。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/96.png" alt="" />
             <h3>11. 分享</h3>
-            <p class="p-top">除了下载数据图文以外，你还生成了一个自带交互功能的链接，分享打开链接后可以直接播放音乐、视频、动态图表等，点击右上方「分享」按钮，你可以选择公开或私密分享你的项目。</p>
-            <img src="https://ss1.dydata.io/user-handbook/97.png" alt="">
-            <p class="p-top">扫描二维码或复制链接后分享即可查看，还能选择「所有人可查看」或「设置密码查看」，设置密码后，访问者需输入密码才能查看你的作品。</p>
-            <img src="https://ss1.dydata.io/user-handbook/98.png" alt="">
+            <p class="p-top">
+              除了下载数据图文以外，你还生成了一个自带交互功能的链接，分享打开链接后可以直接播放音乐、视频、动态图表等，点击右上方「分享」按钮，你可以选择公开或私密分享你的项目。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/97.png" alt="" />
+            <p class="p-top">
+              扫描二维码或复制链接后分享即可查看，还能选择「所有人可查看」或「设置密码查看」，设置密码后，访问者需输入密码才能查看你的作品。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/98.png" alt="" />
             <p class="p-top">点击「iframe」，还可以直接复制iframe代码将此数据图文的全部内容嵌入到你的网页中。</p>
-            <img src="https://ss1.dydata.io/user-handbook/99.png" alt="">
+            <img src="https://ss1.dydata.io/user-handbook/99.png" alt="" />
           </div>
         </div>
         <!-- 我的 -->
@@ -623,124 +873,188 @@
             <p class="p-top">在「我的」中，你可以快速找到自己创建的项目、收藏的数据图文模板和上传的数据。</p>
             <h2 class="h1-top" id="24">(一) 我的项目</h2>
             <h3>1. 查看</h3>
-            <p class="p-top">所有创建的项目都在「我的项目」中，在左侧导航栏点击「我的」-「项目」，即可查看你的项目，通过右上角搜索栏还能快速找到你创建的项目。</p>
-            <img src="https://ss1.dydata.io/user-handbook/100.png" alt="">
+            <p class="p-top">
+              所有创建的项目都在「我的项目」中，在左侧导航栏点击「我的」-「项目」，即可查看你的项目，通过右上角搜索栏还能快速找到你创建的项目。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/100.png" alt="" />
             <p class="p-top">在「我的项目」中，可以通过左上角的「全部/单图/数据图文」标签快速筛选项目类型。</p>
-            <img src="https://ss1.dydata.io/user-handbook/101.png" alt="">
-            <p class="p-top">右上角的进度条显示了你当前已有的项目数量以及最多可以创建的数量。若你的项目数已满，将无法创建新项目。你可以尝试删除一些不太常用的项目，获得更多项目储存空间，或者升级会员获取更大的项目存储空间。</p>
-            <img src="https://ss1.dydata.io/user-handbook/102.png" alt="">
+            <img src="https://ss1.dydata.io/user-handbook/101.png" alt="" />
+            <p class="p-top">
+              右上角的进度条显示了你当前已有的项目数量以及最多可以创建的数量。若你的项目数已满，将无法创建新项目。你可以尝试删除一些不太常用的项目，获得更多项目储存空间，或者升级会员获取更大的项目存储空间。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/102.png" alt="" />
             <p class="p-top">通过进度条右侧的搜索功能还可以快速找到具体的项目。</p>
-            <img src="https://ss1.dydata.io/user-handbook/103.png" alt="">
+            <img src="https://ss1.dydata.io/user-handbook/103.png" alt="" />
             <h3>2. 编辑</h3>
-            <p class="p-top">鼠标移动到想要修改的项目上，点击出现的「编辑」按钮，进入编辑项目页面，可以重新编辑你的项目</p>
-            <img src="https://ss1.dydata.io/user-handbook/104.png" alt="">
-            <img src="https://ss1.dydata.io/user-handbook/105.png" alt="">
+            <p class="p-top">
+              鼠标移动到想要修改的项目上，点击出现的「编辑」按钮，进入编辑项目页面，可以重新编辑你的项目
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/104.png" alt="" />
+            <img src="https://ss1.dydata.io/user-handbook/105.png" alt="" />
             <h3>3. 预览</h3>
-            <p class="p-top">你可以通过预览功能查看项目效果，鼠标移动到想要查看的项目上，点击「预览」，即可打开预览页面。预览页面中可交互、可播放动态视频，还能播放音乐和视频。</p>
-            <img src="https://ss1.dydata.io/user-handbook/106.png" alt="">
-            <p class="p-top">在预览界面中，将鼠标放到图表上方，即可体验交互查看到对应数据，除此之外，音乐、视频和动态图表等都可以在此页面播放。</p>
-            <img src="https://ss1.dydata.io/user-handbook/107.png" alt="">
-            <p class="p-top">预览界面右上方还通过了缩放、自适应功能以及全屏按钮，点击「+」或「-」可以放大和缩小画布，点击「宽度自适应」或「高度自适应」按钮，屏幕将自动适应当前图片的宽度/高度。</p>
-            <img src="https://ss1.dydata.io/user-handbook/108.png" alt="">
+            <p class="p-top">
+              你可以通过预览功能查看项目效果，鼠标移动到想要查看的项目上，点击「预览」，即可打开预览页面。预览页面中可交互、可播放动态视频，还能播放音乐和视频。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/106.png" alt="" />
+            <p class="p-top">
+              在预览界面中，将鼠标放到图表上方，即可体验交互查看到对应数据，除此之外，音乐、视频和动态图表等都可以在此页面播放。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/107.png" alt="" />
+            <p class="p-top">
+              预览界面右上方还通过了缩放、自适应功能以及全屏按钮，点击「+」或「-」可以放大和缩小画布，点击「宽度自适应」或「高度自适应」按钮，屏幕将自动适应当前图片的宽度/高度。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/108.png" alt="" />
             <p class="p-top">你还可以点击「全屏模式」，在全屏状态下进行预览。</p>
-            <img src="https://ss1.dydata.io/user-handbook/109.png" alt="">
+            <img src="https://ss1.dydata.io/user-handbook/109.png" alt="" />
             <p class="p-top">或者点击项目右上角的「…」，再点击「分享」。</p>
-            <img src="https://ss1.dydata.io/user-handbook/110.png" alt="">
-            <p class="p-top">分享类型包括「所有人可查看」和「设置密码查看」。选择「所有人可查看」，任何人都可以通过该链接访问你的项目。你可以直接选择手机扫码后查看效果再分享，也可以点击「复制链接」按钮，即可复制链接到剪贴板，可以直接粘贴发送。</p>
-            <img src="https://ss1.dydata.io/user-handbook/111.png" alt="">
-            <p class="p-top">选择「设置密码查看」，你可以给项目链接添加一个访问密码，访问者只有输入正确密码才能访问你的项目。</p>
-            <img src="https://ss1.dydata.io/user-handbook/112.png" alt="">
+            <img src="https://ss1.dydata.io/user-handbook/110.png" alt="" />
+            <p class="p-top">
+              分享类型包括「所有人可查看」和「设置密码查看」。选择「所有人可查看」，任何人都可以通过该链接访问你的项目。你可以直接选择手机扫码后查看效果再分享，也可以点击「复制链接」按钮，即可复制链接到剪贴板，可以直接粘贴发送。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/111.png" alt="" />
+            <p class="p-top">
+              选择「设置密码查看」，你可以给项目链接添加一个访问密码，访问者只有输入正确密码才能访问你的项目。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/112.png" alt="" />
             <h3>4. 重命名</h3>
             <p class="p-top">鼠标移动到想要修改名称的项目上，点击右上角的「…」，点击「重命名」，打开重命名弹窗。</p>
-            <img src="https://ss1.dydata.io/user-handbook/113.png" alt="">
-            <p class="p-top">输入修改后的项目名称，点击「确定」，即可保存新的名称。名称需要限制在50字以内，如果超过50字，将无法保存。</p>
-            <img src="https://ss1.dydata.io/user-handbook/114.png" alt="">
+            <img src="https://ss1.dydata.io/user-handbook/113.png" alt="" />
+            <p class="p-top">
+              输入修改后的项目名称，点击「确定」，即可保存新的名称。名称需要限制在50字以内，如果超过50字，将无法保存。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/114.png" alt="" />
             <h3>5. 项目描述</h3>
-            <p class="p-top">你可以在项目描述中更详细地介绍你的作品。鼠标移动到想要修改项目描述的项目上，点击右上角的「…」，点击「项目描述」，打开项目描述弹窗。</p>
-            <img src="https://ss1.dydata.io/user-handbook/115.png" alt="">
-            <p class="p-top">输入修改后的项目描述，点击「确定」，即可保存新的项目描述。项目描述需要限制在140字以内，如果超过140字，将无法保存。</p>
-            <img src="https://ss1.dydata.io/user-handbook/116.png" alt="">
+            <p class="p-top">
+              你可以在项目描述中更详细地介绍你的作品。鼠标移动到想要修改项目描述的项目上，点击右上角的「…」，点击「项目描述」，打开项目描述弹窗。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/115.png" alt="" />
+            <p class="p-top">
+              输入修改后的项目描述，点击「确定」，即可保存新的项目描述。项目描述需要限制在140字以内，如果超过140字，将无法保存。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/116.png" alt="" />
             <h3>6. 创建副本</h3>
-            <p class="p-top">通过创建副本，你可以保留最初的作品而仅在副本中做修改。鼠标移动到想要创建副本的项目上，点击右上角的「…」，点击「创建副本」，即可创建该项目的副本。创建的副本会在原项目名称的最后自动添加文字“副本”以示区分，可以通过「重命名」修改。</p>
-            <img src="https://ss1.dydata.io/user-handbook/117.png" alt="">
-            <img src="https://ss1.dydata.io/user-handbook/118.png" alt="">
+            <p class="p-top">
+              通过创建副本，你可以保留最初的作品而仅在副本中做修改。鼠标移动到想要创建副本的项目上，点击右上角的「…」，点击「创建副本」，即可创建该项目的副本。创建的副本会在原项目名称的最后自动添加文字“副本”以示区分，可以通过「重命名」修改。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/117.png" alt="" />
+            <img src="https://ss1.dydata.io/user-handbook/118.png" alt="" />
             <h3>7. 锁定</h3>
-            <p class="p-top">通过锁定项目，你可以将重要的项目锁定避免误删。鼠标移动到想要创建副本的项目上，点击右上角的「…」，点击「锁定」，即可锁定该项目。</p>
-            <img src="https://ss1.dydata.io/user-handbook/119.png" alt="">
-            <p class="p-top">锁定后的项目右下角会出现锁定标志，锁定后的项目无法编辑，点击右上角的「…」，点击「解锁」，即可解锁该项目。</p>
-            <img src="https://ss1.dydata.io/user-handbook/120.png" alt="">
+            <p class="p-top">
+              通过锁定项目，你可以将重要的项目锁定避免误删。鼠标移动到想要创建副本的项目上，点击右上角的「…」，点击「锁定」，即可锁定该项目。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/119.png" alt="" />
+            <p class="p-top">
+              锁定后的项目右下角会出现锁定标志，锁定后的项目无法编辑，点击右上角的「…」，点击「解锁」，即可解锁该项目。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/120.png" alt="" />
             <h3>8. 删除</h3>
-            <p class="p-top">定期删除不再需要的项目可以为新项目的创建留出空间，但要注意的是项目一经删除之后将无法恢复，请谨慎操作。</p>
-            <p class="p-top">鼠标移动到想要删除的项目上，点击右上角的「…」，点击「删除」，确认无误后在弹出的删除弹窗中再次点击「删除」，即可删除该项目。</p>
-            <img src="https://ss1.dydata.io/user-handbook/121.png" alt="">
-            <img src="https://ss1.dydata.io/user-handbook/122.png" alt="">
-            <p class="p-top">也可以通过批量删除的方式同时删除多个项目。鼠标移动到想要删除的项目上，勾选左上角的选框，即可选中该项目，选中所有要删除的项目后，点击左上角「全部」标签左侧的「删除」图标，确认无误后在弹出的删除弹窗中再次点击「删除」，即可删除选中的所有项目。</p>
-            <img src="https://ss1.dydata.io/user-handbook/123.png" alt="">
-            <img src="https://ss1.dydata.io/user-handbook/124.png" alt="">
-            <p class="p-top">在未选中任何项目时，直接勾选左上角「全部」标签左侧的「全选」选框，可以直接选中全部项目，此时点击「删除」图标，将删除所有已创建的项目。</p>
-            <img src="https://ss1.dydata.io/user-handbook/125.png" alt="">
+            <p class="p-top">
+              定期删除不再需要的项目可以为新项目的创建留出空间，但要注意的是项目一经删除之后将无法恢复，请谨慎操作。
+            </p>
+            <p class="p-top">
+              鼠标移动到想要删除的项目上，点击右上角的「…」，点击「删除」，确认无误后在弹出的删除弹窗中再次点击「删除」，即可删除该项目。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/121.png" alt="" />
+            <img src="https://ss1.dydata.io/user-handbook/122.png" alt="" />
+            <p class="p-top">
+              也可以通过批量删除的方式同时删除多个项目。鼠标移动到想要删除的项目上，勾选左上角的选框，即可选中该项目，选中所有要删除的项目后，点击左上角「全部」标签左侧的「删除」图标，确认无误后在弹出的删除弹窗中再次点击「删除」，即可删除选中的所有项目。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/123.png" alt="" />
+            <img src="https://ss1.dydata.io/user-handbook/124.png" alt="" />
+            <p class="p-top">
+              在未选中任何项目时，直接勾选左上角「全部」标签左侧的「全选」选框，可以直接选中全部项目，此时点击「删除」图标，将删除所有已创建的项目。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/125.png" alt="" />
           </div>
 
           <div class="content">
             <h2 class="h1-top" id="25">(二) 我的收藏</h2>
             <h3>1. 查看</h3>
-            <p class="p-top">在预览数据图文的模板时，可以对你喜爱或者感兴趣的模板进行收藏，收藏后的模板将统一收录在我的「收藏」中，通过右上角搜索栏就能快速找到你收藏的模板。</p>
-            <img src="https://ss1.dydata.io/user-handbook/126.png" alt="">
+            <p class="p-top">
+              在预览数据图文的模板时，可以对你喜爱或者感兴趣的模板进行收藏，收藏后的模板将统一收录在我的「收藏」中，通过右上角搜索栏就能快速找到你收藏的模板。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/126.png" alt="" />
             <h3>2. 编辑、预览</h3>
-            <p class="p-top">将鼠标移至收藏的数据图文上方，可以直接对该项目进行「编辑」和「预览」，对应进入该数据图文的编辑页面或预览页面。</p>
-            <img src="https://ss1.dydata.io/user-handbook/127.png" alt="">
+            <p class="p-top">
+              将鼠标移至收藏的数据图文上方，可以直接对该项目进行「编辑」和「预览」，对应进入该数据图文的编辑页面或预览页面。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/127.png" alt="" />
             <h3>3. 取消收藏</h3>
             <p class="p-top">鼠标移动到对应模板上时，可以在下方点击「收藏」直接取消收藏此项目。</p>
-            <img src="https://ss1.dydata.io/user-handbook/128.png" alt="">
-            <p class="p-top">也可以通过批量删除的方式同时取消收藏多个项目。鼠标移动到想要取消收藏的项目上，勾选左上角的选框，即可选中该项目，点击左上角全部勾选左侧的「删除」图标，确认无误后在弹出的删除弹窗中再次点击「删除」，即可取消收藏选中的所有项目。</p>
-            <img src="https://ss1.dydata.io/user-handbook/129.png" alt="">
+            <img src="https://ss1.dydata.io/user-handbook/128.png" alt="" />
+            <p class="p-top">
+              也可以通过批量删除的方式同时取消收藏多个项目。鼠标移动到想要取消收藏的项目上，勾选左上角的选框，即可选中该项目，点击左上角全部勾选左侧的「删除」图标，确认无误后在弹出的删除弹窗中再次点击「删除」，即可取消收藏选中的所有项目。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/129.png" alt="" />
           </div>
 
           <div class="content">
             <h2 class="h1-top" id="26">(三) 我的数据</h2>
-            <p class="p-top">在「我的数据」中可以查看到所有你上传的数据文件，通过右上角搜索栏还能快速搜索到相关数据。</p>
-            <img src="https://ss1.dydata.io/user-handbook/130.png" alt="">
+            <p class="p-top">
+              在「我的数据」中可以查看到所有你上传的数据文件，通过右上角搜索栏还能快速搜索到相关数据。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/130.png" alt="" />
             <h3>1. 上传</h3>
             <p class="p-top">想先上传数据再制作图表，点击「上传数据」按钮。</p>
-            <img src="https://ss1.dydata.io/user-handbook/131.png" alt="">
+            <img src="https://ss1.dydata.io/user-handbook/131.png" alt="" />
             <p class="p-top">支持一键上传2M内的EXCEL或CSV文件。</p>
-            <img src="https://ss1.dydata.io/user-handbook/132.png" alt="">
+            <img src="https://ss1.dydata.io/user-handbook/132.png" alt="" />
             <p class="p-top">上传完成后即可在线编辑，编辑完成后点击「下一步」按钮，默认自动保存到「我的数据」中。</p>
-            <img src="https://ss1.dydata.io/user-handbook/133.png" alt="">
+            <img src="https://ss1.dydata.io/user-handbook/133.png" alt="" />
             <p class="p-top">系统会自动根据你上传的数据进行图表的推荐，你可以根据分类筛选出适合的图表。</p>
-            <img src="https://ss1.dydata.io/user-handbook/134.png" alt="">
-            <p class="p-top">选择图表后将会出现预览效果，点击「生成图表」即可生成图表项目，如何觉得此图表不合适，你还可以点击「上一步」重新选择图表。</p>
-            <img src="https://ss1.dydata.io/user-handbook/135.png" alt="">
-            <p class="p-top">搜索栏左侧进度条显示的是已上传的数据条数与上传数量上限，达到上限后将无法继续上传数据，请及时删除不再需要的数据，或者升级会员获取更大的数据存储空间。</p>
-            <img src="https://ss1.dydata.io/user-handbook/136.png" alt="">
+            <img src="https://ss1.dydata.io/user-handbook/134.png" alt="" />
+            <p class="p-top">
+              选择图表后将会出现预览效果，点击「生成图表」即可生成图表项目，如何觉得此图表不合适，你还可以点击「上一步」重新选择图表。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/135.png" alt="" />
+            <p class="p-top">
+              搜索栏左侧进度条显示的是已上传的数据条数与上传数量上限，达到上限后将无法继续上传数据，请及时删除不再需要的数据，或者升级会员获取更大的数据存储空间。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/136.png" alt="" />
             <h3>2. 编辑</h3>
             <p class="p-top">在我的数据中找到想要重新编辑的数据，点击右侧的的「编辑数据」按钮，即可打开编辑表格。</p>
-            <img src="https://ss1.dydata.io/user-handbook/137.png" alt="">
+            <img src="https://ss1.dydata.io/user-handbook/137.png" alt="" />
             <p class="p-top">编辑完成后点击「保存」即可修改成功。</p>
-            <img src="https://ss1.dydata.io/user-handbook/138.png" alt="">
+            <img src="https://ss1.dydata.io/user-handbook/138.png" alt="" />
             <h3>3. 制作图表</h3>
-            <p class="p-top">使用「制作图表」功能，只需编辑数据和选择图表两个步骤就能即刻将你上传的数据转化为可视化图表。找到你想要可视化的数据，点击右侧的「制作图表」按钮，打开数据表格编辑数据。</p>
-            <img src="https://ss1.dydata.io/user-handbook/139.png" alt="">
-            <p class="p-top">数据的修改会自动保存，如果希望保留原始数据，可以取消勾选「下一步」按钮左侧的「自动保存」，编辑完成后点击「下一步」选择图表。</p>
-            <img src="https://ss1.dydata.io/user-handbook/140.png" alt="">
+            <p class="p-top">
+              使用「制作图表」功能，只需编辑数据和选择图表两个步骤就能即刻将你上传的数据转化为可视化图表。找到你想要可视化的数据，点击右侧的「制作图表」按钮，打开数据表格编辑数据。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/139.png" alt="" />
+            <p class="p-top">
+              数据的修改会自动保存，如果希望保留原始数据，可以取消勾选「下一步」按钮左侧的「自动保存」，编辑完成后点击「下一步」选择图表。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/140.png" alt="" />
             <p class="p-top">系统会自动根据你修改的数据进行图表的推荐，你可以根据分类筛选出适合的图表。</p>
-            <img src="https://ss1.dydata.io/user-handbook/141.png" alt="">
-            <p class="p-top">选择图表后将会出现预览效果，点击「生成图表」即可生成图表项目，如何觉得此图表不合适，你还可以点击「上一步」重新选择图表。</p>
-            <img src="https://ss1.dydata.io/user-handbook/142.png" alt="">
+            <img src="https://ss1.dydata.io/user-handbook/141.png" alt="" />
+            <p class="p-top">
+              选择图表后将会出现预览效果，点击「生成图表」即可生成图表项目，如何觉得此图表不合适，你还可以点击「上一步」重新选择图表。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/142.png" alt="" />
             <h3>4. 重命名</h3>
             <p class="p-top">鼠标移动到想要修改名称的数据上，点击右边的「更多」后，点击「重命名」。</p>
-            <img src="https://ss1.dydata.io/user-handbook/143.png" alt="">
-            <p class="p-top">输入修改后的数据表名称，点击「确定」，即可保存新的名称。名称需要限制在50字以内，如果超过50字，将无法保存。</p>
-            <img src="https://ss1.dydata.io/user-handbook/144.png" alt="">
+            <img src="https://ss1.dydata.io/user-handbook/143.png" alt="" />
+            <p class="p-top">
+              输入修改后的数据表名称，点击「确定」，即可保存新的名称。名称需要限制在50字以内，如果超过50字，将无法保存。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/144.png" alt="" />
             <h3>5. 删除</h3>
-            <p class="p-top">数据上传数量达到上限后将无法继续上传数据，请及时删除不再需要的数据，但要注意上传的数据一经删除将无法恢复，请谨慎操作。</p>
-            <p class="p-top">鼠标移动到需要删除的数据上，点击右上角的「更多」后，点击「删除」，确认无误后在弹出的删除弹窗中再次点击「删除」，即可删除该数据。</p>
-            <img src="https://ss1.dydata.io/user-handbook/145.png" alt="">
-            <img src="https://ss1.dydata.io/user-handbook/146.png" alt="">
-            <p class="p-top">也可以通过批量删除的方式同时删除多条数据。鼠标移动到想要删除的数据上，勾选左边的选框，即可选中该数据，选中所有要删除的数据后，点击左上角全部勾选右侧的「删除」图标，确认无误后在弹出的删除弹窗中再次点击「删除」，即可删除选中的所有数据。</p>
-            <img src="https://ss1.dydata.io/user-handbook/147.png" alt="">
-            <p class="p-top">在未选中任何数据时，直接勾选左上角的「全选」选框，可以直接选中全部数据，此时点击「删除」图标，将删除所有上传的数据。</p>
-            <img src="https://ss1.dydata.io/user-handbook/148.png" alt="">
+            <p class="p-top">
+              数据上传数量达到上限后将无法继续上传数据，请及时删除不再需要的数据，但要注意上传的数据一经删除将无法恢复，请谨慎操作。
+            </p>
+            <p class="p-top">
+              鼠标移动到需要删除的数据上，点击右上角的「更多」后，点击「删除」，确认无误后在弹出的删除弹窗中再次点击「删除」，即可删除该数据。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/145.png" alt="" />
+            <img src="https://ss1.dydata.io/user-handbook/146.png" alt="" />
+            <p class="p-top">
+              也可以通过批量删除的方式同时删除多条数据。鼠标移动到想要删除的数据上，勾选左边的选框，即可选中该数据，选中所有要删除的数据后，点击左上角全部勾选右侧的「删除」图标，确认无误后在弹出的删除弹窗中再次点击「删除」，即可删除选中的所有数据。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/147.png" alt="" />
+            <p class="p-top">
+              在未选中任何数据时，直接勾选左上角的「全选」选框，可以直接选中全部数据，此时点击「删除」图标，将删除所有上传的数据。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/148.png" alt="" />
           </div>
         </div>
         <!-- 会员特权 -->
@@ -748,17 +1062,21 @@
           <h1 id="title-2-6">会员特权</h1>
           <div class="content">
             <h2 class="h1-top" id="27">(一) 会员特权</h2>
-            <p class="p-top">镝数图表为个人用户提供了会员服务，可以更全面地支持你的可视化创作、数据表达等工作。总体来看，升级会员获得更大的储存空间和导出量以及更自由的导出方式，升级企业会员获得无限容量、超高权限，点击页面右上角「会员特权」查看详情。</p>
-            <img src="https://ss1.dydata.io/user-handbook/149.png" alt="">
+            <p class="p-top">
+              镝数图表为个人用户提供了会员服务，可以更全面地支持你的可视化创作、数据表达等工作。总体来看，升级会员获得更大的储存空间和导出量以及更自由的导出方式，升级企业会员获得无限容量、超高权限，点击页面右上角「会员特权」查看详情。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/149.png" alt="" />
             <p class="p-top">不同会员的价格及权限如下：</p>
-            <img src="https://ss1.dydata.io/user-handbook/150.png" alt="">        
+            <img src="https://ss1.dydata.io/user-handbook/150.png" alt="" />
           </div>
 
           <div class="content">
             <h2 class="h1-top" id="28">(二) 企业定制服务</h2>
-            <p class="p-top">镝数图表为企业用户提供个性化定制服务，帮助打造具有传播力的产品，增强企业的品牌效应，提升品牌价值。服务包括但不限于数据新闻写作平台定制、数据可视化产品开发等。点击「会员特权」-「企业定制服务」了解详情。</p>
-            <img src="https://ss1.dydata.io/user-handbook/151.png" alt="">
-            <p class="p-top">如果你有企业可视化产品定制的需求，欢迎通过biz@dyclub.org与我们取得联系。</p>    
+            <p class="p-top">
+              镝数图表为企业用户提供个性化定制服务，帮助打造具有传播力的产品，增强企业的品牌效应，提升品牌价值。服务包括但不限于数据新闻写作平台定制、数据可视化产品开发等。点击「会员特权」-「企业定制服务」了解详情。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/151.png" alt="" />
+            <p class="p-top">如果你有企业可视化产品定制的需求，欢迎通过biz@dyclub.org与我们取得联系。</p>
           </div>
         </div>
 
@@ -766,8 +1084,10 @@
         <div *ngIf="title2_7.indexOf(clickId) > -1">
           <h1 id="title-2-7">商务合作通道</h1>
           <div class="content">
-            <p class="p-top">镝数图表提供「媒体合作通道」，服务包括但不限于媒体行业解决方案、可视化专业顾问等，填写相关信息点击提交审核，我们将会有相关人员联系您。</p>
-            <img src="https://ss1.dydata.io/user-handbook/152.png" alt="">        
+            <p class="p-top">
+              镝数图表提供「媒体合作通道」，服务包括但不限于媒体行业解决方案、可视化专业顾问等，填写相关信息点击提交审核，我们将会有相关人员联系您。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/152.png" alt="" />
           </div>
         </div>
 
@@ -776,55 +1096,71 @@
           <h1 id="title-2-8">账户管理</h1>
           <div class="content">
             <h2 class="h1-top" id="29">(一) 我的账户</h2>
-            <p class="p-top">点击右上角头像，在展开的列表中点击「我的账户」，在这里你进行个人账户设置，修改个人信息和进行安全设置。</p>
-            <img src="https://ss1.dydata.io/user-handbook/153.png" alt="">
+            <p class="p-top">
+              点击右上角头像，在展开的列表中点击「我的账户」，在这里你进行个人账户设置，修改个人信息和进行安全设置。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/153.png" alt="" />
             <h3>1. 个人信息</h3>
-            <p class="p-top">在个人信息中，你可以设置昵称、个人主页、个人简介等个性化内容。修改后的昵称会显示在头像右侧，其他人会在访问你的作品时看到你的个性化信息。输入信息，点击「保存修改」即可设置，但要注意昵称不能超过20字，个人简介不能超过140字。</p>
-            <p class="p-top">还可以修改账户的头像，点击「设置头像」，上传图片后即可修改。建议上传图片的大小为400px*400px，支持jpg、jpeg、png以及bmp格式的文件。</p>
-            <img src="https://ss1.dydata.io/user-handbook/154.png" alt="">
+            <p class="p-top">
+              在个人信息中，你可以设置昵称、个人主页、个人简介等个性化内容。修改后的昵称会显示在头像右侧，其他人会在访问你的作品时看到你的个性化信息。输入信息，点击「保存修改」即可设置，但要注意昵称不能超过20字，个人简介不能超过140字。
+            </p>
+            <p class="p-top">
+              还可以修改账户的头像，点击「设置头像」，上传图片后即可修改。建议上传图片的大小为400px*400px，支持jpg、jpeg、png以及bmp格式的文件。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/154.png" alt="" />
             <h3>2. 安全设置</h3>
             <p class="p-top">若你需要设置或重置密码，点击「设置密码」或「重置密码」。</p>
-            <img src="https://ss1.dydata.io/user-handbook/155.png" alt=""> 
+            <img src="https://ss1.dydata.io/user-handbook/155.png" alt="" />
             <p class="p-top">为了保证你的账号安全，我们需要先验证你的身份，你可以选择「手机验证」或者「邮箱验证」。</p>
-            <img src="https://ss1.dydata.io/user-handbook/156.png" alt="">
+            <img src="https://ss1.dydata.io/user-handbook/156.png" alt="" />
             <p class="p-top">验证通过后，输入新密码，点击「完成」后即可设置成功。</p>
-            <img src="https://ss1.dydata.io/user-handbook/157.png" alt=""> 
-            <p class="p-top">绑定邮箱可以为你的账户增加安全保障，若你需要绑定或重置邮箱，点击「绑定邮箱」或「重置邮箱」。</p>
-            <img src="https://ss1.dydata.io/user-handbook/158.png" alt="">  
+            <img src="https://ss1.dydata.io/user-handbook/157.png" alt="" />
+            <p class="p-top">
+              绑定邮箱可以为你的账户增加安全保障，若你需要绑定或重置邮箱，点击「绑定邮箱」或「重置邮箱」。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/158.png" alt="" />
             <p class="p-top">为了保证你的账号安全，我们需要先输入登录密码验证你的身份。</p>
-            <img src="https://ss1.dydata.io/user-handbook/159.png" alt="">  
+            <img src="https://ss1.dydata.io/user-handbook/159.png" alt="" />
             <p class="p-top">验证通过后，输入邮箱地址并确认保存后，在24小时内登录该邮箱进行验证，即可完成绑定操作。</p>
-            <img src="https://ss1.dydata.io/user-handbook/160.png" alt="">  
+            <img src="https://ss1.dydata.io/user-handbook/160.png" alt="" />
             <p class="p-top">若你需要更换绑定的手机号，点击「重置手机」。</p>
-            <img src="https://ss1.dydata.io/user-handbook/161.png" alt="">  
+            <img src="https://ss1.dydata.io/user-handbook/161.png" alt="" />
             <p class="p-top">为了保证你的账号安全，重置手机需要通过已绑定的手机验证身份。</p>
-            <img src="https://ss1.dydata.io/user-handbook/162.png" alt="">  
+            <img src="https://ss1.dydata.io/user-handbook/162.png" alt="" />
             <p class="p-top">若你绑定的手机无法接收短信，请联系镝数客服为你解除原手机绑定。</p>
-            <img src="https://ss1.dydata.io/user-handbook/163.png" alt=""> 
+            <img src="https://ss1.dydata.io/user-handbook/163.png" alt="" />
             <p class="p-top">若你绑定的手机可以接收短信，请点击「能」，并进行短信验证。</p>
-            <img src="https://ss1.dydata.io/user-handbook/164.png" alt="">  
+            <img src="https://ss1.dydata.io/user-handbook/164.png" alt="" />
             <p class="p-top">验证通过后输入新的手机号码，再次进行短信验证后即可重置成功。</p>
-            <img src="https://ss1.dydata.io/user-handbook/165.png" alt="">  
+            <img src="https://ss1.dydata.io/user-handbook/165.png" alt="" />
           </div>
           <div class="content">
             <h2 class="h1-top" id="30">(二) 会员/账单</h2>
-            <p class="p-top">点击右上角头像，在展开的列表中点击「会员/账单」后，可以查看到当前你的会员方案、历史账单，还有会员兑换码的入口。</p>
-            <img src="https://ss1.dydata.io/user-handbook/166.png" alt="">
+            <p class="p-top">
+              点击右上角头像，在展开的列表中点击「会员/账单」后，可以查看到当前你的会员方案、历史账单，还有会员兑换码的入口。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/166.png" alt="" />
             <h3>1. 我的会员</h3>
-            <p class="p-top">在「我的会员」中， 你可以查看当前的会员方案、时长以及有效期限，还可以看到你的各类权限使用情况。</p>
-            <img src="https://ss1.dydata.io/user-handbook/167.png" alt=""> 
+            <p class="p-top">
+              在「我的会员」中， 你可以查看当前的会员方案、时长以及有效期限，还可以看到你的各类权限使用情况。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/167.png" alt="" />
             <h3>2. 我的账单</h3>
             <p class="p-top">点击「我的账单」，在这里可以查看你在镝数图表的消费记录。</p>
-            <img src="https://ss1.dydata.io/user-handbook/168.png" alt=""> 
+            <img src="https://ss1.dydata.io/user-handbook/168.png" alt="" />
             <h3>3. 特权兑换</h3>
-            <p class="p-top">点击「特权兑换」，可以通过兑换码获取相应的会员权益，同一用户不可使用同一个兑换码兑换多次。输入兑换码后点击「兑换」即刻生效。</p>
-            <img src="https://ss1.dydata.io/user-handbook/169.png" alt=""> 
+            <p class="p-top">
+              点击「特权兑换」，可以通过兑换码获取相应的会员权益，同一用户不可使用同一个兑换码兑换多次。输入兑换码后点击「兑换」即刻生效。
+            </p>
+            <img src="https://ss1.dydata.io/user-handbook/169.png" alt="" />
           </div>
           <div class="content">
             <h2 class="h1-top" id="31">(三) 邀请有礼</h2>
-            <p class="p-top">点击右上角头像，在展开的列表中点击「邀请有礼」，镝数图表为你生成了专属邀请链接和二维码，分享你的邀请链接或二维码邀请朋友注册镝数图表，每成功邀请一位好友，你和好友均可获得7天镝数图表会员。会员天数可累加，上不封顶！</p>
+            <p class="p-top">
+              点击右上角头像，在展开的列表中点击「邀请有礼」，镝数图表为你生成了专属邀请链接和二维码，分享你的邀请链接或二维码邀请朋友注册镝数图表，每成功邀请一位好友，你和好友均可获得7天镝数图表会员。会员天数可累加，上不封顶！
+            </p>
             <p class="p-top">你还可以在「邀请成就」中看到详细的邀请记录。</p>
-            <img src="https://ss1.dydata.io/user-handbook/170.png" alt="">
+            <img src="https://ss1.dydata.io/user-handbook/170.png" alt="" />
           </div>
         </div>
 
@@ -835,8 +1171,12 @@
             <p>
               武汉镝次元数据科技有限公司是一家融合了新闻学、信息学、统计学、计算机科学、艺术设计等学科的跨领域创新型公司。公司拥有独家的数据聚合、管理、挖掘、可视化技术，对接丰富的数据资源和媒体资源，通过产学研结合的方式，积极参与和推动数据挖掘和数据传播的技术创新、行业生长、人才培养和理论发展。
             </p>
-            <p class="p-top">两款核心产品——镝数聚和镝数图表，不仅提供高质量的数据资源，还能帮助用户完成从数据获取、到数据分析与处理、到数据可视化呈现与发布的全程工作。</p>
-            <p class="p-top">镝次元还开设培训课程，并发布行业研究成果《中国数据新闻作品年鉴》和《中国数据新闻发展蓝皮书》等。</p>
+            <p class="p-top">
+              两款核心产品——镝数聚和镝数图表，不仅提供高质量的数据资源，还能帮助用户完成从数据获取、到数据分析与处理、到数据可视化呈现与发布的全程工作。
+            </p>
+            <p class="p-top">
+              镝次元还开设培训课程，并发布行业研究成果《中国数据新闻作品年鉴》和《中国数据新闻发展蓝皮书》等。
+            </p>
           </div>
           <h1 class="h1-2top">联系方式</h1>
           <div class="content">
@@ -853,12 +1193,11 @@
         <!-- 版本更新 -->
         <div *ngIf="updateEditionArr.indexOf(clickId) > -1">
           <ng-container *ngFor="let item of versionUpdateLog; let i = index">
-            <h1 [id]="item.id" [ngClass]="{'h1-top': i !== 0}">{{item.time}}</h1>
+            <h1 [id]="item.id" [ngClass]="{ 'h1-top': i !== 0 }">{{ item.time }}</h1>
             <div class="content">
-              <p [ngClass]="{'p-top': ind === 0}" *ngFor="let data of item.textArr;let ind = index;">{{data}}</p>
+              <p [ngClass]="{ 'p-top': ind === 0 }" *ngFor="let data of item.textArr; let ind = index">{{ data }}</p>
             </div>
           </ng-container>
-
         </div>
 
         <!-- 浏览器兼容列表 -->
@@ -907,7 +1246,7 @@
                 <td>Safari</td>
                 <td>不支持</td>
               </tr>
-            </table>       
+            </table>
           </div>
 
           <div class="content">
@@ -938,29 +1277,33 @@
                 <td>不支持</td>
               </tr>
             </table>
-            
+
             <p class="tip-1">查看版本号的方法</p>
             <p class="tip-2">点击浏览器右上角的显示菜单，在「帮助」中找到「关于」选项，点击即可查看到具体的版本号。</p>
           </div>
         </div>
-
       </div>
       <div class="help-tip">
-        <div class="help-number" [ngClass]="{'active': helpNum > 0}" (click)='handleGood()'>
-          <i></i>有帮助&nbsp;&nbsp;{{helpNum}}</div>
+        <div class="help-number" [ngClass]="{ active: helpNum > 0 }" (click)="handleGood()">
+          <i></i>有帮助&nbsp;&nbsp;{{ helpNum }}
+        </div>
         <div>
-          联系<span>客服<div class="float-code float-code-wechat"><img src="/dyassets/images/index/xiaodi.jpg" alt="微信客服">
-            </div></span>或<span>技术支持<div class="float-code float-code-assistance"><img
-                src="/dyassets/images/support-code.png" alt="技术支持"></div></span>
+          联系<span
+            >客服
+            <div class="float-code float-code-wechat">
+              <img src="/dyassets/images/index/xiaodi.jpg" alt="微信客服" /></div></span
+          >或<span
+            >技术支持
+            <div class="float-code float-code-assistance">
+              <img src="/dyassets/images/support-code.png" alt="技术支持" /></div
+          ></span>
         </div>
       </div>
     </div>
-
   </div>
-
 </div>
 <div class="tab">
-  <span [routerLink]="[ '/pages/home/index' ]">发现</span>
-  <span [routerLink]="[ '/pages/home/chart-template' ]">图表模板</span>
-  <span [routerLink]="[ '/pages/home/info-template' ]">数据图文</span>
+  <span [routerLink]="['/pages/home/index']">发现</span>
+  <span [routerLink]="['/pages/home/chart-template']">图表模板</span>
+  <span [routerLink]="['/pages/home/info-template']">数据图文</span>
 </div>
