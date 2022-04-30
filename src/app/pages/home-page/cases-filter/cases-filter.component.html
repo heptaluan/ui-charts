@@ -1,79 +1,8 @@
-<!-- <nb-card>
-  <nb-tabset (changeTab)="onTabChanged($event)">
-    <nb-tab tabTitle="图表类型">
-    </nb-tab>
-    <nb-tab tabTitle="功能分类">
-    </nb-tab>
-  </nb-tabset>
-  <nb-card-body>
-    <div class="shape" *ngIf="classify === 'shape'">
-      <div class="row">
-        <div class="col">分类：</div>
-        <div class="col"><img src="/dyassets/images/0.svg" alt="饼图"><div>饼图</div></div>
-        <div class="col"><img src="/dyassets/images/1.svg" alt="饼图"><div>饼图</div></div>
-        <div class="col"><img src="/dyassets/images/2.svg" alt="饼图"><div>饼图</div></div>
-        <div class="col"><img src="/dyassets/images/3.svg" alt="饼图"><div>饼图</div></div>
-        <div class="col"><img src="/dyassets/images/4.svg" alt="饼图"><div>饼图</div></div>
-        <div class="col"><img src="/dyassets/images/5.svg" alt="饼图"><div>饼图</div></div>
-        <div class="col"><img src="/dyassets/images/6.svg" alt="饼图"><div>饼图</div></div>
-        <div class="col"><img src="/dyassets/images/7.svg" alt="饼图"><div>饼图</div></div>
-        <div class="col"><img src="/dyassets/images/8.svg" alt="饼图"><div>饼图</div></div>
-        <div class="col"><img src="/dyassets/images/9.svg" alt="饼图"><div>饼图</div></div>
-      </div>
-      <div class="row">
-        <div class="col"></div>
-        <div class="col"><img src="/dyassets/images/10.svg" alt="饼图"><div>饼图</div></div>
-        <div class="col"><img src="/dyassets/images/11.svg" alt="饼图"><div>饼图</div></div>
-        <div class="col"><img src="/dyassets/images/12.svg" alt="饼图"><div>饼图</div></div>
-        <div class="col"><img src="/dyassets/images/13.svg" alt="饼图"><div>饼图</div></div>
-        <div class="col"><img src="/dyassets/images/14.svg" alt="饼图"><div>饼图</div></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-      </div>
-    </div>
-    <div class="utility" *ngIf="classify === 'utility'">
-      <div class="row">
-        <div class="col">分类：</div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-      </div>
-    </div>
-  </nb-card-body>
-  <nb-card-footer>
-    <div class="sorting">
-      <div class="row">
-        <div class="col">排序：</div>
-        <div class="col">时间</div>
-        <div class="col">热度</div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>      
-      </div>
-    </div>
-  </nb-card-footer>
-</nb-card> -->
-
 <div class="sort-container d-block mx-auto">
   <div class="d-flex">
     <label>排序:</label>
-    <label class="sort-type" (click)="sort('choice')" [ngClass]="{'active': sortType === 'choice'}">精选</label>
-    <label class="sort-type" (click)="sort('hot')" [ngClass]="{'active': sortType === 'hot'}">最热</label>
-    <label class="sort-type" (click)="sort('time')" [ngClass]="{'active': sortType === 'time'}">最新</label>
+    <label class="sort-type" (click)="sort('choice')" [ngClass]="{ active: sortType === 'choice' }">精选</label>
+    <label class="sort-type" (click)="sort('hot')" [ngClass]="{ active: sortType === 'hot' }">最热</label>
+    <label class="sort-type" (click)="sort('time')" [ngClass]="{ active: sortType === 'time' }">最新</label>
   </div>
 </div>

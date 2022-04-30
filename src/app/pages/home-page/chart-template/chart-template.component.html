@@ -1,37 +1,49 @@
 <lx-dy-search
-  [width]='400'
+  [width]="400"
   (onSearch)="onSearch($event)"
   (onDeleteBtnClick)="reload()"
   [isShowHot]="false"
   [hotWords]="hotWords"
   [keyWord]="keyword"
-  [ngStyle]="{top: isShowTip ? '56px' : '8px'}"
+  [ngStyle]="{ top: isShowTip ? '56px' : '8px' }"
   [placeHolderText]="'搜索图表模板'"
 ></lx-dy-search>
-<div class="bread-nav"><a [routerLink]="['/pages', 'home', 'index']">发现</a> > <a (click)="reload()">图表模板</a><span *ngIf="keyword"> > 搜索“{{keyword}}”，共找到 <i>{{resultLength}}</i> 个结果</span></div>
+<div class="bread-nav">
+  <a [routerLink]="['/pages', 'home', 'index']">发现</a> > <a (click)="reload()">图表模板</a
+  ><span *ngIf="keyword">
+    > 搜索“{{ keyword }}”，共找到 <i>{{ resultLength }}</i> 个结果</span
+  >
+</div>
 <div class="create-project" [ngStyle]="createProjectBoxStyle">
-  <div class="create-project-container" [ngStyle]="{'width': widthStyle}">
+  <div class="create-project-container" [ngStyle]="{ width: widthStyle }">
     <div class="change-chart-box">
       <div class="chart-classify change-chart-list" *ngIf="initialState.type === 'chart'">
-        <span [ngClass]="{'active': chartClassifyIndex === 0}" class="change-chart-item" (click)="changeChartClassify(0)">图表类型</span>
-        <span [ngClass]="{'active': chartClassifyIndex === 1}" class="change-chart-item" (click)="changeChartClassify(1)">使用场景</span>
+        <span
+          [ngClass]="{ active: chartClassifyIndex === 0 }"
+          class="change-chart-item"
+          (click)="changeChartClassify(0)"
+          >图表类型</span
+        >
+        <span
+          [ngClass]="{ active: chartClassifyIndex === 1 }"
+          class="change-chart-item"
+          (click)="changeChartClassify(1)"
+          >使用场景</span
+        >
       </div>
       <div class="change-chart-template-list" *ngIf="initialState.type === 'chart'">
         <ul>
-          <li [ngClass]="{'active': i == activeIndex}" *ngFor="let item of chartTitleTemplates; let i = index;" (click)="chartTemplateListClickHandle(item, i)">
-            <p>{{item.title}}</p>
+          <li
+            [ngClass]="{ active: i == activeIndex }"
+            *ngFor="let item of chartTitleTemplates; let i = index"
+            (click)="chartTemplateListClickHandle(item, i)"
+          >
+            <p>{{ item.title }}</p>
           </li>
         </ul>
       </div>
-      <!-- <div class="chart-price change-chart-list" *ngIf="initialState.type === 'chart'">
-        <span class="change-chart-title">价格：</span>
-        <span class="change-chart-item" [ngClass]="{'active': chartPriceIndex === 0}" (click)="changeChartPrice(0)">全部</span>
-        <span class="change-chart-item" [ngClass]="{'active': chartPriceIndex === 1}" (click)="changeChartPrice(1)">会员</span>
-        <span class="change-chart-item" [ngClass]="{'active': chartPriceIndex === 2}" (click)="changeChartPrice(2)">免费</span>
-      </div> -->
     </div>
 
-    <!-- 单图 -->
     <div class="chart-template-list template-list" *ngIf="initialState.type === 'chart'">
       <ul *ngIf="resultLength">
         <li (click)="createEmptyTemplateHandle()">
@@ -40,37 +52,46 @@
             <span class="template-title">空白模版&nbsp;600px*510px</span>
           </div>
         </li>
-        <li #slider  *ngFor="let item of chartFilterTemplates; let i = index" (click)="createChartTemplateHandle(item, i)">
-            <div class="dynamic-chart" *ngIf="item.projectId === '8000000011111111001' || 
+        <li
+          #slider
+          *ngFor="let item of chartFilterTemplates; let i = index"
+          (click)="createChartTemplateHandle(item, i)"
+        >
+          <div
+            class="dynamic-chart"
+            *ngIf="
+              item.projectId === '8000000011111111001' ||
               item.projectId === '8000000011111111002' ||
               item.projectId === '8000000011111111003' ||
-              item.projectId === '8000000011111111004' ">动态</div>
-            <div class="template-cover" [ngClass]="{'erro-style': isErroImg}">
-              <div class="new-chart" *ngIf="newChartTagList.indexOf(item.templateId) > -1"></div>
-              <!-- <div class="vip-recommend">推荐</div> -->
-              <!-- <div class="vip-level" *ngIf="item.isFree !== '0'"></div> -->
-              <img #img class="mx-auto" [src]="item.thumb" (error)="imgerror($event)"/>
-              <img class="mx-auto display-none" [src]="item.gif"  (error)="imgerror($event)" alt="">
-            </div>
-            <div class="template-intro">
-              <span class="template-title">{{item.title}}</span>
-              <span class="template-view" (mouseover)="showContent(i)" (mouseout)="showContent('')"></span>
-              <div class="template-content">
-                <div #sliderShadow class="shadow"></div>
-                <div class="content-definition">
-                  {{item.definition}}
-                </div>
-                <div class="content-title">使用场景</div>
-                <div class="content-usedCase">
-                  {{item.usedCase}}
-                </div>
+              item.projectId === '8000000011111111004'
+            "
+          >
+            动态
+          </div>
+          <div class="template-cover" [ngClass]="{ 'erro-style': isErroImg }">
+            <div class="new-chart" *ngIf="newChartTagList.indexOf(item.templateId) > -1"></div>
+            <img #img class="mx-auto" [src]="item.thumb" (error)="imgerror($event)" />
+            <img class="mx-auto display-none" [src]="item.gif" (error)="imgerror($event)" alt="" />
+          </div>
+          <div class="template-intro">
+            <span class="template-title">{{ item.title }}</span>
+            <span class="template-view" (mouseover)="showContent(i)" (mouseout)="showContent('')"></span>
+            <div class="template-content">
+              <div #sliderShadow class="shadow"></div>
+              <div class="content-definition">
+                {{ item.definition }}
               </div>
-            </div>         
+              <div class="content-title">使用场景</div>
+              <div class="content-usedCase">
+                {{ item.usedCase }}
+              </div>
+            </div>
+          </div>
         </li>
       </ul>
       <div class="empty-container" *ngIf="!resultLength">
         <div class="no-template">
-          <img src="/dyassets/images/datastore/no-search-result.png">
+          <img src="/dyassets/images/datastore/no-search-result.png" />
           <div>暂未发现符合搜索条件的结果</div>
           <p>请<a href="javascript:;" (click)="showTemplateDemandFeedback()">点击这里</a>提出你的模板需求</p>
         </div>
