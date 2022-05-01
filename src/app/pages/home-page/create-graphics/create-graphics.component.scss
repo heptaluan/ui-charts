@@ -1,26 +1,26 @@
 :host ::ng-deep {
-    .templates-container {
-        max-width: 1280px;
-        height: 215px;
-        padding: 0 85px;        
+  .templates-container {
+    max-width: 1280px;
+    height: 215px;
+    padding: 0 85px;
+  }
+  .filter-container {
+    max-width: 1280px;
+    height: 33px;
+    padding: 0 85px;
+    .header {
+      font-size: 24px;
+      color: #323b47;
     }
-    .filter-container {
-        max-width: 1280px;
-        height: 33px;
-        padding: 0 85px;         
-        .header {
-            font-size:24px;
-            color:#323b47;
-        }
-    }
-    .cases-container {
-        padding-top: 40px;
-        background-color: #f5f7fa;
-        position: relative;
-        min-height: calc(100% - 215px);
-    }
+  }
+  .cases-container {
+    padding-top: 40px;
+    background-color: #f5f7fa;
+    position: relative;
+    min-height: calc(100% - 215px);
+  }
 
-    lx-form-search .form-control {
-        width: 248px;
-    }
+  lx-form-search .form-control {
+    width: 248px;
+  }
 }

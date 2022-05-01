@@ -118,7 +118,6 @@
   }
 
   .from-template {
-
     ul {
       padding: 0;
       margin: 0;
@@ -169,7 +168,6 @@
       }
 
       .info {
-
         overflow: visible;
 
         .template-list-item {
@@ -219,7 +217,7 @@
             width: 35px;
             height: 35px;
             background: url('/dyassets/images/add-black.svg') no-repeat center/cover;
-            transition: all .3s linear;
+            transition: all 0.3s linear;
           }
 
           img {
@@ -235,7 +233,7 @@
             border-radius: 4px;
             width: 36px;
             height: 22px;
-            background: url("/dyassets/images/person/vip.svg") no-repeat center / contain;
+            background: url('/dyassets/images/person/vip.svg') no-repeat center / contain;
           }
         }
 

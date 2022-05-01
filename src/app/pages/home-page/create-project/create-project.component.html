@@ -1,5 +1,4 @@
 <div class="create-project">
-
   <div class="from-data">
     <h4 class="data-title">从数据开始</h4>
 
@@ -20,7 +19,12 @@
         <ng-template #blankTemplate>
           <div [innerHtml]="blankHtml"></div>
         </ng-template>
-        <li class="data-list-item empty-table" [tooltip]="blankTemplate" containerClass="dataClass" (click)='createBlankExcel()'>
+        <li
+          class="data-list-item empty-table"
+          [tooltip]="blankTemplate"
+          containerClass="dataClass"
+          (click)="createBlankExcel()"
+        >
           <div class="data-cover"><i></i></div>
           <div class="data-content">
             <h5>空白表格</h5>
@@ -30,14 +34,18 @@
         <ng-template #uploadTemplate>
           <div [innerHtml]="uploadHtml"></div>
         </ng-template>
-        <li class="data-list-item upload-data" [tooltip]="uploadTemplate" containerClass="dataClass" (click)='dataUpload()'>
+        <li
+          class="data-list-item upload-data"
+          [tooltip]="uploadTemplate"
+          containerClass="dataClass"
+          (click)="dataUpload()"
+        >
           <div class="data-cover"><i></i></div>
           <div class="data-content">
             <h5>上传数据</h5>
             <p>上传Excel/CSV文件</p>
           </div>
         </li>
-
       </ul>
     </div>
   </div>
@@ -48,17 +56,23 @@
     <div class="template-list">
       <div class="view-more" (click)="createProject('chart')">查看更多</div>
       <ul class="chart">
-        <li class="template-list-item first" tooltip="50多种图表选择，支持PNG/SVG/GIF格式导出" (click)="createProject('chart')">
+        <li
+          class="template-list-item first"
+          tooltip="50多种图表选择，支持PNG/SVG/GIF格式导出"
+          (click)="createProject('chart')"
+        >
           <div class="template-cover border-dashed"><i></i></div>
           <h5 class="title">图表</h5>
         </li>
-        <li class="template-list-item" *ngFor="let item of chartTemplates;let i = index"
-          (click)='createOneChart(item, i)'>
+        <li
+          class="template-list-item"
+          *ngFor="let item of chartTemplates; let i = index"
+          (click)="createOneChart(item, i)"
+        >
           <div class="template-cover">
-            <img [src]="item.thumb" alt="">
-            <!-- <div class="vip-level" *ngIf="!item.isFree"></div> -->
+            <img [src]="item.thumb" alt="" />
           </div>
-          <h5>{{item.title}}</h5>
+          <h5>{{ item.title }}</h5>
         </li>
       </ul>
     </div>
@@ -66,20 +80,25 @@
     <div class="template-list template-info-list">
       <div class="view-more view-info-more" (click)="createProject('infographic')">查看更多</div>
       <ul class="chart info">
-        <li class="template-list-item first" tooltip="图表、文字等元素自由布局，剪辑动人数据故事" (click)="createProject('infographic')">
+        <li
+          class="template-list-item first"
+          tooltip="图表、文字等元素自由布局，剪辑动人数据故事"
+          (click)="createProject('infographic')"
+        >
           <div class="template-cover border-dashed"><i></i></div>
           <h5 class="title">信息图</h5>
         </li>
-        <li class="template-list-item" *ngFor="let item of infoTemplates;let i = index"
-          (click)='openOneType(item.id, i)'>
+        <li
+          class="template-list-item"
+          *ngFor="let item of infoTemplates; let i = index"
+          (click)="openOneType(item.id, i)"
+        >
           <div class="template-cover template-info-cover">
-            <img [src]="item.thumb" alt="">
-            <!-- <div class="vip-level" *ngIf="item.isFree !== '0'">会员</div> -->
+            <img [src]="item.thumb" alt="" />
           </div>
-          <h5>{{item.title}}</h5>
+          <h5>{{ item.title }}</h5>
         </li>
       </ul>
     </div>
-
   </div>
 </div>

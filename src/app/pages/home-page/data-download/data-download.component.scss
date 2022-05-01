@@ -70,7 +70,7 @@
         }
       }
 
-      input[type="checkbox"] {
+      input[type='checkbox'] {
         width: 20px;
         height: 20px;
         display: inline-block;
@@ -80,8 +80,8 @@
         position: relative;
       }
 
-      input[type="checkbox"]::before {
-        content: "";
+      input[type='checkbox']::before {
+        content: '';
         position: absolute;
         top: 0;
         left: 0;
@@ -92,8 +92,8 @@
         // border-radius: 4px;
       }
 
-      input[type="checkbox"]:checked::before {
-        content: "\2713";
+      input[type='checkbox']:checked::before {
+        content: '\2713';
         background-color: #fff;
         position: absolute;
         top: 0;
@@ -123,7 +123,6 @@
       width: 400px;
       float: right;
     }
-
   }
 
   .list-item-box {
@@ -133,7 +132,6 @@
       list-style: none;
     }
   }
-
 
   .progressbar-box {
     // width: 380px;
@@ -196,7 +194,6 @@
     }
   }
 }
-
 
 .list-item-content {
   list-style: none;
@@ -266,11 +263,10 @@
 
       .data-time {
         font-size: 14px;
-        color: rgba(0, 0, 0, .45);
+        color: rgba(0, 0, 0, 0.45);
         font-family: PingFangSC-Regular;
       }
     }
-
   }
 
   &:hover {
@@ -312,7 +308,7 @@
 
       .view {
         color: #fff;
-        background: #0190FF;
+        background: #0190ff;
         font-size: 12px;
         margin: 0 105px 0 15px;
         padding: 7px 12px;
@@ -326,7 +322,6 @@
 }
 
 :host ::ng-deep {
-
   pagination {
     .pagination-page {
       margin-left: 10px;

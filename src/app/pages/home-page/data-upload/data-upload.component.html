@@ -23,21 +23,25 @@
 
     <div class="progressbar-box">
       <div class="get-online-data">
-        <a 
+        <a
           onclick="_hmt.push(['_trackEvent', 'chart', 'data-management', 'go_dydata'])"
-          target="_blank" href="https://dydata.io/"
-        >点击获得更多在线数据</a>
+          target="_blank"
+          href="https://dydata.io/"
+          >点击获得更多在线数据</a
+        >
       </div>
-      <div class="data-upload" (click)='dataUpload()'>
-        +&nbsp;&nbsp;上传数据
-      </div>
+      <div class="data-upload" (click)="dataUpload()">+&nbsp;&nbsp;上传数据</div>
       <div class="project-total" [hidden]="isVpl === 'eip2'">
         <div class="project-total-title">
           <span class="template-total">{{ progressbarValue }}&nbsp;/&nbsp;{{ templateTotal }}</span>
           <span class="upgrade" *ngIf="isVpl === 'None'" (click)="upgrade()">扩充容量</span>
         </div>
         <div class="progressbar">
-          <progressbar [value]="progressbarValue" [max]="templateTotal" [type]="getProgressColor(progressbarValue, templateTotal)"></progressbar>
+          <progressbar
+            [value]="progressbarValue"
+            [max]="templateTotal"
+            [type]="getProgressColor(progressbarValue, templateTotal)"
+          ></progressbar>
         </div>
       </div>
 

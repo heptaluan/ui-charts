@@ -1,33 +1,50 @@
 <div class="data-upload">
   <div class="data-upload-title">
     <div class="multiple-choice">
-      <input type="checkbox" *ngIf="dataType === 'xlsx'" [(checked)]='dataTemplates.length === listIds.length && listIds.length' (click)='checkedAll($event)' [tooltip]="dataTemplates.length === listIds.length && listIds.length ? '取消全选' : '全选'" container="body">
-      <input type="checkbox" *ngIf="dataType === 'pdf'" [(checked)]='dataReportTemplates.length === listIds.length && listIds.length' (click)='checkedAll($event)' [tooltip]="dataReportTemplates.length === listIds.length && listIds.length ? '取消全选' : '全选'" container="body">
-      <i (click)='allDelete()' *ngIf="listIds.length" tooltip='删除' container="body"></i>
-      <div class="select-one" (click)='checkedAll($event)' *ngIf="listIds.length && listIds.length < this.copyArr.length" tooltip='取消' container="body"></div>
+      <input
+        type="checkbox"
+        *ngIf="dataType === 'xlsx'"
+        [(checked)]="dataTemplates.length === listIds.length && listIds.length"
+        (click)="checkedAll($event)"
+        [tooltip]="dataTemplates.length === listIds.length && listIds.length ? '取消全选' : '全选'"
+        container="body"
+      />
+      <input
+        type="checkbox"
+        *ngIf="dataType === 'pdf'"
+        [(checked)]="dataReportTemplates.length === listIds.length && listIds.length"
+        (click)="checkedAll($event)"
+        [tooltip]="dataReportTemplates.length === listIds.length && listIds.length ? '取消全选' : '全选'"
+        container="body"
+      />
+      <i (click)="allDelete()" *ngIf="listIds.length" tooltip="删除" container="body"></i>
+      <div
+        class="select-one"
+        (click)="checkedAll($event)"
+        *ngIf="listIds.length && listIds.length < this.copyArr.length"
+        tooltip="取消"
+        container="body"
+      ></div>
     </div>
 
     <div class="progressbar-box">
-      <!-- <div class="text-tip">
-        <p>已下载量/可下载量</p>
-        <p>（截至{{deadline}}）</p>
-      </div>
-      <div class="project-total">
-        <div class="project-total-title">
-          <span class="template-total">{{progressbarValue}}/{{templateTotal}}</span>
-          <span class="upgrade" (click)="upgrade()" *ngIf="isVpl === 'None' && dataType === 'xlsx'">扩充容量</span>
-        </div>
-        <div class="progressbar">
-          <progressbar [value]="progressbarValue" [max]="templateTotal"></progressbar>
-        </div>
-      </div> -->
-
       <div class="project-search">
-        <lx-form-search class="project-search-input" #searchWord (searchValue)="search($event)" [initValue]="initSearch" [type]="'home'"></lx-form-search>
+        <lx-form-search
+          class="project-search-input"
+          #searchWord
+          (searchValue)="search($event)"
+          [initValue]="initSearch"
+          [type]="'home'"
+        ></lx-form-search>
       </div>
     </div>
 
-    <tabset type="pills" [ngClass]="{'no-project': dataType === 'xlsx' ? dataTemplates.length : dataReportTemplates.length && !searchResult}">
+    <tabset
+      type="pills"
+      [ngClass]="{
+        'no-project': dataType === 'xlsx' ? dataTemplates.length : dataReportTemplates.length && !searchResult
+      }"
+    >
       <tab heading="数据" (select)="onTabSelect($event)" id="xlsx">
         <div class="list-item-box">
           <div class="search-loading" *ngIf="!showSearchLoading">
@@ -37,17 +54,17 @@
           </div>
           <div class="list-item" *ngIf="showSearchLoading">
             <lx-list-item
-              [searchResult]='searchResult'
-              [listIds]='listIds'
-              (deleteSucc)='getDownLoadData("xlsx")'
-              [data]='dataTemplates'
+              [searchResult]="searchResult"
+              [listIds]="listIds"
+              (deleteSucc)="getDownLoadData('xlsx')"
+              [data]="dataTemplates"
               [type]="'download'"
             >
             </lx-list-item>
           </div>
         </div>
       </tab>
-      <tab heading="数据报告" (select)="onTabSelect($event)" id='pdf'>
+      <tab heading="数据报告" (select)="onTabSelect($event)" id="pdf">
         <div class="search-loading" *ngIf="!showSearchLoading">
           <div class="loading-container">
             <div class="loading"></div>
@@ -55,30 +72,23 @@
         </div>
         <div class="list-item" *ngIf="showSearchLoading">
           <lx-list-item
-            [searchResult]='searchResult'
-            [listIds]='listIds'
-            (deleteSucc)='getDownLoadData("pdf")'
-            [data]='dataReportTemplates'
+            [searchResult]="searchResult"
+            [listIds]="listIds"
+            (deleteSucc)="getDownLoadData('pdf')"
+            [data]="dataReportTemplates"
             [type]="'download'"
           >
           </lx-list-item>
         </div>
       </tab>
-      <!-- <tab heading="免费">
-        <div class="list-item">
-          <lx-list-item [listIds]='listIds' (deleteSucc)='getDownLoadData()' [data]='dataReportTemplates'
-            [type]="'download'"></lx-list-item>
-        </div>
-      </tab> -->
-
       <pagination
         *ngIf="currentTotalNum !== 0 && !searchResult"
         pageBtnClass="dy-pagination"
         previousText="上一页"
         nextText="下一页"
-        [maxSize]=10
+        [maxSize]="10"
         [itemsPerPage]="20"
-        rotate=true
+        rotate="true"
         [totalItems]="currentTotalNum"
         [ngModel]="currentPage"
         (pageChanged)="onPageChanged($event)"
