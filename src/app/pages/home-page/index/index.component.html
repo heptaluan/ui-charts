@@ -25,7 +25,12 @@
 
 <!-- 图表轮播 -->
 <div class="carousel-charts">
-  <lx-dy-panel  [isCarousel]="true" [name]="'图表模板合集'" [typeArr]="chartTypes" (typeClick)="hanleChartTypeClick($event)">
+  <lx-dy-panel
+    [isCarousel]="true"
+    [name]="'图表模板合集'"
+    [typeArr]="chartTypes"
+    (typeClick)="hanleChartTypeClick($event)"
+  >
     <lx-dy-carousel [showColumnNum]="2" [arr]="chartArr" (clickItem)="handleChartsClick($event)"></lx-dy-carousel>
   </lx-dy-panel>
 </div>
