@@ -1,4 +1,4 @@
 export type HotWords = {
-  word: string;
-  mark: string;
+  word: string
+  mark: string
 }

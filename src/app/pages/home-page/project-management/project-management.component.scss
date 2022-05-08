@@ -12,7 +12,8 @@
     .title {
       font-size: 22px;
       font-weight: 600;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo", "Consolas", sans-serif !important;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei',
+        'Hiragino Sans GB', 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, 'Monaco', 'Menlo', 'Consolas', sans-serif !important;
       color: #000000;
     }
 
@@ -25,7 +26,7 @@
         height: 100%;
         position: relative;
 
-        input[type="checkbox"] {
+        input[type='checkbox'] {
           display: block;
           width: 16px;
           height: 16px;
@@ -36,8 +37,8 @@
           cursor: pointer;
         }
 
-        input[type="checkbox"]::before {
-          content: "";
+        input[type='checkbox']::before {
+          content: '';
           position: absolute;
           top: 0;
           left: 0;
@@ -48,8 +49,8 @@
           // border-radius: 4px;
         }
 
-        input[type="checkbox"]:checked::before {
-          content: "\2713";
+        input[type='checkbox']:checked::before {
+          content: '\2713';
           background-color: #fff;
           position: absolute;
           top: 0;
@@ -179,7 +180,7 @@
               }
 
               .bg-warning {
-                background-color: #F5A623 !important;
+                background-color: #f5a623 !important;
               }
 
               .bg-danger {
@@ -220,7 +221,8 @@
       position: relative;
       width: 100%;
       margin-top: 32px;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo", "Consolas", sans-serif !important;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei',
+        'Hiragino Sans GB', 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, 'Monaco', 'Menlo', 'Consolas', sans-serif !important;
 
       &.active {
         z-index: 100;
@@ -229,7 +231,7 @@
       li.waterfall-item {
         position: absolute;
         border-radius: 6px;
-        transition: all .2s linear;
+        transition: all 0.2s linear;
 
         img {
           border: solid 1px #e8e8e8;
@@ -316,7 +318,7 @@
 
             &.locked {
               color: rgba(255, 255, 255, 0.5);
-              background-color: rgba(0, 0, 0, .7);
+              background-color: rgba(0, 0, 0, 0.7);
 
               &:hover {
                 &::after {
@@ -327,7 +329,7 @@
                   position: absolute;
                   content: '项目已锁定，无法编辑';
                   color: #ffffff;
-                  background-color: rgba(0, 0, 0, .8);
+                  background-color: rgba(0, 0, 0, 0.8);
                   box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
                   border-radius: 6px;
                   top: -32px;
@@ -335,8 +337,7 @@
                 }
               }
 
-              cursor: url(/dyassets/images/home-page/project/mouse-not-allowed.svg),
-              not-allowed !important;
+              cursor: url(/dyassets/images/home-page/project/mouse-not-allowed.svg), not-allowed !important;
             }
           }
 
@@ -366,7 +367,7 @@
             color: #fff;
             line-height: 32px;
             text-align: center;
-            opacity: .7;
+            opacity: 0.7;
             cursor: pointer;
             z-index: 4;
           }
@@ -502,7 +503,7 @@
                     position: absolute;
                     content: '项目已锁定，无法编辑';
                     color: #fff;
-                    background-color: rgba(0, 0, 0, .8);
+                    background-color: rgba(0, 0, 0, 0.8);
                     box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
                     border-radius: 6px;
                     bottom: -31px;
@@ -627,7 +628,8 @@
     box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
     border-radius: 2px;
     font-size: 12px;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo", "Consolas", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei',
+      'Hiragino Sans GB', 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, 'Monaco', 'Menlo', 'Consolas', sans-serif;
     color: #ffffff;
   }
 

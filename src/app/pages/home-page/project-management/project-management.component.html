@@ -3,24 +3,38 @@
   <!-- header -->
   <div class="project-wrapper-header flex-row-space-between">
     <div class="project-wrapper-header-left flex-row-space-between">
-      <input type="checkbox" [(checked)]="isCheckedAll" (click)="checkedAll($event)" tooltip='全选' container="body">
-      <div class="no-full-select" *ngIf="!isCheckedAll && listIds.length" (click)="clearListIds()" tooltip='取消' container="body"></div>
-      <i class="active" (click)='allDelete()' *ngIf="listIds.length" tooltip='删除' container="body"></i>
+      <input type="checkbox" [(checked)]="isCheckedAll" (click)="checkedAll($event)" tooltip="全选" container="body" />
+      <div
+        class="no-full-select"
+        *ngIf="!isCheckedAll && listIds.length"
+        (click)="clearListIds()"
+        tooltip="取消"
+        container="body"
+      ></div>
+      <i class="active" (click)="allDelete()" *ngIf="listIds.length" tooltip="删除" container="body"></i>
       <i *ngIf="!listIds.length"></i>
       <div class="tabs flex-row-space-between" (click)="handleTabClick($event)">
-        <div class="box" [ngClass]="{'active': type === 'all'}">全部</div>
-        <div class="box" [ngClass]="{'active': type === 'chart'}">单图</div>
-        <div class="box" [ngClass]="{'active': type === 'info'}">数据图文</div>
+        <div class="box" [ngClass]="{ active: type === 'all' }">全部</div>
+        <div class="box" [ngClass]="{ active: type === 'chart' }">单图</div>
+        <div class="box" [ngClass]="{ active: type === 'info' }">数据图文</div>
       </div>
     </div>
-    <div class="project-wrapper-header-right flex-row-space-between" [ngClass]="{'end': isVpl === 'eip1' || isVpl === 'eip2'}">
+    <div
+      class="project-wrapper-header-right flex-row-space-between"
+      [ngClass]="{ end: isVpl === 'eip1' || isVpl === 'eip2' }"
+    >
       <div class="progress-wrapper" [hidden]="isVpl === 'eip1' || isVpl === 'eip2'">
         <div class="text flex-row-space-between">
-          <span>{{allProjects.length}} / {{templateTotal}}</span>
+          <span>{{ allProjects.length }} / {{ templateTotal }}</span>
           <span class="upgrade" *ngIf="isVpl === 'None'" (click)="upgrade()">扩充容量</span>
         </div>
         <div class="progress-box">
-          <progressbar [hidden]="isVpl === 'eip1' || isVpl === 'eip2'" [value]="allProjects.length" [type]="getProgressColor(allProjects.length, templateTotal)" [max]="templateTotal"></progressbar>
+          <progressbar
+            [hidden]="isVpl === 'eip1' || isVpl === 'eip2'"
+            [value]="allProjects.length"
+            [type]="getProgressColor(allProjects.length, templateTotal)"
+            [max]="templateTotal"
+          ></progressbar>
         </div>
       </div>
       <div class="search">
@@ -38,35 +52,56 @@
 
   <ng-container *ngIf="!showLoading">
     <!-- 瀑布流部分 -->
-    <ul class="waterfall" [ngStyle]="{'height': containerHeight + 'px'}" *ngIf="showWaterfallArr.length" [ngClass]="{'active': isShowMenu}">
+    <ul
+      class="waterfall"
+      [ngStyle]="{ height: containerHeight + 'px' }"
+      *ngIf="showWaterfallArr.length"
+      [ngClass]="{ active: isShowMenu }"
+    >
       <li
         class="waterfall-item"
         *ngFor="let item of showWaterfallArr; let i = index"
         (mouseenter)="handleMouseEnter(i)"
         (mouseleave)="handleMouseLeave()"
-        [ngClass]="{'hover-style': hoverIndex === i}"
-        [ngStyle]="{'width': item.width + 'px', 'height': item.height + 'px', 'top': item.top + 'px', 'left': item.left + 'px'}"
+        [ngClass]="{ 'hover-style': hoverIndex === i }"
+        [ngStyle]="{
+          width: item.width + 'px',
+          height: item.height + 'px',
+          top: item.top + 'px',
+          left: item.left + 'px'
+        }"
       >
-        <img [src]="item.url.split('?')[0]" alt="">
-        <p class="waterfall-title">{{item.title}}</p>
+        <img [src]="item.url.split('?')[0]" alt="" />
+        <p class="waterfall-title">{{ item.title }}</p>
         <div class="lock-icon" *ngIf="item.editable === 'N'"></div>
         <div class="item-checkbox" *ngIf="(hoverIndex === i || listIds.indexOf(item.id) >= 0) && item.editable === 'Y'">
-          <input type="checkbox" [checked]='listIds.indexOf(item.id) >= 0' (click)='checkedOne(item.id)'>
+          <input type="checkbox" [checked]="listIds.indexOf(item.id) >= 0" (click)="checkedOne(item.id)" />
         </div>
-        <div class="menu" (click)="toggleMenu()" *ngIf="hoverIndex === i" appClickOutside [bindFlag]="bindFlag" (onClickOutSide)="onClickOutSide()">
+        <div
+          class="menu"
+          (click)="toggleMenu()"
+          *ngIf="hoverIndex === i"
+          appClickOutside
+          [bindFlag]="bindFlag"
+          (onClickOutSide)="onClickOutSide()"
+        >
           <ul *ngIf="isShowMenu">
-            <li 
-              *ngFor="let menu of menuList" 
+            <li
+              *ngFor="let menu of menuList"
               (click)="handleMenuClick(i, item, menu)"
-              [ngClass]="{'locked': item.editable === 'N' && menu.canLock, 'over': i > editMap[type] - 1}"
+              [ngClass]="{ locked: item.editable === 'N' && menu.canLock, over: i > editMap[type] - 1 }"
             >
-              {{item.editable === 'N' ? menu.lockText : menu.text}}
+              {{ item.editable === 'N' ? menu.lockText : menu.text }}
             </li>
           </ul>
         </div>
         <div class="mask" *ngIf="hoverIndex === i">
           <ng-container *ngIf="i <= editMap[type] - 1">
-            <div class="edit" (click)="createInfoTemplateHandle($event, item)" [ngClass]="{'locked': item.editable === 'N'}">
+            <div
+              class="edit"
+              (click)="createInfoTemplateHandle($event, item)"
+              [ngClass]="{ locked: item.editable === 'N' }"
+            >
               <span>编辑</span>
             </div>
             <div class="preview" (click)="previewInfo(item)" *ngIf="!isIframe">
@@ -74,17 +109,24 @@
             </div>
           </ng-container>
           <ng-container *ngIf="i > editMap[type] - 1">
-            <div class="over" (click)="handleOverClick()"  tooltip="立刻升级解锁数据" container="body" containerClass="customClass" placement="top">
+            <div
+              class="over"
+              (click)="handleOverClick()"
+              tooltip="立刻升级解锁数据"
+              container="body"
+              containerClass="customClass"
+              placement="top"
+            >
               <span>项目超限</span>
             </div>
           </ng-container>
         </div>
         <div class="waterfall-introduce" *ngIf="hoverIndex === i">
-          <p class="title" [title]="item.title">{{item.title}}</p>
+          <p class="title" [title]="item.title">{{ item.title }}</p>
         </div>
       </li>
     </ul>
-  
+
     <ng-container *ngIf="!showWaterfallArr.length">
       <!-- 暂无项目 -->
       <ng-container *ngIf="!searchWord">
@@ -96,7 +138,7 @@
           <p>快去「发现」看看吧~</p>
         </div>
       </ng-container>
-    
+
       <!-- 暂无搜索结果 -->
       <ng-container *ngIf="searchWord">
         <div class="empty-container d-flex flex-column justify-content-center align-items-center">
