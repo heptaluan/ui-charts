@@ -1,6 +1,5 @@
-
 .introduce-box {
-  background-color: #F0F7FF;
+  background-color: #f0f7ff;
   line-height: normal;
   // width: 7.5rem;
   padding-bottom: 1.04rem;
@@ -28,26 +27,25 @@
       background: url('/dyassets/images/home-page/mobile/header-tip.svg') no-repeat center / cover;
       position: relative;
       margin: 0.41rem 0.41rem 0 0;
-      width: .45rem;
-      height: .28rem;
+      width: 0.45rem;
+      height: 0.28rem;
       cursor: pointer;
     }
-
   }
 
   .header-tip {
     position: fixed;
     width: 1.91rem;
     height: 3.13rem;
-    padding: 0 .09rem;
-    border-radius: .06rem;
+    padding: 0 0.09rem;
+    border-radius: 0.06rem;
     background: #ffffff;
     z-index: 4;
     top: 1rem;
-    right: .41rem;
+    right: 0.41rem;
 
     &::before {
-      content: "";
+      content: '';
       width: 0;
       height: 0;
       border: 8px solid;
@@ -58,11 +56,11 @@
 
     p {
       color: #000000;
-      font-size: .3rem;
-      height: .79rem;
-      line-height: .79rem;
-      border-bottom: .01rem solid #dddddd;
-      padding-left: .27rem;
+      font-size: 0.3rem;
+      height: 0.79rem;
+      line-height: 0.79rem;
+      border-bottom: 0.01rem solid #dddddd;
+      padding-left: 0.27rem;
       outline: none;
 
       &:last-of-type {
@@ -97,9 +95,9 @@
       &:nth-child(2) {
         position: absolute;
         top: 2.4rem;
-        left: 0.26rem ;
+        left: 0.26rem;
         width: 0.79rem;
-	      height: 0.79rem;
+        height: 0.79rem;
       }
     }
 
@@ -115,10 +113,9 @@
         top: 0.81rem;
         left: 1.02rem;
       }
-      
 
       &:nth-child(3)::after {
-        content: "";
+        content: '';
         position: absolute;
         top: 0.25rem;
         width: 5.76rem;
@@ -135,10 +132,9 @@
         top: 0.98rem;
         left: 0.59rem;
       }
-      
 
       &:nth-child(4)::after {
-        content: "";
+        content: '';
         position: absolute;
         top: 0.25rem;
         width: 6.32rem;
@@ -149,7 +145,7 @@
       }
     }
   }
-  
+
   .step-one {
     position: relative;
     top: -0.11rem;
@@ -164,10 +160,9 @@
       &:nth-child(3) {
         display: block;
         width: 6.5rem;
-	      height: 0.87rem;
+        height: 0.87rem;
         margin: 0 auto;
       }
-      
     }
     p {
       font-size: 0.3rem;
@@ -192,9 +187,9 @@
       &:nth-child(3) {
         display: block;
         width: 6.5rem;
-	      height: 3.6rem;
+        height: 3.6rem;
         margin: 0 auto;
-      }    
+      }
     }
     p {
       width: 6.7rem;
@@ -220,9 +215,9 @@
       &:nth-child(3) {
         display: block;
         width: 6.5rem;
-	      height: 3.56rem;
+        height: 3.56rem;
         margin: 0 auto;
-      }    
+      }
     }
     p {
       font-size: 0.3rem;
@@ -238,7 +233,6 @@
     }
   }
 
-
   .page-text {
     color: #323b47;
     font-size: 0.3rem;
@@ -249,18 +243,21 @@
     position: relative;
   }
 
-  .step-one-bg, .step-two-bg, .step-three-bg, .step-four-bg {
+  .step-one-bg,
+  .step-two-bg,
+  .step-three-bg,
+  .step-four-bg {
     position: relative;
     z-index: 2;
     font-size: 0;
-    padding: 0 .6rem;
+    padding: 0 0.6rem;
   }
 
   .weixin-code {
     position: relative;
     z-index: 2;
     width: 3.6rem;
-	  height: 3.6rem;
+    height: 3.6rem;
     display: block;
     margin: 0 auto;
   }
@@ -273,19 +270,20 @@
     line-height: 0.8rem;
     font-size: 0.3rem;
     letter-spacing: 1px;
-	  color: #ffffff;
-    margin: 0.48rem auto 0 auto ;
+    color: #ffffff;
+    margin: 0.48rem auto 0 auto;
     text-align: center;
   }
 
-  .page-bg01, .page-bg02 {
+  .page-bg01,
+  .page-bg02 {
     position: absolute;
     z-index: 1;
   }
 
   .page-bg01 {
     width: 2.6rem;
-	  height: 2.97rem;
+    height: 2.97rem;
     left: 0;
     bottom: 5.43rem;
   }
@@ -293,8 +291,7 @@
   .page-bg02 {
     width: 0.79rem;
     height: 0.79rem;
-    bottom: 4.19rem;  
+    bottom: 4.19rem;
     right: 0.21rem;
   }
-
 }

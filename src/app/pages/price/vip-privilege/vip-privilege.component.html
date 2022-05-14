@@ -121,7 +121,11 @@
         <a class="btn-wrapper" [class.no-right-go]="update1Flag" (click)="rightGo($event, 'None')">{{ updateTip1 }}</a>
         <a class="btn-wrapper" [class.no-right-go]="update2Flag" (click)="rightGo($event, 'vip1')">{{ updateTip2 }}</a>
         <a class="btn-wrapper" (click)="askPrice()">咨询</a>
-        <div class="free-vip" (click)="goExchange()" onclick="_hmt.push(['_trackEvent', 'price', 'price-desc', 'free-vip'])">
+        <div
+          class="free-vip"
+          (click)="goExchange()"
+          onclick="_hmt.push(['_trackEvent', 'price', 'price-desc', 'free-vip'])"
+        >
           <a>领取会员特权</a>
         </div>
       </div>
@@ -154,13 +158,17 @@
           <li class="server-item">
             <div class="server-item-icon icon-brand"></div>
             <p class="title">品牌数据传播定制</p>
-            <p class="server-desc">从热点切入，深入分析数据，释放企业数据的传播价值，用最有表现力的数据作品赋能企业品牌。</p>
+            <p class="server-desc">
+              从热点切入，深入分析数据，释放企业数据的传播价值，用最有表现力的数据作品赋能企业品牌。
+            </p>
           </li>
           <li class="server-item">
             <div class="server-item-icon icon-dev"></div>
             <p class="title">数据可视化产品开发</p>
             <div class="line"></div>
-            <p class="server-desc">将产品数据结构化，结构数据可视化，可视数据智能化，既实用又亮眼，彰显你的产品价值。</p>
+            <p class="server-desc">
+              将产品数据结构化，结构数据可视化，可视数据智能化，既实用又亮眼，彰显你的产品价值。
+            </p>
           </li>
         </ul>
 
@@ -304,7 +312,7 @@
           </div>
         </div>
       </div>
-      <div class="partner background-gray" style="height: 760px;">
+      <div class="partner background-gray" style="height: 760px">
         <h1 class="title">企业服务</h1>
         <div class="partner-wrapper">
           <img src="/dyassets/images/price/partner_logo.png" alt="" />

@@ -49,8 +49,8 @@
     padding-top: 32px;
     overflow: auto;
     background: #f6f7f9;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei', 'Hiragino Sans GB', 'Segoe UI',
-      'Helvetica Neue', Helvetica, Arial, 'Monaco', 'Menlo', 'Consolas', sans-serif !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei',
+      'Hiragino Sans GB', 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, 'Monaco', 'Menlo', 'Consolas', sans-serif !important;
   }
 
   .right-content {
@@ -60,8 +60,8 @@
     max-width: 2080px;
     min-width: 930px;
     padding: 32px 80px 0 270px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei', 'Hiragino Sans GB', 'Segoe UI',
-      'Helvetica Neue', Helvetica, Arial, 'Monaco', 'Menlo', 'Consolas', sans-serif !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei',
+      'Hiragino Sans GB', 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, 'Monaco', 'Menlo', 'Consolas', sans-serif !important;
 
     &.iframe {
       margin-left: 0;
@@ -102,7 +102,6 @@
 
 // --------------------------------------------- 移动端  ---------------------------------------------------
 .mobile {
-
   .mobile-mask {
     position: fixed;
     width: 100%;
@@ -134,26 +133,25 @@
       background: url('/dyassets/images/home-page/mobile/header-tip.svg') no-repeat center / cover;
       position: relative;
       margin: 0.41rem 0.41rem 0 0;
-      width: .45rem;
-      height: .28rem;
+      width: 0.45rem;
+      height: 0.28rem;
       cursor: pointer;
     }
-
   }
 
   .header-tip {
     position: fixed;
     width: 1.91rem;
     height: 3.13rem;
-    padding: 0 .09rem;
-    border-radius: .06rem;
+    padding: 0 0.09rem;
+    border-radius: 0.06rem;
     background: #ffffff;
     z-index: 4;
     top: 1rem;
-    right: .41rem;
+    right: 0.41rem;
 
     &::before {
-      content: "";
+      content: '';
       width: 0;
       height: 0;
       border: 8px solid;
@@ -164,11 +162,11 @@
 
     p {
       color: #000000;
-      font-size: .3rem;
-      height: .79rem;
-      line-height: .79rem;
-      border-bottom: .01rem solid #dddddd;
-      padding-left: .27rem;
+      font-size: 0.3rem;
+      height: 0.79rem;
+      line-height: 0.79rem;
+      border-bottom: 0.01rem solid #dddddd;
+      padding-left: 0.27rem;
       outline: none;
 
       &:last-of-type {
@@ -262,7 +260,6 @@
       .content-wrapper-magin {
         margin: 0.32rem 1.36rem 0 1.36rem;
       }
-
     }
 
     .chart {
@@ -320,7 +317,6 @@
           }
         }
       }
-
     }
 
     .infographic {
@@ -364,7 +360,7 @@
             font-weight: 600;
           }
 
-          &:nth-child(1)>img {
+          &:nth-child(1) > img {
             width: 3.12rem;
             height: 4.98rem;
           }
@@ -374,7 +370,7 @@
           //   height: 4.74rem;
           // }
 
-          &:nth-child(2)>img {
+          &:nth-child(2) > img {
             width: 3.12rem;
             height: 3.16rem;
           }
@@ -384,44 +380,41 @@
           //   height: 4.17rem;
           // }
 
-          &:nth-child(3)>img {
+          &:nth-child(3) > img {
             width: 3.12rem;
             height: 7.9rem;
           }
 
-          &:nth-child(4)>img {
+          &:nth-child(4) > img {
             width: 3.12rem;
             height: 1.34rem;
           }
 
-          &:nth-child(5)>img {
+          &:nth-child(5) > img {
             width: 3.12rem;
             height: 1.47rem;
           }
 
-          &:nth-child(6)>img {
+          &:nth-child(6) > img {
             width: 3.12rem;
             height: 4.74rem;
           }
 
-          &:nth-child(7)>img {
+          &:nth-child(7) > img {
             width: 3.12rem;
             height: 4.74rem;
           }
 
-          &:nth-child(8)>img {
+          &:nth-child(8) > img {
             width: 3.12rem;
             height: 2.37rem;
           }
 
-          &:nth-child(9)>img {
+          &:nth-child(9) > img {
             width: 3.12rem;
             height: 9.48rem;
           }
-
-
         }
-
       }
 
       .login-button {
@@ -440,13 +433,11 @@
           text-decoration: none;
         }
       }
-
     }
 
     .hide-login {
       height: 28.67rem !important;
     }
-
   }
 
   footer {
@@ -497,8 +488,8 @@
         color: rgba(255, 255, 255, 0.7);
         font-size: 0.24rem;
         margin-left: 0.1rem;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei', 'Hiragino Sans GB', 'Segoe UI',
-          'Helvetica Neue', Helvetica, Arial, 'Monaco', 'Menlo', 'Consolas', sans-serif !important;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei',
+          'Hiragino Sans GB', 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, 'Monaco', 'Menlo', 'Consolas', sans-serif !important;
       }
     }
 

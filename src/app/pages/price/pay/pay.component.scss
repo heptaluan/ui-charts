@@ -25,7 +25,7 @@ li {
 }
 
 a {
-  text-decoration: none
+  text-decoration: none;
 }
 
 .w {
@@ -52,15 +52,15 @@ a {
 }
 
 .icon-address {
-  background-image: url("/dyassets/images/price/icon-address.png");
+  background-image: url('/dyassets/images/price/icon-address.png');
 }
 
 .icon-mail {
-  background-image: url("/dyassets/images/price/icon-mail.png");
+  background-image: url('/dyassets/images/price/icon-mail.png');
 }
 
 .icon-phone {
-  background-image: url("/dyassets/images/price/icon-phone.png");
+  background-image: url('/dyassets/images/price/icon-phone.png');
 }
 
 .button-wrapper {
@@ -84,14 +84,14 @@ a {
 }
 
 .button-link::before {
-  content: " ";
+  content: ' ';
   position: absolute;
   display: block;
   top: 45px;
   left: 14px;
   width: 210px;
   height: 50px;
-  background: url("/dyassets/images/price/button-shadow.png");
+  background: url('/dyassets/images/price/button-shadow.png');
   transform: rotate(180deg);
 }
 
@@ -100,15 +100,15 @@ a {
 }
 
 .icon-brand {
-  background-image: url("/dyassets/images/price/icon-bind.png");
+  background-image: url('/dyassets/images/price/icon-bind.png');
 }
 
 .icon-custom {
-  background-image: url("/dyassets/images/price/icon-custom.png");
+  background-image: url('/dyassets/images/price/icon-custom.png');
 }
 
 .icon-dev {
-  background-image: url("/dyassets/images/price/icon-dev.png");
+  background-image: url('/dyassets/images/price/icon-dev.png');
 }
 
 .page-bg {
@@ -128,7 +128,7 @@ a {
   width: 100%;
   height: 694px;
   min-width: 1170px;
-  background: url("/dyassets/images/price/top-bg.png") no-repeat top;
+  background: url('/dyassets/images/price/top-bg.png') no-repeat top;
   background-size: 100% 100%;
 }
 
@@ -138,7 +138,7 @@ a {
   width: 100%;
   height: 1322px;
   min-width: 1170px;
-  background: url("/dyassets/images/price/bottom-bg.png") no-repeat bottom;
+  background: url('/dyassets/images/price/bottom-bg.png') no-repeat bottom;
   background-size: 100% 100%;
   margin-top: 233px;
 }
@@ -164,7 +164,7 @@ a {
   width: 1170px;
   height: 904px;
   margin: 260px auto 0 auto;
-  background: url("/dyassets/images/price/power_bg.png") no-repeat bottom center;
+  background: url('/dyassets/images/price/power_bg.png') no-repeat bottom center;
   background-size: 100% 95%;
 }
 
@@ -202,7 +202,7 @@ a {
   width: 370px;
   height: 752px;
   float: left;
-  background: #FFFFFF;
+  background: #ffffff;
   margin-right: 30px;
   border: solid 1px #ebebeb;
 }
@@ -267,7 +267,7 @@ a {
 
 .powers .power-wrapper .power-text {
   height: 22px;
-  color: #323B47;
+  color: #323b47;
   padding-top: 10px;
   font-family: PingFangSC-Regular;
   font-size: 13px;
@@ -320,11 +320,11 @@ a {
   position: absolute;
   top: -15px;
   left: -9px;
-  content: " ";
+  content: ' ';
   display: block;
   width: 150px;
   height: 156px;
-  background: url("/dyassets/images/price/dis_bg.png") no-repeat center;
+  background: url('/dyassets/images/price/dis_bg.png') no-repeat center;
   background-size: 100% 100%;
 }
 
@@ -391,30 +391,30 @@ a {
   display: block;
   width: 364px;
   height: 558px;
-  background: url("/dyassets/images/price/pay-left.png") no-repeat center;
+  background: url('/dyassets/images/price/pay-left.png') no-repeat center;
   background-size: 100% 100%;
   z-index: 99;
 }
 
 .pay-left-bar::before {
   position: absolute;
-  content: " ";
+  content: ' ';
   display: block;
   width: 12px;
   height: 13px;
   right: -11px;
-  background: url("/dyassets/images/price/t1.svg") no-repeat center;
+  background: url('/dyassets/images/price/t1.svg') no-repeat center;
 }
 
 .pay-left-bar::after {
   position: absolute;
-  content: " ";
+  content: ' ';
   display: block;
   width: 12px;
   height: 13px;
   right: -11px;
   bottom: 0;
-  background: url("/dyassets/images/price/t2.svg") no-repeat center;
+  background: url('/dyassets/images/price/t2.svg') no-repeat center;
 }
 
 .pay-left-bar .pay-title {
@@ -452,7 +452,7 @@ a {
   width: 931px;
   height: 533px;
   background: #ffffff;
-  box-shadow: 0 3px 16px 0 rgba(96, 95, 147, .1);
+  box-shadow: 0 3px 16px 0 rgba(96, 95, 147, 0.1);
   z-index: 1;
 }
 
@@ -491,12 +491,12 @@ a {
 }
 
 .pay-check-box.checked::before {
-  content: " ";
+  content: ' ';
   position: absolute;
   display: block;
   height: 15px;
   width: 15px;
-  background: url("/dyassets/images/price/pay-check.svg") no-repeat;
+  background: url('/dyassets/images/price/pay-check.svg') no-repeat;
   right: 0;
   bottom: 0;
 }
@@ -745,7 +745,7 @@ a {
 }
 
 .pay-btn:before {
-  content: " ";
+  content: ' ';
   display: block;
   width: 285px;
   height: 126px;
@@ -753,6 +753,6 @@ a {
   right: -37px;
   top: -15px;
   z-index: -1;
-  background: url("/dyassets/images/price/bay-btn-sh.png");
-  opacity: .2;
+  background: url('/dyassets/images/price/bay-btn-sh.png');
+  opacity: 0.2;
 }
