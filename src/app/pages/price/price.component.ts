@@ -1,28 +1,23 @@
-import { Component, OnInit } from '@angular/core';
-import { UtilsService } from '../../share/services/utils.service';
+import { Component, OnInit } from '@angular/core'
+import { UtilsService } from '../../share/services/utils.service'
 
 @Component({
   selector: 'lx-price',
   templateUrl: './price.component.html',
-  styleUrls: ['./price.component.scss']
+  styleUrls: ['./price.component.scss'],
 })
 export class PriceComponent implements OnInit {
+  browserType: string = ''
+  isChrome: boolean = true
+  isCloseTip: boolean = false
 
-  browserType: string = '';
-  isChrome: boolean = true;
-  isCloseTip: boolean = false;
+  isShowBackTop: boolean = false
 
-  isShowBackTop: boolean = false;
-
-  constructor(
-    private _utilService: UtilsService,
-  ) {
-
-  }
+  constructor(private _utilService: UtilsService) {}
 
   ngOnInit() {
-    this.isChrome = this._utilService.getBrowserInfo() === 'Chrome' || this._utilService.getBrowserInfo() === 'Safari';
-    this.isCloseTip = this._utilService.isCloseTip;
+    this.isChrome = this._utilService.getBrowserInfo() === 'Chrome' || this._utilService.getBrowserInfo() === 'Safari'
+    this.isCloseTip = this._utilService.isCloseTip
   }
 
   ngAfterViewInit(): void {
@@ -30,16 +25,16 @@ export class PriceComponent implements OnInit {
   }
 
   closeTip() {
-    this.isCloseTip = true;
-    this._utilService.closeTip();
+    this.isCloseTip = true
+    this._utilService.closeTip()
   }
 
   handleScroll() {
-    const top = Math.round(document.documentElement.scrollTop);
+    const top = Math.round(document.documentElement.scrollTop)
     if (top >= 500) {
-      this.isShowBackTop = true;
+      this.isShowBackTop = true
     } else {
-      this.isShowBackTop = false;
+      this.isShowBackTop = false
     }
   }
 }

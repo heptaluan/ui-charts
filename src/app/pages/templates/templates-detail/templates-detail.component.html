@@ -25,22 +25,30 @@
           </div>
           <div class="item-data-detail">
             <div class="item-data-type">
-              <span class="item-data-title">场景</span><span
-                class="item-data-content" (click)="hanleInfoClick(itemDetailContent.tpl_type_id,'index')">{{itemDetailContent.tpl_type}}</span>
+              <span class="item-data-title">场景</span
+              ><span class="item-data-content" (click)="hanleInfoClick(itemDetailContent.tpl_type_id, 'index')">{{
+                itemDetailContent.tpl_type
+              }}</span>
             </div>
             <div class="d-flex">
               <span class="item-data-title b-12">类型</span>
               <span class="item-data-type recommand-type">
                 <ng-container *ngFor="let item of itemDetailContent.type_tags; let i = index; let last = last">
-                  <span *ngIf="!last" class="item-data-content" (click)="hanleInfoClick(item.id, 'index')">{{ item.name }}、</span>
-                  <span *ngIf="last" class="item-data-content" (click)="hanleInfoClick(item.id, 'index')">{{ item.name }}</span>
+                  <span *ngIf="!last" class="item-data-content" (click)="hanleInfoClick(item.id, 'index')"
+                    >{{ item.name }}、</span
+                  >
+                  <span *ngIf="last" class="item-data-content" (click)="hanleInfoClick(item.id, 'index')">{{
+                    item.name
+                  }}</span>
                 </ng-container>
               </span>
             </div>
             <div>
               <span class="item-data-title b-12">尺寸</span
               ><span class="item-data-content"
-                >{{ itemDetailContent.size.split('*')[0] }}&nbsp;x&nbsp;{{ itemDetailContent.size.split('*')[1] }}px</span
+                >{{ itemDetailContent.size.split('*')[0] }}&nbsp;x&nbsp;{{
+                  itemDetailContent.size.split('*')[1]
+                }}px</span
               >
             </div>
 

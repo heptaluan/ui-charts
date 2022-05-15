@@ -1,35 +1,20 @@
-<div class="swiper-container" (mouseover)='mySwiper?.autoplay.stop()' (mouseout)='mySwiper?.autoplay.start()'>
+<div class="swiper-container" (mouseover)="mySwiper?.autoplay.stop()" (mouseout)="mySwiper?.autoplay.start()">
   <div class="swiper-wrapper">
-    <!-- <div
-      onclick="_hmt.push(['_trackEvent', 'templatecenter', 'template-index', 'templatecenter-banner-review2019-clicked'])"
+    <div
       class="swiper-slide"
-      style="background: url(/dyassets/images/share/review-2019.png) no-repeat center center / cover;">
-    </div> -->
-    <div class="swiper-slide"
-      style="background: url(/dyassets/images/share/bannerEip.png) no-repeat center center / cover; cursor: pointer;">
-      <a href="https://dychart.com/show/57836d09be3354551205996d9aa3e78e?hmsr=%E9%95%9D%E6%95%B0%E5%AE%98%E7%BD%91banner&hmpl=%E9%95%9D%E6%95%B0%E5%85%8D%E8%B4%B9%E9%80%81%E4%BC%81%E4%B8%9A%E4%BC%9A%E5%91%98&hmcu=%E9%95%9D%E6%95%B0%E5%85%8D%E8%B4%B9%E9%80%81%E4%BC%81%E4%B8%9A%E4%BC%9A%E5%91%98-%E5%AE%98%E7%BD%91banner&hmkw=%E4%BC%81%E4%B8%9A%E5%85%8D%E8%B4%B9%E4%BC%9A%E5%91%98&hmci=%E6%8A%97%E6%88%98%E7%96%AB%E6%83%85%EF%BC%8C%E9%95%9D%E6%95%B0%E5%85%8D%E8%B4%B9%E9%80%81%E4%BC%81%E4%B8%9A%E4%BC%9A%E5%91%98" target="_blank"
-        onclick="_hmt.push(['_trackEvent', 'templatecenter', 'template-index', 'templatecenter-bannerEip-clicked'])"></a>
+      style="background: url(/dyassets/images/share/bannerEip.png) no-repeat center center / cover; cursor: pointer"
+    >
+      <a
+        href="https://dychart.com/show/57836d09be3354551205996d9aa3e78e"
+        target="_blank"
+        onclick="_hmt.push(['_trackEvent', 'templatecenter', 'template-index', 'templatecenter-bannerEip-clicked'])"
+      ></a>
     </div>
     <div
       onclick="_hmt.push(['_trackEvent', 'templatecenter', 'template-index', 'templatecenter-banner-annualReport-clicked'])"
       class="swiper-slide"
-      style="background: url(/dyassets/images/share/annual-report.png) no-repeat center center / cover;">
-    </div>
-    <div class="swiper-slide"
-      style="background: rgb(0, 140, 235) url(/dyassets/images/share/bannerRep.png) no-repeat center center / contain; cursor: pointer;">
-      <a href="https://www.wjx.top/m/44694601.aspx" target="_blank"
-        onclick="_hmt.push(['_trackEvent', 'templatecenter', 'template-index', 'templatecenter-bannerRep-clicked'])"></a>
-    </div>
-    <!-- <div class="swiper-slide"
-      style="background: url(/dyassets/images/share/free-vip.jpg) no-repeat center center / cover; cursor: pointer;">
-      <a href="https://mp.weixin.qq.com/s/LXEIfwdhGARFRl6vhQ2mhQ" target="_blank"
-        onclick="_hmt.push(['_trackEvent', 'templatecenter', 'template-index', 'templatecenter-banner1-clicked'])"></a>
-    </div> -->
-    <!-- <div class="swiper-slide"
-      style="background: url(/dyassets/images/share/data-img.jpg) no-repeat center center / cover; cursor: pointer;">
-      <a href="https://dydata.io/appv2/#/pages/templates/list?index=13" target="_blank"
-        onclick="_hmt.push(['_trackEvent', 'templatecenter', 'template-index', 'templatecenter-banner2-clicked'])"></a>
-    </div> -->
+      style="background: url(/dyassets/images/share/annual-report.png) no-repeat center center / cover"
+    ></div>
   </div>
   <div class="swiper-pagination"></div>
 </div>
@@ -46,11 +31,11 @@
       <li style="border-top: 4px solid #5d38db" class="introduce-list">
         <h4>话题营销</h4>
         <p>
-          <span [routerLink]="[ '/pages/templates/list' ]" [queryParams]="{'index': 9}">手机海报</span>
-          <span [routerLink]="[ '/pages/templates/list' ]" [queryParams]="{'index': 12}">新闻长图</span>
+          <span [routerLink]="['/pages/templates/list']" [queryParams]="{ index: 9 }">手机海报</span>
+          <span [routerLink]="['/pages/templates/list']" [queryParams]="{ index: 12 }">新闻长图</span>
         </p>
         <p>
-          <span [routerLink]="[ '/pages/templates/list' ]" [queryParams]="{'index': 13}">数据图说</span>
+          <span [routerLink]="['/pages/templates/list']" [queryParams]="{ index: 13 }">数据图说</span>
           <span class="without"></span>
         </p>
         <p><span class="without"></span><span class="without"></span></p>
@@ -58,67 +43,70 @@
       <li style="border-top: 4px solid #ff0000" class="introduce-list">
         <h4>社交媒体</h4>
         <p>
-          <span [routerLink]="[ '/pages/templates/list' ]" [queryParams]="{'index': 1}">微信公众号首图</span>
-          <span [routerLink]="[ '/pages/templates/list' ]" [queryParams]="{'index': 2}">微博焦点图片</span>
+          <span [routerLink]="['/pages/templates/list']" [queryParams]="{ index: 1 }">微信公众号首图</span>
+          <span [routerLink]="['/pages/templates/list']" [queryParams]="{ index: 2 }">微博焦点图片</span>
         </p>
         <p>
-          <span [routerLink]="[ '/pages/templates/list' ]" [queryParams]="{'index': 4}">正文配图(横版)</span>
-          <span [routerLink]="[ '/pages/templates/list' ]" [queryParams]="{'index': 5}">正文配图(方形)</span>
+          <span [routerLink]="['/pages/templates/list']" [queryParams]="{ index: 4 }">正文配图(横版)</span>
+          <span [routerLink]="['/pages/templates/list']" [queryParams]="{ index: 5 }">正文配图(方形)</span>
         </p>
         <p>
-          <span [routerLink]="[ '/pages/templates/list' ]" [queryParams]="{'index': 6}">正文配图(竖版)</span>
+          <span [routerLink]="['/pages/templates/list']" [queryParams]="{ index: 6 }">正文配图(竖版)</span>
           <span class="without"></span>
         </p>
       </li>
       <li style="border-top: 4px solid #f5a623" class="introduce-list">
         <h4>图表制作</h4>
         <p>
-          <span [routerLink]="[ '/pages/templates/list' ]" [queryParams]="{'index': 6666666006}">时间轴</span>
-          <span [routerLink]="[ '/pages/templates/list' ]" [queryParams]="{'index': 6666666004}">数据对比</span>
+          <span [routerLink]="['/pages/templates/list']" [queryParams]="{ index: 6666666006 }">时间轴</span>
+          <span [routerLink]="['/pages/templates/list']" [queryParams]="{ index: 6666666004 }">数据对比</span>
         </p>
         <p>
-          <span [routerLink]="[ '/pages/templates/list' ]" [queryParams]="{'index': 6666666005}">数值展示</span>
-          <span [routerLink]="[ '/pages/templates/list' ]" [queryParams]="{'index': 6666666007}">数据地图</span>
+          <span [routerLink]="['/pages/templates/list']" [queryParams]="{ index: 6666666005 }">数值展示</span>
+          <span [routerLink]="['/pages/templates/list']" [queryParams]="{ index: 6666666007 }">数据地图</span>
         </p>
         <p>
-          <span [routerLink]="[ '/pages/templates/list' ]" [queryParams]="{'index': 6666666008}">图片写实</span>
+          <span [routerLink]="['/pages/templates/list']" [queryParams]="{ index: 6666666008 }">图片写实</span>
           <span class="without"></span>
         </p>
       </li>
       <li style="border-top: 4px solid #7ccc4f" class="introduce-list">
         <h4>商务办公</h4>
         <p>
-          <span [routerLink]="[ '/pages/templates/list' ]" [queryParams]="{'index': 7}">图表报告</span>
-          <span [routerLink]="[ '/pages/templates/list' ]" [queryParams]="{'index': 11}">简历</span>
-          <p>
-            <span class="without"></span>
-            <span class="without"></span>
-          </p>
-          <p>
-            <span class="without"></span>
-            <span class="without"></span>
-          </p>
+          <span [routerLink]="['/pages/templates/list']" [queryParams]="{ index: 7 }">图表报告</span>
+          <span [routerLink]="['/pages/templates/list']" [queryParams]="{ index: 11 }">简历</span>
+        </p>
+
+        <p>
+          <span class="without"></span>
+          <span class="without"></span>
+        </p>
+        <p>
+          <span class="without"></span>
+          <span class="without"></span>
+        </p>
       </li>
     </ul>
   </div>
 </div>
 <div class="templates-wrapper">
   <div class="templates-content">
-
     <!-- 公众号 -->
-    <div class="templates-gongzhong item-margin" *ngFor="let item of listTemplates"
-      [hidden]='item.name === "营销长图" || item.name === "工作报告" || item.name === "头条号首图"'>
+    <div
+      class="templates-gongzhong item-margin"
+      *ngFor="let item of listTemplates"
+      [hidden]="item.name === '营销长图' || item.name === '工作报告' || item.name === '头条号首图'"
+    >
       <div class="title">
-        <h4>{{item.name}}</h4>
+        <h4>{{ item.name }}</h4>
         <span class="read-more" (click)="viewMore(item)">查看更多</span>
       </div>
       <ul class="item-list-box">
         <li *ngFor="let list of item.shows">
-          <lx-templates-item [type]="item.name" [list]='list'></lx-templates-item>
+          <lx-templates-item [type]="item.name" [list]="list"></lx-templates-item>
         </li>
       </ul>
     </div>
-
   </div>
 </div>
 
