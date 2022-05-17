@@ -10,7 +10,7 @@
     height: 6px;
     background-color: #ffffff;
     border-radius: 2px;
-    opacity: .5;
+    opacity: 0.5;
   }
 
   .swiper-pagination-bullet-active {
@@ -23,15 +23,20 @@
   }
 
   .swiper-button-prev {
-    background: url("https://ss1.dydata.io/v2/home/arrows-left.png") no-repeat center/contain;
+    background: url('https://ss1.dydata.io/v2/home/arrows-left.png') no-repeat center/contain;
   }
 
   .swiper-button-next {
-    background: url("https://ss1.dydata.io/v2/home/arrows-right.png") no-repeat center/contain;
+    background: url('https://ss1.dydata.io/v2/home/arrows-right.png') no-repeat center/contain;
   }
 }
 
-ul, li {margin: 0; padding: 0; list-style: none;}
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 
 .swiper-container {
   height: 322px;
@@ -39,7 +44,7 @@ ul, li {margin: 0; padding: 0; list-style: none;}
 
 .templates-introduce-box {
   width: 100%;
-  background: #F5F6F7;
+  background: #f5f6f7;
   padding-bottom: 40px;
 
   .templates-introduce {
@@ -197,5 +202,4 @@ ul, li {margin: 0; padding: 0; list-style: none;}
       }
     }
   }
-
 }

@@ -3,15 +3,19 @@
   </lx-templates-search-input>
 </div>
 <div class="create-project-container">
-
   <div class="change-chart-box">
     <div class="info-scene">
       <div class="info-scene-title">场景：</div>
       <div class="info-scene-item">
         <ul>
-          <li [ngClass]="{'active': infoClassifyIndex === i}" *ngFor="let item of infoFirstClassify,let i = index"
+          <li
+            [ngClass]="{ active: infoClassifyIndex === i }"
+            *ngFor="let item of infoFirstClassify; let i = index"
             (click)="changeInfoClassify(i, item)"
-            [hidden]='item.name === "营销长图" || item.name === "工作报告" || item.name === "头条号首图"'>{{item.name}}</li>
+            [hidden]="item.name === '营销长图' || item.name === '工作报告' || item.name === '头条号首图'"
+          >
+            {{ item.name }}
+          </li>
         </ul>
       </div>
     </div>
@@ -19,8 +23,12 @@
       <div class="info-scene-title">类型：</div>
       <div class="info-scene-item">
         <ul>
-          <li [ngClass]="{'active': infoSecondClassifyIndex === i}"
-            *ngFor="let item of infoSecondClassify,let i = index" (click)="changeInfoClassify(i, item)">{{item.name}}
+          <li
+            [ngClass]="{ active: infoSecondClassifyIndex === i }"
+            *ngFor="let item of infoSecondClassify; let i = index"
+            (click)="changeInfoClassify(i, item)"
+          >
+            {{ item.name }}
           </li>
         </ul>
       </div>
@@ -29,57 +37,26 @@
 
   <div class="change-chart-box">
     <div class="info-scene">
-      <!-- <div class="info-scene-title">排序：</div> -->
-      <!-- <div class="info-scene-item">
-        <ul>
-          <li [ngClass]="{'active': infoOrderIndex === i}" *ngFor="let item of infoOrders , let i = index"
-            (click)="changeInfoOrder(i, item)">{{item}}</li>
-        </ul>
-      </div> -->
       <div class="info-scene-title">排序：</div>
-      <div class="info-scene-last no-click-area" (click)='extendOrderDrop()' [ngClass]="{'active': orderDropDownflag}">
-        {{infoOrders[infoOrderIndex]}}
+      <div class="info-scene-last no-click-area" (click)="extendOrderDrop()" [ngClass]="{ active: orderDropDownflag }">
+        {{ infoOrders[infoOrderIndex] }}
         <ul *ngIf="orderDropDownflag">
-          <li (click)='changeInfoOrder(i, item)' *ngFor="let item of infoOrders; let i = index">{{item}}</li>
+          <li (click)="changeInfoOrder(i, item)" *ngFor="let item of infoOrders; let i = index">{{ item }}</li>
         </ul>
       </div>
       <div class="info-scene-title info-price">价格：</div>
-      <div class="info-scene-last no-click-area" (click)='extendDrop()' [ngClass]="{'active': dropDownFlag}">
-        {{priceMenu[priceIndex]}}
+      <div class="info-scene-last no-click-area" (click)="extendDrop()" [ngClass]="{ active: dropDownFlag }">
+        {{ priceMenu[priceIndex] }}
         <ul *ngIf="dropDownFlag">
-          <li (click)='changeInfoPrice(i, item)' *ngFor="let item of priceMenu; let i = index">{{item}}</li>
+          <li (click)="changeInfoPrice(i, item)" *ngFor="let item of priceMenu; let i = index">{{ item }}</li>
         </ul>
       </div>
     </div>
   </div>
 
-  <!-- 信息图 -->
-  <div class="infographic-template-list template-list" *ngIf="!isSearchResult">
-    <!-- <ngx-masonry [updateLayout]="updateMasonryLayout" [options]='myOptions'>
-      <div ngxMasonryItem class="masonry-item" *ngFor="let item of infoFilterTemplates; let i = index"
-        (mouseenter)="mouseEnterHandler(item)" (mouseleave)="mouseLeavwHandler()" (click)="createInfoTemplateHandle(item)">
-        <div class="template-cover">
-          <i class="vip-tag" *ngIf="item.price !== 0"></i>
-          <img class="d-block mx-auto" [src]="item.thumb ? item.thumb.split('?')[0] : item.thumb" alt="">
-          <div class="info-mask">
-            <div class="like-info">
-              <i class="icon iconfont icon-xihuan" (click)="toggleLike($event, item)"
-                [ngClass]="{'active': isLike}"></i>
-            </div>
-            <div class="preview-info" (click)="previewInfo($event, item)">预览</div>
-          </div>
-        </div>
-        <div class="template-intro">
-          <span class="template-title">{{item.title}}</span>
-          <span class="template-view">{{item.count}}人使用</span>
-        </div>
-      </div>
-    </ngx-masonry> -->
-  </div>
-
   <div class="empty-container" *ngIf="isSearchResult">
     <div class="no-template">
-      <img src="/dyassets/images/datastore/no-search-result.png">
+      <img src="/dyassets/images/datastore/no-search-result.png" />
       <div>暂未发现符合搜索条件的结果</div>
       <p>请<a href="javascript:;" (click)="showTemplateDemandFeedback()">点击这里</a>提出你的模板需求</p>
     </div>

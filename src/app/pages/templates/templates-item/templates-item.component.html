@@ -1,18 +1,17 @@
-<div class="item-box" (click)='createInfo()' (mouseenter)="mouseEnterHandler(list)" (mouseleave)="mouseLeavwHandler()">
+<div class="item-box" (click)="createInfo()" (mouseenter)="mouseEnterHandler(list)" (mouseleave)="mouseLeavwHandler()">
   <div class="item-cover" [ngStyle]="itemStyles">
     <i class="vip-tag" *ngIf="list.price !== 0"></i>
     <div class="item-img">
-      <img [src]="'https://image.dydata.io/' + list.snapshot" alt="">
+      <img [src]="'https://image.dydata.io/' + list.snapshot" alt="" />
     </div>
     <div class="info-mask">
       <div class="like-info">
-        <i class="icon iconfont icon-xihuan" (click)="toggleLike($event, list)" [ngClass]="{'active': isLike}"></i>
+        <i class="icon iconfont icon-xihuan" (click)="toggleLike($event, list)" [ngClass]="{ active: isLike }"></i>
       </div>
       <div class="preview-info" (click)="previewInfo($event, list)">预览</div>
     </div>
   </div>
   <div class="item-content">
-    <span class="item-name" title="{{list.name}}">{{list.name}}</span>
-    <!-- <span class="item-view">尺寸：500px*500</span> -->
+    <span class="item-name" title="{{ list.name }}">{{ list.name }}</span>
   </div>
 </div>

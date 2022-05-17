@@ -1,8 +1,8 @@
 .item-box {
   width: 250px;
   background-color: #ffffff;
-	box-shadow: 0px 1px 7px 0px rgba(200, 209, 224, 0.4);
-	border-radius: 1px;
+  box-shadow: 0px 1px 7px 0px rgba(200, 209, 224, 0.4);
+  border-radius: 1px;
   cursor: pointer;
 
   .item-cover {
@@ -26,7 +26,6 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      // border: 1px solid pink;
       img {
         display: block;
         width: auto;
@@ -45,7 +44,7 @@
       background-color: rgba(102, 102, 102, 0.3);
       box-shadow: inset 0px -1px 0px 0px rgba(209, 209, 209, 0.5);
       opacity: 0;
-      transition: all .3s;
+      transition: all 0.3s;
 
       .like-info {
         position: absolute;
@@ -56,8 +55,8 @@
         border-radius: 4px;
         background: #fff;
 
-        font-size:12px;
-        color:#969799;
+        font-size: 12px;
+        color: #969799;
         .iconfont {
           margin-left: 2px;
           font-size: 20px;
@@ -98,7 +97,8 @@
     line-height: 40px;
     border-top: 1px solid #ebebeb;
 
-    .item-name, .item-view {
+    .item-name,
+    .item-view {
       font-size: 12px;
     }
 
@@ -118,7 +118,4 @@
       color: #969799;
     }
   }
-
-
-
 }
