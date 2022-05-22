@@ -1,16 +1,31 @@
 <div class="page-container">
   <div class="workspace-wrap">
     <div class="block-logo">
-      <img *ngIf="isShowLogo" [src]="blockLogoSrc">
+      <img *ngIf="isShowLogo" [src]="blockLogoSrc" />
     </div>
-    <div changeZoom id="focal" class="page d-block mx-auto" style='position: relative;'>
+    <div changeZoom id="focal" class="page d-block mx-auto" style="position: relative">
       <ng-template lxChartHost></ng-template>
     </div>
     <ng-container *ngIf="blockProps && blockProps.publishDisplay && blockProps.logoDisplay">
-      <div *ngIf="blockProps && blockProps.publishDisplay && (blockProps.publishDisplay.show || blockProps.logoDisplay.show)" class="logo" [ngStyle]="logoDisplay">
+      <div
+        *ngIf="
+          blockProps && blockProps.publishDisplay && (blockProps.publishDisplay.show || blockProps.logoDisplay.show)
+        "
+        class="logo"
+        [ngStyle]="logoDisplay"
+      >
         <div class="inner-logo" *ngIf="isShowWatermark">
-          <span *ngIf="blockProps && blockProps.publishDisplay && blockProps.publishDisplay.show && isShowWatermark" [ngStyle]="publishDisplayText">{{blockProps.publishDisplay.text}}</span>
-          <img [ngStyle]="publishDisplayImage" *ngIf="blockProps.logoDisplay && blockProps.logoDisplay.show && isShowWatermark" [src]="blockProps.logoDisplay.imgUrl" alt="logo">
+          <span
+            *ngIf="blockProps && blockProps.publishDisplay && blockProps.publishDisplay.show && isShowWatermark"
+            [ngStyle]="publishDisplayText"
+            >{{ blockProps.publishDisplay.text }}</span
+          >
+          <img
+            [ngStyle]="publishDisplayImage"
+            *ngIf="blockProps.logoDisplay && blockProps.logoDisplay.show && isShowWatermark"
+            [src]="blockProps.logoDisplay.imgUrl"
+            alt="logo"
+          />
         </div>
       </div>
     </ng-container>

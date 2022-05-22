@@ -2,7 +2,7 @@
   width: 100%;
   margin: 0 auto;
   padding: 40px 0;
-  background: #F5F6F7;
+  background: #f5f6f7;
 
   .search-input {
     width: 1000px;
@@ -107,7 +107,7 @@
 
       .hot-word {
         &::before {
-          content: "";
+          content: '';
           display: block;
           position: absolute;
           top: -6px;
