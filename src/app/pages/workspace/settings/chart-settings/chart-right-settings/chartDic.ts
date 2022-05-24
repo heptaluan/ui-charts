@@ -1,84 +1,84 @@
 export const chartDic = {
-  "PieChart": "444746070325460997", // 基础饼图
-  "DonutChart": "444746070325460998", // 基础环形图
-  "DeformedPieChart": "444746070325460999", // 变形饼图
-  "RoundCornerDonutChart": "5544734748594536492", // 基础环形图（圆角）
-  "RoundCornerPieChart": "5544734748594536493", // 基础饼图（圆角）
-  "IconPieChart": "4447460703254610041", // 人形饼图
-  "TwoLevelDonutChart": "5544734748594536494", // 双层环图
-  "SimpleLineChart": "444746070325460995", // 基础折线图
-  "BeeLineChart": "4544734748594536433", // 折线对比图
-  "StepLineChart": "5612096174443311134", // 多条阶梯折线图
-  "SmoothLineChart": "5948734748594536789", // 平滑线图
-  "SimpleBarChart": "444734748594536323", // 基础柱状图
-  "BasicHorizontalBarChart": "154772011302084304", // 基本条形图
-  "GroupedBarChart": "3612096174443311105", // 分组柱状图
-  "StackBarChart": "3612096174443311107", // 堆叠柱状图
-  "NegativeHorizontalBarChart": "3612096174443311106", // 正负分组条形图
-  "PyramidChart": "5544734748594536487", // 人口金字塔
-  "GroupedHorizontalBarChart": "3612096174443311110", // 分组条形图
-  "StackHorizontalBarChart": "3612096174443311109", // 堆叠条形图
-  "IconBarChart": "5544734748594536473", // 人形条形图
-  "MixLineBarChart": "5544734748594536332", // 折柱混合图
-  "MultipleBarChart": "5544734748594536478", // 分面柱图
-  "StackedLinearChart": "4544734748594536434", // 堆叠面积图(折线)
-  "OverlapAreaChart": "5544734748594536499", // 层叠面积图（平滑）
-  "StackedChart": "5544734748594536498", // 堆积面积图 （平滑）
-  "StreamgraphChart": "5544734748594536486", // 河流图
-  "GroupingBubbleChart": "4612096174443311107", // 分组气泡图
-  "PolygonRadarChart": "451905388296536065", // 雷达图（直线）
-  "RadarChart": "5544734748594536491", // 多维雷达图（曲线）
-  "QuarterRoseChart": "5943734748594536331", // 玫瑰图（扇形）
-  "RoseChart": "5944734748594536331", // 玫瑰图
-  "RadialBarChart": "5945734748594536331", // 玉玦图
-  "RadialLineChart": "5948734748594536332", // 玉玦图（线形）
-  "SunburstChart": "5543734748594537504", // 旭日图
-  "ChordChart": "5544734748594536500", // 弦图
-  "WeightedTreeChart": "5543734748594536502", // 横向权重树图
-  "TreeChart": "5543734748595436502", // 横向无权重树图
-  "TwoLevelTreemapChart": "5544734748594536502", // 矩形树图-双层
-  "OneLevelTreemapChart": "5544734748594536503", // 矩形树图-单层
-  "VerticalSankeyChart": "5543533748794536504", // 桑基图（纵向）
-  "SankeyChart": "5543733748594536504", // 桑基图（横向）
-  "SimpleSankeyChart": "5543733748594536505", // 桑基图（两列）
-  "FunnelChart": "5544734748594536339", // 漏斗图
-  "CalendarHeatmapChart": "5544734748594536484", // 热力日历图
-  "WaveCircleChart": "4447460703254610031", // 水波图
-  "PercentageAreaChart": "154778025133261039", // 百分比堆叠面积图
-  "PercentageBarChart": "154778102528502157", // 百分比堆叠柱状图
-  "HalfPieChart": "154777746677828400", // 半圆环
-  "ProgressRoundPieChart": "154778171740391769", // 圆环进度图
-  "BarProgressChart": "154778145806026722", // 条状进度图
-  "HalfProgressPieChart": "154777820323716078", // 半圆环进度图
-  "ArcDiagramChart": "154771854328053247", // 弧长链接图
-  "SlopeChart": "154778232785223023", // 斜率图
-  "ChangeWaterfallHistogramChart": "5544734748594536330", // 变化瀑布图
-  "FormWaterfallHistogramChart": "5544734748594536326", // 组成瀑布图
-  "HollowChart": "5612096174443311145", // 描边条状图
-  "GanttChart": "154777693253141239", // 甘特图
-  "RankingChangeChart": "154778205305403383", // 排名变化图
-  "SymmetricChart": "5544734748594536495", // 李克特量表
-  "WordCloudChart": "114473474859453649", // 词云图
-  "RelativeRadarChart": "7612096173333355103", // 线形雷达图（相对值）
-  "ContrastiveFunnelChart": "7612096173333355101", // 对比漏斗图
-  "StackCircleChart": "7612096176663355107", // 堆叠韦恩图
-  "RangeAreaChart": "7612096176663355103", // 区间面积图
-  "RangeBarChart": "7612096176663355104", // 区间柱状图
-  "RangeHorizontalBarChart": "7612096176663355105", // 区间条形图
-  "PolarStackBarChart": "7612096174443355101", // 堆叠玫瑰图
-  "PolarStackDonutBarChart": "7612096174443355102", // 堆叠玫瑰图（空心）
-  "RoseDonutChart": "7612096176663355106", // 玫瑰图（空心）
-  "BulletChart": "6543210123456536001", // 子弹图
-  "DynamicBarChart": "8000000011111111001", // 动态条形图
-  "DynamicLineChart": "8000000011111111002", // 动态折线变化图
-  "DynamicRankLineChart": "8000000011111111003", // 动态折线排名图
-  "PackChart": "8000000011111111004", // 动态圆堆积图
-  "HistogramChart": "7955555555502346003", // 直方图
-  "PictographBarChart": "7955555555502345002", // 符号柱图
-  "ReverseLineChart": "7955555555502345005", // 纵向折线图
-  "ReverseStackedAreaChart": "7955555555502345004", // 纵向堆叠面积图
-  "ReverseOverlapAreaChart": "7955555555502345003", // 纵向层叠面积图
-  "BasicScatterChart": "7955555555502346002", // 散点图
-  "HundredPercentBarChart": "7955555555502345001", // 百分比条形图
-  "TableChart": "7955555555502346001", // 表格
+  PieChart: '444746070325460997',
+  DonutChart: '444746070325460998',
+  DeformedPieChart: '444746070325460999',
+  RoundCornerDonutChart: '5544734748594536492',
+  RoundCornerPieChart: '5544734748594536493',
+  IconPieChart: '4447460703254610041',
+  TwoLevelDonutChart: '5544734748594536494',
+  SimpleLineChart: '444746070325460995',
+  BeeLineChart: '4544734748594536433',
+  StepLineChart: '5612096174443311134',
+  SmoothLineChart: '5948734748594536789',
+  SimpleBarChart: '444734748594536323',
+  BasicHorizontalBarChart: '154772011302084304',
+  GroupedBarChart: '3612096174443311105',
+  StackBarChart: '3612096174443311107',
+  NegativeHorizontalBarChart: '3612096174443311106',
+  PyramidChart: '5544734748594536487',
+  GroupedHorizontalBarChart: '3612096174443311110',
+  StackHorizontalBarChart: '3612096174443311109',
+  IconBarChart: '5544734748594536473',
+  MixLineBarChart: '5544734748594536332',
+  MultipleBarChart: '5544734748594536478',
+  StackedLinearChart: '4544734748594536434',
+  OverlapAreaChart: '5544734748594536499',
+  StackedChart: '5544734748594536498',
+  StreamgraphChart: '5544734748594536486',
+  GroupingBubbleChart: '4612096174443311107',
+  PolygonRadarChart: '451905388296536065',
+  RadarChart: '5544734748594536491',
+  QuarterRoseChart: '5943734748594536331',
+  RoseChart: '5944734748594536331',
+  RadialBarChart: '5945734748594536331',
+  RadialLineChart: '5948734748594536332',
+  SunburstChart: '5543734748594537504',
+  ChordChart: '5544734748594536500',
+  WeightedTreeChart: '5543734748594536502',
+  TreeChart: '5543734748595436502',
+  TwoLevelTreemapChart: '5544734748594536502',
+  OneLevelTreemapChart: '5544734748594536503',
+  VerticalSankeyChart: '5543533748794536504',
+  SankeyChart: '5543733748594536504',
+  SimpleSankeyChart: '5543733748594536505',
+  FunnelChart: '5544734748594536339',
+  CalendarHeatmapChart: '5544734748594536484',
+  WaveCircleChart: '4447460703254610031',
+  PercentageAreaChart: '154778025133261039',
+  PercentageBarChart: '154778102528502157',
+  HalfPieChart: '154777746677828400',
+  ProgressRoundPieChart: '154778171740391769',
+  BarProgressChart: '154778145806026722',
+  HalfProgressPieChart: '154777820323716078',
+  ArcDiagramChart: '154771854328053247',
+  SlopeChart: '154778232785223023',
+  ChangeWaterfallHistogramChart: '5544734748594536330',
+  FormWaterfallHistogramChart: '5544734748594536326',
+  HollowChart: '5612096174443311145',
+  GanttChart: '154777693253141239',
+  RankingChangeChart: '154778205305403383',
+  SymmetricChart: '5544734748594536495',
+  WordCloudChart: '114473474859453649',
+  RelativeRadarChart: '7612096173333355103',
+  ContrastiveFunnelChart: '7612096173333355101',
+  StackCircleChart: '7612096176663355107',
+  RangeAreaChart: '7612096176663355103',
+  RangeBarChart: '7612096176663355104',
+  RangeHorizontalBarChart: '7612096176663355105',
+  PolarStackBarChart: '7612096174443355101',
+  PolarStackDonutBarChart: '7612096174443355102',
+  RoseDonutChart: '7612096176663355106',
+  BulletChart: '6543210123456536001',
+  DynamicBarChart: '8000000011111111001',
+  DynamicLineChart: '8000000011111111002',
+  DynamicRankLineChart: '8000000011111111003',
+  PackChart: '8000000011111111004',
+  HistogramChart: '7955555555502346003',
+  PictographBarChart: '7955555555502345002',
+  ReverseLineChart: '7955555555502345005',
+  ReverseStackedAreaChart: '7955555555502345004',
+  ReverseOverlapAreaChart: '7955555555502345003',
+  BasicScatterChart: '7955555555502346002',
+  HundredPercentBarChart: '7955555555502345001',
+  TableChart: '7955555555502346001',
 }

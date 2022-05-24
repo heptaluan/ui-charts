@@ -1,11 +1,16 @@
 <div
-  *ngFor = "let item of curReferLines"
-  class = "refer"
-  [ngClass] = "{'referX': item.direction === 'row', 'referY': item.direction === 'col'}"
-  [ngStyle] = "{'top': item.direction === 'row' ? item.top : -46 + 'px', 'left': item.direction === 'col' ? item.left : -getLeftX() + 'px', 'height': item.direction === 'row' ? '1px' : getHeightY(), 'width': item.direction === 'row' ? getWidthX() : '1px'}"
-  [referLine] = "item.direction"
-  [id] = "item.id"
-  [project] = "{'width': projectWidth, 'height': projectHeight,'line':item}"
+  *ngFor="let item of curReferLines"
+  class="refer"
+  [ngClass]="{ referX: item.direction === 'row', referY: item.direction === 'col' }"
+  [ngStyle]="{
+    top: item.direction === 'row' ? item.top : -46 + 'px',
+    left: item.direction === 'col' ? item.left : -getLeftX() + 'px',
+    height: item.direction === 'row' ? '1px' : getHeightY(),
+    width: item.direction === 'row' ? getWidthX() : '1px'
+  }"
+  [referLine]="item.direction"
+  [id]="item.id"
+  [project]="{ width: projectWidth, height: projectHeight, line: item }"
   (referData)="changeReferTip($event)"
   (clickReferLine)="clickReferLine($event)"
 ></div>

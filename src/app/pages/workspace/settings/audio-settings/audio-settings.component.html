@@ -10,47 +10,88 @@
   ></lx-elements-locked>
 
   <!-- 对齐组件 -->
-  <lx-elements-aligned
-    [block]="curBlock"
-    [projectId]="projectId"
-    [pageId]="curPageId"
-  ></lx-elements-aligned>
+  <lx-elements-aligned [block]="curBlock" [projectId]="projectId" [pageId]="curPageId"></lx-elements-aligned>
 
   <section>
-    <div class="toggle" [ngClass]="{'active': curBlock.props.data.sourceType === 'url'}" (click)="toggleMusic()">
+    <div class="toggle" [ngClass]="{ active: curBlock.props.data.sourceType === 'url' }" (click)="toggleMusic()">
       <div class="diy">自定义音乐链接</div>
-      <div class="text"><i></i>{{curBlock.props.data.sourceType === 'url' ? curBlock.props.data.src : curBlock.props.data.title}}</div>
+      <div class="text">
+        <i></i>{{ curBlock.props.data.sourceType === 'url' ? curBlock.props.data.src : curBlock.props.data.title }}
+      </div>
     </div>
-    <lx-settings-size [locked]="curBlock?.props.size.ratio" [value0]="curBlock?.props.size.height" [value1]="curBlock?.props.size.width"
-      [value2]="curBlock?.props.size.rotate" [ratio]="curBlock?.props.size.ratio" [max0]="10000" [min0]="1" [max1]="6000" [min1]="1"
-      [max2]="360" [max2]="0" [title0]="''" [title1]="''" [title2]="''" [letter1]="'W'" [letter0]="'H'" [letter2]="'°'" 
+    <lx-settings-size
+      [locked]="curBlock?.props.size.ratio"
+      [value0]="curBlock?.props.size.height"
+      [value1]="curBlock?.props.size.width"
+      [value2]="curBlock?.props.size.rotate"
+      [ratio]="curBlock?.props.size.ratio"
+      [max0]="10000"
+      [min0]="1"
+      [max1]="6000"
+      [min1]="1"
+      [max2]="360"
+      [max2]="0"
+      [title0]="''"
+      [title1]="''"
+      [title2]="''"
+      [letter1]="'W'"
+      [letter0]="'H'"
+      [letter2]="'°'"
       [isLockClick]="curBlock?.props.type !== 'bgm'"
-      (onChanged)="onSizeChanged($event)"></lx-settings-size>
+      (onChanged)="onSizeChanged($event)"
+    ></lx-settings-size>
   </section>
 
   <section>
     <ng-container *ngIf="curBlock?.props.type === 'insertSong'">
-
-      <div class="text-wrapper">音乐标题 <input type="text" [(value)]="musicTitle" (keyup)="($event.which === 13) ? changeTitle($event) : 0" (blur)="changeTitle($event)" /></div>
+      <div class="text-wrapper">
+        音乐标题
+        <input
+          type="text"
+          [(value)]="musicTitle"
+          (keyup)="$event.which === 13 ? changeTitle($event) : 0"
+          (blur)="changeTitle($event)"
+        />
+      </div>
       <div class="flex-sp color-list-box border-box">
         <div class="small-title">皮肤</div>
         <!-- 边框样式 -->
-        <lx-settings-dropdowns [values]="skins" [index]="skinIndex" [isBackgroundColor]="true" (onChanged)="changeSkins($event)">
+        <lx-settings-dropdowns
+          [values]="skins"
+          [index]="skinIndex"
+          [isBackgroundColor]="true"
+          (onChanged)="changeSkins($event)"
+        >
         </lx-settings-dropdowns>
       </div>
     </ng-container>
 
-    <div class="checked-box" [ngClass]="{'top-0': curBlock?.props.type === 'bgm'}">
-      <lx-checkbox id="autoplay-setting" [disabled]="false" [(checked)]="autoplay" (change)="changePlayMode('autoplay')"></lx-checkbox>
+    <div class="checked-box" [ngClass]="{ 'top-0': curBlock?.props.type === 'bgm' }">
+      <lx-checkbox
+        id="autoplay-setting"
+        [disabled]="false"
+        [(checked)]="autoplay"
+        (change)="changePlayMode('autoplay')"
+      ></lx-checkbox>
       <label for="autoplay-setting">自动播放</label>
     </div>
     <div class="checked-box">
-      <lx-checkbox id="loopback-setting" [disabled]="false" [(checked)]="loopback" (change)="changePlayMode('loopback')"></lx-checkbox>
+      <lx-checkbox
+        id="loopback-setting"
+        [disabled]="false"
+        [(checked)]="loopback"
+        (change)="changePlayMode('loopback')"
+      ></lx-checkbox>
       <label for="loopback-setting">循环播放</label>
     </div>
   </section>
 </ng-container>
 
 <ng-container *ngIf="pageNum === 2">
-  <lx-audio-sidebar [isToggle]="true" [songData]="curBlock.props.data" (backPageOne)="changeOnePage()" (changeSong)="changeSong($event)"></lx-audio-sidebar>
+  <lx-audio-sidebar
+    [isToggle]="true"
+    [songData]="curBlock.props.data"
+    (backPageOne)="changeOnePage()"
+    (changeSong)="changeSong($event)"
+  ></lx-audio-sidebar>
 </ng-container>

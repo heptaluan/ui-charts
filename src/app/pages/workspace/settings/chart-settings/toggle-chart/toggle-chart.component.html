@@ -1,28 +1,33 @@
 <nb-card class="toggle-chart">
   <nb-card-header>
     切换图表
-    <i class="icon iconfont icon-fanhui" (click)='clickCloseBtn()'></i>
+    <i class="icon iconfont icon-fanhui" (click)="clickCloseBtn()"></i>
   </nb-card-header>
 
   <nb-card-body>
-    <lx-form-search (searchValue)='search($event)'></lx-form-search>
+    <lx-form-search (searchValue)="search($event)"></lx-form-search>
     <label for="">分类：</label>
-    <lx-settings-dropdowns class="toggle-drowdowns" [values]="['按图表类型', '按功能类型']" [index]='0' (onChanged)='changeClassifyBy($event)'></lx-settings-dropdowns>
+    <lx-settings-dropdowns
+      class="toggle-drowdowns"
+      [values]="['按图表类型', '按功能类型']"
+      [index]="0"
+      (onChanged)="changeClassifyBy($event)"
+    ></lx-settings-dropdowns>
     <span class="flod-all" (click)="flodAll()">收起全部</span>
   </nb-card-body>
 
   <nb-card-footer>
     <div class="row">
       <div class="col list-content toggle-chart-template">
-        <lx-chart-template-item 
-          [classifyBy]='classifyBy' 
-          [isToggle]="true" 
-          [type]='selectedType' 
-          [data]='chartTemplates' 
-          [searchText]='searchText'
-          [curBlock]='curBlock'
-          [curPageId]='curPageId'
-          [isToggleList]='isToggleList'
+        <lx-chart-template-item
+          [classifyBy]="classifyBy"
+          [isToggle]="true"
+          [type]="selectedType"
+          [data]="chartTemplates"
+          [searchText]="searchText"
+          [curBlock]="curBlock"
+          [curPageId]="curPageId"
+          [isToggleList]="isToggleList"
         ></lx-chart-template-item>
       </div>
     </div>

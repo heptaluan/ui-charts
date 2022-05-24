@@ -8,57 +8,57 @@ export const topMenuConfig = {
     edit: false,
     align: false,
     locked: false,
-    level: false
+    level: false,
   },
   infographic: {
     multiple: {
       edit: true,
       align: true,
       locked: true,
-      level: true
+      level: true,
     },
     unLocked: {
       image: {
         edit: false,
         align: true,
         locked: true,
-        level: true
+        level: true,
       },
       chart: {
         edit: true,
         align: true,
         locked: true,
-        level: true
+        level: true,
       },
       text: {
         edit: false,
         align: true,
         locked: true,
-        level: true
+        level: true,
       },
       shape: {
         edit: false,
         align: true,
         locked: true,
-        level: true
+        level: true,
       },
       audio: {
         edit: false,
         align: true,
         locked: true,
-        level: true
+        level: true,
       },
       video: {
         edit: false,
         align: true,
         locked: true,
-        level: true
+        level: true,
       },
       group: {
         edit: false,
         align: true,
         locked: true,
-        level: true
+        level: true,
       },
     },
     locked: {
@@ -66,46 +66,44 @@ export const topMenuConfig = {
         edit: false,
         align: false,
         locked: true,
-        level: false
+        level: false,
       },
       chart: {
         edit: false,
         align: false,
         locked: true,
-        level: false
+        level: false,
       },
       text: {
         edit: false,
         align: false,
         locked: true,
-        level: false
+        level: false,
       },
       shape: {
         edit: false,
         align: false,
         locked: true,
-        level: false
+        level: false,
       },
       audio: {
         edit: false,
         align: false,
         locked: true,
-        level: false
+        level: false,
       },
       video: {
         edit: false,
         align: false,
         locked: true,
-        level: false
+        level: false,
       },
       group: {
         edit: false,
         align: false,
         locked: true,
-        level: false
+        level: false,
       },
-    }
-  }
+    },
+  },
 }
-
-
