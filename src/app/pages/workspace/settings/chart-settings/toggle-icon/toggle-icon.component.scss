@@ -10,11 +10,11 @@
   z-index: 998;
   background-color: #333333;
 
-
   .icon-header {
     height: 38px;
     line-height: 38px;
-    font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo",  "Consolas", sans-serif !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei',
+      'Hiragino Sans GB', 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, 'Monaco', 'Menlo', 'Consolas', sans-serif !important;
     font-size: 14px;
     color: rgba(255, 255, 255, 0.8);
     letter-spacing: 0;
@@ -161,7 +161,7 @@ label {
     height: 7px !important;
     background: url('/dyassets/images/setting/drop-down-blue-big.svg') no-repeat !important;
   }
-  
+
   .btn-dropdown {
     width: 105px !important;
     border: none !important;
@@ -184,5 +184,6 @@ label {
   }
 }
 :host ::ng-deep {
-  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo",  "Consolas", sans-serif !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei',
+    'Hiragino Sans GB', 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, 'Monaco', 'Menlo', 'Consolas', sans-serif !important;
 }

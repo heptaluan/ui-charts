@@ -1,27 +1,25 @@
-import { Component, OnInit, SimpleChanges } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import * as _ from 'lodash';
-import { Subscription } from 'rxjs';
-import { Store } from '@ngrx/store';
-import * as fromRoot from '../../../../states/reducers';
-import { UpdateProjectContent } from '../../../../states/models/project.model';
-import { UpdateCurrentProjectArticleAction } from '../../../../states/actions/project.action';
-import * as ProjectActions from '../../../../states/actions/project.action';
-import { DataTransmissionService } from '../../../../share/services';
+import { Component, OnInit, SimpleChanges } from '@angular/core'
+import { ActivatedRoute } from '@angular/router'
+import * as _ from 'lodash'
+import { Subscription } from 'rxjs'
+import { Store } from '@ngrx/store'
+import * as fromRoot from '../../../../states/reducers'
+import { UpdateProjectContent } from '../../../../states/models/project.model'
+import { UpdateCurrentProjectArticleAction } from '../../../../states/actions/project.action'
+import * as ProjectActions from '../../../../states/actions/project.action'
+import { DataTransmissionService } from '../../../../share/services'
 
 @Component({
   selector: 'lx-multiple-settings',
   templateUrl: './multiple-settings.component.html',
-  styleUrls: ['./multiple-settings.component.scss']
+  styleUrls: ['./multiple-settings.component.scss'],
 })
-
 export class MultipleSettingsComponent implements OnInit {
-
   idList: string[]
   blockList: any = []
   domList: any = []
-  dragBoxStyle: any;
-  dragBoxClientRect: any;
+  dragBoxStyle: any
+  dragBoxClientRect: any
 
   selectedBlockList: any
   pageId: any
@@ -36,31 +34,37 @@ export class MultipleSettingsComponent implements OnInit {
     private _activatedRoute: ActivatedRoute,
     private _store: Store<fromRoot.State>,
     private _dataTransmissionService: DataTransmissionService
-  ) { }
+  ) {}
 
   ngOnInit() {
     // 监听页面变化的时候同步拖拽框
     const targetNode = document.querySelector('.page-size')
     const config = { attributes: true, childList: true, subtree: true }
-    const observer = new MutationObserver(_ => {
+    const observer = new MutationObserver((_) => {
       this.setDragBoxStyle()
     })
     observer.observe(targetNode, config)
   }
 
   ngAfterViewInit(): void {
-    this.getCurrentProjectArticleScription = this._store.select(fromRoot.getCurrentProjectArticle).subscribe(data => {
-      if (data.contents.pages[0].blocks.length > 0) {
-        this.selectedBlockList = data.contents.pages[0].blocks
-      }
-      this.pageId = data.contents.pages[0].pageId
-      this.projectId = this._activatedRoute.snapshot.queryParams.project
-    }).add(
-      // 监听鼠标右键复用事件
-      this._dataTransmissionService.getLockedData().take(1).subscribe(res => {
-        this.handleGroupLocked()
+    this.getCurrentProjectArticleScription = this._store
+      .select(fromRoot.getCurrentProjectArticle)
+      .subscribe((data) => {
+        if (data.contents.pages[0].blocks.length > 0) {
+          this.selectedBlockList = data.contents.pages[0].blocks
+        }
+        this.pageId = data.contents.pages[0].pageId
+        this.projectId = this._activatedRoute.snapshot.queryParams.project
       })
-    )
+      .add(
+        // 监听鼠标右键复用事件
+        this._dataTransmissionService
+          .getLockedData()
+          .take(1)
+          .subscribe((res) => {
+            this.handleGroupLocked()
+          })
+      )
   }
 
   // 组合锁定事件
@@ -68,7 +72,7 @@ export class MultipleSettingsComponent implements OnInit {
     this.getSelectedBlockDomList()
     const groupList = []
     const newList = _.cloneDeep(this.selectedBlockList)
-    this.domList.map(item => {
+    this.domList.map((item) => {
       const newBlock = _.cloneDeep(this.getNewSelectedBlock(newList, item.getAttribute('chartid')))
       newBlock.locked = true
       groupList.push(newBlock)
@@ -77,14 +81,14 @@ export class MultipleSettingsComponent implements OnInit {
           blockId: newBlock.blockId,
           pageId: this.pageId,
           type: newBlock.type,
-          target: 'redo'
+          target: 'redo',
         },
         method: 'put',
-        block: newBlock
+        block: newBlock,
       }
-      this._store.dispatch(new UpdateCurrentProjectArticleAction(this.projectId, newData));
+      this._store.dispatch(new UpdateCurrentProjectArticleAction(this.projectId, newData))
     })
-    Array.from(document.querySelectorAll('.block-container')).map(item => item.classList.remove('is-selceted'))
+    Array.from(document.querySelectorAll('.block-container')).map((item) => item.classList.remove('is-selceted'))
     this._store.dispatch(new ProjectActions.UpdateCurrentProjectGroupLockedAction(groupList))
   }
 
@@ -99,32 +103,32 @@ export class MultipleSettingsComponent implements OnInit {
     switch (type) {
       case 'l':
         this.handleAlignLeft()
-        break;
+        break
       case 'r':
         this.handleAlignRight()
-        break;
+        break
       case 'c':
         this.handleAlignCenter()
-        break;
+        break
       case 't':
         this.handleAlignTop()
-        break;
+        break
       case 'b':
         this.handleAlignBottom()
-        break;
+        break
       case 'm':
         this.handleAlignMiddle()
-        break;
+        break
       default:
-        break;
+        break
     }
-    this._store.dispatch(new ProjectActions.UpdateCurrentProjectGroupMoveAction(this.blockList));
+    this._store.dispatch(new ProjectActions.UpdateCurrentProjectGroupMoveAction(this.blockList))
   }
 
   // 左对齐
   handleAlignLeft() {
-    const dragBoxLeft = this.dragBoxClientRect.left + 2 | 0
-    this.domList.map(item => {
+    const dragBoxLeft = (this.dragBoxClientRect.left + 2) | 0
+    this.domList.map((item) => {
       const itemLeft = item.getBoundingClientRect().left | 0
       if (itemLeft === dragBoxLeft) {
         return
@@ -137,13 +141,13 @@ export class MultipleSettingsComponent implements OnInit {
     })
     setTimeout(() => {
       this.setDragBoxStyle()
-    }, 30);
+    }, 30)
   }
 
   // 右对齐
   handleAlignRight() {
-    const dragBoxRight = this.dragBoxClientRect.right - 2 | 0
-    this.domList.map(item => {
+    const dragBoxRight = (this.dragBoxClientRect.right - 2) | 0
+    this.domList.map((item) => {
       const itemRight = item.getBoundingClientRect().right | 0
       if (itemRight === dragBoxRight) {
         return
@@ -156,18 +160,18 @@ export class MultipleSettingsComponent implements OnInit {
     })
     setTimeout(() => {
       this.setDragBoxStyle()
-    }, 30);
+    }, 30)
   }
 
   // 居中对齐
   handleAlignCenter() {
     const dragBoxLeft = this.dragBoxClientRect.left | 0
     const dragBoxWidth = this.dragBoxClientRect.width | 0
-    const dragBoxBasePoint = (dragBoxLeft + (dragBoxWidth / 2)) | 0
-    this.domList.map(item => {
+    const dragBoxBasePoint = (dragBoxLeft + dragBoxWidth / 2) | 0
+    this.domList.map((item) => {
       const itemLeft = item.getBoundingClientRect().left | 0
       const itemWidth = item.getBoundingClientRect().width | 0
-      const itemBasePoint = (itemLeft + (itemWidth / 2)) | 0
+      const itemBasePoint = (itemLeft + itemWidth / 2) | 0
       if (dragBoxBasePoint === itemBasePoint) {
         return
       } else if (dragBoxBasePoint < itemBasePoint) {
@@ -184,13 +188,13 @@ export class MultipleSettingsComponent implements OnInit {
     })
     setTimeout(() => {
       this.setDragBoxStyle()
-    }, 30);
+    }, 30)
   }
 
   // 顶对齐
   handleAlignTop() {
-    const dragBoxTop = this.dragBoxClientRect.top + 2 | 0
-    this.domList.map(item => {
+    const dragBoxTop = (this.dragBoxClientRect.top + 2) | 0
+    this.domList.map((item) => {
       const itemTop = item.getBoundingClientRect().top | 0
       if (itemTop === dragBoxTop) {
         return
@@ -203,13 +207,13 @@ export class MultipleSettingsComponent implements OnInit {
     })
     setTimeout(() => {
       this.setDragBoxStyle()
-    }, 30);
+    }, 30)
   }
 
   // 底对齐
   handleAlignBottom() {
-    const dragBoxBottom = this.dragBoxClientRect.bottom - 2 | 0
-    this.domList.map(item => {
+    const dragBoxBottom = (this.dragBoxClientRect.bottom - 2) | 0
+    this.domList.map((item) => {
       const itemBottom = item.getBoundingClientRect().bottom | 0
       if (itemBottom === dragBoxBottom) {
         return
@@ -222,18 +226,18 @@ export class MultipleSettingsComponent implements OnInit {
     })
     setTimeout(() => {
       this.setDragBoxStyle()
-    }, 30);
+    }, 30)
   }
 
   // 垂直对齐
   handleAlignMiddle() {
     const dragBoxTop = this.dragBoxClientRect.top | 0
     const dragBoxHeight = this.dragBoxClientRect.height | 0
-    const dragBoxBasePoint = (dragBoxTop + (dragBoxHeight / 2)) | 0
-    this.domList.map(item => {
+    const dragBoxBasePoint = (dragBoxTop + dragBoxHeight / 2) | 0
+    this.domList.map((item) => {
       const itemTop = item.getBoundingClientRect().top | 0
       const itemHeight = item.getBoundingClientRect().height | 0
-      const itemBasePoint = (itemTop + (itemHeight / 2)) | 0
+      const itemBasePoint = (itemTop + itemHeight / 2) | 0
       if (dragBoxBasePoint === itemBasePoint) {
         return
       } else if (dragBoxBasePoint < itemBasePoint) {
@@ -250,7 +254,7 @@ export class MultipleSettingsComponent implements OnInit {
     })
     setTimeout(() => {
       this.setDragBoxStyle()
-    }, 30);
+    }, 30)
   }
 
   // 更新 JSON
@@ -261,40 +265,40 @@ export class MultipleSettingsComponent implements OnInit {
       case 'r':
       case 'm':
         newBlock.position.left = value
-        break;
+        break
       case 't':
       case 'b':
       case 'c':
         newBlock.position.top = value
-        break;
+        break
       default:
-        break;
+        break
     }
     let newData: UpdateProjectContent = {
       target: {
         blockId: newBlock.blockId,
         pageId: this.pageId,
         type: newBlock.type,
-        target: 'redo'
+        target: 'redo',
       },
       method: 'put',
-      block: newBlock
+      block: newBlock,
     }
-    this._store.dispatch(new UpdateCurrentProjectArticleAction(this.projectId, newData));
+    this._store.dispatch(new UpdateCurrentProjectArticleAction(this.projectId, newData))
   }
 
   // 接收数据
   updateBlock(data) {
-    this.idList = data.idList;
-    this.selectedBlockList = data.selectedBlockList;
-    this.moveEndBlockList = data.selectedBlockList;
+    this.idList = data.idList
+    this.selectedBlockList = data.selectedBlockList
+    this.moveEndBlockList = data.selectedBlockList
   }
 
   // 获取当前选中 block 列表
   getSelectedBlockList() {
     this.blockList = []
-    this.selectedBlockList.map(element => {
-      this.idList.map(item => {
+    this.selectedBlockList.map((element) => {
+      this.idList.map((item) => {
         if (element.blockId === item) {
           this.blockList.push(element)
         }
@@ -305,7 +309,7 @@ export class MultipleSettingsComponent implements OnInit {
   // 获取当前更新 block
   getSelectedBlock(id) {
     let newBlock = null
-    this.selectedBlockList.map(element => {
+    this.selectedBlockList.map((element) => {
       if (element.blockId === id) {
         newBlock = element
       }
@@ -315,7 +319,7 @@ export class MultipleSettingsComponent implements OnInit {
 
   getNewSelectedBlock(list, id) {
     let newBlock = null
-    list.map(element => {
+    list.map((element) => {
       if (element.blockId === id) {
         newBlock = element
       }
@@ -326,8 +330,8 @@ export class MultipleSettingsComponent implements OnInit {
   // 获取当前选中元素列表
   getSelectedBlockDomList() {
     this.domList = []
-    Array.from(document.querySelectorAll('.block-container')).map(element => {
-      this.idList.map(item => {
+    Array.from(document.querySelectorAll('.block-container')).map((element) => {
+      this.idList.map((item) => {
         if (element.getAttribute('chartid') === item) {
           this.domList.push(element)
         }
@@ -354,14 +358,17 @@ export class MultipleSettingsComponent implements OnInit {
   setDragBoxStyle() {
     if (!document.querySelector('.workspace-wrap')) return
     this.getSelectedBlockDomList()
-    const dragBox = (document.querySelector('.drag-box') as HTMLElement)
+    const dragBox = document.querySelector('.drag-box') as HTMLElement
     const wrapBoxRect = document.querySelector('.workspace-wrap').getBoundingClientRect()
     const offectDiffValue = {
       top: wrapBoxRect.top,
-      left: wrapBoxRect.left
+      left: wrapBoxRect.left,
     }
-    let leftArr = [], topArr = [], rightArr = [], bottomArr = []
-    this.domList.map(item => {
+    let leftArr = [],
+      topArr = [],
+      rightArr = [],
+      bottomArr = []
+    this.domList.map((item) => {
       let itemClientRect = item.getBoundingClientRect()
       leftArr.push(itemClientRect.left - offectDiffValue.left)
       topArr.push(itemClientRect.top - offectDiffValue.top)
@@ -376,13 +383,13 @@ export class MultipleSettingsComponent implements OnInit {
 
     dragBox.style.left = minLeft - 2 + 'px'
     dragBox.style.top = minTop - 2 + 'px'
-    dragBox.style.width = (maxRight - minLeft) + 4 + 'px'
-    dragBox.style.height = (maxBottom - minTop) + 4 + 'px'
+    dragBox.style.width = maxRight - minLeft + 4 + 'px'
+    dragBox.style.height = maxBottom - minTop + 4 + 'px'
   }
 
   // 组合
   handleGroupClick() {
-    this._dataTransmissionService.sendGroupData(false);
+    this._dataTransmissionService.sendGroupData(false)
   }
 
   ngOnDestroy(): void {

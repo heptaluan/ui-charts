@@ -1,15 +1,21 @@
-<div class="setting-container" [ngClass]="{'showToggleChart': !showToggleChartNav || !showToggleIconNav, 'isChartLocked': isChartLocked}">
-  <lx-toggle-chart #toggleChart [hidden]="showToggleChartNav" (closeSidebarEvent)='closeToggleChart($event)'>
+<div
+  class="setting-container"
+  [ngClass]="{ showToggleChart: !showToggleChartNav || !showToggleIconNav, isChartLocked: isChartLocked }"
+>
+  <lx-toggle-chart #toggleChart [hidden]="showToggleChartNav" (closeSidebarEvent)="closeToggleChart($event)">
   </lx-toggle-chart>
-  <lx-toggle-icon *ngIf="!showToggleIconNav" [blockId]="blockId" (closeSidebarEvent)='closeToggleIcon($event)'>
+  <lx-toggle-icon *ngIf="!showToggleIconNav" [blockId]="blockId" (closeSidebarEvent)="closeToggleIcon($event)">
   </lx-toggle-icon>
   <tabset #staticTab [justified]="true" [hidden]="!showToggleChartNav || !showToggleIconNav" class="edit-data-tab">
     <tab heading="编辑数据" (select)="onTabSelect($event)" customClass="setting-tab chart-right-table" id="tab1">
       <lx-chart-left-settings #leftSettings></lx-chart-left-settings>
     </tab>
     <tab heading="编辑图表" (select)="onTabSelect($event)" customClass="setting-tab" id="tab2">
-      <lx-chart-right-settings #rightSettings (toggleChart)='showToggleChartHandle($event)'
-        (toggleIcon)="showToggleIconHandle($event)"></lx-chart-right-settings>
+      <lx-chart-right-settings
+        #rightSettings
+        (toggleChart)="showToggleChartHandle($event)"
+        (toggleIcon)="showToggleIconHandle($event)"
+      ></lx-chart-right-settings>
     </tab>
   </tabset>
 </div>

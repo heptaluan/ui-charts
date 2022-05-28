@@ -1,31 +1,23 @@
 <div class="setting-container multiple-settings">
   <div class="multiple-header">多选组件</div>
   <div class="section table-chart-text-style">
-    <div container="body" tooltip="左对齐" (click)="onMultipleClick('l')" class="align-l text-style-btn"><i class="icon align-icon align-icon-l"></i></div>
-    <div container="body" tooltip="水平居中" (click)="onMultipleClick('c')" class="align-c text-style-btn"><i class="icon align-icon align-icon-c"></i></div>
-    <div container="body" tooltip="右对齐" (click)="onMultipleClick('r')" class="align-r text-style-btn"><i class="icon align-icon align-icon-r"></i></div>
-    <div container="body" tooltip="顶对齐" (click)="onMultipleClick('t')" class="align-t text-style-btn"><i class="icon align-icon align-icon-t"></i></div>
-    <div container="body" tooltip="垂直居中" (click)="onMultipleClick('m')" class="align-m text-style-btn"><i class="icon align-icon align-icon-m"></i></div>
-    <div container="body" tooltip="底对齐" (click)="onMultipleClick('b')" class="align-b text-style-btn"><i class="icon align-icon align-icon-b"></i></div>
-  </div>
-
-  <div class="line shadow-opacity" style="display: none;">
-    <!-- <div>               
-      <lx-slider [min]=1 [max]=12 [step]=1 [cur]="1" (valueChanged)="onInput($event, 'fontSize')"></lx-slider>
-      <div class="small-title">长度</div>
+    <div container="body" tooltip="左对齐" (click)="onMultipleClick('l')" class="align-l text-style-btn">
+      <i class="icon align-icon align-icon-l"></i>
     </div>
-    <div>              
-      <lx-slider [min]=1 [max]=12 [step]=1 [cur]="1" (valueChanged)="onInput($event, 'lineHeight')"></lx-slider>
-      <div class="small-title">宽度</div>           
+    <div container="body" tooltip="水平居中" (click)="onMultipleClick('c')" class="align-c text-style-btn">
+      <i class="icon align-icon align-icon-c"></i>
     </div>
-    <div>             
-      <lx-slider [min]=1 [max]=12 [step]=1 [cur]="1" (valueChanged)="onInput($event, 'letterSpacing')"></lx-slider>
-      <div class="small-title">角度</div>
-    </div> -->
+    <div container="body" tooltip="右对齐" (click)="onMultipleClick('r')" class="align-r text-style-btn">
+      <i class="icon align-icon align-icon-r"></i>
+    </div>
+    <div container="body" tooltip="顶对齐" (click)="onMultipleClick('t')" class="align-t text-style-btn">
+      <i class="icon align-icon align-icon-t"></i>
+    </div>
+    <div container="body" tooltip="垂直居中" (click)="onMultipleClick('m')" class="align-m text-style-btn">
+      <i class="icon align-icon align-icon-m"></i>
+    </div>
+    <div container="body" tooltip="底对齐" (click)="onMultipleClick('b')" class="align-b text-style-btn">
+      <i class="icon align-icon align-icon-b"></i>
+    </div>
   </div>
-
-  <!-- <div class="group-btn" (click)="handleGroupClick()">
-    组合
-  </div> -->
-
 </div>
