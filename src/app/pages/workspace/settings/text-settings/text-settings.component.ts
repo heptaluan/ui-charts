@@ -1,38 +1,36 @@
-import { Component, OnInit } from '@angular/core';
-import * as fromRoot from '../../../../states/reducers';
-import { Store } from '@ngrx/store';
-import * as ProjectModels from '../../../../states/models/project.model';
-import * as _ from 'lodash';
-import { Observable, Subscription } from 'rxjs';
-import { UpdateCurrentProjectArticleAction } from '../../../../states/actions/project.action';
-import { UpdateProjectContent } from '../../../../states/models/project.model';
-import { ChartMapService } from '../../../../block/chart-map.service';
-import { SettingsTemplate } from '../settings-template.component';
+import { Component, OnInit } from '@angular/core'
+import * as fromRoot from '../../../../states/reducers'
+import { Store } from '@ngrx/store'
+import * as ProjectModels from '../../../../states/models/project.model'
+import * as _ from 'lodash'
+import { Observable, Subscription } from 'rxjs'
+import { UpdateCurrentProjectArticleAction } from '../../../../states/actions/project.action'
+import { UpdateProjectContent } from '../../../../states/models/project.model'
+import { ChartMapService } from '../../../../block/chart-map.service'
+import { SettingsTemplate } from '../settings-template.component'
 
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router'
 
 @Component({
   selector: 'lx-text-settings',
   templateUrl: './text-settings.component.html',
-  styleUrls: ['./text-settings.component.scss']
+  styleUrls: ['./text-settings.component.scss'],
 })
 export class TextSettingsComponent implements OnInit, SettingsTemplate {
-  mySubscription = new Subscription();
-  themeColorList;
-  curBlock: ProjectModels.Block = this._chartMapService.TemplateTextBlock;
-  curProps: ProjectModels.TextBlockProps = this._chartMapService.TemplateTextBlockProps;
-  curPageId: string;
-  projectId: string;
+  mySubscription = new Subscription()
+  themeColorList
+  curBlock: ProjectModels.Block = this._chartMapService.TemplateTextBlock
+  curProps: ProjectModels.TextBlockProps = this._chartMapService.TemplateTextBlockProps
+  curPageId: string
+  projectId: string
 
   // 对应文字
   fontFamilyText = [
-    // 'Noto Sans SC',
     '方正黑体',
     '方正楷体',
     '方正书宋',
     '方正仿宋',
     '站酷高端黑',
-    // 'Droid Sans Fallback',
     '阿里巴巴普惠体 细体',
     '阿里巴巴普惠体 常规',
     '阿里巴巴普惠体 中等',
@@ -72,13 +70,11 @@ export class TextSettingsComponent implements OnInit, SettingsTemplate {
 
   // 显示列表
   fontFamily = [
-    // '<img src="/dyassets/fontSize/01.svg" />',
     '<img src="/dyassets/fontSize/02.svg" />',
     '<img src="/dyassets/fontSize/03.svg" />',
     '<img src="/dyassets/fontSize/04.svg" />',
     '<img src="/dyassets/fontSize/05.svg" />',
     '<img src="/dyassets/fontSize/06.svg" />',
-    // '<img src="/dyassets/fontSize/07.svg" />',
     '<img src="/dyassets/fontSize/08.svg" />',
     '<img src="/dyassets/fontSize/09.svg" />',
     '<img src="/dyassets/fontSize/10.svg" />',
@@ -114,145 +110,153 @@ export class TextSettingsComponent implements OnInit, SettingsTemplate {
     '<img src="/dyassets/fontSize/playfairdisplayregular.svg" />',
     '<img src="/dyassets/fontSize/solwayextrabold.svg" />',
     '<img src="/dyassets/fontSize/solwaylight.svg" />',
-  ];
+  ]
 
-  fontFamilyIndex = 0;
+  fontFamilyIndex = 0
 
   constructor(
     private _store: Store<fromRoot.State>,
     private _chartMapService: ChartMapService,
-    private _router: ActivatedRoute,
-  ) {
-
-  }
+    private _router: ActivatedRoute
+  ) {}
 
   ngOnInit() {
-    this.projectId = this._router.snapshot.queryParams.project; 
+    this.projectId = this._router.snapshot.queryParams.project
     // 启用透明度单独配置 加入颜色模块统一渲染
-    if (this.curProps.opacity !== 100){
+    if (this.curProps.opacity !== 100) {
       if (this.curProps.color.length === 4) {
-        this.curProps.color = this.curProps.color[0] + this.curProps.color[1] + this.curProps.color[1] 
-                                                      + this.curProps.color[2] + this.curProps.color[2] 
-                                                      + this.curProps.color[3] + this.curProps.color[3] 
+        this.curProps.color =
+          this.curProps.color[0] +
+          this.curProps.color[1] +
+          this.curProps.color[1] +
+          this.curProps.color[2] +
+          this.curProps.color[2] +
+          this.curProps.color[3] +
+          this.curProps.color[3]
       }
-      this.curProps.color = this.curProps.color.substring(0,7) + Math.round(this.curProps.opacity*2.55).toString(16).padStart(2,"0") ;
+      this.curProps.color =
+        this.curProps.color.substring(0, 7) +
+        Math.round(this.curProps.opacity * 2.55)
+          .toString(16)
+          .padStart(2, '0')
       this.curProps.opacity = 100
-    } 
-    this.mySubscription
-      .add(this._store.select(fromRoot.getCurrentProjectFull).subscribe(project => {
-        this.themeColorList = project.article.contents.theme.colors;  
-      }))   
+    }
+    this.mySubscription.add(
+      this._store.select(fromRoot.getCurrentProjectFull).subscribe((project) => {
+        this.themeColorList = project.article.contents.theme.colors
+      })
+    )
   }
 
   onDropDownChanged(event) {
-    this.fontFamilyIndex = event;
-    const newBlock = _.cloneDeep(this.curBlock);
-    
-    (<ProjectModels.TextBlockProps>newBlock.props).fontFamily = this.fontFamilyText[event];
-    this.updateProject(newBlock);
+    this.fontFamilyIndex = event
+    const newBlock = _.cloneDeep(this.curBlock)
+
+    ;(<ProjectModels.TextBlockProps>newBlock.props).fontFamily = this.fontFamilyText[event]
+    this.updateProject(newBlock)
   }
 
   onInput(value, type) {
-    const newBlock = _.cloneDeep(this.curBlock);
+    const newBlock = _.cloneDeep(this.curBlock)
     if (type === 'opacity') {
-      (<ProjectModels.TextBlockProps>newBlock.props).opacity = value;
+      ;(<ProjectModels.TextBlockProps>newBlock.props).opacity = value
     } else if (type == 'fontSize') {
-      (<ProjectModels.TextBlockProps>newBlock.props).fontSize = value;
+      ;(<ProjectModels.TextBlockProps>newBlock.props).fontSize = value
     } else if (type == 'lineHeight') {
-      (<ProjectModels.TextBlockProps>newBlock.props).lineHeight = value;
+      ;(<ProjectModels.TextBlockProps>newBlock.props).lineHeight = value
     } else if (type == 'letterSpacing') {
-      (<ProjectModels.TextBlockProps>newBlock.props).letterSpacing = value;
+      ;(<ProjectModels.TextBlockProps>newBlock.props).letterSpacing = value
     }
-    this.updateProject(newBlock);
+    this.updateProject(newBlock)
   }
 
   onSizeChanged(event) {
     if (event) {
-      const newBlock = _.cloneDeep(this.curBlock);
+      const newBlock = _.cloneDeep(this.curBlock)
 
-      newBlock.props.size.height = event.value0;
-      newBlock.props.size.width = event.value1;
-      newBlock.props.size.rotate = event.value2;
+      newBlock.props.size.height = event.value0
+      newBlock.props.size.width = event.value1
+      newBlock.props.size.rotate = event.value2
       if (event.type == 'locked') {
-        newBlock.props.size.ratio = event.locked ? (newBlock.props.size.height / newBlock.props.size.width) : null;
+        newBlock.props.size.ratio = event.locked ? newBlock.props.size.height / newBlock.props.size.width : null
       }
-      this.updateProject(newBlock);
+      this.updateProject(newBlock)
     }
   }
 
   onStyleClicked(index) {
-    const newBlock = _.cloneDeep(this.curBlock);
+    const newBlock = _.cloneDeep(this.curBlock)
     switch (index) {
       case 0:
-        (<ProjectModels.TextBlockProps>newBlock.props).basic.bold = !(<ProjectModels.TextBlockProps>newBlock.props).basic.bold;
-        break;
+        ;(<ProjectModels.TextBlockProps>newBlock.props).basic.bold = !(<ProjectModels.TextBlockProps>newBlock.props)
+          .basic.bold
+        break
       case 1:
-        (<ProjectModels.TextBlockProps>newBlock.props).basic.italic = !(<ProjectModels.TextBlockProps>newBlock.props).basic.italic;
-        break;
+        ;(<ProjectModels.TextBlockProps>newBlock.props).basic.italic = !(<ProjectModels.TextBlockProps>newBlock.props)
+          .basic.italic
+        break
       case 2:
-        const underline = (<ProjectModels.TextBlockProps>newBlock.props).basic.underline;
-        (<ProjectModels.TextBlockProps>newBlock.props).basic.underline = !underline;
+        const underline = (<ProjectModels.TextBlockProps>newBlock.props).basic.underline
+        ;(<ProjectModels.TextBlockProps>newBlock.props).basic.underline = !underline
         if (!underline) {
-          (<ProjectModels.TextBlockProps>newBlock.props).basic.deleteline = false;
+          ;(<ProjectModels.TextBlockProps>newBlock.props).basic.deleteline = false
         }
-        break;
+        break
       case 3:
-        const deleteline = (<ProjectModels.TextBlockProps>newBlock.props).basic.deleteline;
-        (<ProjectModels.TextBlockProps>newBlock.props).basic.deleteline = !deleteline;
+        const deleteline = (<ProjectModels.TextBlockProps>newBlock.props).basic.deleteline
+        ;(<ProjectModels.TextBlockProps>newBlock.props).basic.deleteline = !deleteline
         if (!underline) {
-          (<ProjectModels.TextBlockProps>newBlock.props).basic.underline = false;
+          ;(<ProjectModels.TextBlockProps>newBlock.props).basic.underline = false
         }
-        break;
+        break
       case 4:
-        (<ProjectModels.TextBlockProps>newBlock.props).basic.align = 'left';
-        break;
+        ;(<ProjectModels.TextBlockProps>newBlock.props).basic.align = 'left'
+        break
       case 5:
-        (<ProjectModels.TextBlockProps>newBlock.props).basic.align = 'center';
-        break;
+        ;(<ProjectModels.TextBlockProps>newBlock.props).basic.align = 'center'
+        break
       case 6:
-        (<ProjectModels.TextBlockProps>newBlock.props).basic.align = 'right';
-        break;
+        ;(<ProjectModels.TextBlockProps>newBlock.props).basic.align = 'right'
+        break
       case 7:
-        (<ProjectModels.TextBlockProps>newBlock.props).basic.align = 'justify';
-        break;
+        ;(<ProjectModels.TextBlockProps>newBlock.props).basic.align = 'justify'
+        break
       default:
-        break;
+        break
     }
-    this.updateProject(newBlock);
+    this.updateProject(newBlock)
   }
 
   updateProject(block) {
-    this.curBlock = block;
-    this.curProps = block.props;
+    this.curBlock = block
+    this.curProps = block.props
     let newData: UpdateProjectContent = {
       target: {
         blockId: block.blockId,
         pageId: this.curPageId,
-        type: block.type
+        type: block.type,
       },
       method: 'put',
-      block: block
+      block: block,
     }
-    this._store.dispatch(new UpdateCurrentProjectArticleAction(this.projectId, newData));
+    this._store.dispatch(new UpdateCurrentProjectArticleAction(this.projectId, newData))
   }
 
   /**color-picker */
-  public onEventLog( data: any): void {
-      const textBlock = _.cloneDeep(this.curBlock);
-      (<ProjectModels.TextBlockProps>textBlock.props).color = data;
-      this.updateProject(textBlock);
-
+  public onEventLog(data: any): void {
+    const textBlock = _.cloneDeep(this.curBlock)
+    ;(<ProjectModels.TextBlockProps>textBlock.props).color = data
+    this.updateProject(textBlock)
   }
 
   updateBlock(block: ProjectModels.Block, pageId?: string) {
     const newBlock = _.cloneDeep(block)
-    this.curBlock = newBlock;
+    this.curBlock = newBlock
     newBlock.props.size.rotate = Math.ceil(Number(Number.parseInt(newBlock.props.size.rotate as any)))
-    this.curProps = <ProjectModels.TextBlockProps>newBlock.props;
-    this.curPageId = pageId;
+    this.curProps = <ProjectModels.TextBlockProps>newBlock.props
+    this.curPageId = pageId
 
-    let index = _.indexOf(this.fontFamilyText, this.curProps.fontFamily);
-    this.fontFamilyIndex = index === -1 ? 0 : index;
+    let index = _.indexOf(this.fontFamilyText, this.curProps.fontFamily)
+    this.fontFamilyIndex = index === -1 ? 0 : index
   }
-
 }

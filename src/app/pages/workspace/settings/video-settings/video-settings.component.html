@@ -9,11 +9,7 @@
 ></lx-elements-locked>
 
 <!-- 对齐组件 -->
-<lx-elements-aligned
-  [block]="curBlock"
-  [projectId]="projectId"
-  [pageId]="curPageId"
-></lx-elements-aligned>
+<lx-elements-aligned [block]="curBlock" [projectId]="projectId" [pageId]="curPageId"></lx-elements-aligned>
 
 <section>
   <lx-settings-size
@@ -38,7 +34,14 @@
   ></lx-settings-size>
   <div class="line top-20">
     <div class="small-title">不透明度(%)</div>
-    <lx-slider [min]=0 [max]=100 [step]=1 [cur]='opacity' [isProgress]="true" (valueChanged)="onInput($event)"></lx-slider>
+    <lx-slider
+      [min]="0"
+      [max]="100"
+      [step]="1"
+      [cur]="opacity"
+      [isProgress]="true"
+      (valueChanged)="onInput($event)"
+    ></lx-slider>
   </div>
 </section>
 <div class="text-wrapper">

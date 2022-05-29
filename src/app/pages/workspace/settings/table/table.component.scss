@@ -1,13 +1,10 @@
-
 .table-container {
   border: 1px solid #333333;
-  // border-radius: 4px;
   height: 100%;
 }
 
 .table-sheet {
   margin-bottom: 0px;
-  // font-family:SourceHanSansCN-Medium;
   font-size: 12px;
   color: #666666;
   width: 90px;
@@ -39,7 +36,7 @@
   }
   // 排序提示小箭头
   .handsontable .columnSorting::after {
-    content: "\2195";
+    content: '\2195';
     color: #000;
     width: 4px;
     top: 50%;
@@ -56,14 +53,14 @@
     text-decoration: none;
   }
   .handsontable .columnSorting.ascending::after {
-    content: "\25B2";
+    content: '\25B2';
     color: #5f5f5f;
     position: absolute;
     right: -15px;
   }
 
   .handsontable .columnSorting.descending:after {
-    content: "\25BC";
+    content: '\25BC';
     color: #5f5f5f;
     position: absolute;
     right: -15px;
@@ -84,9 +81,9 @@
   justify-content: center;
 }
 :host ::ng-deep {
-  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo",  "Consolas", sans-serif !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei',
+    'Hiragino Sans GB', 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, 'Monaco', 'Menlo', 'Consolas', sans-serif !important;
 }
-
 
 // 上传数据按钮
 .table-upload-data {
@@ -140,7 +137,7 @@
 
   span {
     font-size: 14px;
-	  color: #ffffff;
+    color: #ffffff;
   }
 
   i {
@@ -151,33 +148,33 @@
 }
 
 :host ::ng-deep {
-  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo",  "Consolas", sans-serif !important;
-     
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei',
+    'Hiragino Sans GB', 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, 'Monaco', 'Menlo', 'Consolas', sans-serif !important;
+
   div ::-webkit-scrollbar {
-      width: 10px !important;
-      height: 10px !important;
-      background-color: transparent !important; // all: initial !important;
+    width: 10px !important;
+    height: 10px !important;
+    background-color: transparent !important;
   }
 
   div ::-webkit-scrollbar-thumb {
-      background-color: #bbbbba !important;
-      border-radius: 6px !important; // all: initial !important;
-      border-width: 1px;
-      border-style: dashed;
-      border-color: transparent;
-      background-clip: padding-box;
-  }
-  
-  div ::-webkit-scrollbar-thumb:hover {
-      border-radius: 4px !important;
-      background-clip: unset;
-      background-color: #989898 !important;
-  }
-  div ::-webkit-scrollbar-track {
-      background: transparent !important; // all: initial !important;
-  }
-  div ::-webkit-scrollbar-corner {
-      background: transparent !important; //
+    background-color: #bbbbba !important;
+    border-radius: 6px !important;
+    border-width: 1px;
+    border-style: dashed;
+    border-color: transparent;
+    background-clip: padding-box;
   }
 
+  div ::-webkit-scrollbar-thumb:hover {
+    border-radius: 4px !important;
+    background-clip: unset;
+    background-color: #989898 !important;
+  }
+  div ::-webkit-scrollbar-track {
+    background: transparent !important;
+  }
+  div ::-webkit-scrollbar-corner {
+    background: transparent !important;
+  }
 }

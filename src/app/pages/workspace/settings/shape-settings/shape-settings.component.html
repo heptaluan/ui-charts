@@ -1,23 +1,14 @@
 <div class="setting-container">
   <tabset #staticTab [justified]="true">
     <!-- 标题 -->
-    <tab  heading="{{title}}" customClass="setting-tab" id="tab2">
-      <div class="d-flex flex-column right-container"  *ngIf="curBlock.shapeType !== 'line'">
-
+    <tab heading="{{ title }}" customClass="setting-tab" id="tab2">
+      <div class="d-flex flex-column right-container" *ngIf="curBlock.shapeType !== 'line'">
         <!-- 锁定组件 -->
-        <lx-elements-locked
-          [block]="curBlock"
-          [projectId]="projectId"
-          [pageId]="curPageId"
-        ></lx-elements-locked>
+        <lx-elements-locked [block]="curBlock" [projectId]="projectId" [pageId]="curPageId"></lx-elements-locked>
 
         <!-- 对齐组件 -->
-        <lx-elements-aligned
-          [block]="curBlock"
-          [projectId]="projectId"
-          [pageId]="curPageId"
-        ></lx-elements-aligned>
-        
+        <lx-elements-aligned [block]="curBlock" [projectId]="projectId" [pageId]="curPageId"></lx-elements-aligned>
+
         <!-- 尺寸组件 -->
         <div class="section size-section" *ngIf="showSizeOption">
           <lx-settings-size
@@ -26,25 +17,36 @@
             [value1]="curBlock?.props.size.width"
             [value2]="curBlock?.props.size.rotate"
             [ratio]="curBlock?.props.size.ratio"
-            [max0]=10000
-            [min0]=1
-            [max1]=6000
-            [min1]=1
-            [max2]=360
-            [max2]=0
+            [max0]="10000"
+            [min0]="1"
+            [max1]="6000"
+            [min1]="1"
+            [max2]="360"
+            [max2]="0"
             (onChanged)="onSizeChanged($event)"
-            [title0]="''" [title1]="''" [title2]="''"
-            [letter1]="'W'" [letter0]="'H'" [letter2]="'°'"
+            [title0]="''"
+            [title1]="''"
+            [title2]="''"
+            [letter1]="'W'"
+            [letter0]="'H'"
+            [letter2]="'°'"
           ></lx-settings-size>
-          
+
           <ng-container *ngIf="showRadius">
             <div class="line top-20">
               <div class="small-title">圆角(px)</div>
-              <lx-slider  [min]=0 [max]=50 [step]=1 [cur]='radius' [isProgress]="true" (valueChanged)="onInput($event, 'radius')"></lx-slider>
+              <lx-slider
+                [min]="0"
+                [max]="50"
+                [step]="1"
+                [cur]="radius"
+                [isProgress]="true"
+                (valueChanged)="onInput($event, 'radius')"
+              ></lx-slider>
             </div>
-            </ng-container>
-            <!-- 选色版增加不透明度后与此功能重复，删去 -->
-            <!-- <div class="line top-20">
+          </ng-container>
+          <!-- 选色版增加不透明度后与此功能重复，删去 -->
+          <!-- <div class="line top-20">
               <div class="small-title">不透明度(%)</div>
               <lx-slider [min]=0 [max]=100 [step]=1 [cur]='opacity' [isProgress]="true" (valueChanged)="onInput($event, 'opacity')"></lx-slider>
             </div> -->
@@ -79,32 +81,32 @@
 
         <!-- 圆角 && 透明度 -->
 
-          
-
-
         <!-- 颜色面板 -->
         <div class="section">
           <div *ngIf="!showArrowOption">
-
             <div class="line color-list-box">
               <div class="small-title">填充样式</div>
               <div class="flex-sp">
                 <lx-settings-dropdowns
-                [index]="fillStyleIndex"
-                [values]="fillStyle"
-                (onChanged)="onColorListDropDownChanged($event)"
-                class="shape-colors"
+                  [index]="fillStyleIndex"
+                  [values]="fillStyle"
+                  (onChanged)="onColorListDropDownChanged($event)"
+                  class="shape-colors"
                 ></lx-settings-dropdowns>
 
                 <!-- 单色 && 无 -->
-                <div class="shape-linear-color left-12" [ngClass]="{'hidden': fillStyleIndex !== 1}">
-                  <lx-color-list [themColorList]=themeColorList [colorSeleced] ="colors[0]" [isGradientShow]="true" (onChanged)="changeColor('colorPickerClick', $event)" ></lx-color-list>
+                <div class="shape-linear-color left-12" [ngClass]="{ hidden: fillStyleIndex !== 1 }">
+                  <lx-color-list
+                    [themColorList]="themeColorList"
+                    [colorSeleced]="colors[0]"
+                    [isGradientShow]="true"
+                    (onChanged)="changeColor('colorPickerClick', $event)"
+                  ></lx-color-list>
                 </div>
               </div>
             </div>
-       
 
-          <!-- 渐变
+            <!-- 渐变
           <div class="shape-linear-color" *ngIf='fillStyleIndex === 2'>
             <input
               class="color-box"
@@ -130,19 +132,19 @@
               cpPosition="left"
             />
           </div> -->
-        </div>
+          </div>
 
-        <!-- 边框 -->
-          
+          <!-- 边框 -->
+
           <div class="flex-sp color-list-box top-20 border-box">
             <div class="small-title">线条样式</div>
             <lx-settings-dropdowns
-              [index]="borderStyleIndex" [isBackgroundColor] = "true"
+              [index]="borderStyleIndex"
+              [isBackgroundColor]="true"
               [values]="borderStyle"
               (onChanged)="onBorderDropDownChanged($event)"
               class="border-style-dropdowns"
             ></lx-settings-dropdowns>
-            
           </div>
 
           <div class="flex-sp top-15 right">
@@ -155,46 +157,74 @@
               type="text"
             > -->
 
-            <lx-slider [min]=0 [max]=100 [step]=1 [cur]="borderWidth"
-              (valueChanged)="borderWidthInputBlurHandle($event)"></lx-slider>
+            <lx-slider
+              [min]="0"
+              [max]="100"
+              [step]="1"
+              [cur]="borderWidth"
+              (valueChanged)="borderWidthInputBlurHandle($event)"
+            ></lx-slider>
 
-            <lx-color-list  class="left-12 "  [themColorList]=themeColorList [colorSeleced] ="borderColors" (onChanged)="changeColor('borderColorPickerClick', $event)" ></lx-color-list>
+            <lx-color-list
+              class="left-12"
+              [themColorList]="themeColorList"
+              [colorSeleced]="borderColors"
+              (onChanged)="changeColor('borderColorPickerClick', $event)"
+            ></lx-color-list>
           </div>
         </div>
 
         <!-- 阴影 -->
         <div class="section">
-              <div class="accordion-content">
-                <div class="flex-start">
-                  <lx-checkbox class="switch" [checked]="isShadowOpen" (change)="tooltipSwitch($event)">
-                  </lx-checkbox>
-                  <div class="small-title left-8">阴影</div>
-                </div>      
-                <div class="line shadow-opacity top-20" *ngIf="isShadowOpen">
-                  <div>
-                    <lx-color-list  [themColorList]=themeColorList [colorSeleced] ="shadowColor" (onChanged)="changeColor('shadow', $event)" ></lx-color-list>
-                    <div class="small-title">颜色</div>
-                  </div>
-                  <div>
-                    <lx-slider [min]=0 [max]=20 [step]=1 [cur]='shadowRadius'
-                      (valueChanged)="onInput($event, 'shadowRadius')"></lx-slider>
-                    <div class="small-title">距离</div>
-                  </div>
-  
-                  <div>                
-                    <lx-slider [min]=0 [max]=360 [step]=1 [cur]='shadowAngle'
-                      (valueChanged)="onInput($event, 'shadowAngle')"></lx-slider>
-                      <div class="small-title">角度</div>
-                  </div>
-  
-                  <div>                  
-                    <lx-slider [min]=0 [max]=20 [step]=1 [cur]='shadowBlur' (valueChanged)="onInput($event,'shadowBlur')">
-                    </lx-slider>
-                    <div class="small-title">模糊</div>
-                  </div> 
-                </div>
-              
+          <div class="accordion-content">
+            <div class="flex-start">
+              <lx-checkbox class="switch" [checked]="isShadowOpen" (change)="tooltipSwitch($event)"> </lx-checkbox>
+              <div class="small-title left-8">阴影</div>
+            </div>
+            <div class="line shadow-opacity top-20" *ngIf="isShadowOpen">
+              <div>
+                <lx-color-list
+                  [themColorList]="themeColorList"
+                  [colorSeleced]="shadowColor"
+                  (onChanged)="changeColor('shadow', $event)"
+                ></lx-color-list>
+                <div class="small-title">颜色</div>
               </div>
+              <div>
+                <lx-slider
+                  [min]="0"
+                  [max]="20"
+                  [step]="1"
+                  [cur]="shadowRadius"
+                  (valueChanged)="onInput($event, 'shadowRadius')"
+                ></lx-slider>
+                <div class="small-title">距离</div>
+              </div>
+
+              <div>
+                <lx-slider
+                  [min]="0"
+                  [max]="360"
+                  [step]="1"
+                  [cur]="shadowAngle"
+                  (valueChanged)="onInput($event, 'shadowAngle')"
+                ></lx-slider>
+                <div class="small-title">角度</div>
+              </div>
+
+              <div>
+                <lx-slider
+                  [min]="0"
+                  [max]="20"
+                  [step]="1"
+                  [cur]="shadowBlur"
+                  (valueChanged)="onInput($event, 'shadowBlur')"
+                >
+                </lx-slider>
+                <div class="small-title">模糊</div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- 提示文本 -->
@@ -206,52 +236,51 @@
               placeholder="请输入文本"
               #tooltipInput
               [(ngModel)]="tooltipText"
-              (blur)="tooltipInputBlurHandle($event)" 
+              (blur)="tooltipInputBlurHandle($event)"
               (keyup)="onInputHandle($event)"
               type="text"
               class="input-style"
-              style="width: 150px;"
-            >
+              style="width: 150px"
+            />
           </div>
-        
         </div>
-
       </div>
 
       <!-- 直线样式单独处理 -->
-      <div class="d-flex flex-column right-container" style="padding-left: 16px;" *ngIf="curBlock.shapeType === 'line'">
-
+      <div class="d-flex flex-column right-container" style="padding-left: 16px" *ngIf="curBlock.shapeType === 'line'">
         <!-- 选色版增加不透明度后与此功能重复，删去 -->
-        <!-- 尺寸组件 -->      
+        <!-- 尺寸组件 -->
         <!-- <div class="line top-20">
           <div class="small-title">不透明度(%)</div>
           <lx-slider [min]=0 [max]=100 [step]=1 [cur]='opacity' [isProgress]="true" (valueChanged)="onInput($event, 'opacity')"></lx-slider>
         </div> -->
 
-
         <!-- 颜色面板 -->
         <div>
           <div *ngIf="!showArrowOption">
-
             <div class="line color-list-box">
               <div class="small-title">填充样式</div>
               <div class="flex-sp">
                 <lx-settings-dropdowns
-                [index]="fillStyleIndex"
-                [values]="fillStyle"
-                (onChanged)="onColorListDropDownChanged($event)"
-                class="shape-colors"
+                  [index]="fillStyleIndex"
+                  [values]="fillStyle"
+                  (onChanged)="onColorListDropDownChanged($event)"
+                  class="shape-colors"
                 ></lx-settings-dropdowns>
 
                 <!-- 单色 && 无 -->
-                <div class="shape-linear-color left-12 " *ngIf='fillStyleIndex !== 2'>
-                  <lx-color-list  [themColorList]=themeColorList [colorSeleced] ="colors[0]" [isGradientShow]="true" (onChanged)="changeColor('colorPickerClick', $event)" ></lx-color-list>
+                <div class="shape-linear-color left-12" *ngIf="fillStyleIndex !== 2">
+                  <lx-color-list
+                    [themColorList]="themeColorList"
+                    [colorSeleced]="colors[0]"
+                    [isGradientShow]="true"
+                    (onChanged)="changeColor('colorPickerClick', $event)"
+                  ></lx-color-list>
                 </div>
               </div>
             </div>
-       
 
-          <!-- 渐变
+            <!-- 渐变
           <div class="shape-linear-color" *ngIf='fillStyleIndex === 2'>
             <input
               class="color-box"
@@ -277,19 +306,19 @@
               cpPosition="left"
             />
           </div> -->
-        </div>
+          </div>
 
-        <!-- 边框 -->
-          
+          <!-- 边框 -->
+
           <div class="flex-sp color-list-box top-20 border-box">
             <div class="small-title">线条样式</div>
             <lx-settings-dropdowns
-              [index]="borderStyleIndex" [isBackgroundColor] = "true"
+              [index]="borderStyleIndex"
+              [isBackgroundColor]="true"
               [values]="borderStyle"
               (onChanged)="onBorderDropDownChanged($event)"
               class="border-style-dropdowns"
             ></lx-settings-dropdowns>
-            
           </div>
 
           <div class="flex-sp top-15 right">
@@ -301,49 +330,76 @@
               onafterpaste="this.value = this.value.replace(/\D/g,'')"
               type="text"
             > -->
-            <lx-slider [min]=0 [max]=100 [step]=1 [cur]="borderWidth"
-              (valueChanged)="borderWidthInputBlurHandle($event)"></lx-slider>
+            <lx-slider
+              [min]="0"
+              [max]="100"
+              [step]="1"
+              [cur]="borderWidth"
+              (valueChanged)="borderWidthInputBlurHandle($event)"
+            ></lx-slider>
 
-            <lx-color-list  class="left-12"  [themColorList]=themeColorList [isGradientShow]="true" [colorSeleced] ="borderColors" (onChanged)="changeColor('borderColorPickerClick', $event)" ></lx-color-list>
+            <lx-color-list
+              class="left-12"
+              [themColorList]="themeColorList"
+              [isGradientShow]="true"
+              [colorSeleced]="borderColors"
+              (onChanged)="changeColor('borderColorPickerClick', $event)"
+            ></lx-color-list>
           </div>
         </div>
 
         <!-- 阴影 -->
         <div class="section line-section">
-
-              <div class="accordion-content"> 
-                
-                <div class="flex-start">
-                  <lx-checkbox class="switch" [checked]="isShadowOpen" (change)="tooltipSwitch($event)">
-                  </lx-checkbox>
-                  <div class="small-title left-8">阴影</div>
-                </div>
-                <div class="line shadow-opacity top-20" *ngIf="isShadowOpen">
-                  <div>
-                    <lx-color-list  [themColorList]=themeColorList [colorSeleced] ="shadowColor" (onChanged)="changeColor('shadow', $event)" ></lx-color-list>
-                    <div class="small-title">颜色</div>
-                  </div>
-                  <div>
-                    <lx-slider [min]=0 [max]=20 [step]=1 [cur]='shadowRadius'
-                      (valueChanged)="onInput($event, 'shadowRadius')"></lx-slider>
-                    <div class="small-title">距离</div>
-                  </div>
-  
-                  <div>                
-                    <lx-slider [min]=0 [max]=360 [step]=1 [cur]='shadowAngle'
-                      (valueChanged)="onInput($event, 'shadowAngle')"></lx-slider>
-                      <div class="small-title">角度</div>
-                  </div>
-  
-                  <div>                  
-                    <lx-slider [min]=0 [max]=20 [step]=1 [cur]='shadowBlur' (valueChanged)="onInput($event,'shadowBlur')">
-                    </lx-slider>
-                    <div class="small-title">模糊</div>
-                  </div> 
-                </div>
-              
+          <div class="accordion-content">
+            <div class="flex-start">
+              <lx-checkbox class="switch" [checked]="isShadowOpen" (change)="tooltipSwitch($event)"> </lx-checkbox>
+              <div class="small-title left-8">阴影</div>
+            </div>
+            <div class="line shadow-opacity top-20" *ngIf="isShadowOpen">
+              <div>
+                <lx-color-list
+                  [themColorList]="themeColorList"
+                  [colorSeleced]="shadowColor"
+                  (onChanged)="changeColor('shadow', $event)"
+                ></lx-color-list>
+                <div class="small-title">颜色</div>
               </div>
-            <!-- </accordion-group>
+              <div>
+                <lx-slider
+                  [min]="0"
+                  [max]="20"
+                  [step]="1"
+                  [cur]="shadowRadius"
+                  (valueChanged)="onInput($event, 'shadowRadius')"
+                ></lx-slider>
+                <div class="small-title">距离</div>
+              </div>
+
+              <div>
+                <lx-slider
+                  [min]="0"
+                  [max]="360"
+                  [step]="1"
+                  [cur]="shadowAngle"
+                  (valueChanged)="onInput($event, 'shadowAngle')"
+                ></lx-slider>
+                <div class="small-title">角度</div>
+              </div>
+
+              <div>
+                <lx-slider
+                  [min]="0"
+                  [max]="20"
+                  [step]="1"
+                  [cur]="shadowBlur"
+                  (valueChanged)="onInput($event, 'shadowBlur')"
+                >
+                </lx-slider>
+                <div class="small-title">模糊</div>
+              </div>
+            </div>
+          </div>
+          <!-- </accordion-group>
           </accordion> -->
         </div>
 
@@ -355,15 +411,13 @@
             placeholder="请输入文本"
             #tooltipInput
             [(ngModel)]="tooltipText"
-            (blur)="tooltipInputBlurHandle($event)" 
+            (blur)="tooltipInputBlurHandle($event)"
             (keyup)="onInputHandle($event)"
             type="text"
             class="input-style"
-            style="width: 150px;"
-          >
+            style="width: 150px"
+          />
         </div>
-
-
       </div>
     </tab>
   </tabset>
