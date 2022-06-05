@@ -1,31 +1,42 @@
-<nb-card class="text-templates-sidebar" [ngStyle]='styles'>
+<nb-card class="text-templates-sidebar" [ngStyle]="styles">
   <!-- header -->
   <div class="shape-header" *ngIf="!hideShape">
     插入形状
-    <i class="icon iconfont icon-x" (click)='clickCloseBtn()'></i>
+    <i class="icon iconfont icon-x" (click)="clickCloseBtn()"></i>
   </div>
   <!-- body -->
   <div class="setting-container" *ngIf="!hideShape">
     <tabset>
-      <tab heading="形状" (select)="onTabSelect($event)" customClass="setting-tab" id="tab1">
-      </tab>
-      <tab heading="图标" (select)="onTabSelect($event)" customClass="setting-tab" id="tab2">
-      </tab>
+      <tab heading="形状" (select)="onTabSelect($event)" customClass="setting-tab" id="tab1"> </tab>
+      <tab heading="图标" (select)="onTabSelect($event)" customClass="setting-tab" id="tab2"> </tab>
     </tabset>
   </div>
   <!-- footer -->
   <nb-card-footer>
     <div class="row">
-      <div class="search-image" *ngIf="!tabActive" [ngClass]="{iconStyles: hideShape}">
-        <lx-form-search (searchValue)='search($event)' [placeholder] = "'搜索图标'"></lx-form-search>
-        <lx-classify class="classify" (category)="classify($event)" [type]="'icon'" [data]='categories' [hideShape]="true" [partCategories]='partCategories'></lx-classify>
+      <div class="search-image" *ngIf="!tabActive" [ngClass]="{ iconStyles: hideShape }">
+        <lx-form-search (searchValue)="search($event)" [placeholder]="'搜索图标'"></lx-form-search>
+        <lx-classify
+          class="classify"
+          (category)="classify($event)"
+          [type]="'icon'"
+          [data]="categories"
+          [hideShape]="true"
+          [partCategories]="partCategories"
+        ></lx-classify>
       </div>
       <div class="col-12 list-content" *ngIf="tabActive">
-        <lx-shape-template-item [data]='shapeTemplates' [pageId]='pageId'></lx-shape-template-item>
+        <lx-shape-template-item [data]="shapeTemplates" [pageId]="pageId"></lx-shape-template-item>
       </div>
       <div class="col-12 list-content list-icon" *ngIf="!tabActive" #iconScroll>
-        <lx-icon-template-item [data]='iconTemplates' [hideShape]="hideShape" [blockId]="blockId" [dataCopy]='iconDataCopy' [pageId]='pageId'></lx-icon-template-item>
-        <div class="load-more" (click)='loadMore()' [ngClass]="{noMore: text === '- 没有更多了 -'}" >{{text}}</div>
+        <lx-icon-template-item
+          [data]="iconTemplates"
+          [hideShape]="hideShape"
+          [blockId]="blockId"
+          [dataCopy]="iconDataCopy"
+          [pageId]="pageId"
+        ></lx-icon-template-item>
+        <div class="load-more" (click)="loadMore()" [ngClass]="{ noMore: text === '- 没有更多了 -' }">{{ text }}</div>
       </div>
     </div>
   </nb-card-footer>

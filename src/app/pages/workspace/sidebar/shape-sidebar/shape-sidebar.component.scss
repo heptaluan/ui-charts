@@ -3,11 +3,12 @@
   box-shadow: none !important;
   border-right: 1px solid #1f1f1f;
   background: #252626;
-  
+
   .shape-header {
     height: 38px;
     line-height: 38px;
-    font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo",  "Consolas", sans-serif !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei',
+      'Hiragino Sans GB', 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, 'Monaco', 'Menlo', 'Consolas', sans-serif !important;
     font-size: 14px;
     color: rgba(255, 255, 255, 0.8);
     letter-spacing: 0;
@@ -41,7 +42,7 @@
     background: #252625;
     border-bottom: 1px solid #161616;
   }
-  
+
   nb-card-footer {
     height: calc(100% - 80px);
     padding-top: 0 !important;
@@ -67,7 +68,8 @@
         border: solid 1px rgba(255, 255, 255, 0.1);
         line-height: 22px;
         text-align: center;
-        font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo",  "Consolas", sans-serif !important;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei',
+          'Hiragino Sans GB', 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, 'Monaco', 'Menlo', 'Consolas', sans-serif !important;
         font-size: 12px;
         color: #ffffff;
         cursor: pointer;
@@ -75,8 +77,8 @@
 
         &:hover {
           border: solid 1px#4A90E2;
-          color: #4A90E2;
-        }       
+          color: #4a90e2;
+        }
       }
       .noMore {
         border: none;
@@ -84,7 +86,7 @@
       }
     }
     .list-icon {
-      height: calc(100% - 115px);  //修正形状与图标两边高度不一致
+      height: calc(100% - 115px); //修正形状与图标两边高度不一致
     }
     .search-image {
       width: 100%;
@@ -127,7 +129,7 @@
       color: #a3a3a3;
       font-size: 12px;
       box-sizing: border-box;
-      div:nth-child(1){
+      div:nth-child(1) {
         width: 100%;
         progress {
           display: inline-block;
@@ -135,14 +137,14 @@
         }
       }
       &::after {
-        content: "";
+        content: '';
         display: block;
         position: absolute;
         height: 2px;
         width: 3px;
         top: 58px;
         right: -5px;
-        background: #3f3f3f;    //补掉左移的边框空缺
+        background: #3f3f3f; //补掉左移的边框空缺
       }
     }
   }
@@ -150,19 +152,20 @@
 
 :host::ng-deep {
   .input-group {
-    width: 266px;   // 搜索框宽度 实际宽度250px
+    width: 266px; // 搜索框宽度 实际宽度250px
     margin-left: -17px;
 
     .form-control {
       height: 24px;
-      padding: 6px 23px;  
+      padding: 6px 23px;
     }
 
     .icon-sousuo {
       left: 20px !important;
     }
 
-    .icon-x:before,.icon-sousuo:before {
+    .icon-x:before,
+    .icon-sousuo:before {
       transform: scale(0.8125); // 原本16px缩小为13px
       transform-origin: 0 0;
       display: block;
@@ -178,12 +181,12 @@
         left: 1px !important;
         top: 2px !important;
       }
-    } 
+    }
   }
 
   .iconStyles {
     .input-group {
-      left: 0!important;
+      left: 0 !important;
     }
   }
   .nav-tabs {
@@ -210,7 +213,8 @@
         color: #999999 !important;
         padding: 0;
         height: 37px;
-        font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo",  "Consolas", sans-serif !important;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei',
+          'Hiragino Sans GB', 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, 'Monaco', 'Menlo', 'Consolas', sans-serif !important;
         font-weight: normal;
         font-stretch: normal;
         letter-spacing: 0px;
@@ -234,7 +238,7 @@
       text-align: left;
       padding-bottom: 42px;
 
-      &>div {
+      & > div {
         margin-left: 0 !important;
       }
 
@@ -246,5 +250,6 @@
   }
 }
 :host ::ng-deep {
-  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo",  "Consolas", sans-serif !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei',
+    'Hiragino Sans GB', 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, 'Monaco', 'Menlo', 'Consolas', sans-serif !important;
 }

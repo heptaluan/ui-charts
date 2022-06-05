@@ -6,56 +6,56 @@
   flex-wrap: wrap;
 
   .template-item {
+    width: 120px;
+    height: 92px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    margin: 0 5px 15px 5px;
+    box-sizing: border-box;
+
+    .over-layout {
+      position: absolute;
+      opacity: 0;
       width: 120px;
       height: 92px;
-      background-color: #ffffff;
       border-radius: 2px;
-      margin: 0 5px 15px 5px;
-      box-sizing: border-box;
-    
-      .over-layout {
-        position: absolute;
-        opacity: 0;
-        width: 120px;
-        height: 92px;
-        border-radius: 2px;
-        background-color: rgba($color: #4c7693, $alpha: .7);
-        text-align: center;
+      background-color: rgba($color: #4c7693, $alpha: 0.7);
+      text-align: center;
+      border: 2px solid #0090ff;
+      transition: all 0.3s;
+
+      button {
+        background-color: transparent;
+        color: #fff;
         border: 2px solid #0090ff;
-        transition: all .3s;
-    
-        button {
-          background-color: transparent;
-          color: #fff;
-          border: 2px solid #0090ff;
-          border: none;
-          outline: none;
-          width: 120px;
-          height: 88px;
-        }
+        border: none;
+        outline: none;
+        width: 120px;
+        height: 88px;
       }
-    
-      .title {
-        font-size: 12px;
-        font-weight: bold;
-        color: #333333;
-        text-align: center;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        height: 12px;
-        line-height: 12px;
-        font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo",  "Consolas", sans-serif;
+    }
+
+    .title {
+      font-size: 12px;
+      font-weight: bold;
+      color: #333333;
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      height: 12px;
+      line-height: 12px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei',
+        'Hiragino Sans GB', 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, 'Monaco', 'Menlo', 'Consolas', sans-serif;
+    }
+
+    .content {
+      width: unset;
+      height: unset;
+      margin: auto;
+      img {
+        background-size: cover;
       }
-    
-      .content {
-        width: unset;
-        height: unset;
-        margin: auto;
-        img {
-         
-          background-size: cover;
-        }
-      }
+    }
   }
 
   .template-item:hover {
@@ -67,11 +67,9 @@
   .dy-button {
     border-radius: 2px;
   }
-
 }
-  
 
-
-  :host ::ng-deep {
-    font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo",  "Consolas", sans-serif !important;
-  }
+:host ::ng-deep {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei',
+    'Hiragino Sans GB', 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, 'Monaco', 'Menlo', 'Consolas', sans-serif !important;
+}

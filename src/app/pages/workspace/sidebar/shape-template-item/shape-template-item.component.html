@@ -1,12 +1,15 @@
 <div class="shape-template">
-  <div class="template-item" *ngFor="let item of shapeTemplates; let i = index;">
-    <div class="over-layout panel-shadow d-flex justify-content-center align-items-center" [attr.shapeType]='item.shapeType'>
-      <button class="dy-button" (click)='insertShape($event, i)'>插入</button>
+  <div class="template-item" *ngFor="let item of shapeTemplates; let i = index">
+    <div
+      class="over-layout panel-shadow d-flex justify-content-center align-items-center"
+      [attr.shapeType]="item.shapeType"
+    >
+      <button class="dy-button" (click)="insertShape($event, i)">插入</button>
     </div>
 
-    <div class="title">{{item.title}}</div>
+    <div class="title">{{ item.title }}</div>
     <div class="content d-flex justify-content-center align-items-center">
-      <img [ngStyle]="item.styles" [src]="item.content">
+      <img [ngStyle]="item.styles" [src]="item.content" />
     </div>
   </div>
 </div>

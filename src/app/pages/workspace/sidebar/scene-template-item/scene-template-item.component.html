@@ -1,12 +1,26 @@
 <!-- 循环部分 -->
-<div class="template-item" *ngFor="let item of templates;let i = index;" [ngStyle]="{'left': item.left + 'px', 'top': item.top + 'px'}">
-  <div class="over-layout panel-shadow d-flex justify-content-center align-items-center" (mouseenter)="mouseEnterHandler(item)" (mouseleave)="mouseLeavwHandler()" [attr.id]='item.id' [attr.imgSrc]='item.url' >
+<div
+  class="template-item"
+  *ngFor="let item of templates; let i = index"
+  [ngStyle]="{ left: item.left + 'px', top: item.top + 'px' }"
+>
+  <div
+    class="over-layout panel-shadow d-flex justify-content-center align-items-center"
+    (mouseenter)="mouseEnterHandler(item)"
+    (mouseleave)="mouseLeavwHandler()"
+    [attr.id]="item.id"
+    [attr.imgSrc]="item.url"
+  >
     <div class="preview" (click)="preview($event, item)">预览</div>
     <div class="like-info">
-      <i class="icon iconfont icon-xihuan" (click)="toggleLike($event, item)" [ngClass]="{'active': isLike || isFav}"></i>
+      <i
+        class="icon iconfont icon-xihuan"
+        (click)="toggleLike($event, item)"
+        [ngClass]="{ active: isLike || isFav }"
+      ></i>
     </div>
-    <button class="dy-button" (click)='insertTemplate(item)'>插入</button>
-    <i *ngIf="deleteFlag" (click)='deleteImg($event)'></i>
+    <button class="dy-button" (click)="insertTemplate(item)">插入</button>
+    <i *ngIf="deleteFlag" (click)="deleteImg($event)"></i>
   </div>
-  <img [src]="item.thumb.split('?')[0]" class="imageStyle" alt="">
+  <img [src]="item.thumb.split('?')[0]" class="imageStyle" alt="" />
 </div>
