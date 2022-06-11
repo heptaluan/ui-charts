@@ -1,19 +1,18 @@
 <div class="caseitem" (click)="onCaseClick()">
   <div class="caseimg-container">
     <a>
-      <img src="{{caseitem.thumb}}" alt="">
+      <img src="{{ caseitem.thumb }}" alt="" />
     </a>
   </div>
   <div class="caseinfo-container">
-    <p class="title">{{caseitem.title}}</p>
-    <p class="author text-truncate" title='{{caseitem.author}}'>{{caseitem.author}}</p>
+    <p class="title">{{ caseitem.title }}</p>
+    <p class="author text-truncate" title="{{ caseitem.author }}">{{ caseitem.author }}</p>
 
     <p class="info">
-      <img src="../../../dyassets/images/watch.png" alt="">
-      <span>{{caseitem.watch}}</span>
-      <img src="../../../dyassets/images/dislike.png" alt="">
-      <span>{{caseitem.like}}</span>
+      <img src="../../../dyassets/images/watch.png" alt="" />
+      <span>{{ caseitem.watch }}</span>
+      <img src="../../../dyassets/images/dislike.png" alt="" />
+      <span>{{ caseitem.like }}</span>
     </p>
   </div>
 </div>
-

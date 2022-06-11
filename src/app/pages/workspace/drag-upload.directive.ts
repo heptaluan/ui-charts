@@ -8,9 +8,9 @@ import * as fromRoot from '../../states/reducers'
 import { UtilsService } from '../../share/services/utils.service'
 import { Subscription } from 'rxjs'
 import { UpdateProjectContent } from '../../states/models/project.model'
-import * as ProjectModels from '../../states/models/project.model';
+import * as ProjectModels from '../../states/models/project.model'
 import { UpdateCurrentChartProjectArticleAction } from '../../states/actions/project.action'
-import { UpdateCurrentProjectArticleAction } from '../../states/actions/project.action';
+import { UpdateCurrentProjectArticleAction } from '../../states/actions/project.action'
 import * as ProjectActions from '../../states/actions/project.action'
 import { BsModalRef, BsModalService } from 'ngx-bootstrap'
 import { ProgressComponent, UploadTipsComponent } from '../../components/modals'
@@ -18,14 +18,12 @@ import { DataTransmissionService, VipService } from '../../share/services'
 import * as $ from 'jquery'
 import { API } from '../../states/api.service'
 import { ImageMapService } from '../../block/image-map.service'
-import { UpgradeMemberComponent } from '../../components/modals/upgrade-member/upgrade-member.component';
+import { UpgradeMemberComponent } from '../../components/modals/upgrade-member/upgrade-member.component'
 
 @Directive({
-  selector: '[dropUpload]'
+  selector: '[dropUpload]',
 })
-
 export class DropUploadDirective {
-
   private dropBox: HTMLDivElement
   private projectType: string
   private chartList: any[] = []
@@ -38,11 +36,11 @@ export class DropUploadDirective {
   private bsModalRef: BsModalRef
 
   private chartTemplateList: ReadonlyArray<string> = [
-    '5544734748594536493',  // 圆角饼图
-    '444734748594536323',   // 基础柱状图
-    '3612096174443311105',  // 分组柱状图
-    '154772011302084304',   // 基础条形图
-    '7955555555502346001'   // 表格
+    '5544734748594536493', // 圆角饼图
+    '444734748594536323', // 基础柱状图
+    '3612096174443311105', // 分组柱状图
+    '154772011302084304', // 基础条形图
+    '7955555555502346001', // 表格
   ]
 
   private getCurrentChartProjectFullSubscription: Subscription = new Subscription()
@@ -60,46 +58,54 @@ export class DropUploadDirective {
     private _dataTransmissionService: DataTransmissionService,
     private _vipService: VipService,
     private _api: API,
-    private _imageMapService: ImageMapService,
-  ) { }
+    private _imageMapService: ImageMapService
+  ) {}
 
   ngOnInit(): void {
-    this.isVpl = this._vipService.getVipLevel();
-    this.projectType = this._activatedRoute.snapshot.queryParams.type;
+    this.isVpl = this._vipService.getVipLevel()
+    this.projectType = this._activatedRoute.snapshot.queryParams.type
 
     // 监听扫码上传的图片
-    this.getImageSubjectStateSubscription.add(this._dataTransmissionService.getImageSubjectState().subscribe(res => {
-      if (res.code === 1) {
-        this.handleInsertImage(`${res.data.notify_info}`, true)
-      }
-    }))
+    this.getImageSubjectStateSubscription.add(
+      this._dataTransmissionService.getImageSubjectState().subscribe((res) => {
+        if (res.code === 1) {
+          this.handleInsertImage(`${res.data.notify_info}`, true)
+        }
+      })
+    )
   }
 
   ngAfterViewInit(): void {
     this.dropBox = <HTMLDivElement>document.querySelector('.drop-box')
     if (this.projectType === 'infographic') {
-      this.getCurrentProjectFullSubscription.add(this._store.select(fromRoot.getCurrentProjectFull).subscribe(project => {
-        if (project) {
-          this.project = project
-          this.projectId = project.id
-          this.pageId = project.article.contents.pages[0].pageId
-        }
-      }))
+      this.getCurrentProjectFullSubscription.add(
+        this._store.select(fromRoot.getCurrentProjectFull).subscribe((project) => {
+          if (project) {
+            this.project = project
+            this.projectId = project.id
+            this.pageId = project.article.contents.pages[0].pageId
+          }
+        })
+      )
     } else if (this.projectType === 'chart') {
-      this.getCurrentChartProjectFullSubscription.add(this._store.select(fromRoot.getCurrentChartProjectFull).subscribe(project => {
-        if (project) {
-          this.project = project
-          this.projectId = project.id
-          this.pageId = project.article.contents.pages[0].pageId
-        }
-      }))
+      this.getCurrentChartProjectFullSubscription.add(
+        this._store.select(fromRoot.getCurrentChartProjectFull).subscribe((project) => {
+          if (project) {
+            this.project = project
+            this.projectId = project.id
+            this.pageId = project.article.contents.pages[0].pageId
+          }
+        })
+      )
     }
 
-    this.getChartTemplatesSubscription.add(this._store.select(fromRoot.getChartTemplates).subscribe(data => {
-      if (data) {
-        this.chartList = data
-      }
-    }))
+    this.getChartTemplatesSubscription.add(
+      this._store.select(fromRoot.getChartTemplates).subscribe((data) => {
+        if (data) {
+          this.chartList = data
+        }
+      })
+    )
 
     this.dropBox.ondragover = function (ev: MouseEvent): void {
       ev.stopPropagation()
@@ -222,23 +228,23 @@ export class DropUploadDirective {
         case 'image/jpeg':
           console.log(`jpg`)
           window['_hmt'].push(['_trackEvent', 'editpage', 'edit-desktop', 'info-drag-jpg'])
-          break;
+          break
         case 'image/png':
           console.log(`png`)
           window['_hmt'].push(['_trackEvent', 'editpage', 'edit-desktop', 'info-drag-png'])
-          break;
+          break
         case 'image/gif':
           console.log(`gif`)
           window['_hmt'].push(['_trackEvent', 'editpage', 'edit-desktop', 'info-drag-gif'])
-          break;
+          break
         default:
-          break;
+          break
       }
       this.bsModalRef = this.modalService.show(ProgressComponent, {
         ignoreBackdropClick: true,
         initialState: {
-          text: `正在上传，请稍候`
-        }
+          text: `正在上传，请稍候`,
+        },
       })
       this.insertInfographicImages(list[0])
     } else if (isCsv) {
@@ -252,8 +258,8 @@ export class DropUploadDirective {
       this.bsModalRef = this.modalService.show(ProgressComponent, {
         ignoreBackdropClick: true,
         initialState: {
-          text: `正在上传，请稍候`
-        }
+          text: `正在上传，请稍候`,
+        },
       })
       this.readAsCsvAndExcel(list[0], this.insertInfographicChart.bind(this))
     } else {
@@ -266,9 +272,11 @@ export class DropUploadDirective {
 
   public insertSingleChart(name: string, blockId: string, templateId: string, data: any): void {
     const newData = this.filterEmptyValueArr(data)
-    let block = _.cloneDeep(_.find(this.chartList, function (o) {
-      return o.templateId === templateId
-    }))
+    let block = _.cloneDeep(
+      _.find(this.chartList, function (o) {
+        return o.templateId === templateId
+      })
+    )
     block.projectId = this.projectId
     block.blockId = blockId
     block.position = { top: 0, left: 0 }
@@ -284,10 +292,10 @@ export class DropUploadDirective {
         target: {
           blockId: block.blockId,
           pageId: this.pageId,
-          type: block.type
+          type: block.type,
         },
         method: 'add',
-        block: block
+        block: block,
       }
       this._store.dispatch(new ProjectActions.UpdateCurrentChartProjectArticleAction(this.projectId, addData))
     } else {
@@ -296,21 +304,23 @@ export class DropUploadDirective {
           block: block,
           projectId: this.projectId,
           pageId: this.pageId,
-        }
+        },
       })
     }
     setTimeout(() => {
       this.toastr.success(null, '上传成功')
-    }, 500);
+    }, 500)
   }
 
   public insertInfographicChart(name: string, blockId: string, templateId: string, data: Array<Array<string>>): void {
     const newData = this.filterEmptyValueArr(data)
     let scale: number = Number.parseInt(document.querySelector('.page-size span').innerHTML)
     let left: number, top: number
-    let block = _.cloneDeep(_.find(this.chartList, function (o) {
-      return o.templateId === templateId
-    }))
+    let block = _.cloneDeep(
+      _.find(this.chartList, function (o) {
+        return o.templateId === templateId
+      })
+    )
     block.projectId = this.projectId
     block.blockId = blockId
     block.dataSrc.data[0] = newData
@@ -329,16 +339,16 @@ export class DropUploadDirective {
     }
     block.position = {
       top: top,
-      left: left
+      left: left,
     }
     let addData: UpdateProjectContent = {
       target: {
         blockId: block.blockId,
         pageId: this.pageId,
-        type: block.type
+        type: block.type,
       },
       method: 'add',
-      block: block
+      block: block,
     }
     this._dataTransmissionService.saveProcess('success')
     this._store.dispatch(new ProjectActions.UpdateCurrentProjectArticleAction(this.projectId, addData))
@@ -396,16 +406,16 @@ export class DropUploadDirective {
     }
     newBlock.position = {
       top: top,
-      left: left
+      left: left,
     }
     const newData: UpdateProjectContent = {
       target: {
         blockId: newBlock.blockId,
         pageId: this.pageId,
-        type: 'image'
+        type: 'image',
       },
       method: 'add',
-      block: newBlock
+      block: newBlock,
     }
     this._dataTransmissionService.saveProcess('success')
     this._store.dispatch(new UpdateCurrentProjectArticleAction(this.projectId, newData))
@@ -413,21 +423,27 @@ export class DropUploadDirective {
     setTimeout(() => {
       this._dataTransmissionService.sendSidebarState('image')
       this.toastr.success(null, '上传成功')
-    }, 500);
+    }, 500)
     setTimeout(() => {
       this._dataTransmissionService.sendImageSidebarSwitch(true)
-    }, 800);
+    }, 800)
   }
 
   // helpers
   // =========================================
   // =========================================
 
-  private readAsCsvAndExcel(files: File, callback: (name: string, blockId: string, templateId: string, daraSrc: Array<Array<string>>) => void): void {
+  private readAsCsvAndExcel(
+    files: File,
+    callback: (name: string, blockId: string, templateId: string, daraSrc: Array<Array<string>>) => void
+  ): void {
     const blockId: string = this._utilsService.generate_uuid()
     const name: string = files.name.split('.')[0]
     let isCSV: boolean = false
-    if (files.type !== 'application/vnd.ms-excel' && files.type !== 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet') {
+    if (
+      files.type !== 'application/vnd.ms-excel' &&
+      files.type !== 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+    ) {
       isCSV = true
     } else {
       isCSV = false
@@ -442,7 +458,7 @@ export class DropUploadDirective {
         reader.readAsText(files, 'gb2312')
         reader.onload = function () {
           data = reader.result
-          dataSrc = _.map(_.dropRight(data.split(/\n/)) as any, item => item.split(','))
+          dataSrc = _.map(_.dropRight(data.split(/\n/)) as any, (item) => item.split(','))
           if (dataSrc.length === 0) {
             console.log(`failed`)
             if (that.projectType === 'chart') {
@@ -461,9 +477,11 @@ export class DropUploadDirective {
         reader.onload = function (e) {
           data = e.target['result']
           wb = XLSX.read(data, {
-            type: 'binary'
+            type: 'binary',
           })
-          dataSrc = _.map(_.dropRight(XLSX.utils.sheet_to_csv(wb.Sheets[wb.SheetNames[0]]).split(/\n/)), item => item.split(','))
+          dataSrc = _.map(_.dropRight(XLSX.utils.sheet_to_csv(wb.Sheets[wb.SheetNames[0]]).split(/\n/)), (item) =>
+            item.split(',')
+          )
           if (dataSrc.length === 0) {
             console.log(`failed`)
             if (that.projectType === 'chart') {
@@ -485,7 +503,7 @@ export class DropUploadDirective {
 
   private getSingleChartCsvFile(ev: MouseEvent): File {
     const files = ev['dataTransfer'].files
-    const filterList = _.filter(files, item => /\.(xlsx|xls|XLSX|XLS|csv|CSV)$/.test(item.name))
+    const filterList = _.filter(files, (item) => /\.(xlsx|xls|XLSX|XLS|csv|CSV)$/.test(item.name))
     return filterList[0]
   }
 
@@ -495,10 +513,10 @@ export class DropUploadDirective {
       target: {
         pageId: this.pageId,
         type: 'article',
-        target: 'redo'
+        target: 'redo',
       },
       method: 'put',
-      design: newDesign
+      design: newDesign,
     }
     this._store.dispatch(new UpdateCurrentChartProjectArticleAction(this.projectId, newData))
   }
@@ -508,17 +526,20 @@ export class DropUploadDirective {
     const typeList: number[] = this.getDataSrcTypeList(newData)
     let chartTemplateIndex = 0
     if (typeList.length === 2 && (typeList[0] === 0 || typeList[1] === 0)) {
-      const count: number = newData[typeList.findIndex(n => n === 0)].reduce((prev: number, cur: number) => prev += Number(cur), 0)
+      const count: number = newData[typeList.findIndex((n) => n === 0)].reduce(
+        (prev: number, cur: number) => (prev += Number(cur)),
+        0
+      )
       if ((0.9 < count && count < 1.1) || (95 < count && count < 105)) {
         chartTemplateIndex = 0
       } else {
         chartTemplateIndex = 1
       }
     } else if (typeList.length >= 3) {
-      const flag: number = (typeList.slice(1)).reduce((prev: number, cur: number) => prev += Number(cur), 0)
+      const flag: number = typeList.slice(1).reduce((prev: number, cur: number) => (prev += Number(cur)), 0)
       if (typeList[0] === 1 && flag === 0) {
         chartTemplateIndex = 2
-      } else if (typeList.find(n => n === 0) !== undefined) {
+      } else if (typeList.find((n) => n === 0) !== undefined) {
         chartTemplateIndex = 3
       } else {
         chartTemplateIndex = 4
@@ -532,7 +553,7 @@ export class DropUploadDirective {
   private getDataSrcTypeList(data: Array<Array<string>>): Array<number> {
     const typeList: number[] = []
     for (let i = 0; i < data.length; i++) {
-      const list = _.filter(data[i], item => {
+      const list = _.filter(data[i], (item) => {
         if (item === '') return true
         return isNaN(item as any)
       })
@@ -558,7 +579,7 @@ export class DropUploadDirective {
     const vColIndex = _.findIndex(dataMap, (o: any) => {
       return o.function === 'vCol'
     })
-    if ((block.templateId === this.chartTemplateList[0]) || block.templateId === this.chartTemplateList[1]) {
+    if (block.templateId === this.chartTemplateList[0] || block.templateId === this.chartTemplateList[1]) {
       if (typeList[0] === 1) {
         dataMap[objColIndex].index = 0
         dataMap[vColIndex].index = 1
@@ -567,7 +588,7 @@ export class DropUploadDirective {
         dataMap[vColIndex].index = 0
       }
     } else if (block.templateId === this.chartTemplateList[3]) {
-      const objColIndex = typeList.findIndex(n => n === 0)
+      const objColIndex = typeList.findIndex((n) => n === 0)
       dataMap[vColIndex].index = objColIndex
     }
   }
@@ -579,11 +600,11 @@ export class DropUploadDirective {
       blockBoxList.each((k, v) => {
         blockList.push($(v).attr('chartid'))
       })
-      const index = blockList.findIndex(x => x === newBlock.blockId);
+      const index = blockList.findIndex((x) => x === newBlock.blockId)
       if (index !== -1) {
         $(blockBoxList[index]).click()
       }
-    }, 300);
+    }, 300)
   }
 
   private checkUploadState(file: File, callback: (url: string) => void): void {
@@ -601,7 +622,7 @@ export class DropUploadDirective {
         } else {
           setTimeout(() => {
             that.bsModalRef.hide()
-          }, 200);
+          }, 200)
           that.showUpqradeUserAccountModal()
         }
       }
@@ -614,50 +635,53 @@ export class DropUploadDirective {
         initialState: {
           chaeckType: 0,
           vipIds: ['6'],
-          svipIds: ['6']
-        }
+          svipIds: ['6'],
+        },
       })
     } else {
       setTimeout(() => {
         this.bsModalRef.hide()
-      }, 200);
+      }, 200)
       this.toastr.warning(null, '图片存储超限')
     }
   }
 
   private filterEmptyValueArr(data: Array<Array<string>>): Array<Array<string>> {
     // 输出有数字的二维数组，中间空值不过滤（过滤多余的空值）
-    let newData = _.cloneDeep(data);
-    let colNumArr = [];
-    let rowNumArr = [];
+    let newData = _.cloneDeep(data)
+    let colNumArr = []
+    let rowNumArr = []
     let filterArr = newData.map((item, index) => {
       // 找出有长度的数组, 将 index 存进 colNumArr, 找最大 index
       if (_.compact(item).length > 0) {
-        colNumArr.push(index);
+        colNumArr.push(index)
       }
       // 找出数组有值的最后一个index, 将 index 存进 rowNumArr
       item.map((i, ind) => {
         if (i) {
-          rowNumArr.push(ind);
+          rowNumArr.push(ind)
         }
-        return i;
+        return i
       })
-      return item;
+      return item
     })
     if (colNumArr.length) {
-      filterArr.length = Math.max(...colNumArr) + 1;
+      filterArr.length = Math.max(...colNumArr) + 1
     } else {
-      newData = _.map(newData[0], item => { return _.compact(item) }).filter(d => d.length > 0)
-    };
+      newData = _.map(newData[0], (item) => {
+        return _.compact(item)
+      }).filter((d) => d.length > 0)
+    }
     if (rowNumArr.length) {
-      newData = filterArr.map(item => {
-        item.length = Math.max(...rowNumArr) + 1;
-        return item;
+      newData = filterArr.map((item) => {
+        item.length = Math.max(...rowNumArr) + 1
+        return item
       })
     } else {
-      newData = _.map(newData[0], item => { return _.compact(item) }).filter(d => d.length > 0);
+      newData = _.map(newData[0], (item) => {
+        return _.compact(item)
+      }).filter((d) => d.length > 0)
     }
     return newData
   }
-
 }

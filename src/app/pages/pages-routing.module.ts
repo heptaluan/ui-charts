@@ -1,16 +1,16 @@
 /*
  * @Description: 页面路由
  */
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { PagesComponent } from './pages.component';
-import { AuthGuard } from '../auth-guard.service';
-import { DownloadComponent } from './download/download.component';
-import { CaseComponent } from './case/case.component';
-import { IndexIntroduceComponent } from './index-introduce/index-introduce.component';
-import { InvitationComponent } from './invitation/invitation.component';
-import { ExchangePhoneComponent } from './exchange-phone/exchange-phone.component';
-import { IndexIntroduceRegisterComponent } from './index-introduce-register/index-introduce-register.component';
+import { NgModule } from '@angular/core'
+import { Routes, RouterModule } from '@angular/router'
+import { PagesComponent } from './pages.component'
+import { AuthGuard } from '../auth-guard.service'
+import { DownloadComponent } from './download/download.component'
+import { CaseComponent } from './case/case.component'
+import { IndexIntroduceComponent } from './index-introduce/index-introduce.component'
+import { InvitationComponent } from './invitation/invitation.component'
+import { ExchangePhoneComponent } from './exchange-phone/exchange-phone.component'
+import { IndexIntroduceRegisterComponent } from './index-introduce-register/index-introduce-register.component'
 
 const routes: Routes = [
   {
@@ -32,15 +32,15 @@ const routes: Routes = [
       { path: 'index/userhelp', component: IndexIntroduceComponent },
       { path: 'case', component: CaseComponent },
       { path: 'exchange', component: ExchangePhoneComponent },
-    ]
+    ],
   },
   { path: 'workspace', loadChildren: './workspace/workspace.module#WorkspaceModule' },
-  { path: 'download', component: DownloadComponent }
-];
+  { path: 'download', component: DownloadComponent },
+]
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
-  providers: [AuthGuard]
+  providers: [AuthGuard],
 })
-export class PagesRoutingModule { }
+export class PagesRoutingModule {}
