@@ -1,1 +1,1 @@
-export * from './dy-carousel.component';
+export * from './dy-carousel.component'
