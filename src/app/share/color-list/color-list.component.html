@@ -1,7 +1,12 @@
 <div class="wrap">
-  <div appClickOutside [bindFlag]="bindFlag" (onClickOutSide)="onClickOutSide()" class="color-list-box"
-    [ngStyle]="{'background': colorSeleced}" (click)="handleClicked()">
-  </div>
+  <div
+    appClickOutside
+    [bindFlag]="bindFlag"
+    (onClickOutSide)="onClickOutSide()"
+    class="color-list-box"
+    [ngStyle]="{ background: colorSeleced }"
+    (click)="handleClicked()"
+  ></div>
 </div>
 
 <ng-template #dyncomp></ng-template>

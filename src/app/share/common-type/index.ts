@@ -1,1 +1,1 @@
-export * from './chartDisplayDic';
+export * from './chartDisplayDic'

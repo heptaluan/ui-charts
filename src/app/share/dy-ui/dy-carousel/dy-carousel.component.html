@@ -3,17 +3,15 @@
     <ul class="swiper-slide" *ngFor="let charts of showArr; let ind = index">
       <li
         *ngFor="let item of charts; let i = index"
-        [ngStyle]="{ 'margin-bottom': i < perLineNum ? getBottom() : ''}"
+        [ngStyle]="{ 'margin-bottom': i < perLineNum ? getBottom() : '' }"
         (click)="onClick(item, i + 1)"
-        >
-        <!-- (mouseenter)="onMouseEnter(i, item, ind)"
-        (mouseleave)="onMouseLeave(i, item, ind)" -->
-        <div #slider class="img" [ngStyle]="{ 'background': getUrl(item.bgUrl)}">
+      >
+        <div #slider class="img" [ngStyle]="{ background: getUrl(item.bgUrl) }">
           <div class="dynamic-chart" *ngIf="item?.dynamicIcon">动态</div>
           <div class="new" *ngIf="item?.new"></div>
         </div>
-        <h3>{{item.name}}</h3>
-        <p class="desc" *ngIf="item.desc">{{item.desc}}</p>
+        <h3>{{ item.name }}</h3>
+        <p class="desc" *ngIf="item.desc">{{ item.desc }}</p>
       </li>
     </ul>
   </div>

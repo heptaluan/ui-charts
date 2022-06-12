@@ -1,26 +1,37 @@
-import { Component, OnInit, Output, EventEmitter, Input, ElementRef, ViewChild, ComponentFactoryResolver, ViewContainerRef, ComponentRef, SimpleChanges } from '@angular/core';
-import { WheelColorPickerComponent } from '../wheel-color-picker/wheel-color-picker.component';
+import {
+  Component,
+  OnInit,
+  Output,
+  EventEmitter,
+  Input,
+  ElementRef,
+  ViewChild,
+  ComponentFactoryResolver,
+  ViewContainerRef,
+  ComponentRef,
+  SimpleChanges,
+} from '@angular/core'
+import { WheelColorPickerComponent } from '../wheel-color-picker/wheel-color-picker.component'
 
 interface ColorPickerData {
-  clientRect: any,
-  isShowColorPicker: boolean,
-  themColorList: string[],
-  isOpacityShow: boolean,
-  isOverflow: boolean,
-  isGradientShow: boolean,
-  colorSeleced: string,
-  left: number,
+  clientRect: any
+  isShowColorPicker: boolean
+  themColorList: string[]
+  isOpacityShow: boolean
+  isOverflow: boolean
+  isGradientShow: boolean
+  colorSeleced: string
+  left: number
   top: number
 }
 
 @Component({
   selector: 'lx-color-list',
   templateUrl: './color-list.component.html',
-  styleUrls: ['./color-list.component.scss']
+  styleUrls: ['./color-list.component.scss'],
 })
-
 export class ColorListComponent implements OnInit {
-  @Input() clickPosition = '';
+  @Input() clickPosition = ''
 
   @Input() isOpacityShow: boolean = true
   @Input() isOverflow: boolean = false
@@ -39,10 +50,10 @@ export class ColorListComponent implements OnInit {
     '#b6c2ff',
     '#96edc1',
     '#ffbe92',
-    '#ffd6ae'
+    '#ffd6ae',
   ]
-  @Input() colorSeleced: string = "#ffffff"
-  colorSelecedData: string = "#ffffff"
+  @Input() colorSeleced: string = '#ffffff'
+  colorSelecedData: string = '#ffffff'
   @Output() onChanged = new EventEmitter()
   @ViewChild('dyncomp', { read: ViewContainerRef })
   private dyncomp: ViewContainerRef
@@ -52,30 +63,25 @@ export class ColorListComponent implements OnInit {
   public bindFlag: boolean = false
   public isSingle: boolean = false
 
-  constructor(
-    private _el: ElementRef,
-    private componentFactoryResolver: ComponentFactoryResolver
-  ) { }
+  constructor(private _el: ElementRef, private componentFactoryResolver: ComponentFactoryResolver) {}
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.colorSeleced && changes.colorSeleced.currentValue) {
       this.colorSeleced = this.formatBackground(changes.colorSeleced.currentValue)
-      this.colorSelecedData = changes.colorSeleced.currentValue;
+      this.colorSelecedData = changes.colorSeleced.currentValue
     }
   }
 
-  ngOnInit() { }
+  ngOnInit() {}
 
   public formatBackground(color: string): string {
-    return ~color.indexOf(',')
-      ? this.formatGradientColor(JSON.parse(color.replace(RegExp("\'", "g"), "\"")))
-      : color
+    return ~color.indexOf(',') ? this.formatGradientColor(JSON.parse(color.replace(RegExp("'", 'g'), '"'))) : color
   }
 
   public handleClicked(): void {
     if (this.clickPosition === 'bgColor') {
       // 百度统计
-      window['_hmt'].push(['_trackEvent', 'editpage', 'edit-desktop', 'edit-right-changeBgColor']);
+      window['_hmt'].push(['_trackEvent', 'editpage', 'edit-desktop', 'edit-right-changeBgColor'])
     }
     this.isShowColorPicker = !this.isShowColorPicker
     this.bindFlag = this.isShowColorPicker
@@ -89,7 +95,7 @@ export class ColorListComponent implements OnInit {
       isGradientShow: this.isGradientShow,
       colorSeleced: this.colorSelecedData,
       left: clientRect.x - 212,
-      top: document.body.clientHeight - clientRect.y < 320 ? document.body.clientHeight - 320 : clientRect.y
+      top: document.body.clientHeight - clientRect.y < 320 ? document.body.clientHeight - 320 : clientRect.y,
     })
   }
 
@@ -106,13 +112,13 @@ export class ColorListComponent implements OnInit {
         this.dyncomp.clear()
         this.comp = this.dyncomp.createComponent(componentFactory)
         this.comp.instance.initRefData(data)
-        this.comp.instance.onChanged.subscribe(res => {
+        this.comp.instance.onChanged.subscribe((res) => {
           if (res) {
             this.colorSeleced = this.formatBackground(res)
             this.onChanged.emit(res)
           }
         })
-        this.comp.instance.onClosed.subscribe(res => {
+        this.comp.instance.onClosed.subscribe((res) => {
           res && this.comp.destroy()
         })
       } catch (err) {
@@ -125,7 +131,7 @@ export class ColorListComponent implements OnInit {
   private formatGradientColor(colorList: string[]): string {
     let length = colorList.length
     let colorPos = ''
-    this.sortGradient(colorList).map(item => {
+    this.sortGradient(colorList).map((item) => {
       if (item.indexOf('angle') < 0) {
         colorPos += `${this.colorToRGB(item.split(':')[0], false)} ${this.toPercent(item.split(':')[1])},`
       }
@@ -162,11 +168,10 @@ export class ColorListComponent implements OnInit {
     if (color.length === 3) {
       color = color[0] + color[0] + color[1] + color[1] + color[2] + color[2]
     }
-    color4 = Math.round((parseInt(color.substring(7, 9), 16) / 255) * 100) / 100 || 1;
+    color4 = Math.round((parseInt(color.substring(7, 9), 16) / 255) * 100) / 100 || 1
     if (color.length === 8) {
-      color4 =
-        Math.round((parseInt(color[6] + color[7], 16) / 255) * 100) / 100
-      color = color.substring(0, 6);
+      color4 = Math.round((parseInt(color[6] + color[7], 16) / 255) * 100) / 100
+      color = color.substring(0, 6)
     }
     if (/^[0-9a-fA-F]{6}$/.test(color)) {
       color1 = parseInt(color.substr(0, 2), 16)
@@ -188,5 +193,4 @@ export class ColorListComponent implements OnInit {
     str += '%'
     return str
   }
-
 }
