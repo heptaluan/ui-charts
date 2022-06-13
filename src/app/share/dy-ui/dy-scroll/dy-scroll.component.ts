@@ -9,15 +9,9 @@ import {
   Input,
   SimpleChanges,
   Output,
-  EventEmitter
-} from '@angular/core';
-// import BScroll from '@better-scroll/core';
-// import ScrollBar from '@better-scroll/scroll-bar';
-// import MouseWheel from '@better-scroll/mouse-wheel';
-
-import { timer } from 'rxjs/observable/timer';
-// BScroll.use(ScrollBar);
-// BScroll.use(MouseWheel);
+  EventEmitter,
+} from '@angular/core'
+import { timer } from 'rxjs/observable/timer'
 
 @Component({
   selector: 'app-dy-scroll',
@@ -33,20 +27,20 @@ import { timer } from 'rxjs/observable/timer';
         height: 100%;
         overflow: hidden;
       }
-    `
+    `,
   ],
   encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DyScrollComponent implements OnInit, AfterViewInit {
-  private bs;
+  private bs
 
-  @Input() data: any[];
-  @Input() refreshDelay = 50;
+  @Input() data: any[]
+  @Input() refreshDelay = 50
 
-  @Output() onScrollEnd = new EventEmitter<number>();
+  @Output() onScrollEnd = new EventEmitter<number>()
 
-  @ViewChild('wrap') private wrapRef: ElementRef;
+  @ViewChild('wrap') private wrapRef: ElementRef
 
   constructor(readonly el: ElementRef) {}
 
@@ -58,31 +52,31 @@ export class DyScrollComponent implements OnInit, AfterViewInit {
         interactive: true,
         fade: false,
       },
-      mouseWheel: {}
-    });
+      mouseWheel: {},
+    })
     this.bs.on('scrollEnd', ({ y }) => {
-      this.onScrollEnd.emit(y);
-    });
+      this.onScrollEnd.emit(y)
+    })
   }
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['data']) {
-      this.refreshScroll();
+      this.refreshScroll()
     }
   }
 
   private refresh() {
-    this.bs.refresh();
+    this.bs.refresh()
   }
 
   scrollToElement(...args) {
-    this.bs.scrollToElement.apply(this.bs, args);
+    this.bs.scrollToElement.apply(this.bs, args)
   }
 
   refreshScroll() {
     timer(this.refreshDelay).subscribe(() => {
-      this.refresh();
-    });
+      this.refresh()
+    })
   }
 
   scrollTo(...args) {}

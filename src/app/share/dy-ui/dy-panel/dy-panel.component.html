@@ -2,7 +2,12 @@
   <div class="panel-head">
     <h1>{{ name }}</h1>
     <div class="type-wrapper">
-      <span *ngFor="let item of typeArr; let i = index" [ngClass]="{ more: item.name === '更多' }" (click)="handleClickType(item, i + 1)">{{ item.name }}</span>
+      <span
+        *ngFor="let item of typeArr; let i = index"
+        [ngClass]="{ more: item.name === '更多' }"
+        (click)="handleClickType(item, i + 1)"
+        >{{ item.name }}</span
+      >
     </div>
   </div>
   <ul class="panel-container" *ngIf="!isCarousel" [ngClass]="{ wider: showColunmNum === 2 }">
@@ -12,21 +17,21 @@
       [ngStyle]="{ 'margin-bottom': getBottom(i) }"
       (click)="handleClick(item, i + 1)"
       (mouseleave)="activeIndex = -1"
-    > 
+    >
       <div class="dynamic-chart" *ngIf="item.dynamic === '1'">动态</div>
       <div class="img-box">
-        <img [src]="item.imgUrl"
-        (error)="imgerror($event)"
-        [alt]="item.name" (mouseenter)="onMouseEnter(i, item)" />
+        <img [src]="item.imgUrl" (error)="imgerror($event)" [alt]="item.name" (mouseenter)="onMouseEnter(i, item)" />
       </div>
-      
+
       <p class="name" *ngIf="activeIndex !== i">{{ item.name }}</p>
       <div class="edit" (click)="edit(item, $event)" *ngIf="activeIndex === i"><i></i><span>编辑</span></div>
       <div class="collect-wrapper" *ngIf="activeIndex === i" [ngClass]="{ active: activeIndex === i }">
         <div class="collect-inner-wrapper">
           <p class="title">{{ item.name }}</p>
           <p class="collect-show">
-            <span class="collect" [ngClass]="{ active: item.collected }" (click)="collect(item, $event)"><i></i>收藏</span>
+            <span class="collect" [ngClass]="{ active: item.collected }" (click)="collect(item, $event)"
+              ><i></i>收藏</span
+            >
             <span class="used"><i></i>{{ item.count }}人使用</span>
           </p>
         </div>

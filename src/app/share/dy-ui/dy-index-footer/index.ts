@@ -1,1 +1,1 @@
-export * from './dy-index-footer.component';
+export * from './dy-index-footer.component'

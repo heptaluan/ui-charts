@@ -1,1 +1,1 @@
-export * from './dy-panel.component';
+export * from './dy-panel.component'

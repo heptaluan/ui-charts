@@ -1,5 +1,6 @@
 .panel-wrapper {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo",  "Consolas", sans-serif !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei',
+    'Hiragino Sans GB', 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, 'Monaco', 'Menlo', 'Consolas', sans-serif !important;
   min-width: 930px;
   .panel-head {
     height: 36px;
@@ -158,7 +159,7 @@
         border-radius: 0 0 6px 6px;
         background: #fff;
         .collect-inner-wrapper {
-          transform: scale(.87);
+          transform: scale(0.87);
           .title {
             color: #000000;
             height: 20px;

@@ -1,1 +1,1 @@
-export * from './dy-search.component';
+export * from './dy-search.component'

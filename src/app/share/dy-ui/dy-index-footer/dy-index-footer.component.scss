@@ -285,7 +285,8 @@ a:hover {
         //   border-color: #fff transparent transparent transparent;
         // }
       }
-      &.phone, &.email {
+      &.phone,
+      &.email {
         width: 153px;
       }
     }
@@ -345,6 +346,5 @@ a:hover {
         display: block;
       }
     }
-
   }
 }

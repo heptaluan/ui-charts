@@ -19,11 +19,23 @@
         </li>
       </ul>
       <p class="copyright">
-        <span>Copyright 武汉镝次元数据科技有限公司 © 2016  鄂ICP备15019128号-3 <a class="footer-icon" target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=42011102003836"><i></i></a>鄂公网安备 42011102003836号</span>
+        <span
+          >Copyright 武汉镝次元数据科技有限公司 © 2016 鄂ICP备15019128号-3
+          <a
+            class="footer-icon"
+            target="_blank"
+            href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=42011102003836"
+            ><i></i></a
+          >鄂公网安备 42011102003836号</span
+        >
       </p>
     </div>
     <div class="qrcode-wrapper">
-      <div class="icon" (mouseenter)="handleItemCode('wechat', 'enter')" (mouseleave)="handleItemCode('wechat', 'leave')">
+      <div
+        class="icon"
+        (mouseenter)="handleItemCode('wechat', 'enter')"
+        (mouseleave)="handleItemCode('wechat', 'leave')"
+      >
         <div class="qrcode wechat" *ngIf="qrcodeTip === 'wechat'">
           <img src="/dyassets/images/index/wechat-service.png" alt="" />
           <p>微信服务号</p>
