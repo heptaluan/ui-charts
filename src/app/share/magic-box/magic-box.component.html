@@ -1,15 +1,40 @@
-<div [hidden]="projectType === 'chart'" class="resizable-handler ui-resizable-handle ui-resizable-nw" id="nwhandle_{{blockId}}"></div>
-<div [hidden]="projectType === 'chart'" class="resizable-handler ui-resizable-handle ui-resizable-sw" id="swhandle_{{blockId}}"></div>
-<div [hidden]="projectType === 'chart'" class="resizable-handler ui-resizable-handle ui-resizable-se" id="sehandle_{{blockId}}"></div>
-<div [hidden]="projectType === 'chart'" class="resizable-handler ui-resizable-handle ui-resizable-ne" id="nehandle_{{blockId}}"></div>
+<div
+  [hidden]="projectType === 'chart'"
+  class="resizable-handler ui-resizable-handle ui-resizable-nw"
+  id="nwhandle_{{ blockId }}"
+></div>
+<div
+  [hidden]="projectType === 'chart'"
+  class="resizable-handler ui-resizable-handle ui-resizable-sw"
+  id="swhandle_{{ blockId }}"
+></div>
+<div
+  [hidden]="projectType === 'chart'"
+  class="resizable-handler ui-resizable-handle ui-resizable-se"
+  id="sehandle_{{ blockId }}"
+></div>
+<div
+  [hidden]="projectType === 'chart'"
+  class="resizable-handler ui-resizable-handle ui-resizable-ne"
+  id="nehandle_{{ blockId }}"
+></div>
 
-<div [hidden]="projectType === 'chart'" class="resizable-handler ui-resizable-handle ui-resizable-w" id="whandle_{{blockId}}"></div>
-<div [hidden]="projectType === 'chart'" class="resizable-handler ui-resizable-handle ui-resizable-e" id="ehandle_{{blockId}}"></div>
-<div [hidden]="projectType === 'chart'" class="resizable-handler ui-resizable-handle ui-resizable-s" id="shandle_{{blockId}}"></div>
-
-
-
+<div
+  [hidden]="projectType === 'chart'"
+  class="resizable-handler ui-resizable-handle ui-resizable-w"
+  id="whandle_{{ blockId }}"
+></div>
+<div
+  [hidden]="projectType === 'chart'"
+  class="resizable-handler ui-resizable-handle ui-resizable-e"
+  id="ehandle_{{ blockId }}"
+></div>
+<div
+  [hidden]="projectType === 'chart'"
+  class="resizable-handler ui-resizable-handle ui-resizable-s"
+  id="shandle_{{ blockId }}"
+></div>
 
 <ng-container>
-  <div [hidden]="hideRotateHandle" class="rotate rotate_{{blockId}}"></div>
+  <div [hidden]="hideRotateHandle" class="rotate rotate_{{ blockId }}"></div>
 </ng-container>

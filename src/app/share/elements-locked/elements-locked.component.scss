@@ -1,5 +1,3 @@
-
-
 .locked-box {
   .top-fill {
     height: 115px;
@@ -14,14 +12,14 @@
     left: 0;
     z-index: 1000;
     text-align: center;
-  
+
     p {
       margin-top: 20px;
       margin-bottom: 16px;
       font-size: 16px;
       color: #ffffff;
     }
-  
+
     button {
       padding: 7px 33px;
       background-image: linear-gradient(180deg, #525252 0%, #2e2e2e 100%);
@@ -30,9 +28,9 @@
       outline: none;
       cursor: pointer;
       font-size: 14px;
-      transition: all .3s;
+      transition: all 0.3s;
       color: #fff;
-  
+
       &:hover {
         background-image: linear-gradient(180deg, #474747 0%, #242424 100%);
         border-radius: 2px;
@@ -53,4 +51,3 @@
     top: 40px;
   }
 }
-

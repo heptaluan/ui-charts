@@ -1,9 +1,16 @@
 <div class="input-group">
-  <div class="check-wrapper" [ngClass]="{'long': !isShowInput}">
+  <div class="check-wrapper" [ngClass]="{ long: !isShowInput }">
     <lx-checkbox class="switch" [checked]="checked" (change)="hanelSwitchChange($event)"></lx-checkbox>
-    <span class="input-title">{{inputTitle}}</span>
-  </div> 
-  <span class="button" (click)="handleBtnClick()">{{buttonValue}}</span>
-  <input [value]="inputDefaultValue" #input *ngIf="checked && isShowInput" type="text" class="form-control" (blur)="handleInputBlur()" (keyup)="handleInputKeyup($event)">
+    <span class="input-title">{{ inputTitle }}</span>
+  </div>
+  <span class="button" (click)="handleBtnClick()">{{ buttonValue }}</span>
+  <input
+    [value]="inputDefaultValue"
+    #input
+    *ngIf="checked && isShowInput"
+    type="text"
+    class="form-control"
+    (blur)="handleInputBlur()"
+    (keyup)="handleInputKeyup($event)"
+  />
 </div>
-

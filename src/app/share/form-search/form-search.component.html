@@ -1,15 +1,15 @@
 <div class="input-group" [hidden]="isHome">
   <i class="icon iconfont icon-sousuo"></i>
-  <input [(ngModel)]="searchArea" class="form-control" type="text" placeholder={{placeholder}}>
+  <input [(ngModel)]="searchArea" class="form-control" type="text" placeholder="{{ placeholder }}" />
   <button *ngIf="searchArea" type="button" class="close close-icon" aria-label="Close" (click)="resetSearch()">
-  <i class="icon iconfont icon-x"></i>
+    <i class="icon iconfont icon-x"></i>
   </button>
 </div>
 
 <div class="input-group home" [hidden]="!isHome">
-  <input [(ngModel)]="searchArea" class="form-control" type="text" placeholder="请输入搜索内容">
+  <input [(ngModel)]="searchArea" class="form-control" type="text" placeholder="请输入搜索内容" />
   <i class="icon iconfont icon-sousuo"></i>
   <button *ngIf="searchArea" type="button" class="close close-icon" aria-label="Close" (click)="resetSearch()">
-  <i class="icon iconfont icon-x"></i>
+    <i class="icon iconfont icon-x"></i>
   </button>
 </div>

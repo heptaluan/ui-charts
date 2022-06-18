@@ -1,37 +1,57 @@
 <div class="browser-tip" *ngIf="!isCloseTip && !isChrome">
-  <span>推荐<a href="https://www.google.cn/chrome/" target="_blank">下载谷歌Chrome浏览器</a>，获得创作最佳体验</span> 
+  <span>推荐<a href="https://www.google.cn/chrome/" target="_blank">下载谷歌Chrome浏览器</a>，获得创作最佳体验</span>
   <i class="icon iconfont icon-x" (click)="closeTip()"></i>
 </div>
 <div class="dy-navbar">
   <div class="navbar-nav">
-    <a [routerLink]="['/pages/home', 'index' ]" onclick="_hmt.push(['_trackEvent', 'navigation', 'navi-head', 'navi-logo'])"><img src="/dyassets/images/logo-new.svg" alt=""></a>
+    <a
+      [routerLink]="['/pages/home', 'index']"
+      onclick="_hmt.push(['_trackEvent', 'navigation', 'navi-head', 'navi-logo'])"
+      ><img src="/dyassets/images/logo-new.svg" alt=""
+    /></a>
   </div>
 
-  <div class="actions" *ngIf="this.userName" >
-    <!-- <a *ngIf="isVpl === 'None'" class="upgrate" [routerLink]="['/pages', 'price', 'index']" onclick="_hmt.push(['_trackEvent', 'me', 'me', 'me-navi-upgrade'])"></a> -->
-    <!-- <a *ngIf="isVpl !== 'None'" class="upgrate-c"></a> -->
+  <div class="actions" *ngIf="this.userName">
     <a class="upgrate-c vip" (click)="goPrice()">开通会员</a>
-    <a href="https://www.dydata.io/?hmsr=dycharts&hmpl=&hmcu=&hmkw=&hmci=" class="upgrate-c data" target="_blank" onclick="_hmt.push(['_trackEvent', 'homepage', 'menu', 'dydata'])">数据资源</a>
+    <a
+      href="https://www.dydata.io/?hmsr=dycharts&hmpl=&hmcu=&hmkw=&hmci="
+      class="upgrate-c data"
+      target="_blank"
+      onclick="_hmt.push(['_trackEvent', 'homepage', 'menu', 'dydata'])"
+      >数据资源</a
+    >
     <a class="upgrate-c" (click)="goMedia()">商务合作通道</a>
     <ng-container *ngIf="userMenu.length > 0">
-      <img class="rounded-circle user-avatar no-click-area" src="{{config.picture}}" (click)='userDropDown()' alt="">
+      <img
+        class="rounded-circle user-avatar no-click-area"
+        src="{{ config.picture }}"
+        (click)="userDropDown()"
+        alt=""
+      />
     </ng-container>
     <div class="user">
-      <p>{{this.userName}}</p>
-      <div class="vip-icon" *ngIf="isVpl !== 'None'" (click)='handleVip()'>
+      <p>{{ this.userName }}</p>
+      <div class="vip-icon" *ngIf="isVpl !== 'None'" (click)="handleVip()">
         <i [ngClass]="vipLogo"></i>
       </div>
     </div>
     <ul class="user-dropdown" *ngIf="userDropdownFlag" (mouseleave)="mouseouthide()">
-      <li (click)='handleItemClick(item)' *ngFor="let item of userMenu"><i></i><span>{{item}}</span></li>
+      <li (click)="handleItemClick(item)" *ngFor="let item of userMenu">
+        <i></i><span>{{ item }}</span>
+      </li>
     </ul>
   </div>
 
   <div class="login-btns" *ngIf="!this.userName">
     <a class="upgrate-c vip" (click)="goPrice()">开通会员</a>
-    <a href="https://www.dydata.io/?hmsr=dycharts&hmpl=&hmcu=&hmkw=&hmci=" class="upgrate-c data" target="_blank" onclick="_hmt.push(['_trackEvent', 'homepage', 'menu', 'dydata'])">数据资源</a>
+    <a
+      href="https://www.dydata.io/?hmsr=dycharts&hmpl=&hmcu=&hmkw=&hmci="
+      class="upgrate-c data"
+      target="_blank"
+      onclick="_hmt.push(['_trackEvent', 'homepage', 'menu', 'dydata'])"
+      >数据资源</a
+    >
     <a class="upgrate-c" (click)="goMedia()">商务合作通道</a>
     <a class="login" (click)="login()">登录/注册</a>
-    <!-- <a class="register" (click)="register()">&nbsp;&nbsp;注册</a> -->
   </div>
 </div>
