@@ -1,73 +1,61 @@
 :host ::ng-deep {
-    .modal-body {
-        width: 470px;
-        padding: 0 30px;
+  .modal-body {
+    width: 470px;
+    padding: 0 30px;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.65);
+    input[type='text'],
+    input[type='password'] {
+      height: 46px;
+      border: 1px solid #e1e3e6;
+      display: block;
+      border-radius: 2px;
+      line-height: 22px;
+      font-size: 16px;
+      color: hsl(214, 17%, 24%);
+      padding: 11px 20px 11px;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  .modal-header {
+    width: 470px;
+    border-bottom: none;
+    padding: 0;
+    min-height: 40px;
+    .modal-title {
+      width: 100%;
+      /* padding: 15px 0; */
+      line-height: 25px;
+      font-size: 18px;
+      color: #323b47;
+      margin-top: 40px;
+      font-weight: bold;
+    }
+    .icon-close {
+      cursor: pointer;
+      background: transparent;
+      border: none;
+      position: absolute;
+      right: 13px;
+      top: 11px;
+      &:focus {
+        outline: none;
+      }
+      .iconfont {
         font-size: 14px;
-        color:rgba(0,0,0,0.65);
-        input[type="text"], input[type="password"] {
-            height: 46px;
-            border: 1px solid #e1e3e6;
-            display: block;
-            border-radius: 2px;
-            line-height: 22px;
-            font-size: 16px;
-            color: hsl(214, 17%, 24%);
-            padding: 11px 20px 11px;
-            &:focus {
-                outline: none;
-            }
-        }
+      }
     }
+  }
 
-    .modal-header {
-        width: 470px;
-        border-bottom: none;
-        padding: 0;
-        min-height: 40px;
-        .modal-title {
-            width: 100%;
-            /* padding: 15px 0; */
-            line-height: 25px;
-            font-size: 18px;
-            color: #323b47;
-            margin-top: 40px;
-            font-weight: bold;
-        }
-        .icon-close {
-            cursor: pointer;
-            background: transparent;
-            border: none;
-            position: absolute;
-            right: 13px;
-            top: 11px;
-            &:focus {
-                outline: none;
-            }
-            .iconfont {
-                font-size: 14px;
-            }
-        }
-        // .close {
-        //     padding: 0;
-        //     margin-top: 15px;
-        //     margin-right: 15px;
-        //     position: absolute;
-        //     right: 0;
-        //     span {
-        //         font-weight: 200;
-        //     }
-        //     &:focus {
-        //         outline: none;
-        //     }
-        // }
+  .modal-footer {
+    width: 470px;
+    padding: 25px 30px 40px 30px;
+    border-top: none;
+    .dy-button-reverse {
+      border: 1px solid hsla(0, 0%, 61%, 0.6);
     }
-
-    .modal-footer {
-        width: 470px;
-        padding: 25px 30px 40px 30px;
-        border-top: none;
-        .dy-button-reverse {
-            border: 1px solid hsla(0,0%,61%,.6);
-        }
-    }
+  }
 }

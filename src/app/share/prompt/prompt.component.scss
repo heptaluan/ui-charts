@@ -15,10 +15,10 @@
   .modal-footer {
     padding: 0 30px 25px;
     border-top: none;
-    &> :not(:last-child) {
+    & > :not(:last-child) {
       margin-right: 7.5px;
     }
-    &> :not(:first-child) {
+    & > :not(:first-child) {
       margin-left: 7.5px;
     }
   }

@@ -1,149 +1,148 @@
-import { Injectable } from '@angular/core';
-import { Subject, Observable } from 'rxjs';
+import { Injectable } from '@angular/core'
+import { Subject, Observable } from 'rxjs'
 
 @Injectable()
 export class DataTransmissionService {
+  private subject = new Subject<any>()
 
-  private subject = new Subject<any>();
-
-  private scaleSubject = new Subject<any>();
+  private scaleSubject = new Subject<any>()
 
   // 参考线传递数据
-  private referSubject = new Subject<any>();
+  private referSubject = new Subject<any>()
 
   // 保存 gif 传递数据
-  private gifSubject = new Subject<any>();
+  private gifSubject = new Subject<any>()
 
   // 传递保存到手机进度数据
-  private progressSubject = new Subject<any>();
+  private progressSubject = new Subject<any>()
 
   // 传递重试状态
-  private retryDownloadSubject = new Subject<any>();
+  private retryDownloadSubject = new Subject<any>()
 
   // 传递是否需要显示边框
-  private borderSubject = new Subject<any>();
+  private borderSubject = new Subject<any>()
 
   // 传递svg对象
-  private svgSubject = new Subject<any>();
+  private svgSubject = new Subject<any>()
 
   // 传递blockId
-  private blockIdSubject = new Subject<any>();
+  private blockIdSubject = new Subject<any>()
 
   // 传递logo与水印
-  private logoWatermarkSubject = new Subject<any>();
+  private logoWatermarkSubject = new Subject<any>()
 
   // 传递加载状态
-  private saveLoadingSubject = new Subject<any>();
+  private saveLoadingSubject = new Subject<any>()
 
   // 传递顶部浏览器提示
-  private showTipSubject = new Subject<any>();
+  private showTipSubject = new Subject<any>()
 
   // 传递删除参考线 ID （传递参考线选择状态）
-  private getReferLineIdSubject = new Subject<any>();
+  private getReferLineIdSubject = new Subject<any>()
 
   // 传递组合数据
-  private groupSubject = new Subject<any>();
+  private groupSubject = new Subject<any>()
 
   // 传递路由数据
-  private exchangeSubject = new Subject<any>();
+  private exchangeSubject = new Subject<any>()
 
   sendExchange(flag) {
-    this.exchangeSubject.next(flag);
+    this.exchangeSubject.next(flag)
   }
 
   getExchange(): Observable<any> {
-    return this.exchangeSubject.asObservable();
+    return this.exchangeSubject.asObservable()
   }
 
   sendLogoWatermark(flag) {
-    this.logoWatermarkSubject.next(flag);
+    this.logoWatermarkSubject.next(flag)
   }
 
   getLogoWatermark() {
-    return this.logoWatermarkSubject.asObservable();
+    return this.logoWatermarkSubject.asObservable()
   }
 
   clearData() {
-    this.subject.next();
+    this.subject.next()
   }
 
   // 表格展开
   sendData(show: any) {
-    this.subject.next({ show: show });
+    this.subject.next({ show: show })
   }
 
   getData(): Observable<any> {
-    return this.subject.asObservable();
+    return this.subject.asObservable()
   }
 
   // block 传递缩放比例
   sendPageZoom(zoom: any) {
-    this.subject.next(zoom);
+    this.subject.next(zoom)
   }
 
   getPageZoom(): Observable<any> {
-    return this.subject.asObservable();
+    return this.subject.asObservable()
   }
 
   // 页面 缩放比例传递
   sendPageScaleChange(data: number) {
-    this.scaleSubject.next(data);
+    this.scaleSubject.next(data)
   }
 
   getPageScaleChange(): Observable<any> {
-    return this.scaleSubject.asObservable();
+    return this.scaleSubject.asObservable()
   }
 
   // 小工具增加参考线
   changeReferLine(data: string) {
-    this.referSubject.next(data);
+    this.referSubject.next(data)
   }
 
   getReferLine(): Observable<any> {
-    return this.referSubject.asObservable();
+    return this.referSubject.asObservable()
   }
 
   // 传递参考线选中状态
-  sendDeleteReferLineId(data: { type: string, id: string | undefined }) {
-    this.getReferLineIdSubject.next(data);
+  sendDeleteReferLineId(data: { type: string; id: string | undefined }) {
+    this.getReferLineIdSubject.next(data)
   }
 
   getDeleteReferLineId(): Observable<any> {
-    return this.getReferLineIdSubject.asObservable();
+    return this.getReferLineIdSubject.asObservable()
   }
 
   // 保存 gif
   saveGIF(data: string) {
-    this.gifSubject.next(data);
+    this.gifSubject.next(data)
   }
 
   getGIFData(): Observable<any> {
-    return this.gifSubject.asObservable();
+    return this.gifSubject.asObservable()
   }
 
   // 保存到手机进度
   saveProcess(data: string) {
-    this.progressSubject.next(data);
+    this.progressSubject.next(data)
   }
 
   // 获取手机下载进度
   getProcess() {
-    return this.progressSubject.asObservable();
+    return this.progressSubject.asObservable()
   }
 
   // 传递重试信息
   sendRetryStatus(data: string) {
-    this.retryDownloadSubject.next(data);
+    this.retryDownloadSubject.next(data)
   }
 
   // 获取重试
   getRetryStatus() {
-    return this.retryDownloadSubject.asObservable();
+    return this.retryDownloadSubject.asObservable()
   }
 
   // 获取边框状态
   getIsShowBorder() {
-    return this.borderSubject.asObservable();
+    return this.borderSubject.asObservable()
   }
 
   // 传送边框状态
@@ -158,7 +157,7 @@ export class DataTransmissionService {
 
   // 获取svg
   getSvg() {
-    return this.svgSubject.asObservable();
+    return this.svgSubject.asObservable()
   }
 
   // 传递
@@ -168,7 +167,7 @@ export class DataTransmissionService {
 
   // 获取svg
   getBlockId() {
-    return this.blockIdSubject.asObservable();
+    return this.blockIdSubject.asObservable()
   }
 
   // 传递加载状态
@@ -178,14 +177,14 @@ export class DataTransmissionService {
 
   // 获取加载状态
   getSaveLoading() {
-    return this.saveLoadingSubject.asObservable();
+    return this.saveLoadingSubject.asObservable()
   }
 
   // =====================
   // =====================
 
   // 右键菜单传值
-  private contextMenuSubject = new Subject<any>();
+  private contextMenuSubject = new Subject<any>()
 
   // 传递加载状态
   sendContextMenuData(data: any) {
@@ -194,14 +193,14 @@ export class DataTransmissionService {
 
   // 获取加载状态
   getContextMenuData() {
-    return this.contextMenuSubject.asObservable();
+    return this.contextMenuSubject.asObservable()
   }
 
   // =====================
   // =====================
 
   // 模板切换
-  private templateSwitchingSubject = new Subject<any>();
+  private templateSwitchingSubject = new Subject<any>()
 
   // 传递加载状态
   sendTemplateSwitchingData(data: any) {
@@ -210,7 +209,7 @@ export class DataTransmissionService {
 
   // 获取加载状态
   getTemplateSwitchingData() {
-    return this.templateSwitchingSubject.asObservable();
+    return this.templateSwitchingSubject.asObservable()
   }
 
   // 传递顶部浏览器提示
@@ -220,14 +219,14 @@ export class DataTransmissionService {
 
   // 获取顶部浏览器提示
   getShowTip() {
-    return this.showTipSubject.asObservable();
+    return this.showTipSubject.asObservable()
   }
 
   // =====================
   // =====================
 
   // 多选锁定
-  private lockedSubject = new Subject<any>();
+  private lockedSubject = new Subject<any>()
 
   // 传递加载状态
   sendLockedData(data: any) {
@@ -236,24 +235,24 @@ export class DataTransmissionService {
 
   // 获取加载状态
   getLockedData() {
-    return this.lockedSubject.asObservable();
+    return this.lockedSubject.asObservable()
   }
 
-  // 发送组合数据 
+  // 发送组合数据
   sendGroupData(data: any) {
-    this.groupSubject.next(data);
+    this.groupSubject.next(data)
   }
 
   // 获取组合数据
   getGroupData() {
-    return this.groupSubject.asObservable();
+    return this.groupSubject.asObservable()
   }
 
   // =====================
   // =====================
 
   // 切换主题
-  private toggleThememSubject = new Subject<any>();
+  private toggleThememSubject = new Subject<any>()
 
   // 传递加载状态
   sendToggleThememData(data: any) {
@@ -262,22 +261,22 @@ export class DataTransmissionService {
 
   // 获取加载状态
   getToggleThememData() {
-    return this.toggleThememSubject.asObservable();
+    return this.toggleThememSubject.asObservable()
   }
 
   // =====================
   // =====================
 
   // 传递展开状态
-  private sendSidebarStateSubject = new Subject<any>();
-  private imageSidebarSwitchSubject = new Subject<any>();
+  private sendSidebarStateSubject = new Subject<any>()
+  private imageSidebarSwitchSubject = new Subject<any>()
 
   sendSidebarState(data: any) {
     this.sendSidebarStateSubject.next(data)
   }
 
   getSidebarState() {
-    return this.sendSidebarStateSubject.asObservable();
+    return this.sendSidebarStateSubject.asObservable()
   }
 
   sendImageSidebarSwitch(data: any) {
@@ -285,84 +284,84 @@ export class DataTransmissionService {
   }
 
   getImageSidebarSwitch() {
-    return this.imageSidebarSwitchSubject.asObservable();
+    return this.imageSidebarSwitchSubject.asObservable()
   }
 
   // =====================
   // =====================
 
   // 单图发送数据给 TABLE
-  private data2TableSubject = new Subject<any>();
+  private data2TableSubject = new Subject<any>()
 
   sendData2Table(data: any) {
     this.data2TableSubject.next(data)
   }
 
   getData2Table() {
-    return this.data2TableSubject.asObservable();
+    return this.data2TableSubject.asObservable()
   }
 
   // =====================
   // =====================
 
   // 另存为单图的通知
-  private forkChartSubject = new Subject<any>();
+  private forkChartSubject = new Subject<any>()
 
   sendForkChartState(data: any) {
     this.forkChartSubject.next(data)
   }
 
   getForkChartState() {
-    return this.forkChartSubject.asObservable();
+    return this.forkChartSubject.asObservable()
   }
 
   // =====================
   // =====================
 
   // 扫码通知
-  private codeSubject = new Subject<any>();
+  private codeSubject = new Subject<any>()
 
   sendCodeSubjectState(data: any) {
     this.codeSubject.next(data)
   }
 
   getCodeSubjectState() {
-    return this.codeSubject.asObservable();
+    return this.codeSubject.asObservable()
   }
 
   // 上传
-  private imageSubject = new Subject<any>();
+  private imageSubject = new Subject<any>()
 
   sendImageSubjectState(data: any) {
     this.imageSubject.next(data)
   }
 
   getImageSubjectState() {
-    return this.imageSubject.asObservable();
+    return this.imageSubject.asObservable()
   }
 
   // =====================
   // =====================
 
   // 颜色选择器
-  private colorListSubject = new Subject<any>();
+  private colorListSubject = new Subject<any>()
 
   sendColorListSubject(data: any) {
     this.colorListSubject.next(data)
   }
 
   getColorListSubject() {
-    return this.colorListSubject.asObservable();
+    return this.colorListSubject.asObservable()
   }
 
   // 颜色选择器事件通知
-  private handleColorChangeSubject = new Subject<any>();
+  private handleColorChangeSubject = new Subject<any>()
 
   sendHandleColorChangeSubject(data: any) {
     this.handleColorChangeSubject.next(data)
   }
 
   getHandleColorChangeSubject() {
-    return this.handleColorChangeSubject.asObservable();
+    return this.handleColorChangeSubject.asObservable()
   }
 }

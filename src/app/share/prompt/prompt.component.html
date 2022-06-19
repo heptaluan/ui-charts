@@ -1,17 +1,41 @@
 <div class="modal-header">
-  <div class="modal-title pull-left" [ngClass]="{'text-left': title.position === 'left', 'text-center': title.position === 'center',
-    'text-right': title.position === 'right'}">{{title.content}}</div>
-  <!-- <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
-      <span aria-hidden="true">&times;</span>
-    </button> -->
+  <div
+    class="modal-title pull-left"
+    [ngClass]="{
+      'text-left': title.position === 'left',
+      'text-center': title.position === 'center',
+      'text-right': title.position === 'right'
+    }"
+  >
+    {{ title.content }}
+  </div>
 </div>
 <div class="modal-body">
   <ng-content></ng-content>
 </div>
-<div *ngIf="actions" class="modal-footer" [ngClass]="{'justify-content-start': actions.position === 'left',
+<div
+  *ngIf="actions"
+  class="modal-footer"
+  [ngClass]="{
+    'justify-content-start': actions.position === 'left',
     'justify-content-center': actions.position === 'center',
     'jusitfy-content-end': actions.position === 'right',
-    'justify-content-around': actions.position === 'around'}">
-  <button *ngFor="let action of actions.buttons" type="button" class="dy-button-prompt" [ngClass]="{'dy-button-green': action.title === '替换', 'dy-button-reverse': action.title === '取消', 'dy-button-del': action.title === '删除', 'dy-button-blue': action.title === '确定', 'song': insertSong}"
-    (click)="hidePrompt(action)">{{action.title}}</button>
+    'justify-content-around': actions.position === 'around'
+  }"
+>
+  <button
+    *ngFor="let action of actions.buttons"
+    type="button"
+    class="dy-button-prompt"
+    [ngClass]="{
+      'dy-button-green': action.title === '替换',
+      'dy-button-reverse': action.title === '取消',
+      'dy-button-del': action.title === '删除',
+      'dy-button-blue': action.title === '确定',
+      song: insertSong
+    }"
+    (click)="hidePrompt(action)"
+  >
+    {{ action.title }}
+  </button>
 </div>

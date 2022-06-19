@@ -1,18 +1,17 @@
-import { Injectable } from '@angular/core';
-import { Subject, Observable } from 'rxjs';
+import { Injectable } from '@angular/core'
+import { Subject, Observable } from 'rxjs'
 
 @Injectable()
 export class NotifyChartRenderService {
-
-  private subject = new Subject<any>();
-  private playBySpeedSubject = new Subject<any>();
+  private subject = new Subject<any>()
+  private playBySpeedSubject = new Subject<any>()
 
   sendChartRender(data: any) {
-    this.subject.next(data);
+    this.subject.next(data)
   }
 
   getChartRender(): Observable<any> {
-    return this.subject.asObservable();
+    return this.subject.asObservable()
   }
 
   sendChartSpeed(data: number) {
@@ -20,7 +19,6 @@ export class NotifyChartRenderService {
   }
 
   getChartSpeed(): Observable<any> {
-    return this.playBySpeedSubject.asObservable();
+    return this.playBySpeedSubject.asObservable()
   }
-
 }

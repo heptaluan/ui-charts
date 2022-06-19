@@ -9,7 +9,8 @@
   right: -5px;
 }
 
-.ui-resizable-e, .ui-resizable-w {
+.ui-resizable-e,
+.ui-resizable-w {
   top: 50%;
   transform: translate(0, -50%);
 }
@@ -29,12 +30,12 @@
   cursor: pointer;
   border-radius: 50px;
   &:after {
-      position: absolute;
-      content: '';
-      left: 8px;
-      top: 17px;
-      background: #85b5ec;
-      width: 1px;
-      height: 8px;
+    position: absolute;
+    content: '';
+    left: 8px;
+    top: 17px;
+    background: #85b5ec;
+    width: 1px;
+    height: 8px;
   }
 }
