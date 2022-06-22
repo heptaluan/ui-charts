@@ -1,10 +1,16 @@
 <ng-container [ngSwitch]="showObj?.control">
-
   <!-- number-input -->
   <ng-container *ngSwitchCase="'number-input'">
     <div class="line no-progress">
-      <div class="small-title">{{showObj.displayTitle}}</div>
-      <lx-slider [min]=showObj.outputList[0] [max]=showObj.outputList[1] [step]=1 [cur]='value' (valueBlurChanged)="emitvalueBlurChange()" (valueChanged)="onInput($event, 1)">
+      <div class="small-title">{{ showObj.displayTitle }}</div>
+      <lx-slider
+        [min]="showObj.outputList[0]"
+        [max]="showObj.outputList[1]"
+        [step]="1"
+        [cur]="value"
+        (valueBlurChanged)="emitvalueBlurChange()"
+        (valueChanged)="onInput($event, 1)"
+      >
       </lx-slider>
     </div>
   </ng-container>
@@ -12,11 +18,23 @@
   <!-- dropdown-toggle&color-picker -->
   <ng-container *ngSwitchCase="'dropdown-toggle&color-picker'">
     <div class="line">
-      <div class="small-title">{{showObj.displayTitle}}</div>
-      <div class="title-show line" [ngClass]="{'active': value === null}">
-        <lx-settings-dropdowns [values]="showObj.dropdownList" [index]="value === null ? 0 : 1" (onChanged)="changeDrop($event)">
+      <div class="small-title">{{ showObj.displayTitle }}</div>
+      <div class="title-show line" [ngClass]="{ active: value === null }">
+        <lx-settings-dropdowns
+          [values]="showObj.dropdownList"
+          [index]="value === null ? 0 : 1"
+          (onChanged)="changeDrop($event)"
+        >
         </lx-settings-dropdowns>
-        <lx-color-list *ngIf="value !== null" class="left-8" [isOverflow]="true" [themColorList]="themColorList" [isGradientShow]="true" [colorSeleced]="initColor" (onChanged)="changeColor($event)"></lx-color-list>
+        <lx-color-list
+          *ngIf="value !== null"
+          class="left-8"
+          [isOverflow]="true"
+          [themColorList]="themColorList"
+          [isGradientShow]="true"
+          [colorSeleced]="initColor"
+          (onChanged)="changeColor($event)"
+        ></lx-color-list>
       </div>
     </div>
   </ng-container>
@@ -24,10 +42,13 @@
   <!-- dropdown-toggle -->
   <ng-container *ngSwitchCase="'dropdown-toggle'">
     <div class="line">
-      <div class="small-title">{{showObj.displayTitle}}</div>
+      <div class="small-title">{{ showObj.displayTitle }}</div>
       <div class="title-show line active">
-        <lx-settings-dropdowns [values]="showObj.dropdownList" [index]="showObj.outputList.indexOf(value)"
-          (onChanged)="changeDropList(showObj.outputList[$event])"></lx-settings-dropdowns>
+        <lx-settings-dropdowns
+          [values]="showObj.dropdownList"
+          [index]="showObj.outputList.indexOf(value)"
+          (onChanged)="changeDropList(showObj.outputList[$event])"
+        ></lx-settings-dropdowns>
       </div>
     </div>
   </ng-container>
@@ -35,73 +56,122 @@
   <!-- number-input-percentage -->
   <ng-container *ngSwitchCase="'number-input-percentage'">
     <div class="line">
-      <div class="small-title">{{showObj.displayTitle}}</div>
-      <lx-slider [min]=0 [max]=100 [step]=1 [cur]='value * 100' [isProgress]="true" (valueBlurChanged)="emitvalueBlurChange()" (valueChanged)="onInput($event, 100)"></lx-slider>
+      <div class="small-title">{{ showObj.displayTitle }}</div>
+      <lx-slider
+        [min]="0"
+        [max]="100"
+        [step]="1"
+        [cur]="value * 100"
+        [isProgress]="true"
+        (valueBlurChanged)="emitvalueBlurChange()"
+        (valueChanged)="onInput($event, 100)"
+      ></lx-slider>
     </div>
   </ng-container>
 
   <!-- corner-array -->
   <ng-container *ngSwitchCase="'corner-array'">
     <div class="corner-wrapper">
-      <div class="small-title">{{showObj.displayTitle}}</div>
+      <div class="small-title">{{ showObj.displayTitle }}</div>
 
       <div class="corner">
         <div class="corner-array">
           <span></span>
-          <lx-slider [min]=0 [max]=1000 [step]=1 [cur]='value[0]' (valueBlurChanged)="emitvalueBlurChange()" (valueChanged)="changeCorner($event,0)"></lx-slider>
+          <lx-slider
+            [min]="0"
+            [max]="1000"
+            [step]="1"
+            [cur]="value[0]"
+            (valueBlurChanged)="emitvalueBlurChange()"
+            (valueChanged)="changeCorner($event, 0)"
+          ></lx-slider>
         </div>
         <div class="corner-array">
           <span class="transform-90"></span>
-          <lx-slider [min]=0 [max]=1000 [step]=1 [cur]='value[1]' (valueBlurChanged)="emitvalueBlurChange()" (valueChanged)="changeCorner($event,1)"></lx-slider>
+          <lx-slider
+            [min]="0"
+            [max]="1000"
+            [step]="1"
+            [cur]="value[1]"
+            (valueBlurChanged)="emitvalueBlurChange()"
+            (valueChanged)="changeCorner($event, 1)"
+          ></lx-slider>
         </div>
         <div class="corner-array">
           <span class="transform-270"></span>
-          <lx-slider [min]=0 [max]=1000 [step]=1 [cur]='value[2]' (valueBlurChanged)="emitvalueBlurChange()" (valueChanged)="changeCorner($event,2)"></lx-slider>
+          <lx-slider
+            [min]="0"
+            [max]="1000"
+            [step]="1"
+            [cur]="value[2]"
+            (valueBlurChanged)="emitvalueBlurChange()"
+            (valueChanged)="changeCorner($event, 2)"
+          ></lx-slider>
         </div>
         <div class="corner-array">
           <span class="transform-180"></span>
-          <lx-slider [min]=0 [max]=1000 [step]=1 [cur]='value[3]' (valueBlurChanged)="emitvalueBlurChange()" (valueChanged)="changeCorner($event,3)"></lx-slider>
+          <lx-slider
+            [min]="0"
+            [max]="1000"
+            [step]="1"
+            [cur]="value[3]"
+            (valueBlurChanged)="emitvalueBlurChange()"
+            (valueChanged)="changeCorner($event, 3)"
+          ></lx-slider>
         </div>
       </div>
     </div>
-
   </ng-container>
 
   <!-- multichoices-value -->
   <ng-container *ngSwitchCase="'multichoices-value'">
     <div class="line multi">
-      <div class="small-title">{{showObj.displayTitle}}</div>
+      <div class="small-title">{{ showObj.displayTitle }}</div>
       <div class="title-show line">
-        <lx-settings-dropdowns 
+        <lx-settings-dropdowns
           [values]="showObj.dropdownList"
           [index]="showObj.outputList.indexOf(value.key)"
           (onChanged)="changeDropListMult(showObj.outputList[$event])"
-        ></lx-settings-dropdowns>    
+        ></lx-settings-dropdowns>
       </div>
-      <input type="text" [(ngModel)]="sectionValue" pattern="" (ngModelChange)="changeMultSectionValue()" (keyup)="validite(true)"
-        (afterpaste)="validite(true)" (blur)="validite(false)" (keypress)="validite(true)">
-
+      <input
+        type="text"
+        [(ngModel)]="sectionValue"
+        pattern=""
+        (ngModelChange)="changeMultSectionValue()"
+        (keyup)="validite(true)"
+        (afterpaste)="validite(true)"
+        (blur)="validite(false)"
+        (keypress)="validite(true)"
+      />
     </div>
   </ng-container>
 
   <!-- range-number-input -->
   <ng-container *ngSwitchCase="'range-number-input'">
     <div class="line">
-      <div class="small-title">{{showObj.displayTitle}}</div>
+      <div class="small-title">{{ showObj.displayTitle }}</div>
       <div class="rang-number">
-        <input class="range-input" type="text" [(ngModel)]="minValue" 
+        <input
+          class="range-input"
+          type="text"
+          [(ngModel)]="minValue"
           onkeyup="this.value=this.value.replace(/\D/g,'')"
           onafterpaste="this.value=this.value.replace(/\D/g,'')"
-          (blur)="changeRange($event,0)"
-          (keypress)="inputBlur($event)" > 
+          (blur)="changeRange($event, 0)"
+          (keypress)="inputBlur($event)"
+        />
         <span><img src="../../../../../../dyassets/images/setting/line.svg" /></span>
-        <input class="range-input" type="text" [(ngModel)]="maxValue"
+        <input
+          class="range-input"
+          type="text"
+          [(ngModel)]="maxValue"
           onkeyup="this.value=this.value.replace(/\D/g,'')"
           onafterpaste="this.value=this.value.replace(/\D/g,'')"
-          (blur)="changeRange($event,1)"
-          (keypress)="inputBlur($event)" >
+          (blur)="changeRange($event, 1)"
+          (keypress)="inputBlur($event)"
+        />
       </div>
-
     </div>
   </ng-container>
 
@@ -112,27 +182,41 @@
   <!-- dropdown-toggle&number-input -->
   <ng-container *ngSwitchCase="'dropdown-toggle&number-input'">
     <div class="line">
-      <div class="small-title">{{showObj.displayTitle}}</div>
-      <div class="title-show line" [ngClass]="{'active': value === null}">
-        <lx-settings-dropdowns [values]="showObj.dropdownList" [index]="value === null ? 0 : 1" (onChanged)="changeNumberDrop($event)">
+      <div class="small-title">{{ showObj.displayTitle }}</div>
+      <div class="title-show line" [ngClass]="{ active: value === null }">
+        <lx-settings-dropdowns
+          [values]="showObj.dropdownList"
+          [index]="value === null ? 0 : 1"
+          (onChanged)="changeNumberDrop($event)"
+        >
         </lx-settings-dropdowns>
-        <input class="number-input" *ngIf="value !== null" type="text"  [(ngModel)]="value"
+        <input
+          class="number-input"
+          *ngIf="value !== null"
+          type="text"
+          [(ngModel)]="value"
           onkeyup="this.value=this.value.replace(/\D/g,'')"
           onafterpaste="this.value=this.value.replace(/\D/g,'')"
           (blur)="changeNumber(this.value)"
-          (keypress)="inputBlur($event)" >
+          (keypress)="inputBlur($event)"
+        />
       </div>
     </div>
   </ng-container>
 
-    <!-- color-picker -->
-    <ng-container *ngSwitchCase="'color-picker'">
-      <div class="line">
-        <div class="small-title">{{showObj.displayTitle}}</div>
-        <div class="title-show line">
-          <lx-color-list [isOverflow]="true" [themColorList]="themColorList" [isGradientShow]="true" [colorSeleced]="initColor" (onChanged)="changeColor($event)"></lx-color-list>
-        </div>
+  <!-- color-picker -->
+  <ng-container *ngSwitchCase="'color-picker'">
+    <div class="line">
+      <div class="small-title">{{ showObj.displayTitle }}</div>
+      <div class="title-show line">
+        <lx-color-list
+          [isOverflow]="true"
+          [themColorList]="themColorList"
+          [isGradientShow]="true"
+          [colorSeleced]="initColor"
+          (onChanged)="changeColor($event)"
+        ></lx-color-list>
       </div>
-    </ng-container>
-
+    </div>
+  </ng-container>
 </ng-container>

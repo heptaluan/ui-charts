@@ -6,8 +6,6 @@
   z-index: 999;
 
   .tool-box {
-    // width: 300px; 手掌
-    // width: 270px;
     display: flex;
     box-sizing: border-box;
     justify-content: space-around;
@@ -188,7 +186,7 @@
             i {
               background: url(/dyassets/images/page/col-referLine.svg) center / contain;
             }
-          } 
+          }
         }
       }
     }

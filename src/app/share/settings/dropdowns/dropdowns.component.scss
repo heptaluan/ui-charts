@@ -2,7 +2,7 @@
   .right-2 {
     margin-right: 2px;
   }
-  
+
   .btn-group {
     vertical-align: top;
   }
@@ -22,7 +22,7 @@
 
     i {
       width: 6px;
-	    height: 5px;
+      height: 5px;
       background: url('/dyassets/images/setting/drop-down.svg') no-repeat;
       position: absolute;
       right: 8px;
@@ -31,7 +31,8 @@
 
   .btn-title {
     font-size: 12px;
-    font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo",  "Consolas", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei',
+      'Hiragino Sans GB', 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, 'Monaco', 'Menlo', 'Consolas', sans-serif;
     color: #ffffff;
 
     img {
@@ -45,15 +46,15 @@
     margin: 5px 0 20px 0;
     border-radius: 2px;
     background-color: #3b3c3d;
-    box-shadow: 0px 2px 8px 0px 
-		rgba(0, 0, 0, 0.24);
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.24);
     overflow: hidden;
     min-width: unset;
-    
+
     .dropdown-item {
       height: 30px;
       line-height: 12px;
-      font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo",  "Consolas", sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei',
+        'Hiragino Sans GB', 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, 'Monaco', 'Menlo', 'Consolas', sans-serif;
       font-size: 12px;
       color: #ffffff;
       background-color: #3b3c3d;
@@ -113,7 +114,7 @@
 
 .tab-wrapper {
   width: calc(100% - 18px);
-	height: 50px;
+  height: 50px;
   background-color: #3b3c3d;
   padding: 14px 7px;
   margin: 0 9px;
@@ -127,7 +128,7 @@
     background-color: #3b3c3d;
     border: 1px solid #5a5b5c;
     line-height: 20px;
-    text-align: center; 
+    text-align: center;
     color: #ffffff;
     font-size: 12px;
     user-select: none;
@@ -145,7 +146,6 @@
   overflow-x: hidden;
 }
 
-
 :host ::ng-deep {
   .dropdown-item-wrapper::-webkit-scrollbar {
     width: 6px !important;
@@ -157,7 +157,7 @@
     border-radius: 4px !important; // all: initial !important;
     background-clip: unset !important;
     border-width: 0 !important;
-    
+
     // border-style: dashed;
     // border-color: transparent;
     // background-clip: padding-box;
@@ -169,11 +169,9 @@
   }
 
   .dropdown-item-wrapper::-webkit-scrollbar-track {
-
     background: transparent !important; // all: initial !important;
   }
   .dropdown-item-wrapper::-webkit-scrollbar-corner {
     background: transparent !important; //
   }
-
 }

@@ -1,4 +1,12 @@
-<div id="classify" [ngClass]="{templates: isTemplates,more: isTemplates && more}">
-  <div (click)='onSelect(item, i)'  [ngClass]="{'active': i == activeIndex, 'template': isFix}" *ngFor="let item of partCategories,let i = index">{{item.category_cn}}</div>
-  <div class="extends" [ngClass]="{'icon-style': hideShape}" (click)='extends()'>{{title}}<i [class.active]='more'></i></div>
+<div id="classify" [ngClass]="{ templates: isTemplates, more: isTemplates && more }">
+  <div
+    (click)="onSelect(item, i)"
+    [ngClass]="{ active: i == activeIndex, template: isFix }"
+    *ngFor="let item of partCategories; let i = index"
+  >
+    {{ item.category_cn }}
+  </div>
+  <div class="extends" [ngClass]="{ 'icon-style': hideShape }" (click)="extends()">
+    {{ title }}<i [class.active]="more"></i>
+  </div>
 </div>

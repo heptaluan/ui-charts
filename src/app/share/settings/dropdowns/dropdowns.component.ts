@@ -1,29 +1,29 @@
-import { Component, OnInit, Input, Output, EventEmitter, ElementRef, SimpleChange, ViewChild } from '@angular/core';
-declare const FontFaceObserver: any;
-import * as _ from 'lodash';
+import { Component, OnInit, Input, Output, EventEmitter, ElementRef, SimpleChange, ViewChild } from '@angular/core'
+declare const FontFaceObserver: any
+import * as _ from 'lodash'
 @Component({
   selector: 'lx-settings-dropdowns',
   templateUrl: './dropdowns.component.html',
-  styleUrls: ['./dropdowns.component.scss']
+  styleUrls: ['./dropdowns.component.scss'],
 })
 export class DropdownsComponent implements OnInit {
-  @Input() index: number = 0;
-  @Input() theme: string = '';
-  @Input() values: any[];
-  @Input() isDisabled: boolean = false;
-  @Input() type: string;
-  @Input() id: string;
-  @Input() listIndex: any;
-  @Input() isBackgroundColor: boolean = false;
-  @Input() loadFont: any;
-  @Input() selector: any;
-  @Input() fontSelector: any;
-  @Output() onChanged = new EventEmitter();
-  @Input() firstSize = 0;
-  @ViewChild('dropdown') dropdown;
-  autoClose: boolean = true;
-  isChinese: boolean = true;
-  oldValues: any[];
+  @Input() index: number = 0
+  @Input() theme: string = ''
+  @Input() values: any[]
+  @Input() isDisabled: boolean = false
+  @Input() type: string
+  @Input() id: string
+  @Input() listIndex: any
+  @Input() isBackgroundColor: boolean = false
+  @Input() loadFont: any
+  @Input() selector: any
+  @Input() fontSelector: any
+  @Output() onChanged = new EventEmitter()
+  @Input() firstSize = 0
+  @ViewChild('dropdown') dropdown
+  autoClose: boolean = true
+  isChinese: boolean = true
+  oldValues: any[]
 
   // 文字映射
   fontFamilyListText = [
@@ -71,19 +71,17 @@ export class DropdownsComponent implements OnInit {
     'Solway-Light',
   ]
 
-  constructor(
-    private _el: ElementRef
-  ) { }
+  constructor(private _el: ElementRef) {}
 
   onClicked(index) {
-    this.index = index;
-    this.onChanged.emit(index);
+    this.index = index
+    this.onChanged.emit(index)
     const that = this
     if (!this._el.nativeElement.querySelector('.font-loading')) {
-      return;
+      return
     }
     this._el.nativeElement.querySelector('.font-loading').style.display = 'block'
-    var font = new FontFaceObserver(this.fontFamilyListText[index]);
+    var font = new FontFaceObserver(this.fontFamilyListText[index])
     font.load(null, 15000).then(function () {
       that._el.nativeElement.querySelector('.font-loading').style.display = 'none'
     })
@@ -91,12 +89,12 @@ export class DropdownsComponent implements OnInit {
 
   ngOnInit() {
     if (this.firstSize !== 0) {
-      this.autoClose = false;
-      document.addEventListener('click',this.allClick.bind(this));
-      this.oldValues = _.cloneDeep(this.values);
+      this.autoClose = false
+      document.addEventListener('click', this.allClick.bind(this))
+      this.oldValues = _.cloneDeep(this.values)
       this.selectType(this.index < this.firstSize)
     }
-    
+
     // 针对分组气泡图，圆堆积图，散点图（顺序依次如下）的映射面板单独处理
     if (this.id === '4612096174443311107') {
       if (this.listIndex === 0 || this.listIndex === 1 || this.listIndex === 3) {
@@ -135,17 +133,17 @@ export class DropdownsComponent implements OnInit {
   }
 
   ngOnDestroy() {
-    document.removeEventListener('click',this.allClick.bind(this));
+    document.removeEventListener('click', this.allClick.bind(this))
   }
 
   selectType(flag) {
-    this.isChinese = flag;
+    this.isChinese = flag
   }
 
   allClick() {
-    var e = e || window.event;
+    var e = e || window.event
     if (!this._el.nativeElement.contains(e.target)) {
-      this.dropdown.hide();
+      this.dropdown.hide()
     }
   }
 }

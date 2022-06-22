@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core'
 
 @Component({
   selector: 'lx-switch',
@@ -14,24 +14,24 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
       switchColor="#fcfcfc"
       defaultBgColor="#282828"
     ></ui-switch>
-  `
+  `,
 })
 export class SwitchComponent {
-  @Input() checked: boolean = false;
-  @Input() disabled: boolean = false;
-  @Output() change = new EventEmitter();
-  @Output() changeEvent = new EventEmitter();
-  @Output() valueChange = new EventEmitter();
+  @Input() checked: boolean = false
+  @Input() disabled: boolean = false
+  @Output() change = new EventEmitter()
+  @Output() changeEvent = new EventEmitter()
+  @Output() valueChange = new EventEmitter()
 
   switchChange(event) {
-    this.change.emit(event);
+    this.change.emit(event)
   }
 
   switchChangeEvent(event) {
-    this.changeEvent.emit(event);
+    this.changeEvent.emit(event)
   }
 
   switchValueChange(event) {
-    this.valueChange.emit(event);
+    this.valueChange.emit(event)
   }
 }

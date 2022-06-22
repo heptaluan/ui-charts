@@ -1,62 +1,56 @@
 <div class="size-container">
-    <div class="input-container">
-      <div class="title">{{title1}}</div>
-      <div class="input-box" [ngClass]="{'input-border': isBorder === 1}">
-        <input #input1
-          class="inputWidth"
-          inputmode="numeric" 
-          [value]="value1"
-          (blur)="onInput1($event)" 
-          (keypress)="onKeyPress($event, 'value1')" 
-          (keyup)="formatInput($event)"
-          onafterpaste="this.value=this.value.replace(/\D/g,'')"
-          (focus)="onfocus(1)"
-        />
-        <span>{{letter1}}</span>
-      </div>
+  <div class="input-container">
+    <div class="title">{{ title1 }}</div>
+    <div class="input-box" [ngClass]="{ 'input-border': isBorder === 1 }">
+      <input
+        #input1
+        class="inputWidth"
+        inputmode="numeric"
+        [value]="value1"
+        (blur)="onInput1($event)"
+        (keypress)="onKeyPress($event, 'value1')"
+        (keyup)="formatInput($event)"
+        onafterpaste="this.value=this.value.replace(/\D/g,'')"
+        (focus)="onfocus(1)"
+      />
+      <span>{{ letter1 }}</span>
     </div>
+  </div>
   <div class="lock-btn" (click)="onLockClicked()">
-    <img src="/dyassets/images/setting/{{locked ? 'settings-lock' : 'settings-unlock'}}.svg"/>
+    <img src="/dyassets/images/setting/{{ locked ? 'settings-lock' : 'settings-unlock' }}.svg" />
   </div>
   <div class="input-container">
-    <div class="title">{{title0}}</div>
-    <div class="input-box" [ngClass]="{'input-border': isBorder === 0}">
-      <input #input0
+    <div class="title">{{ title0 }}</div>
+    <div class="input-box" [ngClass]="{ 'input-border': isBorder === 0 }">
+      <input
+        #input0
         class="inputHeight"
-        inputmode="numeric" 
+        inputmode="numeric"
         [value]="value0"
-        (blur)="onInput0($event)" 
-        (keypress)="onKeyPress($event, 'value0')" 
+        (blur)="onInput0($event)"
+        (keypress)="onKeyPress($event, 'value0')"
         (keyup)="formatInput($event)"
         onafterpaste="this.value=this.value.replace(/\D/g,'')"
         (focus)="onfocus(0)"
       />
-      <span>{{letter0}}</span>
+      <span>{{ letter0 }}</span>
     </div>
   </div>
   <div class="input-container angle-setting" [hidden]="pageSetting">
-      <div class="title">{{title2}}</div>
-      <div class="input-box rotate-input-box" [ngClass]="{'input-border': isBorder === 2}">
-        <input #input2
-          inputmode="numeric" 
-          [value]="value2"
-          (blur)="onInput2($event)" 
-          (keypress)="onKeyPress($event, 'value2')" 
-          (keyup)="formatInput($event)"
-          onafterpaste="this.value=this.value.replace(/\D/g,'')"
-          (focus)="onfocus(2)"
-          class="rotate-input"
-        />
-      <span>{{letter2}}</span>
-      </div>     
+    <div class="title">{{ title2 }}</div>
+    <div class="input-box rotate-input-box" [ngClass]="{ 'input-border': isBorder === 2 }">
+      <input
+        #input2
+        inputmode="numeric"
+        [value]="value2"
+        (blur)="onInput2($event)"
+        (keypress)="onKeyPress($event, 'value2')"
+        (keyup)="formatInput($event)"
+        onafterpaste="this.value=this.value.replace(/\D/g,'')"
+        (focus)="onfocus(2)"
+        class="rotate-input"
+      />
+      <span>{{ letter2 }}</span>
     </div>
+  </div>
 </div>
-
-
-
-<!-- 1，文本框只能输入数字代码(小数点也不能输入)
-<input onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
- 
-2，只能输入数字,能输小数点.
-<input onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
-<input name=txt1 onchange="if(/\D/.test(this.value)){alert('只能输入数字');this.value='';}"> -->

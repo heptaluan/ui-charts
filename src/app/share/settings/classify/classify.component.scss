@@ -1,83 +1,85 @@
 #classify {
-    width: 280px;
-    font-size: 13px;
-    background: #252625;
-    color: #a3a3a3;
-    text-align: center;
-    display: flex;
+  width: 280px;
+  font-size: 13px;
+  background: #252625;
+  color: #a3a3a3;
+  text-align: center;
+  display: flex;
+  position: relative;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  div {
+    width: auto;
+    height: 18px;
+    cursor: pointer;
+    margin-left: 30px;
+    margin-top: 8px;
+    &:hover {
+      color: #129cff;
+    }
+  }
+  .template {
+    width: auto;
+    margin-left: 12px;
+  }
+  .active {
+    color: #129cff;
+  }
+  .extends {
     position: relative;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: wrap;
-    div {
-        width: auto;
-        height: 18px;
-        cursor: pointer;
-        margin-left: 30px;
-        margin-top: 8px;
-        &:hover {
-            color: #129cff;
-        }
+    bottom: 0;
+    left: 13px;
+    margin: 10px auto;
+    width: 100%;
+    &:hover {
+      color: #a3a3a3;
     }
+    i {
+      display: inline-block;
+      width: 9px;
+      height: 6px;
+      background: url(/dyassets/images/drop-down-icon-gray.svg) no-repeat center / cover;
+      margin-left: 5px;
+      vertical-align: 1px;
+      &.active {
+        background: url(/dyassets/images/drop-up-icon-gray.svg) no-repeat center / cover;
+        vertical-align: 2px;
+      }
+    }
+  }
+  .icon-style {
+    color: #ffffff;
+    &:hover {
+      color: #ffffff;
+    }
+    i {
+      display: inline-block;
+      background: url(/dyassets/images/drop-down-icon-white.svg) no-repeat center / cover;
+
+      &.active {
+        background: url(/dyassets/images/drop-up-icon-white.svg) no-repeat center / cover;
+      }
+    }
+  }
+
+  &.more {
+    margin-left: -22px !important;
     .template {
-      width: auto;
-      margin-left: 12px;
-    }
-    .active {
-        color: #129cff;
-    }
-    .extends {
-        position: relative;
-        bottom: 0;
-        left: 13px;
-        margin: 10px auto;
-        width: 100%;
-        &:hover {
-            color: #a3a3a3;
-        }
-        i {
-            display: inline-block;
-            width: 9px;
-            height: 6px;
-            background: url(/dyassets/images/drop-down-icon-gray.svg) no-repeat center / cover;
-            margin-left: 5px;
-            vertical-align: 1px;
-            &.active {
-                background: url(/dyassets/images/drop-up-icon-gray.svg) no-repeat center / cover;
-                vertical-align: 2px;
-            }
-        }
-    }
-    .icon-style {
-        color: #ffffff;
-        &:hover {
-            color: #ffffff;
-        }
-        i {
-            display: inline-block;
-            background: url(/dyassets/images/drop-down-icon-white.svg) no-repeat center / cover;
+      margin-left: 26px !important;
 
-            &.active {
-                background: url(/dyassets/images/drop-up-icon-white.svg) no-repeat center / cover;
-            }
-        }
+      &:nth-last-child(2),
+      &:nth-last-child(3),
+      &:nth-last-child(4) {
+        margin-left: 22px !important;
+      }
     }
+  }
 
-    &.more {
-        margin-left: -22px !important;
-        .template {
-            margin-left: 26px !important;
-        
-            &:nth-last-child(2),&:nth-last-child(3),&:nth-last-child(4) {
-                margin-left: 22px !important;
-            }
-        }   
+  &.templates {
+    margin-left: -22px !important;
+    .template {
+      margin-left: 26px !important;
     }
-
-    &.templates {
-        margin-left: -22px !important;
-        .template {
-            margin-left: 26px !important;
-        }   
-    }
+  }
 }

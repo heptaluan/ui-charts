@@ -7,7 +7,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 20px;    
+    height: 20px;
     width: 209px;
 
     &.no-progress {
@@ -20,7 +20,7 @@
       }
     }
   }
-  
+
   .top-20 {
     margin-top: 20px;
   }
@@ -35,11 +35,11 @@
 
     lx-settings-dropdowns {
       border-radius: 2px;
-      
+
       .btn-dropdown {
         width: 67px;
         height: 20px;
-        
+
         .btn-title {
           line-height: 12px;
         }
@@ -59,16 +59,17 @@
 
     &.active {
       lx-settings-dropdowns {
-        .btn-dropdown, .dropdown-menu {
+        .btn-dropdown,
+        .dropdown-menu {
           width: 95px;
         }
-      } 
+      }
     }
   }
 
   .corner-wrapper {
     width: 210px;
-	  height: 50px;
+    height: 50px;
     display: flex;
     justify-content: space-between;
   }
@@ -88,7 +89,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+
     lx-slider {
       .input-container input {
         text-align: left !important;
@@ -97,23 +98,23 @@
     }
 
     .transform-90 {
-      transform:rotate(90deg);
+      transform: rotate(90deg);
     }
 
     .transform-180 {
-      transform:rotate(180deg);
+      transform: rotate(180deg);
     }
 
     .transform-270 {
-      transform:rotate(270deg);
+      transform: rotate(270deg);
     }
 
     span {
       width: 20px;
       height: 20px;
       background-color: #19191a;
-      background: url("../../../dyassets/images/setting/corner.svg") no-repeat center ;
-      background-size: 8px 8px;     
+      background: url('../../../dyassets/images/setting/corner.svg') no-repeat center;
+      background-size: 8px 8px;
     }
     input {
       width: 26px;
@@ -138,7 +139,7 @@
     }
 
     lx-settings-dropdowns {
-      border-radius: 2px; 
+      border-radius: 2px;
       .btn-dropdown {
         width: 77px;
         height: 20px;
@@ -178,7 +179,8 @@
       box-shadow: none;
       color: #ffffff;
       font-size: 12px;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo", "Consolas", sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei',
+        'Hiragino Sans GB', 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, 'Monaco', 'Menlo', 'Consolas', sans-serif;
     }
 
     span {
@@ -201,7 +203,7 @@
     box-shadow: none;
     color: #ffffff;
     font-size: 12px;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Monaco", "Menlo", "Consolas", sans-serif;
-
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei',
+      'Hiragino Sans GB', 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, 'Monaco', 'Menlo', 'Consolas', sans-serif;
   }
 }
