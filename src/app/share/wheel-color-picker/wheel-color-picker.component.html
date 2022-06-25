@@ -1,121 +1,160 @@
-
-
 <div class="wheel-color-picker-backgrond">
-  <div  class="wheel-color-picker" (click)="showColorPicker()" [ngStyle]="{'background': isSingle ? colorShowSeleced : gradientColorShow,'opacity': isSingle ? opacitySeleced :'unset'}"></div>
+  <div
+    class="wheel-color-picker"
+    (click)="showColorPicker()"
+    [ngStyle]="{
+      background: isSingle ? colorShowSeleced : gradientColorShow,
+      opacity: isSingle ? opacitySeleced : 'unset'
+    }"
+  ></div>
 </div>
-<div class="color-setting " [ngClass]="{'bottom-371': isOverflow}" [ngStyle]="{'left': left + 'px', 'top': top + 'px'}">
-  <div [ngClass]="{'color-picker-wrapper-show': isShowColorPicker}" class="color-picker-wrapper" (mouseup)="addLocalStorage()">
+<div class="color-setting" [ngClass]="{ 'bottom-371': isOverflow }" [ngStyle]="{ left: left + 'px', top: top + 'px' }">
+  <div
+    [ngClass]="{ 'color-picker-wrapper-show': isShowColorPicker }"
+    class="color-picker-wrapper"
+    (mouseup)="addLocalStorage()"
+  >
     <div>
       <div class="tab">
         <div class="tab-select">
-          <span (click)="selectType(true)" [ngClass]="{'active': isSingle}">单色</span>
+          <span (click)="selectType(true)" [ngClass]="{ active: isSingle }">单色</span>
           <ng-container *ngIf="isGradientShow">
             <i></i>
-            <span (click)="selectType(false)" [ngClass]="{'active': !isSingle}">渐变色</span> 
+            <span (click)="selectType(false)" [ngClass]="{ active: !isSingle }">渐变色</span>
           </ng-container>
-          
         </div>
         <!-- 关闭按钮 -->
         <div class="close-btn" (click)="closeDialog()">
-          <img src="../../../dyassets/images/setting/color-close.svg" alt="">
+          <img src="../../../dyassets/images/setting/color-close.svg" alt="" />
         </div>
       </div>
 
-      <div class="gradient" [ngClass]="{'display-none': isSingle}"> 
-        <div class="gradient-background" [ngStyle]="{background: gradientBackground}" (mousedown)="addSlider($event)">
-          <div #gradient class="gradient-slider"  ></div>
+      <div class="gradient" [ngClass]="{ 'display-none': isSingle }">
+        <div class="gradient-background" [ngStyle]="{ background: gradientBackground }" (mousedown)="addSlider($event)">
+          <div #gradient class="gradient-slider"></div>
         </div>
-        
+
         <!-- <img src="../../../dyassets/images/setting/color-angle.svg" alt=""> -->
-        <input type="text"  [(ngModel)]="angle"
-        onkeyup="this.value=this.value.replace(/\D/g,'')"
-        onafterpaste="this.value=this.value.replace(/\D/g,'')"
-        (blur)="setAngle()"
-        (keypress)="inputBlur($event)" >
+        <input
+          type="text"
+          [(ngModel)]="angle"
+          onkeyup="this.value=this.value.replace(/\D/g,'')"
+          onafterpaste="this.value=this.value.replace(/\D/g,'')"
+          (blur)="setAngle()"
+          (keypress)="inputBlur($event)"
+        />
         <span>°</span>
-       
+
         <!-- <div class="gradient-color-wrapper">
           <div class="gradient-color" [ngStyle]="{background: gradientColorShow}"></div>
         </div> -->
-        <div class="angle-wrapper" (mousedown) ="addRotateChangeEvent($event)">
+        <div class="angle-wrapper" (mousedown)="addRotateChangeEvent($event)">
           <div class="circle"></div>
-          <div class="line" [style.transform]="'rotate('+(450-rotate)+'deg)'"></div>
+          <div class="line" [style.transform]="'rotate(' + (450 - rotate) + 'deg)'"></div>
         </div>
-
       </div>
-            
-      <div class="d-flex padding-14" [ngClass]="{'top-13': !isSingle}">
+
+      <div class="d-flex padding-14" [ngClass]="{ 'top-13': !isSingle }">
         <div class="select-color-backgroud">
-          <div class="select-color" [style.backgroundColor]="colorShowSeleced" [style.opacity]="opacitySeleced" (click)="showWheelColorPicker()" ></div>
+          <div
+            class="select-color"
+            [style.backgroundColor]="colorShowSeleced"
+            [style.opacity]="opacitySeleced"
+            (click)="showWheelColorPicker()"
+          ></div>
         </div>
-        
-        <div class="input-box"><span>#</span><input type="text" [(ngModel)]="colorSelecedText" (ngModelChange)="setColorSeleced()"/></div>
-        <div  class="d-flex width-78" [ngClass]="{'hidden': !isOpacityShow}">
-          <img src="../../../dyassets/images/setting/unopacity-title.svg"/>
-          <input class="opacity-input" type="text" 
-                  [(ngModel)]="colorOpacitySeleced" (ngModelChange)="setColorOpacitySeleced()"
-                  onkeyup="this.value=this.value.replace(/\D/g,'')"
-                  onafterpaste="this.value=this.value.replace(/\D/g,'')"
-                  (blur)="validite()"
-                  (keypress)="validite()"
-                  />
-        </div>      
-      </div>
-      
-      <div class="opacity-slider" [ngClass]="{'display-none': !isOpacityShow}">
-        <div #slider class="opacity-slider-color" (mousedown) ="addMoveEvent()"  (mouseup) ="setOpacity($event)" [ngStyle]="{background: opacityBackground}">
-          <div #scursor class="slider-scursor" [style.left]="scursorLeft+'px'"></div>
-        </div>         
+
+        <div class="input-box">
+          <span>#</span><input type="text" [(ngModel)]="colorSelecedText" (ngModelChange)="setColorSeleced()" />
+        </div>
+        <div class="d-flex width-78" [ngClass]="{ hidden: !isOpacityShow }">
+          <img src="../../../dyassets/images/setting/unopacity-title.svg" />
+          <input
+            class="opacity-input"
+            type="text"
+            [(ngModel)]="colorOpacitySeleced"
+            (ngModelChange)="setColorOpacitySeleced()"
+            onkeyup="this.value=this.value.replace(/\D/g,'')"
+            onafterpaste="this.value=this.value.replace(/\D/g,'')"
+            (blur)="validite()"
+            (keypress)="validite()"
+          />
+        </div>
       </div>
 
-      <div *ngIf="isShowWheelColorPicker" >
+      <div class="opacity-slider" [ngClass]="{ 'display-none': !isOpacityShow }">
+        <div
+          #slider
+          class="opacity-slider-color"
+          (mousedown)="addMoveEvent()"
+          (mouseup)="setOpacity($event)"
+          [ngStyle]="{ background: opacityBackground }"
+        >
+          <div #scursor class="slider-scursor" [style.left]="scursorLeft + 'px'"></div>
+        </div>
+      </div>
+
+      <div *ngIf="isShowWheelColorPicker">
         <div (mouseup)="emitColor()" class="top-13 left-14 bottom-16">
-          <input           
+          <input
             id="color-block"
             class="color-block"
             type="text"
             data-wcp-sliders="wv"
             data-wcp-format="css"
-            data-wcp-layout="block"       
+            data-wcp-layout="block"
           />
-        </div>     
+        </div>
       </div>
-      
     </div>
 
-    <div class="color-choose" [ngClass]="{'top-20': !isOpacityShow}"> 
+    <div class="color-choose" [ngClass]="{ 'top-20': !isOpacityShow }">
       <div class="d-flex">
         <div class="color-title">主题颜色</div>
       </div>
-      
-      <div  class="color-list-wrapper">
+
+      <div class="color-list-wrapper">
         <div *ngFor="let themColor of themColorList; let key = index">
           <div *ngIf="key < 14">
-            <div class="color-item" [ngClass]="{'active-color': themColor === colorShowSeleced}" [style.backgroundColor]="themColor" (click)="setColorSeleced(themColor)"></div>
-          </div>     
-        </div>
-      </div>
-      
-      <div class="color-title top-13">预设颜色</div>
-      <div  class="color-list-wrapper">
-        <div *ngFor="let presetColor of presetColorList; let key = index">
-          <div *ngIf="key < 14">
-            <div class="color-item" [ngClass]="{'active-color': presetColor === colorShowSeleced}" [style.backgroundColor]="presetColor" (click)="setColorSeleced(presetColor)"></div>
+            <div
+              class="color-item"
+              [ngClass]="{ 'active-color': themColor === colorShowSeleced }"
+              [style.backgroundColor]="themColor"
+              (click)="setColorSeleced(themColor)"
+            ></div>
           </div>
         </div>
       </div>
-      
+
+      <div class="color-title top-13">预设颜色</div>
+      <div class="color-list-wrapper">
+        <div *ngFor="let presetColor of presetColorList; let key = index">
+          <div *ngIf="key < 14">
+            <div
+              class="color-item"
+              [ngClass]="{ 'active-color': presetColor === colorShowSeleced }"
+              [style.backgroundColor]="presetColor"
+              (click)="setColorSeleced(presetColor)"
+            ></div>
+          </div>
+        </div>
+      </div>
+
       <div class="color-title top-13">最近使用</div>
-      <div  class="color-list-wrapper height-18">
+      <div class="color-list-wrapper height-18">
         <div *ngFor="let usedColor of usedColorList; let key = index">
           <div *ngIf="key < 7">
             <div class="color-item-used">
-              <div class="color-item" [ngClass]="{'active-color': usedColor === colorShowSeleced}" [style.backgroundColor]="usedColor" (click)="setColorRgbaSeleced(usedColor)"></div>
+              <div
+                class="color-item"
+                [ngClass]="{ 'active-color': usedColor === colorShowSeleced }"
+                [style.backgroundColor]="usedColor"
+                (click)="setColorRgbaSeleced(usedColor)"
+              ></div>
             </div>
           </div>
         </div>
-      </div>   
+      </div>
     </div>
-
   </div>
 </div>

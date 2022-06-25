@@ -1,22 +1,22 @@
 /*
  * @Description: 公共模块，提供公共组件及服务
  */
-import { NgModule, ModuleWithProviders } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgModule, ModuleWithProviders } from '@angular/core'
+import { CommonModule } from '@angular/common'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
-import { RouterModule, Router } from '@angular/router';
+import { RouterModule, Router } from '@angular/router'
 
-import { ColorPickerModule } from './color-picker/color-picker.module';
-import { HtmlPipe } from './shape-pipe';
+import { ColorPickerModule } from './color-picker/color-picker.module'
+import { HtmlPipe } from './shape-pipe'
 import { PropertiesPipe } from './pipe/keyvalue.pipe'
-import { NgxLoadingModule } from 'ngx-loading';
+import { NgxLoadingModule } from 'ngx-loading'
 
 // import { NgxMasonryModule } from 'ngx-masonry';
 
-import { QRCodeModule } from 'angular2-qrcode';
+import { QRCodeModule } from 'angular2-qrcode'
 
-import { FormatDataTimePipe } from './pipe/format-data-time.pipe';
+import { FormatDataTimePipe } from './pipe/format-data-time.pipe'
 
 import {
   NbThemeModule,
@@ -29,7 +29,7 @@ import {
   NbCardModule,
   NbCheckboxModule,
   NbSidebarModule,
-} from '@nebular/theme';
+} from '@nebular/theme'
 
 import {
   BsDropdownModule,
@@ -42,27 +42,25 @@ import {
   PopoverModule,
   CarouselModule,
   TooltipModule,
-} from 'ngx-bootstrap';
+} from 'ngx-bootstrap'
 
-import { UiSwitchModule } from 'ngx-ui-switch';
+import { UiSwitchModule } from 'ngx-ui-switch'
 
-import { HeaderComponent } from './header/header.component';
-import { CaseItemComponent } from './case-item/case-item.component';
-import { FormSearchComponent } from './form-search/form-search.component';
-import { ModalComponent } from './modal/modal.component';
-import { PromptComponent } from './prompt/prompt.component';
-import { PaginationComponent } from './pagination/pagination.component';
-import { SizeComponent } from './settings/size/size.component';
-import { DropdownsComponent } from './settings/dropdowns/dropdowns.component';
-import { NumpickerComponent } from './settings/numpicker/numpicker.component';
-import { SliderComponent } from './settings/slider/slider.component';
-import { SwitchComponent } from './settings/switch/switch.component';
-import { CheckboxComponent } from './settings/checkbox/checkbox.component';
-import { RadioComponent } from './settings/radio/radio.component';
-import { FooterComponent } from './footer/footer.component';
-import { WheelColorPickerComponent } from './wheel-color-picker/wheel-color-picker.component';
+import { HeaderComponent } from './header/header.component'
+import { CaseItemComponent } from './case-item/case-item.component'
+import { FormSearchComponent } from './form-search/form-search.component'
+import { ModalComponent } from './modal/modal.component'
+import { PromptComponent } from './prompt/prompt.component'
+import { PaginationComponent } from './pagination/pagination.component'
+import { SizeComponent } from './settings/size/size.component'
+import { DropdownsComponent } from './settings/dropdowns/dropdowns.component'
+import { SliderComponent } from './settings/slider/slider.component'
+import { SwitchComponent } from './settings/switch/switch.component'
+import { CheckboxComponent } from './settings/checkbox/checkbox.component'
+import { RadioComponent } from './settings/radio/radio.component'
+import { FooterComponent } from './footer/footer.component'
+import { WheelColorPickerComponent } from './wheel-color-picker/wheel-color-picker.component'
 import { ColorListComponent } from './color-list/color-list.component'
-
 
 import {
   VipService,
@@ -74,22 +72,22 @@ import {
   CompleteBlockService,
   SearchTypeService,
   IndexService,
-  WaterfallService
-} from './services';
+  WaterfallService,
+} from './services'
 
-import { ToolComponent } from './tool/tool.component';
-import { ClassifyComponent } from './settings/classify/classify.component';
-import { LoadingComponent } from './loading/loading.component';
+import { ToolComponent } from './tool/tool.component'
+import { ClassifyComponent } from './settings/classify/classify.component'
+import { LoadingComponent } from './loading/loading.component'
 
-import { HotTableModule } from '@handsontable/angular';
-import { MagicBoxComponent } from './magic-box/magic-box.component';
+import { HotTableModule } from '@handsontable/angular'
+import { MagicBoxComponent } from './magic-box/magic-box.component'
 
-import { ChangeZoomDirective } from '../pages/workspace/changeZoom.directive';
-import { DropUploadDirective } from '../pages/workspace/drag-upload.directive';
+import { ChangeZoomDirective } from '../pages/workspace/changeZoom.directive'
+import { DropUploadDirective } from '../pages/workspace/drag-upload.directive'
 
-import { FloatMenuComponent } from './float-menu/float-menu.component';
-import { referLineDirective } from '../pages/workspace/referLine.directive';
-import { InputGroupComponent } from './input-group/input-group.component';
+import { FloatMenuComponent } from './float-menu/float-menu.component'
+import { referLineDirective } from '../pages/workspace/referLine.directive'
+import { InputGroupComponent } from './input-group/input-group.component'
 import { ProcessComponent } from './process/process.component'
 import { ElementsAlignedComponent } from './elements-aligned/elements-aligned.component'
 import { ElementsLockedComponent } from './elements-locked/elements-locked.component'
@@ -100,15 +98,15 @@ import {
   DySearchComponent,
   DyPanelComponent,
   DyIndexFooterComponent,
-  DyFooterComponent
-} from './index';
-import { SafePipe } from './pipe/safe.pipe';
+  DyFooterComponent,
+} from './index'
+import { SafePipe } from './pipe/safe.pipe'
 
-import { magicBoxDirective } from '../pages/workspace/magicBox.directive';
-import { DyScrollComponent } from './dy-ui/dy-scroll/dy-scroll.component';
-import { ClickOutsideDirective } from './directives/clickoutside.directive';
+import { magicBoxDirective } from '../pages/workspace/magicBox.directive'
+import { DyScrollComponent } from './dy-ui/dy-scroll/dy-scroll.component'
+import { ClickOutsideDirective } from './directives/clickoutside.directive'
 
-const COMMON_MODULES = [RouterModule, CommonModule, FormsModule, ReactiveFormsModule, ColorPickerModule];
+const COMMON_MODULES = [RouterModule, CommonModule, FormsModule, ReactiveFormsModule, ColorPickerModule]
 
 const NB_MODULES = [
   NbThemeModule,
@@ -121,7 +119,7 @@ const NB_MODULES = [
   NbCardModule,
   NbCheckboxModule,
   NbSidebarModule,
-];
+]
 
 const NGX_BOOTSTRAP_MODULES = [
   BsDropdownModule,
@@ -134,7 +132,7 @@ const NGX_BOOTSTRAP_MODULES = [
   PopoverModule,
   CarouselModule,
   TooltipModule,
-];
+]
 
 // const CHARTS_PROVIDERS = [
 //   ChartsModule.forRoot().providers
@@ -150,7 +148,7 @@ const NB_THEME_PROVIDERS = [
   ).providers,
   ...NbMenuModule.forRoot().providers,
   ...NbSidebarModule.forRoot().providers,
-];
+]
 
 const NGX_BOOTSTRAP_PROVIDERS = [
   BsDropdownModule.forRoot().providers,
@@ -163,7 +161,7 @@ const NGX_BOOTSTRAP_PROVIDERS = [
   PopoverModule.forRoot().providers,
   CarouselModule.forRoot().providers,
   TooltipModule.forRoot().providers,
-];
+]
 
 const SHARE_SERVICES = [
   WaterfallService,
@@ -180,7 +178,7 @@ const SHARE_SERVICES = [
   referLineDirective,
   SetBlockZIndexService,
   magicBoxDirective,
-];
+]
 
 const SHARE_COMPONENTS = [
   HeaderComponent,
@@ -194,7 +192,6 @@ const SHARE_COMPONENTS = [
   SwitchComponent,
   CheckboxComponent,
   SliderComponent,
-  NumpickerComponent,
   RadioComponent,
   FooterComponent,
   ToolComponent,
@@ -214,8 +211,8 @@ const SHARE_COMPONENTS = [
   DyScrollComponent,
   ProcessComponent,
   ElementsAlignedComponent,
-  ElementsLockedComponent
-];
+  ElementsLockedComponent,
+]
 
 @NgModule({
   imports: [
@@ -249,7 +246,7 @@ const SHARE_COMPONENTS = [
     referLineDirective,
     FormatDataTimePipe,
     magicBoxDirective,
-    ClickOutsideDirective
+    ClickOutsideDirective,
   ],
   declarations: [
     ...SHARE_COMPONENTS,
@@ -261,15 +258,15 @@ const SHARE_COMPONENTS = [
     referLineDirective,
     ClickOutsideDirective,
     FormatDataTimePipe,
-    magicBoxDirective
+    magicBoxDirective,
   ],
-  entryComponents: [WheelColorPickerComponent]
+  entryComponents: [WheelColorPickerComponent],
 })
 export class ShareModule {
   static forRoot(): ModuleWithProviders {
     return <ModuleWithProviders>{
       ngModule: ShareModule,
       providers: [...NB_THEME_PROVIDERS, ...NGX_BOOTSTRAP_PROVIDERS, ...SHARE_SERVICES],
-    };
+    }
   }
 }
