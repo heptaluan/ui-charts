@@ -1,6 +1,6 @@
 export function preventDefault(e: Event) {
-  e.stopPropagation();
-  e.preventDefault();
+  e.stopPropagation()
+  e.preventDefault()
 }
 
 // 按照 order 大小排序
@@ -20,7 +20,6 @@ export const indexChartArr = [
   { name: '极坐标热力图', tempId: '7955555777700001208', order: '4.08' },
   { name: '三元图', tempId: '7955555777700001209', order: '4.08' },
 
-  
   { name: '百分比符号条形图dev', tempId: '7955555666601234501', order: '4.1' },
   { name: '分组力导图dev', tempId: '7955555666601234504', order: '4.2' },
   { name: '极化面积图dev', tempId: '7955555666601234505', order: '4.3' },
@@ -115,6 +114,4 @@ export const indexChartArr = [
   // { name: '表格', tempId: '7955555555502346001', order: '86' },
   { name: '散点图', tempId: '7955555555502346002', order: '87' },
   { name: '直方图', tempId: '7955555555502346003', order: '88' },
-
-
-];
+]
